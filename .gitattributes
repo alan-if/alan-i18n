@@ -1,0 +1,85 @@
+##########################################
+#  ALAN Internationalization Project     #
+#  https://github.com/alan-if/alan-i18n  #
+##########################################
+
+# Set Git's default behaviour to text-files autodetection, in case users don't
+# have `core.autocrlf` set:
+* text=auto
+
+# ==============================================================================
+#                               ALAN RELATED FILES
+# ==============================================================================
+[attr]Alan text linguist-language=Alan linguist-detectable=true
+
+## Alan Sources
+###############
+*.alan   Alan
+*.i      Alan
+*.ifid   text linguist-generated=true
+# UTF-8 converted Alan sources for Asciidoctor inclusion:
+*.utf8_alan    text linguist-generated=true
+
+## Alan Story-Files
+###################
+*.a3c   binary
+*.a3r   binary
+*.sav   binary
+
+## Adventures Solutions & Transcripts
+#####################################
+*.a3sol   text linguist-detectable=false
+*.a3log   text linguist-generated=true
+*.log     text linguist-generated=true
+
+## AlanIDE Files
+################
+.project   text linguist-language=XML linguist-generated=true
+
+# ==============================================================================
+#                                GENERIC SETTINGS
+# ==============================================================================
+
+## Repository Configuration
+###########################
+.editorconfig    text eol=lf
+.travis.yml      text eol=lf
+.gitattributes   text eol=lf
+.gitconfig       text eol=lf
+.gitignore       text eol=lf
+.gitmodules      text eol=lf
+
+## Shell/CMD Scripts
+####################
+*.bat   text eol=crlf
+*.com   text eol=crlf
+*.sh    text eol=lf
+
+## Documentation
+################
+*.md         text
+*.odt        binary
+*.txt        text
+
+## ==============
+## Graphics Files
+## ==============
+*.gif      binary
+*.ico      binary
+*.jpeg     binary
+*.jpg      binary
+*.png      binary
+*.svg      binary
+*.svgz     binary
+
+## ==================
+## Binary Executables
+## ==================
+*.app      binary
+*.dll      binary
+*.dylib    binary
+*.exe      binary
+*.out      binary
+*.so       binary
+
+# EOF #
