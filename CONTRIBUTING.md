@@ -11,7 +11,9 @@ Summary
 
 - [Conventions](#conventions)
     - [Files Extensions](#files-extensions)
-    - [EditorConfig Settings](#editorconfig-settings)
+    - [Code Styles Convention](#code-styles-convention)
+        - [EditorConfig Validation via Travis CI](#editorconfig-validation-via-travis-ci)
+        - [Validating Commits via EClint](#validating-commits-via-eclint)
 
 <!-- /MarkdownTOC -->
 
@@ -21,7 +23,7 @@ Summary
 
 ## Files Extensions
 
-The configuration files for Git and EditorConfig cover the following Alan-specific files extensions:
+The configuration files for Git and [EditorConfig] cover the following Alan-specific files extensions:
 
 |   ext    |                description                 |
 |----------|--------------------------------------------|
@@ -29,6 +31,8 @@ The configuration files for Git and EditorConfig cover the following Alan-specif
 | `.i`     | Alan source modules.                       |
 | `.a3sol` | Alan commands script (aka solution files). |
 | `.a3log` | Alan game transcripts.                     |
+
+Although the `.a3sol` and `.a3log` extension are arbitrary chosen, and non-officially part of the Alan specifications, you're nonetheless asked to adopt them in this project as extensions for command scripts and transcripts, respectively, since the project toolchain requires them.
 
 By default, the following Alan generated files will be excluded from the project:
 
@@ -40,27 +44,75 @@ By default, the following Alan generated files will be excluded from the project
 | `.sav`  | Saved games (used for testing). |
 
 
-## EditorConfig Settings
+## Code Styles Convention
 
-- [`.editorconfig`](./.editorconfig)
+This repository adopts [EditorConfig] to enforce consistent code styles in the repository contents and across different editors and IDEs:
 
-The template contains [EditorConfig] settings for Alan files designed to offer support across multiple editors and IDEs, as well as to provide optimal source code previews on GitHub.
+- [`.editorconfig`][.editorconfig]
 
-The [EditorConfig] file format is an application-agnostic standard for defining consistent coding style conventions for multiple developers working on the same project across various editors and IDEs. A growing number of editors and IDEs support EditorConfig out of the box, and numerous plug-ins and extensions are available for editors that don't.
+If you're using an [editor or IDE that natively supports EditorConfig], code styling should be handled auto-magically in the background.
+If not, check if there's an [EditorConfig plug-in/package] for your editor/IDE that you can install.
 
-One of the main benefits of the EditorConfig settings is the ability to enforce ISO-8859-1 encoding on Alan files (`*.alan`, `*.i`, `*.a3sol`, `*.a3log`) and prevent accidental UTF-8 file-corruption from copy-&-paste operations. Most editors that support [EditorConfig] should be able to enforce ISO-8859-1 strictness on Alan sources via the `.editorconfig` file.
+### EditorConfig Validation via Travis CI
 
-As of Jun 2015, [GitHub natively supports EditorConfig] files within repositories. The `.editorconfig` file in this template will improve Alan sources visualization on GitHub. Although GitHub doesn't recognize Alan source files natively, it will honour the EditorConfig settings of this template.
+Each PR and commit is tested on GitHub for code styles consistency via Travis CI, using the [EClint] validator for [EditorConfig].
 
-[EditorConfig]: https://editorconfig.org/ "Visit the EditorConfig project website"
-[Github natively supports EditorConfig]: https://github.com/editorconfig/editorconfig.github.com/pull/48
+Travis CI validation is performed by the [`validate.sh`][validate.sh] script found in the repository root; you can run the script locally to check the integrity status of your repository folder (the script will check all files, including unstaged and ignored ones).
 
+### Validating Commits via EClint
+
+You're strongly advised to install [EClint] ([Node.js]) and our pre-commit [Git hook] to validate your changes for code consistency at commit time:
+
+- [`git-hook-install.sh`][git-hook-install.sh] — installs the pre-commit hook.
+- [`git-hook-remove.sh`][git-hook-remove.sh] — removes the pre-commit hook.
+
+Once installed the pre-commit hook, every time you carry out a commit operation the staged files will be first checked via [EClint] to ensure that they meet the code styles settings in [`.editorconfig`][.editorconfig], and if they don't the commit will fail with an error listing the files that didn't pass the validation test.
+
+> **NOTE** — You can always bypass the pre-commit hook via the `--no-verify` option, e.g.:
+>
+> ```
+> git commit --no-verify
+> ```
+
+The advantage of using this hook instead of the [`validate.sh`][validate.sh] script is that the hook will test only the staged files involved in the actual commit, whereas the script will test _every_ file in the repository folder, including ignored and unstaged files, which is more time consuming and not focused on the specific commit changes.
+
+The [`git-hook-install.sh`][git-hook-install.sh] script will create the following files inside the repository:
+
+- `.git/hooks/pre-commit-validate.sh` — the commit validation script.
+- `.git/hooks/pre-commit` — the pre-commit hook that launches the validation script.
+
+You can uninstall the Git hook at any time, by executing:
+
+- [`git-hook-remove.sh`][git-hook-remove.sh]
+
+The hook installer and uninstaller scripts are designed to coexist with other pre-commit hooks you might have added to the repository, without disrupting them.
 
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
+[Git hook]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks "Learn more about Git hooks"
 
+<!-- tools and services -->
+
+[EClint]: https://www.npmjs.com/package/eclint "EClint page at NPM"
+[EditorConfig]: https://editorconfig.org "Learn more about EditorConfig on its official website"
+[Node.js]: https://nodejs.org "Visit Node.js website"
+
+[editor or IDE that natively supports EditorConfig]: https://editorconfig.org/#pre-installed "Check if your editor/IDE supports EditorConfig"
+[EditorConfig plug-in/package]: https://editorconfig.org/#download "List of EditorConfig plug-ins for various editors and IDEs"
+
+<!-- project files -->
+
+[.editorconfig]: ./.editorconfig "View EditorConfig settings"
+[git-hook-install.sh]: ./git-hook-install.sh "View Git hook installer script"
+[git-hook-remove.sh]: ./git-hook-remove.sh "View Git hook uninstaller script"
+[validate.sh]: ./validate.sh "View source script for code style validation"
+
+<!-- repo links -->
+
+[Issues]: https://github.com/alan-if/alan-i18n/issues "View the current repository Issues or submit a new Issue"
+[Discussions]: https://github.com/alan-if/alan-i18n/discussions "Visit the Discussions area of ALAN i18n"
 
 <!-- EOF -->
