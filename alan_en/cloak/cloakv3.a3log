@@ -1,0 +1,96 @@
+Arun - Adventure Language Interpreter version 3.0beta7 (2020-09-07 22:49:37)
+Version of 'cloakv3.a3c' is 3.0beta7!
+'cloakv3' contains the following IFIDs:
+  IFID:	UUID://535c6938-950e-27bc-0ce3-3b0bc6ff4805//
+
+
+
+
+Hurrying through the rainswept November night, you're glad to see the
+bright lights of the Opera House. It's surprising that there aren't more
+people about but, hey, what do you expect in a cheap demo game...? 
+
+
+Cloak of Darkness 
+A basic IF demonstration. 
+Version 1, Sept 2008. (Implemented using ALAN 3.0alpha6, lib 0.6.1) 
+Auto-converted to Alan v3 from the Alan v2 Version by Thomas Nilsson
+
+
+Foyer of the Opera House
+You are standing in a spacious hall, splendidly decorated in red and
+gold, with glittering chandeliers overhead. The entrance from the street
+is to the north, and there are doorways south and west.
+
+> N
+You've only just arrived, and besides, the weather outside seems to be
+getting worse.
+
+> S
+Darkness
+It's pitch black here. You can't see a thing.
+
+> LOOK
+In the dark? You could easily disturb something!
+
+> N
+Foyer of the Opera House
+You are standing in a spacious hall, splendidly decorated in red and
+gold, with glittering chandeliers overhead. The entrance from the street
+is to the north, and there are doorways south and west.
+
+> W
+Cloakroom
+The walls of this small room were clearly once lined with hooks, though
+now only one remains. The exit is a door to the east.
+
+> EXAMINE HOOK
+It's just a small brass hook screwed to the wall.
+
+> TAKE IT
+You can't take that!
+
+> I
+You are carrying a black velvet cloak.
+
+> EXAMINE ME
+As handsome as ever.
+
+> EXAMINE THE CLOAK
+A handsome cloak, of velvet trimmed with satin, and slightly spattered
+with raindrops. Its blackness is so deep that it almost seems to suck
+light from the room.
+
+> REMOVE CLOAK
+You are not wearing the black velvet cloak.
+
+> PUT CLOAK ON HOOK
+You put the black velvet cloak on the small brass hook.
+
+> L
+Cloakroom
+The walls of this small room were clearly once lined with hooks, though
+now only one remains. The exit is a door to the east. 
+
+On the small brass hook is a velvet cloak.
+
+> E
+Foyer of the Opera House
+You are standing in a spacious hall, splendidly decorated in red and
+gold, with glittering chandeliers overhead. The entrance from the street
+is to the north, and there are doorways south and west.
+
+> S
+Foyer bar
+The bar, much rougher than you'd have guessed after the opulence of the
+foyer to the north, is completely empty. There seems to be some sort of
+message scrawled in the sawdust on the floor.
+
+> READ MESSAGE
+The message, neatly marked in the sawdust, reads...
+
+    *** You have won ***
+
+You have scored 2 points out of 2 in 14 moves.
+
+Do you want to UNDO, RESTART, RESTORE or QUIT ? 

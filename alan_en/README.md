@@ -29,6 +29,7 @@ Edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6.
     + [`index.txt`][index.txt] — INDEX of the Alan Library (original).
     + [`ChangeLog`][ChangeLog] — original v0.6.2 Changelog.
     + [`COPYING`][COPYING] — [Artistic License 2.0].
+- [`/cloak/`][cloak] — _Cloak of Darkness_ sample adventure, by Stephen Griffiths.
 
 # About
 
@@ -78,6 +79,7 @@ All three libraries are distributed under the [Artistic License 2.0].
 <!-- project files and folders -->
 
 [lib_en]: ./lib_en/ "Navigate to English Alan IF library folder"
+[cloak]: ./cloak/ "Navigate to 'Cloak of Darkness' folder"
 
 [ChangeLog]: ./lib_en/ChangeLog "Read ChangeLog document"
 [COPYING]: ./lib_en/COPYING "View Artistic License 2.0"
