@@ -21,8 +21,9 @@ _Vampiro: Memorias de Rexxe_ v1.0.1, ported to ALAN by [Bruce Humphrey], 2010; b
 # Directory Contents
 
 - [`vampiro.alan`][vampiro.alan] — _Vampiro_ v1.0.1.
-- [`vampiro.ifid`][vampiro.ifid] — original IDIF.
+- [`vampiro.ifid`][vampiro.ifid] — original IFID.
 - [`vampiro.a3sol`][vampiro.a3sol] — walkthrough commands script.
+- [`vampiro.a3log`][vampiro.a3log] — generated walkthrough transcript.
 - [`build.sh`][build.sh] — compiles and tests `vampiro.alan`.
 
 The _Vampiro_ source files ([`vampiro.alan`][vampiro.alan] and [`vampiro.ifid`][vampiro.ifid]) were extracted from the `vampiro101.zip` archive, downloaded from CAAD:
@@ -118,9 +119,10 @@ Since these are all trivial changes, not affecting in any significant way the or
 
 <!-- project files and folders -->
 
-[vampiro.a3sol]: ./vampiro.a3sol "View source file"
+[vampiro.a3log]: ./vampiro.a3log "View transcript file"
+[vampiro.a3sol]: ./vampiro.a3sol "View walkthrough script"
 [vampiro.alan]: ./vampiro.alan "View source file"
-[vampiro.ifid]: ./vampiro.ifid "View source file"
+[vampiro.ifid]: ./vampiro.ifid "View IFID file"
 [build.sh]: ./build.sh "View source file"
 
 <!-- people -->
