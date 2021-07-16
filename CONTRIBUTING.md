@@ -25,14 +25,14 @@ Summary
 
 The configuration files for Git and [EditorConfig] cover the following Alan-specific files extensions:
 
-|   ext    |                description                 |
-|----------|--------------------------------------------|
-| `.alan`  | Alan source files.                         |
-| `.i`     | Alan source modules.                       |
-| `.a3sol` | Alan commands script (aka solution files). |
-| `.a3log` | Alan game transcripts.                     |
+|   ext   |                description                 |
+|---------|--------------------------------------------|
+| `.alan` | Alan source files.                         |
+| `.i`    | Alan source modules.                       |
+| `.a3s`  | Alan commands script (aka solution files). |
+| `.a3t`  | Alan game transcripts.                     |
 
-Although the `.a3sol` and `.a3log` extension are arbitrary chosen, and non-officially part of the Alan specifications, you're nonetheless asked to adopt them in this project as extensions for command scripts and transcripts, respectively, since the project toolchain requires them.
+The `.a3s` and `.a3t` extension are the new official extensions adopted for command scripts and transcripts, respectively.
 
 By default, the following Alan generated files will be excluded from the project:
 
