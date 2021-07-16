@@ -90,7 +90,7 @@ More details about the license terms, authors and credits of each third party as
 <!-- badges -->
 
 [travis badge]: https://travis-ci.com/alan-if/alan-i18n.svg?branch=main "Travis CI: EditorConfig validation status"
-[travis link]: https://travis-ci.com/alan-if/alan-if
+[travis link]: https://travis-ci.com/alan-if/alan-i18n
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue
