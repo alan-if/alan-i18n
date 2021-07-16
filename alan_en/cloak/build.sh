@@ -1,7 +1,7 @@
 #!/bin/bash
 
 adv=cloakv3
-inc=../lib_en
+inc=../StartLib
 
 echo -e "\033[34;1m==========================================================================\033[0m"
 echo -e "\033[033mCompiling \"$adv.alan\""

@@ -1,8 +1,8 @@
-# Alan IF Spanish
+# ALAN Starter Library Spanish
 
-Spanish Alan IF library v0.6.1e (April, 2010), by [Bruce Humphrey].
+Spanish implementation of the __Starter Library__, maintained by the ALAN IF community.
 
-Based on the English library v0.6.1dev and the pALANte library v0.1 by Marcos Donnantuoni.
+Based on the __[Librería pALANte v0.6.1e][pALANte]__ (April, 2010), by [Bruce Humphrey] and Marcos Donnantuoni.
 
 -----
 
@@ -12,6 +12,7 @@ Based on the English library v0.6.1dev and the pALANte library v0.1 by Marcos Do
 
 - [Directory Contents](#directory-contents)
 - [About](#about)
+- [Library Status](#library-status)
 - [Usage Example](#usage-example)
 - [License](#license)
 - [Reference Links](#reference-links)
@@ -22,7 +23,7 @@ Based on the English library v0.6.1dev and the pALANte library v0.1 by Marcos Do
 
 # Directory Contents
 
-- [`/lib_es/`][lib_es/] — **pALANte**, the ALAN Spanish Library v0.6.1e:
+- [`/StartLib/`][StartLib/] — Spanish Starter Library:
     + [`palante.i`][palante.i] — main library module that loads all others:
         * `*.i` — various library modules.
     + [`leeme.txt`][leeme.txt] — Spanish ReadMe of the pALANte library.
@@ -36,12 +37,21 @@ Marcos Donnantuoni and Bruce Humphrey — among others — began working on the 
 
 Then, in 2010, Bruce Humphrey took up the project again and completed the pALANte library and the _Vampiro_ sample adventure.
 
-The files inside the [`/lib_es/`][lib_es/] folder were extracted from the `lib_es_0_6_1e.zip ` archive downloaded from:
+The files inside the [`/StartLib/`][StartLib/] folder were extracted from the `StartLib_0_6_1e.zip ` archive downloaded from:
 
 - https://www.caad.es/?q=node/1718
 
+An archived copy of the original __[pALANte v0.6.1e][pALANte]__ library can be found at the [ALAN Goodies] project:
+
+- https://github.com/alan-if/alan-goodies/tree/master/libs/pALANte_0.6.1e/
+
+
+# Library Status
+
+Although we're planning to update the __Spanish Starter Library__ to take advantage of the new ALAN&nbsp;3 features that were introduced since 2010, currently its code is the same as the original __[pALANte]__ library.
+
 The original sources were reformatted by [Tristano Ajmone] to conform to code style conventions of this repository, all changes were merely aesthetic, not affecting the source code.
-The [`lib_es/COPYING`][COPYING] file of the [Artistic License 2.0] was added, since this is a derivative work of the [English Alan Library].
+The [`StartLib/COPYING`][COPYING] file of the [Artistic License 2.0] was added, since this is a derivative work of the [English Alan Library].
 
 
 # Usage Example
@@ -70,7 +80,7 @@ schedule ini_terms at limbo after 0. -- necesario para que funcione la
 
 # License
 
-- [`lib_es/COPYING`][COPYING]
+- [`StartLib/COPYING`][COPYING]
 
 The Spanish Alan Library is the work of [Bruce Humphrey] and Marcos Donnantuoni, based on the original [English Alan Library] by Göran Forslund, Stephen Griffiths and Thomas Nilsson (now [Thomas Nilefalk]).
 
@@ -105,7 +115,8 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 [CAAD]: https://www.caad.es  "Visit the CAAD (Club de Aventuras AD) website"
 [WikiCAAD » Alan]: https://wiki.caad.es/Alan
 [CAAD Forum]: https://foro.caad.es
-[Librería pALANte para ALAN, v0.6.1e]: https://www.caad.es/?q=node/1718
+[Librería pALANte para ALAN, v0.6.1e]: https://www.caad.es/?q=node/1718 "Download page of the original pALANte library at CAAD"
+[pALANte]: https://github.com/alan-if/alan-goodies/tree/master/libs/pALANte_0.6.1e/ "View the original pALANte Library v0.6.1e at the ALAN Goodies repository"
 
 [Wikipedia ES » Aventura conversacional]: https://es.wikipedia.org/wiki/Aventura_conversacional
 
@@ -115,6 +126,8 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 [English Alan Library]: ../alan_en/lib_en/ "Navigate to the English Alan Library folder"
 [Artistic License 2.0]: https://opensource.org/licenses/Artistic-2.0  "View the Artistic License 2.0 at Open Source Initiative"
 
+[ALAN Goodies]: https://github.com/alan-if/alan-goodies "Visit the ALAN Goodies repository on GitHub"
+
 <!-- Vampiro -->
 
 [Vampiro]: https://www.caad.es/?q=node/1717 "View original page of Vampiro at CAAD"
@@ -122,14 +135,14 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 
 <!-- project files and folders -->
 
-[lib_es/]: ./lib_es/ "Navigate to Spanish Alan IF library folder"
+[StartLib/]: ./StartLib/ "Navigate to Spanish Alan IF library folder"
 [vampiro/]: ./vampiro/ "Navigate to sample adventure"
 
-[indice.txt]: ./lib_es/indice.txt "View file"
-[leeme.txt]: ./lib_es/leeme.txt "View pALANte Library Index (Spanish)"
-[palante.i]: ./lib_es/palante.i "View source file of main library module"
-[ReadMe]: ./lib_es/ReadMe "View English README document"
-[COPYING]: ./lib_es/COPYING "View Artistic License 2.0"
+[indice.txt]: ./StartLib/indice.txt "View file"
+[leeme.txt]: ./StartLib/leeme.txt "View pALANte Library Index (Spanish)"
+[palante.i]: ./StartLib/palante.i "View source file of main library module"
+[ReadMe]: ./StartLib/ReadMe "View English README document"
+[COPYING]: ./StartLib/COPYING "View Artistic License 2.0"
 
 <!-- people -->
 

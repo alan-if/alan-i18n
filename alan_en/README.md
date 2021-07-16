@@ -1,7 +1,7 @@
-# Alan IF English
+# ALAN Starter Library English
 
-English Alan IF library v0.6.2 (November, 2007), by Göran Forslund, Thomas Nilsson (now [Thomas Nilefalk]) and Stephen Griffiths.
-Edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6.
+Reference implementation of the __Starter Library__, in English, maintained by the ALAN IF community.
+Based on the __[ALAN Library v0.6.2]__ (November, 2007), by Göran Forslund, Thomas Nilsson (now [Thomas Nilefalk]) and Stephen Griffiths.
 
 -----
 
@@ -11,8 +11,8 @@ Edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6.
 
 - [Directory Contents](#directory-contents)
 - [About](#about)
+- [Library Status](#library-status)
 - [License](#license)
-- [Some Background on the Libraries](#some-background-on-the-libraries)
 
 <!-- /MarkdownTOC -->
 
@@ -20,7 +20,7 @@ Edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6.
 
 # Directory Contents
 
-- [`/lib_en/`][lib_en] — ALAN Library v0.6.2:
+- [`/StartLib/`][StartLib] — English Starter Library:
     + [`std.i`][std.i] — main library module that loads all others:
         * `*.i` — various library modules.
     + [`README.md`][README.md] — original ReadMe, plus Tristano's notes.
@@ -31,36 +31,34 @@ Edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6.
     + [`COPYING`][COPYING] — [Artistic License 2.0].
 - [`/cloak/`][cloak] — _Cloak of Darkness_ sample adventure, by Stephen Griffiths.
 
+
 # About
 
-This is a recovered copy of the legacy ALAN Library v0.6.2 (the last version of the 0.6.x series), dating back to November, 2007.
-Edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6.
+The __ALAN Starter Library__ is based on a recovered copy of the legacy __[ALAN Library v0.6.2]__ (the last version of the 0.6.x series), dating back to November, 2007.
 
-This ALAN Library was the result of the collaborative joint effort of Göran Forslund, Thomas Nilsson (now Thomas Nilefalk) and Stephen Griffiths over a long period of time.
-The library was originally written for ALAN v2, and then updated to make use of the new features introduced by ALAN v3.
+The __ALAN Library__ was the result of the collaborative joint effort of Göran Forslund, Thomas Nilsson (now [Thomas Nilefalk]) and Stephen Griffiths over a long period of time.
+It was originally written for ALAN&nbsp;2, and then updated to make use of the new features introduced by ALAN&nbsp;3, but its development was soon abandoned if favour of the newer __[ALAN Library 1]__ that was released in 2010, which was superseded by the __[ALAN Standard Library 2]__ in 2016.
 
+The original v0.6.2 code was edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6.
+It was then renamed in this project to "Starter Library" to avoid confusion with the original library (and all other ALAN Libraries), so that we could start updating it to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007.
+
+An archived copy of the original __[ALAN Library v0.6.2]__ can be found at the [ALAN Goodies] project:
+
+- https://github.com/alan-if/alan-goodies/tree/master/libs/ALAN-Library_0.6/
+
+For some background info on the various ALAN libraries created in the course of time, and their history, see:
+
+- [ALAN Wiki] » [Alan Libraries]
+
+# Library Status
+
+Although we're planning to update the __English Starter Library__ to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007, currently its code is the same as the original __[ALAN Library v0.6.2]__.
 
 # License
 
 - [`COPYING`][COPYING]
 
-The library is released under the terms of the [Artistic License 2.0].
-
-
-# Some Background on the Libraries
-
-> __Tristano's Note__ — Having joined the ALAN community when Anssi's StdLib 2.1 was already the new established library, I haven't had any actual experience with previous versions of the ALAN Library. The following information might be inaccurate. Corrections are welcome.
-
-From what I've gathered, the evolution of the ALAN standard libraries is roughly as follows.
-
-- The original __ALAN Library__, up to v0.4.0 (2001–2002), was designed for ALAN 2.
-- __ALAN Library v0.4.1__ was ported to work with ALAN 3, and was updated up to v0.6.2 (2002–2007).
-- __[ALAN Library 1]__ (2010–2011) was a new library design (redesign?) by [Anssi Räisänen], where the library code was organized into four main sumodules.
-- The __[ALAN Standard Library 2]__ (2016–) was designed by [Anssi Räisänen], this being a new library altogether, targeting specifically ALAN 3 new features and introducing extensive features in formally organized library structure. This is the current ALAN Library in use today, v2.1 being the latest release.
-
-The original ALAN Library, up to v0.6.2 was the result of the collaborative joint effort of Göran Forslund, Thomas Nilsson (now [Thomas Nilefalk]) and Stephen Griffiths. The [ALAN Library 1] was designed by [Anssi Räisänen]. The new [ALAN Standard Library 2]  (aka StdLib) is the work of [Anssi Räisänen].
-
-All three libraries are distributed under the [Artistic License 2.0].
+The __ALAN Starter Library__ is released under the terms of the [Artistic License 2.0].
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
@@ -68,7 +66,14 @@ All three libraries are distributed under the [Artistic License 2.0].
 
 [Artistic License 2.0]: https://opensource.org/licenses/Artistic-2.0 "View the Artistic License 2.0 at Open Source Initiative"
 
+[ALAN Goodies]: https://github.com/alan-if/alan-goodies "Visit the ALAN Goodies repository on GitHub"
+
+[ALAN Wiki]: https://github.com/alan-if/alan/wiki/ "Visit the ALAN Wiki"
+[Alan Libraries]: https://github.com/alan-if/alan/wiki/Alan-Libraries "ALAN Wiki » Alan Libraries"
+
 <!-- ALAN Libs -->
+
+[ALAN Library v0.6.2]: https://github.com/alan-if/alan-goodies/tree/master/libs/ALAN-Library_0.6 "View the original ALAN Library v0.6.2 at the ALAN Goodies repository"
 
 [ALAN Library 1]: https://www.alanif.se/download-alan-v3/download-library/library-v1-00 "Go to the download page of ALAN Library v1.0 on ALAN website"
 
@@ -78,16 +83,16 @@ All three libraries are distributed under the [Artistic License 2.0].
 
 <!-- project files and folders -->
 
-[lib_en]: ./lib_en/ "Navigate to English Alan IF library folder"
+[StartLib]: ./StartLib/ "Navigate to English Alan IF library folder"
 [cloak]: ./cloak/ "Navigate to 'Cloak of Darkness' folder"
 
-[ChangeLog]: ./lib_en/ChangeLog "Read ChangeLog document"
-[COPYING]: ./lib_en/COPYING "View Artistic License 2.0"
-[index.md]: ./lib_en/index.md "View Alan Library Index (markdown)"
-[index.txt]: ./lib_en/index.txt "View Alan Library Index (plain text)"
-[NOTES.md]: ./lib_en/NOTES.md "Read usage notes for 'std.i'"
-[README.md]: ./lib_en/README.md "View README document"
-[std.i]: ./lib_en/std.i "View source file of main library module"
+[ChangeLog]: ./StartLib/ChangeLog "Read ChangeLog document"
+[COPYING]: ./StartLib/COPYING "View Artistic License 2.0"
+[index.md]: ./StartLib/index.md "View Alan Library Index (markdown)"
+[index.txt]: ./StartLib/index.txt "View Alan Library Index (plain text)"
+[NOTES.md]: ./StartLib/NOTES.md "Read usage notes for 'std.i'"
+[README.md]: ./StartLib/README.md "View README document"
+[std.i]: ./StartLib/std.i "View source file of main library module"
 
 <!-- people -->
 
