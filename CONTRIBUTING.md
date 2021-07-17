@@ -11,6 +11,8 @@ Summary
 
 - [Conventions](#conventions)
     - [Files Extensions](#files-extensions)
+        - [ALAN Files](#alan-files)
+    - [Locale Codes](#locale-codes)
     - [Code Styles Convention](#code-styles-convention)
         - [EditorConfig Validation via Travis CI](#editorconfig-validation-via-travis-ci)
         - [Validating Commits via EClint](#validating-commits-via-eclint)
@@ -21,7 +23,16 @@ Summary
 
 # Conventions
 
+The following agreed upon conventions are important to ensure consistency across the project.
+
+Most of these conventions are the same as those adopted in other ALAN related projects and repositories, and they are the result of the [ALAN IF Development team] collaborative editing experience, their learned lessons (and mistakes), and best practices discovered along the way.
+
+Established conventions simplify working across different projects in a consistent way, and allow configuring editors and tools for working with ALAN projects anywhere.
+When we adopt the same conventions, it's easier to work together in a smooth manner.
+
 ## Files Extensions
+
+### ALAN Files
 
 The configuration files for Git and [EditorConfig] cover the following Alan-specific files extensions:
 
@@ -42,6 +53,25 @@ By default, the following Alan generated files will be excluded from the project
 | `.ifid` | Source adventure IFID file.     |
 | `.log`  | Compiler/ARun log files.        |
 | `.sav`  | Saved games (used for testing). |
+
+
+## Locale Codes
+
+To structure and organize project directories and files, we use two-letter _locale codes_ to represent the various spoken languages, according to the [ISO 639-1:2002] standard.
+
+Here are a few locale codes which are used in this project:
+
+| language | code |
+|----------|------|
+| English  | `en` |
+| French   | `fr` |
+| German   | `de` |
+| Spanish  | `es` |
+| Swedish  | `sv` |
+
+For the full list of ISO 639-1 language codes, see:
+
+- https://github.com/datasets/language-codes/blob/master/data/language-codes.csv
 
 
 ## Code Styles Convention
@@ -94,6 +124,10 @@ The hook installer and uninstaller scripts are designed to coexist with other pr
 
 [Git hook]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks "Learn more about Git hooks"
 
+<!-- standards -->
+
+[ISO 639-1:2002]: https://en.wikipedia.org/wiki/ISO_639-1 "Wikipedia » ISO 639-1"
+
 <!-- tools and services -->
 
 [EClint]: https://www.npmjs.com/package/eclint "EClint page at NPM"
@@ -114,5 +148,9 @@ The hook installer and uninstaller scripts are designed to coexist with other pr
 
 [Issues]: https://github.com/alan-if/alan-i18n/issues "View the current repository Issues or submit a new Issue"
 [Discussions]: https://github.com/alan-if/alan-i18n/discussions "Visit the Discussions area of ALAN i18n"
+
+<!-- people and orgs -->
+
+[ALAN IF Development team]: https://github.com/alan-if "View the ALAN IF Development team GitHub profile"
 
 <!-- EOF -->
