@@ -18,6 +18,7 @@ Created by [Tristano Ajmone] on April, 2021.
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3,4" -->
 
 - [Project Contents](#project-contents)
+    - [Library Locales](#library-locales)
 - [About](#about)
 - [License](#license)
 - [Useful Links](#useful-links)
@@ -27,6 +28,12 @@ Created by [Tristano Ajmone] on April, 2021.
 -----
 
 # Project Contents
+
+- [`/alan_en/`][en] — English library.
+- [`/alan_es/`][es] — Spanish library.
+- [`/resources/`][resources/] — developers' resources.
+
+## Library Locales
 
 |       folder      |  locale |          description           |    date   |
 |-------------------|---------|--------------------------------|-----------|
@@ -95,15 +102,6 @@ More details about the license terms, authors and credits of each third party as
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue
 
-<!-- project folders -->
-
-[en]: ./alan_en/ "Navigate to ALAN English folder"
-[es]: ./alan_es/ "Navigate to ALAN Spanish folder"
-
-<!-- project files -->
-
-[COPYING]: ./COPYING "View Artistic License 2.0"
-
 <!-- ALAN Links -->
 
 [Alan]: https://www.alanif.se/ "Visit the Alan website"
@@ -119,6 +117,14 @@ More details about the license terms, authors and credits of each third party as
 
 [Library v1]: https://www.alanif.se/download-alan-v3/download-library/library-v1-00 "Go to the download page of the Alan Library v1"
 [Standard Library v2]: https://github.com/AnssiR66/AlanStdLib "Visit the Standard Library v2 repository on GitHub"
+
+<!-- project files and folders -->
+
+[en]: ./alan_en/ "Navigate to ALAN English folder"
+[es]: ./alan_es/ "Navigate to ALAN Spanish folder"
+[resources/]: ./resources "Navigate to resources folder"
+
+[COPYING]: ./COPYING "View Artistic License 2.0"
 
 <!-- people and organizations -->
 
