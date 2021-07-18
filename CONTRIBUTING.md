@@ -1,4 +1,4 @@
-# Contributors' Guidlines
+# Contributors' Guidelines
 
 Summary
 
@@ -16,6 +16,8 @@ Summary
     - [Code Styles Convention](#code-styles-convention)
         - [EditorConfig Validation via Travis CI](#editorconfig-validation-via-travis-ci)
         - [Validating Commits via EClint](#validating-commits-via-eclint)
+- [New Libraries](#new-libraries)
+    - [Directory Structure](#directory-structure)
 
 <!-- /MarkdownTOC -->
 
@@ -118,6 +120,29 @@ You can uninstall the Git hook at any time, by executing:
 The hook installer and uninstaller scripts are designed to coexist with other pre-commit hooks you might have added to the repository, without disrupting them.
 
 
+# New Libraries
+
+If you're planning to add a port of the Starter Library to a new locale, here are some guidelines.
+
+## Directory Structure
+
+Each port to a new locale should abide to the following folders naming and structuring convention:
+
+- `/alan_<locale-code>/`
+    + `/StartLib/`
+    + `README.md` — English README.
+    + `README_<locale-code>.md` — README in target locale.
+
+Where `<locale-code>` stand for the two-letter code indicating the target locale (e.g. `en`, `de`, `es`), as described in the _[Locale Codes]_ section of this document.
+
+The main `README.md` document in English should be provided in the `alan_<locale-code>/` folder, for the benefit of all users and maintainer, since English is the standard communication language used in the ALAN community.
+
+A README document in the target locale of the library should also be provided, named as `README_<locale-code>.md`, for the benefit of the library end users (who might not necessarily know English).
+Naming the document this way is preferable to translating the filename to the target locale (e.g. `LEEME.md` for Spanish, `LISEZMOI.md` for French, or `LEGGIMI.md` for Italian), since the latter solution makes it less obvious to non-speakers of the target locale that it's a README document.
+
+Inside the `StartLib/` folder, you're free to name documents as you please, since its contents are for the exclusive benefit of speakers of the target locale.
+
+
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
@@ -137,6 +162,11 @@ The hook installer and uninstaller scripts are designed to coexist with other pr
 [editor or IDE that natively supports EditorConfig]: https://editorconfig.org/#pre-installed "Check if your editor/IDE supports EditorConfig"
 [EditorConfig plug-in/package]: https://editorconfig.org/#download "List of EditorConfig plug-ins for various editors and IDEs"
 
+<!-- repo links -->
+
+[Issues]: https://github.com/alan-if/alan-i18n/issues "View the current repository Issues or submit a new Issue"
+[Discussions]: https://github.com/alan-if/alan-i18n/discussions "Visit the Discussions area of ALAN i18n"
+
 <!-- project files -->
 
 [.editorconfig]: ./.editorconfig "View EditorConfig settings"
@@ -144,10 +174,9 @@ The hook installer and uninstaller scripts are designed to coexist with other pr
 [git-hook-remove.sh]: ./git-hook-remove.sh "View Git hook uninstaller script"
 [validate.sh]: ./validate.sh "View source script for code style validation"
 
-<!-- repo links -->
+<!-- XRefs -->
 
-[Issues]: https://github.com/alan-if/alan-i18n/issues "View the current repository Issues or submit a new Issue"
-[Discussions]: https://github.com/alan-if/alan-i18n/discussions "Visit the Discussions area of ALAN i18n"
+[Locale Codes]: #locale-codes "Jump to 'Locale Codes' section"
 
 <!-- people and orgs -->
 
