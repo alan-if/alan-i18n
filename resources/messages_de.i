@@ -1,4 +1,4 @@
--- "messages_en.i" | 2021/07/18 | ALAN 3.0beta7
+-- "messages_de.i" | 2021/07/18 | ALAN 3.0beta7
 --==============================================================================
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -13,7 +13,7 @@
 
 -- Use this template to override the standard messages built into Alan with your
 -- custom messages. The message definitions shown here are the default ones for
--- the English language.
+-- the German language.
 
 -- You can provide fine-tuned message responses by adding conditional code
 -- constructs inside any MESSAGE definition. For more info on how to achieve
@@ -26,7 +26,7 @@
 
 MESSAGE
 
-MORE: "<More>"
+MORE: "<Mehr>"
 
 -- =============================================================================
 
@@ -38,30 +38,30 @@ MORE: "<More>"
 -- Player Location
 --------------------------------------------------------------------------------
 
-AGAIN: "(again)"
+AGAIN: "(erneut)"
 
-SEE_START: "There is $01"
+SEE_START: "Es gibt $01"
 SEE_COMMA: ", $01"
-SEE_AND: "and $01"
-SEE_END: "here. "
+SEE_AND: "und $01"
+SEE_END: "hier."
 
 --------------------------------------------------------------------------------
 -- Inanimate Containers
 --------------------------------------------------------------------------------
 
-CONTAINS: "$+1 contains"
+CONTAINS: "$+1 enthält"
 CONTAINS_COMMA: "$01,"
-CONTAINS_AND: "$01 and"
+CONTAINS_AND: "$01 und"
 CONTAINS_END: "$01."
 
-IS_EMPTY: "$+1 is empty."
+IS_EMPTY: "$+1 ist leer."
 
 --------------------------------------------------------------------------------
 -- Actors Inventories
 --------------------------------------------------------------------------------
 
-CARRIES: "$+1 carries"
-EMPTY_HANDED: "$+1 is empty-handed."
+CARRIES: "$+1 trägt"
+EMPTY_HANDED: "$+1 trägt nichts."
 
 -- =============================================================================
 
@@ -69,15 +69,15 @@ EMPTY_HANDED: "$+1 is empty-handed."
 
 -- =============================================================================
 
-NO_SUCH: "I can't see any $1 here."
-NO_WAY: "You can't go that way."
-CANT0: "You can't do that."
-IMPOSSIBLE_WITH: "That's impossible with $+1."
+NO_SUCH: "Ich kann hier keinen $1 sehen."
+NO_WAY: "Du kannst nicht in diese Richtung gehen."
+CANT0: "Du kannst das nicht tun."
+IMPOSSIBLE_WITH: "Es gibt nicht mit $+1."
 
-CAN_NOT_CONTAIN: "$+1 can not contain $+2."
-CONTAINMENT_LOOP: "Putting $+1 in itself is impossible."
-CONTAINMENT_LOOP2: "Putting $+1 in $+2 is impossible
-                    since $+2 already is inside $+1."
+CAN_NOT_CONTAIN: "$+1 kan $+2 nicht trägen."
+CONTAINMENT_LOOP: "Es ist unmöglich, $+1 in sich selbst zu setzen."
+CONTAINMENT_LOOP2: "Es ist unmöglich, $+1 in $+2 zu setzen,
+                    weil $+2 bereits in $+1 ist."
 
 -- =============================================================================
 
@@ -85,29 +85,29 @@ CONTAINMENT_LOOP2: "Putting $+1 in $+2 is impossible
 
 -- =============================================================================
 
-UNKNOWN_WORD: "I don't know the word '$1'."
-WHAT: "I don't understand."
-WHAT_WORD: "I don't know what you mean by '$1'."
-MULTIPLE: "You can't refer to multiple objects with '$v'."
-NOUN: "You must supply a noun."
+UNKNOWN_WORD: "Ich kenne das Wort '$1' nicht."
+WHAT: "Ich ferste nicht."
+WHAT_WORD: "Ich verstehe nicht was Du mit '$1' meinst."
+MULTIPLE: "Du kannst Dich nicht auf mehrere Gegenstände mit '$v' beziehen."
+NOUN: "Du musst ein Gegenstandswort angeben."
 
 --------------------------------------------------------------------------------
 -- Improper use of BUT and ALL
 --------------------------------------------------------------------------------
 
-AFTER_BUT: "You must give at least one object after '$1'."
-BUT_ALL: "You can only use '$1' after '$2'."
-NOT_MUCH: "That doesn't leave much to $v!"
+AFTER_BUT: "Du musst zum mindesten einen Gegenstand nach '$1' angeben."
+BUT_ALL: "Du kannst '$1' nur nach '$2' verwenden."
+NOT_MUCH: "Das überläßt viel nicht zu $v!"
 
 --------------------------------------------------------------------------------
 -- Disambiguation
 --------------------------------------------------------------------------------
 
-WHICH_START: "I don't know if you mean $+1"
+WHICH_START: "Ich weiß nicht, falls Du $+1"
 WHICH_COMMA: ", $+1"
-WHICH_OR: "or $+1."
+WHICH_OR: "oder $+1 meinst."
 
-WHICH_PRONOUN_START: "I don't know what you mean by '$1',"
+WHICH_PRONOUN_START: "Ich weiß nicht, was Du mit '$1' meinst,"
 WHICH_PRONOUN_FIRST: "$+1"
     ---------------------------------------------
     -- NOTE: Second to last candidates are listed
@@ -126,9 +126,9 @@ WHICH_PRONOUN_FIRST: "$+1"
     --       prompt where the user will be typing the response.
     ----------------------------------------------------------------------
 
-REALLY: "Are you sure (RETURN confirms) ? "
+REALLY: "Bist Du sicher (ENTER bestätigt) ? "
 
-QUIT_ACTION: "Do you want to UNDO, RESTART, RESTORE or QUIT ? "
+QUIT_ACTION: "Mö""chtest Du UNDO, RESTART, RESTORE oder QUIT ? "
     --------------------------------------------------------------
     -- NOTE: The suggested choices UNDO, RESTART, RESTORE and QUIT
     --       are hardcoded into ALAN and can't be overridden.
@@ -136,25 +136,25 @@ QUIT_ACTION: "Do you want to UNDO, RESTART, RESTORE or QUIT ? "
     --       lest the player won't known how to reply correctly.
     --------------------------------------------------------------
 
-HAVE_SCORED: "You have scored $1 points out of $2 in $3 moves."
+HAVE_SCORED: "Du hast $1 Punkte von $2 in $3 bewegt erzielt."
 
-UNDONE: "'$1' undone."
-NO_UNDO: "Nothing to undo."
+UNDONE: "'$1' annuliert."
+NO_UNDO: "Es gibt nichts zu annulieren."
 
 --------------------------------------------------------------------------------
 -- Saving Game Session
 --------------------------------------------------------------------------------
 
-SAVE_WHERE: "Enter file name to save in"
-SAVE_OVERWRITE: "That file already exists, overwrite (RETURN confirms) ? "
-SAVE_FAILED: "Sorry, save failed."
+SAVE_WHERE: "Gib den Dateinamen an, um zu speichern"
+SAVE_OVERWRITE: "Die Datei existiert bereits, überschreiben (ENTER, bestätigt)? "
+SAVE_FAILED: "Das Spiel konnte nicht gespeichert werden."
 
 --------------------------------------------------------------------------------
 -- Restoring Saved Game Session
 --------------------------------------------------------------------------------
 
-RESTORE_FROM: "Enter file name to restore from"
-SAVE_MISSING: "Sorry, could not open that save file."
-NOT_A_SAVEFILE:"That file does not seem to be an Alan game save file."
-SAVE_VERSION: "Sorry, the save file was created by a different version."
-SAVE_NAME: "Sorry, the save file did not contain a save for this adventure."
+RESTORE_FROM: "Von welcher Datei soll das Spiel wieder hergestellt werden."
+SAVE_MISSING: "Konnte das gespeicherte Spiel nicht ö""ffnen."
+NOT_A_SAVEFILE: "Diese Datei scheint kein gespeichertes ALAN Spiel zu sein."
+SAVE_VERSION: "Diese Datei wurde mit einer anderen Version gespeichert."
+SAVE_NAME: "Diese gespeicherte Datei gehört nicht zu diesem Spiel."
