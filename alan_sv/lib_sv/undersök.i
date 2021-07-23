@@ -1,45 +1,42 @@
--- examine.i
--- Library version 0.5.0
-
--- 0.4.1 - converted to ALANv3
+-- undersök.i
 
 
 Add to every thing
   Is
-    examinable.
-    searchable.
+    undersökbar.
+    sökbar.
 End add.
 
 Add to every actor
-  Is not searchable.
+  Is not undersökbar.
 End add.
 
 ----
 
 Synonyms
-  x, inspect, 'check' = examine.
+  inspektera, kontrollera, kolla = undersök.
 
 Syntax
-  examine = examine (obj) *
+  undersök = undersök (obj) *
     Where obj IsA thing
-      else "You can't examine that!"
+      else "Du kan inte undersöka" Say the obj. "."
 
 Syntax
-  examine = 'look' 'at' (obj) *.
+  undersök = 'titta' 'på' (obj) *.
 
 Add to every thing
-  Verb examine
-    Check obj is examinable
-      else "You can't examine" say the obj. "."
+  Verb undersök
+    Check obj is undersökbar
+      else "Du kan inte undersöka" say the obj. "."
     Does
-      "There is nothing special about" say the obj. "."
+      "Det verkar inte vara något särskilt med" say the obj. "."
   End verb.
 End add.
 
 ----
 
 Synonyms
-  inside, into = 'in'.
+  inside, into = 'i'.
 
 Syntax
   look_in = 'look' 'in' (obj)

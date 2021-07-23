@@ -27,7 +27,7 @@ Syntax
 
 Verb 'återställ'
   Does
-    Restore-.
+    Restore.
     "Done.$n"
     Look.
 End verb.

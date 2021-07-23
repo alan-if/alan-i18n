@@ -23,7 +23,6 @@ Syntax
     Where obj IsA object
       else "Du kan inte ta" say the obj. "med dig!"
 
-
 Syntax
   ta_upp1 = tag upp (obj)*
     Where obj IsA object
