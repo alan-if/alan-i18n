@@ -1,8 +1,4 @@
--- meta.i
--- 0.6.2 : removed q verb and just made 'q' a synonym for 'quit'
-
--- Library version 0.5.0
-
+-- "meta.i"
 
 Synonyms q = 'quit'.
 

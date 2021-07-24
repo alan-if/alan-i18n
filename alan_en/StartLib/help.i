@@ -1,6 +1,4 @@
--- help.i
--- Library version 0.5.0
-
+-- "help.i"
 
 Synonyms
   h = help.

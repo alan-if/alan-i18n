@@ -1,6 +1,4 @@
--- look.i
--- Library version 0.5.0
-
+-- "look.i"
 
 Synonyms
   l = 'look'.

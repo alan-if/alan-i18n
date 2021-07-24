@@ -1,6 +1,4 @@
--- brief.i
--- Library version 0.5.0
-
+-- "brief.i"
 
 --
 -- Use "Visits 0." or "Visits 1000." in the START section if you want

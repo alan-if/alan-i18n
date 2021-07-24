@@ -1,26 +1,22 @@
 
-INDEX over the Alan Library
-===========================
+# ALAN Starter Library Index
 
-Library Version 0.4.1 -- June, 2002
-
-
-There are two indices here. Each is divided into categories
-(attributes, syntax, verbs etc.). The first index sorts each category
-in alphabetical order, the second in the order of the file they are
-defined in.
-
-The purpose of this index is to act as a roadmap to the library showing
-you at a glance what is defined in the library and where to go to find
-out details about each definition.
-
-Please read the [README] and [NOTES] files for information about
-using the library.
+Version 0.1.0 (2021/07/24).
 
 
---------------------------------------------------
+There are two indices here.
+Each is divided into categories (attributes, syntax, verbs etc.).
+The first index sorts each category in alphabetical order, the second in the order of the file they are defined in.
+
+The purpose of this index is to act as a roadmap to the library showing you at a glance what is defined in the library and where to go to find out details about each definition.
+
+Please read the [README] and [NOTES] files for information about using the library.
+
+-----
 
 **Table of Contents**
+
+<!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3,4" -->
 
 - [Alphabetical order:](#alphabetical-order)
     - [ACTOR](#actor)
@@ -41,12 +37,12 @@ using the library.
     - [CONTAINER](#container-1)
     - [LOCATION](#location-1)
 
---------------------------------------------------
+<!-- /MarkdownTOC -->
+
+-----
 
 
-
-Alphabetical order:
-===================
+# Alphabetical order:
 
 ## ACTOR
 
@@ -269,8 +265,7 @@ Alphabetical order:
 | `west`                                      | [nowhere.i] |
 
 
-File order:
-===========
+# File order:
 
 
 ## DEFAULT ATTRIBUTES
@@ -481,7 +476,7 @@ File order:
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
-[README]: ./README.md
+[README]: https://github.com/alan-if/alan-goodies/blob/master/libs/ALAN-Library_0.6/README.md#original-readme "View archived copy of original 'ReadMe' at ALAN Goodies"
 [NOTES]: ./NOTES.md
 
 <!-- Lib modules -->
@@ -510,7 +505,7 @@ File order:
 [read.i]: ./read.i "View source file"
 [scenery.i]: ./scenery.i "View source file"
 [smell.i]: ./smell.i "View source file"
-[std.i]: ./std.i "View source file"
+[StartLib.i]: ./StartLib.i "View source file"
 [take.i]: ./take.i "View source file"
 [talk.i]: ./talk.i "View source file"
 [throw.i]: ./throw.i "View source file"

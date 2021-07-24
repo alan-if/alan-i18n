@@ -1,9 +1,4 @@
--- invent.i
--- 0.6.2 : changed 'the Worn' from a 'thing' to an 'entity'
-
--- Library version 0.5.0
--- 0.4.1 - converted to ALANv3
-
+-- "invent.i"
 
 Add to every thing
   Has weight 0.

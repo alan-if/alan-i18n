@@ -1,9 +1,4 @@
--- give.i
--- Library version 0.5.0
-
--- 0.5.0 - added Syntax synonym "give (recip) (obj)"
--- 0.4.1 - converted to ALANv3
-
+-- "give.i"
 
 Syntax
   give = 'give' (obj) 'to' (recip)

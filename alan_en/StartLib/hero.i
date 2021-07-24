@@ -1,6 +1,4 @@
--- hero.i
--- Library version 0.6.1dev
-
+-- "hero.i"
 
 Synonyms
   me, myself, self = hero.

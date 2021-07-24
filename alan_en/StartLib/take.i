@@ -1,11 +1,4 @@
--- take.i
--- Library version 0.5.0
-
--- 0.6.0 - removed guard for taking things from animate containers since
---         Alan v3.0.29 supports Extract clause on containers
--- 0.5.0 - cleaned up formatting, made use of "." not making a leading space
--- 0.4.1 - converted to ALANv3
-
+-- "take.i"
 
 Add to every thing
   Is inanimate.

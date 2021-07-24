@@ -1,3 +1,7 @@
+![Library version][lib badge]&nbsp;
+[![Alan version][alan badge]][alan link]&nbsp;
+[![License][license badge]][COPYING]
+
 # ALAN Starter Library English
 
 Reference implementation of the __Starter Library__, in English, maintained by the ALAN IF community.
@@ -21,13 +25,11 @@ Based on the __[ALAN Library v0.6.2]__ (November, 2007), by Göran Forslund, Tho
 # Directory Contents
 
 - [`/StartLib/`][StartLib] — English Starter Library:
-    + [`std.i`][std.i] — main library module that loads all others:
+    + [`StartLib.i`][StartLib.i] — main library module that loads all others:
         * `*.i` — various library modules.
-    + [`README.md`][README.md] — original ReadMe, plus Tristano's notes.
-    + [`NOTES.md`][NOTES.md] — Usage notes for `std.i`.
-    + [`index.md`][index.md] — INDEX of the Alan Library (markdown version).
-    + [`index.txt`][index.txt] — INDEX of the Alan Library (original).
-    + [`ChangeLog`][ChangeLog] — original v0.6.2 Changelog.
+    + [`CHANGELOG.md`][CHANGELOG.md] — Starter Library Changelog.
+    + [`INDEX.md`][INDEX.md] — Starter Library Index.
+    + [`NOTES.md`][NOTES.md] — `StartLib.i` usage notes.
     + [`COPYING`][COPYING] — [Artistic License 2.0].
 - [`/cloak/`][cloak] — _Cloak of Darkness_ sample adventure, by Stephen Griffiths.
 
@@ -39,8 +41,9 @@ The __ALAN Starter Library__ is based on a recovered copy of the legacy __[ALAN 
 The __ALAN Library__ was the result of the collaborative joint effort of Göran Forslund, Thomas Nilsson (now [Thomas Nilefalk]) and Stephen Griffiths over a long period of time.
 It was originally written for ALAN&nbsp;2, and then updated to make use of the new features introduced by ALAN&nbsp;3, but its development was soon abandoned if favour of the newer __[ALAN Library 1]__ that was released in 2010, which was superseded by the __[ALAN Standard Library 2]__ in 2016.
 
-The original v0.6.2 code was edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6.
-It was then renamed in this project to "Starter Library" to avoid confusion with the original library (and all other ALAN Libraries), so that we could start updating it to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007.
+The original v0.6.2 code was edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6; also, some outdated references and broken links were updated accordingly.
+
+The library was then renamed in this project from __ALAN Library__ to "Starter Library" to avoid confusion with the original library (and all other ALAN Libraries), so that we could start updating it to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007.
 
 An archived copy of the original __[ALAN Library v0.6.2]__ can be found at the [ALAN Goodies] project:
 
@@ -81,18 +84,23 @@ The __ALAN Starter Library__ is released under the terms of the [Artistic Licens
 
 [ALAN repository]: https://bitbucket.org/alanif/alan "Visit the official ALAN repository on Bitbucket"
 
+<!-- badges -->
+
+[lib badge]: https://img.shields.io/badge/StartLib%20EN-0.1.0-yellow "ALAN Starter Library version"
+[alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
+[alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
+[license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue
+
 <!-- project files and folders -->
 
 [StartLib]: ./StartLib/ "Navigate to English Alan IF library folder"
 [cloak]: ./cloak/ "Navigate to 'Cloak of Darkness' folder"
 
-[ChangeLog]: ./StartLib/ChangeLog "Read ChangeLog document"
+[CHANGELOG.md]: ./StartLib/CHANGELOG.md "Read CHANGELOG document"
 [COPYING]: ./StartLib/COPYING "View Artistic License 2.0"
-[index.md]: ./StartLib/index.md "View Alan Library Index (markdown)"
-[index.txt]: ./StartLib/index.txt "View Alan Library Index (plain text)"
+[INDEX.md]: ./StartLib/INDEX.md "View Alan Library Index (markdown)"
 [NOTES.md]: ./StartLib/NOTES.md "Read usage notes for 'std.i'"
-[README.md]: ./StartLib/README.md "View README document"
-[std.i]: ./StartLib/std.i "View source file of main library module"
+[StartLib.i]: ./StartLib/StartLib.i "View source file of main library module"
 
 <!-- people -->
 

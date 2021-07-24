@@ -1,6 +1,4 @@
--- scenery.i
--- Library version 0.5.0
-
+-- "scenery.i"
 
 Every scenery IsA object
   Is

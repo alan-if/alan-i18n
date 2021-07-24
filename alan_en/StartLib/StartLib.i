@@ -1,8 +1,13 @@
--- std.i
--- Library version 0.6.2
+--==============================================================================
+--------------------------------------------------------------------------------
+-- * * * ALAN Starter Library English * * *   v0.1.0 | 2021/07/24 | ALAN 3.Beta7
+--------------------------------------------------------------------------------
+--==============================================================================
 
--- All verb definitions have a small, simple default body. To make
--- them do other things use DOES ONLY in your specialised verb body.
+-- Main library module.
+
+-- All verb definitions have a small, simple default body.
+-- To make them do other things use DOES ONLY in your specialised verb body.
 
 -- player character, etc.
 Import 'hero.i'.

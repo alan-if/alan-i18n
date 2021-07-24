@@ -1,7 +1,4 @@
--- talk.i
--- Library version 0.5.0
-
--- 0.4.1 - converted to ALANv3
+-- "talk.i"
 
 
 -- for verbs like 'ask' and 'tell' you need to individually program

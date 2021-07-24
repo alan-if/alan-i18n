@@ -130,12 +130,20 @@ Each port to a new locale should abide to the following folders naming and struc
 
 - `/alan_<locale-code>/`
     + `/StartLib/`
+        * `StartLib.i` — main library import module.
+        * `*.i` — other library modules.
     + `README.md` — English README.
     + `README_<locale-code>.md` — README in target locale.
 
 Where `<locale-code>` stand for the two-letter code indicating the target locale (e.g. `en`, `de`, `es`), as described in the _[Locale Codes]_ section of this document.
 
-The main `README.md` document in English should be provided in the `alan_<locale-code>/` folder, for the benefit of all users and maintainer, since English is the standard communication language used in the ALAN community.
+The main library import module should be named `StartLib.i`, regardless of the library locale.
+(This module was called `std.i` in previous incarnations of the library.)
+
+The other library modules should be named accorded to their meaning in the target locale — e.g. `help.i` would be translated to `ayuda.i` in Spanish, `hilfe.i` in German, `aiuto.i` in Italian, etc.).
+
+
+The main `README.md` document in the `alan_<locale-code>/` folder should be in English, for the benefit of all users and maintainer, since English is the standard communication language used in the ALAN&nbsp;IF community.
 
 A README document in the target locale of the library should also be provided, named as `README_<locale-code>.md`, for the benefit of the library end users (who might not necessarily know English).
 Naming the document this way is preferable to translating the filename to the target locale (e.g. `LEEME.md` for Spanish, `LISEZMOI.md` for French, or `LEGGIMI.md` for Italian), since the latter solution makes it less obvious to non-speakers of the target locale that it's a README document.

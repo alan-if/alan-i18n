@@ -1,12 +1,4 @@
--- open.i
--- Library version 0.5.0
-
--- 0.4.1 - converted to ALANv3
--- 0.5.0 - Changed attributes around:
---    'open' indicates state
---    'openable' indicates if it is possible to open
---    'closeable' indicates if it is possible to close
-
+-- "open.i"
 
 Syntax
   open = open (obj)

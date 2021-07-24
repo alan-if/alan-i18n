@@ -1,8 +1,4 @@
--- attack.i
--- Library version 0.5.0
-
--- 0.4.1 - converted to ALANv3
-
+-- "attack.i"
 
 Add to every thing
   Is not shootable.
