@@ -11,16 +11,16 @@
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --==============================================================================
 
--- Use this template to override the standard messages built into Alan with your
--- custom messages. The message definitions shown here are the default ones for
--- the Swedish language.
+-- Använd denna mall för att överrida standardmeddelandena som är inbyggda i Alan
+-- med dina egna anpassade texter. Texterna som finns här är samma som de som
+-- finns inbyggda om du väljer svenska som språk.
 
--- You can provide fine-tuned message responses by adding conditional code
--- constructs inside any MESSAGE definition. For more info on how to achieve
--- this, refer to The ALAN Manual "§3.15. MESSAGEs".
+-- Du kan finjustera meddelandena genom att lägga till extra kod i MESSAGE-
+-- definitionerna. För mer information see Alan-manualens avsnitt
+-- "§3.15. MESSAGEs".
 
--- For a detailed explanation of each message and its usage context, refer to
--- The ALAN Manual "Appendix C.1. Input Response Messages".
+-- För mer en detaljerad förklaring av varje medddelande och hur den används, se
+-- ALAN-manualen "Appendix C.1. Input Response Messages".
 
 --------------------------------------------------------------------------------
 
@@ -30,12 +30,12 @@ MORE: "<Mera>"
 
 -- =============================================================================
 
--- DESCRIPTIONS
+-- BESKRIVNINGAR
 
 -- =============================================================================
 
 --------------------------------------------------------------------------------
--- Player Location
+-- Spelarens plats
 --------------------------------------------------------------------------------
 
 AGAIN: "(igen)"
@@ -46,7 +46,7 @@ SEE_AND: "och $01"
 SEE_END: "här."
 
 --------------------------------------------------------------------------------
--- Inanimate Containers
+-- Behållare
 --------------------------------------------------------------------------------
 
 CONTAINS: "$+1 innehåller"
@@ -57,7 +57,7 @@ CONTAINS_END: "$01."
 IS_EMPTY: "$+1 är tom."
 
 --------------------------------------------------------------------------------
--- Actors Inventories
+-- Aktörers inventarier
 --------------------------------------------------------------------------------
 
 CARRIES: "$+1 bär på"
@@ -65,7 +65,7 @@ EMPTY_HANDED: "$+1 är tomhänt."
 
 -- =============================================================================
 
--- INVALID COMMANDS
+-- FELAKTIGA KOMMANDON
 
 -- =============================================================================
 
@@ -81,7 +81,7 @@ CONTAINMENT_LOOP2: "Det är omöjligt att stoppa $+1 i
 
 -- =============================================================================
 
--- PARING PROBLEMS
+-- PARSNINGSPROBLEM
 
 -- =============================================================================
 
@@ -92,7 +92,7 @@ MULTIPLE: "Du kan inte ange flera objekt tillsammans med verbet '$v'."
 NOUN: "Du måste ange ett substantiv."
 
 --------------------------------------------------------------------------------
--- Improper use of BUT and ALL
+-- Felaktig användning av OCH och UTOM
 --------------------------------------------------------------------------------
 
 AFTER_BUT: "Det borde vara minst ett objekt efter '$1'."
@@ -100,7 +100,7 @@ BUT_ALL: "Du kan bara använda '$1' efter '$2'."
 NOT_MUCH: "Det blir inte så mycket kvar att $v då!"
 
 --------------------------------------------------------------------------------
--- Disambiguation
+-- Flertydighet
 --------------------------------------------------------------------------------
 
 WHICH_START: "Jag vet inte om du menar $+1"
@@ -116,24 +116,24 @@ WHICH_PRONOUN_FIRST: "$+1"
 
 -- =============================================================================
 
--- GAME-SESSION MESSAGES
+-- DIALOGER
 
 -- =============================================================================
 
     ----------------------------------------------------------------------
-    -- NOTE: Question messages add a space after the question mark ("? ").
-    --       This grants spacing between the '?' and the confirmation
-    --       prompt where the user will be typing the response.
+    -- NOTE: Meddelanden som är frågor har ett blanksteg efter frågetecknet
+    --       ("? "). Detta ger ett mellanrum mellan '?' och svaret som
+    --       användaren skriver in.
     ----------------------------------------------------------------------
 
-REALLY: "Är du säker (RETURN för ja) ? "
+REALLY: "Är du säker (tryck RETUR för ja) ? "
 
 QUIT_ACTION: "Vad vill du göra, UNDO, RESTART, RESTORE or QUIT ? "
     --------------------------------------------------------------
-    -- NOTE: The suggested choices UNDO, RESTART, RESTORE and QUIT
-    --       are hardcoded into ALAN and can't be overridden.
-    --       You shouldn't translate these words in the message
-    --       lest the player won't known how to reply correctly.
+    -- NOTE: De angivna svarsalternativen UNDO, RESTART, RESTORE
+    --       och QUIT är hårdkodade i ALAN och kan inte ändras.
+    --       Du bör inte översätta orden i meddelandet eftersom
+    --       användaren då inte vet vad som är giltiga svar.
     --------------------------------------------------------------
 
 HAVE_SCORED: "Du har samlat $1 poäng av $2 på $3 drag."
@@ -142,19 +142,19 @@ UNDONE: "'$1' ogjort."
 NO_UNDO: "Det finns inget att göra ogjort."
 
 --------------------------------------------------------------------------------
--- Saving Game Session
+-- Spara spelomgången
 --------------------------------------------------------------------------------
 
 SAVE_WHERE: "Spara äventyret i vilken fil"
-SAVE_OVERWRITE: "Filen fanns redan, skriva över (RETURN för ja) ? "
+SAVE_OVERWRITE: "Filen fanns redan, skriva över (tryck RETUR för ja) ? "
 SAVE_FAILED: "Tyvärr, det gick inte att spara äventyret."
 
 --------------------------------------------------------------------------------
--- Restoring Saved Game Session
+-- Hämta sparad spelomgång
 --------------------------------------------------------------------------------
 
 RESTORE_FROM: "Hämta sparat äventyr från vilken fil"
-SAVE_MISSING: "Tyvärr, kunde inte hitta något så""dant sparat äventyr."
+SAVE_MISSING: "Tyvärr, kunde inte hitta något sådant sparat äventyr."
 NOT_A_SAVEFILE: "Den filen verkar inte vara ett sparat Alan spel."
 SAVE_VERSION: "Tyvärr, det sparade äventyret har inte samma version."
 SAVE_NAME: "Tyvärr, det var inte detta äventyr som var sparat i den filen."
