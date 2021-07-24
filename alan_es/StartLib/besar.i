@@ -1,27 +1,23 @@
--- besar.i
--- Library version 0.6.0e
-
--- 0.4.1 - converted to ALANv3
-
+-- "besar.i" <-- "kiss.i"
 
 Synonyms
   beso, besa, besucar, besuco, besuca, besuqueo, besuquea, besuquear = besar.
 Syntax
   besar = besar (obj)
-    Where obj Isa Thing
-      ELSE "¡No se puede besar!"
+    Where obj IsA thing
+      else "¡No se puede besar!"
 
-Add To Every Thing
+Add to every thing
   Verb besar
     Does
-      If obj=Hero Then
+      If obj=hero then
         "Bueno, ¡si insistes!"
-      Else
-        If obj Is InAnimado Then
-          "Besas" Say The obj. "."
-        Else
-          Say The obj. "esquiva tus intentos."
-        End If.
-      End If.
-  End Verb.
-End Add To.
+      else
+        If obj is InAnimado then
+          "Besas" say the obj. "."
+        else
+          Say the obj. "esquiva tus intentos."
+        End if.
+      End if.
+  End verb.
+End add to.

@@ -1,28 +1,16 @@
--- take.i
--- Library version 0.6.1e
+-- "tomar.i" <-- "take.i"
 
--- 0.6.1e - versión española
--- 0.6.0 - removed guard for taking things from animate containers since
---         Alan v3.0.29 supports Extract clause on containers
--- 0.5.0 - cleaned up formatting, made use of "." not making a leading space
--- 0.4.1 - converted to ALANv3
+Add to every thing
+  Is inanimado.
+End add to thing.
 
+Add to every object
+  Is tomable.
+End add to object.
 
-
-Add To Every thing
-  Is
-    inanimado.
-End Add To thing.
-
-Add To Every object
-  Is
-    tomable.
-End Add To object.
-
-Add To Every actor
-  Is
-    Not inanimado.
-End Add To actor.
+Add to every actor
+  Is not inanimado.
+End add to actor.
 
 Synonyms
   toma, tomo, agarro, agarra, agarrar, cojo, coge, coger,
@@ -33,26 +21,26 @@ Synonyms
 
 Syntax
   tomar = tomar (obj) *
-    Where obj Isa object
-      Else "¡No puedes tomar" say the obj. "!"
+    Where obj IsA object
+      else "¡No puedes tomar" say the obj. "!"
   tomar = tomar 'el' (obj).
 
 
-Add To Every object
+Add to every object
   Verb tomar
-    Check obj Is tomable
-      Else "¡No puedes tomar" say the obj. "!"
-    And obj Not In llevado
-      Else "Ya lo tienes - lo llevas puesto."
-    And obj Not In hero
-      Else "Ya lo tienes."
-    And peso Of obj <=50
-      Else "Es demasiado pesado."
+    Check obj is tomable
+      else "¡No puedes tomar" say the obj. "!"
+    And obj not in llevado
+      else "Ya lo tienes - lo llevas puesto."
+    And obj not in hero
+      else "Ya lo tienes."
+    And peso of obj <=50
+      else "Es demasiado pesado."
     Does
-      Locate obj In hero.
+      Locate obj in hero.
       "Tomas" say the obj. "."
-  End Verb.
-End Add To.
+  End verb.
+End add to.
 
 
 Syntax
@@ -60,39 +48,39 @@ Syntax
   dejar = dejar 'el' (obj) *.
 
 
-Add To Every object
+Add to every object
   Verb dejar
-    Check obj In hero
-      Else "No lo llevas."
+    Check obj in hero
+      else "No lo llevas."
     Does
-      Locate obj Here.
+      Locate obj here.
       "Dejas" say the obj. "."
-  End Verb.
-End Add To.
+  End verb.
+End add to.
 
 
 Syntax
   tomar_de = 'tomar' (obj) 'de' (cont)
-    Where obj Isa object
-      Else "Solo puedes tomar objetos."
-    And cont Isa thing
-      Else "¡No puedes tomar objetos de eso!"
-    And cont Isa Container
-      Else "¡No puedes tomar objetos de eso!"
+    Where obj IsA object
+      else "Solo puedes tomar objetos."
+    And cont IsA thing
+      else "¡No puedes tomar objetos de eso!"
+    And cont IsA container
+      else "¡No puedes tomar objetos de eso!"
 
-Add To Every object
+Add to every object
   Verb tomar_de
     When obj
-      Check obj Not In hero
-        Else "Ya llevas" Say The obj. "."
-      And obj In cont
-        Else Say The obj. "no está."
+      Check obj not in hero
+        else "Ya llevas" say the obj. "."
+      And obj in cont
+        else say the obj. "no está."
     Does
-      If cont=hero Then
+      If cont=hero then
         "¡No necesitas tomar cosas de ti mismo!"
-      Else
-        Locate obj In hero.
-        "Tomas" Say The obj. "."
-      End If.
-  End Verb.
-End Add.
+      else
+        Locate obj in hero.
+        "Tomas" say the obj. "."
+      End if.
+  End verb.
+End add.

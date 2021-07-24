@@ -1,8 +1,6 @@
--- brief.i
--- Library version 0.6.1e
+-- "brief.i"
 
--- No parece funcionar.
-
+-- No parece funcionar!
 
 --
 -- Use "Visits 0." or "Visits 1000." in the START section if you want
@@ -12,24 +10,24 @@
 Synonyms
   largo = verbose.
 
-SYNTAX
+Syntax
   verbose = verbose.
 
-VERB verbose
-  DOES
+Verb verbose
+  Does
     Visits 0.
     "El modo largo está activado."
-END VERB verbose.
+End verb verbose.
 
 Synonyms
   superbreve, breve = brief.
 
-SYNTAX
+Syntax
   brief = brief.
 
-VERB brief
-  DOES
+Verb brief
+  Does
     Visits 1000.
-    "El modo Breve está activado. Las descripciones de las localizaciones
-    solo se muestran la primera vez que las visitas."
-END VERB brief.
+    "El modo Breve está activado. Las descripciones de las
+     localizaciones solo se muestran la primera vez que las visitas."
+End verb brief.

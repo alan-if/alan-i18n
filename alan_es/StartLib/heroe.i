@@ -1,18 +1,17 @@
--- heroe.i
--- Library version 0.6.1e
+-- "heroe.i" <-- "hero.i"
 
 Synonyms
   mi, me, yo, heroe, héroe = hero.
 
-The hero Isa actor
-Container
-  Limits
-    Count 10 Then
-      "No puedes llevar más. Debes dejar algo antes."
-    peso 50 Then
-      "No puedes llevar más peso. Debes dejar algo antes."
+The hero IsA actor
+  Container
+    Limits
+      Count 10 then
+        "No puedes llevar más. Debes dejar algo antes."
+      peso 50 then
+        "No puedes llevar más peso. Debes dejar algo antes."
     Header
       "Tienes"
-    Else
+    else
       "No tienes nada."
-End The hero.
+End the hero.

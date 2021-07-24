@@ -1,33 +1,33 @@
--- lanzar.i
--- versión 0.6.1e
-
--- 0.4.1 - converted to ALANv3
+-- "lanzar.i" <-- "throw.i"
 
 Synonyms
-  lanzo, lanza, tiro, tira, tirar = lanzar.
+  lanzo, lanza,
+  tiro, tira, tirar = lanzar.
+
 Syntax
   lanzar = lanzar (obj) *
-    Where obj Isa Object
-      Else "Solo puedes lanzar objetos."
+    Where obj IsA object
+      else "Solo puedes lanzar objetos."
 
-Add To Every object
+Add to every object
   Verb lanzar
-    Check obj In hero
-      Else "¡No tienes" Say the obj. "!"
+    Check obj in hero
+      else "¡No tienes" say the obj. "!"
     Does
-      "No puedes lanzar" Say term_s of obj. "muy lejos," Say The obj.
-      "acaba" Say term_n of obj. "en el suelo."
-      Locate obj Here.
-    End Verb.
-End Add To.
+      "No puedes lanzar" say term_s of obj.
+      "muy lejos," say the obj.
+      "acaba" say term_n of obj. "en el suelo."
+      Locate obj here.
+    End verb.
+End add to.
 
 
 Syntax
   lanzar_a = lanzar (obj1) a (obj2)
-    Where obj1 Isa object
-      Else "Solo puedes lanzar objetos."
-    And obj2 Isa thing
-      Else "No puedes lanzar nada contra eso."
+    Where obj1 IsA object
+      else "Solo puedes lanzar objetos."
+    And obj2 IsA thing
+      else "No puedes lanzar nada contra eso."
   lanzar_a = lanzar (obj1) a el (obj2).
   lanzar_a = lanzar el (obj1) a (obj2).
   lanzar_a = lanzar el (obj1) a el (obj2).
@@ -38,41 +38,41 @@ Syntax
   lanzar_a = lanzar el (obj1) contra el (obj2).
 
 
-Add To Every object
+Add to every object
   Verb lanzar_a
     When obj1
-      Check obj1 In hero
-        Else "¡No tienes" say the obj1. "!"
-      And obj2 Not In hero
-        Else "¡Tú llevas" Say The obj2. "!"
+      Check obj1 in hero
+        else "¡No tienes" say the obj1. "!"
+      And obj2 not in hero
+        else "¡Tú llevas" say the obj2. "!"
       And obj2 <> hero
-        Else "No puedes lanzar" Say The obj1. "contra ti mismo."
+        else "No puedes lanzar" say the obj1. "contra ti mismo."
     Does
-      Say The obj1. "rebota" Say term_n of obj1. "inocentemente en"
-      Say The obj2. "y acaba" Say term_n of obj1. "en el suelo."
-      Locate obj1 Here.
-    End Verb.
-End Add To.
+      Say The obj1. "rebota" say term_n of obj1. "inocentemente en"
+      Say The obj2. "y acaba" say term_n of obj1. "en el suelo."
+      Locate obj1 here.
+    End verb.
+End add to.
 
 
 Syntax
   lanzar_en = lanzar (obj1) en (obj2)
-    Where obj1 Isa object
-      Else "No seas así."
-    And obj2 Isa Container
-      Else "No puedes lanzar nada en eso."
+    Where obj1 IsA object
+      else "No seas así."
+    And obj2 IsA container
+      else "No puedes lanzar nada en eso."
 
-Add To Every object
+Add to every object
   Verb lanzar_en
     When obj1
-      Check obj1 In hero
-        Else "¡No tienes" Say the obj1. "!"
+      Check obj1 in hero
+        else "¡No tienes" say the obj1. "!"
       And obj1 <> obj2
-        Else "¡Ese sería un gran truco!"
+        else "¡Ese sería un gran truco!"
       And obj2 <> hero
-        Else "¡No puedes meterte" Say The obj1. "!"
+        else "¡No puedes meterte" say the obj1. "!"
     Does
-      Locate obj1 In obj2.
+      Locate obj1 in obj2.
       "Hecho."
-    End Verb.
-End Add.
+    End verb.
+End add.

@@ -1,52 +1,54 @@
--- encender.i
--- Library version 0.6.1e
+-- "encender.i" <-- "turn.i"
 
--- 0.4.1 - converted to ALANv3
-
-
-Add To Every object
+Add to every object
   Is
     Not encendido.
     Not conmutable.
-End Add To object.
+End add to object.
 
 Synonyms
-  enciendo, enciende, encende, prendo, prende, prender, inicio, inicia, iniciar = encender.
+  enciendo, enciende, encende,
+  prendo, prende, prender,
+  inicio, inicia, iniciar = encender.
+
 Syntax
   encender = encender (obj)
-    Where obj Isa object
-      Else "No se puede encender."
+    Where obj IsA object
+      else "No se puede encender."
   encender = encender el (obj).
 
 
-Add To Every object
+Add to every object
   Verb encender
-    Check obj Is conmutable
-      Else "No puedes encender" Say the obj. "."
-    And obj Is Not encendido
-      Else "Eso ya está encendido"
+    Check obj is conmutable
+      else "No puedes encender" say the obj. "."
+    And obj is not encendido
+      else "Eso ya está encendido"
     Does
       Make obj encendido.
-      "Enciendes" Say The obj. "."
-    End Verb.
-End Add To.
+      "Enciendes" say the obj. "."
+    End verb.
+End add to.
 
 Synonyms
-  apago, apaga, extingo, extingue, extinguir, sofoco, sofoca, sofocar = apagar.
+  apago, apaga,
+  extingo, extingue, extinguir,
+  sofoco, sofoca, sofocar = apagar.
+
 Syntax
   apagar = apagar (obj)
-    Where obj Isa object
-      Else "No se puede apagar."
+    Where obj IsA object
+      else "No se puede apagar."
   apagar = apagar el (obj).
 
-Add To Every object
+Add to every object
   Verb apagar
-    Check obj Is conmutable
-      Else "No se puede apagar."
-    And obj Is encendido
-      Else "Ya está apagado."
+    Check obj is conmutable
+      else "No se puede apagar."
+    And obj is encendido
+      else "Ya está apagado."
     Does
-      Make obj Not encendido.
-      "Apagas" Say The obj. "."
-  End Verb.
-End Add To.
+      Make obj not encendido.
+      "Apagas" say the obj. "."
+  End verb.
+End add to.

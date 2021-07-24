@@ -1,52 +1,59 @@
+-- "atributos.i"
+
 -- atributos globales para todos los verbos y objetos
 
-synonyms
+Synonyms
   él, la, los, las = el.
 
-  eso, esos, esa, esas, ello, aquello, aquella, aquellos, aquellas, lo = it.
+  eso, esos, esa, esas, ello,
+  aquello, aquella, aquellos, aquellas, lo = it.
 
   todo, todos, toda, todas = all.
 
-Add To Every thing  -- object en pALANte 0.1
+Add to every thing  -- object en pALANte 0.1
 
   Is not femenina.
   Is not plural.
 
-  has term_n "".
-  has term_s "".
-  has ser "".
+  Has term_n "".
+  Has term_s "".
+  Has ser "".
 
-  definite article
-    if this is femenina then
-      "la"
-      if this is plural then
-        "$$s"
-      end if.
-    else
-      if this is plural then
-        "los"
+  Definite Article
+    If this is femenina
+      then
+        "la"
+        If this is plural then
+          "$$s"
+        End if.
       else
-        "el"
-      end if.
-    end if.
+        If this is plural
+          then
+            "los"
+          else
+            "el"
+        End if.
+    End if.
 
-  indefinite article
+  Indefinite Article
     "un"
-    if this is femenina then
-      "$$a"
-      if this is plural then
-        "$$s"
-      end if.
-    elsif this is plural then
-      "$$os"
-    end if.
+    If this is femenina
+      then
+        "$$a"
+        If this is plural
+          then
+          "$$s"
+        End if.
+    elsIf this is plural
+      then "$$os"
+    End if.
 
-End Add To.
+End add to.
 
-Every named_actor Isa actor
+Every named_actor IsA actor
   Definite Article ""
   Indefinite Article ""
-End Every named_actor.
+End every named_actor.
 
 -- evento que inicializa las terminaciones de los objetos
 -- y palabras como 'son' o 'es'
@@ -55,34 +62,34 @@ End Every named_actor.
 -- "  schedule ini_terms at limbo after 0. "
 
 
-event ini_terms
-  for each o isa object do
-    if ser of o = "" then
-      if o is plural then
-        set ser of o to "son".
+Event ini_terms
+  For each o IsA object do
+    If ser of o = "" then
+      If o is plural then
+        Set ser of o to "son".
       else
-        set ser of o to "es".
-      end if.
-    end if.
-    if term_n of o = "" then
-      if o is plural then
-        set term_n of o to "$$n".
-      end if.
-    end if.
-    if term_s of o = "" then
-      if o is femenina then
-        if o is plural then
-          set term_s of o to "$$as".
+        Set ser of o to "es".
+      End if.
+    End if.
+    If term_n of o = "" then
+      If o is plural then
+        Set term_n of o to "$$n".
+      End if.
+    End if.
+    If term_s of o = "" then
+      If o is femenina then
+        If o is plural then
+          Set term_s of o to "$$as".
         else
-          set term_s of o to "$$a".
-        end if.
+          Set term_s of o to "$$a".
+        End if.
       else
-        if o is plural then
-          set term_s of o to "$$os".
+        If o is plural then
+          Set term_s of o to "$$os".
         else
-          set term_s of o to "$$o".
-        end if.
-      end if.
-    end if.
-  end for.
-end event.
+          Set term_s of o to "$$o".
+        End if.
+      End if.
+    End if.
+  End for.
+End event.

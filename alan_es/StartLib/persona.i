@@ -1,23 +1,21 @@
--- persona.i
--- versión 0.6.0e  (será 0.6.1e cuando se comprueben correctamente los pronombres)
-
+-- "persona.i" <-- "people.i"
 
 -- Clases para personas
 
-Every persona Isa actor
-  Is Not named.       -- Si tiene nombre propio
+Every persona IsA actor
+  Is not named.       -- Si tiene nombre propio
   Description
-    If This Is Not named Then
-      "Hay" Say An This. "aquí."
-    Else
-      Say This. "está aquí."
-    End If.
-End Every persona.
+    If this is not named then
+      "Hay" say an this. "aquí."
+    else
+      Say this. "está aquí."
+    End if.
+End every persona.
 
-Every macho Isa persona
+Every macho IsA persona
   Pronoun him.
-End Every macho.
+End every macho.
 
-Every hembra Isa persona
+Every hembra IsA persona
   Pronoun her.
-End Every hembra.
+End every hembra.

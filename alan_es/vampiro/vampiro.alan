@@ -1,19 +1,28 @@
---  Vampiro para ALAN pALANte
---
--- Versión 1.0.1
---
--- Esta es la versión en ALAN + libreria española de "Memorias de reXXe", también
--- conocido como "Vampiro". Este código fuente forma parte del
--- "Proyecto Vampiro", del cual puedes encontrar más información en
--- https://www.caad.es/informate/vampiro/
---
--- Para procesar este fichero necesitarás la librería LIB_ES y el
--- programa ALAN.
---
--- La implementación en pALANte es de Bruce Humphrey, realizada para
--- comprobar la librería 0.6.0e (realizada entre Marcos Donantuonni y Bruce Humphrey)
+--==============================================================================
+--------------------------------------------------------------------------------
+-- * * V A M P I R O  de Bruce Humphrey * *   v1.0.2 | 2021/07/24 | ALAN 3.Beta7
+--------------------------------------------------------------------------------
+--==============================================================================
 
-import 'palante.i'.
+--  Vampiro para ALAN Starter Library Spanish v1.0.2.
+--
+-- Esta es la versión en ALAN + libreria española de "Memorias de reXXe",
+-- también conocido como "Vampiro". Este código fuente forma parte del
+-- "Proyecto Vampiro", del cual puedes encontrar más información en
+--
+--    https://www.caad.es/informate/vampiro/
+--
+-- Para procesar este fichero necesitarás la librería española ALAN Starter
+-- Library y el programa ALAN 3:
+--
+--    https://github.com/alan-if/alan-i18n/tree/main/alan_es/
+--    https://www.alanif.se
+--
+-- La implementación en pALANte es de Bruce Humphrey, realizada para comprobar
+-- la librería 0.6.0e (realizada entre Marcos Donantuonni y Bruce Humphrey).
+--------------------------------------------------------------------------------
+
+import 'StartLib.i'.
 
 
 Every lugar Isa Location

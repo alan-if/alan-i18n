@@ -1,19 +1,14 @@
--- examinar.i
--- Library version 0.6.1e
+-- "examinar.i" <-- "examine.i"
 
--- 0.4.1 - converted To ALANv3
+Add to every thing
+  Is
+    examinable.
+    buscable.
+End add to thing.
 
-
-Add To Every Thing
-IS
-  examinable.
-  buscable.
-End Add To Thing.
-
-Add To Every Actor
-IS
-  NOT buscable.
-End Add To Actor.
+Add to every actor
+  Is not buscable.
+End add to actor.
 
 ----
 
@@ -22,18 +17,18 @@ Synonyms
 
 Syntax
   examinar = examinar (obj) *
-    Where obj Isa Thing
-      Else "¡No puedes examinar" say the obj. "!"
+    Where obj IsA thing
+      else "¡No puedes examinar" say the obj. "!"
   examinar = examinar el (obj) *.
 
-Add To Every Thing
+Add to every thing
   Verb examinar
-    Check obj Is examinable
-      Else "No puedes examinar" Say The obj. "."
+    Check obj is examinable
+      else "No puedes examinar" say the obj. "."
     Does
-      "No hay nada particular acerca de" Say The obj. "."
-  End Verb.
-End Add To.
+      "No hay nada particular acerca de" say the obj. "."
+  End verb.
+End add to.
 
 
 ----
@@ -46,43 +41,43 @@ Syntax
 Verb mirar
   Does
     Look.
-End Verb.
+End verb.
 
 Syntax
   mirar_en = 'mirar' 'en' (obj)
-    Where obj Isa Thing
-      Else "No puedes mirar dentro de" Say The obj. "."
-    And obj Isa Container
-      Else "No puedes mirar dentro de" Say The obj. "."
+    Where obj IsA thing
+      else "No puedes mirar dentro de" say the obj. "."
+    And obj IsA container
+      else "No puedes mirar dentro de" say the obj. "."
   mirar_en = mirar dentro (obj).
   mirar_en = mirar dentro de (obj).
   mirar_en = mirar (obj).
 
-Add To Every object
+Add to every object
   Verb mirar_en
-    Check obj Is examinable
-      Else "No puedes mirar en" Say The obj. "."
+    Check obj is examinable
+      else "No puedes mirar en" say the obj. "."
     Does
       List obj.
-  End Verb.
-End Add To.
+  End verb.
+End add to.
 
 
 ----
 
 Syntax
   buscar = buscar (obj)
-    Where obj Isa Thing
-      Else "¡No puedes buscar en eso!"
+    Where obj IsA thing
+      else "¡No puedes buscar en eso!"
   buscar = buscar en (obj).
   buscar = buscar dentro (obj).
   buscar = buscar dentro de (obj).
 
-Add To Every object
+Add to every object
   Verb buscar
-    Check obj Is buscable
-      Else "No puedes buscar en" Say The obj. "."
+    Check obj is buscable
+      else "No puedes buscar en" say the obj. "."
     Does
       "No encuentras nada de interés."
-  End Verb.
-End Add To.
+  End verb.
+End add to.

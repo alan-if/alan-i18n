@@ -1,34 +1,30 @@
--- dar.i
--- Library version 0.6.0e
-
--- 0.5.0 - added syntax synonym "dar (recip) (obj)"
--- 0.4.1 - converted to ALANv3
+-- "dar.i" <-- "give.i"
 
 Synonyms
-  doy, da, dono, dona, donar, entrego, entrega, entregar = dar.
+  doy, da, dono, dona, donar,
+  entrego, entrega, entregar = dar.
 
 Syntax
   dar = dar (obj) 'a' (recip)
-    Where obj Isa object
-      Else "Solo puedes dar objetos."
-    And recip Isa Container
-      Else "¡A eso no le puedes dar nada!"
+    Where obj IsA object
+      else "Solo puedes dar objetos."
+    And recip IsA container
+      else "¡A eso no le puedes dar nada!"
   dar = dar (obj) (recip).
   dar = dar 'a' (recip) (obj).
   dar = dar 'a' (recip) 'el' (obj).
 
-Add To Every object
+Add to every object
   Verb dar
     When obj
-      Check obj In hero
-        Else
-          "No tienes" Say The obj. "."
+      Check obj in hero
+        else "No tienes" say the obj. "."
     Does
-      If recip=hero Then
-        "¡Ya tienes" Say The obj. "!"
-      Else
-        "Das" Say The obj. "a" Say The recip. "."
-        Locate obj In recip.
-      End If.
-  End Verb.
-End Add To.
+      If recip=hero then
+        "¡Ya tienes" say the obj. "!"
+      else
+        "Das" say the obj. "a" say the recip. "."
+        Locate obj in recip.
+      End if.
+  End verb.
+End add to.

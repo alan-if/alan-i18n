@@ -1,46 +1,43 @@
--- empujar.i
--- Library version 0.6.0e
+-- "empujar.i" <-- "push.i"
 
--- 0.4.1 - converted to ALANv3
-
-Add To Every Thing
-Is
-  empujable.
-End Add To Thing.
+Add to every thing
+  Is empujable.
+End add to thing.
 
 Synonyms
   empujo, empuja = empujar.
+
 Syntax
   empujar = empujar (obj)
-    Where obj Isa Thing
-      Else "¡No puedes empujar eso!."
+    Where obj IsA thing
+      else "¡No puedes empujar eso!."
   empujar = empujar 'el' (obj).
 
-Add To Every object
+Add to every object
   Verb empujar
-    Check obj Is empujable
-      Else "No puedes empujar eso."
+    Check obj is empujable
+      else "No puedes empujar eso."
     Does
-      "Empujas" Say The obj. "."
-  End Verb.
-End Add To.
+      "Empujas" say the obj. "."
+  End verb.
+End add to.
 
 Syntax
   empujar_con = empujar (obj1) 'con' (obj2)
-    Where obj1 Isa thing
-      Else "You can't empujar that."
-    And obj2 Isa object
-      Else "You can use only objects to empujar things with."
+    Where obj1 IsA thing
+      else "You can't empujar that."
+    And obj2 IsA object
+      else "You can use only objects to empujar things with."
   empujar_con = empujar (obj1) 'con' 'el' (obj2).
   empujar_con = empujar 'el' (obj1) 'con' (obj2).
   empujar_con = empujar 'el' (obj1) 'con' 'el' (obj2).
 
-Add To Every object
+Add to every object
   Verb empujar_con
     When obj1
-      Check obj1 Is empujable
-        Else "No puedes empujar eso."
+      Check obj1 is empujable
+        else "No puedes empujar eso."
     Does
-      "Usando" Say The obj2. "empujas" Say The obj1. "."
-  End Verb.
-End Add To.
+      "Usando" say the obj2. "empujas" say the obj1. "."
+  End verb.
+End add to.

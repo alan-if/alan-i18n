@@ -1,26 +1,22 @@
--- read.i
--- Library version 0.5.0
+-- "leer.i" <-- "read.i"
 
--- 0.4.1 - converted to ALANv3
-
-
-Add To Every object
-  Is
-    Not leible.
-End Add To object.
+Add to every object
+  Is not leible.
+End add to object.
 
 Synonyms
   lee, leo = leer.
+
 Syntax
   leer = leer (obj)
-    Where obj Isa object
-      Else "Eso no se puede leer."
+    Where obj IsA object
+      else "Eso no se puede leer."
 
-Add To Every object
+Add to every object
   Verb leer
-    Check obj Is leible
-      Else "No hay nada escrito en" Say The obj. "."
+    Check obj is leible
+      else "No hay nada escrito en" say the obj. "."
     Does
-      "Lees" Say The obj. "."
-    End Verb.
-End Add To.
+      "Lees" say the obj. "."
+    End verb.
+End add to.

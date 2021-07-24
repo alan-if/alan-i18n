@@ -1,114 +1,111 @@
--- atacar.i
--- Library version 0.6.1e
+-- "atacar.i" <-- "attack.i"
 
--- 0.6.1e - translated into Spanish.
+Add to every thing
+  Is not dispararable.
+End add to thing.
 
--- 0.4.1 - converted to ALANv3
-
-
-Add To Every thing
-  Is
-    Not dispararable.
-End Add To thing.
-
-Add To Every object
+Add to every object
   Is
     Not arma.
     Not dispararable.
-End Add To object.
+End add to object.
 
 
 Synonyms
-  mata, mato, matar, golpea, golpeo, golpear, lucha, lucho, luchar, ataca, ataco, patea, pateo, patear = atacar.
+  mata, mato, matar,
+  golpea, golpeo, golpear,
+  lucha, lucho, luchar,
+  ataca, ataco, patea, pateo,
+  patear = atacar.
   dispara, disparo = disparar.
 
 
 Syntax
   atacar = atacar (act)
-    Where act Isa thing
-      Else "No puedes atacarle."
+    Where act IsA thing
+      else "No puedes atacarle."
 
-Add To Every thing
+Add to every thing
   Verb atacar
     Does
       "La violencia no es la solución. Por lo menos, no siempre."
-  End Verb.
-End Add To.
+  End verb.
+End add to.
 
 
 
 Syntax
   atacar_con = atacar (act) 'con' (obj)
-    Where act Isa thing
-      Else "No puedes atacar a eso."
-    And obj Isa object
-      Else "¡No puedes atacar nada con eso!"
+    Where act IsA thing
+      else "No puedes atacar a eso."
+    And obj IsA object
+      else "¡No puedes atacar nada con eso!"
 
-Add To Every thing
+Add to every thing
   Verb atacar_con
     When obj
-      Check obj In hero
-        Else "No tienes ese objeto para atacar con."
-      And obj Is arma
-        Else "¡No tiene sentido atacar nada con eso!"
+      Check obj in hero
+        else "No tienes ese objeto para atacar con."
+      And obj is arma
+        else "¡No tiene sentido atacar nada con eso!"
     Does
       "La violencia no es la solución."
-  End Verb.
-End Add To.
+  End verb.
+End add to.
 
 
 Syntax
   disparar = disparar (obj)
-    Where obj Isa thing
-      Else "No puedes disparar a eso."
+    Where obj IsA thing
+      else "No puedes disparar a eso."
   disparar = disparar 'a' (obj).
 
 
-Add To Every thing
+Add to every thing
   Verb disparar
     Does
-      If obj Is dispararable Then
+      If obj is dispararable then
         "Debes especificar contra que disparar."
-      Else
+      else
         "Debes especificar con que quieres disparar al"
-        Say The obj. "."
-      End If.
-  End Verb.
-End Add To.
+        Say the obj. "."
+      End if.
+  End verb.
+End add to.
 
 
 
 Syntax
   disparar_a = disparar (obj) 'a' (act)
-    Where obj Isa object
-      Else "No puedes disparar eso."
-    And act Isa thing
-      Else "No puedes disparar a eso."
+    Where obj IsA object
+      else "No puedes disparar eso."
+    And act IsA thing
+      else "No puedes disparar a eso."
 
   disparar_con = disparar (act) 'con' (obj)
-    Where obj Isa object
-      Else "No puedes disparar eso."
-    And act Isa thing
-      Else "No puedes disparar a eso."
+    Where obj IsA object
+      else "No puedes disparar eso."
+    And act IsA thing
+      else "No puedes disparar a eso."
 
-Add To Every thing
+Add to every thing
   Verb disparar_a
     When obj
-      Check obj In hero
-        Else "No lo tienes."
-      And obj Is dispararable
-        Else "No puedes disparar a nada con eso."
+      Check obj in hero
+        else "No lo tienes."
+      And obj is dispararable
+        else "No puedes disparar a nada con eso."
     Does
       "La violencia no es la solución."
-  End Verb.
+  End verb.
 
   Verb disparar_con
     When obj
-      Check obj In hero
-        Else "No tienes eso."
-      And obj Is dispararable
-        Else "No puedes disparar a nada con eso."
+      Check obj in hero
+        else "No tienes eso."
+      And obj is dispararable
+        else "No puedes disparar a nada con eso."
     Does
       "La violencia no es la solución."
-  End Verb.
-End Add To.
+  End verb.
+End add to.

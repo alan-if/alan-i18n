@@ -1,49 +1,43 @@
--- escenario.i
--- Library version 0.6.1e
+-- "escenario.i" <-- "scenery.i"
 
-every escenario isa object
+Every escenario IsA object
   Is
     Not buscable.
     Not tomable.
     Not empujable.
     Not tocable.
-  description "" -- para que no se liste en las descripciones
+  Description "" -- para que no se liste en las descripciones
 
   Verb examinar
-    Does Only
-      "Solo es escenario."
-    End Verb.
+    Does only "Solo es escenario."
+  End verb.
 
   Verb buscar
-    Does Only
-      "No hace falta buscar nada ahí."
-  End Verb.
+    Does only "No hace falta buscar nada ahí."
+  End verb.
 
   Verb tomar
-    Does Only
-      "No puedes tomarlo."
-  End Verb.
+    Does only "No puedes tomarlo."
+  End verb.
 
   Verb empujar
-    Does Only
-      "No tiene sentido empujar."
-  End Verb.
+    Does only "No tiene sentido empujar."
+  End verb.
 
   Verb tocar
-    Does Only
-      "No hace falta tocar."
-  End Verb.
-end every.
+    Does only "No hace falta tocar."
+  End verb.
+End every.
 
-every escenario_p isa escenario
-  is plural.
-end every.
+Every escenario_p IsA escenario
+  Is plural.
+End every.
 
-every escenario_f isa escenario
-  is femenina.
-end every.
+Every escenario_f IsA escenario
+  Is femenina.
+End every.
 
-every escenario_fp isa escenario
-  is femenina.
-  is plural.
-end every.
+Every escenario_fp IsA escenario
+  Is femenina.
+  Is plural.
+End every.

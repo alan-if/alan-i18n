@@ -1,100 +1,99 @@
--- meta.i
--- versión 0.6.1e
+-- "meta.i"
 
 Synonyms
   abandono, abandona, abandonar = 'quit'.
-SYNTAX
+Syntax
   'quit' = 'quit'.
   q = q.
 
-VERB 'quit'
-  DOES
-    QUIT.
-END VERB.
+Verb 'quit'
+  Does
+    Quit.
+End verb.
 
-VERB q
-  DOES
+Verb q
+  Does
     "Por favor escribe el comando 'abandonar' entero para salir del juego.
      $p(No puedes deshacer una instrucción abandonar. Así que, para evitar que
      accidentalmente salgas del juego por teclear 'q' cuando intentas hacer
      otra cosa, debes escribir el comando 'abandonar' al completo.)"
-END VERB.
+End verb.
 
 Synonyms
   grabar, graba, salvar, salva = 'save'.
-SYNTAX
+Syntax
   'save' = 'save'.
 
-VERB 'save'
-  DOES
-    SAVE.
+Verb 'save'
+  Does
+    Save.
     "¡Perfecto!."
-END VERB.
+End verb.
 
 Synonyms
   restaurar, restaura, recuperar, recupera = 'restore'.
-SYNTAX
+Syntax
   'restore' = 'restore'.
 
-VERB 'restore'
-  DOES
-    RESTORE.
+Verb 'restore'
+  Does
+    Restore.
     "Hecho.$n"
-    LOOK.
-END VERB.
+    Look.
+End verb.
 
 Synonyms
   comenzar, comienzo, comienza, recomenzar = 'restart'.
-SYNTAX
+Syntax
   'restart' = 'restart'.
 
-VERB 'restart'
-  DOES
-    RESTART.
-END VERB.
+Verb 'restart'
+  Does
+    Restart.
+End verb.
 
 
 Synonyms
   puntos, puntaje, puntuacion, puntuación = 'score'.
-SYNTAX
+Syntax
   'score' = 'score'.
 
-VERB 'score'
-  DOES
-    SCORE.
-END VERB 'score'.
+Verb 'score'
+  Does
+    Score.
+End verb 'score'.
 
 
-SYNONYMS
+Synonyms
   z, espera, esperar, espero = 'wait'.
 
-SYNTAX
+Syntax
   'wait' = 'wait'.
 
-VERB 'wait'
-  DOES
+Verb 'wait'
+  Does
     "Pasa el tiempo..."
-END VERB.
+End verb.
 
 
-SYNONYMS
+Synonyms
   g, repetir, repite, repito = again.
 
-SYNTAX
+Syntax
   again = again.
 
-VERB again
-  DOES
+Verb again
+  Does
     "El comando 'repetir' no está disponible, lo siento. Probablemente puedes
      utilizar los cursores arriba y abajo para moverte por tus comandos previos
      (a menos que uses el intérprete MSDOS, en ese caso puedes pulsar F3 para
      repetir tu último comando.)"
-END VERB.
+End verb.
 
---SYNTAX
+--Syntax
 --    undo = undo.
 
---VERB undo
---    DOES
+--Verb undo
+--    Does
 --        "Unfortunately you cannot 'undo' commands in this game."
---END VERB.
+--End verb.

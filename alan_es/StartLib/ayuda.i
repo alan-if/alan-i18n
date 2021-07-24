@@ -1,5 +1,4 @@
--- ayuda.i
--- Library version 0.6.0e
+-- "ayuda.i" <-- "help.i"
 
 Synonyms
   h, help = ayuda.
@@ -16,8 +15,8 @@ Verb ayuda
      harías si estuviese allí de verdad!$pRecuerda estudiar las descripciones
      cuidadosamente, ¡seguro que tienen pistas!$pPuedes usar 'puntuacion'
      para ver como vas. 'grabar' y 'restaurar' te permiten guardar la partida
-     para resumirla más tarde. $p¡¡Buena Suerte!! ¡La vas a necesitar...!"
-End Verb.
+     para resumirla más tarde.$p¡¡Buena Suerte!! ¡La vas a necesitar...!"
+End verb.
 
 Synonyms
   hint, hints, pista = pistas.
@@ -28,7 +27,7 @@ Syntax
 Verb pistas
   Does
     "Por desgracia no hay pistas."
-End Verb.
+End verb.
 
 ----
 
@@ -41,9 +40,9 @@ Syntax
 Verb creditos
   Does
     "El autor tiene el copyright de este juego.
-     $pEste juego se ha creado utilizando ALAN Adventure Language. ALAN es
-     un sistema de autoría de ficción interactiva por Thomas Nilsson
-     $nemail: thomas.nilsson@progindus.se $pPuedes encontrar más información
-     sobre ALAN en la web:
-     $ihttp://www.alanif.se/"
-End Verb.
+     $pEste juego se ha creado utilizando ALAN Adventure Language.
+     ALAN es un sistema de autoría de ficción interactiva por Thomas Nilefalk
+     $nemail: thomas@alanif.se
+     $pPuedes encontrar más información sobre ALAN en la web:
+     $ihttps://www.alanif.se"
+End verb.

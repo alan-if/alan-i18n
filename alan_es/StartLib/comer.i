@@ -1,43 +1,44 @@
--- comer.i
--- Library version 0.6.0e
+-- "comer.i" <-- "eat.i"
 
--- 0.4.1 - converted to ALANv3
-
-
-Add To Every Object
+Add to every object
 Is
   Not comestible.
   Not bebible.
-End Add To Object.
+End add to object.
 
 Synonyms
-  come, como, papeo, papea, papear, devoro, devora, devorar, zampo, zampa, zampar,
-  trago, traga, tragar, consumo, consume, consumir, engullo, engulle, engullir = comer.
+  come, como,
+  papeo, papea, papear,
+  devoro, devora, devorar,
+  zampo, zampa, zampar,
+  trago, traga, tragar,
+  consumo, consume, consumir,
+  engullo, engulle, engullir = comer.
   bebe, bebo = beber.
 
 Syntax
   comer = comer (obj)
-    Where obj Isa Object
-      Else "¡No te puedes comer" Say An obj. "!"
+    Where obj IsA object
+      else "¡No te puedes comer" say an obj. "!"
 
   beber = beber (obj)
-    Where obj Isa Object
-      Else "¡No puedes beber" Say An obj. "!"
+    Where obj IsA object
+      else "¡No puedes beber" say an obj. "!"
 
-Add To Every Object
+Add to every object
   Verb comer
-    Check obj Is comestible
-      Else "¡No te puedes comer eso!"
+    Check obj is comestible
+      else "¡No te puedes comer eso!"
     Does
-      Locate obj At Limbo.
-      "Te comes" Say the obj. "."
-  End Verb.
+      Locate obj at Limbo.
+      "Te comes" say the obj. "."
+  End verb.
 
   Verb beber
-    Check obj Is bebible
-      Else "Eso no se puede beber."
+    Check obj is bebible
+      else "Eso no se puede beber."
     Does
-      Locate obj At Limbo.
-      "Te bebes" Say The obj. "."
-  End Verb.
-End Add.
+      Locate obj at Limbo.
+      "Te bebes" say the obj. "."
+  End verb.
+End add.

@@ -1,3 +1,7 @@
+![Library version][lib badge]&nbsp;
+[![Alan version][alan badge]][alan link]&nbsp;
+[![License][license badge]][COPYING]
+
 # ALAN Starter Library Spanish
 
 Spanish implementation of the __Starter Library__, maintained by the ALAN IF community.
@@ -24,11 +28,10 @@ Based on the __[Librería pALANte v0.6.1e][pALANte]__ (April, 2010), by [Bruce H
 # Directory Contents
 
 - [`/StartLib/`][StartLib/] — Spanish Starter Library:
-    + [`palante.i`][palante.i] — main library module that loads all others:
+    + [`StartLib.i`][StartLib.i] — main library module that loads all others:
         * `*.i` — various library modules.
-    + [`leeme.txt`][leeme.txt] — Spanish ReadMe of the pALANte library.
-    + [`ReadMe`][ReadMe] — ReadMe from the original English library.
-    + [`indice.txt`][indice.txt] — INDEX of the pALANte library.
+    + [`CHANGELOG.md`][CHANGELOG.md] — Starter Library Changelog.
+    + [`INDICE.md`][INDICE.md] — Starter Library Index.
 - [`vampiro/`][vampiro/] — The _[Vampiro]_ sample adventure, by [Bruce Humphrey].
 
 # About
@@ -48,9 +51,12 @@ An archived copy of the original __[pALANte v0.6.1e][pALANte]__ library can be f
 
 # Library Status
 
+- [`CHANGELOG.md`][CHANGELOG.md]
+
 Although we're planning to update the __Spanish Starter Library__ to take advantage of the new ALAN&nbsp;3 features that were introduced since 2010, currently its code is the same as the original __[pALANte]__ library.
 
-The original sources were reformatted by [Tristano Ajmone] to conform to code style conventions of this repository, all changes were merely aesthetic, not affecting the source code.
+The original sources were reformatted by [Tristano Ajmone] to conform to code style conventions of this repository, all changes were merely aesthetic, not affecting the source code; some output text containing obsolete links and references was also amended.
+
 The [`StartLib/COPYING`][COPYING] file of the [Artistic License 2.0] was added, since this is a derivative work of the [English Alan Library].
 
 
@@ -59,7 +65,7 @@ The [`StartLib/COPYING`][COPYING] file of the [Artistic License 2.0] was added, 
 ```alan
 -- Ejemplo de aventura mínima para ALAN
 
-import 'palante.i'. -- importar la librería española
+import 'StartLib.i'. -- importar la librería española
 
 
 The inicio Isa location
@@ -133,16 +139,22 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 [Vampiro]: https://www.caad.es/?q=node/1717 "View original page of Vampiro at CAAD"
 [its page at WikiCAAD]: https://wiki.caad.es/Vampiro_(Alan) "WikiCAAD » Vampiro (Alan)"
 
+<!-- badges -->
+
+[lib badge]: https://img.shields.io/badge/StartLib%20ES-0.1.0-yellow "ALAN Starter Library version"
+[alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
+[alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
+[license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue
+
 <!-- project files and folders -->
 
 [StartLib/]: ./StartLib/ "Navigate to Spanish Alan IF library folder"
 [vampiro/]: ./vampiro/ "Navigate to sample adventure"
 
-[indice.txt]: ./StartLib/indice.txt "View file"
-[leeme.txt]: ./StartLib/leeme.txt "View pALANte Library Index (Spanish)"
-[palante.i]: ./StartLib/palante.i "View source file of main library module"
-[ReadMe]: ./StartLib/ReadMe "View English README document"
+[CHANGELOG.md]: ./StartLib/CHANGELOG.md "Read CHANGELOG document"
 [COPYING]: ./StartLib/COPYING "View Artistic License 2.0"
+[INDICE.md]: ./StartLib/INDICE.md "View file"
+[StartLib.i]: ./StartLib/StartLib.i "View source file of main library module"
 
 <!-- people -->
 

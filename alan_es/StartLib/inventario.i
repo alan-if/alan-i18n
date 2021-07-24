@@ -1,20 +1,17 @@
--- inventario.i
--- Library version 0.6.2  -- convertido llevado de Thing a Entity (para evitar problemas de acceso)
+-- "inventario.i" <-- "invent.i"
 
--- 0.4.1 - converted To ALANv3
-
-Add To Every Thing Is
-  peso 0.
-End Add To Thing.
+Add to every thing
+  Is peso 0.
+End add to thing.
 
 
-Add To Every Actor Is
-  peso 50.
-End Add To Actor.
+Add to every actor
+  Is peso 50.
+End add to actor.
 
-Add To Every object Is
-  peso 5.
-End Add To object.
+Add to every object
+  Is peso 5.
+End add to object.
 
 
 
@@ -31,15 +28,15 @@ Verb invent
 End Verb invent.
 
 
-The llevado Isa Entity
+The llevado IsA entity
   Container
     Limits
-      Count 10 Then
+      Count 10 then
         "No puedes llevar nada más. Debes dejar algo antes."
-      peso 50 Then
+      peso 50 then
         "No puedes llevar más peso. Debes dejar algo antes."
     Header
       "Llevas"
-    Else
+    else
       ""
-End The llevado.
+End the llevado.
