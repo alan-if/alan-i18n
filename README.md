@@ -32,6 +32,9 @@ Created by [Tristano Ajmone] on April, 2021.
 - [`/alan_en/`][en] — English library.
 - [`/alan_es/`][es] — Spanish library.
 - [`/resources/`][resources/] — developers' resources.
+- [`CONTRIBUTING.md`][CONTRIBUTING.md] — _Contributors' Guidelines_.
+- [`VERSION_SCHEME.md`][VERSION_SCHEME.md] — _Library Version Scheme_.
+
 
 ## Library Locales
 
@@ -125,6 +128,8 @@ More details about the license terms, authors and credits of each third party as
 [resources/]: ./resources "Navigate to resources folder"
 
 [COPYING]: ./COPYING "View Artistic License 2.0"
+[CONTRIBUTING.md]: ./CONTRIBUTING.md "Read 'Contributors' Guidelines' documentation"
+[VERSION_SCHEME.md]: ./VERSION_SCHEME.md "Read 'Library Version Scheme' documentation"
 
 <!-- people and organizations -->
 
