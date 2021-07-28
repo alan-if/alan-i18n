@@ -55,7 +55,12 @@ For some background info on the various ALAN libraries created in the course of 
 
 # Library Status
 
-Although we're planning to update the __English Starter Library__ to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007, currently its code is the same as the original __[ALAN Library v0.6.2]__.
+- [`StartLib/CHANGELOG.md`][CHANGELOG.md]
+
+The __English Starter Library__ is currently in Beta stage.
+We're gradually updating it to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007, as well as refactoring its source code to meet the goals of this project.
+
+Until the library reaches its first stable release with v1.0.0, its code will be subject to frequent changes, including backwards compatibility breaking changes; furthermore, we can't guarantee that its documentation will always be up to date with its latest code changes.
 
 # License
 
@@ -86,7 +91,7 @@ The __ALAN Starter Library__ is released under the terms of the [Artistic Licens
 
 <!-- badges -->
 
-[lib badge]: https://img.shields.io/badge/StartLib%20EN-0.1.0-yellow "ALAN Starter Library version"
+[lib badge]: https://img.shields.io/badge/StartLib%20EN-0.1.1-yellow "ALAN Starter Library version"
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue

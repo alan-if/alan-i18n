@@ -13,6 +13,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.1.1 \(2021/07/29\)](#v011-20210729)
     - [v0.1.0 \(2021/07/24\)](#v010-20210724)
 
 <!-- /MarkdownTOC -->
@@ -21,6 +22,15 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 
 # Beta Releases
+
+## v0.1.1 (2021/07/29)
+
+Convert "meta verbs" to real `META VERB`s, which in the original library were just ordinary verbs (probably the `META` keyword was not available back then).
+
+- Added `wait.i`, and moved therein the 'wait' verb from `meta.it`, since it's not a meta-verb.
+- `meta.i` renamed to `meta_session.i`, and all its verbs made META.
+- `help.i` renamed to `meta_help.i`, and all its verbs made META.
+- `brief.i` renamed to `meta_brief.i`, and all its verbs made META.
 
 ## v0.1.0 (2021/07/24)
 

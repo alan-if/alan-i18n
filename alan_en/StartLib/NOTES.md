@@ -76,10 +76,10 @@ Keep the library ".i" files in their own subdirectory or file folder. If you fin
 Don't hesitate to modify the ".i" files to meet your requirements.
 (But do modify a copy, not the original file — keep the originals for reference.)
 
-For example, one ".i" file which you'll almost certainly want to modify is the "[help.i]" file.
+For example, one ".i" file which you'll almost certainly want to modify is the "[meta_help.i]" file.
 It contains a very basic and generic `help` verb and a `credits` verb which states 'The author retains copyright of this game.'
 At the very least you'd probably want to modify that to something like '"Game Title" by My Name (C) 20xx.' plus a statement of your distribution policy — shareware, freeware, "don't redistribute this" or whatever.
-So to change the "help.i" file take a copy the original file from the library's subdirectory into your game's subdirectory and then edit that copy of "help.i" to make the help and credits verbs display the text you want them to.
+So to change the "meta_help.i" file take a copy the original file from the library's subdirectory into your game's subdirectory and then edit that copy of "meta_help.i" to make the help and credits verbs display the text you want them to.
 
 If you find bugs or stupid things in the library or you have ideas to expand or improve it, let the library maintainer know.
 The library is in the early stages of development so there is certain to be many areas requiring improvement.
@@ -231,7 +231,7 @@ Converted to markdown by Tristano Ajmone, April 2019.
 [INDEX.md]: ./INDEX.md
 
 [examine.i]: ./examine.i "View source file"
-[help.i]: ./help.i "View source file"
+[meta_help.i]: ./meta_help.i "View source file"
 [invent.i]: ./invent.i "View source file"
 [StartLib.i]: ./StartLib.i "View source file"
 [take.i]: ./take.i "View source file"

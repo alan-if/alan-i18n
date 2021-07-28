@@ -1,11 +1,14 @@
--- "meta.i"
+-- "meta_session.i"
+
+-- Meta verbs definitions for extradiegetic commands relating
+-- to the current game session (storage, quitting, etc.).
 
 Synonyms q = 'quit'.
 
 Syntax
   'quit' = 'quit'.
 
-Verb 'quit'
+Meta verb 'quit'
   Does
     Quit.
 End verb.
@@ -14,7 +17,7 @@ End verb.
 Syntax
   'save' = 'save'.
 
-Verb 'save'
+Meta verb 'save'
   Does
     Save.
     "Ok."
@@ -24,7 +27,7 @@ End verb.
 Syntax
   'restore' = 'restore'.
 
-Verb 'restore'
+Meta verb 'restore'
   Does
     Restore.
     "Done.$n"
@@ -35,7 +38,7 @@ End verb.
 Syntax
   'restart' = 'restart'.
 
-Verb 'restart'
+Meta verb 'restart'
   Does
     Restart.
 End verb.
@@ -44,21 +47,9 @@ End verb.
 Syntax
   'score' = 'score'.
 
-Verb 'score'
+Meta verb 'score'
   Does
     Score.
-End verb.
-
-
-Synonyms
-  z = 'wait'.
-
-Syntax
-  'wait' = 'wait'.
-
-Verb 'wait'
-  Does
-    "Time passes..."
 End verb.
 
 
@@ -68,7 +59,7 @@ Synonyms
 Syntax
   again = again.
 
-Verb again
+Meta verb again
   Does
     "The 'again' command is not available, sorry. You can probably use
      the up and down arrow keys to scroll through your previous commands
@@ -80,7 +71,7 @@ End verb.
 -- Syntax
 --   undo = undo.
 
--- Verb undo
+-- Meta verb undo
 --   Does
 --     "Unfortunately you cannot 'undo' commands in this game."
 -- End verb.

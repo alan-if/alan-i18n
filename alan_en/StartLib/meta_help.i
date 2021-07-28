@@ -1,4 +1,4 @@
--- "help.i"
+-- "meta_help.i"
 
 Synonyms
   h = help.
@@ -6,7 +6,7 @@ Synonyms
 Syntax
   help = help.
 
-Verb help
+Meta verb help
   Does
     "In this game I am your eyes and your body. I will describe
      the surroundings for you. You tell me what you want to do. For
@@ -27,7 +27,7 @@ Synonyms
 Syntax
   hint = hint.
 
-Verb hint
+Meta verb hint
   Does
     "Unfortunately hints are not available in this game."
 End verb.
@@ -39,7 +39,7 @@ Synonyms
 Syntax
   credits = credits.
 
-Verb credits
+Meta verb credits
   Does
     "The author retains the copyright to this game.
      $pThis game was written using the ALAN Adventure Language.

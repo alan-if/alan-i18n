@@ -1,4 +1,4 @@
--- "brief.i"
+-- "meta_brief.i"
 
 --
 -- Use "Visits 0." or "Visits 1000." in the START section if you want
@@ -8,7 +8,7 @@
 Syntax
   verbose = verbose.
 
-Verb verbose
+Meta verb verbose
   Does
     Visits 0.
     "Verbose mode is now on."
@@ -18,7 +18,7 @@ End verb.
 Syntax
   brief = brief.
 
-Verb brief
+Meta verb brief
   Does
     Visits 1000.
     "Brief mode is now on. Location descriptions will only be shown

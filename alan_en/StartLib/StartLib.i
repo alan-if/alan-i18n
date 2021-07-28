@@ -1,6 +1,6 @@
 --==============================================================================
 --------------------------------------------------------------------------------
--- * * * ALAN Starter Library English * * *   v0.1.0 | 2021/07/24 | ALAN 3.Beta7
+-- * * * ALAN Starter Library English * * *   v0.1.1 | 2021/07/29 | ALAN 3.Beta7
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -38,8 +38,8 @@ Import 'smell.i'.
 Import 'knock.i'.
 Import 'jump.i'.
 Import 'wear.i'.    -- + remove, undress, put on
+Import 'wait.i'.
 
-Import 'help.i'.    -- + notes, hint
 
 
 -- Scenery
@@ -56,9 +56,13 @@ Import 'invent.i'.
 Import 'nowhere.i'.
 
 
--- Verbose and brief mode
-Import 'brief.i'.
+-- ==========
+-- META VERBS
+-- ==========
+-- Extradiegetic actions which don't consume a game turn.
+
+Import 'meta_session.i'. -- Score, save, restore, etc.
+Import 'meta_brief.i'.   -- Verbose and brief mode
+Import 'meta_help.i'.    -- + notes, hint
 
 
--- Score, save, restore etc.
-Import 'meta.i'.
