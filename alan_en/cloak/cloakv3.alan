@@ -1,241 +1,246 @@
 --==============================================================================
--- "Cloak of Darkness"
 --------------------------------------------------------------------------------
--- A sample adventure based on an idea by Roger Firth.
--- Implemented in ALAN by Stephen Griffiths, adapted to ALAN 3 by Thomas Nilsson
--- (now Thomas Nilefalk):
---    http://www.firthworks.com/roger/cloak/alan/
+-- * * * Cloak of Darkness v2 * * *  2021/07/29 | StartLib v0.1.0 | ALAN 3.Beta7
+--------------------------------------------------------------------------------
 --==============================================================================
-import 'std.i'.
 
-The foyer Isa location
+-- A sample adventure based on an idea by Roger Firth.
+-- Originally implemented in ALAN 2 by Stephen Griffiths, then adapted to ALAN 3
+-- by Thomas Nilsson (now Thomas Nilefalk) in 2008:
+--    http://www.firthworks.com/roger/cloak/alan/
+-- Readapted in 2021 by Tristano Ajmone to work with the ALAN Starter Library:
+--    https://github.com/alan-if/alan-i18n
+--==============================================================================
+Import 'StartLib.i'.
+
+The foyer IsA location
   Name 'Foyer of the Opera House'
 
   Description
-    "You are standing in a spacious hall, splendidly decorated in red and
-     gold, with glittering chandeliers overhead. The entrance from the
-     street is to the north, and there are doorways south and west."
+    "You are standing in a spacious hall, splendidly
+     decorated in red and gold, with glittering
+     chandeliers overhead.
+     The entrance from the street is to the north,
+     and there are doorways south and west."
 
-  Exit south To bar
+  Exit south to bar
     Does
-      If cloak In hero Then
-        Locate hero At dark_bar.
-      Else
-        Locate hero At bar.
-      End If.
-  End Exit.
+      If cloak in hero then
+        Locate hero at dark_bar.
+      else
+        Locate hero at bar.
+      End if.
+  End exit.
 
-  Exit west To cloakroom.
+  Exit west to cloakroom.
 
-  Exit north To foyer
+  Exit north to foyer
     Check
-      "You've only just arrived, and besides, the weather outside seems to
-       be getting worse."
-  End Exit.
+      "You've only just arrived, and besides,
+       the weather outside seems to be getting worse."
+  End exit.
+End the foyer.
 
-End The foyer.
 
-The cloakroom Isa location
-
+The cloakroom IsA location
   Description
-    "The walls of this small room were clearly once lined with hooks,
-     though now only one remains. The exit is a door to the east."
+    "The walls of this small room were clearly once
+     lined with hooks, though now only one remains.
+     The exit is a door to the east."
 
-  Exit east To foyer.
+  Exit east to foyer.
+End the cloakroom.
 
-End The cloakroom.
 
-The hook Isa object
+The hook IsA object
   Name small brass hook
   At cloakroom
-  Is
-    Not takeable.
+  Is not takeable.
   Description
 
   Verb examine
-    Does Only
+    Does only
       "It's just a small brass hook"
-      If cloak Is on_hook Then
+      If cloak is on_hook then
         "with a cloak hanging on it."
-      Else
+      else
         "screwed to the wall."
-      End If.
-  End Verb.
-
-End The hook.
+      End if.
+  End verb.
+End the hook.
 
 Synonyms
   peg = hook.
 
-The bar Isa location
+
+The bar IsA location
   Name foyer bar
 
   Description
-    "The bar, much rougher than you'd have guessed after the opulence of
-     the foyer to the north, is completely empty. There seems to be some
-     sort of message scrawled in the sawdust on the floor."
+    "The bar, much rougher than you'd have guessed
+     after the opulence of the foyer to the north,
+     is completely empty.
+     There seems to be some sort of message scrawled
+     in the sawdust on the floor."
 
-  Exit north To foyer.
+  Exit north to foyer.
+End the bar.
 
-End The bar.
 
-The 'message' Isa object
+The 'message' IsA object
   Name scrawled 'message'
   At bar
-  Is
-    Not takeable.
-  Is
-    readable.
-  Has
-    damage_number  0.
+  Is not takeable.
+  Is readable.
+  Has damage_number 0.
   Description
 
   Verb examine
-    Does Only
+    Does only
       Describe read_message.
-  End Verb.
+  End verb.
 
   Verb read
-    Does Only
+    Does only
       Describe read_message.
-  End Verb.
+  End verb.
+End the 'message'.
 
-End The 'message'.
 Synonyms
   floor, sawdust = 'message'.
 
 
-
-The read_message Isa object
-
+The read_message IsA object
   Description
-    If damage_number Of 'message' <2 Then
+    If damage_number Of 'message' <2 then
       Score 1.
-      "The message, neatly marked in the sawdust, reads... $p$t*** You have
-       won ***$p"
-    Else
-      "The message has been carelessly trampled, making it difficult to
-       read. You can just distinguish the words... $p$t*** You have lost
-       ***$p"
-    End If.
-    Score .
+      "The message, neatly marked in the sawdust,
+       reads... $p$t*** You have won ***$p"
+    else
+      "The message has been carelessly trampled,
+       making it difficult to read.
+       You can just distinguish the words...
+       $p$t*** You have lost ***$p"
+    End if.
+    Score.
     Quit.
+End the read_message.
 
-End The read_message.
-
-The dark_bar Isa location
+The dark_bar IsA location
   Name darkness
 
   Description
     "It's pitch black here. You can't see a thing."
 
-  Exit north To foyer.
+  Exit north to foyer.
 
-  Exit northeast, east, southeast, south, southwest, west, northwest To dark_bar
+  Exit northeast, east, southeast, south,
+       southwest, west, northwest
+       to dark_bar
     Check
       "Blundering around in the dark isn't a good idea!"
-      Increase damage_number Of 'message' By 2.
-  End Exit.
+      Increase damage_number of 'message' by 2.
+  End exit.
 
   Verb invent, 'look', 'wait'
-    Does Only
+    Does only
       Describe dark_warning.
-  End Verb.
+  End verb.
 
-  Verb read, switch_on1, switch_on2, turn_on1, turn_on2
-    Does Only
+  Verb read, switch_on1, switch_on2,
+       turn_on1, turn_on2
+    Does only
       Describe dark_warning.
-  End Verb.
+  End verb.
 
-  Verb drop, examine, pick_up1, pick_up2, put_down1, put_down2, take, throw
-    Does Only
+  Verb drop, examine, pick_up1, pick_up2,
+       put_down1, put_down2, take, throw
+    Does only
       Describe dark_warning.
-  End Verb.
+  End verb.
 
   Verb search
-    Does Only
+    Does only
       Describe dark_warning.
-  End Verb.
+  End verb.
+End the dark_bar.
 
-End The dark_bar.
 
-The dark_warning Isa object
-
+The dark_warning IsA object
   Description
     "In the dark? You could easily disturb something!"
-    Increase damage_number Of 'message' By 1.
+    Increase damage_number of 'message' by 1.
+End the dark_warning.
 
-End The dark_warning.
 
-The cloak Isa object
+The cloak IsA object
   Name black velvet cloak
   In hero
-  Is
-    Not on_hook.
+  Is not on_hook.
   Description
-    If cloak Is on_hook Then
+    If cloak Is on_hook then
       "$pOn the small brass hook is a velvet cloak."
-    Else
+    else
       "$pThere is a black velvet cloak here."
-    End If.
+    End if.
 
   Verb examine
     Check Current Location <>dark_bar
-      Else
-        Describe dark_warning.
-    Does Only
-      "A handsome cloak, of velvet trimmed with satin, and slightly
-       spattered with raindrops. Its blackness is so deep that it almost
-       seems to suck light from the room."
-  End Verb.
+      else describe dark_warning.
+    Does only
+      "A handsome cloak, of velvet trimmed with satin,
+       and slightly spattered with raindrops.
+       Its blackness is so deep that it almost seems
+       to suck light from the room."
+  End verb.
 
   Verb drop, put_down1, put_down2
     Check Current Location <>dark_bar
-      Else
-        Describe dark_warning.
+      else describe dark_warning.
     And Current Location =cloakroom
-      Else
-        "This isn't the best place to leave a smart cloak lying around."
-  End Verb.
+      else "This isn't the best place to leave
+            a smart cloak lying around."
+  End verb.
 
   Verb put_on
-  When Obj1
-    Check obj2 =hook
-      Else
-        "This isn't the best place to leave a smart cloak lying around."
-    Does Only
-      If hero Is Not hung_cloak Then
-        Make hero hung_cloak.
-        Score 1.
-      End If.
-      "You $v the $1 on the $2."
-      Make cloak on_hook.
-      Locate cloak Here.
-  End Verb.
+    When obj1
+      Check obj2 =hook
+        else "This isn't the best place to leave
+              a smart cloak lying around."
+      Does only
+        If hero is not hung_cloak then
+          Make hero hung_cloak.
+          Score 1.
+        End if.
+        "You $v the $1 on the $2."
+        Make cloak on_hook.
+        Locate cloak here.
+  End verb.
+End the cloak.
 
-End The cloak.
 Synonyms
   hang = put.
 
-Add To Every actor
-  Is
-    Not hung_cloak.
-  Verb examine
-    Check Current Location <> dark_bar
-      Else
-        Describe dark_warning.
-    Does Only
-      "As handsome as ever."
-  End Verb.
 
+Add to every actor
+  Is not hung_cloak.
+  Verb examine
+    Check current location <> dark_bar
+      else Describe dark_warning.
+    Does only
+      "As handsome as ever."
+  End verb.
 End Add.
 
 
-Start At foyer.
-  "$p$pHurrying through the rainswept November night, you're glad to see
-   the bright lights of the Opera House. It's surprising that there aren't
-   more people about but, hey, what do you expect in a cheap demo game...?"
-  "$p$nCloak of Darkness"
-  "$nA basic IF demonstration."
-  "$nVersion 1, Sept 2008. (Implemented using ALAN 3.0alpha6, lib 0.6.1)"
-  "$nAuto-converted to Alan v3 from the Alan v2 Version by Thomas Nilsson"
+Start at foyer.
+  "$p$pHurrying through the rainswept November night,
+   you're glad to see the bright lights of the Opera House.
+   It's surprising that there aren't more people about but,
+   hey, what do you expect in a cheap demo game...?"
+  Style alert.
+  "$p$nCloak of Darkness" Style emphasized.
+  "$nA basic IF demonstration." Style normal.
+  "$pVersion 2, July 2021. (ALAN 3.0beta7, StartLib v0.1.0)"
+  "$nOriginally implemented by Stephen Griffiths for ALAN 2,
+   readapted by the ALAN IF Development Team."
