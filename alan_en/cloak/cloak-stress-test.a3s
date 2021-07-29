@@ -1,0 +1,65 @@
+; ******************************************************************************
+; *                       Cloak of Darkness Stress Test                        *
+; ******************************************************************************
+; This solution script tests every entity and verb in the game, and as many
+; pertinent library verbs as possible, in order to track how changes to the
+; library affect it, and to ensure that neither the game nor the library are
+; breaking up.
+; ==============================================================================
+; THE FOYER
+; ==============================================================================
+NORTH
+; ------------------------------------------------------------------------------
+; Hero
+; ------------------------------------------------------------------------------
+X ME
+X HERO
+X MYSELF
+; ------------------------------------------------------------------------------
+; Cloak
+; ------------------------------------------------------------------------------
+INVENTORY
+X CLOAK
+WEAR CLOAK
+DROP CLOAK
+; ==============================================================================
+; BAR DARK
+; ==============================================================================
+; Enter the Bar (not wearing the cloak)...
+SOUTH
+LOOK
+INVENTORY
+X ME
+WAIT
+X MESSAGE
+; Test invalid directions (damages message):
+NORTHEAST
+EAST
+SOUTHEAST
+SOUTH
+SOUTHWEST
+WEST
+NORTHWEST
+; Back to Foyer...
+NORTH
+; ==============================================================================
+; Cloakroom
+; ==============================================================================
+; To the Cloakroom...
+WEST
+X HOOK
+TAKE HOOK
+PUT CLOAK ON HOOK
+LOOK
+X HOOK
+X CLOAK
+INVENTORY
+X ME
+; Back to Foyer...
+EAST
+; ==============================================================================
+; BAR LIT
+; ==============================================================================
+; Into the Bar (without the cloak)...
+SOUTH
+X MESSAGE

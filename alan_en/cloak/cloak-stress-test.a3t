@@ -1,0 +1,181 @@
+
+
+
+Hurrying through the rainswept November night, you're glad to see the
+bright lights of the Opera House. It's surprising that there aren't more
+people about but, hey, what do you expect in a cheap demo game...? 
+
+
+Cloak of Darkness 
+A basic IF demonstration. 
+
+Version 2, July 2021. (ALAN 3.0beta7, StartLib v0.1.0) 
+Originally implemented by Stephen Griffiths for ALAN 2, readapted by the
+ALAN IF Development Team.
+
+
+Foyer of the Opera House
+You are standing in a spacious hall, splendidly decorated in red and
+gold, with glittering chandeliers overhead. The entrance from the street
+is to the north, and there are doorways south and west.
+
+> ; ******************************************************************************
+> ; *                       Cloak of Darkness Stress Test                        *
+> ; ******************************************************************************
+> ; This solution script tests every entity and verb in the game, and as many
+> ; pertinent library verbs as possible, in order to track how changes to the
+> ; library affect it, and to ensure that neither the game nor the library are
+> ; breaking up.
+> ; ==============================================================================
+> ; THE FOYER
+> ; ==============================================================================
+> NORTH
+You've only just arrived, and besides, the weather outside seems to be
+getting worse.
+
+> ; ------------------------------------------------------------------------------
+> ; Hero
+> ; ------------------------------------------------------------------------------
+> X ME
+As handsome as ever.
+
+> X HERO
+As handsome as ever.
+
+> X MYSELF
+As handsome as ever.
+
+> ; ------------------------------------------------------------------------------
+> ; Cloak
+> ; ------------------------------------------------------------------------------
+> INVENTORY
+You are carrying a black velvet cloak.
+
+> X CLOAK
+A handsome cloak, of velvet trimmed with satin, and slightly spattered
+with raindrops. Its blackness is so deep that it almost seems to suck
+light from the room.
+
+> WEAR CLOAK
+You can't wear the black velvet cloak.
+
+> DROP CLOAK
+This isn't the best place to leave a smart cloak lying around.
+
+> ; ==============================================================================
+> ; BAR DARK
+> ; ==============================================================================
+> ; Enter the Bar (not wearing the cloak)...
+> SOUTH
+Darkness
+It's pitch black here. You can't see a thing.
+
+> LOOK
+In the dark? You could easily disturb something!
+
+> INVENTORY
+In the dark? You could easily disturb something!
+
+> X ME
+In the dark? You could easily disturb something!
+
+> WAIT
+In the dark? You could easily disturb something!
+
+> X MESSAGE
+I can't see any message here.
+
+> ; Test invalid directions (damages message):
+> NORTHEAST
+Blundering around in the dark isn't a good idea!
+
+> EAST
+Blundering around in the dark isn't a good idea!
+
+> SOUTHEAST
+Blundering around in the dark isn't a good idea!
+
+> SOUTH
+Blundering around in the dark isn't a good idea!
+
+> SOUTHWEST
+Blundering around in the dark isn't a good idea!
+
+> WEST
+Blundering around in the dark isn't a good idea!
+
+> NORTHWEST
+Blundering around in the dark isn't a good idea!
+
+> ; Back to Foyer...
+> NORTH
+Foyer of the Opera House
+You are standing in a spacious hall, splendidly decorated in red and
+gold, with glittering chandeliers overhead. The entrance from the street
+is to the north, and there are doorways south and west.
+
+> ; ==============================================================================
+> ; Cloakroom
+> ; ==============================================================================
+> ; To the Cloakroom...
+> WEST
+Cloakroom
+The walls of this small room were clearly once lined with hooks, though
+now only one remains. The exit is a door to the east.
+
+> X HOOK
+It's just a small brass hook screwed to the wall.
+
+> TAKE HOOK
+You can't take that!
+
+> PUT CLOAK ON HOOK
+You put the black velvet cloak on the small brass hook.
+
+> LOOK
+Cloakroom
+The walls of this small room were clearly once lined with hooks, though
+now only one remains. The exit is a door to the east. 
+
+On the small brass hook is a velvet cloak.
+
+> X HOOK
+It's just a small brass hook with a cloak hanging on it.
+
+> X CLOAK
+A handsome cloak, of velvet trimmed with satin, and slightly spattered
+with raindrops. Its blackness is so deep that it almost seems to suck
+light from the room.
+
+> INVENTORY
+You are empty-handed.
+
+> X ME
+As handsome as ever.
+
+> ; Back to Foyer...
+> EAST
+Foyer of the Opera House
+You are standing in a spacious hall, splendidly decorated in red and
+gold, with glittering chandeliers overhead. The entrance from the street
+is to the north, and there are doorways south and west.
+
+> ; ==============================================================================
+> ; BAR LIT
+> ; ==============================================================================
+> ; Into the Bar (without the cloak)...
+> SOUTH
+Foyer bar
+The bar, much rougher than you'd have guessed after the opulence of the
+foyer to the north, is completely empty. There seems to be some sort of
+message scrawled in the sawdust on the floor.
+
+> X MESSAGE
+The message has been carelessly trampled, making it difficult to read.
+You can just distinguish the words...
+
+    *** You have lost ***
+
+You have scored 1 points out of 2 in 24 moves.
+
+Do you want to UNDO, RESTART, RESTORE or QUIT ? 
