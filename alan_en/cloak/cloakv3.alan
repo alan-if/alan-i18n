@@ -1,6 +1,6 @@
 --==============================================================================
 --------------------------------------------------------------------------------
--- * * * Cloak of Darkness v2 * * *  2021/07/29 | StartLib v0.1.1 | ALAN 3.Beta7
+-- * * * Cloak of Darkness v2 * * *  2021/07/29 | StartLib v0.1.2 | ALAN 3.Beta7
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -112,7 +112,7 @@ Synonyms
 
 The read_message IsA object
   Description
-    If damage_number Of 'message' <2 then
+    If damage_number of 'message' <2 then
       Score 1.
       "The message, neatly marked in the sawdust,
        reads... $p$t*** You have won ***$p"
@@ -178,20 +178,19 @@ The cloak IsA object
   In hero
   Is not on_hook.
   Description
-    If cloak Is on_hook then
+    If cloak is on_hook then
       "$pOn the small brass hook is a velvet cloak."
     else
       "$pThere is a black velvet cloak here."
     End if.
+  Has xDesc "A handsome cloak, of velvet trimmed with
+             satin, and slightly spattered with raindrops.
+             Its blackness is so deep that it almost seems
+             to suck light from the room.".
 
   Verb examine
     Check Current Location <>dark_bar
       else describe dark_warning.
-    Does only
-      "A handsome cloak, of velvet trimmed with satin,
-       and slightly spattered with raindrops.
-       Its blackness is so deep that it almost seems
-       to suck light from the room."
   End verb.
 
   Verb drop, put_down1, put_down2
@@ -224,11 +223,11 @@ Synonyms
 
 Add to every actor
   Is not hung_cloak.
+  Has xDesc "As handsome as ever.".
+
   Verb examine
     Check current location <> dark_bar
       else Describe dark_warning.
-    Does only
-      "As handsome as ever."
   End verb.
 End Add.
 
@@ -241,6 +240,6 @@ Start at foyer.
   Style alert.
   "$p$nCloak of Darkness" Style emphasized.
   "$nA basic IF demonstration." Style normal.
-  "$pVersion 2, July 2021. (ALAN 3.0beta7, StartLib v0.1.0)"
+  "$pVersion 2, July 2021. (ALAN 3.0beta7, StartLib v0.1.2)"
   "$nOriginally implemented by Stephen Griffiths for ALAN 2,
    readapted by the ALAN IF Development Team."

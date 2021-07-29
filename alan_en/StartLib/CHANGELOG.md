@@ -13,6 +13,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.1.2 \(2021/07/29\)](#v012-20210729)
     - [v0.1.1 \(2021/07/29\)](#v011-20210729)
     - [v0.1.0 \(2021/07/24\)](#v010-20210724)
 
@@ -22,6 +23,32 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 
 # Beta Releases
+
+## v0.1.2 (2021/07/29)
+
+Edit `examine.i` by adding to EVERY THING the new `xDesc` attribute:
+
+```alan
+Add to every thing
+  Has xDesc "".
+```
+
+And tweak the `examine` verb so that when the `xDesc` attribute of an object being examined is not an empty string it will print `xDesc`, or fallback to the default message otherwise:
+
+```alan
+Add to every thing
+  Verb examine
+    Check obj is examinable
+      else "You can't examine" say the obj. "."
+    Does
+      If xDesc of obj <> ""
+        then say xDesc of obj.
+        else "There is nothing special about" say the obj. "."
+      End if.
+```
+
+This new attribute (inspired by the StdLib 2) allows to easily provide actors and objects with static examine descriptions without having to override the `examine` verb on them via `Does Only`.
+
 
 ## v0.1.1 (2021/07/29)
 

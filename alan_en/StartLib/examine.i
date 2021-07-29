@@ -4,6 +4,7 @@ Add to every thing
   Is
     examinable.
     searchable.
+  Has xDesc "". -- Shown with 'examine', if not empty string.
 End add.
 
 Add to every actor
@@ -28,7 +29,10 @@ Add to every thing
     Check obj is examinable
       else "You can't examine" say the obj. "."
     Does
-      "There is nothing special about" say the obj. "."
+      If xDesc of obj <> ""
+        then say xDesc of obj.
+        else "There is nothing special about" say the obj. "."
+      End if.
   End verb.
 End add.
 

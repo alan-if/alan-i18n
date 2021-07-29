@@ -77,7 +77,7 @@ Add to every object
     When obj1
       Check obj2 in hero
         else "You don't have" say the obj2. "."
-      And obj1 Is openable
+      And obj1 is openable
         else "You can't close" say the obj1. "."
       Does -- To be overridden by DOES ONLY where appropriate...
         "You can't close" say the obj1. "with" say the obj2. "."

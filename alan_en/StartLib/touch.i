@@ -26,7 +26,7 @@ Add to every object
 
   Verb touch_with
     When obj1
-      Check obj1 Is touchable
+      Check obj1 is touchable
         else "You can't touch that."
       And obj1 <> obj2
         else "It doesn't make sense to touch something with itself."

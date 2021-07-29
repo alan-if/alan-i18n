@@ -91,7 +91,7 @@ The __ALAN Starter Library__ is released under the terms of the [Artistic Licens
 
 <!-- badges -->
 
-[lib badge]: https://img.shields.io/badge/StartLib%20EN-0.1.1-yellow "ALAN Starter Library version"
+[lib badge]: https://img.shields.io/badge/StartLib%20EN-0.1.2-yellow "ALAN Starter Library version"
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue
