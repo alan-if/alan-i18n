@@ -1,7 +1,7 @@
 #!/bin/bash
 
 adv=cloakv3
-inc=../StartLib
+inc=../Foundation
 
 rm -f *.a3t
 

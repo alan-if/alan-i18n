@@ -1,4 +1,4 @@
-# INDEX de la libreria ALAN Starter Library española
+# INDEX de la libreria ALAN Foundation española
 
 Version 0.1.0 (2021/07/24).
 
@@ -276,7 +276,7 @@ Version 0.1.0 (2021/07/24).
 [persona.i]: ./persona.i "View source file"
 [poner.i]: ./poner.i "View source file"
 [saltar.i]: ./saltar.i "View source file"
-[StartLib.i]: ./StartLib.i "View source file"
+[Library.i]: ./Library.i "View source file"
 [tocar.i]: ./tocar.i "View source file"
 [tomar.i]: ./tomar.i "View source file"
 

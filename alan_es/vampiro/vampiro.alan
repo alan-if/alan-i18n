@@ -4,7 +4,7 @@
 --------------------------------------------------------------------------------
 --==============================================================================
 
---  Vampiro para ALAN Starter Library Spanish v1.0.2.
+--  Vampiro para ALAN Foundation Library Spanish v1.0.2.
 --
 -- Esta es la versión en ALAN + libreria española de "Memorias de reXXe",
 -- también conocido como "Vampiro". Este código fuente forma parte del
@@ -12,7 +12,7 @@
 --
 --    https://www.caad.es/informate/vampiro/
 --
--- Para procesar este fichero necesitarás la librería española ALAN Starter
+-- Para procesar este fichero necesitarás la librería española ALAN Foundation
 -- Library y el programa ALAN 3:
 --
 --    https://github.com/alan-if/alan-i18n/tree/main/alan_es/
@@ -22,7 +22,7 @@
 -- la librería 0.6.0e (realizada entre Marcos Donantuonni y Bruce Humphrey).
 --------------------------------------------------------------------------------
 
-import 'StartLib.i'.
+import 'Library.i'.
 
 
 Every lugar Isa Location

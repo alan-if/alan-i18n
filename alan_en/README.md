@@ -2,9 +2,9 @@
 [![Alan version][alan badge]][alan link]&nbsp;
 [![License][license badge]][COPYING]
 
-# ALAN Starter Library English
+# ALAN Foundation Library English
 
-Reference implementation of the __Starter Library__, in English, maintained by the ALAN IF community.
+Reference implementation of the __Foundation Library__, in English, maintained by the ALAN IF community.
 Based on the __[ALAN Library v0.6.2]__ (November, 2007), by Göran Forslund, Thomas Nilsson (now [Thomas Nilefalk]) and Stephen Griffiths.
 
 -----
@@ -24,26 +24,26 @@ Based on the __[ALAN Library v0.6.2]__ (November, 2007), by Göran Forslund, Tho
 
 # Directory Contents
 
-- [`/StartLib/`][StartLib] — English Starter Library:
-    + [`StartLib.i`][StartLib.i] — main library module that loads all others:
+- [`/Foundation/`][Foundation] — English Foundation Library:
+    + [`Library.i`][Library.i] — main library module that loads all others:
         * `*.i` — various library modules.
-    + [`CHANGELOG.md`][CHANGELOG.md] — Starter Library Changelog.
-    + [`INDEX.md`][INDEX.md] — Starter Library Index.
-    + [`NOTES.md`][NOTES.md] — `StartLib.i` usage notes.
+    + [`CHANGELOG.md`][CHANGELOG.md] — Foundation Library Changelog.
+    + [`INDEX.md`][INDEX.md] — Foundation Library Index.
+    + [`NOTES.md`][NOTES.md] — `Library.i` usage notes.
     + [`COPYING`][COPYING] — [Artistic License 2.0].
 - [`/cloak/`][cloak] — _Cloak of Darkness_ sample adventure, by Stephen Griffiths.
 
 
 # About
 
-The __ALAN Starter Library__ is based on a recovered copy of the legacy __[ALAN Library v0.6.2]__ (the last version of the 0.6.x series), dating back to November, 2007.
+The __ALAN Foundation Library__ is based on a recovered copy of the legacy __[ALAN Library v0.6.2]__ (the last version of the 0.6.x series), dating back to November, 2007.
 
 The __ALAN Library__ was the result of the collaborative joint effort of Göran Forslund, Thomas Nilsson (now [Thomas Nilefalk]) and Stephen Griffiths over a long period of time.
 It was originally written for ALAN&nbsp;2, and then updated to make use of the new features introduced by ALAN&nbsp;3, but its development was soon abandoned if favour of the newer __[ALAN Library 1]__ that was released in 2010, which was superseded by the __[ALAN Standard Library 2]__ in 2016.
 
 The original v0.6.2 code was edited by [Tristano Ajmone] to ensure compatibility with Alan 3.0beta6; also, some outdated references and broken links were updated accordingly.
 
-The library was then renamed in this project from __ALAN Library__ to "Starter Library" to avoid confusion with the original library (and all other ALAN Libraries), so that we could start updating it to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007.
+The library was then renamed in this project from __ALAN Library__ to "Foundation Library" to avoid confusion with the original library (and all other ALAN Libraries), so that we could start updating it to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007.
 
 An archived copy of the original __[ALAN Library v0.6.2]__ can be found at the [ALAN Goodies] project:
 
@@ -55,9 +55,9 @@ For some background info on the various ALAN libraries created in the course of 
 
 # Library Status
 
-- [`StartLib/CHANGELOG.md`][CHANGELOG.md]
+- [`Foundation/CHANGELOG.md`][CHANGELOG.md]
 
-The __English Starter Library__ is currently in Beta stage.
+The __English Foundation Library__ is currently in Beta stage.
 We're gradually updating it to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007, as well as refactoring its source code to meet the goals of this project.
 
 Until the library reaches its first stable release with v1.0.0, its code will be subject to frequent changes, including backwards compatibility breaking changes; furthermore, we can't guarantee that its documentation will always be up to date with its latest code changes.
@@ -66,7 +66,7 @@ Until the library reaches its first stable release with v1.0.0, its code will be
 
 - [`COPYING`][COPYING]
 
-The __ALAN Starter Library__ is released under the terms of the [Artistic License 2.0].
+The __ALAN Foundation Library__ is released under the terms of the [Artistic License 2.0].
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
@@ -91,21 +91,21 @@ The __ALAN Starter Library__ is released under the terms of the [Artistic Licens
 
 <!-- badges -->
 
-[lib badge]: https://img.shields.io/badge/StartLib%20EN-0.1.2-yellow "ALAN Starter Library version"
+[lib badge]: https://img.shields.io/badge/Foundation%20Lib%20EN-0.1.2-yellow "ALAN Foundation Library version"
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue
 
 <!-- project files and folders -->
 
-[StartLib]: ./StartLib/ "Navigate to English Alan IF library folder"
+[Foundation]: ./Foundation/ "Navigate to English Alan IF library folder"
 [cloak]: ./cloak/ "Navigate to 'Cloak of Darkness' folder"
 
-[CHANGELOG.md]: ./StartLib/CHANGELOG.md "Read CHANGELOG document"
-[COPYING]: ./StartLib/COPYING "View Artistic License 2.0"
-[INDEX.md]: ./StartLib/INDEX.md "View Alan Library Index (markdown)"
-[NOTES.md]: ./StartLib/NOTES.md "Read usage notes for 'std.i'"
-[StartLib.i]: ./StartLib/StartLib.i "View source file of main library module"
+[CHANGELOG.md]: ./Foundation/CHANGELOG.md "Read CHANGELOG document"
+[COPYING]: ./Foundation/COPYING "View Artistic License 2.0"
+[INDEX.md]: ./Foundation/INDEX.md "View Alan Library Index (markdown)"
+[NOTES.md]: ./Foundation/NOTES.md "Read usage notes for 'Library.i'"
+[Library.i]: ./Foundation/Library.i "View source file of main library module"
 
 <!-- people -->
 

@@ -1,6 +1,6 @@
 --==============================================================================
 --------------------------------------------------------------------------------
--- * * * Cloak of Darkness v2 * * *  2021/07/29 | StartLib v0.1.2 | ALAN 3.Beta7
+--* * Cloak of Darkness v2 * * 2021/07/29 | Foundation Lib v0.1.2 | ALAN 3.Beta7
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -8,10 +8,10 @@
 -- Originally implemented in ALAN 2 by Stephen Griffiths, then adapted to ALAN 3
 -- by Thomas Nilsson (now Thomas Nilefalk) in 2008:
 --    http://www.firthworks.com/roger/cloak/alan/
--- Readapted in 2021 by Tristano Ajmone to work with the ALAN Starter Library:
+-- Readapted in 2021 by Tristano Ajmone to work with the ALAN Foundation Library:
 --    https://github.com/alan-if/alan-i18n
 --==============================================================================
-Import 'StartLib.i'.
+Import 'Library.i'.
 
 The foyer IsA location
   Name 'Foyer of the Opera House'
@@ -240,6 +240,6 @@ Start at foyer.
   Style alert.
   "$p$nCloak of Darkness" Style emphasized.
   "$nA basic IF demonstration." Style normal.
-  "$pVersion 2, July 2021. (ALAN 3.0beta7, StartLib v0.1.2)"
+  "$pVersion 2, July 2021. (ALAN 3.0beta7, Foundation Library v0.1.2)"
   "$nOriginally implemented by Stephen Griffiths for ALAN 2,
    readapted by the ALAN IF Development Team."

@@ -4,7 +4,7 @@
 
 # ALAN Internationalization Project
 
-Multi-language translations of the __ALAN Starter Library__, a basic [ALAN Interactive Fiction] library to begin creating text adventures in different languages, and provide reference  implementations to add support for new locales.
+Multi-language translations of the __ALAN Foundation Library__, a basic [ALAN Interactive Fiction] library to begin creating text adventures in different languages, and provide reference  implementations to add support for new locales.
 
 - https://github.com/alan-if/alan-i18n
 
@@ -51,11 +51,11 @@ In computing jargon, a spoken language is referred to as a _locale_, to avoid co
 
 These libraries can be used to start creating text adventures in different locales, or serve as reference implementation for anyone wishing to create a library to support a new locale.
 
-The reference implementation is the English __Starter Library__, based on the __ALAN Library v0.6.2__, which was created by the Alan IF community over the years, and across various Alan incarnations, up to November 2007, after which it was replaced by newer and more sophisticated libraries (__[Library v1]__, and the __[Standard Library v2]__).
+The reference implementation is the English __Foundation Library__, based on the __ALAN Library v0.6.2__, which was created by the Alan IF community over the years, and across various Alan incarnations, up to November 2007, after which it was replaced by newer and more sophisticated libraries (__[Library v1]__, and the __[Standard Library v2]__).
 
 For the goals of this project, the older library v0.6.x provided a better reference implementation for those wishing to translate and adapt it to a new locale, because of its highly modular structure where each file handles a specific feature, so we decided to take on its development from where it stopped, gradually update it make use of the new ALAN features that were introduced since 2007, and rename it to avoid confusion with the original library.
 
-The __Starter Library__ is also a good starting point for those who wish to write a highly customized adventure, where the adventure world (its object types, verbs and commands) is tailored to the story needs, because the library strikes a good balance between simplicity and features coverage.
+The __Foundation Library__ is also a good starting point for those who wish to write a highly customized adventure, where the adventure world (its object types, verbs and commands) is tailored to the story needs, because the library strikes a good balance between simplicity and features coverage.
 Most features can be tweaked, removed or expanded by acting on the single library module (file) that implements a specific feature, whereas more sophisticated libraries usually come at the price of a more entangled system, where features are interconnected with each other in complex ways.
 
 In any case, as their name suggests, these libraries implementations are intended as starting points to begin working with ALAN IF, in general.

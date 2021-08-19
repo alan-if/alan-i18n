@@ -1,5 +1,5 @@
 
-# Usage Notes for "StartLib.i"
+# Usage Notes for "Library.i"
 
 
 -----
@@ -23,18 +23,18 @@
 
 # Three Steps to Using the Library
 
-1. Store all the "[StartLib.i]" library files in a subdirectory or file folder separate from your game's files
+1. Store all the "[Library.i]" library files in a subdirectory or file folder separate from your game's files
 
-2. Add an `include` statement for the main "[StartLib.i]" file at the top of your game's main sourcecode file.
-("[StartLib.i]" contains include statements for all the rest of the library ".i" files so they're automatically added to your game.)
+2. Add an `include` statement for the main "[Library.i]" file at the top of your game's main sourcecode file.
+("[Library.i]" contains include statements for all the rest of the library ".i" files so they're automatically added to your game.)
 
     An example showing the start of your game sourcecode file might be
 
     ``` alan
     -- "My Game" by Fred Smart
 
-    -- add the code from the StartLib.i library to this game
-    Include 'StartLib.i'
+    -- add the code from the Library.i library to this game
+    Include 'Library.i'
 
     -- beginning of your game's actual code
     The abc Isa location
@@ -43,26 +43,26 @@
 
 
 
-3. Compile your game with an `include` parameter for the subdirectory or file folder where you stored the StartLib.i library files. Eg:
+3. Compile your game with an `include` parameter for the subdirectory or file folder where you stored the Library.i library files. Eg:
 
     ```
-    alan   -include c:\alan\stdlib   mygame.alan
+    alan   -include c:\alan\Foundation   mygame.alan
     ```
 
 
 # Study the Library Files
 
-The documentation for the StartLib.i library consists of:
+The documentation for the Library.i library consists of:
 
   * the "[ReadMe]" file,
   * the "[INDEX.md]" file,
   * this "[NOTES.md]" file.
 
-The secret to using "[StartLib.i]" is to study the actual library files — the ".i"files — as the documentation about the library is scanty the best way to learn how things should be defined in your own code is to check how the relevant verbs etc. are defined in the library itself.
+The secret to using "[Library.i]" is to study the actual library files — the ".i"files — as the documentation about the library is scanty the best way to learn how things should be defined in your own code is to check how the relevant verbs etc. are defined in the library itself.
 
 Use the "[INDEX.md]" file to find which ".i" files contain the attributes or verbs or whatever that you wish to investigate.
 
-For example, perhaps you have an object that you want to be able to talk. You note while play-testing that only actors can talk in games using the "StartLib.i" library but you don't want to make your object an actor because, other than being a talkative object, it is otherwise more convenient to code it as an object.
+For example, perhaps you have an object that you want to be able to talk. You note while play-testing that only actors can talk in games using the "Library.i" library but you don't want to make your object an actor because, other than being a talkative object, it is otherwise more convenient to code it as an object.
 So you look through the "[INDEX.md]" file and find that `not can_talk` is a default attribute defined in the "[talk.i]" file.
 So you look in the "[talk.i]" file and find by viewing the source code for the talk verbs that if an individual object is given the `can_talk` attribute then all the talk/ask/etc verbs will now work for that object.
 Ah ha! So you add the line `IS can_talk.` to your object's definition and, hey presto, your problem is solved.
@@ -233,7 +233,7 @@ Converted to markdown by Tristano Ajmone, April 2019.
 [examine.i]: ./examine.i "View source file"
 [meta_help.i]: ./meta_help.i "View source file"
 [invent.i]: ./invent.i "View source file"
-[StartLib.i]: ./StartLib.i "View source file"
+[Library.i]: ./Library.i "View source file"
 [take.i]: ./take.i "View source file"
 [talk.i]: ./talk.i "View source file"
 [turn.i]: ./turn.i "View source file"

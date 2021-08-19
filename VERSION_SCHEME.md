@@ -1,6 +1,6 @@
 # Library Version Scheme
 
-The __ALAN Starter Library__ adopts __[Semantic Versioning 2.0.0]__ as its versioning scheme.
+The __ALAN Foundation Library__ adopts __[Semantic Versioning 2.0.0]__ as its versioning scheme.
 
 Each release is defined by a `MAJOR.MINOR.PATCH` triplet, consisting of three dot-separated numeric segments which are incremented in a meaningful way:
 
@@ -17,10 +17,10 @@ MAJOR changes always require tweaking an adventure code, for some parts of the l
 PATCH changes usually deal with typos, bugs fixes, or other type of improvements that don't require altering the code of adventures.
 
 
-> **WARNING!** — The Starter Library is currently in Beta stage (`v0.X.Y`), so the above rules are not yet enforceable until `v1.0.0` is available.
+> **WARNING!** — The Foundation Library is currently in Beta stage (`v0.X.Y`), so the above rules are not yet enforceable until `v1.0.0` is available.
 > For the whole duration of the `v0.X.Y` cycle, MINOR version bumps should be interpreted as if they were MAJOR changes (i.e. backwards compatibility breaking), and PATCH bumps as being MINOR or PATCH changes (their distinction is not important during Beta work).
 >
-> This arrangement was decided upon in order to avoid introducing too many MAJOR version bumps in the new library, since in the early stages updating the library to exploit new ALAN features will entail many breaking changes, whereas after the `v1.0.0` stable release these should be more sporadic —  i.e. we wanted to prevent ending up having something like `StartLib v302.60.0`, which would look ridiculous.
+> This arrangement was decided upon in order to avoid introducing too many MAJOR version bumps in the new library, since in the early stages updating the library to exploit new ALAN features will entail many breaking changes, whereas after the `v1.0.0` stable release these should be more sporadic —  i.e. we wanted to prevent ending up having something like `Foundation Library v302.60.0`, which would look ridiculous.
 >
 > For more info on the topic, see/join [Discussion #14].
 

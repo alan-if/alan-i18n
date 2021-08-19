@@ -1,5 +1,5 @@
 
-# ALAN Starter Library Index
+# ALAN Foundation Library Index
 
 Version 0.1.1 (2021/07/29).
 
@@ -505,7 +505,7 @@ Please read the [README] and [NOTES] files for information about using the libra
 [read.i]: ./read.i "View source file"
 [scenery.i]: ./scenery.i "View source file"
 [smell.i]: ./smell.i "View source file"
-[StartLib.i]: ./StartLib.i "View source file"
+[Library.i]: ./Library.i "View source file"
 [take.i]: ./take.i "View source file"
 [talk.i]: ./talk.i "View source file"
 [throw.i]: ./throw.i "View source file"

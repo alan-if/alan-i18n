@@ -1,7 +1,7 @@
 #!/bin/bash
 
 adv=vampiro
-inc=../StartLib
+inc=../Foundation
 
 echo -e "\033[34;1m==========================================================================\033[0m"
 echo -e "\033[033mCompiling \"$adv.alan\""

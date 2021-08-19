@@ -1,6 +1,6 @@
-# Starter Library ChangeLog
+# Foundation Library ChangeLog
 
-This is the ChangeLog for the __ALAN Starter Library__, English version.
+This is the ChangeLog for the __ALAN Foundation Library__, English version.
 
 For the ChangeLog of the original __[ALAN Library v0.6.2]__ (from which this library was derived) see the archived [`ChangeLog`][ChangeLog] file hosted at the __[ALAN Goodies]__ project.
 
@@ -61,14 +61,14 @@ Convert "meta verbs" to real `META VERB`s, which in the original library were ju
 
 ## v0.1.0 (2021/07/24)
 
-First official Alpha release of the new __ALAN Starter Library__.
+First official Alpha release of the new __ALAN Foundation Library__.
 
 The library codebase of v0.1.0 is the same as that of the __[ALAN Library v0.6.2]__ (Nov. 2007) archived copy hosted at the [ALAN Goodies] project, which itself included some minor tweaks by [Tristano Ajmone] to ensure compatibility with the ALAN Beta7, plus some aesthetic changes, all of which are thereof documented, along with the original [`ChangeLog`][ChangeLog] file.
 
 The following changes were applied to the original library:
 
-- The library is renamed to "ALAN Starter Library".
-- Main module `std.i` renamed to `StartLib.i`.
+- The library is renamed to "ALAN Foundation Library".
+- Main module `std.i` renamed to `Library.i`.
 - Deleted original `README.md`/`ReadMe`.
 - Deleted `index.txt`.
 - Adapted `NOTES.md` and `INDEX.md` according to changes and new needs.
@@ -77,11 +77,11 @@ The following changes were applied to the original library:
     + Removed references to the old library and its changes.
     + Provided info according to the new project needs, instead.
 
-The original library is here renamed from "Alan Library" to "ALAN Starter Library" in order to avoid confusion between the two, and in view of the upcoming changes and updates to make use of the new ALAN&nbsp;3 features that were introduced since 2007.
+The original library is here renamed from "Alan Library" to "ALAN Foundation Library" in order to avoid confusion between the two, and in view of the upcoming changes and updates to make use of the new ALAN&nbsp;3 features that were introduced since 2007.
 
-The rationale in renaming the library is that many of the upcoming changes will break backward compatibility, meaning that old adventures built for the __ALAN Library v0.6.x__ won't work anymore with the new __ALAN Starter Library__ by the time the latter has reached v1.0.0.
+The rationale in renaming the library is that many of the upcoming changes will break backward compatibility, meaning that old adventures built for the __ALAN Library v0.6.x__ won't work anymore with the new __ALAN Foundation Library__ by the time the latter has reached v1.0.0.
 
-The __Starter Library__ is not going to be just a series of updates to the old __ALAN Library v0.6.x__, but a full-fledged revisitation of its whole codebase, its driving design philosophy, and the way its modules are named and organized.
+The __Foundation Library__ is not going to be just a series of updates to the old __ALAN Library v0.6.x__, but a full-fledged revisitation of its whole codebase, its driving design philosophy, and the way its modules are named and organized.
 
 
 <!-----------------------------------------------------------------------------
