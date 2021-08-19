@@ -1,4 +1,4 @@
--- "messages_en.i" | 2021/07/18 | ALAN 3.0beta7
+-- "messages_en.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
 --==============================================================================
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -61,7 +61,7 @@ IS_EMPTY: "$+1 is empty."
 --------------------------------------------------------------------------------
 
 CARRIES: "$+1 carries"
-EMPTY_HANDED: "$+1 is empty-handed."
+EMPTY_HANDED: "$+1 is not carrying anything."
 
 -- =============================================================================
 
@@ -76,8 +76,8 @@ IMPOSSIBLE_WITH: "That's impossible with $+1."
 
 CAN_NOT_CONTAIN: "$+1 can not contain $+2."
 CONTAINMENT_LOOP: "Putting $+1 in itself is impossible."
-CONTAINMENT_LOOP2: "Putting $+1 in $+2 is impossible
-                    since $+2 already is inside $+1."
+CONTAINMENT_LOOP2: "It is impossible to put $+1 in $+2
+                    because $+2 is already inside $+1."
 
 -- =============================================================================
 
@@ -86,8 +86,8 @@ CONTAINMENT_LOOP2: "Putting $+1 in $+2 is impossible
 -- =============================================================================
 
 UNKNOWN_WORD: "I don't know the word '$1'."
-WHAT: "I don't understand."
-WHAT_WORD: "I don't know what you mean by '$1'."
+WHAT: "I don't understand that."
+WHAT_WORD: "I don't understand what you mean by '$1'."
 MULTIPLE: "You can't refer to multiple objects with '$v'."
 NOUN: "You must supply a noun."
 
@@ -95,7 +95,7 @@ NOUN: "You must supply a noun."
 -- Improper use of BUT and ALL
 --------------------------------------------------------------------------------
 
-AFTER_BUT: "You must give at least one object after '$1'."
+AFTER_BUT: "I was expecting at least one object after '$1'."
 BUT_ALL: "You can only use '$1' after '$2'."
 NOT_MUCH: "That doesn't leave much to $v!"
 
@@ -103,11 +103,11 @@ NOT_MUCH: "That doesn't leave much to $v!"
 -- Disambiguation
 --------------------------------------------------------------------------------
 
-WHICH_START: "I don't know if you mean $+1"
+WHICH_START: "I'm not sure if you mean $+1"
 WHICH_COMMA: ", $+1"
 WHICH_OR: "or $+1."
 
-WHICH_PRONOUN_START: "I don't know what you mean by '$1',"
+WHICH_PRONOUN_START: "I'm not sure whether by '$1' you mean"
 WHICH_PRONOUN_FIRST: "$+1"
     ---------------------------------------------
     -- NOTE: Second to last candidates are listed
@@ -146,7 +146,7 @@ NO_UNDO: "Nothing to undo."
 --------------------------------------------------------------------------------
 
 SAVE_WHERE: "Enter file name to save in"
-SAVE_OVERWRITE: "That file already exists, overwrite (RETURN confirms) ? "
+SAVE_OVERWRITE: "A file with that name exists, overwrite (RETURN confirms) ? "
 SAVE_FAILED: "Sorry, save failed."
 
 --------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
--- "messages_sv.i" | 2021/07/18 | ALAN 3.0beta7
+-- "messages_sv.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
 --==============================================================================
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -61,7 +61,7 @@ IS_EMPTY: "$+1 är tom."
 --------------------------------------------------------------------------------
 
 CARRIES: "$+1 bär på"
-EMPTY_HANDED: "$+1 är tomhänt."
+EMPTY_HANDED: "$+1 bär inte på något."
 
 -- =============================================================================
 
@@ -86,8 +86,8 @@ CONTAINMENT_LOOP2: "Det är omöjligt att stoppa $+1 i
 -- =============================================================================
 
 UNKNOWN_WORD: "Jag känner inte till ordet '$1'."
-WHAT: "Jag förstår inte."
-WHAT_WORD: "Jag vet inte vad du menar med '$1'."
+WHAT: "Jag förstår inte det där."
+WHAT_WORD: "Jag förstår inte vad du menar med '$1'."
 MULTIPLE: "Du kan inte ange flera objekt tillsammans med verbet '$v'."
 NOUN: "Du måste ange ett substantiv."
 
@@ -95,7 +95,7 @@ NOUN: "Du måste ange ett substantiv."
 -- Felaktig användning av OCH och UTOM
 --------------------------------------------------------------------------------
 
-AFTER_BUT: "Det borde vara minst ett objekt efter '$1'."
+AFTER_BUT: "Jag förväntade mig åtminstone ett objekt efter '$1'."
 BUT_ALL: "Du kan bara använda '$1' efter '$2'."
 NOT_MUCH: "Det blir inte så mycket kvar att $v då!"
 
@@ -103,11 +103,11 @@ NOT_MUCH: "Det blir inte så mycket kvar att $v då!"
 -- Flertydighet
 --------------------------------------------------------------------------------
 
-WHICH_START: "Jag vet inte om du menar $+1"
+WHICH_START: "Jag är inte säker på om du menar $+1"
 WHICH_COMMA: ", $+1"
 WHICH_OR: "eller $+1."
 
-WHICH_PRONOUN_START: "Jag vet inte vad du menar med '$1',"
+WHICH_PRONOUN_START: "Jag förstår inte om du med '$1' menar"
 WHICH_PRONOUN_FIRST: "$+1"
     ---------------------------------------------
     -- NOTE: Second to last candidates are listed
@@ -146,7 +146,7 @@ NO_UNDO: "Det finns inget att göra ogjort."
 --------------------------------------------------------------------------------
 
 SAVE_WHERE: "Spara äventyret i vilken fil"
-SAVE_OVERWRITE: "Filen fanns redan, skriva över (tryck RETUR för ja) ? "
+SAVE_OVERWRITE: "Det finns en fil med det namnet, skriva över (tryck RETUR för ja) ? "
 SAVE_FAILED: "Tyvärr, det gick inte att spara äventyret."
 
 --------------------------------------------------------------------------------

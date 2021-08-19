@@ -1,4 +1,4 @@
--- "messages_de.i" | 2021/07/18 | ALAN 3.0beta7
+-- "messages_de.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
 --==============================================================================
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -103,11 +103,11 @@ NOT_MUCH: "Das überläßt viel nicht zu $v!"
 -- Disambiguation
 --------------------------------------------------------------------------------
 
-WHICH_START: "Ich weiß nicht, falls Du $+1"
+WHICH_START: "Ich verstehe nicht, falls Du $+1"
 WHICH_COMMA: ", $+1"
 WHICH_OR: "oder $+1 meinst."
 
-WHICH_PRONOUN_START: "Ich weiß nicht, was Du mit '$1' meinst,"
+WHICH_PRONOUN_START: "Ich versthe nicht, ob du mit '$1'"
 WHICH_PRONOUN_FIRST: "$+1"
     ---------------------------------------------
     -- NOTE: Second to last candidates are listed
@@ -146,7 +146,7 @@ NO_UNDO: "Es gibt nichts zu annulieren."
 --------------------------------------------------------------------------------
 
 SAVE_WHERE: "Gib den Dateinamen an, um zu speichern"
-SAVE_OVERWRITE: "Die Datei existiert bereits, überschreiben (ENTER, bestätigt)? "
+SAVE_OVERWRITE: "Ein Datei mit dieser name existiert, überschreiben (ENTER, bestätigt)? "
 SAVE_FAILED: "Das Spiel konnte nicht gespeichert werden."
 
 --------------------------------------------------------------------------------

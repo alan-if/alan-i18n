@@ -25,6 +25,10 @@ Remember that `MESSAGE` definitions are not limited to simple strings.
 You can provide dynamic messages by including actual code in their definitions, as described in [§3.15] of _[The ALAN Manual]_.
 
 > **TIP** — You can find the default `MESSAGE` definitions in the [`compiler/msg.c`][msg.c] file of the ALAN source code.
+> The first comment line in the `messages_??.i` templates contains the date and commit hash of the `compiler/msg.c` revision against which those strings were last compared:
+>
+>     -- "messages_en.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
+
 
 -------------------------------------------------------------------------------
 
