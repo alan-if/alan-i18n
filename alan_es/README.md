@@ -17,6 +17,7 @@ Based on the __[Librería pALANte v0.6.1e][pALANte]__ (April, 2010), by [Bruce H
 - [Directory Contents](#directory-contents)
 - [About](#about)
 - [Library Status](#library-status)
+- [Build Instructions](#build-instructions)
 - [Usage Example](#usage-example)
 - [License](#license)
 - [Reference Links](#reference-links)
@@ -58,6 +59,17 @@ Although we're planning to update the __Spanish Foundation Library__ to take adv
 The original sources were reformatted by [Tristano Ajmone] to conform to code style conventions of this repository, all changes were merely aesthetic, not affecting the source code; some output text containing obsolete links and references was also amended.
 
 The [`Foundation/COPYING`][COPYING] file of the [Artistic License 2.0] was added, since this is a derivative work of the [English Alan Library].
+
+
+# Build Instructions
+
+To build outdated assets within the Spanish directory `alan_es/`:
+
+    $ rake lib:es:all
+
+To forcefully rebuild all assets in the Spanish directory:
+
+    $ rake lib:es:all -B
 
 
 # Usage Example

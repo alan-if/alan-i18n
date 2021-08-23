@@ -16,6 +16,7 @@ Based on the __[ALAN Library v0.6.2]__ (November, 2007), by Göran Forslund, Tho
 - [Directory Contents](#directory-contents)
 - [About](#about)
 - [Library Status](#library-status)
+- [Build Instructions](#build-instructions)
 - [License](#license)
 
 <!-- /MarkdownTOC -->
@@ -61,6 +62,18 @@ The __English Foundation Library__ is currently in Beta stage.
 We're gradually updating it to take advantage of the new ALAN&nbsp;3 features that were introduced since 2007, as well as refactoring its source code to meet the goals of this project.
 
 Until the library reaches its first stable release with v1.0.0, its code will be subject to frequent changes, including backwards compatibility breaking changes; furthermore, we can't guarantee that its documentation will always be up to date with its latest code changes.
+
+
+# Build Instructions
+
+To build outdated assets within the English directory `alan_en/`:
+
+    $ rake lib:en:all
+
+To forcefully rebuild all assets in the English directory:
+
+    $ rake lib:en:all -B
+
 
 # License
 

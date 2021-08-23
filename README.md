@@ -20,6 +20,11 @@ Created by [Tristano Ajmone] on April, 2021.
 - [Project Contents](#project-contents)
     - [Library Locales](#library-locales)
 - [About](#about)
+- [Build Instructions](#build-instructions)
+- [System Requirements](#system-requirements)
+    - [Alan SDK](#alan-sdk)
+    - [Ruby](#ruby)
+    - [Rake](#rake)
 - [License](#license)
 - [Useful Links](#useful-links)
 
@@ -64,6 +69,66 @@ Unlike most other IF authoring systems, ALAN doesn't ship with a default library
 By design, ALAN is a locale agnostic IF system — i.e. it doesn't assume any target language as being the default one.
 
 The ALAN philosophy is entirely devoted to freedom — not only because it's a free and open source system, but because it provides IF authors with utter freedom when it comes to designing their own adventure worlds, allowing their creation from the ground up, according to the needs of each adventure and the author's personal taste.
+
+
+# Build Instructions
+
+This project uses [Rake]  (Ruby's Make) to handle task management and build automation.
+Being a dependency based system, Rake allows quick project updates since it will only rebuild those assets that need to be (if any).
+
+A nice feature of Rake is that it might be invoked from any folder within the repository directory, so you don't need to issue the `rake` command from the root folder — as long as you're inside the repository tree the command will work as if typed at the root.
+
+To build outdated assets in the project:
+
+    $ rake
+
+To forcefully rebuild the whole project:
+
+    $ rake -B
+
+To do a dry run without executing actions:
+
+    $ rake -n
+
+To delete all generated files from the project:
+
+    $ rake clobber
+
+To view all available build tasks:
+
+    $ rake -T
+
+To view all tasks and their dependencies:
+
+    $ rake -P
+
+
+# System Requirements
+
+In order to fully build this project you'll need the following tools:
+
+- __[Alan SDK](#alan-sdk)__ (command line)
+- __[Ruby 3](#ruby)__ — and the following Ruby gems:
+    + __[Rake](#rake)__
+
+## Alan SDK
+
+You'll need the latest Beta version of the command line [Alan SDK]  (Software Development Kit), and make sure that both the Alan compiler and the ARun interpreter binaries are reachable through the system PATH.
+
+> **NOTE** — We're working on an alternative solution that will delegate to Rake the task of downloading and updating the required SDK binaries (according to OS) and add them to a dedicated repository folder (ignore by Git) in order to make this project independent from any global SDK setup.
+> In the meantime, you'll need to setup the SDK binaries manually.
+
+## Ruby
+
+You'll need Ruby version 3.
+
+Windows users should use [RubyInstaller], which can also be installed as a [Chocolatey Ruby package] using the [Chocolatey GUI] package manager, which simplifies keeping it always up to date.
+
+## Rake
+
+Some Ruby versions natively ship with Rake (e.g. [Ruby for Windows]), if not just install it via:
+
+    $ gem install rake
 
 
 # License
@@ -120,6 +185,14 @@ More details about the license terms, authors and credits of each third party as
 
 [Library v1]: https://www.alanif.se/download-alan-v3/download-library/library-v1-00 "Go to the download page of the Alan Library v1"
 [Standard Library v2]: https://github.com/AnssiR66/AlanStdLib "Visit the Standard Library v2 repository on GitHub"
+
+<!-- third party tools -->
+
+[Chocolatey GUI]: https://community.chocolatey.org/packages/ChocolateyGUI
+[Chocolatey Ruby package]: https://community.chocolatey.org/packages/ruby
+[Rake]: https://ruby.github.io/rake/ "Visit Rake website"
+[Ruby for Windows]: https://rubyinstaller.org
+[RubyInstaller]: https://rubyinstaller.org
 
 <!-- project files and folders -->
 
