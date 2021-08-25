@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.1.0 | 2021/08/23 | by Tristano Ajmone
+=begin "Rakefile" v0.1.0 | 2021/08/25 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -43,7 +43,6 @@ repo_root = pwd
 rule ".a3c" => ".alan" do |t|
   # We assume consistent naming convention for libraries folder:
   #   /alan_<en|es|it|sv>/Foundation/
-  cd repo_root
   lib_dir = File::expand_path(t.source.pathmap("%1d") << "/Foundation")
   adv_src = t.source.pathmap("%f")
   adv_dir = t.source.pathmap("%d")
@@ -54,7 +53,7 @@ rule ".a3c" => ".alan" do |t|
 
   cd "#{repo_root}/#{adv_dir}"
   sh "alan -include #{lib_dir} #{adv_src} 1>#{devnull}"
-  cd repo_root
+  cd repo_root, verbose: false
 end
 
 
@@ -63,38 +62,44 @@ end
 
 task :default => %w[lib:all]
 
+## Phony
+########
+# Exclude Swedish folder leftovers:
+# its development has moved to dev branch!
 require 'rake/phony'
+FileList['alan_??/**/*.i'].exclude('alan_sv/**/*.i').each do |alan_mod|
+  file alan_mod => :phony
+end
+
+## Clean & Clobber
+##################
 require 'rake/clean'
-# Delete generated target files.
 CLOBBER.include('**/*.a3c')
 CLOBBER.include('**/*.a3t')
 
 
 namespace "lib" do
 
-  desc "Test all libraries."
+  desc "Build all libraries"
   task all: %w[lib:en:all lib:es:all]
 
   ## ENGLISH LIBRARY
   ##################
   namespace "en" do
 
-    LIB_EN_SOURCES = FileList['alan_en/Foundation/*.i']
-    LIB_EN_SOURCES.each do |lib_src|
-      file 'alan_en/cloak/cloakv3.a3c' => lib_src
-      file lib_src => :phony
-    end
-
-    desc "Test English library."
+    desc "English library"
     task :all => :cloak
+
+    LIB_EN_SOURCES = FileList['alan_en/Foundation/*.i']
 
     ## Cloak of Darkness
     ####################
-    desc "Cloak of Darkness."
+    desc "Cloak of Darkness"
     task :cloak => 'alan_en/cloak/cloakv3.a3c'
 
     # Cloak of Darkness: Compile
     file 'alan_en/cloak/cloakv3.a3c' => ['alan_en/cloak/cloakv3.alan']
+    file 'alan_en/cloak/cloakv3.a3c' => LIB_EN_SOURCES
 
     # Cloak of Darkness: Tests
     CLOAK_EN_A3S = FileList['alan_en/cloak/*.a3s']
@@ -116,7 +121,7 @@ namespace "lib" do
         unless "cloakv3.a3t" == a3t
           mv("cloakv3.a3t", a3t, force: true)
         end
-        cd repo_root
+        cd repo_root, verbose: false
       end
     end
 
@@ -126,22 +131,19 @@ namespace "lib" do
   ##################
   namespace "es" do
 
-    LIB_ES_SOURCES = FileList['alan_es/Foundation/*.i']
-    LIB_ES_SOURCES.each do |lib_src|
-      file 'alan_es/vampiro/vampiro.a3c' => lib_src
-      file lib_src => :phony
-    end
-
-    desc "Test Spanish library."
+    desc "Spanish library"
     task :all => :vampiro
+
+    LIB_ES_SOURCES = FileList['alan_es/Foundation/*.i']
 
     ## Vampiro
     ##########
-    desc "Vampiro."
+    desc "Vampiro"
     task :vampiro => 'alan_es/vampiro/vampiro.a3c'
 
     # Vampiro: Compile
     file 'alan_es/vampiro/vampiro.a3c' => ['alan_es/vampiro/vampiro.alan']
+    file 'alan_es/vampiro/vampiro.a3c' => LIB_ES_SOURCES
 
     # Vampiro: Tests
     VAMPIRO_A3S = FileList['alan_es/vampiro/*.a3s']
@@ -163,7 +165,7 @@ namespace "lib" do
         unless "vampiro.a3t" == a3t
           mv "vampiro.a3t", "#{a3t}", force: true
         end
-        cd repo_root
+        cd repo_root, verbose: false
       end
     end
 
