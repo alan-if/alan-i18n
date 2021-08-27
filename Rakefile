@@ -62,14 +62,6 @@ end
 
 task :default => %w[lib:all]
 
-## Phony
-########
-# Exclude Swedish folder leftovers:
-# its development has moved to dev branch!
-require 'rake/phony'
-FileList['alan_??/**/*.i'].exclude('alan_sv/**/*.i').each do |alan_mod|
-  file alan_mod => :phony
-end
 
 ## Clean & Clobber
 ##################
@@ -106,7 +98,7 @@ namespace "lib" do
     CLOAK_EN_A3T = CLOAK_EN_A3S.ext('.a3t')
     CLOAK_EN_A3T.zip(CLOAK_EN_A3S).each do |transcript, solution|
       task :cloak => transcript
-      file solution => 'alan_en/cloak/cloakv3.a3c'
+      file transcript => 'alan_en/cloak/cloakv3.a3c'
       file transcript => solution do
         adv_dir = transcript.pathmap("%d")
         a3t = transcript.pathmap("%f")
@@ -150,7 +142,7 @@ namespace "lib" do
     VAMPIRO_A3T = VAMPIRO_A3S.ext('.a3t')
     VAMPIRO_A3T.zip(VAMPIRO_A3S).each do |transcript, solution|
       task :vampiro => transcript
-      file solution => 'alan_es/vampiro/vampiro.a3c'
+      file transcript => 'alan_es/vampiro/vampiro.a3c'
       file transcript => solution do
         adv_dir = transcript.pathmap("%d")
         a3t = transcript.pathmap("%f")
