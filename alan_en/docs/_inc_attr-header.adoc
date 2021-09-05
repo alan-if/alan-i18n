@@ -1,0 +1,15 @@
+// Commonly Shared Header Attributes
+:lang: en
+// Sections:
+:idprefix:
+:sectanchors:
+// Cross References:
+:xrefstyle: full
+:chapter-refsig: Ch.
+:section-refsig: Sec.
+:appendix-refsig: App.
+// Misc Settings:
+:experimental: true
+:icons: font
+:linkattrs: true
+:reproducible: true

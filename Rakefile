@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.2.0 | 2021/08/31 | by Tristano Ajmone
+=begin "Rakefile" v0.2.1 | 2021/09/05 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -35,7 +35,24 @@ else
   $devnull = "/dev/null"
 end
 
-# Rake Code Begin Here ...
+def create_asciidoc_tasks_from_folder(target_task, target_folder, dependencies)
+  adoc_sources = FileList["#{target_folder}/*.asciidoc"].each do |adoc_fpath|
+    doc_src = adoc_fpath.pathmap("%f")
+    html_fpath = adoc_fpath.ext('.html')
+    task target_task => html_fpath
+    file html_fpath => adoc_fpath
+    file html_fpath => dependencies
+    file html_fpath do
+      hstr = "## Converting Document: #{adoc_fpath}"
+      puts "\n#{hstr}"
+      puts '#' * hstr.length
+
+      cd "#{$repo_root}/#{target_folder}"
+      sh "asciidoctor -wt #{doc_src}"
+      cd $repo_root, verbose: false
+    end
+  end
+end
 
 def create_transcripting_tasks_from_folder(target_task, target_folder, dependencies)
   # -----------------------------------------------------------------------
@@ -129,7 +146,7 @@ namespace "lib" do
   namespace "en" do
 
     desc "English library"
-    task :all => :cloak
+    task :all => [:cloak, :docs]
 
     LIB_EN_SOURCES = FileList['alan_en/Foundation/*.i']
 
@@ -139,6 +156,12 @@ namespace "lib" do
     task :cloak
     create_transcripting_tasks_from_folder(:cloak,'alan_en/cloak', LIB_EN_SOURCES)
 
+    ## Documentation
+    ################
+    desc "English documentation"
+    task :docs
+    ADOC_DEPS = FileList['alan_en/docs/*.adoc']
+    create_asciidoc_tasks_from_folder(:docs,'alan_en/docs', ADOC_DEPS)
   end # lib:en:
 
   ## SPANISH LIBRARY

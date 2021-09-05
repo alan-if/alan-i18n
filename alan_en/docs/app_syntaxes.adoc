@@ -1,0 +1,84 @@
+[appendix]
+= Verbs Syntaxes
+
+The following lookup table can be used as a quick reference to check the library defined verbs, their identifiers and syntaxes.
+
+
+[%autowidth]
+[cols="2*<m,<d"]
+|===================
+| verb        | syntax                         | module
+
+| again       | again                          | meta_session.i
+| ask         | ask (act) about (topic)!       | talk.i
+| attack      | attack (act)                   | attack.i
+| attack_with | attack (act) 'with' (obj)      | attack.i
+| brief       | brief                          | meta_brief.i
+| close       | close (obj)                    | open.i
+| close_with  | close (obj1) 'with' (obj2)     | open.i
+| credits     | credits                        | meta_help.i
+| drop        | drop (obj)*                    | take.i
+| eat         | eat (obj)                      | eat.i
+| examine     | 'look' 'at' (obj)*             | examine.i
+| examine     | examine (obj)*                 | examine.i
+| give        | 'give' (obj) 'to' (recip)      | give.i
+| help        | help                           | meta_help.i
+| hint        | hint                           | meta_help.i
+| invent      | invent                         | invent.i
+| jump_on     | jump 'on' (obj)                | jump.i
+| kiss        | kiss (obj)                     | kiss.i
+| knock       | knock                          | knock.i
+| knock_on    | knock 'on' (obj)               | knock.i
+| listen      | listen                         | listen.i
+| listen_to   | listen 'to' (obj)              | listen.i
+| lock        | lock (obj)                     | lock.i
+| lock_with   | lock (obj) 'with' (key)        | lock.i
+| look        | 'look'                         | look.i
+| look_in     | 'look' 'in' (obj)              | examine.i
+| open        | open (obj)                     | open.i
+| open_with   | open (obj1) 'with' (obj2)      | open.i
+| pick_up1    | pick up (obj)*                 | take.i
+| push        | push (obj)                     | push.i
+| push_with   | push (obj1) 'with' (obj2)      | push.i
+| put         | put (obj)*                     | put.i
+| put_down1   | put (obj)* down                | take.i
+| put_down2   | put down (obj)*                | take.i
+| put_in      | put (obj1) 'in' (obj2)         | put.i
+| put_near    | put (obj1) 'near' (obj2)       | put.i
+| quit        | 'quit'                         | meta_session.i
+| read        | read (obj)                     | read.i
+| remove      | 'remove' (obj)                 | wear.i
+| restart     | 'restart'                      | meta_session.i
+| restore     | 'restore'                      | meta_session.i
+| save        | 'save'                         | meta_session.i
+| say_to      | 'say' (topic)! 'to' (act)      | talk.i
+| say_word    | 'say' (topic)!                 | talk.i
+| score       | 'score'                        | meta_session.i
+| search      | search (obj)                   | examine.i
+| shoot       | shoot (obj)                    | attack.i
+| shoot_at    | shoot (obj) 'at' (act)         | attack.i
+| shout       | shout                          | talk.i
+| smell       | smell (obj)                    | smell.i
+| smell0      | smell                          | smell.i
+| take        | take (obj)*                    | take.i
+| take_from   | 'take' (obj) 'from' (holder)   | take.i
+| talk_to     | talk 'to' (act) about (topic)! | talk.i
+| talk_to_a   | talk 'to' (act)                | talk.i
+| throw       | throw (obj)*                   | throw.i
+| throw_at    | throw (obj1) 'at' (obj2)       | throw.i
+| throw_in    | throw (obj1) 'in' (obj2)       | throw.i
+| touch       | touch (obj)                    | touch.i
+| turn_off1   | turn off (obj)                 | turn.i
+| turn_on1    | turn 'on' (obj)                | turn.i
+| undress     | undress                        | wear.i
+| unlock      | unlock (obj)                   | lock.i
+| unlock_with | unlock (obj) 'with' (key)      | lock.i
+| verbose     | verbose                        | meta_brief.i
+| wait        | 'wait'                         | wait.i
+| wear        | wear (obj)                     | wear.i
+
+|===================
+
+
+NOTE: In the *verb* column we've removed any enclosing single quotes from verb identifiers that clash with reserved keywords, to simplify alphabetical sorting and lookup operation.
+

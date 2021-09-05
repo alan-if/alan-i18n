@@ -55,6 +55,9 @@
 
 ## Documentation
 ################
+*.adoc       text
+*.asc        text
+*.asciidoc   text
 *.md         text
 *.odt        binary
 *.txt        text
