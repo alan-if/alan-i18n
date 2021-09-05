@@ -17,12 +17,12 @@ Synonyms
   x, inspect, 'check' = examine.
 
 Syntax
-  examine = examine (obj) *
+  examine = examine (obj)*
     Where obj IsA thing
       else "You can't examine that!"
 
 Syntax
-  examine = 'look' 'at' (obj) *.
+  examine = 'look' 'at' (obj)*.
 
 Add to every thing
   Verb examine
@@ -35,6 +35,59 @@ Add to every thing
       End if.
   End verb.
 End add.
+
+Add to every actor
+  Verb examine
+    Does after
+      If this <> hero
+        then
+          -- ------------------
+          -- List carried items
+          -- ------------------
+          -- Don't say anything if the actor is not carrying anything.
+          Set temp:cnt to count directly in this, is not worn.
+          If  temp:cnt <> 0
+            then "$+1"
+              If this is not plural
+                then "is"
+                ELSE "are"
+              End if. "carrying"
+              For each carried_item directly in this, is not worn
+                do
+                  Say an carried_item.
+                  Decrease temp:cnt.
+                  Depending on temp:cnt
+                    = 1 then "and"
+                    = 0 then "."
+                    else ","
+                  End depend.
+              End for.
+          End if.
+          -- ------------------------
+          -- List worn clothing items
+          -- ------------------------
+          -- Don't say anything if the actor is not wearing anything.
+          Set temp:cnt to count directly in this, is worn.
+          If  temp:cnt <> 0
+            then "$+1"
+              If this is not plural
+                then "is"
+                ELSE "are"
+              End if. "wearing"
+              For each worn_item directly in this, is worn
+                do
+                  Say an worn_item.
+                  Decrease temp:cnt.
+                  Depending on temp:cnt
+                    = 1 then "and"
+                    = 0 then "."
+                    ELSE ","
+                  End depend.
+              End for.
+          End if.
+      End if.
+  End verb examine.
+End add to actor.
 
 ----
 

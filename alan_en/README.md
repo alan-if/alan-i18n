@@ -105,7 +105,7 @@ The __ALAN Foundation Library__ is released under the terms of the [Artistic Lic
 
 <!-- badges -->
 
-[lib badge]: https://img.shields.io/badge/Foundation%20Lib%20EN-0.1.2-yellow "ALAN Foundation Library version"
+[lib badge]: https://img.shields.io/badge/Foundation%20Lib%20EN-0.2.0-yellow "ALAN Foundation Library version"
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue

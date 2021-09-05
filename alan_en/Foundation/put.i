@@ -4,7 +4,7 @@ Synonyms
   place = put.
 
 Syntax
-  put = put (obj) *
+  put = put (obj)*
     Where obj IsA object
       else "You can't put that anywhere."
 
@@ -14,6 +14,9 @@ Add to every object
       else "You haven't got that."
     Does
       Locate obj here.
+      -- In case item was being worn:
+      Set wearer of obj to nobody.
+      Make obj not worn.
       "Dropped."
   End verb.
 End add.
@@ -38,6 +41,9 @@ Add to every object
         else "You can't put" say obj1. "into yourself!"
       Does
         Locate obj1 in obj2.
+        -- In case item was being worn:
+        Set wearer of obj1 to nobody.
+        Make obj1 not worn.
         "Done."
     End verb.
 End add.
@@ -80,5 +86,8 @@ Add to every object
       Does
         "Naaah. I'd rather just put" say the obj1. "down here."
         Locate obj1 at obj2.
+        -- In case item was being worn:
+        Set wearer of obj1 to nobody.
+        Make obj1 not worn.
   End verb.
 End add.

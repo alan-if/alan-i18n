@@ -19,6 +19,9 @@ Add to every object
       else
         "You give" say the obj. "to" say the recip. "."
         Locate obj in recip.
+        -- In case item was being worn:
+        Set wearer of obj to nobody.
+        Make obj not worn.
       End if.
   End verb.
 End add.

@@ -66,12 +66,3 @@ Meta verb again
      (unless you're using the MSDOS interpreter in which case you can
      press the F3 key to repeat your last command.)"
 End verb.
-
-
--- Syntax
---   undo = undo.
-
--- Meta verb undo
---   Does
---     "Unfortunately you cannot 'undo' commands in this game."
--- End verb.

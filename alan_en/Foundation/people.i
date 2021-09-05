@@ -20,3 +20,7 @@ End every.
 Every female IsA person
   Pronoun her.
 End every.
+
+The nobody IsA actor at nowhere
+  -- Dummy actor used to indicate items not being worn, etc.
+End the.

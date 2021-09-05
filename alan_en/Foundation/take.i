@@ -18,7 +18,7 @@ Synonyms
 
 
 Syntax
-  take = take (obj) *
+  take = take (obj)*
     Where obj IsA object
       else "You can't take that with you!"
 
@@ -36,14 +36,22 @@ Add to every object
   Verb take, pick_up1, pick_up2
     Check obj is takeable
       else "You can't take that!"
-    And obj not in worn
-      else "You've already got that - you're wearing that."
     And obj not in hero
       else "You've already got that."
+            If obj is worn then
+              "You're wearing"
+              If obj is not plural
+                then "it."
+                else "them."
+              End if.
+            End if.
     And weight Of obj <=50
       else "That is too heavy to lift."
     Does
       Locate obj in hero.
+      -- In case item was being worn:
+      Set wearer of obj to nobody.
+      Make obj not worn.
       "Taken."
   End verb.
 End add.
@@ -56,7 +64,7 @@ Syntax
   drop = drop (obj)*.
 
 Syntax
-  put_down1 = put (obj) * down.
+  put_down1 = put (obj)* down.
 
 Syntax
   put_down2 = put down (obj)*.
@@ -67,6 +75,9 @@ Add to every object
       else "You aren't carrying that."
     Does
       Locate obj here.
+      -- In case item was being worn:
+      Set wearer of obj to nobody.
+      Make obj not worn.
       "Dropped."
   End verb.
 End add.
@@ -93,6 +104,9 @@ Add to every object
           "You don't need to take things from yourself!"
         else
           Locate obj in hero.
+          -- In case item was being worn:
+          Set wearer of obj to nobody.
+          Make obj not worn.
           "You take" say the obj. "."
         End if.
   End verb.

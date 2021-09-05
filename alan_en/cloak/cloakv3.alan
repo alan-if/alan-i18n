@@ -1,6 +1,6 @@
 --==============================================================================
 --------------------------------------------------------------------------------
---* * Cloak of Darkness v2 * * 2021/07/29 | Foundation Lib v0.1.2 | ALAN 3.Beta7
+--* * Cloak of Darkness v2 * * 2021/09/05 | Foundation Lib v0.2.0 | ALAN 3.Beta7
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -224,7 +224,9 @@ Synonyms
 Add to every actor
   Is not hung_cloak.
   Has xDesc "As handsome as ever.".
+End Add.
 
+Add to every location
   Verb examine
     Check current location <> dark_bar
       else Describe dark_warning.
@@ -240,6 +242,6 @@ Start at foyer.
   Style alert.
   "$p$nCloak of Darkness" Style emphasized.
   "$nA basic IF demonstration." Style normal.
-  "$pVersion 2, July 2021. (ALAN 3.0beta7, Foundation Library v0.1.2)"
+  "$pVersion 3, September 2021. (ALAN 3.0beta7, Foundation Library v0.2.0)"
   "$nOriginally implemented by Stephen Griffiths for ALAN 2,
    readapted by the ALAN IF Development Team."

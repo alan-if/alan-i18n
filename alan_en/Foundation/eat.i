@@ -21,6 +21,9 @@ Add to every object
       else "You can't eat that!"
     Does
       Locate obj at nowhere.
+      -- In case item was being worn:
+      Set wearer of obj to nobody.
+      Make obj not worn.
       "You eat" say the obj. "."
   End verb.
 
@@ -29,6 +32,9 @@ Add to every object
       else "That is not drinkable."
     Does
       Locate obj at nowhere.
+      -- In case item was being worn:
+      Set wearer of obj to nobody.
+      Make obj not worn.
       "You drink" say the obj. "."
   End verb.
 End add.

@@ -1,6 +1,6 @@
 --==============================================================================
 --------------------------------------------------------------------------------
--- * *  ALAN Foundation Library English  * *  v0.1.2 | 2021/07/29 | ALAN 3.Beta7
+-- * *  ALAN Foundation Library English  * *  v0.2.0 | 2021/09/05 | ALAN 3.Beta7
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -12,6 +12,8 @@
 -- player character, etc.
 Import 'hero.i'.
 Import 'global.i'.
+Import 'temp.i'. -- temporary variables
+Import 'messages_runtime.i'. -- redefines some run-time MESSAGEs.
 
 -- People, male/female etc.
 Import 'people.i'.

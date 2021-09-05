@@ -13,6 +13,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.0 \(2021/09/05\)](#v020-20210905)
     - [v0.1.2 \(2021/07/29\)](#v012-20210729)
     - [v0.1.1 \(2021/07/29\)](#v011-20210729)
     - [v0.1.0 \(2021/07/24\)](#v010-20210724)
@@ -23,6 +24,61 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 
 # Beta Releases
+
+## v0.2.0 (2021/09/05)
+
+### New Wearing Mechanics
+
+The wearing mechanics have been entirely redesigned, the new system being simpler and less error-prone, also allowing NPCs to wear items:
+
+- Removed the `worn` ENTIY, which is now replaced by two new attributes defined on every `object`:
+    + `wearer` — a reference attribute pointing to the wearing actor or `nobody` (a dummy actor at `nowhere`).
+    + `worn` — a boolean attribute. Also needed because ALAN aggregators only support boolean attributes in filters.
+- The `nobody` actor instance, located at `nowhere`, is defined in `people.i` as a dummy placeholder for the new `wearer` attribute, to indicate that a `wearable` item is unworn if its wearer is the `nobody` instance.
+- The `wear` verb now makes the worn item `is worn` and sets its `wearer to hero`.
+- Verbs that were relying on the `worn` entity have been adapted to the new system:
+    + Verbs `wear`, `remove` and `undress` (in `wear.i`).
+    + Verbs `take`, `pick_up1` and `pick_up2` (in `take.i`).
+    + The `invent` verb (in `invent.i`).
+- Every verb that moves around object must now also make that object unworn by making it `not worn` and setting its `wearer to nobody`. The following verbs were modified accordingly:
+    + `undress` (in `wear.i`)
+    + `eat` (in `eat.i`) — edibles shouldn't be wearable, but you never know in IF.
+    + `drink` (in `eat.i`) — drinkables shouldn't be wearable, but you never know in IF.
+    + `give` (in `give.i`)
+    + `put` (in `put.i`)
+    + `put_in` (in `put.i`)
+    + `put_near`, `put_behind`, `put_on` and `put_under` (in `put.i`)
+    + `take`, `pick_up1` and `pick_up2` (in `take.i`)
+    + `drop`, `put_down1` and `put_down2` (in `take.i`)
+    + `take_from` (in `take.i`)
+    + `throw` (in `throw.i`)
+    + `throw_at` and `throw_to` (in `throw.i`)
+    + `throw_in` (in `throw.i`)
+- The inventory verb (`invent` in `invent.i`) now lists separately carried and worn items, by iterating twice through every item `in hero` and by checking the `worn` attribute status to distinguish between items that are simply carried and those that are being worn.
+- In `examine.i`, and additional definition of the `examine` verb `Does after` is implemented on every actor to list separately carried and worn items, similarly to how inventory works for the Hero.
+
+These new features also required some tweaks here and there:
+
+- In `globals.i`:
+    + Every actor is provided with the `Container` propriety.
+    + The `plural` attribute is now defined on `entity` instead of `thing` to simplify handling run-time MESSAGEs, verb checks and filters.
+        This can also be useful in advanced adventures which need to refer to locations names, which might be singular or plural named.
+- Two new modules have been added to the library:
+    + `temp.i` — defining the `temp` location, on which the `cnt` numeric attribute is defined for storing temporary values needed in some complex library code.
+    + `messages_runtime.i` — redefines run-time messages to add "(being worn)" to each worn item being listed through the `list` statement. Useful in case author need to use `list` without having to replicate the iteration code for producing two separate lists for carried and worn items.
+
+The _Cloak of Darkness_ adventure had to be slightly tweaked in order to keep working with the new changes.
+
+### Drop Implicit Taking
+
+We decided that the Foundation Library will not implement implicit taking in any of its verbs, leaving it instead for end authors to decide whether to provide or not this feature in their adventure, which verbs deserve implicit taking, and how to implement it, according to their specific needs.
+This choice affected a single library verb:
+
+- `wear` (in `wear.i`) — add a CHECK to ensure that the target wearable item is possessed by the Hero; remove implicit taking from verb body.
+
+### Bug Fixes
+
+- `undress` (in `wear.i`) — the verb was implemented on `object` although it's a verb without parameters supposed to execute on `actor` instances; the verb has now been made a global verb.
 
 ## v0.1.2 (2021/07/29)
 

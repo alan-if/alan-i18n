@@ -6,7 +6,7 @@
 -- quotes. The compiler converts all player words to lower case before
 -- entering them in the dictionary.
 
-Add to every thing
+Add to every entity
   Is not plural.
 End add.
 
@@ -14,3 +14,7 @@ Every named_actor IsA actor
   Definite article ""
   Indefinite article ""
 End every.
+
+Add to every actor
+  Container
+End add to actor.

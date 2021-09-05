@@ -1,7 +1,10 @@
 -- "wear.i"
 
+
 Add to every object
   Is not wearable.
+     not worn.
+  Has wearer nobody. -- dummy actor = unworn state. (see people.i)
 End add.
 
 
@@ -16,16 +19,21 @@ Add to every object
   Verb wear
     Check obj is wearable
       else "You can't wear" say the obj. "."
-    And obj not in worn
+    And wearer of obj <> hero
       else "You are already wearing" say the obj. "."
+--  And obj is not worn
+--    else say the wearer of this. "is wearing" say the obj.
     And obj is takeable
       else "You can't pick" say the obj. "up."
+    And obj in hero
+      else "You haven't got" say the obj. "."
     Does
-      If obj not in hero then
-        Locate obj in hero.
-        "(You pick" say the obj. "up.)$n"
-      End if.
-      Locate obj in worn.
+--    If obj not in hero then
+--      Locate obj in hero.
+--      "(You pick" say the obj. "up.)$n"
+--    End if.
+      Set wearer of obj to hero.
+      Make obj worn.
       "You put on" say the obj. "."
   End verb.
 End add.
@@ -40,10 +48,11 @@ Syntax
 
 Add to every object
   Verb 'remove'
-    Check obj in worn
+    Check wearer of obj = hero
       else "You are not wearing" say the obj. "."
     Does
-      Locate obj in hero.
+      Set wearer of obj to nobody.
+      Make obj not worn.
       "You take off" say the obj. "."
   End verb.
 End add.
@@ -51,14 +60,15 @@ End add.
 
 Syntax undress = undress.
 
-Add to every object
-  Verb undress
-    Does
-      If Count in worn, IsA thing > 0 then
-        Empty worn in hero.
-        "You remove all the items you where wearing."
-      else
-        "You're not wearing anything you can remove."
-      End if.
-  End verb.
-End add.
+Verb undress
+  Does
+    If Count in hero, IsA object, is worn > 0 then
+      For each worn_item in hero, IsA object, is worn do
+        Set wearer of worn_item to nobody.
+        make worn_item not worn.
+      End for.
+      "You remove all the items you where wearing."
+    else
+      "You're not wearing anything you can remove."
+    End if.
+End verb.

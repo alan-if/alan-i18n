@@ -4,7 +4,7 @@ Synonyms
   dump, cast = throw.
 
 Syntax
-  throw = throw (obj) *
+  throw = throw (obj)*
     Where obj IsA object
       else "You can only throw objects."
 
@@ -16,6 +16,9 @@ Add to every object
       "You can't throw very far,"
       say the obj. "ends up on the ground."
       Locate obj here.
+      -- In case item was being worn:
+      Set wearer of obj to nobody.
+      Make obj not worn.
   End verb.
 End add.
 
@@ -49,6 +52,9 @@ Add to every object
         Say the obj1. "bounces harmlessly off"
         say the obj2. "and ends up on the ground."
         Locate obj1 here.
+        -- In case item was being worn:
+        Set wearer of obj1 to nobody.
+        Make obj1 not worn.
   End verb.
 End add.
 
@@ -72,6 +78,9 @@ Add to every object
           "You can't put" say the obj1. "into yourself!"
       Does
         Locate obj1 in obj2.
+        -- In case item was being worn:
+        Set wearer of obj1 to nobody.
+        Make obj1 not worn.
         "Done."
   End verb.
 End add.

@@ -1,7 +1,7 @@
 
 # ALAN Foundation Library Index
 
-Version 0.1.1 (2021/07/29).
+Version 0.2.0 (2021/09/05).
 
 
 There are two indices here.
@@ -20,7 +20,6 @@ Please read the [README] and [NOTES] files for information about using the libra
 
 - [Alphabetical order:](#alphabetical-order)
     - [ACTOR](#actor)
-    - [CONTAINER](#container)
     - [LOCATION](#location)
     - [DEFAULT ATTRIBUTES](#default-attributes)
     - [OBJECT ATTRIBUTES](#object-attributes)
@@ -34,7 +33,6 @@ Please read the [README] and [NOTES] files for information about using the libra
     - [SYNONYMS](#synonyms-1)
     - [SYNTAX](#syntax-1)
     - [ACTOR](#actor-1)
-    - [CONTAINER](#container-1)
     - [LOCATION](#location-1)
 
 <!-- /MarkdownTOC -->
@@ -46,21 +44,18 @@ Please read the [README] and [NOTES] files for information about using the libra
 
 ## ACTOR
 
-| ACTOR  |            |
-|--------|------------|
-| `hero` | [global.i] |
+|  ACTOR   |            |
+|----------|------------|
+| `hero`   | [global.i] |
+| `nobody` | [people.i] |
 
-## CONTAINER
-
-| CONTAINER |            |
-|-----------|------------|
-| `worn`    | [invent.i] |
 
 ## LOCATION
 
 |  LOCATION |             |
 |-----------|-------------|
 | `nowhere` | [nowhere.i] |
+| `temp`    | [temp.i]    |
 
 ## DEFAULT ATTRIBUTES
 
@@ -73,26 +68,29 @@ Please read the [README] and [NOTES] files for information about using the libra
 | `NOT plural`       | [global.i]  |
 | `pushable`         | [push.i]    |
 | `searchable`       | [examine.i] |
-| `NOT Shootable`    | [attack.i]  |
+| `NOT shootable`    | [attack.i]  |
 | `touchable`        | [touch.i]   |
+| `xDesc ""`         | [examine.i] |
 | `weight 5`         | [invent.i]  |
 
 ## OBJECT ATTRIBUTES
 
-| OBJECT ATTRIBUTES |            |
-|-------------------|------------|
-| `NOT closeable`   | [open.i]   |
-| `closed`          | [open.i]   |
-| `NOT drinkable`   | [eat.i]    |
-| `NOT edible`      | [eat.i]    |
-| `NOT lockable`    | [lock.i]   |
-| `locked`          | [lock.i]   |
-| `NOT on`          | [turn.i]   |
-| `NOT readable`    | [read.i]   |
-| `NOT switchable`  | [turn.i]   |
-| `takeable`        | [take.i]   |
-| `NOT Weapon`      | [attack.i] |
-| `NOT wearable`    | [wear.i]   |
+|  OBJECT ATTRIBUTES  |            |
+|---------------------|------------|
+| `NOT closeable`     | [open.i]   |
+| `closed`            | [open.i]   |
+| `NOT drinkable`     | [eat.i]    |
+| `NOT edible`        | [eat.i]    |
+| `NOT lockable`      | [lock.i]   |
+| `locked`            | [lock.i]   |
+| `NOT on`            | [turn.i]   |
+| `NOT readable`      | [read.i]   |
+| `NOT switchable`    | [turn.i]   |
+| `takeable`          | [take.i]   |
+| `NOT weapon`        | [attack.i] |
+| `NOT wearable`      | [wear.i]   |
+| `HAS wearer nobody` | [wear.i]   |
+| `NOT worn`          | [wear.i]   |
 
 
 ## ACTOR ATTRIBUTES
@@ -272,9 +270,10 @@ Please read the [README] and [NOTES] files for information about using the libra
 
 | DEFAULT ATTRIBUTES |             |
 |--------------------|-------------|
-| `NOT Shootable`    | [attack.i]  |
+| `NOT shootable`    | [attack.i]  |
 | `examinable`       | [examine.i] |
 | `searchable`       | [examine.i] |
+| `xDesc ""`         | [examine.i] |
 | `NOT named`        | [global.i]  |
 | `NOT plural`       | [global.i]  |
 | `pushable`         | [push.i]    |
@@ -285,20 +284,22 @@ Please read the [README] and [NOTES] files for information about using the libra
 
 ## OBJECT ATTRIBUTES
 
-| OBJECT ATTRIBUTES |            |
-|-------------------|------------|
-| `NOT Weapon`      | [attack.i] |
-| `NOT edible`      | [eat.i]    |
-| `NOT drinkable`   | [eat.i]    |
-| `NOT lockable`    | [lock.i]   |
-| `locked`          | [lock.i]   |
-| `NOT closeable`   | [open.i]   |
-| `closed`          | [open.i]   |
-| `NOT readable`    | [read.i]   |
-| `takeable`        | [take.i]   |
-| `NOT on`          | [turn.i]   |
-| `NOT switchable`  | [turn.i]   |
-| `NOT wearable`    | [wear.i]   |
+|  OBJECT ATTRIBUTES  |            |
+|---------------------|------------|
+| `NOT weapon`        | [attack.i] |
+| `NOT edible`        | [eat.i]    |
+| `NOT drinkable`     | [eat.i]    |
+| `NOT lockable`      | [lock.i]   |
+| `locked`            | [lock.i]   |
+| `NOT closeable`     | [open.i]   |
+| `closed`            | [open.i]   |
+| `NOT readable`      | [read.i]   |
+| `takeable`          | [take.i]   |
+| `NOT on`            | [turn.i]   |
+| `NOT switchable`    | [turn.i]   |
+| `NOT wearable`      | [wear.i]   |
+| `HAS wearer nobody` | [wear.i]   |
+| `NOT worn`          | [wear.i]   |
 
 
 ## ACTOR ATTRIBUTES
@@ -455,22 +456,18 @@ Please read the [README] and [NOTES] files for information about using the libra
 
 ## ACTOR
 
-| ACTOR  |            |
-|--------|------------|
-| `hero` | [global.i] |
+|  ACTOR   |            |
+|----------|------------|
+| `hero`   | [global.i] |
+| `nobody` | [people.i] |
 
-## CONTAINER
-
-|  CONTAINER  |            |
-|-------------|------------|
-| `inventory` | [invent.i] |
-| `worn`      | [invent.i] |
 
 ## LOCATION
 
 |  LOCATION |             |
 |-----------|-------------|
 | `nowhere` | [nowhere.i] |
+| `temp`    | [temp.i]    |
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
@@ -508,6 +505,7 @@ Please read the [README] and [NOTES] files for information about using the libra
 [Library.i]: ./Library.i "View source file"
 [take.i]: ./take.i "View source file"
 [talk.i]: ./talk.i "View source file"
+[temp.i]: ./temp.i "View source file"
 [throw.i]: ./throw.i "View source file"
 [touch.i]: ./touch.i "View source file"
 [turn.i]: ./turn.i "View source file"
