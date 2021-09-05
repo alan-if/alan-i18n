@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.1.0 | 2021/08/25 | by Tristano Ajmone
+=begin "Rakefile" v0.2.0 | 2021/08/31 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -13,7 +13,7 @@ further improvements.
   so if you 'Rake clobber' you'll have to 'Rake' in order not to loose tracked
   files. Namespaced clobbering would improve working on specific locales.
 * Beware that CDing to a directory is a persistent action affecting all future
-  'sh' commands -- always remember to 'cd repo_root' before issuing shell
+  'sh' commands -- always remember to 'cd $repo_root' before issuing shell
   commands from Rake, or manipulating task paths (working dir is affected!).
 * There's quite a lot of code redundancy which should be optimized via Ruby
   functions (e.g. transcripts tasks DO blocks).
@@ -25,17 +25,66 @@ further improvements.
 ================================================================================
 =end
 
+$repo_root = pwd
+
 # Define OS-specific name of Null device, for redirection
 case RUBY_PLATFORM
 when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
-  devnull = "NUL"
+  $devnull = "NUL"
 else
-  devnull = "/dev/null"
+  $devnull = "/dev/null"
 end
 
 # Rake Code Begin Here ...
 
-repo_root = pwd
+def create_transcripting_tasks_from_folder(target_task, target_folder, dependencies)
+  # -----------------------------------------------------------------------
+  # Process the target folder adding to the target task all the storyfiles
+  # and transcripts as dependencies, and create all the required file tasks
+  # dependencies. Can handle multiple adventures in a same folder, in which
+  # case solutions will be associate to each adventure according to its
+  # base filename: "<advname>*.sol"
+  # -----------------------------------------------------------------------
+  alan_sources = FileList["#{target_folder}/*.alan"]
+  alan_sources.each do |alan_src|
+    storyfile = alan_src.ext('.a3c')
+    task target_task => storyfile
+    file storyfile => alan_src
+    file storyfile => dependencies
+    if alan_sources.count() == 1
+      # Single adventure: all solutions apply to it.
+      solutions = FileList["#{target_folder}/*.a3s"]
+    else
+      # There are multiple adventures in a same folder!
+      # Associate solutions using "<advname>*.sol" pattern.
+      basename = storyfile.pathmap("%n")
+      solutions = FileList["#{target_folder}/#{basename}*.a3s"]
+    end
+    solutions.each do |solution|
+      transcript = solution.ext('.a3t')
+      task target_task => transcript
+      file transcript => [solution, storyfile] do |transcript|
+        a3t = transcript.name.pathmap("%f")
+        a3s = solution.pathmap("%f")
+        a3c = storyfile.pathmap("%f")
+        a3t_raw = a3c.ext('.a3t')
+
+        hstr = "## Generating Transcript: #{a3t}"
+        puts "\n#{hstr}"
+        puts '#' * hstr.length
+
+        cd "#{$repo_root}/#{target_folder}"
+        sh "arun -r -l #{a3c} < #{a3s} 1>#{$devnull}"
+        unless a3t_raw == a3t
+          mv(a3t_raw, a3t, force: true)
+        end
+        cd $repo_root, verbose: false
+      end
+    end
+  end
+end
+
+# Rake Code Begin Here ...
 
 ## Rules
 ########
@@ -51,9 +100,9 @@ rule ".a3c" => ".alan" do |t|
   puts "\n#{hstr}"
   puts '#' * hstr.length
 
-  cd "#{repo_root}/#{adv_dir}"
-  sh "alan -include #{lib_dir} #{adv_src} 1>#{devnull}"
-  cd repo_root, verbose: false
+  cd "#{$repo_root}/#{adv_dir}"
+  sh "alan -include #{lib_dir} #{adv_src} 1>#{$devnull}"
+  cd $repo_root, verbose: false
 end
 
 
@@ -87,35 +136,8 @@ namespace "lib" do
     ## Cloak of Darkness
     ####################
     desc "Cloak of Darkness"
-    task :cloak => 'alan_en/cloak/cloakv3.a3c'
-
-    # Cloak of Darkness: Compile
-    file 'alan_en/cloak/cloakv3.a3c' => ['alan_en/cloak/cloakv3.alan']
-    file 'alan_en/cloak/cloakv3.a3c' => LIB_EN_SOURCES
-
-    # Cloak of Darkness: Tests
-    CLOAK_EN_A3S = FileList['alan_en/cloak/*.a3s']
-    CLOAK_EN_A3T = CLOAK_EN_A3S.ext('.a3t')
-    CLOAK_EN_A3T.zip(CLOAK_EN_A3S).each do |transcript, solution|
-      task :cloak => transcript
-      file transcript => 'alan_en/cloak/cloakv3.a3c'
-      file transcript => solution do
-        adv_dir = transcript.pathmap("%d")
-        a3t = transcript.pathmap("%f")
-        a3s = solution.pathmap("%f")
-
-        hstr = "## Generating Cloak Transcript: #{a3t}"
-        puts "\n#{hstr}"
-        puts '#' * hstr.length
-
-        cd "#{repo_root}/#{adv_dir}"
-        sh "arun -r -l cloakv3.a3c < #{a3s} 1>#{devnull}"
-        unless "cloakv3.a3t" == a3t
-          mv("cloakv3.a3t", a3t, force: true)
-        end
-        cd repo_root, verbose: false
-      end
-    end
+    task :cloak
+    create_transcripting_tasks_from_folder(:cloak,'alan_en/cloak', LIB_EN_SOURCES)
 
   end # lib:en:
 
@@ -131,35 +153,8 @@ namespace "lib" do
     ## Vampiro
     ##########
     desc "Vampiro"
-    task :vampiro => 'alan_es/vampiro/vampiro.a3c'
-
-    # Vampiro: Compile
-    file 'alan_es/vampiro/vampiro.a3c' => ['alan_es/vampiro/vampiro.alan']
-    file 'alan_es/vampiro/vampiro.a3c' => LIB_ES_SOURCES
-
-    # Vampiro: Tests
-    VAMPIRO_A3S = FileList['alan_es/vampiro/*.a3s']
-    VAMPIRO_A3T = VAMPIRO_A3S.ext('.a3t')
-    VAMPIRO_A3T.zip(VAMPIRO_A3S).each do |transcript, solution|
-      task :vampiro => transcript
-      file transcript => 'alan_es/vampiro/vampiro.a3c'
-      file transcript => solution do
-        adv_dir = transcript.pathmap("%d")
-        a3t = transcript.pathmap("%f")
-        a3s = solution.pathmap("%f")
-
-        hstr = "## Generating Vampiro Transcript: #{a3t}"
-        puts "\n#{hstr}"
-        puts '#' * hstr.length
-
-        cd "#{repo_root}/#{adv_dir}"
-        sh "arun -r -l vampiro.a3c < #{a3s} 1>#{devnull}"
-        unless "vampiro.a3t" == a3t
-          mv "vampiro.a3t", "#{a3t}", force: true
-        end
-        cd repo_root, verbose: false
-      end
-    end
+    task :vampiro
+    create_transcripting_tasks_from_folder(:vampiro,'alan_es/vampiro', LIB_ES_SOURCES)
 
   end # lib:es:
 end   # lib:
