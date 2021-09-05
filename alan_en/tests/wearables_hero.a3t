@@ -1,0 +1,106 @@
+
+Use the RESET command to restore all wearable items to their original
+wearer or location.
+
+
+Emporium Alani
+There is a clerk here. There is a woman here.
+
+> ; ==============================================================================
+> ;                             Test Wearables on Hero
+> ; ==============================================================================
+> ; Inventory should always list separately carried and worn items.
+> i
+You are empty-handed. You are wearing a polo and a pair of jeans.
+
+> x polo
+It's your favourite polo shirt, plain white with a crocodile logo on the
+left side of your chest.
+
+> x jeans
+Just a pair of worn out jeans.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB REMOVE
+> ; ------------------------------------------------------------------------------
+> ; REMOVE WORN ITEM:
+> remove polo
+You take off the polo.
+
+> ; REMOVE CARRIED ITEM:
+> remove polo
+You are not wearing the polo.
+
+> i
+You are carrying a polo. You are wearing a pair of jeans.
+
+> drop all
+(polo) Dropped.
+
+(pair of jeans) Dropped.
+
+> i
+You are empty-handed.
+
+> ; REMOVE UNOWNED ITEM:
+> remove polo
+You are not wearing the polo.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB WEAR
+> ; ------------------------------------------------------------------------------
+> i
+You are empty-handed.
+
+> ; WEAR ALL (UNSUPPORTED):
+> wear all
+You can't refer to multiple objects with 'wear'.
+
+> ; WEAR UNOWNED ITEM (IMPLICIT TAKING UNSUPPORTED):
+> wear polo
+You haven't got the polo.
+
+> i
+You are empty-handed.
+
+> ; WEAR WORN ITEM:
+> take polo
+Taken.
+
+> wear polo
+You put on the polo.
+
+> wear polo
+You are already wearing the polo.
+
+> ; WEAR CARRIED ITEM:
+> take jeans
+Taken.
+
+> i
+You are carrying a pair of jeans. You are wearing a polo.
+
+> wear jeans
+You put on the pair of jeans.
+
+> wear jeans
+You are already wearing the pair of jeans.
+
+> i
+You are empty-handed. You are wearing a polo and a pair of jeans.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB UNDRESS
+> ; ------------------------------------------------------------------------------
+> undress
+You remove all the items you where wearing.
+
+> undress
+You're not wearing anything you can remove.
+
+> i
+You are carrying a polo and a pair of jeans.
+
+> 
+
+Do you want to UNDO, RESTART, RESTORE or QUIT ? 

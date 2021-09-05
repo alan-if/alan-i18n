@@ -34,6 +34,7 @@ Based on the __[ALAN Library v0.6.2]__ (November, 2007), by Göran Forslund, Tho
     + [`COPYING`][COPYING] — [Artistic License 2.0].
 - [`/cloak/`][cloak] — _Cloak of Darkness_ sample adventure, by Stephen Griffiths.
 - [`/docs/`][docs] — Foundation Library documentation sources (AsciiDoc).
+- [`/tests/`][tests] — English Test suite.
 
 
 # About
@@ -115,6 +116,7 @@ The __ALAN Foundation Library__ is released under the terms of the [Artistic Lic
 [Foundation]: ./Foundation/ "Navigate to English Alan IF library folder"
 [cloak]: ./cloak/ "Navigate to 'Cloak of Darkness' folder"
 [docs]: ./docs/ "Navigate to documentation folder"
+[tests]: ./tests/ "Navigate to tests folder"
 
 [CHANGELOG.md]: ./Foundation/CHANGELOG.md "Read CHANGELOG document"
 [COPYING]: ./Foundation/COPYING "View Artistic License 2.0"

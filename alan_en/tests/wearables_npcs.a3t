@@ -1,0 +1,47 @@
+
+Use the RESET command to restore all wearable items to their original
+wearer or location.
+
+
+Emporium Alani
+There is a clerk here. There is a woman here.
+
+> ; ==============================================================================
+> ;                             Test Wearables on NPCs
+> ; ==============================================================================
+> ; The Foundation Library allows 'wearable' items to be worn not only by the Hero
+> ; but also by any other actor.
+> ; ------------------------------------------------------------------------------
+> ; NPCs Inventory
+> ; ------------------------------------------------------------------------------
+> ; Examining an actor lists worn items in a separate list form carried ones.
+> x clerk
+He's here to assist customers buying clothes. The clerk is wearing a 
+elegant suit.
+
+> ; ------------------------------------------------------------------------------
+> ; Taking Items Worn by NPCs
+> ; ------------------------------------------------------------------------------
+> ; The library doesn't prevent taking worn items:
+> take suit
+Taken.
+
+> RESET
+All wearables are now restored to their initial wearer or location.
+
+> take suit from clerk
+You take the elegant suit.
+
+> ; ------------------------------------------------------------------------------
+> ; Implicitly Taking Items Worn by NPCs
+> ; ------------------------------------------------------------------------------
+> ; The library no longer supports implicit taking in verbs:
+> RESET
+All wearables are now restored to their initial wearer or location.
+
+> wear suit
+You haven't got the elegant suit.
+
+> 
+
+Do you want to UNDO, RESTART, RESTORE or QUIT ? 

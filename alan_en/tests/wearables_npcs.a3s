@@ -1,0 +1,23 @@
+; ==============================================================================
+;                             Test Wearables on NPCs
+; ==============================================================================
+; The Foundation Library allows 'wearable' items to be worn not only by the Hero
+; but also by any other actor.
+; ------------------------------------------------------------------------------
+; NPCs Inventory
+; ------------------------------------------------------------------------------
+; Examining an actor lists worn items in a separate list form carried ones.
+x clerk
+; ------------------------------------------------------------------------------
+; Taking Items Worn by NPCs
+; ------------------------------------------------------------------------------
+; The library doesn't prevent taking worn items:
+take suit
+RESET
+take suit from clerk
+; ------------------------------------------------------------------------------
+; Implicitly Taking Items Worn by NPCs
+; ------------------------------------------------------------------------------
+; The library no longer supports implicit taking in verbs:
+RESET
+wear suit

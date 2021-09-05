@@ -1,0 +1,11 @@
+-- "limits.alan" | by Tristano Ajmone 2021 | Foundation Library EN Test suite
+-- =============================================================================
+-- * * * * * *   T E S T   A D V E N T U R E   F O R   L I M I T S   * * * * * *
+-- =============================================================================
+
+Import 'Library.i'.
+
+The Bedroom IsA location.
+End the.
+
+Start at Bedroom.

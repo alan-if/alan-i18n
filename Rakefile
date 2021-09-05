@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.2.1 | 2021/09/05 | by Tristano Ajmone
+=begin "Rakefile" v0.2.2 | 2021/09/05 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -146,7 +146,7 @@ namespace "lib" do
   namespace "en" do
 
     desc "English library"
-    task :all => [:cloak, :docs]
+    task :all => [:cloak, :tests, :docs]
 
     LIB_EN_SOURCES = FileList['alan_en/Foundation/*.i']
 
@@ -155,6 +155,12 @@ namespace "lib" do
     desc "Cloak of Darkness"
     task :cloak
     create_transcripting_tasks_from_folder(:cloak,'alan_en/cloak', LIB_EN_SOURCES)
+
+    ## Test Suite
+    #############
+    desc "English test suite"
+    task :tests
+    create_transcripting_tasks_from_folder(:tests,'alan_en/tests', LIB_EN_SOURCES)
 
     ## Documentation
     ################
