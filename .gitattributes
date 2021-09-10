@@ -10,13 +10,13 @@
 # ==============================================================================
 #                               ALAN RELATED FILES
 # ==============================================================================
-[attr]Alan text linguist-language=Alan linguist-detectable=true
+[attr]Alan text linguist-language=AlanIF linguist-detectable
 
 ## Alan Sources
 ###############
 *.alan   Alan
 *.i      Alan
-*.ifid   text linguist-generated=true
+*.ifid   text linguist-generated
 
 ## Alan Story-Files
 ###################
@@ -26,13 +26,13 @@
 
 ## Adventures Solutions & Transcripts
 #####################################
-*.a3s   text linguist-detectable=false
-*.a3t   text linguist-generated=true
-*.log   text linguist-generated=true
+*.a3s   text  -linguist-detectable
+*.a3t   text   linguist-generated
+*.log   text   linguist-generated
 
 ## AlanIDE Files
 ################
-.project   text linguist-language=XML linguist-generated=true
+.project   text linguist-language=XML linguist-generated
 
 # ==============================================================================
 #                                GENERIC SETTINGS
@@ -55,9 +55,10 @@
 
 ## Documentation
 ################
-*.adoc       text
-*.asc        text
-*.asciidoc   text
+[attr]AsciiDoc text linguist-detectable
+*.adoc       AsciiDoc
+*.asc        AsciiDoc
+*.asciidoc   AsciiDoc
 *.md         text
 *.odt        binary
 *.txt        text
