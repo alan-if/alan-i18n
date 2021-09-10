@@ -1,4 +1,4 @@
--- "lanzar.i" <-- "throw.i"
+ï»¿-- "lanzar.i" <-- "throw.i"
 
 Synonyms
   lanzo, lanza,
@@ -12,7 +12,7 @@ Syntax
 Add to every object
   Verb lanzar
     Check obj in hero
-      else "¡No tienes" say the obj. "!"
+      else "Â¡No tienes" say the obj. "!"
     Does
       "No puedes lanzar" say term_s of obj.
       "muy lejos," say the obj.
@@ -42,9 +42,9 @@ Add to every object
   Verb lanzar_a
     When obj1
       Check obj1 in hero
-        else "¡No tienes" say the obj1. "!"
+        else "Â¡No tienes" say the obj1. "!"
       And obj2 not in hero
-        else "¡Tú llevas" say the obj2. "!"
+        else "Â¡TÃº llevas" say the obj2. "!"
       And obj2 <> hero
         else "No puedes lanzar" say the obj1. "contra ti mismo."
     Does
@@ -58,7 +58,7 @@ End add to.
 Syntax
   lanzar_en = lanzar (obj1) en (obj2)
     Where obj1 IsA object
-      else "No seas así."
+      else "No seas asÃ­."
     And obj2 IsA container
       else "No puedes lanzar nada en eso."
 
@@ -66,11 +66,11 @@ Add to every object
   Verb lanzar_en
     When obj1
       Check obj1 in hero
-        else "¡No tienes" say the obj1. "!"
+        else "Â¡No tienes" say the obj1. "!"
       And obj1 <> obj2
-        else "¡Ese sería un gran truco!"
+        else "Â¡Ese serÃ­a un gran truco!"
       And obj2 <> hero
-        else "¡No puedes meterte" say the obj1. "!"
+        else "Â¡No puedes meterte" say the obj1. "!"
     Does
       Locate obj1 in obj2.
       "Hecho."

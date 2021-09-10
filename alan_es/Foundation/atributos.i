@@ -1,9 +1,9 @@
--- "atributos.i"
+ï»¿-- "atributos.i"
 
 -- atributos globales para todos los verbos y objetos
 
 Synonyms
-  él, la, los, las = el.
+  Ã©l, la, los, las = el.
 
   eso, esos, esa, esas, ello,
   aquello, aquella, aquellos, aquellas, lo = it.
@@ -57,7 +57,7 @@ End every named_actor.
 
 -- evento que inicializa las terminaciones de los objetos
 -- y palabras como 'son' o 'es'
--- No olvidar llamarlo en la sección "start",
+-- No olvidar llamarlo en la secciÃ³n "start",
 -- por ejemplo con el comando:
 -- "  schedule ini_terms at limbo after 0. "
 

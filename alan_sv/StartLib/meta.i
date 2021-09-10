@@ -1,4 +1,4 @@
--- meta.i
+﻿-- meta.i
 
 
 Synonyms q = 'avsluta'.
@@ -23,9 +23,9 @@ End verb.
 
 
 Syntax
-  'återställ' = 'återställ'.
+  'Ã¥terstÃ¤ll' = 'Ã¥terstÃ¤ll'.
 
-Verb 'återställ'
+Verb 'Ã¥terstÃ¤ll'
   Does
     Restore.
     "Done.$n"
@@ -43,23 +43,23 @@ End verb.
 
 
 Syntax
-  'poäng' = 'poäng'.
+  'poÃ¤ng' = 'poÃ¤ng'.
 
-Verb 'poäng'
+Verb 'poÃ¤ng'
   Does
     Score.
 End verb.
 
 
 Synonyms
-  z = 'vänta'.
+  z = 'vÃ¤nta'.
 
 Syntax
-  'vänta' = 'vänta'.
+  'vÃ¤nta' = 'vÃ¤nta'.
 
-Verb 'vänta'
+Verb 'vÃ¤nta'
   Does
-    "Tiden går..."
+    "Tiden gÃ¥r..."
 End verb.
 
 
@@ -71,9 +71,9 @@ Syntax
 
 Verb igen
   Does
-    "Kommandot 'igen' är tyvärr inte tillgängligt. Du kan antagligen
-     använda upp- och ner-pilarna, eller F3, på tangentbordet för att
-     hämta tillbaka ett tidigare kommando."
+    "Kommandot 'igen' Ã¤r tyvÃ¤rr inte tillgÃ¤ngligt. Du kan antagligen
+     anvÃ¤nda upp- och ner-pilarna, eller F3, pÃ¥ tangentbordet fÃ¶r att
+     hÃ¤mta tillbaka ett tidigare kommando."
 End verb.
 
 

@@ -1,4 +1,4 @@
--- "meta.i"
+ï»¿-- "meta.i"
 
 Synonyms
   abandono, abandona, abandonar = 'quit'.
@@ -14,7 +14,7 @@ End verb.
 Verb q
   Does
     "Por favor escribe el comando 'abandonar' entero para salir del juego.
-     $p(No puedes deshacer una instrucción abandonar. Así que, para evitar que
+     $p(No puedes deshacer una instrucciÃ³n abandonar. AsÃ­ que, para evitar que
      accidentalmente salgas del juego por teclear 'q' cuando intentas hacer
      otra cosa, debes escribir el comando 'abandonar' al completo.)"
 End verb.
@@ -27,7 +27,7 @@ Syntax
 Verb 'save'
   Does
     Save.
-    "¡Perfecto!."
+    "Â¡Perfecto!."
 End verb.
 
 Synonyms
@@ -54,7 +54,7 @@ End verb.
 
 
 Synonyms
-  puntos, puntaje, puntuacion, puntuación = 'score'.
+  puntos, puntaje, puntuacion, puntuaciÃ³n = 'score'.
 Syntax
   'score' = 'score'.
 
@@ -84,10 +84,10 @@ Syntax
 
 Verb again
   Does
-    "El comando 'repetir' no está disponible, lo siento. Probablemente puedes
+    "El comando 'repetir' no estÃ¡ disponible, lo siento. Probablemente puedes
      utilizar los cursores arriba y abajo para moverte por tus comandos previos
-     (a menos que uses el intérprete MSDOS, en ese caso puedes pulsar F3 para
-     repetir tu último comando.)"
+     (a menos que uses el intÃ©rprete MSDOS, en ese caso puedes pulsar F3 para
+     repetir tu Ãºltimo comando.)"
 End verb.
 
 --Syntax

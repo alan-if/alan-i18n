@@ -1,4 +1,4 @@
--- "look.i"
+﻿-- "look.i"
 
 Synonyms
   l = 'look'.

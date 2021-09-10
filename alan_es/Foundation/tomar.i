@@ -1,4 +1,4 @@
--- "tomar.i" <-- "take.i"
+ï»¿-- "tomar.i" <-- "take.i"
 
 Add to every thing
   Is inanimado.
@@ -22,14 +22,14 @@ Synonyms
 Syntax
   tomar = tomar (obj) *
     Where obj IsA object
-      else "¡No puedes tomar" say the obj. "!"
+      else "Â¡No puedes tomar" say the obj. "!"
   tomar = tomar 'el' (obj).
 
 
 Add to every object
   Verb tomar
     Check obj is tomable
-      else "¡No puedes tomar" say the obj. "!"
+      else "Â¡No puedes tomar" say the obj. "!"
     And obj not in llevado
       else "Ya lo tienes - lo llevas puesto."
     And obj not in hero
@@ -64,9 +64,9 @@ Syntax
     Where obj IsA object
       else "Solo puedes tomar objetos."
     And cont IsA thing
-      else "¡No puedes tomar objetos de eso!"
+      else "Â¡No puedes tomar objetos de eso!"
     And cont IsA container
-      else "¡No puedes tomar objetos de eso!"
+      else "Â¡No puedes tomar objetos de eso!"
 
 Add to every object
   Verb tomar_de
@@ -74,10 +74,10 @@ Add to every object
       Check obj not in hero
         else "Ya llevas" say the obj. "."
       And obj in cont
-        else say the obj. "no está."
+        else say the obj. "no estÃ¡."
     Does
       If cont=hero then
-        "¡No necesitas tomar cosas de ti mismo!"
+        "Â¡No necesitas tomar cosas de ti mismo!"
       else
         Locate obj in hero.
         "Tomas" say the obj. "."

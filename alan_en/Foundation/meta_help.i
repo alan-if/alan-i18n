@@ -1,4 +1,4 @@
--- "meta_help.i"
+﻿-- "meta_help.i"
 
 Synonyms
   h = help.

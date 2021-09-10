@@ -1,61 +1,61 @@
--- berör.i
+﻿-- berÃ¶r.i
 
--- ta på
+-- ta pÃ¥
 -- peta p
 -- knna p
 
 Add to every thing
-  Is berörbar.
+  Is berÃ¶rbar.
 End add.
 
 
 Syntax
-  berör = berör (obj)
+  berÃ¶r = berÃ¶r (obj)
     Where obj IsA thing
-      else "Du kan inte beröra" say the obj. "."
-  berör = känn på (obj)
+      else "Du kan inte berÃ¶ra" say the obj. "."
+  berÃ¶r = kÃ¤nn pÃ¥ (obj)
     Where obj IsA thing
-      else "Du kan inte känna på" say the obj. "."
-  berör = ta på (obj)
+      else "Du kan inte kÃ¤nna pÃ¥" say the obj. "."
+  berÃ¶r = ta pÃ¥ (obj)
     Where obj IsA thing
-      else "Du kan inte ta på" say the obj. "."
+      else "Du kan inte ta pÃ¥" say the obj. "."
 
-  berör_med = berör (obj1) med (obj2)
+  berÃ¶r_med = berÃ¶r (obj1) med (obj2)
     Where obj1 IsA thing
-      else "Du kan inte beröra" say the obj. "."
+      else "Du kan inte berÃ¶ra" say the obj. "."
     And obj2 IsA object
-      else "Du kan bara anvnda saker att beröra med."
-  berör_med = peta på (obj1) med (obj2)
+      else "Du kan bara anvnda saker att berÃ¶ra med."
+  berÃ¶r_med = peta pÃ¥ (obj1) med (obj2)
     Where obj1 IsA thing
-      else "Du kan inte peta på" say the obj. "."
+      else "Du kan inte peta pÃ¥" say the obj. "."
     And obj2 IsA object
-      else "Du kan bara använda saker för att peta på något."
-  berör_med = knn p (obj1) med (obj2)
+      else "Du kan bara anvÃ¤nda saker fÃ¶r att peta pÃ¥ nÃ¥got."
+  berÃ¶r_med = knn p (obj1) med (obj2)
     Where obj1 IsA thing
-      else "Du kan inte känna på" say the obj. "."
+      else "Du kan inte kÃ¤nna pÃ¥" say the obj. "."
     And obj2 IsA object
-      else "Du kan bara använda saker för att känna på något."
-  berör_med = ta p (obj1) med (obj2)
+      else "Du kan bara anvÃ¤nda saker fÃ¶r att kÃ¤nna pÃ¥ nÃ¥got."
+  berÃ¶r_med = ta p (obj1) med (obj2)
     Where obj1 IsA thing
-      else "Du kan inte ta på" say the obj. "."
+      else "Du kan inte ta pÃ¥" say the obj. "."
     And obj2 IsA object
-      else "Du kan bara använda saker för att ta på något."
+      else "Du kan bara anvÃ¤nda saker fÃ¶r att ta pÃ¥ nÃ¥got."
 
 Add to every object
-  Verb berör
-    Check obj is berörbar
-      else "Du kan inte beröra det."
+  Verb berÃ¶r
+    Check obj is berÃ¶rbar
+      else "Du kan inte berÃ¶ra det."
     Does
-      "Du berör" say the obj. "."
+      "Du berÃ¶r" say the obj. "."
   End verb.
 
-  Verb berör_with
+  Verb berÃ¶r_with
     When obj1
-      Check obj1 Is berörbar
-        else "Du kan inte beröra det."
+      Check obj1 Is berÃ¶rbar
+        else "Du kan inte berÃ¶ra det."
       And obj1 <> obj2
-        else "Det gr inte att beröra något med sig självt."
+        else "Det gr inte att berÃ¶ra nÃ¥got med sig sjÃ¤lvt."
       Does
-        "Du berör" say the obj1. "med" say the obj2. "."
+        "Du berÃ¶r" say the obj1. "med" say the obj2. "."
   End verb.
 End add.

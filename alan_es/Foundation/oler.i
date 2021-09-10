@@ -1,4 +1,4 @@
--- "oler.i" <-- "smell.i"
+ï»¿-- "oler.i" <-- "smell.i"
 
 
 Synonyms
@@ -11,14 +11,14 @@ Syntax
 
 Verb oler0
   Does
-    "No hueles nada insólito."
+    "No hueles nada insÃ³lito."
 End verb.
 
 
 Syntax
   oler = oler (obj)
     Where obj IsA thing
-      else "¡No puedes oler eso!"
+      else "Â¡No puedes oler eso!"
   oler = oler el (obj).
 
 Add to every thing

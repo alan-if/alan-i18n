@@ -1,25 +1,25 @@
---==============================================================================
+Ôªø--==============================================================================
 --------------------------------------------------------------------------------
--- * * V A M P I R O  de Bruce Humphrey * *   v1.0.2 | 2021/07/24 | ALAN 3.Beta7
+-- * * V A M P I R O  de Bruce Humphrey * *  v1.0.3 | 2021/09/10 | ALAN 3.0Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
---  Vampiro para ALAN Foundation Library Spanish v1.0.2.
+--  Vampiro para ALAN Foundation Library Spanish v0.1.1.
 --
--- Esta es la versiÛn en ALAN + libreria espaÒola de "Memorias de reXXe",
--- tambiÈn conocido como "Vampiro". Este cÛdigo fuente forma parte del
--- "Proyecto Vampiro", del cual puedes encontrar m·s informaciÛn en
+-- Esta es la versi√≥n en ALAN + libreria espa√±ola de "Memorias de reXXe",
+-- tambi√©n conocido como "Vampiro". Este c√≥digo fuente forma parte del
+-- "Proyecto Vampiro", del cual puedes encontrar m√°s informaci√≥n en
 --
 --    https://www.caad.es/informate/vampiro/
 --
--- Para procesar este fichero necesitar·s la librerÌa espaÒola ALAN Foundation
+-- Para procesar este fichero necesitar√°s la librer√≠a espa√±ola ALAN Foundation
 -- Library y el programa ALAN 3:
 --
 --    https://github.com/alan-if/alan-i18n/tree/main/alan_es/
 --    https://www.alanif.se
 --
--- La implementaciÛn en pALANte es de Bruce Humphrey, realizada para comprobar
--- la librerÌa 0.6.0e (realizada entre Marcos Donantuonni y Bruce Humphrey).
+-- La implementaci√≥n en pALANte es de Bruce Humphrey, realizada para comprobar
+-- la librer√≠a 0.6.0e (realizada entre Marcos Donantuonni y Bruce Humphrey).
 --------------------------------------------------------------------------------
 
 import 'Library.i'.
@@ -49,8 +49,8 @@ Every ContenedorCerr Isa Object
   Is abrible.
   Is cerrable.
   Is Not abierto.
-    Verb abrir does after -- esto se ejecuta despuÈs del abrir por defecto.
-      Make this Not Opaque. -- necesario, o aunque estÈ abierto, seguiremos sin poder coger los objetos.
+    Verb abrir does after -- esto se ejecuta despu√©s del abrir por defecto.
+      Make this Not Opaque. -- necesario, o aunque est√© abierto, seguiremos sin poder coger los objetos.
       List this. -- listamos el contenido.
   End Verb.
   Verb abrir_con
@@ -75,8 +75,8 @@ End Every ContenedorCerr.
 -------------------------
 
 The Hall Isa lugar
-  Description "Est·s en el vestÌbulo del castillo. El ambiente es muy
-               h˙medo y frÌo. Est·s en un pasillo que se extiende hacia
+  Description "Est√°s en el vest√≠bulo del castillo. El ambiente es muy
+               h√∫medo y fr√≠o. Est√°s en un pasillo que se extiende hacia
                el norte. Al sur queda la puerta de entrada al castillo."
   Exit norte to Pasillo.
 End The Hall.
@@ -89,10 +89,10 @@ The lapuerta Isa Escenario At Hall
   Is not abierto.
   Description ""
   Verb abrir
-    Does Only "°Te he dicho que no la puedes abrir, MelÛn!"
+    Does Only "¬°Te he dicho que no la puedes abrir, Mel√≥n!"
   End Verb.
   Verb examinar
-    Does Only "Es muy grande y est· cerrada. No la vas a poder abrir."
+    Does Only "Es muy grande y est√° cerrada. No la vas a poder abrir."
   End Verb.
 End The lapuerta.
 
@@ -105,12 +105,12 @@ The pasillodesdevestibulo Isa Escenario At Hall
 End The pasillodesdevestibulo.
 
 The objVestibulo Isa Escenario At Hall
-  Name VestÌbulo.
+  Name Vest√≠bulo.
   Name Vestibulo.
   Name Hall.
   Verb examinar
-    Does Only "El ambiente es muy h˙medo y frÌo.
-               Est·s en un pasillo que se extiende hacia el norte.
+    Does Only "El ambiente es muy h√∫medo y fr√≠o.
+               Est√°s en un pasillo que se extiende hacia el norte.
                Al sur queda la puerta de entrada al castillo."
   End Verb.
 End The objVestibulo.
@@ -123,7 +123,7 @@ The Pasillo Isa lugar
   Name Pasillo.
   Description
     "Te encuentras en medio del pasillo principal de este piso.
-     Al oeste est· la cocina y al este la biblioteca.
+     Al oeste est√° la cocina y al este la biblioteca.
      El pasillo sigue hacia el norte."
   Exit norte To HabEscaleras.
   Exit sur To Hall.
@@ -157,7 +157,7 @@ End The pasillodesdepasillo.
 The Biblioteca Isa lugar
   Name Biblioteca.
   Description
-    "Te hallas en la biblioteca del castillo. Obviamente est·
+    "Te hallas en la biblioteca del castillo. Obviamente est√°
      llena de libros interesantes, pero desgraciadamente no
      tienes tiempo para leerlos."
   Exit oeste To Pasillo.
@@ -170,11 +170,11 @@ The crucifijo Isa elemento At Biblioteca.
   Name crucifijo plateado.
   Name crucifijo.
   Description
-    "Hay un pequeÒo crucifijo plateado en un lado."
+    "Hay un peque√±o crucifijo plateado en un lado."
   Verb examinar
     Does Only
-      "Es un pequeÒo crucifijo plateado. Es uno de los cuatro
-       elementos que nos servir·n para derrotar al vampiro."
+      "Es un peque√±o crucifijo plateado. Es uno de los cuatro
+       elementos que nos servir√°n para derrotar al vampiro."
   End Verb.
 End The crucifijo.
 
@@ -213,7 +213,7 @@ The pasillodesdebiblioteca Isa Escenario At Biblioteca
   Name pasillo.
   Description ""
   Verb examinar
-    Does Only "El pasillo est· al oeste."
+    Does Only "El pasillo est√° al oeste."
   End Verb.
 End The pasillodesdebiblioteca.
 
@@ -223,9 +223,9 @@ End The pasillodesdebiblioteca.
 The Cocina Isa lugar
   Name Cocina.
   Description
-    "Est·s en la cocina del castillo. Esto est· lleno de
+    "Est√°s en la cocina del castillo. Esto est√° lleno de
      cacerolas y de cacharros para cocinar. Hay un horno, un
-     fregadero y un armario pequeÒo."
+     fregadero y un armario peque√±o."
   Exit este To Pasillo.
 End The Cocina.
 
@@ -261,7 +261,7 @@ The Fregadero Isa Escenario At Cocina
     Header
       "En el fregadero hay"
     Else
-      "El fregadero est· vacÌo."
+      "El fregadero est√° vac√≠o."
   Name fregadero.
   Description ""
   Verb Examinar
@@ -278,7 +278,7 @@ The Armario Isa ContenedorCerr At Cocina
     Else
       ""
   Name armario.
-  Name armario pequeÒo.
+  Name armario peque√±o.
   Is Not tomable.
   Is cerrojo.
   Is cerrojable.
@@ -286,7 +286,7 @@ The Armario Isa ContenedorCerr At Cocina
   Verb Examinar
     Does Only
       If Armario Is abierto Then
-        "Est· abierto."
+        "Est√° abierto."
         If ajos At Limbo Then
           "Al examinarlo se te cae al suelo una ristra
            de ajos que estaba en su interior."
@@ -294,24 +294,24 @@ The Armario Isa ContenedorCerr At Cocina
         End If.
         List Armario.
       Else
-        "Est· cerrado."
+        "Est√° cerrado."
       End If.
   End Verb.
   Verb Abrir
     Check armario Is Not abierto
-      Else "Ya est· abierto."
+      Else "Ya est√° abierto."
     Does Only
     If armario Is Not cerrojo Then
       "Abres el armario."
     Else
-      "Est· cerrado con llave"
+      "Est√° cerrado con llave"
     End If.
   End Verb.
 
   Verb Abrir_con
     When obj
       Check armario Is Not abierto
-        Else "Ya est· abierto."
+        Else "Ya est√° abierto."
       And (key) = llavecita
         Else "No puedes abrir el armario con " Say The (key).
     Does Only
@@ -325,7 +325,7 @@ The pasillodesdecocina Isa Escenario At Biblioteca
   Name pasillo.
   Description ""
   Verb examinar
-    Does Only "El pasillo est· al este."
+    Does Only "El pasillo est√° al este."
   End Verb.
 End The pasillodesdecocina.
 
@@ -335,8 +335,8 @@ End The pasillodesdecocina.
 The HabEscaleras Isa lugar
   Name 'Las Escaleras'.
   Description
-    "Te hallas en el final del pasillo. Delante de tÌ ves unas
-     escaleras que suben y otras que bajan. Al oeste est· el
+    "Te hallas en el final del pasillo. Delante de t√≠ ves unas
+     escaleras que suben y otras que bajan. Al oeste est√° el
      dormitorio y al este la sala de estar."
   Exit sur To Pasillo.
   Exit oeste To Dormitorio.
@@ -372,8 +372,8 @@ End The pasillodesdeescaleras.
 The Dormitorio Isa lugar
   Name Dormitorio.
   Description
-    "Est·s en un dormitorio no muy grande ni tampoco muy pequeÒo.
-     Es bastante austero. SÛlo hay una cama y un armario."
+    "Est√°s en un dormitorio no muy grande ni tampoco muy peque√±o.
+     Es bastante austero. S√≥lo hay una cama y un armario."
   Exit este To HabEscaleras.
 End The Dormitorio.
 
@@ -390,7 +390,7 @@ The armario_dormitorio Isa object at Dormitorio.
   Is not tomable.
   Verb Examinar
     Does Only
-      "Un pequeÒo armario de madera"
+      "Un peque√±o armario de madera"
       If armario_dormitorio Is abierto Then
         "(abierto)."
         List armario_dormitorio.
@@ -405,23 +405,23 @@ The Cama Isa Escenario At Dormitorio
   Is femenina.
   Description ""
   Verb Examinar
-    Does Only "Est· cubierta de s·banas."
+    Does Only "Est√° cubierta de s√°banas."
   End Verb.
 End The Cama.
 
 The Sabanas Isa Object At Dormitorio
   Name sabanas.
-  Name s·banas.
-  Name s·bana.
+  Name s√°banas.
+  Name s√°bana.
   Name sabana.
   Is femenina.
   Is plural.
   Description ""
   Verb Examinar
     Does Only
-      "S·banas corrientes y molientes."
+      "S√°banas corrientes y molientes."
       If llavecita At Limbo Then
-        "Entre ellas encuentras una pequeÒa llavecita."
+        "Entre ellas encuentras una peque√±a llavecita."
         Locate llavecita Here.
       End If.
   End Verb.
@@ -431,7 +431,7 @@ The pasillodesdedormitorio Isa Escenario At Biblioteca
   Name pasillo.
   Description ""
   Verb examinar
-    Does Only "El pasillo est· al este."
+    Does Only "El pasillo est√° al este."
   End Verb.
 End The pasillodesdedormitorio.
 
@@ -441,8 +441,8 @@ End The pasillodesdedormitorio.
 The Sala Isa lugar
   Name 'Sala de Estar'.
   Description
-    "Es la sala m·s acogedora de todo el castillo. En la
-     chimenea los ˙ltimos restos de alg˙n fuego chisporrotean
+    "Es la sala m√°s acogedora de todo el castillo. En la
+     chimenea los √∫ltimos restos de alg√∫n fuego chisporrotean
      alegremente. Hay una mesa grande con una silla al lado.
      De la pared cuelgan bastantes trofeos de caza y adornos
      varios."
@@ -483,7 +483,7 @@ The chimenea Isa Escenario At Sala
   End Verb.
   Verb Buscar
     Does Only
-      "En la chimenea est·n los restos a˙n calientes de un fuego reciente."
+      "En la chimenea est√°n los restos a√∫n calientes de un fuego reciente."
       If madero At Limbo Then
         "Entre ellas encuentras un trozo de madera."
         Locate madero Here.
@@ -497,7 +497,7 @@ The restos Isa Escenario_p At Sala
   Description ""
   Verb Examinar
     Does Only
-      "Son los restos de alg˙n fuego reciente."
+      "Son los restos de alg√∫n fuego reciente."
       If madero At Limbo Then
         "Entre ellas encuentras un trozo de madera."
         Locate madero Here.
@@ -519,11 +519,11 @@ End The mesa.
 
 The silla Isa Escenario At Sala
   Name silla.
-  Name silla cÛmoda.
+  Name silla c√≥moda.
   Is femenina.
   Description ""
   Verb Examinar
-    Does Only "Una cÛmoda silla."
+    Does Only "Una c√≥moda silla."
   End Verb.
 End The silla.
 
@@ -531,19 +531,19 @@ The pasillodesdesala Isa Escenario At Biblioteca
   Name pasillo.
   Description ""
   Verb examinar
-    Does Only "El pasillo est· al oeste."
+    Does Only "El pasillo est√° al oeste."
   End Verb.
 End The pasillodesdesala.
 
 --------------------
--- 8) El SÛtano
+-- 8) El S√≥tano
 --------------------
 The Sotano Isa lugar
   Name Sotano.
   Description
-    "En este pequeÒo sÛtano hace mucho calor, sientes una
-     sensaciÛn de recogimiento. Est· todo muy sucio. Hay un
-     barril aquÌ, tambiÈn hay unas escaleras que suben."
+    "En este peque√±o s√≥tano hace mucho calor, sientes una
+     sensaci√≥n de recogimiento. Est√° todo muy sucio. Hay un
+     barril aqu√≠, tambi√©n hay unas escaleras que suben."
   Exit arriba To HabEscaleras.
 End The Sotano.
 
@@ -563,7 +563,7 @@ The barril Isa ContenedorCerr at Sotano
   Name barril.
   Is cerrojo.
   Is cerrojable.
-  Description ""   -- ya lo mencionamos en la habitaciÛn.
+  Description ""   -- ya lo mencionamos en la habitaci√≥n.
   Verb Examinar
     Does Only
       "Un barril de madera"
@@ -576,22 +576,22 @@ The barril Isa ContenedorCerr at Sotano
   End Verb.
   Verb Abrir
   Check barril Is Not abierto
-    Else "Ya est· abierto."
+    Else "Ya est√° abierto."
   And palanca in hero
     Else "Intentas abrirlo, pero no tienes la suficiente fuerza."
   Does Only
-    "-°Clack!- Haciendo palanca logras abrir el barril."
+    "-¬°Clack!- Haciendo palanca logras abrir el barril."
     Make barril abierto.
     Make barril Not Opaque.
   End Verb.
   Verb Abrir_con
     When obj
       Check barril Is Not abierto
-        Else "Ya est· abierto."
+        Else "Ya est√° abierto."
       And (key) = Palanca
         Else "No puedes abrir el barril con " Say The (key).
     Does Only
-      "-°Clack!- Haciendo palanca logras abrir el barril."
+      "-¬°Clack!- Haciendo palanca logras abrir el barril."
       Make barril abierto.
       Make barril Not opaque.
    End Verb.
@@ -602,7 +602,7 @@ The martillo Isa elemento In barril
   Verb Examinar
     Does Only
       "Un martillo grande. Es uno de los elementos que
-       me permitir·n acabar con el vampiro."
+       me permitir√°n acabar con el vampiro."
   End Verb.
 End The martillo.
 
@@ -612,9 +612,9 @@ End The martillo.
 The Rellano Isa lugar
   Name Rellano.
   Description
-    "Est·s en el piso superior del castillo. AquÌ hace a˙n m·s
-     frÌo que abajo. Detr·s de tÌ est·n las escaleras que bajan
-     y hacia el oeste est· la habitaciÛn del vampiro."
+    "Est√°s en el piso superior del castillo. Aqu√≠ hace a√∫n m√°s
+     fr√≠o que abajo. Detr√°s de t√≠ est√°n las escaleras que bajan
+     y hacia el oeste est√° la habitaci√≥n del vampiro."
   Exit abajo To HabEscaleras.
   Exit oeste To HabVampiro.
 End The Rellano.
@@ -622,18 +622,18 @@ End The Rellano.
 The escalones_arriba Isa Escenario At Rellano
   Name escaleras.
   Is Femenina.
-  Description  -- ToDo: AÒadir concordancia n˙mero y gÈnero, como la versiÛn InformAte
+  Description  -- ToDo: A√±adir concordancia n√∫mero y g√©nero, como la versi√≥n InformAte
     "Conducen al piso inferior."
 End The escalones_arriba.
 
 --------------------------
--- HabitaciÛn del Vampiro
+-- Habitaci√≥n del Vampiro
 --------------------------
 The HabVampiro Isa lugar
   Name Habitacion.
-  Name HabitaciÛn.
+  Name Habitaci√≥n.
   Description
-    "Est·s en una habitaciÛn desnuda. Unicamente hay un altar
+    "Est√°s en una habitaci√≥n desnuda. Unicamente hay un altar
      en el centro. Encima del altar puedes ver un ataud."
   Exit este To Rellano.
 End The HabVampiro.
@@ -644,13 +644,13 @@ The Altar Isa Escenario At HabVampiro
   Verb Examinar
     Does Only
       "Es un altar de dura piedra.
-       Encima de Èste est· el ataud."
+       Encima de √©ste est√° el ataud."
     End Verb.
-  -- ToDo: aÒadir controles "no es necesario" para entrar, sentarse, estirarse, meterse, etc.
+  -- ToDo: a√±adir controles "no es necesario" para entrar, sentarse, estirarse, meterse, etc.
 End The Altar.
 
 Synonyms
-  feretro, fÈretro, caja = ataud.
+  feretro, f√©retro, caja = ataud.
 The Ataud Isa Object At HabVampiro
   Name ataud.
   Is Not tomable.
@@ -665,9 +665,9 @@ The Ataud Isa Object At HabVampiro
         "Abres el ataud. Dentro contemplas la horrible cara del
          vampiro. Protegido por los ajos y el crucifijo empiezas tu
          horrible tarea. Le clavas la estaca en el pecho y de un
-         terrible golpe de martillo la hundes en lo m·s profundo de
-         su ser. Con un grito de agonÌa se deshace en polvo y t˙
-         acabas tu misiÛn aquÌ. ^^Por ahora...^^$n$n$n$n$n°°FINIS!!"
+         terrible golpe de martillo la hundes en lo m√°s profundo de
+         su ser. Con un grito de agon√≠a se deshace en polvo y t√∫
+         acabas tu misi√≥n aqu√≠. ^^Por ahora...^^$n$n$n$n$n¬°¬°FINIS!!"
         quit.
       Else
         "Necesito cuatro cosas antes de poner fin a la ~vida~ del
@@ -679,7 +679,7 @@ End The Ataud.
 
 
 -----------------------------------------------------------
--- Objetos en el Limbo: Inicialmente no est·n en el juego
+-- Objetos en el Limbo: Inicialmente no est√°n en el juego
 -----------------------------------------------------------
 The Ajos Isa elemento At Limbo
   Name ristra de ajos.
@@ -693,13 +693,13 @@ The Ajos Isa elemento At Limbo
     Does Only
       "Es una ristra entera de ajos que expelen un olor
        un tanto asqueroso. Es uno de los cuatro elementos que me
-       servir·n para derrotar al vampiro."
+       servir√°n para derrotar al vampiro."
   End Verb.
   Verb Oler
     Does Only "Puagh."
   End Verb.
   Verb Comer
-    Does Only "Ni hablar, me darÌa halitosis."
+    Does Only "Ni hablar, me dar√≠a halitosis."
   End Verb.
 End The Ajos.
 
@@ -708,20 +708,20 @@ The variables Isa Object At Limbo
   Has elementos 0.
   Description
     "Un contenedor para variables globales.
-     Un sucio truco. °Esto no es OOP correcta!"
+     Un sucio truco. ¬°Esto no es OOP correcta!"
 End The variables.
 
 The llavecita Isa Object At Limbo
-  Name pequeÒa llavecita.
-  Name pequeÒa llave.
+  Name peque√±a llavecita.
+  Name peque√±a llave.
   Name llave.
   Name llavecita.
   Is femenina.
-  Description "Una pequeÒa llave."
+  Description "Una peque√±a llave."
   Verb Examinar
     Does Only
-      "Esta pequeÒa llavecita tiene la pinta
-       de abrir un armario o algo asÌ."
+      "Esta peque√±a llavecita tiene la pinta
+       de abrir un armario o algo as√≠."
   End Verb.
 End The llavecita.
 
@@ -742,14 +742,14 @@ The madero Isa Object At Limbo
         Else "No puedes afilar con" say the obj2.
     Does Only
       "Afilas la madera con el cuchillo
-       °y obtienes una estaca!"
+       ¬°y obtienes una estaca!"
       Locate madero At limbo.
       Locate estaca In hero.
       Set elementos Of variables To elementos Of variables + 1.
   End Verb.
 End The madero.
 
---La estaca inicialmente no est· en el juego. Aparece sÛlo al tratar
+--La estaca inicialmente no est√° en el juego. Aparece s√≥lo al tratar
 -- de afilar el madero usando el cuchillo
 The estaca Isa elemento At Limbo
   Name estaca.
@@ -766,7 +766,7 @@ The estaca Isa elemento At Limbo
   End Verb.
   Verb Afilar
     When obj1
-      Does Only "Ya est· bastante afilada."
+      Does Only "Ya est√° bastante afilada."
   End Verb.
 End The estaca.
 
@@ -774,11 +774,11 @@ End The estaca.
 -- Sintaxis
 --------------
 
--- nota: la idea en ALAN es copiar la librerÌa de ejemplo en cada proyecto, y
--- modificarla como necesitemos. En este caso, Vampiro, en la librerÌa se
--- modifica Ayuda y PuntuaciÛn para que coincida con las originales de Vampiro.
+-- nota: la idea en ALAN es copiar la librer√≠a de ejemplo en cada proyecto, y
+-- modificarla como necesitemos. En este caso, Vampiro, en la librer√≠a se
+-- modifica Ayuda y Puntuaci√≥n para que coincida con las originales de Vampiro.
 --
--- Otros verbos especÌficos para esta aventura se incluyen aquÌ.
+-- Otros verbos espec√≠ficos para esta aventura se incluyen aqu√≠.
 Synonyms
   elemento = elementos.
 Syntax
@@ -804,7 +804,7 @@ Syntax
       Else "Eso no se puede afilar."
     And obj2 Isa Object
       Else "na na naaa."
-  afilar = afilar el (obj1) con (obj2). -- varias formas para que funcione en espaÒol
+  afilar = afilar el (obj1) con (obj2). -- varias formas para que funcione en espa√±ol
   afilar = afilar el (obj1) con el (obj2).
   afilar = afilar (obj1) con el (obj2).
 
@@ -812,9 +812,9 @@ Add To Every Object
   Verb afilar
   When obj1
     Check obj1 In hero
-      Else "°No tienes" say the obj1. "!"
+      Else "¬°No tienes" say the obj1. "!"
     And obj2 In hero
-      Else "°No tienes" say the obj2. "!"
+      Else "¬°No tienes" say the obj2. "!"
     And obj2 = cuchillo
       Else "No tiene sentido afilar con " say the obj2.
     Does
@@ -828,16 +828,16 @@ Syntax
 Verb alcazo
   Does
     "$n$tPrimera aventura 'seria' de Aventuras Alcazo.
-     GuiÛn, texto y programaciÛ¢n de Jaime Alcazo, pruebas
-     Jaime Alcazo, pruebas adicionales Iv·n Alcazo.
-     Fue necesaria una maÒana de estrujamiento neuronal de
+     Gui√≥n, texto y programaci√≥¬¢n de Jaime Alcazo, pruebas
+     Jaime Alcazo, pruebas adicionales Iv√°n Alcazo.
+     Fue necesaria una ma√±ana de estrujamiento neuronal de
      Jaime Alcazo para obtener el argumento (ya ves).
      Fue necesaria una tarde para programarla y ha sido
-     revisada en algunas ocasiones en dÌas posteriores a
+     revisada en algunas ocasiones en d√≠as posteriores a
      los citados. Hecha inicialmente con SINTAC g3.
-     $n$tEsta versiÛn est·† programada con Alan 3, usando
+     $n$tEsta versi√≥n est√°¬† programada con Alan 3, usando
      la libreria Palante 0.6.0e, por Bruce Humphrey.
-     $n$tTeclea AYUDA para obtener la soluciÛn de la aventura.
+     $n$tTeclea AYUDA para obtener la soluci√≥n de la aventura.
      Gracias por jugar.$n$n"
 End Verb.
 
@@ -848,8 +848,8 @@ Verb historia
   Does
     "$n$tEste juego es original de Aventuras Alcazo y el copyright
     pertenece a Jaume Alcazo Castellarnau quien ha cedido los
-    fuentes con fines educativos. (Teclea ALCAZO para saber m·s
-    del juego original). La versiÛn que est·s jugando ha sido
+    fuentes con fines educativos. (Teclea ALCAZO para saber m√°s
+    del juego original). La versi√≥n que est√°s jugando ha sido
     reprogramada a partir del original usando el lenguaje
     Alan, en un proyecto ideado por JLD consistente en
     implementar el mismo juego usando diferentes lenguajes, para
@@ -858,7 +858,7 @@ Verb historia
     Castellarnau.$n$n
     $tAunque el juego es el mismo, el aspecto de la pantalla al
     jugar no intenta parecerse al original de Alcazo, sino que tiene
-    el tÌpico aspecto de los juegos programados en Alan.$n$n"
+    el t√≠pico aspecto de los juegos programados en Alan.$n$n"
 End Verb.
 
 ------------------------------
@@ -866,15 +866,15 @@ End Verb.
 ------------------------------
 Start At Hall.
 Visits 0. -- modo verbose
-schedule ini_terms at limbo after 0. -- °ImportantÌsimo para funcionar en espaÒol!
+schedule ini_terms at limbo after 0. -- ¬°Important√≠simo para funcionar en espa√±ol!
 
 "$t-Memorias de Rexxe-$n
 (c) 1998 Jaume Alcazo Castellarnau.$n$n
-Esta es la versiÛn 1.0.1, programada en ALAN del juego
-""Vampiro"" original de Aventuras ALCAZO. Para m·s informaciÛn
+Esta es la versi√≥n 1.0.3, programada en ALAN del juego
+""Vampiro"" original de Aventuras ALCAZO. Para m√°s informaci√≥n
 teclea HISTORIA en el juego.$n$nMuchas gracias por jugar$n$n"
-"$n$n$tDespiertas aturdido. DespuÈs de unos segundos te incorporas
-en el frÌo suelo de piedra y ves que est·s en un
-castillo. °Ahora recuerdas! Eres reXXe y tu misiÛn es la de
+"$n$n$tDespiertas aturdido. Despu√©s de unos segundos te incorporas
+en el fr√≠o suelo de piedra y ves que est√°s en un
+castillo. ¬°Ahora recuerdas! Eres reXXe y tu misi√≥n es la de
 matar al vampiro. TIENES que matar al vampiro que vive en la
 parte superior del castillo...$n$n"

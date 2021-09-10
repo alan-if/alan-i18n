@@ -1,4 +1,4 @@
--- "examinar.i" <-- "examine.i"
+ï»¿-- "examinar.i" <-- "examine.i"
 
 Add to every thing
   Is
@@ -18,7 +18,7 @@ Synonyms
 Syntax
   examinar = examinar (obj) *
     Where obj IsA thing
-      else "¡No puedes examinar" say the obj. "!"
+      else "Â¡No puedes examinar" say the obj. "!"
   examinar = examinar el (obj) *.
 
 Add to every thing
@@ -68,7 +68,7 @@ End add to.
 Syntax
   buscar = buscar (obj)
     Where obj IsA thing
-      else "¡No puedes buscar en eso!"
+      else "Â¡No puedes buscar en eso!"
   buscar = buscar en (obj).
   buscar = buscar dentro (obj).
   buscar = buscar dentro de (obj).
@@ -78,6 +78,6 @@ Add to every object
     Check obj is buscable
       else "No puedes buscar en" say the obj. "."
     Does
-      "No encuentras nada de interés."
+      "No encuentras nada de interÃ©s."
   End verb.
 End add to.

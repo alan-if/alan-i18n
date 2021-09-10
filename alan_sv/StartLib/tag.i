@@ -1,4 +1,4 @@
--- tag.i
+﻿-- tag.i
 
 
 Add to every thing
@@ -15,7 +15,7 @@ End add.
 
 
 Synonyms
-  ta, bär, hämta, skaffa, stjäl = tag.
+  ta, bÃ¤r, hÃ¤mta, skaffa, stjÃ¤l = tag.
 
 
 Syntax
@@ -33,11 +33,11 @@ Add to every object
     Check obj is tagbar
       else "Du kan inte ta" say the obj. "."
     And obj not in worn
-      else "Du har redan" say the obj. ". Du har den på dig."
+      else "Du har redan" say the obj. ". Du har den pÃ¥ dig."
     And obj not in hero
       else "Du har redan" say the obj. "."
     And weight Of obj <=50
-      else Say the obj. "är för tung för att lyfta."
+      else Say the obj. "Ã¤r fÃ¶r tung fÃ¶r att lyfta."
     Does
       Locate obj in hero.
       "Tagen."
@@ -46,44 +46,44 @@ End add.
 
 
 Synonyms
-  släng, kasta = släpp.
+  slÃ¤ng, kasta = slÃ¤pp.
 
 Syntax
-  släpp = släpp (obj)*.
+  slÃ¤pp = slÃ¤pp (obj)*.
 
 Syntax
-  lägg_ner = lägg ner (obj)*.
+  lÃ¤gg_ner = lÃ¤gg ner (obj)*.
 
 Add to every object
-  Verb släpp, lägg_ner
+  Verb slÃ¤pp, lÃ¤gg_ner
     Check obj in hero
       else "Du har inte" say the obj. "."
     Does
       Locate obj here.
-      "Släppt."
+      "SlÃ¤ppt."
   End verb.
 End add.
 
 
 Syntax
-  tag_från = 'tag' (obj) 'från' (holder)
+  tag_frÃ¥n = 'tag' (obj) 'frÃ¥n' (holder)
     Where obj IsA object
       else "Du kan bara ta saker."
     And holder IsA thing
-      else "Du kan inte ta saker från" Say the holder. "!"
+      else "Du kan inte ta saker frÃ¥n" Say the holder. "!"
     And holder IsA container
-      else "Du kan inte ta saker från" Say the holder. "!"
+      else "Du kan inte ta saker frÃ¥n" Say the holder. "!"
 
 Add to every object
-  Verb tag_från
+  Verb tag_frÃ¥n
     When obj
       Check obj not in hero
         else "Du har redan" say the obj. "."
       And obj in holder
-        else Say the obj. "är inte här."
+        else Say the obj. "Ã¤r inte hÃ¤r."
       Does
         If holder=hero then
-          "Du behöver inte ta saker från dig själv!"
+          "Du behÃ¶ver inte ta saker frÃ¥n dig sjÃ¤lv!"
         else
           Locate obj in hero.
           "Du tar" say the obj. "."

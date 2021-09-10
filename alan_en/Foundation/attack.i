@@ -1,4 +1,4 @@
--- "attack.i"
+﻿-- "attack.i"
 
 Add to every thing
   Is not shootable.

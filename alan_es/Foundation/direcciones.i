@@ -1,4 +1,4 @@
--- "direcciones.i"
+﻿-- "direcciones.i"
 
 Synonyms
                                 e = este.

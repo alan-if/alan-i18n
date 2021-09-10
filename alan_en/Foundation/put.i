@@ -1,4 +1,4 @@
--- "put.i"
+﻿-- "put.i"
 
 Synonyms
   place = put.

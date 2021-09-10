@@ -1,4 +1,4 @@
--- "saltar.i"
+﻿-- "saltar.i"
 
 Synonyms
   salto, salta = saltar.
@@ -6,7 +6,7 @@ Synonyms
 Syntax
   saltar_en = saltar en (obj)
     Where obj IsA thing
-      else "�No puedes saltar sobre eso!"
+      else "¡No puedes saltar sobre eso!"
   saltar_en = saltar sobre (obj).
   saltar_en = saltar (obj).
 

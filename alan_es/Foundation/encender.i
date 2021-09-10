@@ -1,4 +1,4 @@
--- "encender.i" <-- "turn.i"
+ï»¿-- "encender.i" <-- "turn.i"
 
 Add to every object
   Is
@@ -23,7 +23,7 @@ Add to every object
     Check obj is conmutable
       else "No puedes encender" say the obj. "."
     And obj is not encendido
-      else "Eso ya está encendido"
+      else "Eso ya estÃ¡ encendido"
     Does
       Make obj encendido.
       "Enciendes" say the obj. "."
@@ -46,7 +46,7 @@ Add to every object
     Check obj is conmutable
       else "No se puede apagar."
     And obj is encendido
-      else "Ya está apagado."
+      else "Ya estÃ¡ apagado."
     Does
       Make obj not encendido.
       "Apagas" say the obj. "."

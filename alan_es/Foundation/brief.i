@@ -1,4 +1,4 @@
--- "brief.i"
+Ôªø-- "brief.i"
 
 -- No parece funcionar!
 
@@ -16,7 +16,7 @@ Syntax
 Verb verbose
   Does
     Visits 0.
-    "El modo largo est· activado."
+    "El modo largo est√° activado."
 End verb verbose.
 
 Synonyms
@@ -28,6 +28,6 @@ Syntax
 Verb brief
   Does
     Visits 1000.
-    "El modo Breve est· activado. Las descripciones de las
+    "El modo Breve est√° activado. Las descripciones de las
      localizaciones solo se muestran la primera vez que las visitas."
 End verb brief.

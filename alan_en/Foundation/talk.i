@@ -1,4 +1,4 @@
--- "talk.i"
+﻿-- "talk.i"
 
 
 -- for verbs like 'ask' and 'tell' you need to individually program

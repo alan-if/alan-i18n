@@ -1,4 +1,4 @@
--- "take.i"
+﻿-- "take.i"
 
 Add to every thing
   Is inanimate.

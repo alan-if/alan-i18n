@@ -1,4 +1,4 @@
--- "lock.i"
+﻿-- "lock.i"
 
 Add to every object
   Is

@@ -1,4 +1,4 @@
--- "atacar.i" <-- "attack.i"
+ï»¿-- "atacar.i" <-- "attack.i"
 
 Add to every thing
   Is not dispararable.
@@ -28,7 +28,7 @@ Syntax
 Add to every thing
   Verb atacar
     Does
-      "La violencia no es la solución. Por lo menos, no siempre."
+      "La violencia no es la soluciÃ³n. Por lo menos, no siempre."
   End verb.
 End add to.
 
@@ -39,7 +39,7 @@ Syntax
     Where act IsA thing
       else "No puedes atacar a eso."
     And obj IsA object
-      else "¡No puedes atacar nada con eso!"
+      else "Â¡No puedes atacar nada con eso!"
 
 Add to every thing
   Verb atacar_con
@@ -47,9 +47,9 @@ Add to every thing
       Check obj in hero
         else "No tienes ese objeto para atacar con."
       And obj is arma
-        else "¡No tiene sentido atacar nada con eso!"
+        else "Â¡No tiene sentido atacar nada con eso!"
     Does
-      "La violencia no es la solución."
+      "La violencia no es la soluciÃ³n."
   End verb.
 End add to.
 
@@ -96,7 +96,7 @@ Add to every thing
       And obj is dispararable
         else "No puedes disparar a nada con eso."
     Does
-      "La violencia no es la solución."
+      "La violencia no es la soluciÃ³n."
   End verb.
 
   Verb disparar_con
@@ -106,6 +106,6 @@ Add to every thing
       And obj is dispararable
         else "No puedes disparar a nada con eso."
     Does
-      "La violencia no es la solución."
+      "La violencia no es la soluciÃ³n."
   End verb.
 End add to.

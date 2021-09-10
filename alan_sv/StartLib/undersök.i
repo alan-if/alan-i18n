@@ -1,35 +1,35 @@
--- undersök.i
+﻿-- undersÃ¶k.i
 
 
 Add to every thing
   Is
-    undersökbar.
-    sökbar.
+    undersÃ¶kbar.
+    sÃ¶kbar.
 End add.
 
 Add to every actor
-  Is not undersökbar.
+  Is not undersÃ¶kbar.
 End add.
 
 ----
 
 Synonyms
-  inspektera, kontrollera, kolla = undersök.
+  inspektera, kontrollera, kolla = undersÃ¶k.
 
 Syntax
-  undersök = undersök (obj) *
+  undersÃ¶k = undersÃ¶k (obj) *
     Where obj IsA thing
-      else "Du kan inte undersöka" Say the obj. "."
+      else "Du kan inte undersÃ¶ka" Say the obj. "."
 
 Syntax
-  undersök = 'titta' 'på' (obj) *.
+  undersÃ¶k = 'titta' 'pÃ¥' (obj) *.
 
 Add to every thing
-  Verb undersök
-    Check obj is undersökbar
-      else "Du kan inte undersöka" say the obj. "."
+  Verb undersÃ¶k
+    Check obj is undersÃ¶kbar
+      else "Du kan inte undersÃ¶ka" say the obj. "."
     Does
-      "Det verkar inte vara något särskilt med" say the obj. "."
+      "Det verkar inte vara nÃ¥got sÃ¤rskilt med" say the obj. "."
   End verb.
 End add.
 

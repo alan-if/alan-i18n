@@ -1,12 +1,12 @@
--- "hablar.i" <-- "talk.i"
+ï»¿-- "hablar.i" <-- "talk.i"
 
 
 -- Para verbos como 'preguntar' y 'decir' necesitas programar indivualmente las
 -- respuestas a cada tema (u 'obj') para cada actor que quieras que responda a
 -- dicho tema.  Recuerda usar la clausula 'when' para que los actores solo
--- respondan cuando se habla con ellos (¡y no cuando son el *sujeto* de la
--- conversación!) En la Sección 3.7.1 - 'verb alternatives' - del manual en
--- inglés de Alan .  p.e:
+-- respondan cuando se habla con ellos (Â¡y no cuando son el *sujeto* de la
+-- conversaciÃ³n!) En la SecciÃ³n 3.7.1 - 'verb alternatives' - del manual en
+-- inglÃ©s de Alan .  p.e:
 --
 -- Actor Simon
 --   ....
@@ -14,12 +14,12 @@
 --     When act
 --       Does only
 --         If tema = pelota then
---           "Simón responde ""Me encanta el deporte.
+--           "SimÃ³n responde ""Me encanta el deporte.
 --            Mi favorito, el futbol."""
 --         elsIf obj = fred then
 --           .....
 --         else
---           "Simón te mira extrañado. ""Lo siento,
+--           "SimÃ³n te mira extraÃ±ado. ""Lo siento,
 --            no se nada de eso."""
 --         End if.
 --    End Verb preguntar.
@@ -62,7 +62,7 @@ Syntax
 Add to every thing
   Verb decir
     Does
-      Say tema. "... ¡Qué concepto tan hermoso!"
+      Say tema. "... Â¡QuÃ© concepto tan hermoso!"
   End verb.
 End add to.
 
@@ -106,7 +106,7 @@ Add to every thing
       Check act has habla
         else "No puedes hablar con eso."
     Does
-      Say the act. "dice ""¡No sé nada sobre" say the tema. "!"""
+      Say the act. "dice ""Â¡No sÃ© nada sobre" say the tema. "!"""
   End verb.
 End add to.
 
@@ -161,6 +161,6 @@ Add to every thing
       else "No puedes hablar con eso."
     Does
       Say the act. "te mira, aparentemente pensando si tienes algo
-      específico sobre lo que hablar."
+      especÃ­fico sobre lo que hablar."
   End verb.
 End add to.

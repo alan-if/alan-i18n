@@ -1,4 +1,4 @@
--- "persona.i" <-- "people.i"
+ï»¿-- "persona.i" <-- "people.i"
 
 -- Clases para personas
 
@@ -6,9 +6,9 @@ Every persona IsA actor
   Is not named.       -- Si tiene nombre propio
   Description
     If this is not named then
-      "Hay" say an this. "aquí."
+      "Hay" say an this. "aquÃ­."
     else
-      Say this. "está aquí."
+      Say this. "estÃ¡ aquÃ­."
     End if.
 End every persona.
 

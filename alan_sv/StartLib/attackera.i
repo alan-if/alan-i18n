@@ -1,6 +1,6 @@
--- attackera.i
+﻿-- attackera.i
 
--- skjut, skjut på
+-- skjut, skjut pÃ¥
 
 -- thoni56: Changed all "with that" and similar to "with" Say...
 
@@ -29,7 +29,7 @@ Syntax
 Add to every thing
   Verb attackera
     Does
-      "Våld är sällan svaret."
+      "VÃ¥ld Ã¤r sÃ¤llan svaret."
   End verb.
 End add.
 
@@ -39,7 +39,7 @@ Syntax
     Where act IsA thing
       else "Du kan inte attackera" say the act. "."
     And obj IsA object
-      else "Du kan inte attackera något med" say the obj. "!"
+      else "Du kan inte attackera nÃ¥got med" say the obj. "!"
 
 Add to every thing
   Verb attackera_med
@@ -47,9 +47,9 @@ Add to every thing
       Check obj in hero
         else "Du har inte" say the obj. "att attackera med."
       And obj is vapen
-        else "Det är inte så smart att attackera något med" say the obj. "!"
+        else "Det Ã¤r inte sÃ¥ smart att attackera nÃ¥got med" say the obj. "!"
       Does
-        "Våld är sällan svaret."
+        "VÃ¥ld Ã¤r sÃ¤llan svaret."
   End verb.
 End add.
 
@@ -57,17 +57,17 @@ End add.
 Syntax
   skjut = skjut (obj)
     Where obj IsA thing
-      else "Du kan inte skjuta på" say the obj. "."
-  skjut = skjut på (obj).
+      else "Du kan inte skjuta pÃ¥" say the obj. "."
+  skjut = skjut pÃ¥ (obj).
 
 
 Add to every thing
   Verb skjut
     Does
       If obj is beskjutbar then
-        "Du måste säga vad du vill skjuta på."
+        "Du mÃ¥ste sÃ¤ga vad du vill skjuta pÃ¥."
       else
-        "Du måste säga vad du vill skjuta" say the obj. "med."
+        "Du mÃ¥ste sÃ¤ga vad du vill skjuta" say the obj. "med."
       End if.
   End verb.
 End add.
@@ -78,13 +78,13 @@ Syntax
     Where obj IsA object
       else "Du kan inte skjuta med" say the obj. "."
     And act IsA thing
-      else "Du kan inte skjuta på" say the act. "."
+      else "Du kan inte skjuta pÃ¥" say the act. "."
 
   skjut_with = skjut (act) med (obj)
     Where obj IsA object
       else "Du kan inte skjuta med" say the obj. "."
     And act IsA thing
-      else "Du kan inte skjuta på" say the act. "."
+      else "Du kan inte skjuta pÃ¥" say the act. "."
 
 Add to every thing
   Verb skjut_at
@@ -92,9 +92,9 @@ Add to every thing
       Check obj in hero
         else "Du har inte det."
       And obj is beskjutbar
-        else "Du kan inte skjuta något med" say the obj. "."
+        else "Du kan inte skjuta nÃ¥got med" say the obj. "."
       Does
-        "Våld är sällan svaret."
+        "VÃ¥ld Ã¤r sÃ¤llan svaret."
   End verb.
 
   Verb skjut_with
@@ -102,8 +102,8 @@ Add to every thing
       Check obj in hero
         else "Du har inte" say the obj. "."
       And obj is beskjutbar
-        else "Du kan inte skjuta något med" say the obj. "."
+        else "Du kan inte skjuta nÃ¥got med" say the obj. "."
       Does
-        "Våld är sällan svaret."
+        "VÃ¥ld Ã¤r sÃ¤llan svaret."
   End verb.
 End add.

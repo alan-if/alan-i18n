@@ -1,4 +1,4 @@
--- "messages_en.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
+﻿-- "messages_en.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
 --==============================================================================
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -17,7 +17,7 @@
 
 -- You can provide fine-tuned message responses by adding conditional code
 -- constructs inside any MESSAGE definition. For more info on how to achieve
--- this, refer to The ALAN Manual "�3.15. MESSAGEs".
+-- this, refer to The ALAN Manual "§3.15. MESSAGEs".
 
 -- For a detailed explanation of each message and its usage context, refer to
 -- The ALAN Manual "Appendix C.1. Input Response Messages".

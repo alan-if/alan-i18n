@@ -1,4 +1,4 @@
--- "empujar.i" <-- "push.i"
+﻿-- "empujar.i" <-- "push.i"
 
 Add to every thing
   Is empujable.
@@ -10,7 +10,7 @@ Synonyms
 Syntax
   empujar = empujar (obj)
     Where obj IsA thing
-      else "�No puedes empujar eso!."
+      else "¡No puedes empujar eso!."
   empujar = empujar 'el' (obj).
 
 Add to every object

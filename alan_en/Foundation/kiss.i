@@ -1,4 +1,4 @@
--- "kiss.i"
+﻿-- "kiss.i"
 
 Syntax
   kiss = kiss (obj)

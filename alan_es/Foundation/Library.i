@@ -1,11 +1,11 @@
---==============================================================================
+ï»¿--==============================================================================
 --------------------------------------------------------------------------------
--- * *  ALAN Foundation Library Spanish  * *  v0.1.0 | 2021/07/24 | ALAN 3.Beta7
+-- * *  ALAN Foundation Library Spanish  * * v0.1.1 | 2021/09/10 | ALAN 3.0Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
--- Basada en la librería española pALANte v0.6.1e, por Bruce Humphrey.
--- Basada en la librería inglesa versión 0.6.1dev y la librería palante 0.1 de
+-- Basada en la librerÃ­a espaÃ±ola pALANte v0.6.1e, por Bruce Humphrey.
+-- Basada en la librerÃ­a inglesa versiÃ³n 0.6.1dev y la librerÃ­a palante 0.1 de
 -- Marcos Donnantuoni.
 
 Import 'abrir.i'.       -- abrir, cerrar, abrir con, cerrar con

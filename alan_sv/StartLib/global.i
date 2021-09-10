@@ -1,4 +1,4 @@
--- global.i
+﻿-- global.i
 
 Add to every thing
   Is not plural.

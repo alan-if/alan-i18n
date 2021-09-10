@@ -1,4 +1,4 @@
--- brief.i
+﻿-- brief.i
 -- Library version 0.5.0
 
 

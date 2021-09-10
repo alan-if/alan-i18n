@@ -1,4 +1,4 @@
--- "escenario.i" <-- "scenery.i"
+﻿-- "escenario.i" <-- "scenery.i"
 
 Every escenario IsA object
   Is
@@ -13,7 +13,7 @@ Every escenario IsA object
   End verb.
 
   Verb buscar
-    Does only "No hace falta buscar nada ah�."
+    Does only "No hace falta buscar nada ahí."
   End verb.
 
   Verb tomar

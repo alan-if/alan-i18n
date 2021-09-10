@@ -1,5 +1,6 @@
 [![Travis CI Status][travis badge]][travis link]&nbsp;
 [![Alan version][alan badge]][alan link]&nbsp;
+[![Ruby version][ruby badge]][ruby link]&nbsp;
 [![License][license badge]][COPYING]
 
 # ALAN Internationalization Project
@@ -9,6 +10,9 @@ Multi-language translations of the __ALAN Foundation Library__, a basic [ALAN In
 - https://github.com/alan-if/alan-i18n
 
 Created by [Tristano Ajmone] on April, 2021.
+
+> **IMPORTANT** — All ALAN sources, solutions and transcripts files in this project are UTF-8 encoded.
+> You'll need ALAN version `3.0Beta8` (or above) in order to use this project and its libraries.
 
 -----
 
@@ -111,6 +115,7 @@ In order to fully build this project you'll need the following tools:
 - __[Alan SDK](#alan-sdk)__ (command line)
 - __[Ruby 3](#ruby)__ — and the following Ruby gems:
     + __[Rake](#rake)__
+    + __[Asciidoctor]__
 
 ## Alan SDK
 
@@ -167,9 +172,11 @@ More details about the license terms, authors and credits of each third party as
 
 [travis badge]: https://travis-ci.com/alan-if/alan-i18n.svg?branch=main "Travis CI: EditorConfig validation status"
 [travis link]: https://travis-ci.com/alan-if/alan-i18n
-[alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
-[alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
-[license badge]: https://img.shields.io/badge/license-Artistic%20License%202.0-blue
+[alan badge]: https://img.shields.io/badge/ALAN-3.0beta8-yellow
+[alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta8 "Tested with Alan SDK 3.0beta8"
+[ruby badge]: https://img.shields.io/badge/Ruby-3.0.2-yellow
+[ruby link]: https://www.ruby-lang.org "Requires Ruby 3"
+[license badge]: https://img.shields.io/badge/license-Artistic_License_2.0-blue
 
 <!-- ALAN Links -->
 
@@ -189,6 +196,7 @@ More details about the license terms, authors and credits of each third party as
 
 <!-- third party tools -->
 
+[Asciidoctor]: https://github.com/asciidoctor/asciidoctor
 [Chocolatey GUI]: https://community.chocolatey.org/packages/ChocolateyGUI
 [Chocolatey Ruby package]: https://community.chocolatey.org/packages/ruby
 [Rake]: https://ruby.github.io/rake/ "Visit Rake website"

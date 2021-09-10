@@ -1,4 +1,4 @@
--- "messages_de.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
+ï»¿-- "messages_de.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
 --==============================================================================
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -17,7 +17,7 @@
 
 -- You can provide fine-tuned message responses by adding conditional code
 -- constructs inside any MESSAGE definition. For more info on how to achieve
--- this, refer to The ALAN Manual "§3.15. MESSAGEs".
+-- this, refer to The ALAN Manual "Â§3.15. MESSAGEs".
 
 -- For a detailed explanation of each message and its usage context, refer to
 -- The ALAN Manual "Appendix C.1. Input Response Messages".
@@ -49,7 +49,7 @@ SEE_END: "hier."
 -- Inanimate Containers
 --------------------------------------------------------------------------------
 
-CONTAINS: "$+1 enthält"
+CONTAINS: "$+1 enthÃ¤lt"
 CONTAINS_COMMA: "$01,"
 CONTAINS_AND: "$01 und"
 CONTAINS_END: "$01."
@@ -60,8 +60,8 @@ IS_EMPTY: "$+1 ist leer."
 -- Actors Inventories
 --------------------------------------------------------------------------------
 
-CARRIES: "$+1 trägt"
-EMPTY_HANDED: "$+1 trägt nichts."
+CARRIES: "$+1 trÃ¤gt"
+EMPTY_HANDED: "$+1 trÃ¤gt nichts."
 
 -- =============================================================================
 
@@ -74,9 +74,9 @@ NO_WAY: "Du kannst nicht in diese Richtung gehen."
 CANT0: "Du kannst das nicht tun."
 IMPOSSIBLE_WITH: "Es gibt nicht mit $+1."
 
-CAN_NOT_CONTAIN: "$+1 kan $+2 nicht trägen."
-CONTAINMENT_LOOP: "Es ist unmöglich, $+1 in sich selbst zu setzen."
-CONTAINMENT_LOOP2: "Es ist unmöglich, $+1 in $+2 zu setzen,
+CAN_NOT_CONTAIN: "$+1 kan $+2 nicht trÃ¤gen."
+CONTAINMENT_LOOP: "Es ist unmÃ¶glich, $+1 in sich selbst zu setzen."
+CONTAINMENT_LOOP2: "Es ist unmÃ¶glich, $+1 in $+2 zu setzen,
                     weil $+2 bereits in $+1 ist."
 
 -- =============================================================================
@@ -88,7 +88,7 @@ CONTAINMENT_LOOP2: "Es ist unmöglich, $+1 in $+2 zu setzen,
 UNKNOWN_WORD: "Ich kenne das Wort '$1' nicht."
 WHAT: "Ich ferste nicht."
 WHAT_WORD: "Ich verstehe nicht was Du mit '$1' meinst."
-MULTIPLE: "Du kannst Dich nicht auf mehrere Gegenstände mit '$v' beziehen."
+MULTIPLE: "Du kannst Dich nicht auf mehrere GegenstÃ¤nde mit '$v' beziehen."
 NOUN: "Du musst ein Gegenstandswort angeben."
 
 --------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ NOUN: "Du musst ein Gegenstandswort angeben."
 
 AFTER_BUT: "Du musst zum mindesten einen Gegenstand nach '$1' angeben."
 BUT_ALL: "Du kannst '$1' nur nach '$2' verwenden."
-NOT_MUCH: "Das überläßt viel nicht zu $v!"
+NOT_MUCH: "Das Ã¼berlÃ¤ÃŸt viel nicht zu $v!"
 
 --------------------------------------------------------------------------------
 -- Disambiguation
@@ -126,9 +126,9 @@ WHICH_PRONOUN_FIRST: "$+1"
     --       prompt where the user will be typing the response.
     ----------------------------------------------------------------------
 
-REALLY: "Bist Du sicher (ENTER bestätigt) ? "
+REALLY: "Bist Du sicher (ENTER bestÃ¤tigt) ? "
 
-QUIT_ACTION: "Mö""chtest Du UNDO, RESTART, RESTORE oder QUIT ? "
+QUIT_ACTION: "MÃ¶""chtest Du UNDO, RESTART, RESTORE oder QUIT ? "
     --------------------------------------------------------------
     -- NOTE: The suggested choices UNDO, RESTART, RESTORE and QUIT
     --       are hardcoded into ALAN and can't be overridden.
@@ -146,7 +146,7 @@ NO_UNDO: "Es gibt nichts zu annulieren."
 --------------------------------------------------------------------------------
 
 SAVE_WHERE: "Gib den Dateinamen an, um zu speichern"
-SAVE_OVERWRITE: "Ein Datei mit dieser name existiert, überschreiben (ENTER, bestätigt)? "
+SAVE_OVERWRITE: "Ein Datei mit dieser name existiert, Ã¼berschreiben (ENTER, bestÃ¤tigt)? "
 SAVE_FAILED: "Das Spiel konnte nicht gespeichert werden."
 
 --------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ SAVE_FAILED: "Das Spiel konnte nicht gespeichert werden."
 --------------------------------------------------------------------------------
 
 RESTORE_FROM: "Von welcher Datei soll das Spiel wieder hergestellt werden."
-SAVE_MISSING: "Konnte das gespeicherte Spiel nicht ö""ffnen."
+SAVE_MISSING: "Konnte das gespeicherte Spiel nicht Ã¶""ffnen."
 NOT_A_SAVEFILE: "Diese Datei scheint kein gespeichertes ALAN Spiel zu sein."
 SAVE_VERSION: "Diese Datei wurde mit einer anderen Version gespeichert."
-SAVE_NAME: "Diese gespeicherte Datei gehört nicht zu diesem Spiel."
+SAVE_NAME: "Diese gespeicherte Datei gehÃ¶rt nicht zu diesem Spiel."

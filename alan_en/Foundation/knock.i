@@ -1,4 +1,4 @@
--- "knock.i"
+﻿-- "knock.i"
 
 Syntax
   knock_on = knock 'on' (obj)

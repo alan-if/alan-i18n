@@ -1,4 +1,4 @@
--- "global.i"
+﻿-- "global.i"
 
 -- To make instance names always be capitalized (e.g. for persons),
 -- give the instance a capitalised name in single quotes. Since

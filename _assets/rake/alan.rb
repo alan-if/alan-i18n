@@ -1,15 +1,21 @@
-=begin "alan.rb" v0.2.0 | 2021/09/10 | by Tristano Ajmone | MIT License
+=begin "alan.rb" v0.3.0 | 2021/09/10 | by Tristano Ajmone | MIT License
 ================================================================================
 Some custom Rake helper methods for automating common Alan SDK operations that
 we use across different Alan projects.
+Require ALAN SDK >= Beta8 and UFT-8 encoded sources and solutions.
 ================================================================================
 =end
 
 def CreateTranscript(storyfile, solution)
   # ----------------------------------------------------------------------------
-  # Only ISO solutions and transcripts! When we'll switch to UTF-8 will tweak it
-  # to handle UTF-8 encoded solutions, for this method will strip the BOM before
-  # piping it to ARun. It's just not wroth keeping double methods.
+  # Generate a transcript with the same base filename as the solution:
+  #
+  #   "<filename>.a3s" -> "<filename>.a3t"
+  #
+  # This method only supports UTF-8 solutions, with or without BOM. If a BOM is
+  # present it will be stripped off before feeding the solution to ARun, so it
+  # doesn't leak into the final transcript (as it would if redirecting the .a3s
+  # to ARun via 'arun < solution.a3s > transcript.a3t')
   # ----------------------------------------------------------------------------
   TaskHeader("Generating Transcript: #{solution.ext('.a3t')}")
 
@@ -19,8 +25,8 @@ def CreateTranscript(storyfile, solution)
   a3c = storyfile.pathmap("%f")
 
   cd "#{$repo_root}/#{target_folder}"
-  sol_file = File.open(a3s, mode: "rt", encoding: "ISO-8859-1")
-  IO.popen("arun -r -i #{a3c} > #{a3t}", "r+") do |transcript|
+  sol_file = File.open(a3s, mode: "rt", encoding: "BOM|UTF-8")
+  IO.popen("arun -r -u #{a3c} > #{a3t}", "r+") do |transcript|
     transcript.puts sol_file.read
   end
   cd $repo_root, verbose: false

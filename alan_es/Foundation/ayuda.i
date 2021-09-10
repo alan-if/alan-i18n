@@ -1,4 +1,4 @@
--- "ayuda.i" <-- "help.i"
+ï»¿-- "ayuda.i" <-- "help.i"
 
 Synonyms
   h, help = ayuda.
@@ -10,12 +10,12 @@ Verb ayuda
   Does
     "En este juego soy tus ojos y tu cuerpo. Yo describo tu entorno y tu
      me dices que quieres hacer. Por ejemplo, si quieres ir al norte,
-     teclea 'norte'. Hay muchas más cosas que puedes hacer, como tomar
-     objetos, examinarlos, abrir puertas, etc. ¡Prueba cualquier cosa que
-     harías si estuviese allí de verdad!$pRecuerda estudiar las descripciones
-     cuidadosamente, ¡seguro que tienen pistas!$pPuedes usar 'puntuacion'
+     teclea 'norte'. Hay muchas mÃ¡s cosas que puedes hacer, como tomar
+     objetos, examinarlos, abrir puertas, etc. Â¡Prueba cualquier cosa que
+     harÃ­as si estuviese allÃ­ de verdad!$pRecuerda estudiar las descripciones
+     cuidadosamente, Â¡seguro que tienen pistas!$pPuedes usar 'puntuacion'
      para ver como vas. 'grabar' y 'restaurar' te permiten guardar la partida
-     para resumirla más tarde.$p¡¡Buena Suerte!! ¡La vas a necesitar...!"
+     para resumirla mÃ¡s tarde.$pÂ¡Â¡Buena Suerte!! Â¡La vas a necesitar...!"
 End verb.
 
 Synonyms
@@ -32,7 +32,7 @@ End verb.
 ----
 
 Synonyms
-  autor, créditos, info, informacion, información, notas = creditos.
+  autor, crÃ©ditos, info, informacion, informaciÃ³n, notas = creditos.
 
 Syntax
   creditos = creditos.
@@ -41,8 +41,8 @@ Verb creditos
   Does
     "El autor tiene el copyright de este juego.
      $pEste juego se ha creado utilizando ALAN Adventure Language.
-     ALAN es un sistema de autoría de ficción interactiva por Thomas Nilefalk
+     ALAN es un sistema de autorÃ­a de ficciÃ³n interactiva por Thomas Nilefalk
      $nemail: thomas@alanif.se
-     $pPuedes encontrar más información sobre ALAN en la web:
+     $pPuedes encontrar mÃ¡s informaciÃ³n sobre ALAN en la web:
      $ihttps://www.alanif.se"
 End verb.

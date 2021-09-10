@@ -13,6 +13,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.1 \(2021/09/10\)](#v021-20210910)
     - [v0.2.0 \(2021/09/05\)](#v020-20210905)
     - [v0.1.2 \(2021/07/29\)](#v012-20210729)
     - [v0.1.1 \(2021/07/29\)](#v011-20210729)
@@ -25,11 +26,28 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 # Beta Releases
 
+## v0.2.1 (2021/09/10)
+
+### Switch to UTF-8 Encoding
+
+In view of the imminent Alan 3.0Beta8 release, which introduces support for UTF-8 encoded files, all Alan sources, solution and transcript files are converted to UTF-8:
+
+| extension |  file type  |  encoding |
+|-----------|-------------|-----------|
+| `*.alan`  | ALAN source | UTF-8-BOM |
+| `*.i`     | ALAN module | UTF-8-BOM |
+| `*.a3s`   | solution    | UTF-8-BOM |
+| `*.a3t`   | transcript  | UTF-8     |
+
+
+> **NOTE** — Although these ALAN files are now encoded in UTF-8, ALAN internally sill handles them as ISO-8859-1, therefore the supported characters set is still limited to valid Latin1 characters.
+
+
 ## v0.2.0 (2021/09/05)
 
 ### New Wearing Mechanics
 
-The wearing mechanics have been entirely redesigned, the new system being simpler and less error-prone, also allowing NPCs to wear items:
+The wearing mechanics have been entireLy redesigned, the new system being simpLer and less error-prone, also allowing NPCs to wear items:
 
 - Removed the `worn` ENTIY, which is now replaced by two new attributes defined on every `object`:
     + `wearer` — a reference attribute pointing to the wearing actor or `nobody` (a dummy actor at `nowhere`).

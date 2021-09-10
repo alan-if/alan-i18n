@@ -1,4 +1,4 @@
--- "give.i"
+﻿-- "give.i"
 
 Syntax
   give = 'give' (obj) 'to' (recip)

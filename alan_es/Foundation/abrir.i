@@ -1,4 +1,4 @@
--- "abrir.i" <-- "open.i"
+ï»¿-- "abrir.i" <-- "open.i"
 
 Add to every object
   Is
@@ -22,9 +22,9 @@ Add to every object
 
   Verb abrir
     Check obj is abrible
-      else "¡No puedes abrir eso!"
+      else "Â¡No puedes abrir eso!"
     And obj is not abierto
-      else "Ya está" say term_n of this.
+      else "Ya estÃ¡" say term_n of this.
            " abiert" say term_s of this.
     Does
       Make obj abierto.
@@ -47,15 +47,15 @@ Add to every object
   Verb abrir_con
     When obj
       Check obj is cerrojable
-        else "¡Eso no se puede abrir con llave!"
+        else "Â¡Eso no se puede abrir con llave!"
       And obj is not abierto
-        else "Ya está abierto."
+        else "Ya estÃ¡ abierto."
       And key in hero
         else "No tienes" say the key. "."
     Does
       Make obj abierto.
       Make obj not cerrojo.
-      Say the obj. "ahora está descerrojado."
+      Say the obj. "ahora estÃ¡ descerrojado."
     End verb.
 End add.
 
@@ -76,11 +76,11 @@ Add to every object
     Check obj is cerrable
       else "Eso no lo puedes cerrar."
     And obj is abierto
-      else "No está" say term_n of this.
+      else "No estÃ¡" say term_n of this.
            " abiert" say term_s of this. "."
     Does
       Make obj not abierto.
-      Say the obj. "ahora está" say term_n of this.
+      Say the obj. "ahora estÃ¡" say term_n of this.
       " cerrad" say term_s of this. "."
     End verb.
 End add to.
@@ -100,14 +100,14 @@ Add to every object
   Verb cerrar_con
     When obj
       Check obj is cerrojable
-        else "¡No puedes cerrar con llave eso!"
+        else "Â¡No puedes cerrar con llave eso!"
       And obj is not cerrojo
-        else "Ya lo está."
+        else "Ya lo estÃ¡."
       And key in hero
         else "No tienes" say the key. "."
     Does
       Make obj cerrojo.
       Make obj not abierto.
-      Say the obj. " está ahora cerrado con llave."
+      Say the obj. " estÃ¡ ahora cerrado con llave."
     End verb.
 End add.

@@ -1,17 +1,17 @@
--- "besar.i" <-- "kiss.i"
+ï»¿-- "besar.i" <-- "kiss.i"
 
 Synonyms
   beso, besa, besucar, besuco, besuca, besuqueo, besuquea, besuquear = besar.
 Syntax
   besar = besar (obj)
     Where obj IsA thing
-      else "¡No se puede besar!"
+      else "Â¡No se puede besar!"
 
 Add to every thing
   Verb besar
     Does
       If obj=hero then
-        "Bueno, ¡si insistes!"
+        "Bueno, Â¡si insistes!"
       else
         If obj is InAnimado then
           "Besas" say the obj. "."

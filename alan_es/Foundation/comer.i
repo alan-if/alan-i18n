@@ -1,4 +1,4 @@
--- "comer.i" <-- "eat.i"
+ï»¿-- "comer.i" <-- "eat.i"
 
 Add to every object
 Is
@@ -19,16 +19,16 @@ Synonyms
 Syntax
   comer = comer (obj)
     Where obj IsA object
-      else "¡No te puedes comer" say an obj. "!"
+      else "Â¡No te puedes comer" say an obj. "!"
 
   beber = beber (obj)
     Where obj IsA object
-      else "¡No puedes beber" say an obj. "!"
+      else "Â¡No puedes beber" say an obj. "!"
 
 Add to every object
   Verb comer
     Check obj is comestible
-      else "¡No te puedes comer eso!"
+      else "Â¡No te puedes comer eso!"
     Does
       Locate obj at Limbo.
       "Te comes" say the obj. "."

@@ -2,49 +2,49 @@
     -Memorias de Rexxe-
  (c) 1998 Jaume Alcazo Castellarnau.
 
- Esta es la versión 1.0.1, programada en ALAN del juego "Vampiro"
-original de Aventuras ALCAZO. Para más información teclea HISTORIA en el
+ Esta es la versiÃ³n 1.0.3, programada en ALAN del juego "Vampiro"
+original de Aventuras ALCAZO. Para mÃ¡s informaciÃ³n teclea HISTORIA en el
 juego.
 
 Muchas gracias por jugar
 
 
 
-    Despiertas aturdido. Después de unos segundos te incorporas en el
-frío suelo de piedra y ves que estás en un castillo. ¡Ahora recuerdas!
-Eres reXXe y tu misión es la de matar al vampiro. TIENES que matar al
+    Despiertas aturdido. DespuÃ©s de unos segundos te incorporas en el
+frÃ­o suelo de piedra y ves que estÃ¡s en un castillo. Â¡Ahora recuerdas!
+Eres reXXe y tu misiÃ³n es la de matar al vampiro. TIENES que matar al
 vampiro que vive en la parte superior del castillo...
 
 
 
 Hall
-Estás en el vestíbulo del castillo. El ambiente es muy húmedo y frío.
-Estás en un pasillo que se extiende hacia el norte. Al sur queda la
+EstÃ¡s en el vestÃ­bulo del castillo. El ambiente es muy hÃºmedo y frÃ­o.
+EstÃ¡s en un pasillo que se extiende hacia el norte. Al sur queda la
 puerta de entrada al castillo.
 
 > N
 El Pasillo
-Te encuentras en medio del pasillo principal de este piso. Al oeste está
+Te encuentras en medio del pasillo principal de este piso. Al oeste estÃ¡
 la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
 
 > O
 Cocina
-Estás en la cocina del castillo. Esto está lleno de cacerolas y de
-cacharros para cocinar. Hay un horno, un fregadero y un armario pequeño.
+EstÃ¡s en la cocina del castillo. Esto estÃ¡ lleno de cacerolas y de
+cacharros para cocinar. Hay un horno, un fregadero y un armario pequeÃ±o.
 
 > TOMA TODO
 (cuchillo) Tomas el cuchillo.
 
 > E
 El Pasillo
-Te encuentras en medio del pasillo principal de este piso. Al oeste está
+Te encuentras en medio del pasillo principal de este piso. Al oeste estÃ¡
 la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
 
 > E
 Biblioteca
-Te hallas en la biblioteca del castillo. Obviamente está llena de libros
+Te hallas en la biblioteca del castillo. Obviamente estÃ¡ llena de libros
 interesantes, pero desgraciadamente no tienes tiempo para leerlos. Hay un
-pequeño crucifijo plateado en un lado. En el suelo hay una palanca de
+pequeÃ±o crucifijo plateado en un lado. En el suelo hay una palanca de
 acero.
 
 > TOMA TODO
@@ -54,37 +54,37 @@ acero.
 
 > O
 El Pasillo
-Te encuentras en medio del pasillo principal de este piso. Al oeste está
+Te encuentras en medio del pasillo principal de este piso. Al oeste estÃ¡
 la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
 
 > N
 Las Escaleras
-Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
-suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+Te hallas en el final del pasillo. Delante de tÃ­ ves unas escaleras que
+suben y otras que bajan. Al oeste estÃ¡ el dormitorio y al este la sala de
 estar.
 
 > BAJA
 Sotano
-En este pequeño sótano hace mucho calor, sientes una sensación de
-recogimiento. Está todo muy sucio. Hay un barril aquí, también hay unas
+En este pequeÃ±o sÃ³tano hace mucho calor, sientes una sensaciÃ³n de
+recogimiento. EstÃ¡ todo muy sucio. Hay un barril aquÃ­, tambiÃ©n hay unas
 escaleras que suben.
 
 > ABRE BARRIL CON PALANCA
--¡Clack!- Haciendo palanca logras abrir el barril.
+-Â¡Clack!- Haciendo palanca logras abrir el barril.
 
 > TOMA MARTILLO
 Tomas el martillo.
 
 > SUBE
 Las Escaleras
-Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
-suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+Te hallas en el final del pasillo. Delante de tÃ­ ves unas escaleras que
+suben y otras que bajan. Al oeste estÃ¡ el dormitorio y al este la sala de
 estar.
 
 > E
 Sala de Estar
-Es la sala más acogedora de todo el castillo. En la chimenea los últimos
-restos de algún fuego chisporrotean alegremente. Hay una mesa grande con
+Es la sala mÃ¡s acogedora de todo el castillo. En la chimenea los Ãºltimos
+restos de algÃºn fuego chisporrotean alegremente. Hay una mesa grande con
 una silla al lado. De la pared cuelgan bastantes trofeos de caza y
 adornos varios.
 
@@ -95,7 +95,7 @@ Es una chimenea hecha de ladrillos y muy elegante.
 Es una chimenea hecha de ladrillos y muy elegante.
 
 > X FUEGO
-Son los restos de algún fuego reciente. Entre ellas encuentras un trozo
+Son los restos de algÃºn fuego reciente. Entre ellas encuentras un trozo
 de madera.
 
 > TOMA MADERA
@@ -103,8 +103,8 @@ Tomas la madera.
 
 > O
 Las Escaleras
-Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
-suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+Te hallas en el final del pasillo. Delante de tÃ­ ves unas escaleras que
+suben y otras que bajan. Al oeste estÃ¡ el dormitorio y al este la sala de
 estar.
 
 > I
@@ -112,22 +112,22 @@ Tienes un cuchillo, un martillo, una madera, una palanca y un crucifijo
 plateado. Llevas un traje barato.
 
 > AFILA MADERA CON CUCHILLO
-Afilas la madera con el cuchillo ¡y obtienes una estaca!
+Afilas la madera con el cuchillo Â¡y obtienes una estaca!
 
 > O
 Dormitorio
-Estás en un dormitorio no muy grande ni tampoco muy pequeño. Es bastante
-austero. Sólo hay una cama y un armario. Hay un armario.
+EstÃ¡s en un dormitorio no muy grande ni tampoco muy pequeÃ±o. Es bastante
+austero. SÃ³lo hay una cama y un armario. Hay un armario.
 
 > X CAMA
-Está cubierta de sábanas.
+EstÃ¡ cubierta de sÃ¡banas.
 
 > X SABANAS
-Sábanas corrientes y molientes. Entre ellas encuentras una pequeña
+SÃ¡banas corrientes y molientes. Entre ellas encuentras una pequeÃ±a
 llavecita.
 
 > TOMA LLAVECITA
-Tomas la pequeña llavecita.
+Tomas la pequeÃ±a llavecita.
 
 > DEJA PALANCA
 Dejas la palanca.
@@ -137,79 +137,79 @@ Ya lo tienes.
 
 > E
 Las Escaleras
-Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
-suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+Te hallas en el final del pasillo. Delante de tÃ­ ves unas escaleras que
+suben y otras que bajan. Al oeste estÃ¡ el dormitorio y al este la sala de
 estar.
 
 > S
 El Pasillo
-Te encuentras en medio del pasillo principal de este piso. Al oeste está
+Te encuentras en medio del pasillo principal de este piso. Al oeste estÃ¡
 la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
 
 > O
 Cocina
-Estás en la cocina del castillo. Esto está lleno de cacerolas y de
-cacharros para cocinar. Hay un horno, un fregadero y un armario pequeño.
+EstÃ¡s en la cocina del castillo. Esto estÃ¡ lleno de cacerolas y de
+cacharros para cocinar. Hay un horno, un fregadero y un armario pequeÃ±o.
 
 > ABRE ARMARIO CON LLAVE
 Giras la llavecita y abres el armario.
 
 > X ARMARIO
-Está abierto. Al examinarlo se te cae al suelo una ristra de ajos que
+EstÃ¡ abierto. Al examinarlo se te cae al suelo una ristra de ajos que
 estaba en su interior.
 
 > M
 Cocina
-Estás en la cocina del castillo. Esto está lleno de cacerolas y de
-cacharros para cocinar. Hay un horno, un fregadero y un armario pequeño. 
+EstÃ¡s en la cocina del castillo. Esto estÃ¡ lleno de cacerolas y de
+cacharros para cocinar. Hay un horno, un fregadero y un armario pequeÃ±o. 
 Una ristra de ajos.
 
 > TOMA AJOS
 Tomas la ristra de ajos.
 
 > I
-Tienes un martillo, una ristra de ajos, una pequeña llavecita, una estaca, 
+Tienes un martillo, una ristra de ajos, una pequeÃ±a llavecita, una estaca, 
 un cuchillo y un crucifijo plateado. Llevas un traje barato.
 
 > DEJA LLAVECITA
-Dejas la pequeña llavecita.
+Dejas la pequeÃ±a llavecita.
 
 > TOMA AJOS
 Ya lo tienes.
 
 > E
 El Pasillo
-Te encuentras en medio del pasillo principal de este piso. Al oeste está
+Te encuentras en medio del pasillo principal de este piso. Al oeste estÃ¡
 la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
 
 > N
 Las Escaleras
-Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
-suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+Te hallas en el final del pasillo. Delante de tÃ­ ves unas escaleras que
+suben y otras que bajan. Al oeste estÃ¡ el dormitorio y al este la sala de
 estar.
 
 > ARRIBA
 Rellano
-Estás en el piso superior del castillo. Aquí hace aún más frío que abajo.
-Detrás de tí están las escaleras que bajan y hacia el oeste está la
-habitación del vampiro. Conducen al piso inferior.
+EstÃ¡s en el piso superior del castillo. AquÃ­ hace aÃºn mÃ¡s frÃ­o que abajo.
+DetrÃ¡s de tÃ­ estÃ¡n las escaleras que bajan y hacia el oeste estÃ¡ la
+habitaciÃ³n del vampiro. Conducen al piso inferior.
 
 > O
 Habitacion
-Estás en una habitación desnuda. Unicamente hay un altar en el centro.
+EstÃ¡s en una habitaciÃ³n desnuda. Unicamente hay un altar en el centro.
 Encima del altar puedes ver un ataud.
 
 > ABRE ATAUD
 Abres el ataud. Dentro contemplas la horrible cara del vampiro. Protegido
 por los ajos y el crucifijo empiezas tu horrible tarea. Le clavas la
-estaca en el pecho y de un terrible golpe de martillo la hundes en lo más
-profundo de su ser. Con un grito de agonía se deshace en polvo y tú
-acabas tu misión aquí. ^^Por ahora...^^
+estaca en el pecho y de un terrible golpe de martillo la hundes en lo mÃ¡s
+profundo de su ser. Con un grito de agonÃ­a se deshace en polvo y tÃº
+acabas tu misiÃ³n aquÃ­. ^^Por ahora...^^
 
 
 
 
-¡¡FINIS!!
+Â¡Â¡FINIS!!
 
-¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+Â¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
 salir (quit)?

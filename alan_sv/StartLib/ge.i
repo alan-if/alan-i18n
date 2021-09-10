@@ -1,4 +1,4 @@
--- ge.i
+﻿-- ge.i
 
 
 Syntax
@@ -16,7 +16,7 @@ Add to every object
         else "Du har inte" say the obj. "."
     Does
       If recip=hero then
-        "Snällt! Att ge" say the obj. "till dig själv..."
+        "SnÃ¤llt! Att ge" say the obj. "till dig sjÃ¤lv..."
       else
         "Du ger" say the obj. "till" say the recip. "."
         Locate obj in recip.

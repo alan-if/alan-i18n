@@ -13,6 +13,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.1.1 \(2021/09/10\)](#v011-20210910)
     - [v0.1.0 \(2021/07/24\)](#v010-20210724)
 
 <!-- /MarkdownTOC -->
@@ -20,6 +21,21 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 -----
 
 # Beta Releases
+
+## v0.1.1 (2021/09/10)
+
+In view of the imminent Alan 3.0Beta8 release, which introduces support for UTF-8 encoded files, all Alan sources, solution and transcript files are converted to UTF-8:
+
+| extension |  file type  |  encoding |
+|-----------|-------------|-----------|
+| `*.alan`  | ALAN source | UTF-8-BOM |
+| `*.i`     | ALAN module | UTF-8-BOM |
+| `*.a3s`   | solution    | UTF-8-BOM |
+| `*.a3t`   | transcript  | UTF-8     |
+
+
+> **NOTE** — Although these ALAN files are now encoded in UTF-8, ALAN internally sill handles them as ISO-8859-1, therefore the supported characters set is still limited to valid Latin1 characters.
+
 
 ## v0.1.0 (2021/07/24)
 

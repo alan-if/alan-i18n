@@ -1,4 +1,4 @@
--- "messages_sv.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
+ï»¿-- "messages_sv.i" | 2021/08/17 | 6d7ede7f37e97d63c8db5a3d2a1374 | ALAN 3.0beta7
 --==============================================================================
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -11,15 +11,15 @@
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --==============================================================================
 
--- Använd denna mall för att överrida standardmeddelandena som är inbyggda i Alan
--- med dina egna anpassade texter. Texterna som finns här är samma som de som
--- finns inbyggda om du väljer svenska som språk.
+-- AnvÃ¤nd denna mall fÃ¶r att Ã¶verrida standardmeddelandena som Ã¤r inbyggda i Alan
+-- med dina egna anpassade texter. Texterna som finns hÃ¤r Ã¤r samma som de som
+-- finns inbyggda om du vÃ¤ljer svenska som sprÃ¥k.
 
--- Du kan finjustera meddelandena genom att lägga till extra kod i MESSAGE-
--- definitionerna. För mer information see Alan-manualens avsnitt
--- "§3.15. MESSAGEs".
+-- Du kan finjustera meddelandena genom att lÃ¤gga till extra kod i MESSAGE-
+-- definitionerna. FÃ¶r mer information see Alan-manualens avsnitt
+-- "Â§3.15. MESSAGEs".
 
--- För mer en detaljerad förklaring av varje medddelande och hur den används, se
+-- FÃ¶r mer en detaljerad fÃ¶rklaring av varje medddelande och hur den anvÃ¤nds, se
 -- ALAN-manualen "Appendix C.1. Input Response Messages".
 
 --------------------------------------------------------------------------------
@@ -43,25 +43,25 @@ AGAIN: "(igen)"
 SEE_START: "Det finns $01"
 SEE_COMMA: ", $01"
 SEE_AND: "och $01"
-SEE_END: "här."
+SEE_END: "hÃ¤r."
 
 --------------------------------------------------------------------------------
--- Behållare
+-- BehÃ¥llare
 --------------------------------------------------------------------------------
 
-CONTAINS: "$+1 innehåller"
+CONTAINS: "$+1 innehÃ¥ller"
 CONTAINS_COMMA: "$01,"
 CONTAINS_AND: "$01 och"
 CONTAINS_END: "$01."
 
-IS_EMPTY: "$+1 är tom."
+IS_EMPTY: "$+1 Ã¤r tom."
 
 --------------------------------------------------------------------------------
--- Aktörers inventarier
+-- AktÃ¶rers inventarier
 --------------------------------------------------------------------------------
 
-CARRIES: "$+1 bär på"
-EMPTY_HANDED: "$+1 bär inte på något."
+CARRIES: "$+1 bÃ¤r pÃ¥"
+EMPTY_HANDED: "$+1 bÃ¤r inte pÃ¥ nÃ¥got."
 
 -- =============================================================================
 
@@ -69,15 +69,15 @@ EMPTY_HANDED: "$+1 bär inte på något."
 
 -- =============================================================================
 
-NO_SUCH: "Jag ser ingen $1 här."
-NO_WAY: "Du kan inte gå åt det hållet."
-CANT0: "Det går inte att göra."
-IMPOSSIBLE_WITH: "Det går inte med $+1."
+NO_SUCH: "Jag ser ingen $1 hÃ¤r."
+NO_WAY: "Du kan inte gÃ¥ Ã¥t det hÃ¥llet."
+CANT0: "Det gÃ¥r inte att gÃ¶ra."
+IMPOSSIBLE_WITH: "Det gÃ¥r inte med $+1."
 
-CAN_NOT_CONTAIN: "$+1 kan inte innehålla $+2."
-CONTAINMENT_LOOP: "Det är omöjligt att stoppa $+1 i sig själv."
-CONTAINMENT_LOOP2: "Det är omöjligt att stoppa $+1 i
-                    $+2 eftersom $+2 redan är inuti $+1."
+CAN_NOT_CONTAIN: "$+1 kan inte innehÃ¥lla $+2."
+CONTAINMENT_LOOP: "Det Ã¤r omÃ¶jligt att stoppa $+1 i sig sjÃ¤lv."
+CONTAINMENT_LOOP2: "Det Ã¤r omÃ¶jligt att stoppa $+1 i
+                    $+2 eftersom $+2 redan Ã¤r inuti $+1."
 
 -- =============================================================================
 
@@ -85,29 +85,29 @@ CONTAINMENT_LOOP2: "Det är omöjligt att stoppa $+1 i
 
 -- =============================================================================
 
-UNKNOWN_WORD: "Jag känner inte till ordet '$1'."
-WHAT: "Jag förstår inte det där."
-WHAT_WORD: "Jag förstår inte vad du menar med '$1'."
+UNKNOWN_WORD: "Jag kÃ¤nner inte till ordet '$1'."
+WHAT: "Jag fÃ¶rstÃ¥r inte det dÃ¤r."
+WHAT_WORD: "Jag fÃ¶rstÃ¥r inte vad du menar med '$1'."
 MULTIPLE: "Du kan inte ange flera objekt tillsammans med verbet '$v'."
-NOUN: "Du måste ange ett substantiv."
+NOUN: "Du mÃ¥ste ange ett substantiv."
 
 --------------------------------------------------------------------------------
--- Felaktig användning av OCH och UTOM
+-- Felaktig anvÃ¤ndning av OCH och UTOM
 --------------------------------------------------------------------------------
 
-AFTER_BUT: "Jag förväntade mig åtminstone ett objekt efter '$1'."
-BUT_ALL: "Du kan bara använda '$1' efter '$2'."
-NOT_MUCH: "Det blir inte så mycket kvar att $v då!"
+AFTER_BUT: "Jag fÃ¶rvÃ¤ntade mig Ã¥tminstone ett objekt efter '$1'."
+BUT_ALL: "Du kan bara anvÃ¤nda '$1' efter '$2'."
+NOT_MUCH: "Det blir inte sÃ¥ mycket kvar att $v dÃ¥!"
 
 --------------------------------------------------------------------------------
 -- Flertydighet
 --------------------------------------------------------------------------------
 
-WHICH_START: "Jag är inte säker på om du menar $+1"
+WHICH_START: "Jag Ã¤r inte sÃ¤ker pÃ¥ om du menar $+1"
 WHICH_COMMA: ", $+1"
 WHICH_OR: "eller $+1."
 
-WHICH_PRONOUN_START: "Jag förstår inte om du med '$1' menar"
+WHICH_PRONOUN_START: "Jag fÃ¶rstÃ¥r inte om du med '$1' menar"
 WHICH_PRONOUN_FIRST: "$+1"
     ---------------------------------------------
     -- NOTE: Second to last candidates are listed
@@ -121,40 +121,40 @@ WHICH_PRONOUN_FIRST: "$+1"
 -- =============================================================================
 
     ----------------------------------------------------------------------
-    -- NOTE: Meddelanden som är frågor har ett blanksteg efter frågetecknet
+    -- NOTE: Meddelanden som Ã¤r frÃ¥gor har ett blanksteg efter frÃ¥getecknet
     --       ("? "). Detta ger ett mellanrum mellan '?' och svaret som
-    --       användaren skriver in.
+    --       anvÃ¤ndaren skriver in.
     ----------------------------------------------------------------------
 
-REALLY: "Är du säker (tryck RETUR för ja) ? "
+REALLY: "Ã„r du sÃ¤ker (tryck RETUR fÃ¶r ja) ? "
 
-QUIT_ACTION: "Vad vill du göra, UNDO, RESTART, RESTORE or QUIT ? "
+QUIT_ACTION: "Vad vill du gÃ¶ra, UNDO, RESTART, RESTORE or QUIT ? "
     --------------------------------------------------------------
     -- NOTE: De angivna svarsalternativen UNDO, RESTART, RESTORE
-    --       och QUIT är hårdkodade i ALAN och kan inte ändras.
-    --       Du bör inte översätta orden i meddelandet eftersom
-    --       användaren då inte vet vad som är giltiga svar.
+    --       och QUIT Ã¤r hÃ¥rdkodade i ALAN och kan inte Ã¤ndras.
+    --       Du bÃ¶r inte Ã¶versÃ¤tta orden i meddelandet eftersom
+    --       anvÃ¤ndaren dÃ¥ inte vet vad som Ã¤r giltiga svar.
     --------------------------------------------------------------
 
-HAVE_SCORED: "Du har samlat $1 poäng av $2 på $3 drag."
+HAVE_SCORED: "Du har samlat $1 poÃ¤ng av $2 pÃ¥ $3 drag."
 
 UNDONE: "'$1' ogjort."
-NO_UNDO: "Det finns inget att göra ogjort."
+NO_UNDO: "Det finns inget att gÃ¶ra ogjort."
 
 --------------------------------------------------------------------------------
--- Spara spelomgången
+-- Spara spelomgÃ¥ngen
 --------------------------------------------------------------------------------
 
-SAVE_WHERE: "Spara äventyret i vilken fil"
-SAVE_OVERWRITE: "Det finns en fil med det namnet, skriva över (tryck RETUR för ja) ? "
-SAVE_FAILED: "Tyvärr, det gick inte att spara äventyret."
+SAVE_WHERE: "Spara Ã¤ventyret i vilken fil"
+SAVE_OVERWRITE: "Det finns en fil med det namnet, skriva Ã¶ver (tryck RETUR fÃ¶r ja) ? "
+SAVE_FAILED: "TyvÃ¤rr, det gick inte att spara Ã¤ventyret."
 
 --------------------------------------------------------------------------------
--- Hämta sparad spelomgång
+-- HÃ¤mta sparad spelomgÃ¥ng
 --------------------------------------------------------------------------------
 
-RESTORE_FROM: "Hämta sparat äventyr från vilken fil"
-SAVE_MISSING: "Tyvärr, kunde inte hitta något sådant sparat äventyr."
+RESTORE_FROM: "HÃ¤mta sparat Ã¤ventyr frÃ¥n vilken fil"
+SAVE_MISSING: "TyvÃ¤rr, kunde inte hitta nÃ¥got sÃ¥dant sparat Ã¤ventyr."
 NOT_A_SAVEFILE: "Den filen verkar inte vara ett sparat Alan spel."
-SAVE_VERSION: "Tyvärr, det sparade äventyret har inte samma version."
-SAVE_NAME: "Tyvärr, det var inte detta äventyr som var sparat i den filen."
+SAVE_VERSION: "TyvÃ¤rr, det sparade Ã¤ventyret har inte samma version."
+SAVE_NAME: "TyvÃ¤rr, det var inte detta Ã¤ventyr som var sparat i den filen."

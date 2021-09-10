@@ -1,4 +1,4 @@
--- "scenery.i"
+﻿-- "scenery.i"
 
 Every scenery IsA object
   Is

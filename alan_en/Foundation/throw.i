@@ -1,4 +1,4 @@
--- "throw.i"
+﻿-- "throw.i"
 
 Synonyms
   dump, cast = throw.

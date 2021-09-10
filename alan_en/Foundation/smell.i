@@ -1,4 +1,4 @@
--- "smell.i"
+﻿-- "smell.i"
 
 Syntax
   smell0 = smell.

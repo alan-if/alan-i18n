@@ -1,4 +1,4 @@
--- "escuchar.i" <-- "listen.i"
+﻿-- "escuchar.i" <-- "listen.i"
 
 Synonyms
   escucha, escucho,
@@ -7,7 +7,7 @@ Synonyms
 Syntax
   escuchar_el = escuchar el (obj)
     Where obj IsA thing
-      else "�No puedes escuchar eso!"
+      else "¡No puedes escuchar eso!"
   escuchar_el = escuchar (obj).
 
 Add to every thing

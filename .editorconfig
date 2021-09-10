@@ -10,7 +10,7 @@ root = true
 
 # ALAN sources and solution files (edited):
 [*.{alan,i,a3s}]
-charset = unset
+charset = utf-8-bom
 end_of_line = unset
 indent_style = space
 indent_size = unset
@@ -19,7 +19,7 @@ insert_final_newline = true
 
 # ALAN transcripts (generated:
 [*.a3t]
-charset = unset
+charset = utf-8
 end_of_line = unset
 indent_style = space
 indent_size = unset

@@ -1,4 +1,4 @@
--- "meta_session.i"
+﻿-- "meta_session.i"
 
 -- Meta verbs definitions for extradiegetic commands relating
 -- to the current game session (storage, quitting, etc.).

@@ -1,4 +1,4 @@
--- invent.i
+﻿-- invent.i
 -- 0.6.2 : changed 'the Worn' from a 'thing' to an 'entity'
 
 -- Library version 0.5.0

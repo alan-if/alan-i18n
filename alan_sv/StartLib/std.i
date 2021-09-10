@@ -1,27 +1,27 @@
--- std.i (Swedish)
+﻿-- std.i (Swedish)
 -- Library version 0.6.2
 
 -- All verb definitions have a small, simple default body. To make
 -- them do other things use DOES ONLY in your specialised verb body.
 
 -- player character, etc.
-Import 'hjälte.i'.
+Import 'hjÃ¤lte.i'.
 Import 'global.i'.
 
 -- People, male/female etc.
-Import 'människor.i'.
+Import 'mÃ¤nniskor.i'.
 
 -- Standard verbs
 Import 'titta.i'.
 Import 'tag.i'.    -- + pick up, drop, put down.
-Import 'öppna.i'.    -- + close.
-Import 'lås.i'.    -- + unlock.
-Import 'ät.i'.     -- + drink.
+Import 'Ã¶ppna.i'.    -- + close.
+Import 'lÃ¥s.i'.    -- + unlock.
+Import 'Ã¤t.i'.     -- + drink.
 Import 'kasta.i'.
 Import 'tryck.i'.
-Import 'berör.i'.
-Import 'undersök.i'. -- + look at, search
-Import 'läs.i'.
+Import 'berÃ¶r.i'.
+Import 'undersÃ¶k.i'. -- + look at, search
+Import 'lÃ¤s.i'.
 Import 'placera.i'.     -- + put near,behind,on,under
 Import 'ge.i'.
 Import 'tala.i'.    -- + ask, tell, say, shout,
@@ -30,11 +30,11 @@ Import 'kyss.i'.
 Import 'vrid.i'.    -- + switch
 Import 'lyssna.i'.
 Import 'lukta.i'.
-Import 'slå.i'.
+Import 'slÃ¥.i'.
 Import 'hoppa.i'.
-Import 'ta_på.i'.    -- + remove, undress, put on
+Import 'ta_pÃ¥.i'.    -- + remove, undress, put on
 
-Import 'hjälp.i'.    -- + notes, hint
+Import 'hjÃ¤lp.i'.    -- + notes, hint
 
 
 -- Scenery

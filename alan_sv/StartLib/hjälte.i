@@ -1,20 +1,20 @@
--- hero.i
+﻿-- hero.i
 
 
 Synonyms
-  mig, jag = hjälte.
+  mig, jag = hjÃ¤lte.
 
-The hjälte IsA actor
+The hjÃ¤lte IsA actor
   Definite Form
-    "hjälten"
+    "hjÃ¤lten"
   Container
     Limits
       Count 10 then
-        "Du kan inte bära fler saker, du måste släppa något först."
+        "Du kan inte bÃ¤ra fler saker, du mÃ¥ste slÃ¤ppa nÃ¥got fÃ¶rst."
       weight 50 then
-        "Det är för tungt, du måste släppa något först."
+        "Det Ã¤r fÃ¶r tungt, du mÃ¥ste slÃ¤ppa nÃ¥got fÃ¶rst."
     Header
-      "Du bär på"
+      "Du bÃ¤r pÃ¥"
     else
-      "Du är tomhänt."
+      "Du Ã¤r tomhÃ¤nt."
 End the.

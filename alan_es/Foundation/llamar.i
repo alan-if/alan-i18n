@@ -1,4 +1,4 @@
--- "llamar.i"
+﻿-- "llamar.i"
 
 Synonyms
   llama, llamo = llamar.
@@ -6,7 +6,7 @@ Synonyms
 Syntax
   llamar_a = llamar a (obj)
     Where obj IsA thing
-      else "�No puedes llamar a eso!"
+      else "¡No puedes llamar a eso!"
   llamar_a = llamar (obj).
   llamar_a = llamar a el (obj).
   llamar_a = llamar el (obj).

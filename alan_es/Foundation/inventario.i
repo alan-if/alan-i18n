@@ -1,4 +1,4 @@
--- "inventario.i" <-- "invent.i"
+ï»¿-- "inventario.i" <-- "invent.i"
 
 Add to every thing
   Is peso 0.
@@ -32,9 +32,9 @@ The llevado IsA entity
   Container
     Limits
       Count 10 then
-        "No puedes llevar nada más. Debes dejar algo antes."
+        "No puedes llevar nada mÃ¡s. Debes dejar algo antes."
       peso 50 then
-        "No puedes llevar más peso. Debes dejar algo antes."
+        "No puedes llevar mÃ¡s peso. Debes dejar algo antes."
     Header
       "Llevas"
     else

@@ -1,4 +1,4 @@
--- "hero.i"
+﻿-- "hero.i"
 
 Synonyms
   me, myself, self = hero.

@@ -1,4 +1,4 @@
--- scenery.i
+﻿-- scenery.i
 -- Library version 0.5.0
 
 

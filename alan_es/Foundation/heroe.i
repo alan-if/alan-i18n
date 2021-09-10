@@ -1,15 +1,15 @@
--- "heroe.i" <-- "hero.i"
+ï»¿-- "heroe.i" <-- "hero.i"
 
 Synonyms
-  mi, me, yo, heroe, héroe = hero.
+  mi, me, yo, heroe, hÃ©roe = hero.
 
 The hero IsA actor
   Container
     Limits
       Count 10 then
-        "No puedes llevar más. Debes dejar algo antes."
+        "No puedes llevar mÃ¡s. Debes dejar algo antes."
       peso 50 then
-        "No puedes llevar más peso. Debes dejar algo antes."
+        "No puedes llevar mÃ¡s peso. Debes dejar algo antes."
     Header
       "Tienes"
     else
