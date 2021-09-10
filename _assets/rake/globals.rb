@@ -1,0 +1,16 @@
+=begin "globals.rb" v0.1.0 | 2021/09/10 | by Tristano Ajmone | MIT License
+================================================================================
+Some custom Rake helpers required by our custom Ruby modules and which are used
+in most of our Rakefiles.
+================================================================================
+=end
+
+$repo_root = pwd
+
+# Define OS-specific name of Null device, for redirection
+case RUBY_PLATFORM
+when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
+  $devnull = "NUL"
+else
+  $devnull = "/dev/null"
+end

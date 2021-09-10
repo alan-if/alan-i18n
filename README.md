@@ -34,6 +34,7 @@ Created by [Tristano Ajmone] on April, 2021.
 
 # Project Contents
 
+- [`/_assets/`][_assets/] — toolchain assets.
 - [`/alan_en/`][en] — English library.
 - [`/alan_es/`][es] — Spanish library.
 - [`/resources/`][resources/] — developers' resources.
@@ -199,6 +200,7 @@ More details about the license terms, authors and credits of each third party as
 [en]: ./alan_en/ "Navigate to ALAN English folder"
 [es]: ./alan_es/ "Navigate to ALAN Spanish folder"
 [resources/]: ./resources "Navigate to resources folder"
+[_assets/]: ./_assets "Navigate to toolchain assets folder"
 
 [COPYING]: ./COPYING "View Artistic License 2.0"
 [CONTRIBUTING.md]: ./CONTRIBUTING.md "Read 'Contributors' Guidelines' documentation"
