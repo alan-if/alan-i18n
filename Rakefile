@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.3.0 | 2021/09/10 | by Tristano Ajmone
+=begin "Rakefile" v0.4.0 | 2021/09/10 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -37,6 +37,7 @@ task :default => %w[lib:all]
 require 'rake/clean'
 CLOBBER.include('**/*.a3c')
 CLOBBER.include('**/*.a3t')
+CLOBBER.include('**/*.html').exclude('**/docinfo.html')
 
 
 namespace "lib" do
@@ -57,20 +58,20 @@ namespace "lib" do
     ####################
     desc "Cloak of Darkness"
     task :cloak
-    create_transcripting_tasks_from_folder(:cloak,'alan_en/cloak', LIB_EN_SOURCES)
+    CreateTranscriptingTasksFromFolder(:cloak,'alan_en/cloak', LIB_EN_SOURCES)
 
     ## Test Suite
     #############
     desc "English test suite"
     task :tests
-    create_transcripting_tasks_from_folder(:tests,'alan_en/tests', LIB_EN_SOURCES)
+    CreateTranscriptingTasksFromFolder(:tests,'alan_en/tests', LIB_EN_SOURCES)
 
     ## Documentation
     ################
     desc "English documentation"
     task :docs
     ADOC_DEPS = FileList['alan_en/docs/*.adoc']
-    create_asciidoc_tasks_from_folder(:docs,'alan_en/docs', ADOC_DEPS)
+    CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_en/docs', ADOC_DEPS)
   end # lib:en:
 
   ## SPANISH LIBRARY
@@ -86,7 +87,7 @@ namespace "lib" do
     ##########
     desc "Vampiro"
     task :vampiro
-    create_transcripting_tasks_from_folder(:vampiro,'alan_es/vampiro', LIB_ES_SOURCES)
+    CreateTranscriptingTasksFromFolder(:vampiro,'alan_es/vampiro', LIB_ES_SOURCES)
 
   end # lib:es:
 end   # lib:

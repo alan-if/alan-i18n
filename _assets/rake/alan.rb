@@ -1,4 +1,4 @@
-=begin "alan.rb" v0.1.0 | 2021/09/10 | by Tristano Ajmone | MIT License
+=begin "alan.rb" v0.2.0 | 2021/09/10 | by Tristano Ajmone | MIT License
 ================================================================================
 Some custom Rake helper methods for automating common Alan SDK operations that
 we use across different Alan projects.
@@ -11,14 +11,12 @@ def CreateTranscript(storyfile, solution)
   # to handle UTF-8 encoded solutions, for this method will strip the BOM before
   # piping it to ARun. It's just not wroth keeping double methods.
   # ----------------------------------------------------------------------------
+  TaskHeader("Generating Transcript: #{solution.ext('.a3t')}")
+
   target_folder = storyfile.pathmap("%d")
   a3s = solution.pathmap("%f")
   a3t = a3s.ext('.a3t')
   a3c = storyfile.pathmap("%f")
-
-  hstr = "## Generating Transcript: #{a3t}"
-  puts "\n#{hstr}"
-  puts '#' * hstr.length
 
   cd "#{$repo_root}/#{target_folder}"
   sol_file = File.open(a3s, mode: "rt", encoding: "ISO-8859-1")
@@ -29,7 +27,7 @@ def CreateTranscript(storyfile, solution)
 end
 
 
-def create_transcripting_tasks_from_folder(target_task, target_folder, dependencies)
+def CreateTranscriptingTasksFromFolder(target_task, target_folder, dependencies)
   # -----------------------------------------------------------------------
   # Process the target folder adding to the target task all the storyfiles
   # and transcripts as dependencies, and create all the required file tasks
@@ -73,9 +71,7 @@ rule ".a3c" => ".alan" do |t|
   adv_src = t.source.pathmap("%f")
   adv_dir = t.source.pathmap("%d")
 
-  hstr = "## Compiling #{adv_src}"
-  puts "\n#{hstr}"
-  puts '#' * hstr.length
+  TaskHeader("Compiling: #{t.source}")
 
   cd "#{$repo_root}/#{adv_dir}"
   sh "alan -include #{lib_dir} #{adv_src} 1>#{$devnull}"
