@@ -62,6 +62,15 @@
 *.odt        binary
 *.txt        text
 
+## Ruby Files
+#############
+[attr]Ruby text eol=lf
+*.rb        Ruby
+*.rake      Ruby
+*.gemspec   Ruby
+Rakefile    Ruby
+rakefile    Ruby
+
 ## ==============
 ## Graphics Files
 ## ==============
