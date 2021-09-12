@@ -4,6 +4,7 @@ Add to every thing
   Is
     examinable.
     buscable.
+  Has xDesc "". -- Shown with 'examina', if not empty string.
 End add to thing.
 
 Add to every actor
@@ -26,7 +27,10 @@ Add to every thing
     Check obj is examinable
       else "No puedes examinar" say the obj. "."
     Does
-      "No hay nada particular acerca de" say the obj. "."
+      If xDesc of obj <> ""
+        then say xDesc of obj.
+        else "No hay nada particular acerca de" say the obj. "."
+      End if.
   End verb.
 End add to.
 

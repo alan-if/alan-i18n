@@ -10,12 +10,17 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 **Table of Contents**
 
-<!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2" -->
+<!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.1.3 \(2021/09/12\)](#v013-20210912)
+        - [New `xDesc` Attribute](#new-xdesc-attribute)
     - [v0.1.2 \(2021/09/12\)](#v012-20210912)
+        - [Meta Verbs](#meta-verbs)
     - [v0.1.1 \(2021/09/10\)](#v011-20210910)
+        - [UTF-8 Encoding](#utf-8-encoding)
     - [v0.1.0 \(2021/07/24\)](#v010-20210724)
+        - [pALANte v0.6.1e](#palante-v061e)
 
 <!-- /MarkdownTOC -->
 
@@ -25,8 +30,38 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 Lacking a native Spanish speaker who could take on maintenance of the Spanish library, [Tristano Ajmone] began updating the __Spanish Foundation Library__ to mirror the changes of the new __[English Foundation Library]__ as much as possible — the limit being the inability to handle text changes due to lack of confidence when it comes to writing in Spanish.
 
+## v0.1.3 (2021/09/12)
+
+### New `xDesc` Attribute
+
+Edit `examinar.i` by adding to EVERY THING the new `xDesc` attribute:
+
+```alan
+Add to every thing
+  Has xDesc "".
+```
+
+And tweak the `examinar` verb so that when the `xDesc` attribute of an object being examined is not an empty string it will print `xDesc`, or fallback to the default message otherwise:
+
+```alan
+Add to every thing
+  Verb examinar
+    Check obj is examinable
+      else "No puedes examinar" say the obj. "."
+    Does
+      If xDesc of obj <> ""
+        then say xDesc of obj.
+        else "No hay nada particular acerca de" say the obj. "."
+      End if.
+```
+
+This new attribute (inspired by the StdLib 2) allows to easily provide actors and objects with static examine descriptions without having to override the `examine` verb on them via `Does Only`.
+
+
 
 ## v0.1.2 (2021/09/12)
+
+### Meta Verbs
 
 Convert "meta verbs" to real `META VERB`s, which in the original library were just ordinary verbs (probably the `META` keyword was not available back then).
 
@@ -37,6 +72,8 @@ Convert "meta verbs" to real `META VERB`s, which in the original library were ju
 
 
 ## v0.1.1 (2021/09/10)
+
+### UTF-8 Encoding
 
 In view of the imminent Alan 3.0Beta8 release, which introduces support for UTF-8 encoded files, all Alan sources, solution and transcript files are converted to UTF-8:
 
@@ -52,6 +89,8 @@ In view of the imminent Alan 3.0Beta8 release, which introduces support for UTF-
 
 
 ## v0.1.0 (2021/07/24)
+
+### pALANte v0.6.1e
 
 First official Alpha release of the new Spanish __ALAN Foundation Library__.
 
