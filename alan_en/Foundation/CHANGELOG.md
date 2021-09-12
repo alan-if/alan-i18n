@@ -1,4 +1,4 @@
-# Foundation Library ChangeLog
+# English Foundation Library ChangeLog
 
 This is the ChangeLog for the __ALAN Foundation Library__, English version.
 
@@ -10,14 +10,21 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 **Table of Contents**
 
-<!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2" -->
+<!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
     - [v0.2.1 \(2021/09/10\)](#v021-20210910)
+        - [Switch to UTF-8 Encoding](#switch-to-utf-8-encoding)
     - [v0.2.0 \(2021/09/05\)](#v020-20210905)
+        - [New Wearing Mechanics](#new-wearing-mechanics)
+        - [Drop Implicit Taking](#drop-implicit-taking)
+        - [Bug Fixes](#bug-fixes)
     - [v0.1.2 \(2021/07/29\)](#v012-20210729)
+        - [New `xDesc` Attribute](#new-xdesc-attribute)
     - [v0.1.1 \(2021/07/29\)](#v011-20210729)
+        - [Meta Verbs](#meta-verbs)
     - [v0.1.0 \(2021/07/24\)](#v010-20210724)
+        - [ALAN Library v0.6.2](#alan-library-v062)
 
 <!-- /MarkdownTOC -->
 
@@ -47,7 +54,7 @@ In view of the imminent Alan 3.0Beta8 release, which introduces support for UTF-
 
 ### New Wearing Mechanics
 
-The wearing mechanics have been entireLy redesigned, the new system being simpLer and less error-prone, also allowing NPCs to wear items:
+The wearing mechanics have been entireLy redesigned, the new system being simpler and less error-prone, also allowing NPCs to wear items:
 
 - Removed the `worn` ENTIY, which is now replaced by two new attributes defined on every `object`:
     + `wearer` — a reference attribute pointing to the wearing actor or `nobody` (a dummy actor at `nowhere`).
@@ -100,6 +107,8 @@ This choice affected a single library verb:
 
 ## v0.1.2 (2021/07/29)
 
+### New `xDesc` Attribute
+
 Edit `examine.i` by adding to EVERY THING the new `xDesc` attribute:
 
 ```alan
@@ -126,6 +135,8 @@ This new attribute (inspired by the StdLib 2) allows to easily provide actors an
 
 ## v0.1.1 (2021/07/29)
 
+### Meta Verbs
+
 Convert "meta verbs" to real `META VERB`s, which in the original library were just ordinary verbs (probably the `META` keyword was not available back then).
 
 - Added `wait.i`, and moved therein the 'wait' verb from `meta.it`, since it's not a meta-verb.
@@ -134,6 +145,8 @@ Convert "meta verbs" to real `META VERB`s, which in the original library were ju
 - `brief.i` renamed to `meta_brief.i`, and all its verbs made META.
 
 ## v0.1.0 (2021/07/24)
+
+### ALAN Library v0.6.2
 
 First official Alpha release of the new __ALAN Foundation Library__.
 
