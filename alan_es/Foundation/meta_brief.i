@@ -1,4 +1,4 @@
-﻿-- "brief.i"
+﻿-- "meta_brief.i" <-- "brief.i"
 
 -- No parece funcionar!
 
@@ -13,11 +13,12 @@ Synonyms
 Syntax
   verbose = verbose.
 
-Verb verbose
+Meta verb verbose
   Does
     Visits 0.
     "El modo largo está activado."
 End verb verbose.
+
 
 Synonyms
   superbreve, breve = brief.
@@ -25,7 +26,7 @@ Synonyms
 Syntax
   brief = brief.
 
-Verb brief
+Meta verb brief
   Does
     Visits 1000.
     "El modo Breve está activado. Las descripciones de las

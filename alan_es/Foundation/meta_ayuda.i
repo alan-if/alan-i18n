@@ -1,4 +1,4 @@
-﻿-- "ayuda.i" <-- "help.i"
+﻿-- "meta_ayuda.i" <-- "ayuda.i" <-- "help.i"
 
 Synonyms
   h, help = ayuda.
@@ -6,7 +6,7 @@ Synonyms
 Syntax
   ayuda = ayuda.
 
-Verb ayuda
+Meta verb ayuda
   Does
     "En este juego soy tus ojos y tu cuerpo. Yo describo tu entorno y tu
      me dices que quieres hacer. Por ejemplo, si quieres ir al norte,
@@ -18,13 +18,14 @@ Verb ayuda
      para resumirla más tarde.$p¡¡Buena Suerte!! ¡La vas a necesitar...!"
 End verb.
 
+
 Synonyms
   hint, hints, pista = pistas.
 
 Syntax
   pistas = pistas.
 
-Verb pistas
+Meta verb pistas
   Does
     "Por desgracia no hay pistas."
 End verb.
@@ -37,7 +38,7 @@ Synonyms
 Syntax
   creditos = creditos.
 
-Verb creditos
+Meta verb creditos
   Does
     "El autor tiene el copyright de este juego.
      $pEste juego se ha creado utilizando ALAN Adventure Language.

@@ -1,4 +1,4 @@
-# Foundation Library ChangeLog
+# Spanish Foundation Library ChangeLog
 
 This is the ChangeLog for the __ALAN Foundation Library__, Spanish version.
 
@@ -13,6 +13,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.1.2 \(2021/09/12\)](#v012-20210912)
     - [v0.1.1 \(2021/09/10\)](#v011-20210910)
     - [v0.1.0 \(2021/07/24\)](#v010-20210724)
 
@@ -21,6 +22,19 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 -----
 
 # Beta Releases
+
+Lacking a native Spanish speaker who could take on maintenance of the Spanish library, [Tristano Ajmone] began updating the __Spanish Foundation Library__ to mirror the changes of the new __[English Foundation Library]__ as much as possible — the limit being the inability to handle text changes due to lack of confidence when it comes to writing in Spanish.
+
+
+## v0.1.2 (2021/09/12)
+
+Convert "meta verbs" to real `META VERB`s, which in the original library were just ordinary verbs (probably the `META` keyword was not available back then).
+
+- Added `espera.i`, and moved therein the 'wait' verb from `meta.i`, since it's not a meta-verb.
+- `meta.i` renamed to `meta_sesión.i`, and all its verbs made META.
+- `ayuda.i` renamed to `meta_ayuda.i`, and all its verbs made META.
+- `brief.i` renamed to `meta_brief.i`, and all its verbs made META.
+
 
 ## v0.1.1 (2021/09/10)
 
@@ -83,6 +97,8 @@ The __Foundation Library__ is not going to be just a series of updates to the ol
 [Discussion #14]: https://github.com/alan-if/alan-i18n/discussions/14 "See Discussion #14 — Libraries Version Scheme"
 
 <!-- project files and folders -->
+
+[English Foundation Library]: ../alan_en/Foundation/ "Navigate to the English Alan Library folder"
 
 [VERSION_SCHEME.md]: ../../VERSION_SCHEME.md "Read 'Library Version Scheme' documentation"
 

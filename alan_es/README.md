@@ -15,7 +15,9 @@ Based on the __[Librería pALANte v0.6.1e][pALANte]__ (April, 2010), by [Bruce H
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Directory Contents](#directory-contents)
-- [About](#about)
+- [Library History](#library-history)
+    - [Librería pALANte \(2005-2010\)](#librer%C3%ADa-palante-2005-2010)
+    - [Spanish Foundation Library \(2021-\)](#spanish-foundation-library-2021)
 - [Library Status](#library-status)
 - [Build Instructions](#build-instructions)
 - [Usage Example](#usage-example)
@@ -35,13 +37,15 @@ Based on the __[Librería pALANte v0.6.1e][pALANte]__ (April, 2010), by [Bruce H
     + [`INDICE.md`][INDICE.md] — Foundation Library Index.
 - [`vampiro/`][vampiro/] — The _[Vampiro]_ sample adventure, by [Bruce Humphrey].
 
-# About
+# Library History
+
+## Librería pALANte (2005-2010)
 
 Marcos Donnantuoni and Bruce Humphrey — among others — began working on the Spanish localisation of Alan back in 2005, but the project was eventually abandoned, incomplete.
 
-Then, in 2010, Bruce Humphrey took up the project again and completed the pALANte library and the _Vampiro_ sample adventure.
+Then, in 2010, Bruce Humphrey took up the project again and completed the __pALANte__ library and the _Vampiro_ sample adventure.
 
-The files inside the [`/Foundation/`][Foundation/] folder were extracted from the `lib_es_0_6_1e.zip` archive downloaded from:
+The original files inside the [`/Foundation/`][Foundation/] folder were extracted from the `lib_es_0_6_1e.zip` archive downloaded from:
 
 - https://www.caad.es/?q=node/1718
 
@@ -49,16 +53,23 @@ An archived copy of the original __[pALANte v0.6.1e][pALANte]__ library can be f
 
 - https://github.com/alan-if/alan-goodies/tree/master/libs/pALANte_0.6.1e/
 
+## Spanish Foundation Library (2021-)
+
+In 2021, [Thomas Nilefalk] and [Tristano Ajmone] started the [Alan-i18n] project to revive all known translations of the old __ALAN Library v0.6__ into the __Foundation Library__, designed to take advantage of the new ALAN features that were added in the course of time, and introduce some design changes in the overall library.
+Hence, the __Librería pALANte__ was renamed to __Spanish Foundation Library__.
+
 
 # Library Status
 
 - [`CHANGELOG.md`][CHANGELOG.md]
 
-Although we're planning to update the __Spanish Foundation Library__ to take advantage of the new ALAN&nbsp;3 features that were introduced since 2010, currently its code is the same as the original __[pALANte]__ library.
+Lacking a native Spanish speaker who could take on maintenance of the Spanish library, [Tristano Ajmone] has began updating the new __Spanish Foundation Library__ to mirror the changes of the new __[English Foundation Library]__ as much as possible — the limit being the inability to handle text changes due to lack of confidence when it comes to writing in Spanish.
 
-The original sources were reformatted by [Tristano Ajmone] to conform to code style conventions of this repository, all changes were merely aesthetic, not affecting the source code; some output text containing obsolete links and references was also amended.
+Our goals for the new __Foundation Library__ is to take advantage of the new ALAN&nbsp;3 features that were introduced since 2010, and strive to have all library translations mirror each other in terms of new features and design choices.
 
-The [`Foundation/COPYING`][COPYING] file of the [Artistic License 2.0] was added, since this is a derivative work of the [English Alan Library].
+We'd really appreciate if a native Castilian speaker could join the project and help us out with the update work, by supervising changes to the output text of the library, creation of tests, proofreading, etc.
+
+The [`Foundation/COPYING`][COPYING] file with the [Artistic License 2.0] was added by us, since this is a derivative work of the __[Librería pALANte][pALANte]__, which was a derivative work __[ALAN Library v0.6.x]__.
 
 
 # Build Instructions
@@ -100,9 +111,9 @@ schedule ini_terms at limbo after 0. -- necesario para que funcione la
 
 - [`Foundation/COPYING`][COPYING]
 
-The Spanish Alan Library is the work of [Bruce Humphrey] and Marcos Donnantuoni, based on the original [English Alan Library] by Göran Forslund, Stephen Griffiths and Thomas Nilsson (now [Thomas Nilefalk]).
+The Spanish Alan Library is the work of [Bruce Humphrey] and Marcos Donnantuoni, based on the original [ALAN Library v0.6.x] by Göran Forslund, Stephen Griffiths and Thomas Nilsson (now [Thomas Nilefalk]).
 
-Although the original Spanish library didn't contain any license file or info, we're assuming it's governed under the same [Artistic License 2.0] of the original [English Alan Library], since its a derivative work thereof.
+Although the original Spanish library didn't contain any license file or info, we're assuming it's governed under the same [Artistic License 2.0] of the original [ALAN Library v0.6.x], since its a derivative work thereof.
 
 - [`vampiro/`][vampiro/]
 
@@ -129,6 +140,17 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
+[Artistic License 2.0]: https://opensource.org/licenses/Artistic-2.0  "View the Artistic License 2.0 at Open Source Initiative"
+
+[ALAN Library v0.6.x]: https://github.com/alan-if/alan-goodies/tree/master/libs/ALAN-Library_0.6 "View the original ALAN Library v0.6.2 at the ALAN Goodies repository"
+
+<!-- ALAN repos -->
+
+[Alan-i18n]: https://github.com/alan-if/alan-i18n "Visit the Alan-i18n repository on GitHub"
+[ALAN Goodies]: https://github.com/alan-if/alan-goodies "Visit the ALAN Goodies repository on GitHub"
+
+<!-- pALANte -->
+
 [CAAD FaceBook]: https://www.facebook.com/groups/33938974840/
 [CAAD]: https://www.caad.es  "Visit the CAAD (Club de Aventuras AD) website"
 [WikiCAAD » Alan]: https://wiki.caad.es/Alan
@@ -141,11 +163,6 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 [BlogSpot » Alan IF en Español]: https://alanif.blogspot.com/
 [WikiCAAD » Bruce Humphrey]: https://wiki.caad.es/Bruce_Humphrey
 
-[English Alan Library]: ../alan_en/lib_en/ "Navigate to the English Alan Library folder"
-[Artistic License 2.0]: https://opensource.org/licenses/Artistic-2.0  "View the Artistic License 2.0 at Open Source Initiative"
-
-[ALAN Goodies]: https://github.com/alan-if/alan-goodies "Visit the ALAN Goodies repository on GitHub"
-
 <!-- Vampiro -->
 
 [Vampiro]: https://www.caad.es/?q=node/1717 "View original page of Vampiro at CAAD"
@@ -153,12 +170,14 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 
 <!-- badges -->
 
-[lib badge]: https://img.shields.io/badge/Foundation_Lib_ES-0.1.1-yellow "ALAN Foundation Library version"
+[lib badge]: https://img.shields.io/badge/Foundation_Lib_ES-0.1.2-yellow "ALAN Foundation Library version"
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta8-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta8 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic_License_2.0-blue
 
 <!-- project files and folders -->
+
+[English Foundation Library]: ../alan_en/Foundation/ "Navigate to the English Alan Library folder"
 
 [Foundation/]: ./Foundation/ "Navigate to Spanish Alan IF library folder"
 [vampiro/]: ./vampiro/ "Navigate to sample adventure"

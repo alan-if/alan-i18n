@@ -1,4 +1,7 @@
-﻿-- "meta.i"
+﻿-- "meta_sesión.i" <-- "meta_session.i" <-- "meta.i"
+
+-- Meta verbs definitions for extradiegetic commands relating
+-- to the current game session (storage, quitting, etc.).
 
 Synonyms
   abandono, abandona, abandonar = 'quit'.
@@ -6,12 +9,12 @@ Syntax
   'quit' = 'quit'.
   q = q.
 
-Verb 'quit'
+Meta verb 'quit'
   Does
     Quit.
 End verb.
 
-Verb q
+Meta verb q
   Does
     "Por favor escribe el comando 'abandonar' entero para salir del juego.
      $p(No puedes deshacer una instrucción abandonar. Así que, para evitar que
@@ -19,35 +22,38 @@ Verb q
      otra cosa, debes escribir el comando 'abandonar' al completo.)"
 End verb.
 
+
 Synonyms
   grabar, graba, salvar, salva = 'save'.
 Syntax
   'save' = 'save'.
 
-Verb 'save'
+Meta verb 'save'
   Does
     Save.
     "¡Perfecto!."
 End verb.
+
 
 Synonyms
   restaurar, restaura, recuperar, recupera = 'restore'.
 Syntax
   'restore' = 'restore'.
 
-Verb 'restore'
+Meta verb 'restore'
   Does
     Restore.
     "Hecho.$n"
     Look.
 End verb.
 
+
 Synonyms
   comenzar, comienzo, comienza, recomenzar = 'restart'.
 Syntax
   'restart' = 'restart'.
 
-Verb 'restart'
+Meta verb 'restart'
   Does
     Restart.
 End verb.
@@ -58,22 +64,10 @@ Synonyms
 Syntax
   'score' = 'score'.
 
-Verb 'score'
+Meta verb 'score'
   Does
     Score.
 End verb 'score'.
-
-
-Synonyms
-  z, espera, esperar, espero = 'wait'.
-
-Syntax
-  'wait' = 'wait'.
-
-Verb 'wait'
-  Does
-    "Pasa el tiempo..."
-End verb.
 
 
 Synonyms
@@ -82,7 +76,7 @@ Synonyms
 Syntax
   again = again.
 
-Verb again
+Meta verb again
   Does
     "El comando 'repetir' no está disponible, lo siento. Probablemente puedes
      utilizar los cursores arriba y abajo para moverte por tus comandos previos
@@ -93,7 +87,7 @@ End verb.
 --Syntax
 --    undo = undo.
 
---Verb undo
+--Meta verb undo
 --    Does
 --        "Unfortunately you cannot 'undo' commands in this game."
 --End verb.
