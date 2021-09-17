@@ -30,14 +30,20 @@ Add to every object
   Verb tomar
     Check obj is tomable
       else "¡No puedes tomar" say the obj. "!"
-    And obj not in llevado
-      else "Ya lo tienes - lo llevas puesto."
     And obj not in hero
-      else "Ya lo tienes."
+      else "Ya lo tienes"
+            If obj is puesto then
+              "- lo llevas puesto"
+
+            End if.
+            "."
     And peso of obj <=50
       else "Es demasiado pesado."
     Does
       Locate obj in hero.
+      -- In case item was being worn:
+      Set portador of obj to nadie.
+      Make obj not puesto.
       "Tomas" say the obj. "."
   End verb.
 End add to.
@@ -54,10 +60,15 @@ Add to every object
       else "No lo llevas."
     Does
       Locate obj here.
+      -- In case item was being worn:
+      Set portador of obj to nadie.
+      Make obj not puesto.
       "Dejas" say the obj. "."
   End verb.
 End add to.
 
+-- @TODO: The 'cont' parameter was named 'holder' in English, maybe it should
+--        be renamed here too?
 
 Syntax
   tomar_de = 'tomar' (obj) 'de' (cont)
@@ -80,6 +91,9 @@ Add to every object
         "¡No necesitas tomar cosas de ti mismo!"
       else
         Locate obj in hero.
+        -- In case item was being worn:
+        Set portador of obj to nadie.
+        Make obj not puesto.
         "Tomas" say the obj. "."
       End if.
   End verb.

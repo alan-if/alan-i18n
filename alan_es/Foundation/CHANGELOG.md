@@ -13,6 +13,10 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.0 \(2021/09/17\)](#v020-20210917)
+        - [New wearing Mechanics](#new-wearing-mechanics)
+        - [Drop Implicit Taking](#drop-implicit-taking)
+        - [Bug Fixes](#bug-fixes)
     - [v0.1.3 \(2021/09/12\)](#v013-20210912)
         - [New `xDesc` Attribute](#new-xdesc-attribute)
     - [v0.1.2 \(2021/09/12\)](#v012-20210912)
@@ -30,7 +34,71 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 Lacking a native Spanish speaker who could take on maintenance of the Spanish library, [Tristano Ajmone] began updating the __Spanish Foundation Library__ to mirror the changes of the new __[English Foundation Library]__ as much as possible — the limit being the inability to handle text changes due to lack of confidence when it comes to writing in Spanish.
 
+Thanks to [Ricardo] for all the support with the Spanish language.
+
+
+## v0.2.0 (2021/09/17)
+
+> Apply to Spanish library same changes as in English Foundation v0.2.0.
+
+### New wearing Mechanics
+
+The wearing mechanics have been entirely redesigned, the new system being simpler and less error-prone, also allowing NPCs to wear items:
+
+- Renamed the `llevable` attribute to `ponible`, which is more explicitly focused on "wearing" rather than "carrying".
+- Removed the `llevado` ENTIY (in `inventario.i`), which is now replaced by two new attributes defined on every `object`:
+    + `portador` — a reference attribute pointing to the wearing actor or `nadie` (a dummy actor located `at limbo`).
+    + `puesto` — a boolean attribute. Also needed because ALAN aggregators only support boolean attributes in filters.
+- The `nadie` actor instance, located `at limbo`, is defined in `persona.i` as a dummy placeholder for the new `portador` attribute, to indicate that a `ponible` item is unworn if its wearer is the `nadie` instance.
+- The `llevar` verb now makes the worn item `is puesto` and sets its `portador to hero`.
+- Verbs that were relying on the `llevado` entity have been adapted to the new system:
+    + Verbs `llevar`, `quitar` and `desnudar` (in `llevar.i`).
+    + Verb `tomar` (in `tomar.i`).
+    + The `invent` verb (in `inventario.i`).
+- Every verb that moves around an object must now also make that object unworn by making it `not puesto` and setting its `portador` to `nadie`. The following verbs were modified accordingly:
+    + `desnudar` (in `llevar.i`)
+    + `comer` and `beber` (in `comer.i`) — food and drinks shouldn't be wearable, but you never know in IF.
+    + `dar` (in `dar.i`)
+    + `poner` (in `poner.i`)
+    + `poner_en` (in `poner.i`)
+    + `poner_cerca`, `poner_detras`, `poner_sobre` and `poner_bajo` (in `poner.i`)
+    + `tomar` (in `tomar.i`)
+    + `dejar` (in `tomar.i`)
+    + `tomar_de` (in `tomar.i`)
+    + `lanzar` (in `lanzar.i`)
+    + `lanzar_a` (in `lanzar.i`)
+    + `lanzar_en` (in `lanzar.i`)
+- The inventory verb (`invent` in `inventario.i`) now lists separately carried and worn items, by iterating twice through every item `in hero` and by checking the `puesto` attribute status to distinguish between items that are simply carried and those that are being worn.
+- In `examinar.i`, and additional definition of the `examinar` verb `Does after` is implemented on every actor to list separately carried and worn items, similarly to how inventory works for the Hero.
+
+These new features also required some tweaks here and there:
+
+- In `atributos.i`:
+    + Every actor is provided with the `Container` propriety.
+    + The grammar attributes (`femenina`, `plural`, etc.) are now defined on `entity` instead of `thing` to simplify handling run-time MESSAGEs, verb checks and filters.
+        This can also be useful in advanced adventures which need to refer to locations names, which might require specific gender and number accordance in messages.
+- A new module has been added to the library:
+    + `temp.i` — defining the `temp` location, on which the `cnt` numeric attribute is defined for storing temporary values needed in some complex library code.
+- `messages_runtime.i` — redefines run-time messages to add "(está puesto)" to each worn item being listed through the `list` statement. Useful in case author need to use `list` without having to replicate the iteration code for producing two separate lists for carried and worn items.
+
+The _Vampiro_ adventure had to be slightly tweaked in order to keep working with the new changes.
+
+### Drop Implicit Taking
+
+We decided that the Foundation Library will not implement implicit taking in any of its verbs, leaving it instead for end authors to decide whether to provide or not this feature in their adventure, which verbs deserve implicit taking, and how to implement it, according to their specific needs.
+This choice affected a single library verb:
+
+- `llevar` (in `llevar.i`) — add a CHECK to ensure that the target wearable item is possessed by the Hero; remove implicit taking from verb body.
+
+### Bug Fixes
+
+- `desnudar` (in `llevar.i`) — the verb was implemented on `object` although it's a verb without parameters supposed to execute on `actor` instances; the verb has now been made a global verb.
+
+
+
 ## v0.1.3 (2021/09/12)
+
+> Apply to Spanish library same changes as in English Foundation v0.1.2.
 
 ### New `xDesc` Attribute
 
@@ -61,6 +129,8 @@ This new attribute (inspired by the StdLib 2) allows to easily provide actors an
 
 ## v0.1.2 (2021/09/12)
 
+> Apply to Spanish library same changes as in English Foundation v0.1.1.
+
 ### Meta Verbs
 
 Convert "meta verbs" to real `META VERB`s, which in the original library were just ordinary verbs (probably the `META` keyword was not available back then).
@@ -71,7 +141,10 @@ Convert "meta verbs" to real `META VERB`s, which in the original library were ju
 - `brief.i` renamed to `meta_brief.i`, and all its verbs made META.
 
 
+
 ## v0.1.1 (2021/09/10)
+
+> Apply to Spanish library same changes as in English Foundation v0.2.1.
 
 ### UTF-8 Encoding
 
@@ -86,6 +159,7 @@ In view of the imminent Alan 3.0Beta8 release, which introduces support for UTF-
 
 
 > **NOTE** — Although these ALAN files are now encoded in UTF-8, ALAN internally sill handles them as ISO-8859-1, therefore the supported characters set is still limited to valid Latin1 characters.
+
 
 
 ## v0.1.0 (2021/07/24)
@@ -146,7 +220,8 @@ The __Foundation Library__ is not going to be just a series of updates to the ol
 [Alan IF Development team]: https://github.com/alan-if "Visit the Alan Interactive Fiction Development team organization on GitHub"
 
 [Anssi Räisänen]: https://github.com/AnssiR66 "View Anssi Räisänen's GitHub profile"
-[Tristano Ajmone]: https://github.com/tajmone "View Tristano Ajmone's GitHub profile"
+[Ricardo]: https://github.com/Rich15 "View Ricardo's GitHub profile"
 [Thomas Nilefalk]: https://github.com/thoni56 "View Thomas Nilefalk's GitHub profile"
+[Tristano Ajmone]: https://github.com/tajmone "View Tristano Ajmone's GitHub profile"
 
 <!-- EOF -->

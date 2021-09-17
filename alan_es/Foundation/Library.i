@@ -1,6 +1,6 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * *  ALAN Foundation Library Spanish  * * v0.1.3 | 2021/09/12 | ALAN 3.0Beta8
+-- * *  ALAN Foundation Library Spanish  * * v0.2.0 | 2021/09/17 | ALAN 3.0Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -37,5 +37,6 @@ Import 'oler.i'.        -- Oler
 Import 'persona.i'.     -- clase persona, macho, hembra
 Import 'poner.i'.       -- poner, poner_en, poner_bajo, poner_sobre...
 Import 'saltar.i'.      -- Saltar
+Import 'temp.i'.        -- Temporary variables
 Import 'tocar.i'.       -- Tocar
 Import 'tomar.i'.       -- Tomar, Dejar, Tomar_de

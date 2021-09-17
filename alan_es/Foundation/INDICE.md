@@ -1,6 +1,6 @@
 # INDEX de la libreria ALAN Foundation española
 
-Version 0.1.3 (2021/09/12).
+Version 0.2.0 (2021/09/17).
 
 -----
 

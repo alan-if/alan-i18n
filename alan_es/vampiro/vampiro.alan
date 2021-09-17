@@ -1,10 +1,10 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * * V A M P I R O  de Bruce Humphrey * *  v1.0.3 | 2021/09/12 | ALAN 3.0Beta8
+-- * * V A M P I R O  de Bruce Humphrey * *  v2.0.0 | 2021/09/17 | ALAN 3.0Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
---  Vampiro para ALAN Foundation Library Spanish v0.1.3.
+--  Vampiro para ALAN Foundation Library Spanish v0.2.0.
 --
 -- Esta es la versión en ALAN + libreria española de "Memorias de reXXe",
 -- también conocido como "Vampiro". Este código fuente forma parte del
@@ -20,6 +20,10 @@
 --
 -- La implementación en pALANte es de Bruce Humphrey, realizada para comprobar
 -- la librería 0.6.0e (realizada entre Marcos Donantuonni y Bruce Humphrey).
+--
+-- The original source code was adapted by Tristano Ajmone with the help of
+-- Ricardo @Rich15 to the work with the Foundation Library, producing the same
+-- results as the original game.
 --------------------------------------------------------------------------------
 
 import 'Library.i'.
@@ -131,15 +135,13 @@ The Pasillo Isa lugar
   Exit oeste To Cocina.
 End The Pasillo.
 
-The Traje Isa Object In llevado
+The Traje Isa Object In hero
   Name traje barato.
   Name traje.
-  Is llevable.
+  Is ponible. puesto.
+  Has portador hero.
   Description "Un traje."
-  Verb Examinar
-    Does Only
-      "Es un traje barato comprado en las rebajas."
-  End Verb.
+  Has xDesc "Es un traje barato comprado en las rebajas.".
 End The Traje.
 
 The pasillodesdepasillo Isa Escenario At Pasillo
@@ -171,11 +173,9 @@ The crucifijo Isa elemento At Biblioteca.
   Name crucifijo.
   Description
     "Hay un pequeño crucifijo plateado en un lado."
-  Verb examinar
-    Does Only
-      "Es un pequeño crucifijo plateado. Es uno de los cuatro
-       elementos que nos servirán para derrotar al vampiro."
-  End Verb.
+  Has xDesc
+    "Es un pequeño crucifijo plateado. Es uno de los cuatro
+     elementos que nos servirán para derrotar al vampiro.".
 End The crucifijo.
 
 The palanca Isa Object At Biblioteca.
@@ -183,10 +183,7 @@ The palanca Isa Object At Biblioteca.
   Is femenina.
   Description
     "En el suelo hay una palanca de acero."
-  Verb examinar
-    Does Only
-      "Es una palanca de acero toledano. Sirve para forzar cosas."
-  End Verb.
+  Has xDesc "Es una palanca de acero toledano. Sirve para forzar cosas.".
 End The palanca.
 
 The libros Isa Escenario At Biblioteca.
@@ -251,9 +248,7 @@ End The Cacharros.
 The Cuchillo Isa Object In Fregadero
   Name cuchillo.
   Description "Un cuchillo."
-  Verb Examinar
-    Does Only "Un simple cuchillo de cocina. Pincha."
-  End Verb.
+  Has xDesc "Un simple cuchillo de cocina. Pincha.".
 End The Cuchillo.
 
 The Fregadero Isa Escenario At Cocina
@@ -870,7 +865,7 @@ schedule ini_terms at limbo after 0. -- ¡Importantísimo para funcionar en espa
 
 "$t-Memorias de Rexxe-$n
 (c) 1998 Jaume Alcazo Castellarnau.$n$n
-Esta es la versión 1.0.3, programada en ALAN del juego
+Esta es la versión 2.0.0, programada en ALAN del juego
 ""Vampiro"" original de Aventuras ALCAZO. Para más información
 teclea HISTORIA en el juego.$n$nMuchas gracias por jugar$n$n"
 "$n$n$tDespiertas aturdido. Después de unos segundos te incorporas

@@ -18,6 +18,9 @@ Add to every object
       "muy lejos," say the obj.
       "acaba" say term_n of obj. "en el suelo."
       Locate obj here.
+      -- In case item was being worn:
+      Set portador of obj to nadie.
+      Make obj not puesto.
     End verb.
 End add to.
 
@@ -51,6 +54,9 @@ Add to every object
       Say The obj1. "rebota" say term_n of obj1. "inocentemente en"
       Say The obj2. "y acaba" say term_n of obj1. "en el suelo."
       Locate obj1 here.
+      -- In case item was being worn:
+      Set portador of obj1 to nadie.
+      Make obj1 not puesto.
     End verb.
 End add to.
 
@@ -73,6 +79,9 @@ Add to every object
         else "¡No puedes meterte" say the obj1. "!"
     Does
       Locate obj1 in obj2.
+      -- In case item was being worn:
+      Set portador of obj1 to nadie.
+      Make obj1 not puesto.
       "Hecho."
     End verb.
 End add.

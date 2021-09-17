@@ -19,3 +19,7 @@ End every macho.
 Every hembra IsA persona
   Pronoun her.
 End every hembra.
+
+The nadie IsA actor at limbo
+  -- Dummy actor used to indicate items not being worn, etc.
+End the.

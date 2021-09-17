@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.4.0 | 2021/09/10 | by Tristano Ajmone
+=begin "Rakefile" v0.4.1 | 2021/09/16 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -79,7 +79,7 @@ namespace "lib" do
   namespace "es" do
 
     desc "Spanish library"
-    task :all => :vampiro
+    task :all => [:vampiro, :tests]
 
     LIB_ES_SOURCES = FileList['alan_es/Foundation/*.i']
 
@@ -88,6 +88,12 @@ namespace "lib" do
     desc "Vampiro"
     task :vampiro
     CreateTranscriptingTasksFromFolder(:vampiro,'alan_es/vampiro', LIB_ES_SOURCES)
+
+    ## Test Suite
+    #############
+    desc "Spanish test suite"
+    task :tests
+    CreateTranscriptingTasksFromFolder(:tests,'alan_es/tests', LIB_ES_SOURCES)
 
   end # lib:es:
 end   # lib:

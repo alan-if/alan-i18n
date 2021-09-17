@@ -2,7 +2,7 @@
     -Memorias de Rexxe-
  (c) 1998 Jaume Alcazo Castellarnau.
 
- Esta es la versión 1.0.3, programada en ALAN del juego "Vampiro"
+ Esta es la versión 2.0.0, programada en ALAN del juego "Vampiro"
 original de Aventuras ALCAZO. Para más información teclea HISTORIA en el
 juego.
 
@@ -108,8 +108,8 @@ suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
 estar.
 
 > I
-Tienes un cuchillo, un martillo, una madera, una palanca y un crucifijo
-plateado. Llevas un traje barato.
+Tienes un crucifijo plateado, una palanca, un cuchillo, un martillo y una 
+madera. Llevas un traje barato.
 
 > AFILA MADERA CON CUCHILLO
 Afilas la madera con el cuchillo ¡y obtienes una estaca!
@@ -168,8 +168,8 @@ Una ristra de ajos.
 Tomas la ristra de ajos.
 
 > I
-Tienes un martillo, una ristra de ajos, una pequeña llavecita, una estaca, 
-un cuchillo y un crucifijo plateado. Llevas un traje barato.
+Tienes un crucifijo plateado, un cuchillo, un martillo, una ristra de ajos
+, una pequeña llavecita y una estaca. Llevas un traje barato.
 
 > DEJA LLAVECITA
 Dejas la pequeña llavecita.
@@ -212,4 +212,4 @@ acabas tu misión aquí. ^^Por ahora...^^
 ¡¡FINIS!!
 
 ¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
-salir (quit)?
+salir (quit)? 

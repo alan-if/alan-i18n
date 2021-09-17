@@ -25,6 +25,9 @@ Add to every object
       else
         "Das" say the obj. "a" say the recip. "."
         Locate obj in recip.
+        -- In case item was being worn:
+        Set portador of obj to nadie.
+        Make obj not puesto.
       End if.
   End verb.
 End add to.

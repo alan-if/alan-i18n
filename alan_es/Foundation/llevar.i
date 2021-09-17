@@ -1,7 +1,9 @@
 ﻿-- "llevar.i" <-- "wear.i"
 
 Add to every object
-  Is not llevable.
+  Is not ponible.
+     not puesto.
+  Has portador nadie. -- dummy actor = unworn state. (see persona.i)
 End add to object.
 
 Synonyms
@@ -14,18 +16,23 @@ Syntax
 
 Add to every object
   Verb llevar
-    Check obj is llevable
+    Check obj is ponible
       else "No puedes llevar" say the obj. "."
-    And obj not in llevado
-      else "Ya llevas" say the obj. "."
+    And portador of obj <> hero
+      else "Ya llevas puesto" say the obj. "."
+ -- And obj not in llevado
+ --   else "Ya llevas" say the obj. "."
     And obj is tomable
       else "No puedes tomar" say the obj.
+    And obj in hero
+      else "No llevas" say the obj. -- @CHECK TRANSLATION!
     Does
-      If obj not in hero then
-        Locate obj in hero.
-        "(tomas" say the obj. ".)$n"
-      End if.
-      Locate obj in llevado.
+--    If obj not in hero then
+--      Locate obj in hero.
+--      "(tomas" say the obj. ".)$n"
+--    End if.
+      Set portador of obj to hero.
+      Make obj puesto.
       "Te pones" say the obj. "."
     End verb.
 End add to.
@@ -41,10 +48,11 @@ Syntax
 
 Add to every object
   Verb quitar
-    Check obj in llevado
+    Check portador of obj = hero
       else "No llevas" say the obj. "."
     Does
-      Locate obj in hero.
+      Set portador of obj to nadie.
+      Make obj not puesto.
       "Te quitas" say the obj. "."
     End verb.
 End add to.
@@ -55,14 +63,16 @@ Synonyms
 
 Syntax desnudar = desnudar.
 
-Add to every object
-  Verb desnudar
-    Does
-      If count in llevado, IsA thing > 0 then
-        Empty llevado in hero.
-        "Te quitas todo lo que llevabas puesto."
-      else
-        "No llevas nada que puedas quitarte."
-      End if.
-    End verb.
-End add to.
+Verb desnudar
+  Does
+    If count in hero, IsA object, is puesto > 0 then
+      -- @TRANSLATE 'artículo_puesto' ID
+      For each artículo_puesto in hero, IsA object, is puesto do
+        Set portador of artículo_puesto to nadie.
+        Make artículo_puesto not puesto.
+    End for.
+      "Te quitas todo lo que llevabas puesto."
+    else
+      "No llevas nada que puedas quitarte."
+    End if.
+  End verb.

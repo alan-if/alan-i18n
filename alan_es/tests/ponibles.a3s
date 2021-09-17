@@ -1,0 +1,76 @@
+﻿; ******************************************************************************
+; *                                                                            *
+; *                        T E S T   W E A R A B L E S                         *
+; *                                                                            *
+; ******************************************************************************
+; Heading comments and commented annotation are in English to simplify fixes and
+; maintenance by non Spanish speaker.
+; ==============================================================================
+;                             Test Wearables on Hero
+; ==============================================================================
+; Inventory should always list separately carried and worn items.
+i
+x polo
+x jeans
+; ------------------------------------------------------------------------------
+; VERB REMOVE
+; ------------------------------------------------------------------------------
+; REMOVE WORN ITEM:
+quita polo
+; REMOVE CARRIED ITEM:
+quita polo
+i
+drop all
+i
+; REMOVE UNOWNED ITEM:
+quita polo
+; ------------------------------------------------------------------------------
+; VERB WEAR
+; ------------------------------------------------------------------------------
+i
+; WEAR ALL (UNSUPPORTED):
+lleva all
+; WEAR UNOWNED ITEM (IMPLICIT TAKING UNSUPPORTED):
+lleva polo
+i
+; WEAR WORN ITEM:
+take polo
+lleva polo
+lleva polo
+; WEAR CARRIED ITEM:
+toma jeans
+i
+lleva jeans
+lleva jeans
+i
+; ------------------------------------------------------------------------------
+; VERB UNDRESS
+; ------------------------------------------------------------------------------
+desnudate
+desnudate
+i
+; ==============================================================================
+;                             Test Wearables on NPCs
+; ==============================================================================
+; The Foundation Library allows 'wearable' items to be worn not only by the Hero
+; but also by any other actor.
+RESET
+; ------------------------------------------------------------------------------
+; NPCs Inventory
+; ------------------------------------------------------------------------------
+; Examining an actor lists worn items in a separate list form carried ones.
+x vendedor
+x mujer
+; ------------------------------------------------------------------------------
+; Taking Items Worn by NPCs
+; ------------------------------------------------------------------------------
+; The library doesn't prevent taking worn items:
+toma jeans
+RESET
+toma jeans de vendedor
+; ------------------------------------------------------------------------------
+; Implicitly Taking Items Worn by NPCs
+; ------------------------------------------------------------------------------
+; The library no longer supports implicit taking in verbs:
+RESET
+lleva jeans

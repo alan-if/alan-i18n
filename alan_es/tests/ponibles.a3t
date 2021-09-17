@@ -1,0 +1,154 @@
+
+Use the RESET command to restore all ponible items to their original
+portador or location.
+
+
+El Emporio Alani
+Hay un vendedor aquí. Hay un mujer aquí.
+
+> ; ******************************************************************************
+> ; *                                                                            *
+> ; *                        T E S T   W E A R A B L E S                         *
+> ; *                                                                            *
+> ; ******************************************************************************
+> ; Heading comments and commented annotation are in English to simplify fixes and
+> ; maintenance by non Spanish speaker.
+> ; ==============================================================================
+> ;                             Test Wearables on Hero
+> ; ==============================================================================
+> ; Inventory should always list separately carried and worn items.
+> i
+No llevas nada. Llevas un polo y un par de vaqueros.
+
+> x polo
+It's your favourite polo shirt, plain white with a crocodile logo on the
+left side of your chest.
+
+> x jeans
+Just a pair of worn out jeans.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB REMOVE
+> ; ------------------------------------------------------------------------------
+> ; REMOVE WORN ITEM:
+> quita polo
+Te quitas el polo.
+
+> ; REMOVE CARRIED ITEM:
+> quita polo
+No llevas el polo.
+
+> i
+Tienes un polo. Llevas un par de vaqueros.
+
+> drop all
+La palabra "drop" no es relevante.
+
+> i
+Tienes un polo. Llevas un par de vaqueros.
+
+> ; REMOVE UNOWNED ITEM:
+> quita polo
+No llevas el polo.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB WEAR
+> ; ------------------------------------------------------------------------------
+> i
+Tienes un polo. Llevas un par de vaqueros.
+
+> ; WEAR ALL (UNSUPPORTED):
+> lleva all
+No puedes aplicar ese verbo a varios objetos.
+
+> ; WEAR UNOWNED ITEM (IMPLICIT TAKING UNSUPPORTED):
+> lleva polo
+Te pones el polo.
+
+> i
+No llevas nada. Llevas un polo y un par de vaqueros.
+
+> ; WEAR WORN ITEM:
+> take polo
+La palabra "take" no es relevante.
+
+> lleva polo
+Ya llevas puesto el polo.
+
+> lleva polo
+Ya llevas puesto el polo.
+
+> ; WEAR CARRIED ITEM:
+> toma jeans
+Ya lo tienes - lo llevas puesto.
+
+> i
+No llevas nada. Llevas un polo y un par de vaqueros.
+
+> lleva jeans
+Ya llevas puesto los par de vaqueros.
+
+> lleva jeans
+Ya llevas puesto los par de vaqueros.
+
+> i
+No llevas nada. Llevas un polo y un par de vaqueros.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB UNDRESS
+> ; ------------------------------------------------------------------------------
+> desnudate
+Te quitas todo lo que llevabas puesto.
+
+> desnudate
+No llevas nada que puedas quitarte.
+
+> i
+Tienes un polo y un par de vaqueros.
+
+> ; ==============================================================================
+> ;                             Test Wearables on NPCs
+> ; ==============================================================================
+> ; The Foundation Library allows 'wearable' items to be worn not only by the Hero
+> ; but also by any other actor.
+> RESET
+All wearables are now restored to their initial wearer or location.
+
+> ; ------------------------------------------------------------------------------
+> ; NPCs Inventory
+> ; ------------------------------------------------------------------------------
+> ; Examining an actor lists worn items in a separate list form carried ones.
+> x vendedor
+He's here to assist customers buying clothes. El vendedor está wearing un 
+un traje muy elegante.
+
+> x mujer
+She's just a customer.
+
+> ; ------------------------------------------------------------------------------
+> ; Taking Items Worn by NPCs
+> ; ------------------------------------------------------------------------------
+> ; The library doesn't prevent taking worn items:
+> toma jeans
+Ya lo tienes - lo llevas puesto.
+
+> RESET
+All wearables are now restored to their initial wearer or location.
+
+> toma jeans de vendedor
+Ya llevas los par de vaqueros.
+
+> ; ------------------------------------------------------------------------------
+> ; Implicitly Taking Items Worn by NPCs
+> ; ------------------------------------------------------------------------------
+> ; The library no longer supports implicit taking in verbs:
+> RESET
+All wearables are now restored to their initial wearer or location.
+
+> lleva jeans
+Ya llevas puesto los par de vaqueros.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

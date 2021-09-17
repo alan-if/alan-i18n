@@ -10,7 +10,7 @@ Synonyms
 
   todo, todos, toda, todas = all.
 
-Add to every thing  -- object en pALANte 0.1
+Add to every entity  -- 'thing' en pALANte!
 
   Is not femenina.
   Is not plural.
@@ -49,6 +49,12 @@ Add to every thing  -- object en pALANte 0.1
     End if.
 
 End add to.
+
+
+Add to every actor
+  Container
+End add to actor.
+
 
 Every named_actor IsA actor
   Definite Article ""

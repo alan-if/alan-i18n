@@ -31,6 +31,9 @@ Add to every object
       else "¡No te puedes comer eso!"
     Does
       Locate obj at Limbo.
+      -- In case item was being worn:
+      Set portador of obj to nadie.
+      Make obj not puesto.
       "Te comes" say the obj. "."
   End verb.
 
@@ -39,6 +42,9 @@ Add to every object
       else "Eso no se puede beber."
     Does
       Locate obj at Limbo.
+      -- In case item was being worn:
+      Set portador of obj to nadie.
+      Make obj not puesto.
       "Te bebes" say the obj. "."
   End verb.
 End add.

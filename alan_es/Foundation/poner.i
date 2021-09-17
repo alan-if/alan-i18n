@@ -17,6 +17,9 @@ Add to every object
       else "No tienes eso."
     Does
       Locate obj here.
+      -- In case item was being worn:
+      Set portador of obj to nadie.
+      Make obj not puesto.
       "Dejado."
   End verb.
 End add to.
@@ -47,6 +50,9 @@ Add to every object
         else "¡No puedes poner" say obj1. "dentro de tí!"
     Does
       Locate obj1 in obj2.
+      -- In case item was being worn:
+      Set portador of obj1 to nadie.
+      Make obj1 not puesto.
       "Hecho."
     End verb.
 End add to.
@@ -115,5 +121,8 @@ Add to every object
     Does
       "¡Naaah!. Prefiero poner" say the obj1. "en el suelo."
       Locate obj1 At obj2.
+      -- In case item was being worn:
+      Set portador of obj1 to nadie.
+      Make obj1 not puesto.
     End verb.
 End add to.
