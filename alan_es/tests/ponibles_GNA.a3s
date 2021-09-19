@@ -20,3 +20,18 @@ x mujer
 ; We need to ensure that plural NPCs are also mentioned correctly...
 x mellizos
 x mellizas
+; ==============================================================================
+; LISTING NPCs
+; ==============================================================================
+; Since the EXAMINA and INVENTARIO commands don't rely on the LIST statement,
+; but use custom coded loops to separate carried and worn items, we've added
+; to this test adventure the special verb LIST <ACTOR> to check that the LIST
+; statement correctly mentions worn items as being worn according to GNA.
+list hero
+list vendedor
+list mujer
+; ------------------------------------------------------------------------------
+; PLURAL NPCs
+; ------------------------------------------------------------------------------
+list mellizos
+list mellizas

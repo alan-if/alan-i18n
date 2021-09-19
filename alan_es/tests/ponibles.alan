@@ -9,6 +9,24 @@ The emporio IsA location.
   Name 'El Emporio Alani'.
 End the.
 
+
+
+--==============================================================================
+--                           L I S T   A C T O R S
+--==============================================================================
+-- A special test verb to execute the LIST statement on actors and check that
+-- worn items are mentioned correctly according to GNA.
+
+Syntax 'list' = 'list' (act)
+  Where act IsA actor
+    else "This verb can only be used on actors!"
+
+Add to every actor
+  Verb 'list'
+    Does list this.
+  End verb.
+End add to actor.
+
 --==============================================================================
 --                             N P C   A C T O R S
 --==============================================================================
@@ -163,4 +181,5 @@ End the.
 
 Start at emporio.
 "Use the RESET command to restore all ponible items to their
- original portador or location."
+ original portador or location.
+ $nUse the LIST <ACTOR> command to list the inventory of actors."
