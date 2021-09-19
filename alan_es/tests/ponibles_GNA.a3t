@@ -1,6 +1,7 @@
 
 Use the RESET command to restore all ponible items to their original
 portador or location.
+Use the LIST <ACTOR> command to list the inventory of actors.
 
 
 El Emporio Alani
@@ -40,6 +41,33 @@ They're twin brothers. Los mellizos están wearing un sombrero.
 
 > x mellizas
 They're twin sisters. Los mellizas están wearing un botas.
+
+> ; ==============================================================================
+> ; LISTING NPCs
+> ; ==============================================================================
+> ; Since the EXAMINA and INVENTARIO commands don't rely on the LIST statement,
+> ; but use custom coded loops to separate carried and worn items, we've added
+> ; to this test adventure the special verb LIST <ACTOR> to check that the LIST
+> ; statement correctly mentions worn items as being worn according to GNA.
+> list hero
+Tienes unos tirantes, (están puestos), unas sandalias, (están puestas), un
+a camiseta (está puesta) y un pantalón. (está puesto).
+
+> list vendedor
+El vendedor lleva una corbata (está puesta) y un un traje muy elegante. 
+(está puesto).
+
+> list mujer
+El mujer lleva un vestido. (está puesto).
+
+> ; ------------------------------------------------------------------------------
+> ; PLURAL NPCs
+> ; ------------------------------------------------------------------------------
+> list mellizos
+Los mellizos llevan un sombrero. (está puesto).
+
+> list mellizas
+Los mellizas llevan un botas. (está puesto).
 
 > 
 

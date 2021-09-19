@@ -43,27 +43,61 @@ CONTAINS: "$+1"
 -- The IF blocks in the following group of messages adds "(being worn)" after
 -- every item worn by an actor, when using `LIST actor`.
 
--- @TODO: Also handle gender & number correctly:
-
 CONTAINS_COMMA: "$01,"
   If parameter1 isa object then
     If parameter1 is puesto
-      then "(está puesto)"
-    End if.
+      then "(está"
+        If parameter1 is not plural
+          then "puest$$"
+            If parameter1 is not femenina
+              then "o"
+              else "a"
+            End if.
+          else "$$n puest$$"
+            If parameter1 is not femenina
+              then "os"
+              else "as"
+            End if.
+        End if.
+    End if. "$$)"
   End if. "$$,"
 
 CONTAINS_AND: "$01"
   If parameter1 isa object then
     If parameter1 is puesto
-      then "(está puesto)"
-    End if.
-  End if. "and"
+      then "(está"
+        If parameter1 is not plural
+          then "puest$$"
+            If parameter1 is not femenina
+              then "o"
+              else "a"
+            End if.
+          else "$$n puest$$"
+            If parameter1 is not femenina
+              then "os"
+              else "as"
+            End if.
+        End if.
+    End if. "$$)"
+  End if. "y"
 
 CONTAINS_END: "$01."
   If parameter1 isa object then
     If parameter1 is puesto
-      then "(está puesto)"
-    End if.
+      then "(está"
+        If parameter1 is not plural
+          then "puest$$"
+            If parameter1 is not femenina
+              then "o"
+              else "a"
+            End if.
+          else "$$n puest$$"
+            If parameter1 is not femenina
+              then "os"
+              else "as"
+            End if.
+        End if.
+    End if. "$$)"
   End if. "."
 
 IS_EMPTY: "$+1 no contiene nada."
