@@ -1,0 +1,47 @@
+
+Use the RESET command to restore all ponible items to their original
+portador or location.
+
+
+El Emporio Alani
+Hay un vendedor aquí. Hay un mujer aquí. Hay unos mellizos aquí. Hay unos 
+mellizas aquí.
+
+> ; ******************************************************************************
+> ; *                                                                            *
+> ; *                    T E S T   W E A R A B L E S   G N A                     *
+> ; *                                                                            *
+> ; ******************************************************************************
+> ; These tests aim at verifying that gender and number are honored in messages
+> ; relating to wearable items, both for the items and their wearer/carrier.
+> ; ==============================================================================
+> ; INVENTORY
+> ; ==============================================================================
+> inventario
+No llevas nada. Llevas un pantalón, una camiseta, unos tirantes y unas 
+sandalias.
+
+> ; ==============================================================================
+> ; EXAMINING NPCs
+> ; ==============================================================================
+> x vendedor
+He's here to assist customers buying clothes. El vendedor está wearing un 
+un traje muy elegante y una corbata.
+
+> x mujer
+She's just a customer. El mujer está wearing un vestido.
+
+> ; ------------------------------------------------------------------------------
+> ; PLURAL NPCs
+> ; ------------------------------------------------------------------------------
+> ; We need to ensure that plural NPCs are also mentioned correctly...
+> x mellizos
+They're twin brothers. Los mellizos están wearing un sombrero.
+
+> x mellizas
+They're twin sisters. Los mellizas están wearing un botas.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 
