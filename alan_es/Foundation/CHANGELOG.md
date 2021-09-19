@@ -13,6 +13,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.1 \(2021/09/XX\)](#v021-202109xx)
     - [v0.2.0 \(2021/09/17\)](#v020-20210917)
         - [New wearing Mechanics](#new-wearing-mechanics)
         - [Drop Implicit Taking](#drop-implicit-taking)
@@ -35,6 +36,12 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 Lacking a native Spanish speaker who could take on maintenance of the Spanish library, [Tristano Ajmone] began updating the __Spanish Foundation Library__ to mirror the changes of the new __[English Foundation Library]__ as much as possible — the limit being the inability to handle text changes due to lack of confidence when it comes to writing in Spanish.
 
 Thanks to [Ricardo] for all the support with the Spanish language.
+
+
+## v0.2.1 (2021/09/XX)
+
+- `mensajes.i`:
+    + Update containers listing MESSAGEs to correctly mention worn items according to the noun gender and number.
 
 
 ## v0.2.0 (2021/09/17)
