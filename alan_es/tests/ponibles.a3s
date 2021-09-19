@@ -10,45 +10,44 @@
 ; ==============================================================================
 ; Inventory should always list separately carried and worn items.
 i
-x polo
-x jeans
+x pantalón
+x camiseta
 ; ------------------------------------------------------------------------------
 ; VERB REMOVE
 ; ------------------------------------------------------------------------------
 ; REMOVE WORN ITEM:
-quita polo
+quita pantalón
 ; REMOVE CARRIED ITEM:
-quita polo
+quita pantalón
 i
-drop all
+deja all
 i
 ; REMOVE UNOWNED ITEM:
-quita polo
+quita pantalón
 ; ------------------------------------------------------------------------------
 ; VERB WEAR
 ; ------------------------------------------------------------------------------
 i
 ; WEAR ALL (UNSUPPORTED):
 lleva all
-; WEAR UNOWNED ITEM (IMPLICIT TAKING UNSUPPORTED):
-lleva polo
+; WEAR UNOWNED ITEM (IMPLICIT TAKING NOT SUPPORTED):
+lleva pantalón
+i
+toma pantalón
+; WEAR CARRIED ITEM:
+lleva pantalón
 i
 ; WEAR WORN ITEM:
-take polo
-lleva polo
-lleva polo
-; WEAR CARRIED ITEM:
-toma jeans
+lleva pantalón
 i
-lleva jeans
-lleva jeans
-i
+RESET
 ; ------------------------------------------------------------------------------
 ; VERB UNDRESS
 ; ------------------------------------------------------------------------------
-desnudate
+i
 desnudate
 i
+desnudate
 ; ==============================================================================
 ;                             Test Wearables on NPCs
 ; ==============================================================================
@@ -65,12 +64,12 @@ x mujer
 ; Taking Items Worn by NPCs
 ; ------------------------------------------------------------------------------
 ; The library doesn't prevent taking worn items:
-toma jeans
+toma camiseta
 RESET
-toma jeans de vendedor
+toma camiseta de vendedor
 ; ------------------------------------------------------------------------------
 ; Implicitly Taking Items Worn by NPCs
 ; ------------------------------------------------------------------------------
 ; The library no longer supports implicit taking in verbs:
 RESET
-lleva jeans
+lleva camiseta

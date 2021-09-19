@@ -4,7 +4,8 @@ portador or location.
 
 
 El Emporio Alani
-Hay un vendedor aquí. Hay un mujer aquí.
+Hay un vendedor aquí. Hay un mujer aquí. Hay unos mellizos aquí. Hay unos 
+mellizas aquí.
 
 > ; ******************************************************************************
 > ; *                                                                            *
@@ -18,93 +19,97 @@ Hay un vendedor aquí. Hay un mujer aquí.
 > ; ==============================================================================
 > ; Inventory should always list separately carried and worn items.
 > i
-No llevas nada. Llevas un polo y un par de vaqueros.
+No llevas nada. Llevas un pantalón, una camiseta, unos tirantes y unas 
+sandalias.
 
-> x polo
-It's your favourite polo shirt, plain white with a crocodile logo on the
-left side of your chest.
+> x pantalón
+Some old trousers which have seen better times.
 
-> x jeans
-Just a pair of worn out jeans.
+> x camiseta
+No hay nada particular acerca de la camiseta.
 
 > ; ------------------------------------------------------------------------------
 > ; VERB REMOVE
 > ; ------------------------------------------------------------------------------
 > ; REMOVE WORN ITEM:
-> quita polo
-Te quitas el polo.
+> quita pantalón
+Te quitas el pantalón.
 
 > ; REMOVE CARRIED ITEM:
-> quita polo
-No llevas el polo.
+> quita pantalón
+No llevas el pantalón.
 
 > i
-Tienes un polo. Llevas un par de vaqueros.
+Tienes un pantalón. Llevas una camiseta, unos tirantes y unas sandalias.
 
-> drop all
-La palabra "drop" no es relevante.
+> deja all
+(pantalón) Dejas el pantalón.
+
+(camiseta) Dejas la camiseta.
+
+(tirantes) Dejas los tirantes.
+
+(sandalias) Dejas las sandalias.
 
 > i
-Tienes un polo. Llevas un par de vaqueros.
+No llevas nada.
 
 > ; REMOVE UNOWNED ITEM:
-> quita polo
-No llevas el polo.
+> quita pantalón
+No llevas el pantalón.
 
 > ; ------------------------------------------------------------------------------
 > ; VERB WEAR
 > ; ------------------------------------------------------------------------------
 > i
-Tienes un polo. Llevas un par de vaqueros.
+No llevas nada.
 
 > ; WEAR ALL (UNSUPPORTED):
 > lleva all
 No puedes aplicar ese verbo a varios objetos.
 
-> ; WEAR UNOWNED ITEM (IMPLICIT TAKING UNSUPPORTED):
-> lleva polo
-Te pones el polo.
+> ; WEAR UNOWNED ITEM (IMPLICIT TAKING NOT SUPPORTED):
+> lleva pantalón
+No llevas el pantalón
 
 > i
-No llevas nada. Llevas un polo y un par de vaqueros.
+No llevas nada.
 
-> ; WEAR WORN ITEM:
-> take polo
-La palabra "take" no es relevante.
-
-> lleva polo
-Ya llevas puesto el polo.
-
-> lleva polo
-Ya llevas puesto el polo.
+> toma pantalón
+Tomas el pantalón.
 
 > ; WEAR CARRIED ITEM:
-> toma jeans
-Ya lo tienes - lo llevas puesto.
+> lleva pantalón
+Te pones el pantalón.
 
 > i
-No llevas nada. Llevas un polo y un par de vaqueros.
+No llevas nada. Llevas un pantalón.
 
-> lleva jeans
-Ya llevas puesto los par de vaqueros.
-
-> lleva jeans
-Ya llevas puesto los par de vaqueros.
+> ; WEAR WORN ITEM:
+> lleva pantalón
+Ya llevas puesto el pantalón.
 
 > i
-No llevas nada. Llevas un polo y un par de vaqueros.
+No llevas nada. Llevas un pantalón.
+
+> RESET
+All wearables are now restored to their initial wearer or location.
 
 > ; ------------------------------------------------------------------------------
 > ; VERB UNDRESS
 > ; ------------------------------------------------------------------------------
+> i
+No llevas nada. Llevas un pantalón, una camiseta, unos tirantes y unas 
+sandalias.
+
 > desnudate
 Te quitas todo lo que llevabas puesto.
 
+> i
+Tienes un pantalón, una camiseta, unos tirantes y unas sandalias.
+
 > desnudate
 No llevas nada que puedas quitarte.
-
-> i
-Tienes un polo y un par de vaqueros.
 
 > ; ==============================================================================
 > ;                             Test Wearables on NPCs
@@ -120,23 +125,23 @@ All wearables are now restored to their initial wearer or location.
 > ; Examining an actor lists worn items in a separate list form carried ones.
 > x vendedor
 He's here to assist customers buying clothes. El vendedor está wearing un 
-un traje muy elegante.
+un traje muy elegante y una corbata.
 
 > x mujer
-She's just a customer.
+She's just a customer. El mujer está wearing un vestido.
 
 > ; ------------------------------------------------------------------------------
 > ; Taking Items Worn by NPCs
 > ; ------------------------------------------------------------------------------
 > ; The library doesn't prevent taking worn items:
-> toma jeans
+> toma camiseta
 Ya lo tienes - lo llevas puesto.
 
 > RESET
 All wearables are now restored to their initial wearer or location.
 
-> toma jeans de vendedor
-Ya llevas los par de vaqueros.
+> toma camiseta de vendedor
+Ya llevas la camiseta.
 
 > ; ------------------------------------------------------------------------------
 > ; Implicitly Taking Items Worn by NPCs
@@ -145,8 +150,8 @@ Ya llevas los par de vaqueros.
 > RESET
 All wearables are now restored to their initial wearer or location.
 
-> lleva jeans
-Ya llevas puesto los par de vaqueros.
+> lleva camiseta
+Ya llevas puesto la camiseta.
 
 > 
 
