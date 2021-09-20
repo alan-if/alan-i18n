@@ -1,10 +1,12 @@
-=begin "alan.rb" v0.3.0 | 2021/09/10 | by Tristano Ajmone | MIT License
+=begin "alan.rb" v0.3.1 | 2021/09/20 | by Tristano Ajmone | MIT License
 ================================================================================
 Some custom Rake helper methods for automating common Alan SDK operations that
 we use across different Alan projects.
 Require ALAN SDK >= Beta8 and UFT-8 encoded sources and solutions.
 ================================================================================
 =end
+
+require 'open3'
 
 def CreateTranscript(storyfile, solution)
   # ----------------------------------------------------------------------------
@@ -80,6 +82,19 @@ rule ".a3c" => ".alan" do |t|
   TaskHeader("Compiling: #{t.source}")
 
   cd "#{$repo_root}/#{adv_dir}"
-  sh "alan -include #{lib_dir} #{adv_src} 1>#{$devnull}"
-  cd $repo_root, verbose: false
+  begin
+    alan_cmd = "alan -include #{lib_dir} #{adv_src}"
+    puts alan_cmd
+    stdout, stderr, status = Open3.capture3(alan_cmd)
+    raise unless status.success?
+  rescue
+    err_head = "\n*** ADVENTURE COMPILATION FAILED! "
+    puts err_head << '*' * (73 - err_head.length)
+    puts stdout # ALAN reports errors on stdout, not on stderr!
+    puts '*' * 72
+    # Abort Rake execution with error description:
+    raise "ALAN compilation failed: #{t.source}"
+  ensure
+    cd $repo_root, verbose: false
+  end
 end
