@@ -1,6 +1,6 @@
 = Foundation Library Design
 Tristano Ajmone <tajmone@gmail.com>
-v0.1, 2021-09-05
+v0.1, 2021-09-23
 :rev_mark: WIP Alpha
 :doctype: book
 include::_inc_attr-header.adoc[]
@@ -28,96 +28,12 @@ WARNING: This is a work-in-progress early draft.
 .TBD Library Intro
 NOTE: Add introduction to the _Foundation Library_, its goals, etc.
 
-// =============================================================================
-//                                  P A R T   I
-// =============================================================================
+// BOOK PARTS
+include::foundation_part1.adoc[]
 
+include::foundation_part2.adoc[]
 
-= Library Features
-
-In this first part of the book we'll be focusing on the general features of the library and their general design principles.
-
-
-== Wearable Items
-
-The "`wear.i`" modules defines all the attributes and verbs relating to wearable items.
-
-Any `object` instance can be turned into a wearable item by setting it to `is wearable` (e.g. clothes, glasses, an helmet, a backpack, etc.).
-By default, all objects are not wearable.
-
-
-=== Wearables Attributes
-
-To track the status of wearable items, the library defines two further attributes: `worn` (bolean), and `wearer` (reference to `actor` instances).
-
-[source,alan]
-Add to every object
-  Is not wearable.
-     not worn.
-  Has wearer nobody. -- dummy actor = unworn state. (see people.i)
-End add.
-
-The default wearer is `nodoby`, a dummy actor instance defined in "`people.i`", which is used as a placeholder whenever the item is unworn.
-
-[source,alan]
-The nobody IsA actor at nowhere
-  -- Dummy actor used to indicate items not being worn, etc.
-End the.
-
-
-The `worn` attribute provides a quick way to check whether an item is being worn at any time, whereas the `wearer` attribute allows to quickly access the wearing actor.
-
-
-=== Tracking Wearables Status
-
-The library verbs correctly handle these attributes, so end authors don't have to worry about modifying them with the default actions, but it's important that any custom defined verb, script or event that might change the worn status of a wearable item in the adventure code will also update correctly these attributes.
-
-Any action, script or event that relocates an object should:
-
-* Check if the item `is worn`, and e.g. block the action if it's being worn by an actor other than the player (this is the general design rule, but authors can take exception to the rule in their custom actions).
-* If an item is moved from its current location to another place (or into an actor) via the `locate` statement, that item should always be made `not worn` and its `wearer` set to `nobody`. E.g.
-+
-[source,alan]
-Make this not worn. Set wearer of this to nobody.
-
-
-=== Interactions with Worn Items
-
-By design, we chose not to prevent the player from taking worn items, leaving it to the author to decide if an how to implement such restrictions.
-
-Depending on the adventure you're creating, you might for example wish to prevent the player from taking items worn by some types of actors and not others, or maybe from all actors, according to need.
-
-Usually, you'd want to prevent removing items worn by a `person` actor, ensuring that any verbs attempting a similar action will fail with a message reporting that he/she won't let you do that, or some other message along those lines.
-
-As for non-human actors (i.e. `actor` instances other than `people`) you might or might not want to enforce such restrictions, e.g. in order to allow these actions on animals, robot, etc.
-
-If your adventure features animals or mythological creatures with which the player will be interacting, it might be useful for example to allow putting and removing a saddle on a horse, a dog's collar, etc. all items which would qualify as being worn by the animal.
-
-These restriction rules usually should apply to both explicit (e.g. '`take`') and implicit actions (i.e. verbs that will attempt to first take the object if the Hero doesn't posses it), so make sure that your custom verbs and checks apply these restrictions consistently across your adventure verbs.
-
-
-// =============================================================================
-//                                 P A R T   I I
-// =============================================================================
-
-= Design Principles
-
-During the process of updating the old ALAN Library v0.6 to the new ALAN Foundation Library we decided to set some goals regarding the scope of the library, its target audience, and its design principles.
-
-This document is our attempt to lay down those principles in order to allow adventures authors to better understand the underlying library structure, so that they may extend the library following the same principles.
-
-== Implicit Taking
-
-Well polished text adventures usually implement implicit taking action for some verbs, so that the player doesn't have to first take the item to complete that action.
-
-By design, we chose not to implement implicit taking in any of the library defined verbs, leaving it to end author to decide which verbs deserve this feature, and how to implement it.
-
-
-// =============================================================================
-//                                  APPENDICES
-// =============================================================================
-
-
-include::app_syntaxes.adoc[]
+// APPENDICES
+include::foundation_app_syntaxes.adoc[]
 
 // EOF //

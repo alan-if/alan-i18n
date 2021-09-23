@@ -1,12 +1,14 @@
 [appendix]
 = Verbs Syntaxes
 
+=== Verbs Lookup Table
+
 The following lookup table can be used as a quick reference to check the library defined verbs, their identifiers and syntaxes.
 
 
 [%autowidth]
 [cols="2*<m,<d"]
-|===================
+|==============================================================
 | verb        | syntax                         | module
 
 | again       | again                          | meta_session.i
@@ -76,9 +78,21 @@ The following lookup table can be used as a quick reference to check the library
 | verbose     | verbose                        | meta_brief.i
 | wait        | 'wait'                         | wait.i
 | wear        | wear (obj)                     | wear.i
-
-|===================
+|==============================================================
 
 
 NOTE: In the *verb* column we've removed any enclosing single quotes from verb identifiers that clash with reserved keywords, to simplify alphabetical sorting and lookup operation.
 
+
+=== Compatible Syntaxes
+
+Some library verbs have compatible syntaxes, which allow authors (and library maintainers) to override their definitions with a single `VERB` declaration, e.g. to override them in bulk in classes or specific instances.
+
+This section lists together all verbs with compatible syntaxes.
+
+WARNING: TBD!
+
+
+WARNING: Currently there's an
+https://github.com/alan-if/alan-docs/issues/128[open Issue^]
+for the _ALAN Manual_ regarding multiple verbs definitions, which will eventually lead to a new section dedicated to this topic, which we should link to once it's available.
