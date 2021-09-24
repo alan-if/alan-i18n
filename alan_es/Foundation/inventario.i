@@ -28,12 +28,12 @@ Verb invent
     -- ------------------
     Set temp:cnt to count directly in hero, is not puesto.
     If  temp:cnt = 0
-      then "No llevas nada." -- @CHECK TANSLATATION!
+      then "No llevas nada."
       else
-        "Tienes" -- @CHECK TANSLATTION!
+        "Tienes"
         For each artículo_llevado directly in hero, is not puesto
           do
-            Say an artículo_llevado. -- @TANSLATE 'artículo_llevado' ID!
+            Say an artículo_llevado.
             Decrease temp:cnt.
             Depending on temp:cnt
               = 1 then "y"
@@ -49,7 +49,7 @@ Verb invent
     Set temp:cnt to count directly in hero, is puesto.
     If  temp:cnt <> 0
       then
-        "Llevas" -- @CHECK TANSLATTION!
+        "Llevas"
         For each artículo_puesto directly in hero, is puesto
           do
             Say an artículo_puesto.

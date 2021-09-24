@@ -1,0 +1,110 @@
+﻿-- Test adventure for GNA checking | By Ricardo Osio (@Rich15)
+
+
+Import 'Library.i'.
+
+The plaza IsA location
+  Name 'Plaza Principal'.
+End The.
+
+----------------------------------------------------------------------------
+-- Verb list taken from the 'ponibles' adventure, created by Tristano Ajmone
+----------------------------------------------------------------------------
+
+Syntax 'list' = 'list' (act)
+  Where act IsA actor
+    else "This verb can only be used on actors!"
+
+Add to every actor
+  Verb 'list'
+    Does list this.
+  End verb.
+End add to actor.
+
+----------
+-- ACTORS
+----------
+
+The guardia IsA macho At plaza
+  Has xDesc "Un guardia Real con una chaqueta muy llamativa y unos zapatos negros.".
+End The.
+
+The mujer IsA hembra At plaza
+  Has xDesc "Una mujer comprando víveres. Lleva una blusa un poco sucia.".
+End The.
+
+The mendigo IsA macho At plaza
+  Has xDesc "Un hombre pidiendo dinero. Pobre de él.".
+End The.
+
+------------
+-- WEARABLES
+------------
+
+Every artículo_ponible IsA object
+  Is ponible.
+End Every.
+
+--------
+-- Guard
+--------
+
+-- chaqueta (jacket) f.s.
+The chaqueta IsA artículo_ponible in guardia
+  Has xDesc "Una chaqueta naranja y púrpura de la Guardia del Rey.".
+  Is femenina.
+  Is puesto. Has portador guardia.
+End The.
+
+-- zapatos (shoes) m.p.
+The zapatos IsA artículo_ponible in guardia
+  Has xDesc "Unos zapatos negros con una hebilla de plata. Están impecables.".
+  Is plural.
+  Is puesto. Has portador guardia.
+End The.
+
+--------
+-- Woman
+--------
+
+-- blusa (blouse) f.s.
+The blusa IsA artículo_ponible in mujer
+  Has xDesc "Una blusa marrón bastante vieja. Puedes notar que no ha sido lavada
+  en un tiempo.".
+  Is femenina.
+  Is puesto. Has portador mujer.
+End The.
+
+-- aretes (earrings) m.p.
+The aretes IsA artículo_ponible in mujer
+  Has xDesc "Unos aretes de oro. Bastante raro considerando el
+   atuendo de la mujer.".
+  Is plural.
+  Is puesto. Has portador mujer.
+End The.
+
+---------------
+-- Homeless man
+---------------
+
+-- pantalón (pants) m.s.
+The pantalón IsA artículo_ponible in mendigo
+  Name pantalón. Name pantalon.
+  Has xDesc "Un pantalón harapiento y roto.".
+  Is puesto. Has portador mendigo.
+End The.
+
+-- botas (boots) f.p.
+The botas IsA artículo_ponible in mendigo
+  Has xDesc "Unas botas marrones con un agujero en la punta. Parece que en
+   algún momento fueron de buena calidad.".
+  Is femenina.
+  Is plural.
+  Is puesto. Has portador mendigo.
+End The.
+
+-----------------------------------------------------------------------------------
+
+Start At plaza.
+  "Use LIST <ACTOR> to list the inventory of the actors.
+  $nEstás en la plaza principal de la ciudad"

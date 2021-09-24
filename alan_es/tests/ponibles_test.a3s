@@ -1,0 +1,62 @@
+﻿; |===========================|
+; |PONIBLES_TEST  S C R I P T |
+; |===========================|
+
+; =================
+; Initial inventory
+; ==================
+inventario
+
+; ===============
+; Examinate NPC'S
+; ===============
+; GUARD
+x guardia
+
+; WOMAN
+x mujer
+
+; HOMELESS MAN
+x mendigo
+
+; ===================
+;List NPC's for Items
+; ===================
+list guardia
+list mujer
+list mendigo
+
+; =============================
+; Test taking and wearing items
+; =============================
+toma zapatos
+lleva zapatos
+toma chaqueta
+lleva chaqueta
+list hero
+
+; =========================================
+; Test wearing something that isn't carried
+;==========================================
+lleva blusa
+
+toma pantalón
+toma pantalon
+
+inventario
+
+; ==============================
+; Test REMOVE and LEAVE commands
+; ==============================
+quita all
+quita zapatos
+deja zapatos
+lleva zapatos
+
+; ==========
+; LIST again
+; ==========
+list hero
+list guardia
+list mendigo
+list mujer
