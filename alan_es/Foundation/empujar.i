@@ -25,9 +25,9 @@ End add to.
 Syntax
   empujar_con = empujar (obj1) 'con' (obj2)
     Where obj1 IsA thing
-      else "You can't empujar that."
+      else "No puedes empujar eso."
     And obj2 IsA object
-      else "You can use only objects to empujar things with."
+      else "Solo puedes usar objetos para empujar cosas con ellos."
   empujar_con = empujar (obj1) 'con' 'el' (obj2).
   empujar_con = empujar 'el' (obj1) 'con' (obj2).
   empujar_con = empujar 'el' (obj1) 'con' 'el' (obj2).

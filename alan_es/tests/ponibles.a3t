@@ -125,11 +125,11 @@ All wearables are now restored to their initial wearer or location.
 > ; ------------------------------------------------------------------------------
 > ; Examining an actor lists worn items in a separate list form carried ones.
 > x vendedor
-He's here to assist customers buying clothes. El vendedor está wearing un 
+He's here to assist customers buying clothes. El vendedor lleva puesto un 
 un traje muy elegante y una corbata.
 
 > x mujer
-She's just a customer. El mujer está wearing un vestido.
+She's just a customer. El mujer lleva puesto un vestido.
 
 > ; ------------------------------------------------------------------------------
 > ; Taking Items Worn by NPCs

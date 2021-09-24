@@ -17,7 +17,7 @@ Syntax
 Add to every object
   Verb llevar
     Check obj is ponible
-      else "No puedes llevar" say the obj. "."
+      else "No puedes ponerte" say the obj. "."
     And portador of obj <> hero
       else "Ya llevas puesto" say the obj. "."
  -- And obj not in llevado
@@ -25,7 +25,7 @@ Add to every object
     And obj is tomable
       else "No puedes tomar" say the obj.
     And obj in hero
-      else "No llevas" say the obj. -- @CHECK TRANSLATION!
+      else "No llevas" say the obj.
     Does
 --    If obj not in hero then
 --      Locate obj in hero.

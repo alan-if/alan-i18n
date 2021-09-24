@@ -26,21 +26,21 @@ sandalias.
 > ; EXAMINING NPCs
 > ; ==============================================================================
 > x vendedor
-He's here to assist customers buying clothes. El vendedor está wearing un 
+He's here to assist customers buying clothes. El vendedor lleva puesto un 
 un traje muy elegante y una corbata.
 
 > x mujer
-She's just a customer. El mujer está wearing un vestido.
+She's just a customer. El mujer lleva puesto un vestido.
 
 > ; ------------------------------------------------------------------------------
 > ; PLURAL NPCs
 > ; ------------------------------------------------------------------------------
 > ; We need to ensure that plural NPCs are also mentioned correctly...
 > x mellizos
-They're twin brothers. Los mellizos están wearing un sombrero.
+They're twin brothers. Los mellizos llevan puesto un sombrero.
 
 > x mellizas
-They're twin sisters. Los mellizas están wearing un botas.
+They're twin sisters. Los mellizas llevan puesto un botas.
 
 > ; ==============================================================================
 > ; LISTING NPCs

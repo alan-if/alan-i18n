@@ -1,0 +1,137 @@
+
+Use LIST <ACTOR> to list the inventory of the actors.
+Estás en la plaza principal de la ciudad
+
+
+Plaza Principal
+Hay un guardia aquí. Hay un mujer aquí. Hay un mendigo aquí.
+
+> ; |===========================|
+> ; |PONIBLES_TEST  S C R I P T |
+> ; |===========================|
+> 
+
+> ; =================
+> ; Initial inventory
+> ; ==================
+> inventario
+No llevas nada.
+
+> 
+
+> ; ===============
+> ; Examinate NPC'S
+> ; ===============
+> ; GUARD
+> x guardia
+Un guardia Real con una chaqueta muy llamativa y unos zapatos negros. El 
+guardia lleva puesto una chaqueta y unos zapatos.
+
+> 
+
+> ; WOMAN
+> x mujer
+Una mujer comprando víveres. Lleva una blusa un poco sucia. El mujer lleva 
+puesto una blusa y unos aretes.
+
+> 
+
+> ; HOMELESS MAN
+> x mendigo
+Un hombre pidiendo dinero. Pobre de él. El mendigo lleva puesto un 
+pantalón y unas botas.
+
+> 
+
+> ; ===================
+> ;List NPC's for Items
+> ; ===================
+> list guardia
+El guardia lleva unos zapatos (están puestos) y una chaqueta. (está puesta
+).
+
+> list mujer
+El mujer lleva unos aretes (están puestos) y una blusa. (está puesta).
+
+> list mendigo
+El mendigo lleva unas botas (están puestas) y un pantalón. (está puesto).
+
+> 
+
+> ; =============================
+> ; Test taking and wearing items
+> ; =============================
+> toma zapatos
+Tomas los zapatos.
+
+> lleva zapatos
+Te pones los zapatos.
+
+> toma chaqueta
+Tomas la chaqueta.
+
+> lleva chaqueta
+Te pones la chaqueta.
+
+> list hero
+Tienes unos zapatos (están puestos) y una chaqueta. (está puesta).
+
+> 
+
+> ; =========================================
+> ; Test wearing something that isn't carried
+> ;==========================================
+> lleva blusa
+No llevas la blusa
+
+> 
+
+> toma pantalón
+Tomas el pantalón.
+
+> toma pantalon
+Ya lo tienes.
+
+> 
+
+> inventario
+Tienes un pantalón. Llevas una chaqueta y unos zapatos.
+
+> 
+
+> ; ==============================
+> ; Test REMOVE and LEAVE commands
+> ; ==============================
+> quita all
+No puedes aplicar ese verbo a varios objetos.
+
+> quita zapatos
+Te quitas los zapatos.
+
+> deja zapatos
+Dejas los zapatos.
+
+> lleva zapatos
+No llevas los zapatos
+
+> 
+
+> ; ==========
+> ; LIST again
+> ; ==========
+> list hero
+Tienes un pantalón) y una chaqueta. (está puesta).
+
+> list guardia
+El guardia no lleva nada.
+
+> list mendigo
+El mendigo lleva unas botas. (están puestas).
+
+> list mujer
+El mujer lleva unos aretes (están puestos) y una blusa. (está puesta).
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

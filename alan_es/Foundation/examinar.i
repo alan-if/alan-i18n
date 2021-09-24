@@ -69,10 +69,10 @@ Add to every actor
           If  temp:cnt <> 0
             then "$+1"
               If this is not plural
-                then "está" -- @TRANSLATE!
-                else "están" -- @TRANSLATE!
-              End if. "wearing" -- @TRANSLATE!
-              -- @TRANSLATE 'artículo_puesto' ID!
+                then "lleva"
+                ELSE "llevan"
+              End if. "puesto" -- @NOTE: "puesto" should check gender and number
+
               For each artículo_puesto directly in this, is puesto
                 do
                   Say an artículo_puesto.
