@@ -13,6 +13,8 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.2 \(2021/09/26\)](#v022-20210926)
+        - [Honouring Sceneries xDesc](#honouring-sceneries-xdesc)
     - [v0.2.1 \(2021/09/10\)](#v021-20210910)
         - [Switch to UTF-8 Encoding](#switch-to-utf-8-encoding)
     - [v0.2.0 \(2021/09/05\)](#v020-20210905)
@@ -32,6 +34,23 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 
 # Beta Releases
+
+## v0.2.2 (2021/09/26)
+
+### Honouring Sceneries xDesc
+
+If a scenery object has a non-empty `xDesc` attribute, now the library will print its string, otherwise it will just print the default message for attempting actions on scenery objects.
+
+In `scenery.i`, edit the verbs redefined on the `scenery` class:
+
+- Change the default scenery message from "That's only scenery." to "Forget the OBJ, [it's/they're] not important.", which makes it clear to the player that all actions on the object are futile, without breaking the narrative illusion (see [#34]).
+- Previously the verbs `examine` and `take` where overridden together, now they are defined separately so that `examine` can handle the `xDesc` attribute.
+- Tweak the `examine` verb to print the `xDesc` attribute if it's not an empty string, or a default message otherwise.
+
+
+> **BUG** — The `Does only` body of `take` on `scenery` instances never executes because of the `Not takeable` attribute defined on the class, which causes `take` to fail the checks on the `object` class.
+> This was a pre-existent bug in the original library and needs to be addressed in future updates (possibly, similar problems affect other classes too).
+
 
 ## v0.2.1 (2021/09/10)
 
@@ -185,7 +204,8 @@ The __Foundation Library__ is not going to be just a series of updates to the ol
 
 <!-- Issues & Discussion -->
 
-[Discussion #14]: https://github.com/alan-if/alan-i18n/discussions/14 "See Discussion #14 — Libraries Version Scheme"
+[Discussion #14]: https://github.com/alan-if/alan-i18n/discussions/14 "Discussion #14 — Libraries Version Scheme"
+[#34]: https://github.com/alan-if/alan-i18n/discussions/34 "Discussion #34 — On Scenery Objects"
 
 <!-- project files and folders -->
 

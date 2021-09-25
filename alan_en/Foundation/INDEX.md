@@ -1,7 +1,7 @@
 
 # ALAN Foundation Library Index
 
-Version 0.2.1 (2021/09/10).
+Version 0.2.2 (2021/09/26).
 
 
 There are two indices here.

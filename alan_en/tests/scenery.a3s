@@ -1,0 +1,25 @@
+﻿; ==============================================================================
+; EXAMINE SCENERY w/ xDesc
+; ==============================================================================
+; The xDesc attribute is honoured if found:
+x cactus
+x spines
+x sun
+; ==============================================================================
+; EXAMINE SCENERY no xDesc
+; ==============================================================================
+; Otherwise a standard message is shown to deter further actions:
+x sand
+; Plural nouns:
+x tumbleweeds
+; ==============================================================================
+; VERBS OVERRIDEN ON SCENERY
+; ==============================================================================
+; Verbs which are being added as DOES ONLY to replace default...
+; ------------------------------------------------------------------------------
+; TAKE
+; ------------------------------------------------------------------------------
+; BUG: The DOES ONLY body is never executed because the NOT TAKEABLE attribute
+;      is failing the CHECKs of the TAKE verb on the OBJECT class!
+take cactus
+take tumbleweeds

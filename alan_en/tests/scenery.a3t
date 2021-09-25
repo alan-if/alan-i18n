@@ -1,0 +1,50 @@
+
+
+Lost in the Desert
+You're surrounded by dunes. A fierce sun looms above you, following you
+wherever you go. The heat is unbearable, you need to find water.
+A lonely cactus rises tall from the sand. In the distance you glimpse
+tumbleweeds rolling across the sand.
+
+> ; ==============================================================================
+> ; EXAMINE SCENERY w/ xDesc
+> ; ==============================================================================
+> ; The xDesc attribute is honoured if found:
+> x cactus
+It's a sturdy plant, covered in spines.
+
+> x spines
+It's a sturdy plant, covered in spines.
+
+> x sun
+It resembles a disc of molten metal floating in the sky.
+
+> ; ==============================================================================
+> ; EXAMINE SCENERY no xDesc
+> ; ==============================================================================
+> ; Otherwise a standard message is shown to deter further actions:
+> x sand
+Forget the sand, it's not important.
+
+> ; Plural nouns:
+> x tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ==============================================================================
+> ; VERBS OVERRIDEN ON SCENERY
+> ; ==============================================================================
+> ; Verbs which are being added as DOES ONLY to replace default...
+> ; ------------------------------------------------------------------------------
+> ; TAKE
+> ; ------------------------------------------------------------------------------
+> ; BUG: The DOES ONLY body is never executed because the NOT TAKEABLE attribute
+> ;      is failing the CHECKs of the TAKE verb on the OBJECT class!
+> take cactus
+You can't take that!
+
+> take tumbleweeds
+You can't take that!
+
+> 
+
+Do you want to UNDO, RESTART, RESTORE or QUIT ? 

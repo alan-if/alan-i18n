@@ -1,0 +1,47 @@
+﻿-- "scenery.alan"   | by Tristano Ajmone 2021 | Foundation Library EN Test suite
+-- =============================================================================
+-- * * * * * *  T E S T   A D V E N T U R E   F O R   S C E N E R Y  * * * * * *
+-- =============================================================================
+
+Import 'Library.i'.
+
+The desert IsA location.
+  Name 'Lost in the Desert'.
+  Description
+    "You're surrounded by dunes.
+     A fierce sun looms above you, following you wherever you go.
+     The heat is unbearable, you need to find water.$n"
+
+  Exit north, south, east, west, northeast,
+       southeast, northwest, southwest
+       to Desert
+    Does "It would pointless, there's only more desert
+          awaiting you in that direction!"
+  End exit.
+End the.
+
+The sun IsA scenery at desert.
+  Description ""
+  Has xDesc
+    "It resembles a disc of molten metal floating in the sky.".
+End the.
+
+The cactus IsA scenery at desert.
+  Name cactus. Name spines.
+  Description "A lonely cactus rises tall from the sand."
+  Has xDesc "It's a sturdy plant, covered in spines.".
+End the.
+
+The sand IsA scenery at desert.
+  Description ""
+End the.
+
+The tumbleweeds IsA scenery at desert.
+  Name tumbleweeds. Name tumbleweed.
+  Is plural.
+  Description
+    "In the distance you glimpse tumbleweeds rolling across the sand."
+End the.
+
+--------------------------------------------------------------------------------
+Start at Desert.
