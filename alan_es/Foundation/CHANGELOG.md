@@ -40,8 +40,10 @@ Thanks to [Ricardo] for all the support with the Spanish language.
 
 ## v0.2.1 (2021/09/XX)
 
+- Improved and translated various library messages, especially for wearable items, covering gender and number correctly.
 - `mensajes.i`:
-    + Update containers listing MESSAGEs to correctly mention worn items according to the noun gender and number.
+    + Updated containers listing MESSAGEs to correctly mention worn items according to the noun gender and number.
+    + Translated remaining MESSAGEs and polished previous translations.
 
 
 ## v0.2.0 (2021/09/17)

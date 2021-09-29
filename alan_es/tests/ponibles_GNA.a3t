@@ -37,10 +37,10 @@ She's just a customer. El mujer lleva puesto un vestido.
 > ; ------------------------------------------------------------------------------
 > ; We need to ensure that plural NPCs are also mentioned correctly...
 > x mellizos
-They're twin brothers. Los mellizos llevan puesto un sombrero.
+They're twin brothers. Los mellizos llevan puestos un sombrero.
 
 > x mellizas
-They're twin sisters. Los mellizas llevan puesto un botas.
+They're twin sisters. Los mellizas llevan puestos un botas.
 
 > ; ==============================================================================
 > ; LISTING NPCs

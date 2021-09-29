@@ -67,12 +67,19 @@ Add to every actor
           -- Don't say anything if the actor is not wearing anything.
           Set temp:cnt to count directly in this, is puesto.
           If  temp:cnt <> 0
-            then "$+1"
+            then "$+1" "lleva"
               If this is not plural
-                then "lleva"
-                ELSE "llevan"
-              End if. "puesto" -- @NOTE: "puesto" should check gender and number
-
+                then "puest$$"
+                  If this is femenina
+                    then "a"
+                    else "o"
+                  End if.
+                else "$$n puest$$"
+                  If this is femenina
+                    then "as"
+                    else "os"
+                  End if.
+              End if.
               For each artículo_puesto directly in this, is puesto
                 do
                   Say an artículo_puesto.
@@ -80,7 +87,7 @@ Add to every actor
                   Depending on temp:cnt
                     = 1 then "y"
                     = 0 then "."
-                    ELSE ","
+                    else ","
                   End depend.
               End for.
           End if.
