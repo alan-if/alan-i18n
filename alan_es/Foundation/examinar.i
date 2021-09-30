@@ -68,18 +68,10 @@ Add to every actor
           Set temp:cnt to count directly in this, is puesto.
           If  temp:cnt <> 0
             then "$+1" "lleva"
-              If this is not plural
-                then "puest$$"
-                  If this is femenina
-                    then "a"
-                    else "o"
-                  End if.
-                else "$$n puest$$"
-                  If this is femenina
-                    then "as"
-                    else "os"
-                  End if.
-              End if.
+              If this is plural
+                then "$$n"
+              End if. "puesto" -- @NOTE: "puesto" should match gender and number
+                               --         of worn item(s)!
               For each artículo_puesto directly in this, is puesto
                 do
                   Say an artículo_puesto.

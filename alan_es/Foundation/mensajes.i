@@ -125,10 +125,25 @@ NO_WAY: "No puedes ir por ahí."
 CANT0: "No se puede."
 IMPOSSIBLE_WITH: "Eso es imposible con $+1."
 
-CAN_NOT_CONTAIN: "$+1 no puede contener $+2."
-CONTAINMENT_LOOP: "Poner a $+1 en sí mismo es imposible."  -- "mismo" should check for gender
-CONTAINMENT_LOOP2: "Es imposible poner $+1 en $+2
-                    porque $+2 ya está dentro de $+1."
+CAN_NOT_CONTAIN: "$+1 no puede"
+  If parameter1 is plural then "$$n"
+  End if. "contener $+2."
+
+CONTAINMENT_LOOP:
+  "Poner a $+1 en sí mism$$"
+  If parameter1 is femenina
+    then "a"
+    else "o"
+  End if.
+  If parameter1 is plural
+    then "$$s"
+  End if.
+  "es imposible."
+
+CONTAINMENT_LOOP2:
+  "Es imposible poner $+1 en $+2 porque $+2 ya está"
+  If parameter1 is plural then "$$n"
+  End if. "dentro de $+1."
 
 -- =============================================================================
 
