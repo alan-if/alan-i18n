@@ -15,7 +15,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 - [Beta Releases](#beta-releases)
     - [v0.2.1 \(2021/09/XX\)](#v021-202109xx)
     - [v0.2.0 \(2021/09/17\)](#v020-20210917)
-        - [New wearing Mechanics](#new-wearing-mechanics)
+        - [New Wearing Mechanics](#new-wearing-mechanics)
         - [Drop Implicit Taking](#drop-implicit-taking)
         - [Bug Fixes](#bug-fixes)
     - [v0.1.3 \(2021/09/12\)](#v013-20210912)
@@ -42,15 +42,16 @@ Thanks to [Ricardo] for all the support with the Spanish language.
 
 - Improved and translated various library messages, especially for wearable items, covering gender and number correctly.
 - `mensajes.i`:
-    + Updated containers listing MESSAGEs to correctly mention worn items according to the noun gender and number.
+    + Updated containers listing MESSAGEs to correctly mention worn items according to gender and number of the noun.
     + Translated remaining MESSAGEs and polished previous translations.
+- `examinar.i`: fix gender and number in usage of "puesto", "puesta", "puestos" and "puestas" before listing worn items, depending on the gender and number of the items in the list.
 
 
 ## v0.2.0 (2021/09/17)
 
 > Apply to Spanish library same changes as in English Foundation v0.2.0.
 
-### New wearing Mechanics
+### New Wearing Mechanics
 
 The wearing mechanics have been entirely redesigned, the new system being simpler and less error-prone, also allowing NPCs to wear items:
 
