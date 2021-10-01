@@ -62,27 +62,31 @@ Verb reset Does
   "All wearables are now restored to their initial wearer or location."
   -- Hero:
   Locate pantalón in hero. Make pantalón puesto.
-  Set portador of pantalón to hero.
+     Set portador of pantalón to hero.
   Locate camiseta in hero. Make camiseta puesto.
-  Set portador of camiseta to hero.
+     Set portador of camiseta to hero.
   Locate tirantes in hero. Make tirantes puesto.
-  Set portador of tirantes to hero.
+     Set portador of tirantes to hero.
   Locate sandalias in hero. Make sandalias puesto.
-  Set portador of sandalias to hero.
+     Set portador of sandalias to hero.
   -- vendedor:
   Locate traje in vendedor. Make traje puesto.
-  Set portador of traje to vendedor.
+     Set portador of traje to vendedor.
+  Locate camisa in vendedor. Make camisa puesto.
+     Set portador of camisa to vendedor.
   Locate corbata in vendedor. Make corbata puesto.
-  Set portador of corbata to vendedor.
+     Set portador of corbata to vendedor.
   -- mujer:
   Locate vestido in mujer. Make vestido puesto.
-  Set portador of vestido to mujer.
+     Set portador of vestido to mujer.
   -- mellizos:
   Locate sombrero in mellizos. Make sombrero puesto.
-  Set portador of sombrero to mellizos.
+     Set portador of sombrero to mellizos.
+  Locate poncho in mellizos. Make poncho puesto.
+     Set portador of poncho to mellizos.
   -- mellizas:
   Locate botas in mellizas. Make botas puesto.
-  Set portador of botas to mellizas.
+     Set portador of botas to mellizas.
 End verb.
 
 //// Ponibles //////////////////////////////////////////////////////////////////
@@ -95,10 +99,12 @@ For our tests we'll need enough wearable items to cover all genders and nouns:
     | masc.| sombrero (hat)      | calcetines (socks)      |
     |      | vestido  (dress)    | tirantes   (suspenders) |
     |      | pantalón (trousers) | zapatos    (shoes)      |
+    |      | poncho              |                         |
     |------+---------------------+-------------------------|
     | fem. | camiseta (t-shirt)  | sandalias  (sandals)    |
     |      | corbata  (tie)      | medias     (socks)      |
     |      | blusa    (blouse)   | botas      (boots)      |
+    |      | camisa   (shirt)    |                         |
     +------+---------------------+-------------------------+
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -140,8 +146,14 @@ The traje IsA artículo_ponible in vendedor.
   Name traje elegante.
   Name traje.
   Is puesto. Has portador vendedor.
-  Mentioned "un traje muy elegante"
+  Mentioned "traje muy elegante"
   Has xDesc "It's a grey traje by Giorgio Alani, quite elegant.".
+End the.
+
+-- una camisa (shirt): f.s.
+The camisa IsA artículo_ponible in vendedor.
+  Is femenina.
+  Is puesto. Has portador vendedor.
 End the.
 
 -- una corbata (tie): f.s.
@@ -168,12 +180,18 @@ The sombrero IsA artículo_ponible in mellizos.
   Is puesto. Has portador mellizos.
 End the.
 
+-- poncho: m.s.
+The poncho IsA artículo_ponible in mellizos.
+  Is puesto. Has portador mellizos.
+End the.
+
 -- ====================
 -- Worn by Female Twins
 -- ====================
 
 -- botas (boots): f.p.
 The botas IsA artículo_ponible in mellizas.
+  Is femenina.
   Is puesto. Has portador mellizas.
 End the.
 

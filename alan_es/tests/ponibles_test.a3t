@@ -25,20 +25,20 @@ No llevas nada.
 > ; GUARD
 > x guardia
 Un guardia Real con una chaqueta muy llamativa y unos zapatos negros. El 
-guardia lleva puesto una chaqueta y unos zapatos.
+guardia lleva puestos una chaqueta y unos zapatos.
 
 > 
 
 > ; WOMAN
 > x mujer
 Una mujer comprando víveres. Lleva una blusa un poco sucia. El mujer lleva 
-puesto una blusa y unos aretes.
+puestos una blusa y unos aretes.
 
 > 
 
 > ; HOMELESS MAN
 > x mendigo
-Un hombre pidiendo dinero. Pobre de él. El mendigo lleva puesto un 
+Un hombre pidiendo dinero. Pobre de él. El mendigo lleva puestos un 
 pantalón y unas botas.
 
 > 
@@ -47,14 +47,14 @@ pantalón y unas botas.
 > ;List NPC's for Items
 > ; ===================
 > list guardia
-El guardia lleva unos zapatos (están puestos) y una chaqueta. (está puesta
-).
+El guardia lleva unos zapatos (están puestos) y una chaqueta (está puesta)
+.
 
 > list mujer
-El mujer lleva unos aretes (están puestos) y una blusa. (está puesta).
+El mujer lleva unos aretes (están puestos) y una blusa (está puesta).
 
 > list mendigo
-El mendigo lleva unas botas (están puestas) y un pantalón. (está puesto).
+El mendigo lleva unas botas (están puestas) y un pantalón (está puesto).
 
 > 
 
@@ -74,7 +74,7 @@ Tomas la chaqueta.
 Te pones la chaqueta.
 
 > list hero
-Tienes unos zapatos (están puestos) y una chaqueta. (está puesta).
+Tienes unos zapatos (están puestos) y una chaqueta (está puesta).
 
 > 
 
@@ -120,16 +120,16 @@ No llevas los zapatos
 > ; LIST again
 > ; ==========
 > list hero
-Tienes un pantalón) y una chaqueta. (está puesta).
+Tienes un pantalón y una chaqueta (está puesta).
 
 > list guardia
 El guardia no lleva nada.
 
 > list mendigo
-El mendigo lleva unas botas. (están puestas).
+El mendigo lleva unas botas (están puestas).
 
 > list mujer
-El mujer lleva unos aretes (están puestos) y una blusa. (está puesta).
+El mujer lleva unos aretes (están puestos) y una blusa (está puesta).
 
 > 
 

@@ -43,7 +43,7 @@ CONTAINS: "$+1"
 -- The IF blocks in the following group of messages adds "(being worn)" after
 -- every item worn by an actor, when using `LIST actor`.
 
-CONTAINS_COMMA: "$01,"
+CONTAINS_COMMA: "$01"
   If parameter1 isa object then
     If parameter1 is puesto
       then "(está"
@@ -58,9 +58,9 @@ CONTAINS_COMMA: "$01,"
               then "os"
               else "as"
             End if.
-        End if.
-    End if. "$$)"
-  End if. "$$,"
+        End if. "$$)"
+    End if.
+  End if. ","
 
 CONTAINS_AND: "$01"
   If parameter1 isa object then
@@ -77,11 +77,11 @@ CONTAINS_AND: "$01"
               then "os"
               else "as"
             End if.
-        End if.
-    End if. "$$)"
+        End if. "$$)"
+    End if.
   End if. "y"
 
-CONTAINS_END: "$01."
+CONTAINS_END: "$01"
   If parameter1 isa object then
     If parameter1 is puesto
       then "(está"
@@ -96,8 +96,8 @@ CONTAINS_END: "$01."
               then "os"
               else "as"
             End if.
-        End if.
-    End if. "$$)"
+        End if. "$$)"
+    End if.
   End if. "."
 
 IS_EMPTY: "$+1 no contiene nada."

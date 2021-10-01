@@ -26,8 +26,8 @@ sandalias.
 > ; EXAMINING NPCs
 > ; ==============================================================================
 > x vendedor
-He's here to assist customers buying clothes. El vendedor lleva puesto un 
-un traje muy elegante y una corbata.
+He's here to assist customers buying clothes. El vendedor lleva puestos un 
+traje muy elegante, una camisa y una corbata.
 
 > x mujer
 She's just a customer. El mujer lleva puesto un vestido.
@@ -37,10 +37,48 @@ She's just a customer. El mujer lleva puesto un vestido.
 > ; ------------------------------------------------------------------------------
 > ; We need to ensure that plural NPCs are also mentioned correctly...
 > x mellizos
-They're twin brothers. Los mellizos llevan puesto un sombrero.
+They're twin brothers. Los mellizos llevan puestos un sombrero y un poncho
+.
 
 > x mellizas
-They're twin sisters. Los mellizas llevan puesto un botas.
+They're twin sisters. Los mellizas llevan puesta una botas.
+
+> ; ==============================================================================
+> ; EXAMINE NPC: WORN ITEMS MESSAGE GNA
+> ; ==============================================================================
+> ; We need to check that the 'examine' message for listing worn items correctly
+> ; matches the gender and number of "puesto" depending on the items contents.
+> ; ------------------------------------------------------------------------------
+> ; Mixed Gender Items
+> ; ------------------------------------------------------------------------------
+> ; If the list contains both masculine and feminine items: "puestos" (m.p.)
+> x vendedor
+He's here to assist customers buying clothes. El vendedor lleva puestos un 
+traje muy elegante, una camisa y una corbata.
+
+> ; If the list contains only masculine items: "puestos" (m.p.)
+> x mellizos
+They're twin brothers. Los mellizos llevan puestos un sombrero y un poncho
+.
+
+> ; If the list contains only feminine items: "puestas" (f.p.)
+> toma traje
+Tomas el traje muy elegante.
+
+> x vendedor
+He's here to assist customers buying clothes. El vendedor lleva puestas un
+a camisa y una corbata.
+
+> ; ------------------------------------------------------------------------------
+> ; Single Items
+> ; ------------------------------------------------------------------------------
+> ; If the list contains only a single masculine item: "puesto" (m.s.)
+> x mujer
+She's just a customer. El mujer lleva puesto un vestido.
+
+> ; If the list contains only a single feminine item: "puesta" (f.s.)
+> x mellizas
+They're twin sisters. Los mellizas llevan puesta una botas.
 
 > ; ==============================================================================
 > ; LISTING NPCs
@@ -50,24 +88,24 @@ They're twin sisters. Los mellizas llevan puesto un botas.
 > ; to this test adventure the special verb LIST <ACTOR> to check that the LIST
 > ; statement correctly mentions worn items as being worn according to GNA.
 > list hero
-Tienes unos tirantes, (están puestos), unas sandalias, (están puestas), un
-a camiseta (está puesta) y un pantalón. (está puesto).
+Tienes unos tirantes (están puestos), unas sandalias (están puestas), un 
+traje muy elegante, una camiseta (está puesta) y un pantalón (está puesto)
+.
 
 > list vendedor
-El vendedor lleva una corbata (está puesta) y un un traje muy elegante. 
-(está puesto).
+El vendedor lleva una corbata (está puesta) y una camisa (está puesta).
 
 > list mujer
-El mujer lleva un vestido. (está puesto).
+El mujer lleva un vestido (está puesto).
 
 > ; ------------------------------------------------------------------------------
 > ; PLURAL NPCs
 > ; ------------------------------------------------------------------------------
 > list mellizos
-Los mellizos llevan un sombrero. (está puesto).
+Los mellizos llevan un poncho (está puesto) y un sombrero (está puesto).
 
 > list mellizas
-Los mellizas llevan un botas. (está puesto).
+Los mellizas llevan una botas (está puesta).
 
 > 
 

@@ -21,6 +21,28 @@ x mujer
 x mellizos
 x mellizas
 ; ==============================================================================
+; EXAMINE NPC: WORN ITEMS MESSAGE GNA
+; ==============================================================================
+; We need to check that the 'examine' message for listing worn items correctly
+; matches the gender and number of "puesto" depending on the items contents.
+; ------------------------------------------------------------------------------
+; Mixed Gender Items
+; ------------------------------------------------------------------------------
+; If the list contains both masculine and feminine items: "puestos" (m.p.)
+x vendedor
+; If the list contains only masculine items: "puestos" (m.p.)
+x mellizos
+; If the list contains only feminine items: "puestas" (f.p.)
+toma traje
+x vendedor
+; ------------------------------------------------------------------------------
+; Single Items
+; ------------------------------------------------------------------------------
+; If the list contains only a single masculine item: "puesto" (m.s.)
+x mujer
+; If the list contains only a single feminine item: "puesta" (f.s.)
+x mellizas
+; ==============================================================================
 ; LISTING NPCs
 ; ==============================================================================
 ; Since the EXAMINA and INVENTARIO commands don't rely on the LIST statement,

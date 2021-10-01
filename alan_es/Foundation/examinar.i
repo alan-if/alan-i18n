@@ -70,8 +70,24 @@ Add to every actor
             then "$+1" "lleva"
               If this is plural
                 then "$$n"
-              End if. "puesto" -- @NOTE: "puesto" should match gender and number
-                               --         of worn item(s)!
+              End if. "puest$$"
+              -- Establish gender suffix for "puest$$" based on items:
+              make temp femenina.
+              For each artículo_puesto directly in this, is puesto
+                do
+                  If artículo_puesto is not femenina
+                    then make temp not femenina.
+                  End if.
+              End for.
+              If temp is femenina
+                then "a"
+                else "o"
+              End if.
+              -- Establish plural suffix for "puest$$" based on items:
+              If temp:cnt > 1
+                then "$$s"
+              End if.
+              -- List worn items:
               For each artículo_puesto directly in this, is puesto
                 do
                   Say an artículo_puesto.
