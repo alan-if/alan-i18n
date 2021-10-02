@@ -4,7 +4,7 @@ Estás en la plaza principal de la ciudad
 
 
 Plaza Principal
-Hay un guardia aquí. Hay un mujer aquí. Hay un mendigo aquí.
+Hay un guardia aquí. Hay una mujer aquí. Hay unos gemelos aquí. Hay unas gemelas aquí.
 
 > ; |===========================|
 > ; |PONIBLES_TEST  S C R I P T |
@@ -13,7 +13,7 @@ Hay un guardia aquí. Hay un mujer aquí. Hay un mendigo aquí.
 
 > ; =================
 > ; Initial inventory
-> ; ==================
+> ; =================
 > inventario
 No llevas nada.
 
@@ -31,17 +31,24 @@ guardia lleva puestos una chaqueta y unos zapatos.
 
 > ; WOMAN
 > x mujer
-Una mujer comprando víveres. Lleva una blusa un poco sucia. El mujer lleva 
+Una mujer comprando víveres. Lleva una blusa un poco sucia. La mujer lleva 
 puestos una blusa y unos aretes.
 
 > 
 
-> ; HOMELESS MAN
-> x mendigo
-Un hombre pidiendo dinero. Pobre de él. El mendigo lleva puestos un 
-pantalón y unas botas.
+> ; MALE TWINS
+> x gemelos
+Unos gemelos. Ambos llevan la misma ropa puesta. Los gemelos llevan puestos
+unos pantalones y unas botas.
 
 > 
+
+> ; FEMALE TWINS
+> x gemelas
+Unas gemelas. Ambas llevan la misma ropa puesta, incluso comparten un
+sombrero que une sus cabezas. Muy extraño. Las gemelas llevan puesto un sombrero.
+
+>
 
 > ; ===================
 > ;List NPC's for Items
@@ -51,12 +58,16 @@ El guardia lleva unos zapatos (están puestos) y una chaqueta (está puesta)
 .
 
 > list mujer
-El mujer lleva unos aretes (están puestos) y una blusa (está puesta).
+La mujer lleva unos aretes (están puestos) y una blusa. (está puesta).
 
-> list mendigo
-El mendigo lleva unas botas (están puestas) y un pantalón (está puesto).
+> list gemelos
+Los gemelos llevan unas botas (están puestas) y unos pantalones. (están
+puestos).
 
-> 
+> list gemelas
+Las gemelas llevan un sombrero. (está puesto).
+
+>
 
 > ; =============================
 > ; Test taking and wearing items
@@ -80,22 +91,32 @@ Tienes unos zapatos (están puestos) y una chaqueta (está puesta).
 
 > ; =========================================
 > ; Test wearing something that isn't carried
-> ;==========================================
+> ; =========================================
 > lleva blusa
 No llevas la blusa
 
 > 
 
-> toma pantalón
-Tomas el pantalón.
+> ; ==================================================
+> ; Test taking something already taken and being worn
+> ; ==================================================
 
-> toma pantalon
-Ya lo tienes.
+> toma pantalones
+Tomas los pantalones.
 
-> 
+> toma pantalones
+Ya los tienes.
+
+> toma chaqueta 
+Ya la tienes - la llevas puesta.
+
+> toma zapatos
+Ya los tienes - los llevas puestos.
+
+>
 
 > inventario
-Tienes un pantalón. Llevas una chaqueta y unos zapatos.
+Tienes unos pantalones. Llevas una chaqueta y unos zapatos.
 
 > 
 
@@ -120,16 +141,19 @@ No llevas los zapatos
 > ; LIST again
 > ; ==========
 > list hero
-Tienes un pantalón y una chaqueta (está puesta).
+Tienes unos pantalones y una chaqueta. (está puesta).
 
 > list guardia
 El guardia no lleva nada.
 
-> list mendigo
-El mendigo lleva unas botas (están puestas).
+> list gemelos
+Los gemelos llevan unas botas. (están puestas).
+
+> list gemelas
+Las gemelas llevan un sombrero. (está puesto).
 
 > list mujer
-El mujer lleva unos aretes (están puestos) y una blusa (está puesta).
+La mujer lleva unos aretes (están puestos) y una blusa. (está puesta).
 
 > 
 

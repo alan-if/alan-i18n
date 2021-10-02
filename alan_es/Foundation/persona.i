@@ -17,6 +17,7 @@ Every macho IsA persona
 End every macho.
 
 Every hembra IsA persona
+  Is femenina.
   Pronoun her.
 End every hembra.
 

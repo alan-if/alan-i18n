@@ -33,8 +33,15 @@ The mujer IsA hembra At plaza
   Has xDesc "Una mujer comprando víveres. Lleva una blusa un poco sucia.".
 End The.
 
-The mendigo IsA macho At plaza
-  Has xDesc "Un hombre pidiendo dinero. Pobre de él.".
+The gemelos IsA macho At plaza
+  Is plural.
+  Has xDesc "Unos gemelos. Ambos llevan la misma ropa puesta.".
+End The.
+
+The gemelas IsA hembra At plaza
+  Is plural.
+  Has xDesc "Unas gemelas. Ambas llevan la misma ropa puesta, incluso comparten un sombrero que une 
+  sus cabezas. Muy extraño.".
 End The.
 
 ------------
@@ -83,24 +90,36 @@ The aretes IsA artículo_ponible in mujer
   Is puesto. Has portador mujer.
 End The.
 
----------------
--- Homeless man
----------------
+-------------
+-- Male twins
+-------------
 
--- pantalón (pants) m.s.
-The pantalón IsA artículo_ponible in mendigo
-  Name pantalón. Name pantalon.
-  Has xDesc "Un pantalón harapiento y roto.".
-  Is puesto. Has portador mendigo.
+-- pantalones (pants) m.s. (Changed "pantalón" for "pantalones", since this is now a plural NPC)
+The pantalones IsA artículo_ponible in gemelos
+  Name pantalones.
+  Has xDesc "Unos pantalones idénticos.".
+  Is plural.
+  Is puesto. Has portador gemelos.
 End The.
 
 -- botas (boots) f.p.
-The botas IsA artículo_ponible in mendigo
+The botas IsA artículo_ponible in gemelos
   Has xDesc "Unas botas marrones con un agujero en la punta. Parece que en
    algún momento fueron de buena calidad.".
   Is femenina.
   Is plural.
-  Is puesto. Has portador mendigo.
+  Is puesto. Has portador gemelos.
+End The.
+
+---------------
+-- Female twins
+---------------
+
+-- sombrero (hat) m.s.
+The sombrero IsA artículo_ponible in gemelas
+  Has xDesc "Un sombrero gigante compartido por las gemelas, con dos copas para sus dos 
+  cabezas.".
+  Is puesto. Has portador gemelas.
 End The.
 
 -----------------------------------------------------------------------------------

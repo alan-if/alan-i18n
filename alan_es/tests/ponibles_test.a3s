@@ -16,15 +16,19 @@ x guardia
 ; WOMAN
 x mujer
 
-; HOMELESS MAN
-x mendigo
+; MALE TWINS
+x gemelos
+
+; FEMALE TWINS
+x gemelas
 
 ; ===================
 ;List NPC's for Items
 ; ===================
 list guardia
 list mujer
-list mendigo
+list gemelos
+list gemelas
 
 ; =============================
 ; Test taking and wearing items
@@ -40,8 +44,10 @@ list hero
 ;==========================================
 lleva blusa
 
-toma pantalón
-toma pantalon
+toma pantalones
+toma pantalones
+toma chaqueta
+toma zapatos
 
 inventario
 
@@ -58,5 +64,6 @@ lleva zapatos
 ; ==========
 list hero
 list guardia
-list mendigo
+list gemelos
+list gemelas
 list mujer

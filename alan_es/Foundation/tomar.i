@@ -31,9 +31,26 @@ Add to every object
     Check obj is tomable
       else "¡No puedes tomar" say the obj. "!"
     And obj not in hero
-      else "Ya lo tienes"
+      else "Ya l$$" If obj is femenina 
+        then "a"
+        else "o"
+        End If.
+        If obj is plural then "$$s" 
+        End If. "tienes"
             If obj is puesto then
-              "- lo llevas puesto"
+              If obj is femenina
+                then "- la"
+                else "- lo"
+              End If.
+              If obj is plural then "$$s"
+              End If.
+              "llevas puest$$"
+              If obj is femenina
+                then "a"
+                else "o"
+              End If.
+              If obj is plural then "$$s"
+              End If.
 
             End if.
             "."
