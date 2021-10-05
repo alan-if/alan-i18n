@@ -1,0 +1,69 @@
+﻿; ******************************************************************************
+; *                                                                            *
+; *                    T E S T   W E A R A B L E S   G N A                     *
+; *                                                                            *
+; ******************************************************************************
+; These tests aim at verifying that gender and number are honoured in messages
+; relating to wearable items, both for the items and their wearer/carrier.
+; ==============================================================================
+; INVENTORY
+; ==============================================================================
+inventario
+; ==============================================================================
+; EXAMINING NPCs
+; ==============================================================================
+x guardia
+x mujer
+; ------------------------------------------------------------------------------
+; PLURAL NPCs
+; ------------------------------------------------------------------------------
+; We need to ensure that plural NPCs are also mentioned correctly...
+x gemelos
+x gemelas
+; ==============================================================================
+; EXAMINE NPC: WORN ITEMS MESSAGE GNA
+; ==============================================================================
+; We need to check that the 'examine' message for listing worn items correctly
+; matches the gender and number of "puesto" depending on the items contents.
+; ------------------------------------------------------------------------------
+; SINGLE ITEM: Masculine Singular
+; ------------------------------------------------------------------------------
+; If the list contains only a single item m.s.: "puesto" (m.s.)
+x gemelas
+; ------------------------------------------------------------------------------
+; SINGLE ITEM: Feminine Singular
+; ------------------------------------------------------------------------------
+; If the list contains only a single item f.s.: "puesta" (f.s.)
+toma aretes
+x mujer
+; ------------------------------------------------------------------------------
+; SINGLE ITEM: Masculine Plural
+; ------------------------------------------------------------------------------
+; If the list contains only a single item m.p.: "puesto"??? (m.s.)
+toma botas
+x gemelos
+; ------------------------------------------------------------------------------
+; SINGLE ITEM: Feminine Plural
+; ------------------------------------------------------------------------------
+; If the list contains only a single item f.p.: "puesta"??? (f.s.)
+toma blusa
+MAKEWEAR mujer sandalias
+x mujer
+; ------------------------------------------------------------------------------
+; MULTIPLE ITEMS: Mixed Gender
+; ------------------------------------------------------------------------------
+; If the list contains both masculine and feminine items: "puestos" (m.p.)
+x guardia
+; ------------------------------------------------------------------------------
+; MULTIPLE ITEMS: Masculine
+; ------------------------------------------------------------------------------
+; If the list contains only masculine items: "puestos" (m.p.)
+MAKEWEAR gemelos tirantes
+x gemelos
+; ------------------------------------------------------------------------------
+; MULTIPLE ITEMS: Feminine
+; ------------------------------------------------------------------------------
+; If the list contains only feminine items: "puestas" (f.p.)
+toma zapatos
+MAKEWEAR guardia camiseta
+x guardia

@@ -31,12 +31,32 @@ Add to every object
     Check obj is tomable
       else "¡No puedes tomar" say the obj. "!"
     And obj not in hero
-      else "Ya lo tienes"
-            If obj is puesto then
-              "- lo llevas puesto"
-
-            End if.
-            "."
+      else
+-- @NOTE: ALAN is buggy when wrapping lines at words that use $$ continuation,
+--        which are truncated prematurely! (See Issue #42)
+--        For now, we'll leave it as it, otherwise it would become much more
+--        verbose to handle. After the grammar module is created, we should be
+--        able to rely on GNA concordance attributes to handle this with much
+--        slimmer code...
+        "Ya l$$" If obj is femenina
+          then "a"
+          else "o"
+        End If.
+        If obj is plural then "$$s" End If.
+        "tienes"
+          If obj is puesto then "-- l$$"
+            If obj is femenina
+              then "a"
+              else "o"
+          End If.
+          If obj is plural then "$$s" End If.
+          "llevas puest$$"
+          If obj is femenina
+            then "a"
+            else "o"
+          End If.
+          If obj is plural then "$$s" End If.
+        End if. "."
     And peso of obj <=50
       else "Es demasiado pesado."
     Does

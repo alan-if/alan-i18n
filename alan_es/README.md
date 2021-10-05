@@ -63,11 +63,9 @@ Hence, the __Librería pALANte__ was renamed to __Spanish Foundation Library__.
 
 - [`CHANGELOG.md`][CHANGELOG.md]
 
-Lacking a native Spanish speaker who could take on maintenance of the Spanish library, [Tristano Ajmone] has began updating the new __Spanish Foundation Library__ to mirror the changes of the new __[English Foundation Library]__ as much as possible — the limit being the inability to handle text changes due to lack of confidence when it comes to writing in Spanish.
+The __Spanish Foundation Library__ is actively developed by [Tristano Ajmone] and [Ricardo Osio], who are currently working on a new approach to handle the Spanish grammar in the library at initialization time, which will simplify using the library.
 
-Our goals for the new __Foundation Library__ is to take advantage of the new ALAN&nbsp;3 features that were introduced since 2010, and strive to have all library translations mirror each other in terms of new features and design choices.
-
-We'd really appreciate if a native Castilian speaker could join the project and help us out with the update work, by supervising changes to the output text of the library, creation of tests, proofreading, etc.
+Our goal for the new __Foundation Library__ is to take advantage of the new ALAN&nbsp;3 features that were introduced since 2010, and strive to have all library translations mirror each other in terms of new features and design choices.
 
 The [`Foundation/COPYING`][COPYING] file with the [Artistic License 2.0] was added by us, since this is a derivative work of the __[Librería pALANte][pALANte]__, which was a derivative work __[ALAN Library v0.6.x]__.
 
@@ -170,7 +168,7 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 
 <!-- badges -->
 
-[lib badge]: https://img.shields.io/badge/Foundation_Lib_ES-0.2.0-yellow "ALAN Foundation Library version"
+[lib badge]: https://img.shields.io/badge/Foundation_Lib_ES-0.2.1-yellow "ALAN Foundation Library version"
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta8-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta8 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic_License_2.0-blue
@@ -190,6 +188,7 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 <!-- people -->
 
 [Bruce Humphrey]: https://alanif.blogspot.com/ "Visit Bruce Humphrey's blog on ALAN Spanish"
+[Ricardo Osio]: https://github.com/Rich15 "View Ricardo Osio's GitHub profile"
 [Thomas Nilefalk]: https://github.com/thoni56 "View Thomas Nilefalk's GitHub profile"
 [Tristano Ajmone]: https://github.com/tajmone "View Tristano Ajmone's GitHub profile"
 

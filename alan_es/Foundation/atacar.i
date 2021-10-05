@@ -45,7 +45,7 @@ Add to every thing
   Verb atacar_con
     When obj
       Check obj in hero
-        else "No tienes ese objeto para atacar con."
+        else "No tienes ese objeto para atacar con él."
       And obj is arma
         else "¡No tiene sentido atacar nada con eso!"
     Does
@@ -65,9 +65,9 @@ Add to every thing
   Verb disparar
     Does
       If obj is dispararable then
-        "Debes especificar contra que disparar."
+        "Debes especificar contra qué disparar."
       else
-        "Debes especificar con que quieres disparar al"
+        "Debes especificar con qué quieres disparar al"
         Say the obj. "."
       End if.
   End verb.

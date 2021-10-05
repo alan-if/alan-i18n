@@ -13,8 +13,9 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.1 \(2021/10/05\)](#v021-20211005)
     - [v0.2.0 \(2021/09/17\)](#v020-20210917)
-        - [New wearing Mechanics](#new-wearing-mechanics)
+        - [New Wearing Mechanics](#new-wearing-mechanics)
         - [Drop Implicit Taking](#drop-implicit-taking)
         - [Bug Fixes](#bug-fixes)
     - [v0.1.3 \(2021/09/12\)](#v013-20210912)
@@ -32,16 +33,26 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 # Beta Releases
 
-Lacking a native Spanish speaker who could take on maintenance of the Spanish library, [Tristano Ajmone] began updating the __Spanish Foundation Library__ to mirror the changes of the new __[English Foundation Library]__ as much as possible — the limit being the inability to handle text changes due to lack of confidence when it comes to writing in Spanish.
+The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] and [Ricardo Osio].
 
-Thanks to [Ricardo] for all the support with the Spanish language.
+
+## v0.2.1 (2021/10/05)
+
+- Improved and translated various library messages, especially for wearable items, covering gender and number correctly.
+- `mensajes.i`:
+    + Updated containers listing MESSAGEs to correctly mention worn items according to gender and number of the noun.
+    + Translated remaining MESSAGEs and polished previous translations.
+- `examinar.i`: fix gender and number in usage of "puesto", "puesta", "puestos" and "puestas" before listing worn items, depending on the gender and number of the items in the list.
+- `persona.i`: add missing `Is femenina` to `hembra` class, so female actors are handled correctly.
+- `tomar.i`: tweak CHECK response to handle correctly gender and number when attempting to take an object which is already carried or worn.
+
 
 
 ## v0.2.0 (2021/09/17)
 
 > Apply to Spanish library same changes as in English Foundation v0.2.0.
 
-### New wearing Mechanics
+### New Wearing Mechanics
 
 The wearing mechanics have been entirely redesigned, the new system being simpler and less error-prone, also allowing NPCs to wear items:
 
@@ -220,7 +231,7 @@ The __Foundation Library__ is not going to be just a series of updates to the ol
 [Alan IF Development team]: https://github.com/alan-if "Visit the Alan Interactive Fiction Development team organization on GitHub"
 
 [Anssi Räisänen]: https://github.com/AnssiR66 "View Anssi Räisänen's GitHub profile"
-[Ricardo]: https://github.com/Rich15 "View Ricardo's GitHub profile"
+[Ricardo Osio]: https://github.com/Rich15 "View Ricardo Osio's GitHub profile"
 [Thomas Nilefalk]: https://github.com/thoni56 "View Thomas Nilefalk's GitHub profile"
 [Tristano Ajmone]: https://github.com/tajmone "View Tristano Ajmone's GitHub profile"
 

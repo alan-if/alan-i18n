@@ -1,0 +1,72 @@
+﻿; ******************************************************************************
+; *                                                                            *
+; *                T E S T   W E A R A B L E S   A C T I O N S                 *
+; *                                                                            *
+; ******************************************************************************
+; This transcript test various actions on wearable items to ensure they are
+; handled properly by the library, i.e. that their messages are correct and
+; that the worn/unworn state of wearable items is tracked correctly.
+; ==============================================================================
+;                             Test Wearables on Hero
+; ==============================================================================
+; Inventory should always list separately carried and worn items.
+inventario
+x pantalón
+x camiseta
+; ------------------------------------------------------------------------------
+; VERB REMOVE
+; ------------------------------------------------------------------------------
+; REMOVE WORN ITEM:
+quita pantalón
+; REMOVE CARRIED ITEM:
+quita pantalón
+i
+deja all
+i
+; REMOVE UNOWNED ITEM:
+quita pantalón
+; ------------------------------------------------------------------------------
+; VERB WEAR
+; ------------------------------------------------------------------------------
+i
+; WEAR ALL (UNSUPPORTED):
+lleva all
+; WEAR UNOWNED ITEM (IMPLICIT TAKING NOT SUPPORTED):
+lleva pantalón
+i
+toma pantalón
+; WEAR CARRIED ITEM:
+lleva pantalón
+i
+; WEAR WORN ITEM:
+lleva pantalón
+i
+; ------------------------------------------------------------------------------
+; VERB UNDRESS
+; ------------------------------------------------------------------------------
+i
+desnudate
+i
+desnudate
+; ==============================================================================
+;                             Test Wearables on NPCs
+; ==============================================================================
+; The Foundation Library allows 'wearable' items to be worn not only by the Hero
+; but also by any other actor.
+; ------------------------------------------------------------------------------
+; NPCs Inventory
+; ------------------------------------------------------------------------------
+; Examining an actor lists worn items in a separate list form carried ones.
+x guardia
+x mujer
+; ------------------------------------------------------------------------------
+; Taking Items Worn by NPCs
+; ------------------------------------------------------------------------------
+; The library doesn't prevent taking worn items:
+toma blusa de mujer
+toma chaqueta de guardia
+; ------------------------------------------------------------------------------
+; Implicitly Taking Items Worn by NPCs
+; ------------------------------------------------------------------------------
+; The library no longer supports implicit taking in verbs:
+lleva zapatos

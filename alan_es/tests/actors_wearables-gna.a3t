@@ -1,0 +1,135 @@
+
+This adventure provides some special test commands:
+ * LIST <ACTOR> -- to list the inventory of actors.
+ * MAKEWEAR <ACTOR> <OBJ> -- to make an actor wear an item.
+
+
+Plaza Principal
+Hay un guardia aquí. Hay una mujer aquí. Hay unos gemelos aquí. Hay unas 
+gemelas aquí.
+
+> ; ******************************************************************************
+> ; *                                                                            *
+> ; *                    T E S T   W E A R A B L E S   G N A                     *
+> ; *                                                                            *
+> ; ******************************************************************************
+> ; These tests aim at verifying that gender and number are honoured in messages
+> ; relating to wearable items, both for the items and their wearer/carrier.
+> ; ==============================================================================
+> ; INVENTORY
+> ; ==============================================================================
+> inventario
+No llevas nada. Llevas un pantalón, una camiseta, unos tirantes y unas 
+sandalias.
+
+> ; ==============================================================================
+> ; EXAMINING NPCs
+> ; ==============================================================================
+> x guardia
+Un guardia Real con una chaqueta muy llamativa y unos zapatos negros. El 
+guardia lleva puestos una chaqueta y unos zapatos.
+
+> x mujer
+Una mujer comprando víveres. Lleva una blusa un poco sucia. La mujer lleva 
+puestos una blusa y unos aretes.
+
+> ; ------------------------------------------------------------------------------
+> ; PLURAL NPCs
+> ; ------------------------------------------------------------------------------
+> ; We need to ensure that plural NPCs are also mentioned correctly...
+> x gemelos
+Unos gemelos. Ambos llevan la misma ropa puesta. Los gemelos llevan 
+puestos unos pantalones y unas botas.
+
+> x gemelas
+Unas gemelas. Ambas llevan la misma ropa puesta, incluso comparten un
+sombrero que une sus cabezas. Muy extraño. Las gemelas llevan puesto un 
+sombrero.
+
+> ; ==============================================================================
+> ; EXAMINE NPC: WORN ITEMS MESSAGE GNA
+> ; ==============================================================================
+> ; We need to check that the 'examine' message for listing worn items correctly
+> ; matches the gender and number of "puesto" depending on the items contents.
+> ; ------------------------------------------------------------------------------
+> ; SINGLE ITEM: Masculine Singular
+> ; ------------------------------------------------------------------------------
+> ; If the list contains only a single item m.s.: "puesto" (m.s.)
+> x gemelas
+Unas gemelas. Ambas llevan la misma ropa puesta, incluso comparten un
+sombrero que une sus cabezas. Muy extraño. Las gemelas llevan puesto un 
+sombrero.
+
+> ; ------------------------------------------------------------------------------
+> ; SINGLE ITEM: Feminine Singular
+> ; ------------------------------------------------------------------------------
+> ; If the list contains only a single item f.s.: "puesta" (f.s.)
+> toma aretes
+Tomas los aretes.
+
+> x mujer
+Una mujer comprando víveres. Lleva una blusa un poco sucia. La mujer lleva 
+puesta una blusa.
+
+> ; ------------------------------------------------------------------------------
+> ; SINGLE ITEM: Masculine Plural
+> ; ------------------------------------------------------------------------------
+> ; If the list contains only a single item m.p.: "puesto"??? (m.s.)
+> toma botas
+Tomas las botas.
+
+> x gemelos
+Unos gemelos. Ambos llevan la misma ropa puesta. Los gemelos llevan 
+puestos unos pantalones.
+
+> ; ------------------------------------------------------------------------------
+> ; SINGLE ITEM: Feminine Plural
+> ; ------------------------------------------------------------------------------
+> ; If the list contains only a single item f.p.: "puesta"??? (f.s.)
+> toma blusa
+Tomas la blusa.
+
+> MAKEWEAR mujer sandalias
+Done, now la mujer is wearing las sandalias.
+
+> x mujer
+Una mujer comprando víveres. Lleva una blusa un poco sucia. La mujer lleva 
+puestas unas sandalias.
+
+> ; ------------------------------------------------------------------------------
+> ; MULTIPLE ITEMS: Mixed Gender
+> ; ------------------------------------------------------------------------------
+> ; If the list contains both masculine and feminine items: "puestos" (m.p.)
+> x guardia
+Un guardia Real con una chaqueta muy llamativa y unos zapatos negros. El 
+guardia lleva puestos una chaqueta y unos zapatos.
+
+> ; ------------------------------------------------------------------------------
+> ; MULTIPLE ITEMS: Masculine
+> ; ------------------------------------------------------------------------------
+> ; If the list contains only masculine items: "puestos" (m.p.)
+> MAKEWEAR gemelos tirantes
+Done, now los gemelos is wearing los tirantes.
+
+> x gemelos
+Unos gemelos. Ambos llevan la misma ropa puesta. Los gemelos llevan 
+puestos unos tirantes y unos pantalones.
+
+> ; ------------------------------------------------------------------------------
+> ; MULTIPLE ITEMS: Feminine
+> ; ------------------------------------------------------------------------------
+> ; If the list contains only feminine items: "puestas" (f.p.)
+> toma zapatos
+Tomas los zapatos.
+
+> MAKEWEAR guardia camiseta
+Done, now el guardia is wearing la camiseta.
+
+> x guardia
+Un guardia Real con una chaqueta muy llamativa y unos zapatos negros. El 
+guardia lleva puesta una camiseta y una chaqueta.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

@@ -1,0 +1,159 @@
+
+This adventure provides some special test commands:
+ * LIST <ACTOR> -- to list the inventory of actors.
+ * MAKEWEAR <ACTOR> <OBJ> -- to make an actor wear an item.
+
+
+Plaza Principal
+Hay un guardia aquí. Hay una mujer aquí. Hay unos gemelos aquí. Hay unas 
+gemelas aquí.
+
+> ; ******************************************************************************
+> ; *                                                                            *
+> ; *                        T E S T   W E A R A B L E S                         *
+> ; *                                                                            *
+> ; ******************************************************************************
+> ; Heading comments and commented annotation are in English to simplify fixes and
+> ; maintenance by non Spanish speaker.
+> ; ==============================================================================
+> ;                             Test Wearables on Hero
+> ; ==============================================================================
+> ; Inventory should always list separately carried and worn items.
+> i
+No llevas nada. Llevas un pantalón, una camiseta, unos tirantes y unas 
+sandalias.
+
+> x pantalón
+Some old trousers which have seen better times.
+
+> x camiseta
+No hay nada particular acerca de la camiseta.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB REMOVE
+> ; ------------------------------------------------------------------------------
+> ; REMOVE WORN ITEM:
+> quita pantalón
+Te quitas el pantalón.
+
+> ; REMOVE CARRIED ITEM:
+> quita pantalón
+No llevas el pantalón.
+
+> i
+Tienes un pantalón. Llevas una camiseta, unos tirantes y unas sandalias.
+
+> deja all
+(pantalón) Dejas el pantalón.
+
+(camiseta) Dejas la camiseta.
+
+(tirantes) Dejas los tirantes.
+
+(sandalias) Dejas las sandalias.
+
+> i
+No llevas nada.
+
+> ; REMOVE UNOWNED ITEM:
+> quita pantalón
+No llevas el pantalón.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB WEAR
+> ; ------------------------------------------------------------------------------
+> i
+No llevas nada.
+
+> ; WEAR ALL (UNSUPPORTED):
+> lleva all
+No puedes aplicar ese verbo a varios objetos.
+
+> ; WEAR UNOWNED ITEM (IMPLICIT TAKING NOT SUPPORTED):
+> lleva pantalón
+No llevas el pantalón
+
+> i
+No llevas nada.
+
+> toma pantalón
+Tomas el pantalón.
+
+> ; WEAR CARRIED ITEM:
+> lleva pantalón
+Te pones el pantalón.
+
+> i
+No llevas nada. Llevas un pantalón.
+
+> ; WEAR WORN ITEM:
+> lleva pantalón
+Ya llevas puesto el pantalón.
+
+> i
+No llevas nada. Llevas un pantalón.
+
+> RESET
+La palabra "RESET" no es relevante.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB UNDRESS
+> ; ------------------------------------------------------------------------------
+> i
+No llevas nada. Llevas un pantalón.
+
+> desnudate
+Te quitas todo lo que llevabas puesto.
+
+> i
+Tienes un pantalón.
+
+> desnudate
+No llevas nada que puedas quitarte.
+
+> ; ==============================================================================
+> ;                             Test Wearables on NPCs
+> ; ==============================================================================
+> ; The Foundation Library allows 'wearable' items to be worn not only by the Hero
+> ; but also by any other actor.
+> RESET
+La palabra "RESET" no es relevante.
+
+> ; ------------------------------------------------------------------------------
+> ; NPCs Inventory
+> ; ------------------------------------------------------------------------------
+> ; Examining an actor lists worn items in a separate list form carried ones.
+> x vendedor
+La palabra "vendedor" no es relevante.
+
+> x mujer
+Una mujer comprando víveres. Lleva una blusa un poco sucia. La mujer lleva 
+puestos una blusa y unos aretes.
+
+> ; ------------------------------------------------------------------------------
+> ; Taking Items Worn by NPCs
+> ; ------------------------------------------------------------------------------
+> ; The library doesn't prevent taking worn items:
+> toma camiseta
+Tomas la camiseta.
+
+> RESET
+La palabra "RESET" no es relevante.
+
+> toma camiseta de vendedor
+La palabra "vendedor" no es relevante.
+
+> ; ------------------------------------------------------------------------------
+> ; Implicitly Taking Items Worn by NPCs
+> ; ------------------------------------------------------------------------------
+> ; The library no longer supports implicit taking in verbs:
+> RESET
+La palabra "RESET" no es relevante.
+
+> lleva camiseta
+Te pones la camiseta.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

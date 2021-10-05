@@ -68,11 +68,35 @@ Add to every actor
           Set temp:cnt to count directly in this, is puesto.
           If  temp:cnt <> 0
             then "$+1"
-              If this is not plural
-                then "está" -- @TRANSLATE!
-                else "están" -- @TRANSLATE!
-              End if. "wearing" -- @TRANSLATE!
-              -- @TRANSLATE 'artículo_puesto' ID!
+              If this is plural
+                then "llevan"
+                else "lleva"
+              End if.
+              -- Establish gender suffix for "puest$$" based on items:
+              make temp femenina.
+              make temp not plural.
+              For each artículo_puesto directly in this, is puesto
+                do
+                  If artículo_puesto is not femenina
+                    then make temp not femenina.
+                  End if.
+                  If artículo_puesto is plural
+                    then make temp plural.
+                  End if.
+              End for.
+              If temp is femenina
+                then
+                  If temp is plural
+                    then "puestas"
+                    else "puesta"
+                  End if.
+                else
+                  If temp is plural
+                    then "puestos"
+                    else "puesto"
+                  End if.
+              End if.
+              -- List worn items:
               For each artículo_puesto directly in this, is puesto
                 do
                   Say an artículo_puesto.
@@ -80,7 +104,7 @@ Add to every actor
                   Depending on temp:cnt
                     = 1 then "y"
                     = 0 then "."
-                    ELSE ","
+                    else ","
                   End depend.
               End for.
           End if.

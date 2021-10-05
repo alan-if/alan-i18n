@@ -4,7 +4,7 @@
 --------------------------------------------------------------------------------
 --==============================================================================
 
---  Vampiro para ALAN Foundation Library Spanish v0.2.0.
+--  Vampiro para ALAN Foundation Library Spanish v0.2.1.
 --
 -- Esta es la versión en ALAN + libreria española de "Memorias de reXXe",
 -- también conocido como "Vampiro". Este código fuente forma parte del
@@ -22,8 +22,8 @@
 -- la librería 0.6.0e (realizada entre Marcos Donantuonni y Bruce Humphrey).
 --
 -- The original source code was adapted by Tristano Ajmone with the help of
--- Ricardo @Rich15 to the work with the Foundation Library, producing the same
--- results as the original game.
+-- Ricardo Osio @Rich15 to the work with the Foundation Library, producing the
+-- same results as the original game.
 --------------------------------------------------------------------------------
 
 import 'Library.i'.

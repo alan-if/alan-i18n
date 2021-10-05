@@ -1,0 +1,360 @@
+﻿-- "actors.alan" | Spanish Foundation Library Test Suite
+--==============================================================================
+-- * * * * * *   T E S T   A D V E N T U R E   F O R   P E O P L E   * * * * * *
+--==============================================================================
+-- by Ricardo Osio (@Rich15) and Tristano Ajmone, 2021.
+--------------------------------------------------------------------------------
+
+-- This adventure is used for testing actors of the 'persona' class and wearable
+-- items. Since we'll need to test that gender and number is properly handled
+-- in all library messages, we need to provide actors of all numbers and
+-- genders, as well as enough wearable items of each number and gender to cover
+-- the different combinations of items list (a single item for each gender and
+-- number, multiple items of the same gender, items of mixed gender) since
+-- these will affect the 'examiner' message listing worn items.
+
+--------------------------------------------------------------------------------
+
+Import 'Library.i'.
+
+The plaza IsA location
+  Name 'Plaza Principal'.
+End The.
+
+--==============================================================================
+--                       S P E C I A L   C O M M A N D S
+--==============================================================================
+-- Some special verbs to accommodate our testing needs...
+--------------------------------------------------------------------------------
+--                        D R E S S I N G   A C T O R S
+--------------------------------------------------------------------------------
+
+-- We need to be able to make NPCs wear items, so that we can test how various
+-- combinations of different gender items are listed by 'examinar' (e.g. single
+-- items, mixed gender, etc.).
+
+Syntax makewear = makewear (act) (obj)
+  Where act IsA actor
+    else "This verb can only be used on actors!"
+  And obj IsA object
+    else "You can only make actor wear object!"
+
+Add to every thing
+  Verb makewear
+    When act
+    Check obj is ponible
+      else "$+2 is not a wearable item!"
+    Does
+      Locate obj in act.
+      Make obj puesto.
+      Set portador of obj to act.
+      "Done, now $+1 is wearing $+2."
+  End verb.
+End add to.
+
+
+--------------------------------------------------------------------------------
+--                           L I S T   A C T O R S
+--------------------------------------------------------------------------------
+-- A special test verb to execute the LIST statement on actors and check that
+-- carried and worn items are mentioned correctly according to GNA.
+
+Syntax 'list' = 'list' (act)
+  Where act IsA actor
+    else "This verb can only be used on actors!"
+
+Add to every actor
+  Verb 'list'
+    Does list this.
+  End verb.
+End add to actor.
+
+--==============================================================================
+--                             N P C   A C T O R S
+--==============================================================================
+
+-- The Guard (m.s.)
+The guardia IsA macho At plaza
+  Has xDesc
+    "Un guardia Real con una chaqueta muy llamativa y unos zapatos negros.".
+End The.
+
+-- The Woman (f.s.)
+The mujer IsA hembra At plaza
+  Has xDesc "Una mujer comprando víveres. Lleva una blusa un poco sucia.".
+End The.
+
+-- The Male Twins (m.p.)
+The gemelos IsA macho At plaza
+  Is plural.
+  Has xDesc "Unos gemelos. Ambos llevan la misma ropa puesta.".
+End The.
+
+-- The Female Twins (f.p.)
+The gemelas IsA hembra At plaza
+  Is plural.
+  Has xDesc
+    "Unas gemelas. Ambas llevan la misma ropa puesta,
+     incluso comparten un sombrero que une sus cabezas.
+     Muy extraño.".
+End The.
+
+--==============================================================================
+--                              W E A R A B L E S
+--==============================================================================
+
+-- @FIXME: The carried items by the various NPCs should be amended in order to
+--         allow proper testing of how 'examine' handles listing worn items,
+--         i.e. how "puesto"/"puesta"/"puestos"/"puestas" is used depending on
+--         whether the NPC is carrying a single item or multiple items.
+--
+--         The rule is that if it's a single item then "puest*" will follow its
+--         number and gender, if there are only masculine items or mixed gender
+--         items it will be "puestos", and if there are only feminine items it
+--         will be "puestas".
+--
+-- @NOTE:  It's not clear how a single item which is plural should be handled.
+--         E.g. 'los aretes' (earring.), should it be listed as:
+--
+--            La mujer lleva puesto unos aretes.
+--
+--         or instead:
+--
+--            La mujer lleva puestos unos aretes.
+--
+--         The current rules only cover the former.
+
+Every artículo_ponible IsA object.
+  Is ponible.
+End every.
+
+
+////
+@TODO: Once the test adventure is complete, reimplement this special VERB.
+
+Verb reset Does
+  "All wearables are now restored to their initial wearer or location."
+  -- Hero:
+  Locate pantalón in hero. Make pantalón puesto.
+     Set portador of pantalón to hero.
+  Locate camiseta in hero. Make camiseta puesto.
+     Set portador of camiseta to hero.
+  Locate tirantes in hero. Make tirantes puesto.
+     Set portador of tirantes to hero.
+  Locate sandalias in hero. Make sandalias puesto.
+     Set portador of sandalias to hero.
+  -- vendedor:
+  Locate traje in vendedor. Make traje puesto.
+     Set portador of traje to vendedor.
+  Locate camisa in vendedor. Make camisa puesto.
+     Set portador of camisa to vendedor.
+  Locate corbata in vendedor. Make corbata puesto.
+     Set portador of corbata to vendedor.
+  -- mujer:
+  Locate vestido in mujer. Make vestido puesto.
+     Set portador of vestido to mujer.
+  -- mellizos:
+  Locate sombrero in mellizos. Make sombrero puesto.
+     Set portador of sombrero to mellizos.
+  Locate poncho in mellizos. Make poncho puesto.
+     Set portador of poncho to mellizos.
+  -- mellizas:
+  Locate botas in mellizas. Make botas puesto.
+     Set portador of botas to mellizas.
+End verb.
+////
+
+//// Ponibles //////////////////////////////////////////////////////////////////
+@TODO: Rebuilt table once test adventure is complete!
+
+For our tests we'll need enough wearable items to cover all genders and nouns:
+
+    +------|---------------------+-------------------------+
+    |      |      singular       |         plural          |
+    |------+---------------------+-------------------------|
+    | masc.| sombrero (hat)      | calcetines (socks)      |
+    |      | vestido  (dress)    | tirantes   (suspenders) |
+    |      | pantalón (trousers) | zapatos    (shoes)      |
+    |      | poncho              |                         |
+    |------+---------------------+-------------------------|
+    | fem. | camiseta (t-shirt)  | sandalias  (sandals)    |
+    |      | corbata  (tie)      | medias     (socks)      |
+    |      | blusa    (blouse)   | botas      (boots)      |
+    |      | camisa   (shirt)    |                         |
+    +------+---------------------+-------------------------+
+
+////////////////////////////////////////////////////////////////////////////////
+
+-- ============
+-- Worn by Hero
+-- ============
+
+-- un pantalón (trousers): m.s.
+The pantalón IsA artículo_ponible in hero.
+  Is puesto. Has portador hero.
+  Has xDesc "Some old trousers which have seen better times.".
+End the.
+
+-- una camiseta (t-shirt): f.s.
+The camiseta IsA artículo_ponible in hero.
+  Is femenina.
+  Is puesto. Has portador hero.
+End the.
+
+-- tirantes (suspenders): m.p.
+The tirantes IsA artículo_ponible in hero.
+  Is plural.
+  Is puesto. Has portador hero.
+End the.
+
+-- sandalias (sandals): f.p.
+The sandalias IsA artículo_ponible in hero.
+  Is femenina. Is plural.
+  Is puesto. Has portador hero.
+End the.
+
+-- =============
+-- Worn by Guard
+-- =============
+
+-- chaqueta (jacket) f.s.
+The chaqueta IsA artículo_ponible in guardia
+  Has xDesc "Una chaqueta naranja y púrpura de la Guardia del Rey.".
+  Is femenina.
+  Is puesto. Has portador guardia.
+End The.
+
+-- zapatos (shoes) m.p.
+The zapatos IsA artículo_ponible in guardia
+  Has xDesc "Unos zapatos negros con una hebilla de plata. Están impecables.".
+  Is plural.
+  Is puesto. Has portador guardia.
+End The.
+
+-- =============
+-- Worn by Woman
+-- =============
+-- The woman will be used to test 'examine' with a single worn item (f.s.).
+
+-- blusa (blouse) f.s.
+The blusa IsA artículo_ponible in mujer
+  Has xDesc
+    "Una blusa marrón bastante vieja.
+     Puedes notar que no ha sido lavada en un tiempo.".
+  Is femenina.
+  Is puesto. Has portador mujer.
+End The.
+
+-- aretes (earrings) m.p.
+The aretes IsA artículo_ponible in mujer
+  Has xDesc
+    "Unos aretes de oro.
+     Bastante raro considerando el atuendo de la mujer.".
+  Is plural.
+  Is puesto. Has portador mujer.
+End The.
+
+-- ==================
+-- Worn by Male Twins
+-- ==================
+
+-- pantalones (pants) m.s.
+-- (we use "pantalones" instead "pantalón", since this is a plural NPC)
+The pantalones IsA artículo_ponible in gemelos
+  Name pantalones.
+  Has xDesc "Unos pantalones idénticos.".
+  Is plural.
+  Is puesto. Has portador gemelos.
+End The.
+
+-- botas (boots) f.p.
+The botas IsA artículo_ponible in gemelos
+  Has xDesc
+    "Unas botas marrones con un agujero en la punta.
+     Parece que en algún momento fueron de buena calidad.".
+  Is femenina.
+  Is plural.
+  Is puesto. Has portador gemelos.
+End The.
+
+-- ====================
+-- Worn by Female Twins
+-- ====================
+
+-- sombrero (hat) m.s.
+The sombrero IsA artículo_ponible in gemelas
+  Has xDesc
+    "Un sombrero gigante compartido por las gemelas,
+     con dos copas para sus dos cabezas.".
+  Is puesto. Has portador gemelas.
+End The.
+
+
+////
+-- =============
+-- Worn by Clerk
+-- =============
+
+-- un traje (suit): m.s.
+The traje IsA artículo_ponible in vendedor.
+  Name traje elegante.
+  Name traje.
+  Is puesto. Has portador vendedor.
+  Mentioned "traje muy elegante"
+  Has xDesc "It's a grey traje by Giorgio Alani, quite elegant.".
+End the.
+
+-- una camisa (shirt): f.s.
+The camisa IsA artículo_ponible in vendedor.
+  Is femenina.
+  Is puesto. Has portador vendedor.
+End the.
+
+-- una corbata (tie): f.s.
+The corbata IsA artículo_ponible in vendedor.
+  Is femenina.
+  Is puesto. Has portador vendedor.
+End the.
+
+-- =============
+-- Worn by Woman
+-- =============
+
+-- vestido (dress): m.s.
+The vestido IsA artículo_ponible in mujer.
+  Is puesto. Has portador mujer.
+End the.
+
+-- ==================
+-- Worn by Male Twins
+-- ==================
+
+-- sombrero (hat): m.s.
+The sombrero IsA artículo_ponible in mellizos.
+  Is puesto. Has portador mellizos.
+End the.
+
+-- poncho: m.s.
+The poncho IsA artículo_ponible in mellizos.
+  Is puesto. Has portador mellizos.
+End the.
+
+-- ====================
+-- Worn by Female Twins
+-- ====================
+
+-- botas (boots): f.p.
+The botas IsA artículo_ponible in mellizas.
+  Is femenina.
+  Is puesto. Has portador mellizas.
+End the.
+////
+
+--------------------------------------------------------------------------------
+
+Start at plaza.
+-- "Use the RESET command to restore all ponible items to their
+--  original portador or location.
+  "This adventure provides some special test commands:
+ $n  * LIST <ACTOR> -- to list the inventory of actors.
+ $n  * MAKEWEAR <ACTOR> <OBJ> -- to make an actor wear an item."
