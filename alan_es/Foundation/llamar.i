@@ -8,8 +8,6 @@ Syntax
     Where obj IsA thing
       else "¡No puedes llamar a eso!"
   llamar_a = llamar (obj).
-  llamar_a = llamar a el (obj).
-  llamar_a = llamar el (obj).
 
 Add to every thing
   Verb llamar_a

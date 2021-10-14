@@ -14,9 +14,11 @@ Add to every object
     Check obj in hero
       else "¡No tienes" say the obj. "!"
     Does
-      "No puedes lanzar" say term_s of obj.
+      -- @CHECK: Doesn't seem right! (lanzaro|lanzara|lanzaros|lanzaras)???
+      --         Maybe: "No puedes lanzarL" --> lanzarLO, lanzarLA ...
+      "No puedes lanzar" say obj:adj_suf.
       "muy lejos," say the obj.
-      "acaba" say term_n of obj. "en el suelo."
+      "acaba" say obj:verb_suf. "en el suelo."
       Locate obj here.
       -- In case item was being worn:
       Set portador of obj to nadie.
@@ -31,14 +33,8 @@ Syntax
       else "Solo puedes lanzar objetos."
     And obj2 IsA thing
       else "No puedes lanzar nada contra eso."
-  lanzar_a = lanzar (obj1) a el (obj2).
-  lanzar_a = lanzar el (obj1) a (obj2).
-  lanzar_a = lanzar el (obj1) a el (obj2).
   lanzar_a = lanzar (obj1) (obj2).
   lanzar_a = lanzar (obj1) contra (obj2).
-  lanzar_a = lanzar (obj1) contra el (obj2).
-  lanzar_a = lanzar el (obj1) contra (obj2).
-  lanzar_a = lanzar el (obj1) contra el (obj2).
 
 
 Add to every object
@@ -51,8 +47,8 @@ Add to every object
       And obj2 <> hero
         else "No puedes lanzar" say the obj1. "contra ti mismo."
     Does
-      Say The obj1. "rebota" say term_n of obj1. "inocentemente en"
-      Say The obj2. "y acaba" say term_n of obj1. "en el suelo."
+      Say The obj1. "rebota" say obj1:verb_suf. "inocentemente en"
+      Say The obj2. "y acaba" say obj1:verb_suf. "en el suelo."
       Locate obj1 here.
       -- In case item was being worn:
       Set portador of obj1 to nadie.

@@ -31,12 +31,6 @@ Syntax
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA container
       else "No puedes poner nada en" say the obj1. "."
-  poner_en = poner el (obj1) en (obj2).
-  poner_en = poner (obj1) en el (obj2).
-
-  poner_en = dejar el (obj1) en el (obj2).
-  poner_en = dejar (obj1) en el (obj2).
-  poner_en = dejar el (obj1) en (obj2).
   poner_en = dejar (obj1) en (obj2).
 
 Add to every object
@@ -57,56 +51,41 @@ Add to every object
     End verb.
 End add to.
 
+-- @FIXME: All the syntaxes with the "de" variation (e.g. "cerca de") are not
+--         working! The parser seems to consider "de" as part of the parameter.
+--         I've tried putting the variation with "de" first, but to no avail.
+--         MUST find a way to fix this, or proper commands won't be understood!
 
 Syntax
   poner_cerca = poner (obj1) cerca (obj2)
     Where obj1 IsA object
-      else "C"
+      else "No puedes poner eso en ningún lugar."
     And obj2 IsA thing
       else "No puedes poner nada cerca " say the obj2. "."
-  poner_cerca = poner (obj1) cerca de (obj2).
-  poner_cerca = poner (obj1) cerca del (obj2).
-  poner_cerca = poner el (obj1) cerca (obj2).
-  poner_cerca = poner el (obj1) cerca de (obj2).
-  poner_cerca = poner el (obj1) cerca del (obj2).
+  poner_cerca = poner (obj1) cerca de (obj2). -- @DELETE? (See #43)
 
   poner_detras = poner (obj1) detras (obj2)
     Where obj1 IsA object
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA thing
       else "No puedes poner nada tras " say the obj2. "."
-  poner_detras = poner (obj1) detras de (obj2).
-  poner_detras = poner (obj1) detras del (obj2).
-  poner_detras = poner el (obj1) detras (obj2).
-  poner_detras = poner el (obj1) detras de (obj2).
-  poner_detras = poner el (obj1) detras del (obj2).
-  poner_detras = poner (obj1) tras de (obj2).
-  poner_detras = poner (obj1) tras del (obj2).
-  poner_detras = poner el (obj1) tras (obj2).
-  poner_detras = poner el (obj1) tras de (obj2).
-  poner_detras = poner el (obj1) tras del (obj2).
+  poner_detras = poner (obj1) detras de (obj2). -- @DELETE? (See #43)
+  poner_detras = poner (obj1) tras (obj2).
+  poner_detras = poner (obj1) tras de (obj2). -- @DELETE? (See #43)
 
   poner_sobre = poner (obj1) sobre (obj2)
     Where obj1 IsA object
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA thing
       else "No se puede poner nada sobre" say the obj1. "."
-  poner_sobre = poner (obj1) sobre de (obj2).
-  poner_sobre = poner (obj1) sobre del (obj2).
-  poner_sobre = poner el (obj1) sobre (obj2).
-  poner_sobre = poner el (obj1) sobre de (obj2).
-  poner_sobre = poner el (obj1) sobre del (obj2).
+  poner_sobre = poner (obj1) sobre de (obj2). -- @DELETE? (See #43)
 
   poner_bajo = poner (obj1) debajo (obj2)
     Where obj1 IsA object
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA thing
       else "No puedes poner nada bajo" say the obj1. "."
-  poner_bajo = poner (obj1) debajo de (obj2).
-  poner_bajo = poner (obj1) debajo del (obj2).
-  poner_bajo = poner el (obj1) debajo (obj2).
-  poner_bajo = poner el (obj1) debajo de (obj2).
-  poner_bajo = poner el (obj1) debajo del (obj2).
+  poner_bajo = poner (obj1) debajo de (obj2). -- @DELETE? (See #43)
 
 Add to every object
   Verb poner_cerca, poner_detras, poner_sobre, poner_bajo

@@ -1,12 +1,14 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * *  ALAN Foundation Library Spanish  * * v0.2.1 | 2021/10/05 | ALAN 3.0Beta8
+-- * *  ALAN Foundation Library Spanish  * * v0.3.0 | 2021/10/14 | ALAN 3.0Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
 -- Basada en la librería española pALANte v0.6.1e, por Bruce Humphrey.
 -- Basada en la librería inglesa versión 0.6.1dev y la librería palante 0.1 de
 -- Marcos Donnantuoni.
+
+Import 'gramática.i'.   -- Core Spanish grammar module.
 
 Import 'abrir.i'.       -- abrir, cerrar, abrir con, cerrar con
 Import 'atacar.i'.      -- Atacar, disparar

@@ -15,7 +15,6 @@ Syntax
   encender = encender (obj)
     Where obj IsA object
       else "No se puede encender."
-  encender = encender el (obj).
 
 
 Add to every object
@@ -39,7 +38,6 @@ Syntax
   apagar = apagar (obj)
     Where obj IsA object
       else "No se puede apagar."
-  apagar = apagar el (obj).
 
 Add to every object
   Verb apagar

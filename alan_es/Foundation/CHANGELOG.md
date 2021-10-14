@@ -13,6 +13,9 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.3.0 \(2021/10/14\)](#v030-20211014)
+        - [New Grammar Module](#new-grammar-module)
+        - [Library Code Optimizations](#library-code-optimizations)
     - [v0.2.1 \(2021/10/05\)](#v021-20211005)
     - [v0.2.0 \(2021/09/17\)](#v020-20210917)
         - [New Wearing Mechanics](#new-wearing-mechanics)
@@ -34,6 +37,62 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 # Beta Releases
 
 The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] and [Ricardo Osio].
+
+
+## v0.3.0 (2021/10/14)
+
+### New Grammar Module
+
+A new module `gramática.i` is added to the library with the specific task of handling all the Spanish grammar attributes, synonyms and implement a new initialization system.
+
+Now authors only need to specify the definite article of an instance via the new `artículo` string attribute, and the library will take care of correctly initializing all grammatical aspects relating to the gender and number of that instance. Example:
+
+```alan
+The sandalias IsA artículo_ponible in hero.
+  Has artículo "las".
+End the.
+```
+
+and the library will correctly set the all its gender and number attributes, as well as its `Definite` and `Indefinite Article`, etc.
+
+Every entity defaults to having `artículo "el"`, so there's no need to specify an `artículo` for instances that are masculine singular (special library classes with an implicit gender, like `hembra`, obviously default to a different `artículo`).
+
+Authors no longer need to SCHEDULE the `ini_terms` EVENT in the START section of their adventures, since all the grammar initialization is now handled by an `INITIALIZE` block defined on the `entity` class.
+
+
+- Moved to `gramática.i` all grammar related code from `atributos.i`.
+- In `gramática.i` module:
+    + **New `artículo` attribute** added to every `entity` so that authors can specify the definite article of an instance (e.g. `"la"`, `"los"`) to inform the library how to correctly initialize it before the game starts.
+    + **Grammar Initializer** — the old `ini_terms` EVENT has been replaced by an `INITIALIZE` block on the `entity` class.
+        The new code takes care of all the gender, number and grammar setting of each instance based on its `artículo` string attribute.
+        * Renamed attributes `term_n` and `term_s` to `verb_suf` and `adj_suf`, respectively.
+    + **Predefined Player Words** — Defined Spanish SYNONYMS for the various ALAN Player Words:
+        * **NOISE WORDS** — All Spanish determinate articles are defined as SYNONYMS of `'the'` so they're ignored in player input, allowing to create slimmer SYNTAX definitions without articles.
+
+            E.g. the pALANte library previously required the following SYNTAX to handle all possible input combinations:
+
+            ```alan
+            Syntax
+              afilar = afilar (obj1) con (obj2)
+              afilar = afilar el (obj1) con (obj2).
+              afilar = afilar el (obj1) con el (obj2).
+              afilar = afilar (obj1) con el (obj2).
+            ```
+
+            whereas now it's sufficient to write only:
+
+            ```alan
+            Syntax afilar = afilar (obj1) con (obj2)
+            ```
+
+            since all articles are stripped away from the player input at parse time.
+
+### Library Code Optimizations
+
+- **Library Verbs**:
+    + Thanks to the new `gramática.i` module, lot's of alternative SYNTAX definitions become redundant and were stripped away, making the library code slimmer and easier to maintain.
+    + Removed unneeded single quotes around parameters that were not reserved keywords requiring stropping.
+
 
 
 ## v0.2.1 (2021/10/05)

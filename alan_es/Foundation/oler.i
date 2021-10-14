@@ -19,7 +19,6 @@ Syntax
   oler = oler (obj)
     Where obj IsA thing
       else "¡No puedes oler eso!"
-  oler = oler el (obj).
 
 Add to every thing
   Verb oler

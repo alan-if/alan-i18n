@@ -11,7 +11,7 @@
 -- genders, as well as enough wearable items of each number and gender to cover
 -- the different combinations of items list (a single item for each gender and
 -- number, multiple items of the same gender, items of mixed gender) since
--- these will affect the 'examiner' message listing worn items.
+-- these will affect the 'examinar' message listing worn items.
 
 --------------------------------------------------------------------------------
 
@@ -86,13 +86,13 @@ End The.
 
 -- The Male Twins (m.p.)
 The gemelos IsA macho At plaza
-  Is plural.
+  Has artículo "los".
   Has xDesc "Unos gemelos. Ambos llevan la misma ropa puesta.".
 End The.
 
 -- The Female Twins (f.p.)
 The gemelas IsA hembra At plaza
-  Is plural.
+  Has artículo "las".
   Has xDesc
     "Unas gemelas. Ambas llevan la misma ropa puesta,
      incluso comparten un sombrero que une sus cabezas.
@@ -104,7 +104,7 @@ End The.
 --==============================================================================
 
 -- @FIXME: The carried items by the various NPCs should be amended in order to
---         allow proper testing of how 'examine' handles listing worn items,
+--         allow proper testing of how 'examinar' handles listing worn items,
 --         i.e. how "puesto"/"puesta"/"puestos"/"puestas" is used depending on
 --         whether the NPC is carrying a single item or multiple items.
 --
@@ -197,19 +197,19 @@ End the.
 
 -- una camiseta (t-shirt): f.s.
 The camiseta IsA artículo_ponible in hero.
-  Is femenina.
+  Has artículo "la".
   Is puesto. Has portador hero.
 End the.
 
 -- tirantes (suspenders): m.p.
 The tirantes IsA artículo_ponible in hero.
-  Is plural.
+  Has artículo "los".
   Is puesto. Has portador hero.
 End the.
 
 -- sandalias (sandals): f.p.
 The sandalias IsA artículo_ponible in hero.
-  Is femenina. Is plural.
+  Has artículo "las".
   Is puesto. Has portador hero.
 End the.
 
@@ -219,15 +219,15 @@ End the.
 
 -- chaqueta (jacket) f.s.
 The chaqueta IsA artículo_ponible in guardia
+  Has artículo "la".
   Has xDesc "Una chaqueta naranja y púrpura de la Guardia del Rey.".
-  Is femenina.
   Is puesto. Has portador guardia.
 End The.
 
 -- zapatos (shoes) m.p.
 The zapatos IsA artículo_ponible in guardia
+  Has artículo "los".
   Has xDesc "Unos zapatos negros con una hebilla de plata. Están impecables.".
-  Is plural.
   Is puesto. Has portador guardia.
 End The.
 
@@ -238,19 +238,19 @@ End The.
 
 -- blusa (blouse) f.s.
 The blusa IsA artículo_ponible in mujer
+  Has artículo "la".
   Has xDesc
     "Una blusa marrón bastante vieja.
      Puedes notar que no ha sido lavada en un tiempo.".
-  Is femenina.
   Is puesto. Has portador mujer.
 End The.
 
 -- aretes (earrings) m.p.
 The aretes IsA artículo_ponible in mujer
+  Has artículo "los".
   Has xDesc
     "Unos aretes de oro.
      Bastante raro considerando el atuendo de la mujer.".
-  Is plural.
   Is puesto. Has portador mujer.
 End The.
 
@@ -261,19 +261,18 @@ End The.
 -- pantalones (pants) m.s.
 -- (we use "pantalones" instead "pantalón", since this is a plural NPC)
 The pantalones IsA artículo_ponible in gemelos
+  Has artículo "los".
   Name pantalones.
   Has xDesc "Unos pantalones idénticos.".
-  Is plural.
   Is puesto. Has portador gemelos.
 End The.
 
 -- botas (boots) f.p.
 The botas IsA artículo_ponible in gemelos
+  Has artículo "las".
   Has xDesc
     "Unas botas marrones con un agujero en la punta.
      Parece que en algún momento fueron de buena calidad.".
-  Is femenina.
-  Is plural.
   Is puesto. Has portador gemelos.
 End The.
 

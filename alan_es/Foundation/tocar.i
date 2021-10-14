@@ -12,16 +12,12 @@ Syntax
   tocar = tocar (obj)
     Where obj IsA thing
       else "Eso no lo puedes tocar."
-  tocar = tocar el (obj).
 
   tocar_con = tocar (obj1) con (obj2)
     Where obj1 IsA thing
       else "Eso no lo puedes tocar."
     And obj2 IsA object
       else "Solo puedes utilizar objetos para tocar."
-  tocar_con = tocar (obj1) con el (obj2).
-  tocar_con = tocar el (obj1) con (obj2).
-  tocar_con = tocar el (obj1) con el (obj2).
 
 Add to every object
   Verb tocar

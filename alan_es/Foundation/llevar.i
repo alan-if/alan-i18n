@@ -12,7 +12,6 @@ Syntax
   llevar = llevar (obj)
     Where obj IsA object
       else "No puedes llevar eso."
-  llevar = llevar el (obj).
 
 Add to every object
   Verb llevar
@@ -44,7 +43,6 @@ Syntax
   quitar = quitar (obj)
     Where obj IsA object
       else "No te puedes quitar eso."
-  quitar = quitar el (obj).
 
 Add to every object
   Verb quitar
@@ -66,7 +64,6 @@ Syntax desnudar = desnudar.
 Verb desnudar
   Does
     If count in hero, IsA object, is puesto > 0 then
-      -- @TRANSLATE 'artículo_puesto' ID
       For each artículo_puesto in hero, IsA object, is puesto do
         Set portador of artículo_puesto to nadie.
         Make artículo_puesto not puesto.

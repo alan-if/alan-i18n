@@ -3,11 +3,10 @@
 -- Meta verbs definitions for extradiegetic commands relating
 -- to the current game session (storage, quitting, etc.).
 
-Synonyms
-  abandono, abandona, abandonar = 'quit'.
-Syntax
-  'quit' = 'quit'.
-  q = q.
+Synonyms abandono, abandona, abandonar = 'quit'.
+
+Syntax 'quit' = 'quit'.
+            q = q.
 
 Meta verb 'quit'
   Does
@@ -23,10 +22,9 @@ Meta verb q
 End verb.
 
 
-Synonyms
-  grabar, graba, salvar, salva = 'save'.
-Syntax
-  'save' = 'save'.
+Synonyms grabar, graba, salvar, salva = 'save'.
+
+Syntax 'save' = 'save'.
 
 Meta verb 'save'
   Does
@@ -35,10 +33,9 @@ Meta verb 'save'
 End verb.
 
 
-Synonyms
-  restaurar, restaura, recuperar, recupera = 'restore'.
-Syntax
-  'restore' = 'restore'.
+Synonyms restaurar, restaura, recuperar, recupera = 'restore'.
+
+Syntax 'restore' = 'restore'.
 
 Meta verb 'restore'
   Does
@@ -48,10 +45,9 @@ Meta verb 'restore'
 End verb.
 
 
-Synonyms
-  comenzar, comienzo, comienza, recomenzar = 'restart'.
-Syntax
-  'restart' = 'restart'.
+Synonyms comenzar, comienzo, comienza, recomenzar = 'restart'.
+
+Syntax 'restart' = 'restart'.
 
 Meta verb 'restart'
   Does
@@ -59,10 +55,9 @@ Meta verb 'restart'
 End verb.
 
 
-Synonyms
-  puntos, puntaje, puntuacion, puntuación = 'score'.
-Syntax
-  'score' = 'score'.
+Synonyms puntos, puntaje, puntuacion, puntuación = 'score'.
+
+Syntax 'score' = 'score'.
 
 Meta verb 'score'
   Does
@@ -73,8 +68,7 @@ End verb 'score'.
 Synonyms
   g, repetir, repite, repito = again.
 
-Syntax
-  again = again.
+Syntax again = again.
 
 Meta verb again
   Does
@@ -84,10 +78,13 @@ Meta verb again
      repetir tu último comando.)"
 End verb.
 
---Syntax
---    undo = undo.
+-- @TODO: I'm not sure whether this commented out UNDO verb was created when
+--        ALAN didn't have an UNDO command, or whether it's purpose is to
+--        disable undoing in an adventure. Should try the latter and, if it
+--        works add a note about it, otherwise just delete the UNDO verb.
 
---Meta verb undo
---    Does
---        "Unfortunately you cannot 'undo' commands in this game."
---End verb.
+-- Syntax undo = undo.
+--
+-- Meta verb undo
+--   Does "Unfortunately you cannot 'undo' commands in this game."
+-- End verb.

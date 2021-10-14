@@ -23,7 +23,6 @@ Syntax
   tomar = tomar (obj) *
     Where obj IsA object
       else "¡No puedes tomar" say the obj. "!"
-  tomar = tomar 'el' (obj).
 
 
 Add to every object
@@ -71,7 +70,6 @@ End add to.
 
 Syntax
   dejar = dejar (obj) *.
-  dejar = dejar 'el' (obj) *.
 
 
 Add to every object
@@ -91,7 +89,7 @@ End add to.
 --        be renamed here too?
 
 Syntax
-  tomar_de = 'tomar' (obj) 'de' (cont)
+  tomar_de = tomar (obj) de (cont)
     Where obj IsA object
       else "Solo puedes tomar objetos."
     And cont IsA thing

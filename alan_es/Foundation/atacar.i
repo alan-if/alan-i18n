@@ -35,7 +35,7 @@ End add to.
 
 
 Syntax
-  atacar_con = atacar (act) 'con' (obj)
+  atacar_con = atacar (act) con (obj)
     Where act IsA thing
       else "No puedes atacar a eso."
     And obj IsA object
@@ -58,7 +58,7 @@ Syntax
   disparar = disparar (obj)
     Where obj IsA thing
       else "No puedes disparar a eso."
-  disparar = disparar 'a' (obj).
+  disparar = disparar a (obj).
 
 
 Add to every thing
@@ -76,13 +76,13 @@ End add to.
 
 
 Syntax
-  disparar_a = disparar (obj) 'a' (act)
+  disparar_a = disparar (obj) a (act)
     Where obj IsA object
       else "No puedes disparar eso."
     And act IsA thing
       else "No puedes disparar a eso."
 
-  disparar_con = disparar (act) 'con' (obj)
+  disparar_con = disparar (act) con (obj)
     Where obj IsA object
       else "No puedes disparar eso."
     And act IsA thing

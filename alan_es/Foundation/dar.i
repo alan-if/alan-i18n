@@ -5,14 +5,12 @@ Synonyms
   entrego, entrega, entregar = dar.
 
 Syntax
-  dar = dar (obj) 'a' (recip)
+  dar = dar (obj) a (recip)
     Where obj IsA object
       else "Solo puedes dar objetos."
     And recip IsA container
       else "¡A eso no le puedes dar nada!"
   dar = dar (obj) (recip).
-  dar = dar 'a' (recip) (obj).
-  dar = dar 'a' (recip) 'el' (obj).
 
 Add to every object
   Verb dar

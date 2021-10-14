@@ -168,7 +168,7 @@ Although we couldn't find any license file or info in the Alan version of _Vampi
 
 <!-- badges -->
 
-[lib badge]: https://img.shields.io/badge/Foundation_Lib_ES-0.2.1-yellow "ALAN Foundation Library version"
+[lib badge]: https://img.shields.io/badge/Foundation_Lib_ES-0.3.0-yellow "ALAN Foundation Library version"
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta8-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta8 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-Artistic_License_2.0-blue

@@ -11,7 +11,7 @@ Syntax
   empujar = empujar (obj)
     Where obj IsA thing
       else "¡No puedes empujar eso!."
-  empujar = empujar 'el' (obj).
+  empujar = empujar (obj).
 
 Add to every object
   Verb empujar
@@ -23,14 +23,11 @@ Add to every object
 End add to.
 
 Syntax
-  empujar_con = empujar (obj1) 'con' (obj2)
+  empujar_con = empujar (obj1) con (obj2)
     Where obj1 IsA thing
       else "No puedes empujar eso."
     And obj2 IsA object
       else "Solo puedes usar objetos para empujar cosas con ellos."
-  empujar_con = empujar (obj1) 'con' 'el' (obj2).
-  empujar_con = empujar 'el' (obj1) 'con' (obj2).
-  empujar_con = empujar 'el' (obj1) 'con' 'el' (obj2).
 
 Add to every object
   Verb empujar_con

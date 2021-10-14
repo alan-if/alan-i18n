@@ -13,7 +13,6 @@ Syntax
   abrir = abrir (obj)
     Where obj IsA object
       else "Eso no lo puedes abrir."
-  abrir = abrir el (obj).
 
 Add to every object
   Is
@@ -24,8 +23,8 @@ Add to every object
     Check obj is abrible
       else "¡No puedes abrir eso!"
     And obj is not abierto
-      else "Ya está" say term_n of this.
-           " abiert" say term_s of this.
+      else "Ya está" say this:verb_suf.
+           " abiert" say this:adj_suf.
     Does
       Make obj abierto.
       "Abres " say the obj. "."
@@ -39,9 +38,6 @@ Syntax
       else "No puedes abrir con llave eso."
     And key IsA object
       else "No puedes abrir nada con eso."
-  abrir_con = abrir el (obj) con (key).
-  abrir_con = abrir el (obj) con el (key).
-  abrir_con = abrir (obj) con el (key).
 
 Add to every object
   Verb abrir_con
@@ -76,12 +72,12 @@ Add to every object
     Check obj is cerrable
       else "Eso no lo puedes cerrar."
     And obj is abierto
-      else "No está" say term_n of this.
-           " abiert" say term_s of this. "."
+      else "No está" say this:verb_suf.
+           " abiert" say this:adj_suf. "."
     Does
       Make obj not abierto.
-      Say the obj. "ahora está" say term_n of this.
-      " cerrad" say term_s of this. "."
+      Say the obj. "ahora está" say this:verb_suf.
+      " cerrad" say this:adj_suf. "."
     End verb.
 End add to.
 
@@ -92,9 +88,6 @@ Syntax
       else "No puedes cerrar con llave eso."
     And key IsA object
       else "No puedes cerrar nada con eso."
-  cerrar_con = cerrar (obj) con el (key).
-  cerrar_con = cerrar el (obj) con (key).
-  cerrar_con = cerrar el (obj) con el (key).
 
 Add to every object
   Verb cerrar_con

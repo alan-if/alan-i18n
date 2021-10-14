@@ -20,7 +20,6 @@ Syntax
   examinar = examinar (obj) *
     Where obj IsA thing
       else "¡No puedes examinar" say the obj. "!"
-  examinar = examinar el (obj) *.
 
 Add to every thing
   Verb examinar
@@ -126,13 +125,13 @@ Verb mirar
 End verb.
 
 Syntax
-  mirar_en = 'mirar' 'en' (obj)
+  mirar_en = mirar en (obj)
     Where obj IsA thing
       else "No puedes mirar dentro de" say the obj. "."
     And obj IsA container
       else "No puedes mirar dentro de" say the obj. "."
   mirar_en = mirar dentro (obj).
-  mirar_en = mirar dentro de (obj).
+  mirar_en = mirar dentro de (obj). -- @DELETE? (See #43)
   mirar_en = mirar (obj).
 
 Add to every object
@@ -153,7 +152,7 @@ Syntax
       else "¡No puedes buscar en eso!"
   buscar = buscar en (obj).
   buscar = buscar dentro (obj).
-  buscar = buscar dentro de (obj).
+  buscar = buscar dentro de (obj). -- @DELETE? (See #43)
 
 Add to every object
   Verb buscar

@@ -92,13 +92,8 @@ Syntax
       else "No puedes preguntar por eso."
     And act IsA thing
       else "No puedes hablar con eso."
-  preguntar = preguntar a (act) por (tema)!.
-  preguntar = preguntar a (act) por el (tema)!.
-  preguntar = preguntar al (act) por (tema)!.
-  preguntar = preguntar al (act) por el (tema)!.
-  preguntar = preguntar a el (act) por (tema)!.
-  preguntar = preguntar a el (act) por el (tema)!.
   preguntar = preguntar (act) (tema)!.
+  preguntar = preguntar a (act) por (tema)!.
 
 Add to every thing
   Verb preguntar
@@ -122,17 +117,10 @@ Syntax
       else "No puedes preguntar por eso."
     And act IsA thing
       else "No puedes hablar con eso."
-  hablar_con = hablar (act) sobre (tema)!.
-  hablar_con = hablar (act) sobre de (tema)!.
-  hablar_con = hablar (act) sobre el (tema)!.
-  hablar_con = hablar (act) (tema)!.
   hablar_con = hablar con (act) (tema)!.
-  hablar_con = hablar con (act) sobre de (tema)!.
-  hablar_con = hablar con (act) sobre el (tema)!.
-  hablar_con = hablar con el (act) (tema)!.
-  hablar_con = hablar con el (act) sobre (tema)!.
-  hablar_con = hablar con el (act) sobre de (tema)!.
-  hablar_con = hablar con el (act) sobre el (tema)!.
+  hablar_con = hablar con (act) sobre de (tema)!. -- @DELETE? (See #43)
+  hablar_con = hablar (act) (tema)!.
+  hablar_con = hablar (act) sobre (tema)!.
 
 Add to every thing
   Verb hablar_con
@@ -151,9 +139,7 @@ Syntax
     Where act IsA thing
       else "No puedes hablar con eso."
   hablar_con_act = hablar (act).
-  hablar_con_act = hablar al (act).
-  hablar_con_act = hablar a el (act).
-  hablar_con_act = hablar con el (act).
+  hablar_con_act = hablar a (act).
 
 Add to every thing
   Verb hablar_con_act
