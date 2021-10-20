@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.4.1 | 2021/09/16 | by Tristano Ajmone
+=begin "Rakefile" v0.4.2 | 2021/10/20 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -25,6 +25,8 @@ require './_assets/rake/globals.rb'
 require './_assets/rake/alan.rb'
 require './_assets/rake/asciidoc.rb'
 
+# Relative path to libraries for ALAN '-include' option:
+$alan_include = "../Foundation"
 
 ## Tasks
 ########
