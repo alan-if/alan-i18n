@@ -1,0 +1,18 @@
+﻿Import 'Library.i'. -- <1>
+
+The plaza IsA location
+  Name 'Plaza Principal'.
+End the.
+
+The árbol IsA object at plaza. -- <2>
+End the.
+
+The fuente IsA object at plaza.
+  Has artículo "la".
+End the.
+
+The flores IsA object at plaza.
+  Has artículo "las".
+End the.
+
+Start at plaza.

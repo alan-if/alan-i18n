@@ -1,0 +1,29 @@
+[preface]
+= Preface
+
+The _Spanish Foundation Library_ is a revisitation of the Librería pALANte v0.6.1e (April, 2010), by Bruce Humphrey and Marcos Donnantuoni; so let's start by providing some background on the history of the pALANte libarry.
+
+== Librería pALANte (2005–2010)
+
+Marcos Donnantuoni and Bruce Humphrey -- among others -- began working on the Spanish localisation of Alan back in 2005, by translating and adapting the original _ALAN Library v0.6_ by Göran Forslund, Stephen Griffiths and Thomas Nilsson (now Thomas Nilefalk), but the project was eventually abandoned, incomplete.
+
+Then, in 2010, Bruce Humphrey took up the project again and completed the __pALANte__ library and the _Vampiro_ sample adventure, which were published on the CAAD portal:
+
+* https://www.caad.es/?q=node/1718[^]
+
+An archived copy of the original _pALANte v0.6.1e_ library can also be found at the ALAN Goodies project:
+
+* https://github.com/alan-if/alan-goodies/tree/master/libs/pALANte_0.6.1e/[^]
+
+== Spanish Foundation Library (2021–)
+
+In 2021, Thomas Nilefalk and Tristano Ajmone started the
+https://github.com/alan-if/alan-i18n[Alan-i18n project^,title="Visit the Alan-i18n repository on GitHub"]
+to revive all known translations of the old _ALAN Library v0.6_ into the _Foundation Library_, designed to take advantage of the new ALAN features that were added in the course of time, and introduce some design changes in the overall library.
+Hence, the _Librería pALANte_ was renamed to _Spanish Foundation Library_.
+
+We've also kept Humphrey's sample adventure _Vampiro_ (aka _Memorias de reXXe_) as the reference game to test out the new Spanish library, by adapting its source code accordingly.
+
+Although the original Spanish library didn't contain any license file or info, we're assuming it's governed under the same
+https://opensource.org/licenses/Artistic-2.0[Artistic License 2.0^,title="View the Artistic License 2.0 at Open Source Initiative"]
+as the original ALAN Library v0.6, since it's a derivative work thereof.

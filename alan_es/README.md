@@ -111,7 +111,7 @@ schedule ini_terms at limbo after 0. -- necesario para que funcione la
 
 The Spanish Alan Library is the work of [Bruce Humphrey] and Marcos Donnantuoni, based on the original [ALAN Library v0.6.x] by Göran Forslund, Stephen Griffiths and Thomas Nilsson (now [Thomas Nilefalk]).
 
-Although the original Spanish library didn't contain any license file or info, we're assuming it's governed under the same [Artistic License 2.0] of the original [ALAN Library v0.6.x], since its a derivative work thereof.
+Although the original Spanish library didn't contain any license file or info, we're assuming it's governed under the same [Artistic License 2.0] as the original [ALAN Library v0.6.x], since it's a derivative work thereof.
 
 - [`vampiro/`][vampiro/]
 

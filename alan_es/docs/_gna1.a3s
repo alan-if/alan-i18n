@@ -1,0 +1,17 @@
+﻿; tag::x-objects[]
+examina el árbol
+examina la fuente
+examina las flores
+; end::x-objects[]
+
+; tag::x-no-article[]
+examina árbol
+examina fuente
+examina flores
+; end::x-no-article[]
+
+; tag::x-any-article[]
+x el árbol
+x la árbol
+x los árbol
+; end::x-any-article[]

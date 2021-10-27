@@ -62,18 +62,18 @@ namespace "lib" do
     task :cloak
     CreateTranscriptingTasksFromFolder(:cloak,'alan_en/cloak', LIB_EN_SOURCES)
 
-    ## Test Suite
-    #############
+    ## EN Test Suite
+    ################
     desc "English test suite"
     task :tests
     CreateTranscriptingTasksFromFolder(:tests,'alan_en/tests', LIB_EN_SOURCES)
 
-    ## Documentation
-    ################
+    ## EN Documentation
+    ###################
     desc "English documentation"
     task :docs
-    ADOC_DEPS = FileList['alan_en/docs/*.adoc']
-    CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_en/docs', ADOC_DEPS)
+    EN_ADOC_DEPS = FileList['alan_en/docs/*.adoc']
+    CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_en/docs', EN_ADOC_DEPS)
   end # lib:en:
 
   ## SPANISH LIBRARY
@@ -81,7 +81,7 @@ namespace "lib" do
   namespace "es" do
 
     desc "Spanish library"
-    task :all => [:vampiro, :tests]
+    task :all => [:vampiro, :tests, :docs]
 
     LIB_ES_SOURCES = FileList['alan_es/Foundation/*.i']
 
@@ -91,11 +91,18 @@ namespace "lib" do
     task :vampiro
     CreateTranscriptingTasksFromFolder(:vampiro,'alan_es/vampiro', LIB_ES_SOURCES)
 
-    ## Test Suite
-    #############
+    ## ES Test Suite
+    ################
     desc "Spanish test suite"
     task :tests
     CreateTranscriptingTasksFromFolder(:tests,'alan_es/tests', LIB_ES_SOURCES)
 
+    ## ES Documentation
+    ###################
+    desc "Spanish documentation"
+    task :docs
+    ES_ADOC_DEPS = LIB_ES_SOURCES + FileList['alan_es/docs/*.adoc']
+    CreateADocTranscriptingTasksFromFolder(:docs,'alan_es/docs', LIB_ES_SOURCES)
+    CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_es/docs', ES_ADOC_DEPS)
   end # lib:es:
 end   # lib:
