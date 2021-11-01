@@ -203,7 +203,7 @@ WHICH_PRONOUN_FIRST: "$+1"
     --       prompt where the user will be typing the response.
     ----------------------------------------------------------------------
 
-REALLY: "¿Estás seguro (RETURN confirms) ? "
+REALLY: "¿Estás seguro (presiona ENTER para confirmar)? "
 
 QUIT_ACTION: "¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o salir (quit)? "
     --------------------------------------------------------------

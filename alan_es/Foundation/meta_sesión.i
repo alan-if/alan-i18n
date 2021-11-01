@@ -22,7 +22,7 @@ Meta verb q
 End verb.
 
 
-Synonyms grabar, graba, salvar, salva = 'save'.
+Synonyms grabar, graba, salvar, salva, guardar, guarda = 'save'.
 
 Syntax 'save' = 'save'.
 
@@ -45,7 +45,7 @@ Meta verb 'restore'
 End verb.
 
 
-Synonyms comenzar, comienzo, comienza, recomenzar = 'restart'.
+Synonyms comenzar, comienzo, comienza, recomenzar, reiniciar, reinicia = 'restart'.
 
 Syntax 'restart' = 'restart'.
 
