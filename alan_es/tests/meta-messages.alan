@@ -1,0 +1,147 @@
+﻿-- ***********************************************
+--   META MESSAGES TEST by Ricardo Osio (2021)
+-- ***********************************************
+
+-- |================================================================================================|
+-- |This adventure tests different game messages in Spanish. It's mostly based on "meta-verbs" tests|
+-- |from the ALAN STD Library. Some features from the STD Library are not included in the Spanish   |
+-- |Library, so some functionalities are lacking.                                                   |
+-- |================================================================================================|
+
+Import 'Library.i'.
+
+
+-- ==================================================================================================
+--                                    L O C A T I O N S
+-- ==================================================================================================
+
+-- ***************************************************************************************************
+-- Due to the 'DEFINITION_BLOCK' class not being defined in the Spanish Library, "my_game" has been
+-- defined as a Location, and all other locations are located into it. The "cnt" attribute is used for
+-- the "ticker" event.
+-- ***************************************************************************************************
+
+ The my_game IsA location
+  Has cnt 1.
+ End The.
+
+-- ==================================================================================================
+--  Sala de Pruebas
+-- ==================================================================================================
+
+The salaDePrueba IsA location at my_game
+  Name 'Sala de pruebas'
+  Description
+    "Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología de punta y sujetos de
+    prueba extremadamente competentes (como tú)."
+End The.
+
+
+-- ==================================================================================================
+--                                        S C O R E
+-- ==================================================================================================
+-- A scoreboard to test score and some verbs related.
+
+The tablaDePuntos IsA object at salaDePrueba
+  Has artículo "la".
+  Name 'tabla de puntuaciones'
+  Name scoreboard
+  Name tabla
+  Is Not tomable.
+  Is Not empujable.
+
+  Verb examinar
+    Does Only "La tabla de puntuaciones muestra" Say score.
+      If score = 1 Then
+        Say "punto.".
+      Else
+        Say "puntos.".
+      End If.
+  End Verb examinar.
+End The.
+
+
+-- ==================================================================================================
+--                                       D R I N K S
+-- ==================================================================================================
+-- These drinks are used to test the score. Drinking them rewards the player with points.
+
+-- == The "bebida" class ==
+Every bebida IsA object
+  Is bebible.
+End Every.
+
+-- == refresco (a soda) ==
+The refresco IsA bebida at salaDePrueba
+  Name refresco.
+  Has xDesc "Un refresco de cola. Probablemente delicioso, pero con mucha azúcar.".
+
+  Verb beber
+    Does After Score 1.
+  End Verb.
+End The.
+
+-- == café (coffee) ==
+The café IsA bebida at salaDePrueba
+  Name café. Name cafe.
+  Has xDesc "Un poco de café caliente. Te vendría bien para esa cara de sueño...".
+
+  Verb beber
+    Does After Score 1.
+  End Verb.
+End The.
+
+-- == jugo de naranja (orange juice) ==
+The jugo IsA bebida at salaDePrueba
+  Name 'jugo de naranja'. Name jugo.
+  Has xDesc "Un refrescante jugo de naranja. ¡La vitamina C es muy beneficiosa!".
+
+  Verb beber
+    Does After Score 5.
+  End Verb.
+End The.
+
+-- == agua (a glass of water) ==
+The agua IsA bebida at salaDePrueba
+  Has artículo "el".
+  Is femenina.
+  Name agua. Name 'vaso de agua'.
+  Has xDesc "Un vaso de agua increíblemente saludable.".
+
+  Verb beber
+    Does After Score 200.
+  End Verb.
+End The.
+
+
+
+-- ==================================================================================================
+--                                      T I C K E R
+-- ==================================================================================================
+-- This event will let us know when a turn has been consumed.
+-- *************************************************************************************************
+-- @FIX: The event is currently not working. It may have something to do with the absence of a
+-- proper DEFINITION_BLOCK class, which is more complex than just a location in the STD Library.
+-- *************************************************************************************************
+
+Event ticker
+  "$pTICK... (turno Nro" Say my_game:cnt. ")"
+  Increase cnt Of my_game.
+  Schedule ticker At hero After 1.
+End Event.
+
+
+----------------------------------------------------------------------------------------------------
+
+Start at salaDePrueba.
+  "Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los juegos de ALAN.
+  Fuiste escogido para ser un sujeto de pruebas debido a tus extraordinarias habilidades (y quizás tu
+  atractiva apariencia tuvo algo que ver).
+
+  $pHoy comprobarás que todo marcha bien con ciertos meta-comandos del juego. Recuerda que a pesar de
+  haber sido escogido, este trabajo no es remunerado en lo absoluto, pero hey, al menos estás siendo
+  útil ¿no?
+
+  $p¡Mucha suerte y gracias por contribuir con ALAN!
+
+  $p-ALAN Enterprises"

@@ -1,0 +1,351 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
+tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
+.
+
+> look
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
+tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
+.
+
+> ; =========================================================================
+> ;                                 TICKER
+> ; **************************************************************************
+> ; @TODO: Implement the ticker correctly to check turn skipping; it's
+> ; currently not working, so this section is incomplete.
+> ; **************************************************************************
+> ; =========================================================================
+> ; EMPTY COMMANDS
+> ; =========================================================================
+> ; Empty commands should consume a turn.
+> 
+
+> 
+
+> ; =========================================================================
+> ; WRONG AND FAIL COMMANDS
+> ; =========================================================================
+> ; Wrong commands and commands that cannot execute should not consume a turn.
+> toma tabla
+¡No puedes tomar la tabla de puntuaciones!
+
+> e
+No puedes ir por ahí.
+
+> 
+
+> ; =========================================================================
+> ; CREDITS
+> ; =========================================================================
+> creditos
+El autor tiene el copyright de este juego.
+
+Este juego se ha creado utilizando ALAN Adventure Language. ALAN es un
+sistema de autoría de ficción interactiva por Thomas Nilefalk
+email: thomas@alanif.se
+
+Puedes encontrar más información sobre ALAN en la web:
+    https://www.alanif.se
+
+> 
+
+> ; =========================================================================
+> ; SAVING A GAME
+> ; =========================================================================
+> guardar
+Nombre de archivo para guardar (meta-messages.sav) : meta-messages.sav
+¡Perfecto!.
+
+> 
+
+> ; =========================================================================
+> ;                             SCORE
+> ; =========================================================================
+> ; NOTE: In the test adventure from the STD Library (the one this is based
+> ; on) was a NOTIFY command that could be activated or deactivated. This
+> ; made the game to notify the SCORE to the players whenever they gained a
+> ; point. However, since the Spanish Library doesn't include this feature,
+> ; these tests were excluded.
+> ; ------------------------------------------------------------------------
+> ; We need to test the correct functioning of the SCORE statement. For this
+> ; we are using "drinks": each drink rewards the player with some points.
+> score
+Has logrado 0 puntos de un total de 207.
+
+> x tabla
+La tabla de puntuaciones muestra 0 puntos.
+
+> x refresco
+Un refresco de cola. Probablemente delicioso, pero con mucha azúcar.
+
+> bebe refresco
+Te bebes el refresco.
+
+> x tabla
+La tabla de puntuaciones muestra 1 punto.
+
+> bebe cafe
+Te bebes el café.
+
+> x jugo
+Un refrescante jugo de naranja. ¡La vitamina C es muy beneficiosa!
+
+> bebe jugo
+Te bebes el jugo de naranja.
+
+> score
+Has logrado 7 puntos de un total de 207.
+
+> bebe agua
+Te bebes el agua.
+
+> x tabla
+La tabla de puntuaciones muestra 207 puntos.
+
+> 
+
+> ; =========================================================================
+> ; TEST TRANSCRIPT
+> ; =========================================================================
+> ; @NOTE: "script" does not working. Does this has something to do with the
+> ; Spanish Library syntax or is the "script" function simply not included?
+> script
+La palabra "script" no es relevante.
+
+> script on
+La palabra "script" no es relevante.
+
+> 
+
+> ; =========================================================================
+> ; RESTORING A GAME
+> ; =========================================================================
+> restore
+Nombre del archivo para cargar (meta-messages.sav) : meta-messages.sav
+Hecho.
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
+tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
+.
+
+> 
+
+> ; The score should be 0.
+> score
+Has logrado 0 puntos de un total de 207.
+
+> ; All fruits should be present.
+> x jugo
+Un refrescante jugo de naranja. ¡La vitamina C es muy beneficiosa!
+
+> x agua
+Un vaso de agua increíblemente saludable.
+
+> x refresco
+Un refresco de cola. Probablemente delicioso, pero con mucha azúcar.
+
+> x cafe
+Un poco de café caliente. Te vendría bien para esa cara de sueño...
+
+> 
+
+> ; =========================================================================
+> ; TEST EXAMINING A CLASS
+> ; =========================================================================
+> x bebida
+La palabra "bebida" no es relevante.
+
+> 
+
+> bebe agua
+Te bebes el agua.
+
+> score
+Has logrado 200 puntos de un total de 207.
+
+> 
+
+> ; =========================================================================
+> ; RESTARTING A GAME
+> ; =========================================================================
+> reiniciar
+
+¿Estás seguro (presiona ENTER para confirmar)? 
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
+tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
+.
+
+> ; -------------------------------------------------------------------------
+> ; If somenthing besides pressing ENTER is done.
+> ; -------------------------------------------------------------------------
+> look
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
+tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
+.
+
+> ; Does not restart (good).
+> x agua
+Un vaso de agua increíblemente saludable.
+
+> ; This one does restart.
+> reiniciar
+
+¿Estás seguro (presiona ENTER para confirmar)? 
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
+tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
+.
+
+> ; =========================================================================
+> ; TEST ERROR MESSAGES WHEN RESTORING
+> ; =========================================================================
+> ; -------------------------------------------------------------------------
+> ; RESTORE A NON-EXISTING FILE
+> ; -------------------------------------------------------------------------
+> restore
+Nombre del archivo para cargar (meta-messages.sav) : unknown.sav
+Lo siento, no puedo abrir ese archivo.
+
+> 
+
+> ; -------------------------------------------------------------------------
+> ; RESTORE A FILE WHICH IS NOT A SAVED GAME
+> ; -------------------------------------------------------------------------
+> restore
+Nombre del archivo para cargar (meta-messages.sav) : meta-messages.a3c
+Ese archivo no parece ser una partida guardada.
+
+> 
+
+> ; -------------------------------------------------------------------------
+> ; RESTORE A FILE SAVED WITH AN OLDER ARUN VERSION
+> ; -------------------------------------------------------------------------
+> restore
+Nombre del archivo para cargar (meta-messages.a3c) : prev-version-meta-messages.sav
+Lo siento, no puedo abrir ese archivo.
+
+> 
+
+> 
+
+> ; =========================================================================
+> ; QUITTING A GAME
+> ; =========================================================================
+> ; Testing all Quit options.
+> ; -------------------------------------------------------------------------
+> ; QUIT + RESTART
+> ; -------------------------------------------------------------------------
+> quit
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? restart
+
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
+tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
+.
+
+> 
+
+> ; -------------------------------------------------------------------------
+> ; QUIT + UNDO
+> ; -------------------------------------------------------------------------
+> quit
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? undo
+Acción revertida.
+
+> 
+
+> ; -------------------------------------------------------------------------
+> ; QUIT + RESTORE
+> ; -------------------------------------------------------------------------
+> quit
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? restore
+Nombre del archivo para cargar (meta-messages.a3c) : meta-messages.sav
+
+> 
+
+> ; -------------------------------------------------------------------------
+> ; QUIT + QUIT
+> ; -------------------------------------------------------------------------
+> ; Definitively quitting the game.
+> quit
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? quit
+
