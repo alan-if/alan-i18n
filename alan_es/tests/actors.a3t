@@ -94,7 +94,7 @@ Ya llevas puesto el pantalón.
 No llevas nada. Llevas un pantalón.
 
 > RESET
-La palabra "RESET" no es relevante.
+No entendí la palabra 'RESET'.
 
 > ; ------------------------------------------------------------------------------
 > ; VERB UNDRESS
@@ -117,14 +117,14 @@ No llevas nada que puedas quitarte.
 > ; The Foundation Library allows 'wearable' items to be worn not only by the Hero
 > ; but also by any other actor.
 > RESET
-La palabra "RESET" no es relevante.
+No entendí la palabra 'RESET'.
 
 > ; ------------------------------------------------------------------------------
 > ; NPCs Inventory
 > ; ------------------------------------------------------------------------------
 > ; Examining an actor lists worn items in a separate list form carried ones.
 > x vendedor
-La palabra "vendedor" no es relevante.
+No entendí la palabra 'vendedor'.
 
 > x mujer
 Una mujer comprando víveres. Lleva una blusa un poco sucia. La mujer lleva 
@@ -138,17 +138,17 @@ puestos una blusa y unos aretes.
 Tomas la camiseta.
 
 > RESET
-La palabra "RESET" no es relevante.
+No entendí la palabra 'RESET'.
 
 > toma camiseta de vendedor
-La palabra "vendedor" no es relevante.
+No entendí la palabra 'vendedor'.
 
 > ; ------------------------------------------------------------------------------
 > ; Implicitly Taking Items Worn by NPCs
 > ; ------------------------------------------------------------------------------
 > ; The library no longer supports implicit taking in verbs:
 > RESET
-La palabra "RESET" no es relevante.
+No entendí la palabra 'RESET'.
 
 > lleva camiseta
 Te pones la camiseta.

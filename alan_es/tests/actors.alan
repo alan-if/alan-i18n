@@ -61,7 +61,7 @@ End add to.
 
 Syntax 'list' = 'list' (act)
   Where act IsA actor
-    else "This verb can only be used on actors!"
+    else "¡Este verbo solo puede ser usado en actores!"
 
 Add to every actor
   Verb 'list'

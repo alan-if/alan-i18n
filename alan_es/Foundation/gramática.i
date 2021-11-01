@@ -17,6 +17,7 @@ Add to every entity  -- 'thing' en pALANte!
   Is not plural.
   -- Indefinite Article "un"
 
+  Has not nombre_propio. -- For entities with proper name. Without is default
   Has verb_suf "".
   Has adj_suf "".
   Has ser "". -- @NOTE: Was defined but never used anywhere!
@@ -56,28 +57,45 @@ Add to every entity  -- 'thing' en pALANte!
   --------------------
     DEFINITE ARTICLE
   --------------------
-    -- @TODO: Handle entities with proper name!
-    Depending on artículo of this
-      = "el"   then  "el"    --> m.s / f.s
-      = "la"   then  "la"    --> f.s
-      = "los"  then  "los"   --> m.p
-      = "las"  then  "las"   --> f.p
-    End depend.
-
+  -- NAMED ENTITY
+  -- =================
+  -- If an entity has a proper name, do not say any article when mentioning it
+    If this has nombre_propio
+      then ""
+      else
+  -- ================
+  -- NOT NAMED ENTITY
+  -- ================
+        Depending on artículo of this
+          = "el"   then  "el"    --> m.s / f.s
+          = "la"   then  "la"    --> f.s
+          = "los"  then  "los"   --> m.p
+          = "las"  then  "las"   --> f.p
+        End depend.
+    End If.
   ----------------------
     INDEFINITE ARTICLE
   ----------------------
-    -- @TODO: Handle entities with proper name!
-    Depending on artículo of this
-      = "el"   then -- Handle feminine "el" nouns:
-        If this is femenina
-          then "una"         --> f.s
-          else "un"          --> m.s
-        end if.
-      = "la"   then  "una"   --> f.s
-      = "los"  then  "unos"  --> m.p
-      = "las"  then  "unas"  --> f.p
-    End depend.
+  --------------------
+  -- NAMED ENTITY
+  -- =================
+    If this has nombre_propio
+      then ""
+      else
+  -- ================
+  -- NOT NAMED ENTITY
+  -- ================
+      Depending on artículo of this
+        = "el"   then -- Handle feminine "el" nouns:
+          If this is femenina
+            then "una"         --> f.s
+            else "un"          --> m.s
+          end if.
+        = "la"   then  "una"   --> f.s
+        = "los"  then  "unos"  --> m.p
+        = "las"  then  "unas"  --> f.p
+      End depend.
+    End If.
 
 End add to entity.
 
@@ -101,6 +119,28 @@ End add to entity.
 -- We need to define Spanish synonyms for those special words, so that the
 -- parser will recognize them as such.
 
+-- =========
+-- ALL WORDS
+-- =========
+
+Synonyms todo, todos, toda, todas = all.
+
+-- @TODO: Are all of these synonyms of IT, or are some of these THEM words?
+--        There's a difference, since IT refers only to last entity mentioned
+--        in a previous command, whereas THEM words refer to multiple parameters
+--        (e.g. those of ALL, or concatenated parameters via AND).
+
+-- =========
+-- AND WORDS
+-- =========
+
+Synonyms y, luego  = 'and'.
+
+-- =========
+-- BUT WORDS
+-- =========
+
+Synonyms excepto = 'but'.
 
 -- ===========
 -- NOISE WORDS
@@ -113,28 +153,20 @@ End add to entity.
 
 Synonyms el, la, los, las = 'the'.
 
--- =========
--- ALL WORDS
--- =========
-
-Synonyms todo, todos, toda, todas = all.
-
--- @TODO: Are all of these synonyms of IT, or are some of these THEM words?
---        There's a difference, since IT refers only to last entity mentioned
---        in a previous command, whereas THEM words refer to multiple parameters
---        (e.g. those of ALL, or concatenated parameters via AND).
-
-Synonyms
-  eso, esos, esa, esas, ello,
-  aquello, aquella, aquellos, aquellas, lo = it.
-
-
 -- ==============
 -- OTHER SYNOMYMS
 -- ==============
 
-Synonyms
-  una, unas, uno, unos = un.
+Synonyms una, unas, uno, unos = un.
+
+-- @NOTE: These pronouns as SYNONYMS of 'IT' and 'THEM' are a temporary solution
+--        and might change when the initialization code will define GNA-specific
+--        pronoun for each entity. See Discussion #51 for more details:
+--        https://github.com/alan-if/alan-i18n/discussions/51
+
+Synonyms eso, esa, ello, aquello, aquella, lo = it.
+
+Synonyms esos, esas, aquellos, aquellas = them.
 
 --------------------------------------------------------------------------------
 --                           P R E P O S I T I O N S

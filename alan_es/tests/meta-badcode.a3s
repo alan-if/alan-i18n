@@ -1,0 +1,62 @@
+﻿; ****************************************************************************
+; *                                                                          *
+; *                         MALFORMED CODE MESSAGES                          *
+; *                                                                          *
+; ****************************************************************************
+norte
+x código
+x objetos
+; ----------------------------------------------------------------------------
+; TEST 'CAN_NOT_CONTAIN'
+; ----------------------------------------------------------------------------
+x CAN_NOT_CONTAIN
+ejecuta CAN_NOT_CONTAIN
+toma llave
+; test m.s
+pone llave en bidón
+; test f.s
+pone llave en caja
+; test m.p
+pone llave en bidones
+; test f.p
+pone llave en cajas
+; ----------------------------------------------------------------------------
+; TEST 'CANT0'
+; ----------------------------------------------------------------------------
+x CANT0
+ejecuta CANT0
+; ----------------------------------------------------------------------------
+; TEST 'CONTAINMENT_LOOP'
+; ----------------------------------------------------------------------------
+x CONTAINMENT_LOOP
+ejecuta CONTAINMENT_LOOP
+; Let's now test various objects with different GNA:
+; test m.s
+ejecuta CONTAINMENT_LOOP con bidón
+; test f.s
+ejecuta CONTAINMENT_LOOP con caja
+; test m.p
+ejecuta CONTAINMENT_LOOP con bidones
+; test f.p
+ejecuta CONTAINMENT_LOOP con cajas
+; ----------------------------------------------------------------------------
+; TEST 'CONTAINMENT_LOOP2'
+; ----------------------------------------------------------------------------
+x CONTAINMENT_LOOP2
+ejecuta CONTAINMENT_LOOP2
+; Let's now test various objects with different GNA:
+; test m.s <-> f.s
+ejecuta CONTAINMENT_LOOP2 con bidón sobre caja
+; test f.s <-> m.p.
+ejecuta CONTAINMENT_LOOP2 con caja sobre bidones
+; test m.p <-> f.s.
+ejecuta CONTAINMENT_LOOP2 con bidones sobre caja
+; test f.p <-> m.s.
+ejecuta CONTAINMENT_LOOP2 con cajas sobre bidón
+; ----------------------------------------------------------------------------
+; TEST 'IMPOSSIBLE_WITH'
+; ----------------------------------------------------------------------------
+x IMPOSSIBLE_WITH
+IMPOSSIBLE_WITH me
+IMPOSSIBLE_WITH 666
+IMPOSSIBLE_WITH "literal string"

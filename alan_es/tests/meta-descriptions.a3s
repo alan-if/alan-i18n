@@ -1,0 +1,65 @@
+﻿; ****************************************************************************
+; *                                                                          *
+; *                           DESCRIPTION MESSAGES                           *
+; *                                                                          *
+; ****************************************************************************
+; This solution will elicit in-game description RunTime MESSAGEs...
+;
+; Some of these have already been covered elsewhere, and others are somehow
+; futile since they are so omni-present that they couldn't go by unnoticed;
+; but for completeness sake we're covering them too.
+; ============================================================================
+;                       A C T O R   C O N T A I N E R S
+; ============================================================================
+; ----------------------------------------------------------------------------
+; TEST 'CARRIES' + 'CONTAINS_COMMA' + 'CONTAINS_AND' + 'CONTAINS_END'
+; ----------------------------------------------------------------------------
+; To show these MESSAGEs we can't use the 'inventario' VERB because it doesn't
+; rely on LIST but uses ad hoc loops to list worn and carried items.
+; Instead, we'll force a LIST ACTOR statement thanks to a custom VERB we've
+; added to this adventure, but we can't use on the HERO because the library
+; defines custom CONTAINER HEADER/ELSE for the HERO.
+list Anssi
+; ----------------------------------------------------------------------------
+; TEST 'EMPTY_HANDED'
+; ----------------------------------------------------------------------------
+toma bata Y lentes Y diario
+list Anssi
+; @FIXME: Once we implement proper-names for PERSONAS actors the article won't
+;         be show any more!
+; ============================================================================
+;                      O B J E C T   C O N T A I N E R S
+; ============================================================================
+; We'll have to use the 'papelera' container on which we've overridden the
+; 'examine' VERB with a 'LIST THIS' statement...
+; ----------------------------------------------------------------------------
+; TEST 'IS_EMPTY'
+; ----------------------------------------------------------------------------
+x papelera
+; ----------------------------------------------------------------------------
+; TEST 'CONTAINS' + 'CONTAINS_COMMA' + 'CONTAINS_AND' + 'CONTAINS_END'
+; ----------------------------------------------------------------------------
+; First we need to put some stuff in the bin...
+pone bata en papelera
+pone lentes en papelera
+pone diario en papelera
+; Now there are enough objects to cover _COMMA, _AND & _END...
+x papelera
+; ============================================================================
+;                      R O O M   D E S C R I P T I O N S
+; ============================================================================
+; ----------------------------------------------------------------------------
+; TEST 'AGAIN'
+; ----------------------------------------------------------------------------
+; To elicit the 'AGAIN' we need to enter a room, exit it and re-enter it again
+; because it's shown next to the room name only when in "brief mode" (i.e.
+; when VISITS has a non-zero value)...
+n
+s
+n
+; ----------------------------------------------------------------------------
+; TEST 'SEE_START' + 'SEE_COMMA' + 'SEE_AND' + 'SEE_END'
+; ----------------------------------------------------------------------------
+s
+; A simple LOOK will do. (from "Hay ..." onward)
+ve

@@ -11,10 +11,14 @@
 ## Alan Files
 ## ==========
 *.a3c
+*.a3t-adoc
 *.ifid
 *.log
 *.sav
-*.a3t-adoc
+
+# Exceptions required for testing:
+!meta-session-different-adventure.sav
+!meta-session-different-arun.sav
 
 ## =============
 ## AlanIDE Files

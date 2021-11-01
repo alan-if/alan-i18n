@@ -1,0 +1,672 @@
+﻿-- ***********************************************
+--   META MESSAGES TEST by Ricardo Osio (2021)
+-- ***********************************************
+
+-- This adventure is for testing "meta" stuff:
+
+--  * Spanish run-time MESSAGEs, to check they are translated properly and use
+--    correct GNA references.
+--  * META VERBs, to ensure they are not consuming turns.
+--  * Turn consumptions in general, to check how ARun handles player input which
+--    is malformed, ambiguous or not understood for other reasons.
+
+-- Turn consumption is tracked via a "ticker machine" that can be turned ON/OFF
+-- by pressing a red button. When the ticker is on, it will tick at every turn
+-- and display a counter of the turns that have elapsed since its activation
+-- (the counter is reset when the ticker is stopped).
+
+-- We've added the activation button since we don't want to ticker to be always
+-- running, because in some test we'll be only checking that the run-time
+-- messages are translated and rendered properly, so having the ticker ON all
+-- the time would clutter the transcript unnecessarily.
+
+-- This test adventure is mostly based on the "meta-verbs" tests from the ALAN
+-- Standard Library. Some features from the StdLib are not included in the
+-- Foundation Library, therefore not all the original tests are implemented
+-- here.
+
+-- !!! WARNING !!!
+
+-- Don't create a 'meta.a3s' solution for testing this adventure, because its
+-- associated transcript 'meta.a3t' would be overwritten when 'meta-session.a3s'
+-- tests the transcript verb 'activar transcripción'.
+
+-- =============================================================================
+
+Import 'Library.i'.
+
+--------------------------------------------------------------------------------
+--                           L I S T   A C T O R S
+--------------------------------------------------------------------------------
+-- A special test verb to execute the LIST statement on actors and check that
+-- carried and worn items are mentioned correctly according to GNA, and to be
+-- able to elicit the CARRIES RunTime MESSAGE.
+
+Syntax 'list' = 'list' (act)
+  Where act IsA actor
+    else "¡Este verbo solo puede ser usado en actores!"
+
+Add to every actor
+  Verb 'list'
+    Does list this.
+  End verb.
+End add to actor.
+
+--==============================================================================
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--------------------------------------------------------------------------------
+--
+--                         S A L A   D E   P R U E B A S
+--
+--------------------------------------------------------------------------------
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--==============================================================================
+
+-- The "test room" is where ordinary META VERBs and Run-Time MESSAGEs can be
+-- safely tested and elicited. Various tech devices and ad hoc objects are made
+-- available on site for the purpose.
+
+The salaDePrueba IsA location
+  Name 'Sala de pruebas'
+  Description
+    "Aquí se prueban diversos aspectos del lenguaje ALAN,
+     gracias a tecnología de punta y sujetos de prueba
+     extremadamente competentes (como tú).
+     Al norte se encuentra la zona de cuarentena."
+  Exit norte to bugsRoom.
+End The.
+
+
+-- =============================================================================
+--                                    N P C S
+-- =============================================================================
+
+-- We need an NPC to test the LIST statement and it's associated RT-Messages...
+
+The Anssi IsA macho at salaDePrueba.
+  Name Anssi Räisänen.
+  Name Raisanen. Name Anssi.
+  Has nombre_propio.
+  Has xDesc
+    "Él es Anssi Räisänen, el padre de las StdLibs v1 y v2 de ALAN;
+    está aquí para supervisar el trabajo de la Foundation de la Librería.".
+  Description "Anssi Räisänen"
+    Depending on random 1 to 3
+      = 1 then "está caminando alrededor del laboratorio."
+      = 2 then "está ocupado revisando algunos instrumentos de laboratorio."
+      else "te está mirando con curiosidad."
+    End depend.
+End the Anssi.
+
+-- Let's give him some worn and carried objects, with GNA coverage..
+-- (will be shown in reverse order!)
+
+The  diario IsA object in Anssi. --> (m.s) notepad
+  Name  diario.
+End the.
+
+The lentes IsA object in Anssi. --> (m.p) glasses
+  Has artículo "los".
+  Name lentes.
+  Is puesto. Has portador Anssi.
+End the.
+
+The bata IsA object in Anssi. --> (f.s) coat lab
+  Has artículo "la".
+  Name 'bata de laboratorio'.
+  Name bata.
+  Is puesto. Has portador Anssi.
+End the.
+
+--==============================================================================
+--                             M I S C .   P R O P S
+--==============================================================================
+
+-- We need an object container to test CONTAINS, etc.
+
+The papelera IsA object at salaDePrueba --> (f.s.) paper bin
+  Opaque container.
+  Has artículo "la".
+  Has xDesc "Solo una papelera.".
+
+  Verb examinar
+    Does only
+      -- Special behaviour for our tests...
+      list this.
+  End Verb .
+End The.
+
+-- =============================================================================
+--                                   S C O R E
+-- =============================================================================
+
+-- A scoreboard to test score and some verbs related.
+
+The tablaDePuntos IsA object at salaDePrueba
+  Has artículo "la".
+  Name 'tabla de puntuaciones'
+  Name scoreboard
+  Name tabla
+  Is Not tomable.
+  Is Not empujable.
+  Verb examinar
+    Does Only "La tabla de puntuaciones muestra" Say score.
+      If score = 1 Then
+        Say "punto.".
+      Else
+        Say "puntos.".
+      End If.
+  End Verb examinar.
+End The.
+-- =============================================================================
+--                                  D R I N K S
+-- =============================================================================
+
+-- These drinks are used to test the score. Drinking them rewards the player
+-- with points.
+
+-- == The "bebida" class ==
+Every bebida IsA object
+  Name bebida. --> so we can trigger disambiguation when using "bebida"
+  Is bebible.
+End Every.
+
+-- == refresco (a soda) ==
+The refresco IsA bebida at salaDePrueba
+  Name refresco.
+  Has xDesc "Un refresco de cola.
+             Probablemente delicioso, pero con mucha azúcar.".
+
+  Verb beber
+    Does After Score 1.
+  End Verb.
+End The.
+
+-- == café (coffee) ==
+The café IsA bebida at salaDePrueba
+  Name café. Name cafe.
+  Has xDesc "Un poco de café caliente.
+             Te vendría bien para esa cara de sueño...".
+
+  Verb beber
+    Does After Score 1.
+  End Verb.
+End The.
+
+-- == jugo de naranja (orange juice) ==
+The jugo IsA bebida at salaDePrueba
+  Name 'jugo de naranja'. Name jugo.
+  Has xDesc "Un refrescante jugo de naranja.
+             ¡La vitamina C es muy beneficiosa!".
+
+  Verb beber
+    Does After Score 5.
+  End Verb.
+End The.
+
+-- == agua (a glass of water) ==
+The agua IsA bebida at salaDePrueba
+  Has artículo "el".
+  Is femenina.
+  Name agua. Name vaso agua.
+  Has xDesc "Un vaso de agua increíblemente saludable.".
+
+  Verb beber
+    Does After Score 200.
+  End Verb.
+End The.
+
+-- =============================================================================
+--                      T H E   T I C K E R   M A C H I N E
+-- =============================================================================
+
+-- We need a ticker to track that META VERBs are not consuming a turn.
+
+-- So we implement a "ticker machine" that can be activated and stopped by
+-- pressing a red button, and will start ticking in the background at every
+-- turn, letting us know when a turn was consumed (EVENTs are only executed
+-- during consumed game turns, not when executing META VERBS).
+
+-- The ticker counter is implemented via the 'cnt' attribute on the button.
+-- Pressing the button when the ticker is active will stop the ticker and reset
+-- the ticks counter.
+
+--------------------------------------------------------------------------------
+-- V E R B  " P R E S S "
+--------------------------------------------------------------------------------
+
+
+-- We need a dedicated verb for pressing the button, since the "empujar" verb
+-- for "pushing" things is not used for pressing buttons in Spanish
+-- (unlike English, were we can say "push the button").
+
+Add to every thing
+  Is not presionable. -- i.e. not pressable.
+End add to thing.
+
+Synonyms
+  presiona, presione, pulsa,  pulse, pulsar, aprieta, apretar =  presionar.
+
+Syntax
+  presionar =  presionar (obj)
+    Where obj IsA object
+      else "¡Solo puedes presionar objetos!"
+
+Add to every object
+  Verb presionar
+    Check obj is empujable
+      else "No puedes presionar $+1."
+    Does
+      "Presionas $+1, pero nada sucede."
+  End verb.
+End add to.
+
+--------------------------------------------------------------------------------
+-- T I C K E R   B U T T O N
+--------------------------------------------------------------------------------
+
+The botón IsA object at salaDePrueba
+  Name botón. Name boton.
+  Name botón rojo. Name boton rojo.
+  Is presionable.
+  Is not tomable.
+  Is not active. -- i.e. the ticker machine state.
+  Has cnt 0. -- The ticks counter.
+  Description "Un botón rojo está atornillado a la pared."
+  Has xDesc "Es un botón rojo, grande y amenazador.
+             Por encima del botón hay un cartel.".
+
+  Verb presionar
+    Does only
+      "Al presionar el botón"
+      If this is not active
+        then
+          "escuchas un zumbido que viene de la pared,
+           como si una máquina oculta acabase de volver a la vida."
+          Schedule ticker at hero after 0.
+          Set this:cnt to 0. -- reset counter.
+          Make this active.
+        else
+          "la máquina de tics para y el zumbido de la pared se detiene."
+          Cancel ticker.
+          Make this not active.
+      End if.
+  End verb.
+End The.
+
+------------------------
+-- B U T T O N   S I G N
+------------------------
+
+-- @TODO: Once we fix scenery in the English and Spanish libraries, the 'cartel'
+--        should be made into a scenery (probably will be an attribute by then,
+--        not a class any longer).
+
+The cartel IsA object at salaDePrueba
+  Is not tomable.
+  Is leible. -- @TODO: Implement reading (need to check if EN lib uses xDesc)
+  Description "" -- Don't mention it in room descriptions!
+  Has xDesc "El cartel dice ""Presione el botón para encender/apagar
+             la máquina de tics"".".
+End The.
+
+--------------------------------------------------------------------------------
+-- T I C K E R   E V E N T
+--------------------------------------------------------------------------------
+
+-- This event will let us know when a turn has been consumed.
+
+Event ticker
+  Increase botón:cnt.
+  "$pTICK... (turno Nro" say botón:cnt. ")"
+  Schedule ticker at hero after 1.
+End Event.
+
+
+--==============================================================================
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--------------------------------------------------------------------------------
+--
+--                    C Á M A R A   D E   C U A R E N T E N A
+--
+--------------------------------------------------------------------------------
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--==============================================================================
+
+-- The "buggy code quarantine chamber" is a restricted zone were examples of
+-- malformed ALAN code are stored, for the sole purpose of testing specific
+-- Run-Time MESSAGEs that can't be elicited in normal circumstances.
+
+The bugsRoom IsA location
+  Name 'Cámara de cuarentena de código'
+  Description
+    "Esta cámara contiene varios fragmentos de código y objetos de prueba."
+  Entered
+    "Al entrar en la zona de cuarentena la entrada es sellada automáticamente
+    por un grueso panel de led que se desliza desde arriba, aislando el mundo
+    exterior de los peligrosos fragmentos de código malformados que se
+    almacenan en esta área restringida de los Laboratorios ALAN."
+  Exit sur to salaDePrueba
+    Does
+      "Al acercarte a la salida, los sensores de la habitación activan la
+      ducha de rayos X para descontaminarte de cualquier residuo de código
+      defectuoso, antes de abrir la barrera de led y dejarte salir."
+    End exit.
+End The.
+
+--==============================================================================
+--------------------------------------------------------------------------------
+--                 M A L F O R M E D   C O D E   S N I P P E T S
+--------------------------------------------------------------------------------
+--==============================================================================
+
+-- In order to test the RT-MESSAGEs associated to malformed adventures, the
+-- easiest way to expose custom objects emulating code snippets that would
+-- produce the desired message. I.e. each object will execute a specific task
+-- by implementing an ad hoc 'execute' VERB on the "code snippet" instance.
+
+Every code_obj IsA object.
+  Is Not buscable. Not tomable. Not empujable. Not tocable.
+  Description ""
+  Definite Article ""     -- Treat them as is having a proper name
+  Indefinite Article ""   -- (no articles shown).
+End every.
+
+-- To simplify listing the various code snippets, we gather them inside a virtual
+-- scenery object which can be examined by the player:
+
+The snippets IsA escenario at bugsRoom.
+  Name fragmentos de código.
+  Name codigo. Name fragmentos.
+  Has artículo "los".
+  Container
+    Header "Los fragmentos de código son:"
+  Description ""
+  Verb examinar
+    Does only list this.
+  End verb.
+End the snippets.
+
+--==============================================================================
+--                             T E S T   V E R B S
+--==============================================================================
+
+Synonyms ejecuta, ejecute = ejecutar.
+
+-- Default test (no parameters required):
+
+Syntax ejecutar = ejecutar (código)
+  Where código IsA code_obj
+    Else "¡Solo puedes ejecutar fragmentos de código!"
+
+-- Alternative test verbs accepting parameters to test GNA:
+
+Syntax ejecutar_con = ejecutar (código) con (obj)
+  Where código IsA code_obj
+    Else "¡Solo puedes ejecutar fragmentos de código!"
+  And obj IsA test_obj
+    Else "¡Solo puedes ejecutar código con objetos de prueba designados!"
+
+Syntax ejecutar_con2 = ejecutar (código) con (obj1) sobre (obj2)
+  Where código IsA code_obj
+    Else "¡Solo puedes ejecutar fragmentos de código!"
+  And obj1 IsA test_obj
+    Else "¡Solo puedes ejecutar código con objetos de prueba designados!"
+  And obj2 IsA test_obj
+    Else "¡Solo puedes ejecutar código con objetos de prueba designados!"
+
+--==============================================================================
+--                           C O D E   O B J E C T S
+--==============================================================================
+
+-- Each code snippet is an object corresponding to a specific Run-Time MESSAGEs;
+-- it can be examined to obtain details and executed to elicit its RT Message.
+
+-- Snippet objects are created in inverse alphabetical order of the MESSAGEs, so
+-- that they will be listed in the correct order (FILO -- first-in last-out).
+
+-- NOTE: Run-Time MESSAGEs identifiers are not reserved words in ALAN! they have
+--       special meaning only inside MESSAGE blocks, and can be freely used as
+--       identifiers elsewhere, without name clashing.
+
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--                 * * *  P E N D I N G   M E S S A G E S  * * *
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-- These RT-Messages should be implemented here:
+
+--   * xxxxxxx
+
+--------------------------------------------------------------------------------
+-- IMPOSSIBLE_WITH
+--------------------------------------------------------------------------------
+
+-- This message is shown only when there's a SYNTAX definition without WHERE
+-- clauses and the player attempts to use it on an instance of the wrong class.
+-- In other words, it's a fallback default for "lazy syntaxes" where the author
+-- doesn't provide custom responses via WHERE.
+
+-- Since such a bare SYNTAX assumes by default that its parameter will be an
+-- OBJECT instance, to elicit the IMPOSSIBLE_WITH message we need to implement
+-- an ad hoc bare syntax and test it with an ACTOR parameter (or literal STRING
+-- or INTEGER).
+
+-- NOTE: With the same bare SYNTAX, using a parameter of the correct class
+--       (OBJECT) which is not covered by the VERB will elicit the 'CANT0'
+--       message.
+
+Every impossible_obj IsA object.
+End every.
+
+Syntax impossible_action = IMPOSSIBLE_WITH (obj).
+
+Add to every impossible_obj
+  Verb impossible_action
+    Does "Nothing, because this verb is unreachable!"
+  End verb.
+End add to impossible_obj.
+
+
+The IMPOSSIBLE_WITH IsA code_obj in snippets.
+  Has xDesc
+    "Para probar los mensajes de IMPOSSIBLE_WITH, hemos implementado una
+     SYNTAX sin una cláusula WHERE, la cual activará el mensaje cuando
+     se use con actores, strings y números (enteros).
+     Pruébame con: IMPOSSIBLE_WITH ME".
+
+  Verb ejecutar
+    Does "Pruébame con: IMPOSSIBLE_WITH ME"
+  End verb.
+End the IMPOSSIBLE_WITH.
+
+--------------------------------------------------------------------------------
+-- CONTAINMENT_LOOP2
+--------------------------------------------------------------------------------
+
+-- This Message is shown when attempting a transitive containment loop, so we
+-- need two parameters (both containers) and first locate obj2 in obj1, then
+-- attempt to locate obj1 in obj2, which will trigger CONTAINMENT_LOOP2.
+
+-- The tricky part here was to allow repetitive tests using the same objects,
+-- since each execution of 'ejecutar_con2' aborts with CONTAINMENT_LOOP2 error,
+-- which doesn't leave us with a way to restore the parameters' original state.
+
+The CONTAINMENT_LOOP2 IsA code_obj in snippets.
+  Has xDesc
+    "Ejecutar este código activará el mensaje de CONTAINMENT_LOOP2,
+     al intentar insertar un objeto dentro de otro objeto mientras
+     el primero está dentro del segundo.".
+
+  Verb ejecutar
+    Does
+      locate cont1 in cont2.
+  End verb.
+
+  Verb ejecutar_con2
+    Does
+      -- -----------------------------------------------------------------------
+      -- We need to remove test objects which might have been inserted into each
+      -- other by previous executions of this verb. We have to do it here since
+      -- this verb will not tick a turn due to failure, so we can't use an
+      -- Event to handle this (Events won't be executed between successive
+      -- player input triggering this verb) nor can we cater for it at the end
+      -- of the verb body, since it will abort execution.
+      -- -----------------------------------------------------------------------
+      For each tObj IsA test_obj do
+        Empty tObj in test_objects.
+        Locate tObj in test_objects.
+      End for.
+      Locate obj2 in obj1.
+      Locate obj1 in obj2. -- Verb triggers CONTAINMENT_LOOP2 here and aborts!
+  End verb.
+End the CONTAINMENT_LOOP2.
+
+--------------------------------------------------------------------------------
+-- CONTAINMENT_LOOP
+--------------------------------------------------------------------------------
+
+The CONTAINMENT_LOOP IsA code_obj in snippets.
+  Has xDesc
+    "Ejecutar este código activará el mensaje de CONTAINMENT_LOOP,
+     al intentar insertar un objeto dentro de sí mismo.".
+
+  Verb ejecutar
+    Does
+      locate cont1 in cont1.
+  End verb.
+
+  Verb ejecutar_con
+    Does
+      locate obj in obj.
+  End verb.
+End the CONTAINMENT_LOOP.
+
+--------------------------------------------------------------------------------
+-- CANT0
+--------------------------------------------------------------------------------
+
+-- To elicit the 'CANT0' RT Message we just don't supply a VERB for the CANT0
+-- object, and since there's no generic implementation of the 'ejecutar' VERB
+-- on any class, when invoked for CANT0 the SYNTAX won't be able to match any
+-- VERB body.
+
+The CANT0 IsA code_obj in snippets.
+  Has xDesc
+    "Ejecutar este código activará el mensaje de CANT0 porque no hay
+     un verbo que coincida con la SYNTAX 'ejecutar' para este objeto.".
+End the.
+
+--------------------------------------------------------------------------------
+-- CAN_NOT_CONTAIN
+--------------------------------------------------------------------------------
+
+-- Since this messages is elicited by attempting to place into a container an
+-- object of the wrong type, it has to be manually tested via .
+
+The CAN_NOT_CONTAIN IsA code_obj in snippets.
+  Has xDesc
+    "Para activar el mensaje de CAN_NOT_CONTAIN intenta poner la
+     llave que se encuentra en esta habitación dentro de uno de los
+     objetos de prueba, los cuales son contenedores con una cláusula
+     restrictiva de tipo TAKING: solo pueden contener otros objetos
+     de prueba.".
+
+  Verb ejecutar
+    Does "Pruébame con: PONE LLAVE EN CAJA"
+  End verb.
+End the.
+
+--==============================================================================
+--------------------------------------------------------------------------------
+--                            T E S T   O B J E C T S
+--------------------------------------------------------------------------------
+--==============================================================================
+
+Every test_obj IsA escenario.
+  Container taking test_obj.
+  Description ""
+End every.
+
+-- To simplify listing the various test objects, we gather them inside a virtual
+-- scenery object which can be examined by the player:
+
+The test_objects IsA escenario at bugsRoom.
+  Name objetos de prueba.
+  Name objetos.
+  Has artículo "los".
+  Container
+    Header "Los objetos de prueba son:"
+  Description ""
+  Verb examinar
+    Does only list this.
+  End verb.
+End the test_objects.
+
+-- We need various objects with different number and gender in order to test
+-- that the various MESSAGEs are handling GNA properly.
+
+The bidón IsA test_obj in test_objects.   --> m.s. (drum)
+  Name bidón. Name bidon.
+End the.
+
+The caja IsA test_obj in test_objects.    --> f.s. (box)
+  Has artículo "la".
+End the.
+
+The bidones IsA test_obj in test_objects. --> m.p. (drums)
+  Has artículo "los".
+End the.
+
+The cajas IsA test_obj in test_objects.   --> f.p. (boxs)
+  Has artículo "las".
+End the.
+
+--------------------------------------------------------------------------------
+-- OBJECTS FOR DEFAULT TESTS
+--------------------------------------------------------------------------------
+
+-- Objects used for default tests, when no parameters are specified.
+-- These are not located anywhere since they are for internal VERB use,
+-- so the player can't interact with them directly.
+
+The cont1 IsA test_obj container.
+  Name 'contenedor designado'.
+End the.
+
+The cont2 IsA test_obj container in cont1.
+  Name 'contenedor de destino'.
+End the.
+
+--------------------------------------------------------------------------------
+-- 'CAN_NOT_CONTAIN' TEST OBJECTS
+--------------------------------------------------------------------------------
+
+-- These are needed for testing CAN_NOT_CONTAIN messages, which require object
+-- which can't be located into the target container due to TAKING clause
+-- violation. So they are not instances of 'test_obj' class (nor containers).
+
+The llave IsA object at bugsRoom.
+  Has artículo "la".
+End the llave.
+
+--------------------------------------------------------------------------------
+
+Start at salaDePrueba.
+Visits 1. -- Needed to show the 'AGAIN' Run-Time MESSAGE.
+
+ "Estás en la Sala de pruebas.
+  Aquí se verifica que todo vaya bien con los juegos de ALAN.
+  Fuiste escogido para ser un sujeto de pruebas debido a tus extraordinarias
+  habilidades (y quizás tu atractiva apariencia tuvo algo que ver).
+
+$pHoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+  Recuerda que a pesar de haber sido escogido, este trabajo no es remunerado
+  en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+$p¡Mucha suerte y gracias por contribuir con ALAN!
+
+$p-ALAN Enterprises"
