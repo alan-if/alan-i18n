@@ -1,0 +1,153 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una papelera, una tabla de puntuaciones, un refresco, un 
+café, un jugo de naranja y una agua. Anssi Räisänen está caminando
+alrededor del laboratorio.
+
+> ; ****************************************************************************
+> ; *                                                                          *
+> ; *                    PROBLEMATIC PLAYER INPUT MESSAGES                     *
+> ; *                                                                          *
+> ; ****************************************************************************
+> ; Testing run-time messages relating to malformed or otherwise problematic
+> ; player input.
+> ; For the MESSAGEs definitions, see the "mensajes.i" library module.
+> ; ----------------------------------------------------------------------------
+> ; Enable ticker machine to check which input types don't consume a turn:
+> presiona el boton
+Al presionar el botón escuchas un zumbido que viene de la pared, como si
+una máquina oculta acabase de volver a la vida. 
+
+TICK... (turno Nro 1 )
+
+> ; ============================================================================
+> ;                     I N V A L I D   R E F E R E N C E S
+> ; ============================================================================
+> ; Problems with parameters or verbs in the player input...
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHAT_WORD': unmatched multi-reference word (ALL, THEM. etc.)
+> ; ----------------------------------------------------------------------------
+> ; This needs to be tested before a multi-parameter verb was used successfully,
+> ; so that 'THEM' is not a valid reference to any previous parameters:
+> x THEM
+No entiendo lo que quieres decir con "them".
+
+> ; @NOTE: Currently the grammar defines all Spanish pronouns as SYNONYMS of IT.
+> ;        This might changes in future if we decide that the PRONOUN of each
+> ;        entity should be defined during initialization according to its GNA.
+> ;        In that case, the above test might need to be revised, and proper
+> ;        tests for PRONOUNs will have to be added!
+> ; ----------------------------------------------------------------------------
+> ; TEST 'UNKNOWN_WORD': word not in the dictionary
+> ; ----------------------------------------------------------------------------
+> ; Examine a non-existing object:
+> x Xyzzy
+No entendí la palabra 'Xyzzy'.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NO_SUCH': parameter not in scope
+> ; ----------------------------------------------------------------------------
+> ; The object exists but it's not in scope:
+> x llave
+No hay llave aquí.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NOUN': player supplied an adjective without the noun
+> ; ----------------------------------------------------------------------------
+> ; Here 'vaso' is an adjective of 'agua':
+> x vaso
+Tienes que poner un sustantivo.
+
+> x vaso agua
+Un vaso de agua increíblemente saludable. 
+
+TICK... (turno Nro 2 )
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NO_WAY': traversing inexistent Exit
+> ; ----------------------------------------------------------------------------
+> ; The exit doesn't exist:
+> e
+No puedes ir por ahí.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHAT': input doesn't match any Syntax
+> ; ----------------------------------------------------------------------------
+> ; Use existing words but with a wrong syntax (the 'x' syntax doesn't admit
+> ; a verb):
+> x bebe
+No entiendo bien esa frase. Redactala de nuevo.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'MULTIPLE': invalid multiple parameters usage
+> ; ----------------------------------------------------------------------------
+> ; Use 'all' with a verb that doesn't accept multiple parameters:
+> bebe todo
+No puedes aplicar ese verbo a varios objetos.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'AFTER_BUT': an ALL BUT lacks exclusion criteria
+> ; ----------------------------------------------------------------------------
+> ; Use 'ALL BUT' without providing the exclusion criteria:
+> toma todo excepto
+Tienes que poner un objeto después de excepto.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'BUT_ALL': a BUT word not used after ALL word
+> ; ----------------------------------------------------------------------------
+> ; 'BUT' not used after 'ALL' word:
+> toma agua excepto
+Solamente puedes usar "excepto" después de "all".
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NOT_MUCH': a BUT ALL excluding all references
+> ; ----------------------------------------------------------------------------
+> ; Use 'BUT ALL' excluding all posible references:
+> toma todo excepto agua y refresco y cafe y jugo y papelera y diario y bata y lentes
+Eso no deja mucho.
+
+> ; ============================================================================
+> ;                         D I S A M B I G U A T I O N
+> ; ============================================================================
+> ; When a parameter matches multiple instances...
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHICH_START', 'WHICH_COMMA' & 'WHICH_OR'
+> ; ----------------------------------------------------------------------------
+> ; All drinks are instances of the 'bebida' class, which defines the commonly
+> ; inherited 'bebida' NAME, which triggers parser disambiguation:
+> bebe bebida
+No sé si quieres decir el refresco, el café, el jugo de naranja o el agua.
+
+> ; ****************************************************************************
+> ; ********************|  P E N D I N G   M E S S A G E S  |*******************
+> ; ****************************************************************************
+> ; @NOTE: These last two RT-Messages can't be currently tested because the
+> ;        grammar initialization code doesn't (yet) define any PRONOUNs!
+> ;        See: https://github.com/alan-if/alan-i18n/discussions/51
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHICH_PRONOUN_START': pronoun matching multiple instances
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHICH_PRONOUN_FIRST': pronoun matching multiple instances
+> ; ----------------------------------------------------------------------------
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

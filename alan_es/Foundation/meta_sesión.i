@@ -3,6 +3,10 @@
 -- Meta verbs definitions for extradiegetic commands relating
 -- to the current game session (storage, quitting, etc.).
 
+--==============================================================================
+--                   Q U I T T I N G   &   R E S T A R T I N G
+--==============================================================================
+
 Synonyms abandono, abandona, abandonar = 'quit'.
 
 Syntax 'quit' = 'quit'.
@@ -21,6 +25,19 @@ Meta verb q
      otra cosa, debes escribir el comando 'abandonar' al completo.)"
 End verb.
 
+
+Synonyms comenzar, comienzo, comienza, recomenzar, reiniciar, reinicia = 'restart'.
+
+Syntax 'restart' = 'restart'.
+
+Meta verb 'restart'
+  Does
+    Restart.
+End verb.
+
+--==============================================================================
+--                      S A V I N G   &   R E S T O R I N G
+--==============================================================================
 
 Synonyms grabar, graba, salvar, salva, guardar, guarda = 'save'.
 
@@ -44,16 +61,9 @@ Meta verb 'restore'
     Look.
 End verb.
 
-
-Synonyms comenzar, comienzo, comienza, recomenzar, reiniciar, reinicia = 'restart'.
-
-Syntax 'restart' = 'restart'.
-
-Meta verb 'restart'
-  Does
-    Restart.
-End verb.
-
+--==============================================================================
+--                                   S C O R E
+--==============================================================================
 
 Synonyms puntos, puntaje, puntuacion, puntuación = 'score'.
 
@@ -64,6 +74,39 @@ Meta verb 'score'
     Score.
 End verb 'score'.
 
+--==============================================================================
+--                        G A M E   T R A N S C R I P T S
+--==============================================================================
+
+Syntax script0    = transcripción.
+
+Syntax script_on  = activar transcripción.
+       script_on  = transcripción on.
+
+Syntax script_off = desactivar transcripción.
+       script_off = transcripción off.
+
+Synonyms transcripcion, scripting, 'transcript' = transcripción.
+
+Meta verb script0
+  Does
+    "Para activar la transcripción del juego, escriba: ACTIVAR TRANSCRIPCIÓN.
+   $nPara terminar la transcripción, escriba: DESACTIVAR TRANSCRIPCIÓN."
+End verb.
+
+Meta verb script_on
+  Does
+    Transcript on. "La transcripción ya ha comenzado."
+End verb.
+
+Meta verb script_off
+  Does
+    Transcript off. "Fin de la transcripción."
+End verb.
+
+--==============================================================================
+--                       A G A I N ,   U N D O ,   E T C .
+--==============================================================================
 
 Synonyms
   g, repetir, repite, repito = again.
@@ -78,13 +121,8 @@ Meta verb again
      repetir tu último comando.)"
 End verb.
 
--- @TODO: I'm not sure whether this commented out UNDO verb was created when
---        ALAN didn't have an UNDO command, or whether it's purpose is to
---        disable undoing in an adventure. Should try the latter and, if it
---        works add a note about it, otherwise just delete the UNDO verb.
-
--- Syntax undo = undo.
---
--- Meta verb undo
---   Does "Unfortunately you cannot 'undo' commands in this game."
--- End verb.
+-- UNDO is one of the very few hard-coded commands built into the ALAN terps.
+-- It's not possible to use SYNONYMS to support its Spanish translation
+-- counterpart (e.g. 'revierte') because it wouldn't map to any author-defined
+-- words -- i.e. the 'UNDO' word is not in the game dictionary, it's a special
+-- command intercepted by the parser.

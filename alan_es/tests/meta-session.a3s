@@ -1,0 +1,212 @@
+﻿; ****************************************************************************
+; *                                                                          *
+; *                     GAME SESSION COMMANDS & MESSAGES                     *
+; *                                                                          *
+; ****************************************************************************
+; Testing all meta-verbs and run-time messages relating to game session.
+; For the VERBs definitions, see the "meta_sesión.i" library module.
+; For the MESSAGEs definitions, see the "mensajes.i" library module.
+; NOTE: Save and restore commands will always show in parenthesis the last
+;       filename used with these commands, even if the operation failed.
+;       The first time a save command is used, ARun will propose a save file
+;       with the same base name as the adventure.
+; ----------------------------------------------------------------------------
+; Enable ticker machine to check that session meta verbs don't consume a turn:
+presiona el boton
+; ============================================================================
+; UNDOING || META VERB: *none* (UNDO is hardwired)
+; ============================================================================
+; The UNDO command is hardwired into the ALAN interpreter, and behaves like a
+; meta verb, not consuming a turn.
+; @TODO: Add Spanish SYNONYMS for UNDO and test them here!
+; ----------------------------------------------------------------------------
+; TEST 'UNDONE': successful undoing message
+; ----------------------------------------------------------------------------
+; Let's undo the first action:
+undo
+; ----------------------------------------------------------------------------
+; TEST 'NO_UNDO': failed undoing message
+; ----------------------------------------------------------------------------
+; Nothing else to undo:
+undo
+; ============================================================================
+; SAVING THE GAME || META VERB: 'save'
+; ============================================================================
+; TEST 'SAVE_WHERE': provide file name to save
+; ----------------------------------------------------------------------------
+guardar
+meta-session.sav
+; ----------------------------------------------------------------------------
+; TEST 'SAVE_OVERWRITE': confirm overwriting an existing save file
+; ----------------------------------------------------------------------------
+; @ERROR! Couldn't manage to get ARun ask for confirmation before overwriting!
+;         It does if you play in the terminal, but for some reason it doesn't
+;         work in the automated workflow. I thought it might be due to the
+;         filesystem cache not being flushed, but even trying to overwrite a
+;         different save-file (i.e. saved from without the current session)
+;         failed. No idea how to fix this, yet. Suggestions?
+guardar
+meta-session.sav
+; ----------------------------------------------------------------------------
+; TEST 'SAVE_FAILED ': error saving file
+; ----------------------------------------------------------------------------
+; The filename "bad*name.sav" is invalid in all OSs supported by ALAN.
+guardar
+bad*name.sav
+; ============================================================================
+; RESTORING THE GAME || META VERB: 'restore'
+; ============================================================================
+; Let's drink the coffee and restart...
+examina cafe
+bebe cafe
+examina cafe
+; ----------------------------------------------------------------------------
+; TEST 'RESTORE_FROM': provide file name to restore
+; ----------------------------------------------------------------------------
+restaura
+meta-session.sav
+; now the coffee should be back:
+examina cafe
+; ----------------------------------------------------------------------------
+; TEST 'SAVE_MISSING': restore a non-existing file
+; ----------------------------------------------------------------------------
+restaura
+non-existing-file.sav
+; ----------------------------------------------------------------------------
+; TEST 'NOT_A_SAVEFILE': restore a file which is not a saved game
+; ----------------------------------------------------------------------------
+restaura
+meta.ifid
+; ----------------------------------------------------------------------------
+; TEST 'SAVE_VERSION': restore a save file from a different ARun version
+; ----------------------------------------------------------------------------
+; File "meta-session-different-arun.sav" was saved using ARun 3.0Beta7:
+restaura
+meta-session-different-arun.sav
+; ----------------------------------------------------------------------------
+; TEST 'SAVE_NAME ': restore a save file from a different adventure
+; ----------------------------------------------------------------------------
+; File "meta-session-different-adventure.sav" was saved from "adventV3.a3c":
+restaura
+meta-session-different-adventure.sav
+; ============================================================================
+; TRANSCRIPTING THE GAME
+; ============================================================================
+; There are no transcript-specific RT-Messages.
+; ----------------------------------------------------------------------------
+; TRANSCRIPTING HELPER || META VERB: 'script0'
+; ----------------------------------------------------------------------------
+; This is a fallback verb that catches malformed attempts by the player to
+; invoke a transcript command, providing guidance on their correct syntax:
+transcripción
+scripting
+transcript
+; ----------------------------------------------------------------------------
+; START TRANSCRIPTING || META VERB: 'script_on'
+; ----------------------------------------------------------------------------
+; The following command will create/overwrite the "meta.a3t" transcript:
+activar transcripción
+; Further invocations are just ignored (they don't start a new transcript):
+transcripción on
+scripting on
+transcript on
+; ----------------------------------------------------------------------------
+; STOP TRANSCRIPTING || META VERB: 'script_off'
+; ----------------------------------------------------------------------------
+; The following command will stop writing to the "meta.a3t" transcript:
+desactivar transcripción
+; Further invocations are simply ignored:
+transcripción off
+scripting off
+transcript off
+; ============================================================================
+; RESTART THE GAME || META VERB: 'restart'
+; ============================================================================
+; Let's drink the coffee and restart...
+examina cafe
+bebe cafe
+examina cafe
+; ----------------------------------------------------------------------------
+; TEST 'REALLY': confirmation prompt
+; ----------------------------------------------------------------------------
+restart
+
+; now the coffee should be back:
+examina cafe
+; ============================================================================
+; SCORE || META VERB: 'puntos'
+; ============================================================================
+; We need to test the correct functioning of the SCORE statement. For this
+; we are using "drinks": each drink rewards the player with some points.
+puntos
+x tabla
+x refresco
+bebe refresco
+x tabla
+bebe cafe
+x jugo
+bebe jugo
+score
+bebe agua
+x tabla
+; As you can see, ALAN Enterprises' employees not only get free coffee, fruit
+; juices and water (which BTW is Perrier mineral water, but we can't
+; advertise in our code), but we also get reward scores for drinking them!
+; That, and the amazing salaries and prolonged holidays we get here at ALAN.
+;
+; I know what you're thinking, "Yeah, yeah! It's all digital stuff coming out
+; of thin air, crafted within the adventures!" How smart of you! Let me ask
+; you, then, isn't BitCoin also "just" digital money? But you don't mind at
+; all getting hold of a bunch of those, do you?
+;
+; Here you go, you're just jealous that you ain't getting your share of ALAN!
+; ----------------------------------------------------------------------------
+; NOTE: In the test adventure from the STD Library (the one this is based on)
+;       was a NOTIFY command that could be activated or deactivated. This made
+;       the game notify the SCORE to the players whenever they gained a point,
+;       by using a dedicated EVENT that would check every turn whether the
+;       score had changed. However, since the Spanish Library doesn't include
+;       this feature, these tests were excluded.
+; ============================================================================
+; Q VERB || META VERB: 'q'
+; ============================================================================
+; The verb 'Q' is implemented as a reminder of the full 'QUIT' verb, as safety
+; measure against accidentally quitting.
+q
+; ============================================================================
+; QUITTING THE GAME || META VERB: 'quit'
+; ============================================================================
+; Let's test the various Quit options...
+; ----------------------------------------------------------------------------
+; QUIT + RESTART => TEST 'QUIT_ACTION'
+; ----------------------------------------------------------------------------
+abandona
+restart
+; ----------------------------------------------------------------------------
+; QUIT + UNDO => TEST 'QUIT_ACTION' + 'UNDONE'
+; ----------------------------------------------------------------------------
+; We bring up the Quit menu but then Undo ...
+abandona
+undo
+; ----------------------------------------------------------------------------
+; QUIT + RESTORE => TEST 'QUIT_ACTION' + 'RESTORE_FROM'
+; ----------------------------------------------------------------------------
+abandona
+restore
+meta-session.sav
+; ----------------------------------------------------------------------------
+; QUIT + QUIT => TEST 'QUIT_ACTION'
+; ----------------------------------------------------------------------------
+; After quitting, the rest of the commands of this script should be ignored...
+abandona
+quit
+;         ************************************************************
+; !!!!!!! IF YOU CAN SEE THIS LINE IN THE TRANSCRIPT WE HAVE A PROBLEM !!!!!!!
+;         ************************************************************
+;
+; Call immediately your government's national security agency and tell them
+; that their ALAN userbase has been exposed to a serious cyber threat.
+;
+; Then brace yourself and prepare for Doomsday, for terrible things are about
+; to happen soon...
+inventario

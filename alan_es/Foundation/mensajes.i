@@ -32,8 +32,6 @@ SEE_END: "."
 -- These messages are used when listing the contents of containers, which can be
 -- either container objects or actors.
 
--- @TODO: Should these messages check for gender and number? -- ANSWER: It already checks for number. Checking gender isn't needed
-
 CONTAINS: "$+1"
   If parameter1 is plural
     then "contienen"
@@ -152,7 +150,7 @@ CONTAINMENT_LOOP:
 
 CONTAINMENT_LOOP2:
   "Es imposible poner $+1 en $+2 porque $+2 ya está"
-  If parameter1 is plural then "$$n"
+  If parameter2 is plural then "$$n"
   End if. "dentro de $+1."
 
 -- =============================================================================
@@ -161,19 +159,7 @@ CONTAINMENT_LOOP2:
 
 -- =============================================================================
 
--- @FIXME: 'UNKNOWN_WORD' The original message is "I don't know the word '$1'."
---         The current translation "is not relevant" doesn't convey a clear
---         message to the player, it's as if we're dealing with a non important
---         game object (e.g. a scenery), which is misleading since the problem
---         is that the typed word was not understood -- it could be that the
---         player misspelled it by accident. I don't like the original message
---         "I don't know", and I would prefer something like:
---
---               "I didn't understand the word '$1'."
---
---         See: https://github.com/alan-if/alan/issues/33
-
-UNKNOWN_WORD: "La palabra ""$1"" no es relevante."
+UNKNOWN_WORD: "No entendí la palabra '$1'."
 WHAT: "No entiendo bien esa frase. Redactala de nuevo."
 WHAT_WORD: "No entiendo lo que quieres decir con ""$1""."
 MULTIPLE: "No puedes aplicar ese verbo a varios objetos."
@@ -228,11 +214,7 @@ QUIT_ACTION: "¿Quiere revertir (undo), recomenzar (restart), restaurar (restore
 HAVE_SCORED: "Has logrado $1 puntos de un total de $2."
 
 UNDONE: "Acción '$1' revertida."
-NO_UNDO: "No se puede revertir ahora."
-
--- @TODO: The 'NO_UNDO' message in English is "Nothing to undo.",
---        which I think it's clearer regarding the reason why it's
---        not possible to undo the action. Fix it?
+NO_UNDO: "No hay nada que revertir."
 
 --------------------------------------------------------------------------------
 -- Saving Game Session

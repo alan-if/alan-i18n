@@ -1,0 +1,120 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una papelera, una tabla de puntuaciones, un refresco, un 
+café, un jugo de naranja y una agua. Anssi Räisänen está caminando
+alrededor del laboratorio.
+
+> ; ****************************************************************************
+> ; *                                                                          *
+> ; *                         PREDEFINED PLAYER WORDS                          *
+> ; *                                                                          *
+> ; ****************************************************************************
+> ; This solution tests that the Spanish SYNONYMS of the Predefined Player Words
+> ; and other hardcoded input terms are all in place and working correctly.
+> ; The definitions of these SYNONYMS can be found in the "gramática.i" module.
+> ; ============================================================================
+> ;                           PREDEFINED PLAYER WORDS
+> ; ============================================================================
+> ; These are the proper "Predefined Player Words", as described in Appendix E
+> ; of The ALAN Manual...
+> ; ----------------------------------------------------------------------------
+> ; TEST: ALL WORDS
+> ; ----------------------------------------------------------------------------
+> ; Synonyms: 'TODO', 'TODOS', 'TODA', 'TODAS'.
+> toma todo
+(diario) Tomas el diario.
+
+(lentes) Tomas los lentes.
+
+(bata de laboratorio) Tomas la bata de laboratorio.
+
+(papelera) Tomas la papelera.
+
+(refresco) Tomas el refresco.
+
+(café) Tomas el café.
+
+(jugo de naranja) Tomas el jugo de naranja.
+
+(agua) Tomas el agua.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST: AND WORDS
+> ; ----------------------------------------------------------------------------
+> ; Synonyms: 'Y', 'LUEGO'.
+> deja agua y refresco
+(agua) Dejas el agua.
+
+(refresco) Dejas el refresco.
+
+> toma agua luego toma refresco
+Tomas el agua.
+
+Tomas el refresco.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST: BUT WORDS
+> ; ----------------------------------------------------------------------------
+> ; Synonyms: 'EXCEPTO'.
+> deja todo excepto jugo
+(diario) Dejas el diario.
+
+(lentes) Dejas los lentes.
+
+(bata de laboratorio) Dejas la bata de laboratorio.
+
+(papelera) Dejas la papelera.
+
+(refresco) Dejas el refresco.
+
+(café) Dejas el café.
+
+(agua) Dejas el agua.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST: THEM WORDS
+> ; ----------------------------------------------------------------------------
+> ; Synonyms: NONE! (TO BE ADDED)
+> ; ----------------------------------------------------------------------------
+> ; TEST: NOISE WORDS
+> ; ----------------------------------------------------------------------------
+> ; Synonyms: 'EL', 'LA', 'LOS', 'LAS' (definite articles).
+> ; ============================================================================
+> ;                         OTHER HARDCODED PLAYER WORDS
+> ; ============================================================================
+> ; Technically speaking, the SYNONYMS being tested here don't belong to the
+> ; Predefined Player Words, but since they are predefined (hardcoded) words in
+> ; the ALAN parser, and we had to provide translated SYNONYMS definitions for
+> ; them, we're including them in this solution file too...
+> ; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> ; NOTE: I'm not sure this is actually the case, for terms like 'IT', 'A', etc.
+> ;       might be just the default fallback values defined on ENTITY for non
+> ;       specified ARTICLES, PRONOUNS, etc. If the Spanish library defines
+> ;       other defined values for ENTITY, these SYNONYMS might actually no
+> ;       longer work. Need to check this!
+> ; ----------------------------------------------------------------------------
+> ; TEST: 'IT' WORDS
+> ; ----------------------------------------------------------------------------
+> ; Synonyms: 'ESO', 'ESOS', 'ESA', 'ESAS', 'ELLO', 'AQUELLO', 'AQUELLA',
+> ;           'AQUELLOS', 'AQUELLAS', 'LO'.
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

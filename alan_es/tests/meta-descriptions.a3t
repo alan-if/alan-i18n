@@ -1,0 +1,162 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una papelera, una tabla de puntuaciones, un refresco, un 
+café, un jugo de naranja y una agua. Anssi Räisänen está caminando
+alrededor del laboratorio.
+
+> ; ****************************************************************************
+> ; *                                                                          *
+> ; *                           DESCRIPTION MESSAGES                           *
+> ; *                                                                          *
+> ; ****************************************************************************
+> ; This solution will elicit in-game description RunTime MESSAGEs...
+> ;
+> ; Some of these have already been covered elsewhere, and others are somehow
+> ; futile since they are so omni-present that they couldn't go by unnoticed;
+> ; but for completeness sake we're covering them too.
+> ; ============================================================================
+> ;                       A C T O R   C O N T A I N E R S
+> ; ============================================================================
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CARRIES' + 'CONTAINS_COMMA' + 'CONTAINS_AND' + 'CONTAINS_END'
+> ; ----------------------------------------------------------------------------
+> ; To show these MESSAGEs we can't use the 'inventario' VERB because it doesn't
+> ; rely on LIST but uses ad hoc loops to list worn and carried items.
+> ; Instead, we'll force a LIST ACTOR statement thanks to a custom VERB we've
+> ; added to this adventure, but we can't use on the HERO because the library
+> ; defines custom CONTAINER HEADER/ELSE for the HERO.
+> list Anssi
+Anssi Räisänen lleva una bata de laboratorio (está puesta), unos lentes 
+(están puestos) y un diario.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'EMPTY_HANDED'
+> ; ----------------------------------------------------------------------------
+> toma bata Y lentes Y diario
+(bata de laboratorio) Tomas la bata de laboratorio.
+
+(lentes) Tomas los lentes.
+
+(diario) Tomas el diario.
+
+> list Anssi
+Anssi Räisänen no lleva nada.
+
+> ; @FIXME: Once we implement proper-names for PERSONAS actors the article won't
+> ;         be show any more!
+> ; ============================================================================
+> ;                      O B J E C T   C O N T A I N E R S
+> ; ============================================================================
+> ; We'll have to use the 'papelera' container on which we've overridden the
+> ; 'examine' VERB with a 'LIST THIS' statement...
+> ; ----------------------------------------------------------------------------
+> ; TEST 'IS_EMPTY'
+> ; ----------------------------------------------------------------------------
+> x papelera
+La papelera no contiene nada.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CONTAINS' + 'CONTAINS_COMMA' + 'CONTAINS_AND' + 'CONTAINS_END'
+> ; ----------------------------------------------------------------------------
+> ; First we need to put some stuff in the bin...
+> pone bata en papelera
+Hecho.
+
+> pone lentes en papelera
+Hecho.
+
+> pone diario en papelera
+Hecho.
+
+> ; Now there are enough objects to cover _COMMA, _AND & _END...
+> x papelera
+La papelera contiene una bata de laboratorio, unos lentes y un diario.
+
+> ; ============================================================================
+> ;                      R O O M   D E S C R I P T I O N S
+> ; ============================================================================
+> ; ----------------------------------------------------------------------------
+> ; TEST 'AGAIN'
+> ; ----------------------------------------------------------------------------
+> ; To elicit the 'AGAIN' we need to enter a room, exit it and re-enter it again
+> ; because it's shown next to the room name only when in "brief mode" (i.e.
+> ; when VISITS has a non-zero value)...
+> n
+Al entrar en la zona de cuarentena la entrada es sellada automáticamente
+por un grueso panel de led que se desliza desde arriba, aislando el mundo
+exterior de los peligrosos fragmentos de código malformados que se
+almacenan en esta área restringida de los Laboratorios ALAN.
+
+Cámara de cuarentena de código
+Esta cámara contiene varios fragmentos de código y objetos de prueba. Hay 
+una llave.
+
+> s
+Al acercarte a la salida, los sensores de la habitación activan la ducha
+de rayos X para descontaminarte de cualquier residuo de código
+defectuoso, antes de abrir la barrera de led y dejarte salir.
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una papelera, una tabla de puntuaciones, un refresco, un 
+café, un jugo de naranja y una agua. Anssi Räisänen está ocupado
+revisando algunos instrumentos de laboratorio.
+
+> n
+Al entrar en la zona de cuarentena la entrada es sellada automáticamente
+por un grueso panel de led que se desliza desde arriba, aislando el mundo
+exterior de los peligrosos fragmentos de código malformados que se
+almacenan en esta área restringida de los Laboratorios ALAN.
+
+Cámara de cuarentena de código (nuevamente)
+Hay una llave.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'SEE_START' + 'SEE_COMMA' + 'SEE_AND' + 'SEE_END'
+> ; ----------------------------------------------------------------------------
+> s
+Al acercarte a la salida, los sensores de la habitación activan la ducha
+de rayos X para descontaminarte de cualquier residuo de código
+defectuoso, antes de abrir la barrera de led y dejarte salir.
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una papelera, una tabla de puntuaciones, un refresco, un 
+café, un jugo de naranja y una agua. Anssi Räisänen te está mirando con
+curiosidad.
+
+> ; A simple LOOK will do. (from "Hay ..." onward)
+> ve
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una papelera, una tabla de puntuaciones, un refresco, un 
+café, un jugo de naranja y una agua. Anssi Räisänen está caminando
+alrededor del laboratorio.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

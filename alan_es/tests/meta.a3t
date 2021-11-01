@@ -1,0 +1,17 @@
+﻿La transcripción ya ha comenzado.
+
+> ; Further invocations are just ignored (they don't start a new transcript):
+> transcripción on
+La transcripción ya ha comenzado.
+
+> scripting on
+La transcripción ya ha comenzado.
+
+> transcript on
+La transcripción ya ha comenzado.
+
+> ; ----------------------------------------------------------------------------
+> ; STOP TRANSCRIPTING || META VERB: 'script_off'
+> ; ----------------------------------------------------------------------------
+> ; The following command will stop writing to the "meta.a3t" transcript:
+> desactivar transcripción

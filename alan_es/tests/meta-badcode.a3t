@@ -1,0 +1,167 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una papelera, una tabla de puntuaciones, un refresco, un 
+café, un jugo de naranja y una agua. Anssi Räisänen está caminando
+alrededor del laboratorio.
+
+> ; ****************************************************************************
+> ; *                                                                          *
+> ; *                         MALFORMED CODE MESSAGES                          *
+> ; *                                                                          *
+> ; ****************************************************************************
+> norte
+Al entrar en la zona de cuarentena la entrada es sellada automáticamente
+por un grueso panel de led que se desliza desde arriba, aislando el mundo
+exterior de los peligrosos fragmentos de código malformados que se
+almacenan en esta área restringida de los Laboratorios ALAN.
+
+Cámara de cuarentena de código
+Esta cámara contiene varios fragmentos de código y objetos de prueba. Hay 
+una llave.
+
+> x código
+Los fragmentos de código son: CONTAINMENT_LOOP, CANT0, CAN_NOT_CONTAIN, 
+CONTAINMENT_LOOP2 y IMPOSSIBLE_WITH.
+
+> x objetos
+Los objetos de prueba son: unos bidones, unas cajas, una caja y un bidón.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CAN_NOT_CONTAIN'
+> ; ----------------------------------------------------------------------------
+> x CAN_NOT_CONTAIN
+Para activar el mensaje de CAN_NOT_CONTAIN intenta poner la llave que se
+encuentra en esta habitación dentro de uno de los objetos de prueba, los
+cuales son contenedores con una cláusula restrictiva de tipo TAKING: solo
+pueden contener otros objetos de prueba.
+
+> ejecuta CAN_NOT_CONTAIN
+Pruébame con: PONE LLAVE EN CAJA
+
+> toma llave
+Tomas la llave.
+
+> ; test m.s
+> pone llave en bidón
+El bidón no puede contener la llave.
+
+> ; test f.s
+> pone llave en caja
+La caja no puede contener la llave.
+
+> ; test m.p
+> pone llave en bidones
+Los bidones no pueden contener la llave.
+
+> ; test f.p
+> pone llave en cajas
+Las cajas no pueden contener la llave.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CANT0'
+> ; ----------------------------------------------------------------------------
+> x CANT0
+Ejecutar este código activará el mensaje de CANT0 porque no hay un verbo
+que coincida con la SYNTAX 'ejecutar' para este objeto.
+
+> ejecuta CANT0
+No se puede.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CONTAINMENT_LOOP'
+> ; ----------------------------------------------------------------------------
+> x CONTAINMENT_LOOP
+Ejecutar este código activará el mensaje de CONTAINMENT_LOOP, al intentar
+insertar un objeto dentro de sí mismo.
+
+> ejecuta CONTAINMENT_LOOP
+Poner a el contenedor designado en sí mismo es imposible.
+
+> ; Let's now test various objects with different GNA:
+> ; test m.s
+> ejecuta CONTAINMENT_LOOP con bidón
+Poner a el bidón en sí mismo es imposible.
+
+> ; test f.s
+> ejecuta CONTAINMENT_LOOP con caja
+Poner a la caja en sí misma es imposible.
+
+> ; test m.p
+> ejecuta CONTAINMENT_LOOP con bidones
+Poner a los bidones en sí mismos es imposible.
+
+> ; test f.p
+> ejecuta CONTAINMENT_LOOP con cajas
+Poner a las cajas en sí mismas es imposible.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CONTAINMENT_LOOP2'
+> ; ----------------------------------------------------------------------------
+> x CONTAINMENT_LOOP2
+Ejecutar este código activará el mensaje de CONTAINMENT_LOOP2, al
+intentar insertar un objeto dentro de otro objeto mientras el primero
+está dentro del segundo.
+
+> ejecuta CONTAINMENT_LOOP2
+Es imposible poner el contenedor designado en el contenedor de destino
+porque el contenedor de destino ya está dentro de el contenedor designado.
+
+> ; Let's now test various objects with different GNA:
+> ; test m.s <-> f.s
+> ejecuta CONTAINMENT_LOOP2 con bidón sobre caja
+Es imposible poner el bidón en la caja porque la caja ya está dentro de el 
+bidón.
+
+> ; test f.s <-> m.p.
+> ejecuta CONTAINMENT_LOOP2 con caja sobre bidones
+Es imposible poner la caja en los bidones porque los bidones ya están 
+dentro de la caja.
+
+> ; test m.p <-> f.s.
+> ejecuta CONTAINMENT_LOOP2 con bidones sobre caja
+Es imposible poner los bidones en la caja porque la caja ya está dentro de 
+los bidones.
+
+> ; test f.p <-> m.s.
+> ejecuta CONTAINMENT_LOOP2 con cajas sobre bidón
+Es imposible poner las cajas en el bidón porque el bidón ya está dentro de 
+las cajas.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'IMPOSSIBLE_WITH'
+> ; ----------------------------------------------------------------------------
+> x IMPOSSIBLE_WITH
+Para probar los mensajes de IMPOSSIBLE_WITH, hemos implementado una
+SYNTAX sin una cláusula WHERE, la cual activará el mensaje cuando se use
+con actores, strings y números (enteros). Pruébame con: IMPOSSIBLE_WITH ME
+
+> IMPOSSIBLE_WITH me
+Eso es imposible con el hero.
+
+> IMPOSSIBLE_WITH 666
+Eso es imposible con 666.
+
+> IMPOSSIBLE_WITH "literal string"
+Eso es imposible con literal string.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

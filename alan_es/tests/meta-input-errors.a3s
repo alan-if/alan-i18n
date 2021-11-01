@@ -1,0 +1,95 @@
+﻿; ****************************************************************************
+; *                                                                          *
+; *                    PROBLEMATIC PLAYER INPUT MESSAGES                     *
+; *                                                                          *
+; ****************************************************************************
+; Testing run-time messages relating to malformed or otherwise problematic
+; player input.
+; For the MESSAGEs definitions, see the "mensajes.i" library module.
+; ----------------------------------------------------------------------------
+; Enable ticker machine to check which input types don't consume a turn:
+presiona el boton
+; ============================================================================
+;                     I N V A L I D   R E F E R E N C E S
+; ============================================================================
+; Problems with parameters or verbs in the player input...
+; ----------------------------------------------------------------------------
+; TEST 'WHAT_WORD': unmatched multi-reference word (ALL, THEM. etc.)
+; ----------------------------------------------------------------------------
+; This needs to be tested before a multi-parameter verb was used successfully,
+; so that 'THEM' is not a valid reference to any previous parameters:
+x THEM
+; @NOTE: Currently the grammar defines all Spanish pronouns as SYNONYMS of IT.
+;        This might changes in future if we decide that the PRONOUN of each
+;        entity should be defined during initialization according to its GNA.
+;        In that case, the above test might need to be revised, and proper
+;        tests for PRONOUNs will have to be added!
+; ----------------------------------------------------------------------------
+; TEST 'UNKNOWN_WORD': word not in the dictionary
+; ----------------------------------------------------------------------------
+; Examine a non-existing object:
+x Xyzzy
+; ----------------------------------------------------------------------------
+; TEST 'NO_SUCH': parameter not in scope
+; ----------------------------------------------------------------------------
+; The object exists but it's not in scope:
+x llave
+; ----------------------------------------------------------------------------
+; TEST 'NOUN': player supplied an adjective without the noun
+; ----------------------------------------------------------------------------
+; Here 'vaso' is an adjective of 'agua':
+x vaso
+x vaso agua
+; ----------------------------------------------------------------------------
+; TEST 'NO_WAY': traversing inexistent Exit
+; ----------------------------------------------------------------------------
+; The exit doesn't exist:
+e
+; ----------------------------------------------------------------------------
+; TEST 'WHAT': input doesn't match any Syntax
+; ----------------------------------------------------------------------------
+; Use existing words but with a wrong syntax (the 'x' syntax doesn't admit
+; a verb):
+x bebe
+; ----------------------------------------------------------------------------
+; TEST 'MULTIPLE': invalid multiple parameters usage
+; ----------------------------------------------------------------------------
+; Use 'all' with a verb that doesn't accept multiple parameters:
+bebe todo
+; ----------------------------------------------------------------------------
+; TEST 'AFTER_BUT': an ALL BUT lacks exclusion criteria
+; ----------------------------------------------------------------------------
+; Use 'ALL BUT' without providing the exclusion criteria:
+toma todo excepto
+; ----------------------------------------------------------------------------
+; TEST 'BUT_ALL': a BUT word not used after ALL word
+; ----------------------------------------------------------------------------
+; 'BUT' not used after 'ALL' word:
+toma agua excepto
+; ----------------------------------------------------------------------------
+; TEST 'NOT_MUCH': a BUT ALL excluding all references
+; ----------------------------------------------------------------------------
+; Use 'BUT ALL' excluding all posible references:
+toma todo excepto agua y refresco y cafe y jugo y papelera y diario y bata y lentes
+; ============================================================================
+;                         D I S A M B I G U A T I O N
+; ============================================================================
+; When a parameter matches multiple instances...
+; ----------------------------------------------------------------------------
+; TEST 'WHICH_START', 'WHICH_COMMA' & 'WHICH_OR'
+; ----------------------------------------------------------------------------
+; All drinks are instances of the 'bebida' class, which defines the commonly
+; inherited 'bebida' NAME, which triggers parser disambiguation:
+bebe bebida
+; ****************************************************************************
+; ********************|  P E N D I N G   M E S S A G E S  |*******************
+; ****************************************************************************
+; @NOTE: These last two RT-Messages can't be currently tested because the
+;        grammar initialization code doesn't (yet) define any PRONOUNs!
+;        See: https://github.com/alan-if/alan-i18n/discussions/51
+; ----------------------------------------------------------------------------
+; TEST 'WHICH_PRONOUN_START': pronoun matching multiple instances
+; ----------------------------------------------------------------------------
+; ----------------------------------------------------------------------------
+; TEST 'WHICH_PRONOUN_FIRST': pronoun matching multiple instances
+; ----------------------------------------------------------------------------

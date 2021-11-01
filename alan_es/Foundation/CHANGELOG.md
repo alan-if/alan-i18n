@@ -13,6 +13,10 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.3.3 \(2021/11/22\)](#v033-20211122)
+        - [Add Transcript Verbs](#add-transcript-verbs)
+        - [Proper-Named Actors](#proper-named-actors)
+        - [Grammar Fixes and Improvements](#grammar-fixes-and-improvements)
     - [v0.3.2 \(2021/11/11\)](#v032-20211111)
         - [Fix Verbs Moving Objects into Containers](#fix-verbs-moving-objects-into-containers)
     - [v0.3.1 \(2021/11/02\)](#v031-20211102)
@@ -41,6 +45,50 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 # Beta Releases
 
 The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] and [Ricardo Osio].
+
+
+## v0.3.3 (2021/11/22)
+
+### Add Transcript Verbs
+
+Added commands to activate and stop saving a transcript of the game to file, so that players using a command line interpreter can access this feature.
+
+- `meta_sesión.i` — added the following META VERBs to control game transcription:
+    + `script0` — prints the correct commands syntax to activate/deactivate transcripts.
+    + `script_on` — starts the transcription via "activar transcripción" or "transcripción on".
+    + `script_off` — stops the transcription via "desactivar transcripción" or "transcripción off".
+
+### Proper-Named Actors
+
+A new `nombre_propio` attribute has been added to handle entities with a proper name (defaults to `Has not`).
+Proper-named entities are given empty strings as their `Definite` and `Indefinite Article` at initialization time, so that no articles are printed when mentioned.
+
+> **&gt;** _x Carlos_
+>
+> No hay nada particular acerca de Carlos.
+
+### Grammar Fixes and Improvements
+
+Spanish grammar module improvements:
+
+- _Predefined Player Words_:
+    + **AND WORDS** — Define 'Y' and 'LUEGO' as a synonyms of 'AND' so that players might use them to concatenate commands or multiple parameters.
+    + **BUT WORDS** — Define 'EXCEPTO' as a synonyms of 'BUT' so that players might use it in conjunction with 'ALL' to exclude some objects.
+
+In `gramática.i`, move `Synonyms` of plural pronouns to a new definition matching 'THEM' instead of 'IT', so that Spanish plural pronouns can be used as **THEM WORDS** — this is a temporary solution until the library initialization code will define the `Pronoun` of each instance, according its GNA (see [Discussion #51]):
+
+```alan
+Synonyms eso, esa, ello, aquello, aquella, lo = it.
+
+Synonyms esos, esas, aquellos, aquellas = them.
+```
+
+Fixed messages translations in various verbs and run-time messages:
+
+- `lanzar.i` — Fix the GNA in `lanzar` VERB.
+- `mensajes.i`:
+    + `CONTAINMENT_LOOP2` — wasn't handling the number of 'estar' verb properly.
+    + `NO_UNDO` and `UNKNOWN_WORD` — Improve translation providing clearer meaning.
 
 
 ## v0.3.2 (2021/11/11)
@@ -328,6 +376,7 @@ The __Foundation Library__ is not going to be just a series of updates to the ol
 <!-- Issues & Discussion -->
 
 [Discussion #14]: https://github.com/alan-if/alan-i18n/discussions/14 "See Discussion #14 — Libraries Version Scheme"
+[Discussion #51]: https://github.com/alan-if/alan-i18n/discussions/51 "See Discussion #51 — THEM WORDS vs PRONOUNs in Italian and Spanish Libs"
 
 <!-- project files and folders -->
 
