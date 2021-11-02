@@ -1,0 +1,25 @@
+﻿; ==============================================================================
+; Feminine Nouns Taking "EL"
+; ==============================================================================
+x hacha
+toma el hacha
+come el hacha
+; Even if player uses feminine article it works:
+x la hacha
+pone la hacha
+; ------------------------------------------------------------------------------
+; Followed by Adjective
+; ------------------------------------------------------------------------------
+; If an adjective follows, the noun retains the "EL" article. We can treat the
+; noun + adj. as a compound noun via MENTIONED.
+x la ancla
+x ancla pesada
+x pesada
+; ==============================================================================
+; Feminine "EL" Nouns Preceded by Adjective
+; ==============================================================================
+; If an adjective (or any other word) precedes this type of noun, then it takes
+; the "LA" article. Treated as a compound noun via MENTIONED.
+x el arpa
+toma la pequeña arpa
+pone la pequena arpa

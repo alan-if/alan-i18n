@@ -1,10 +1,10 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * * V A M P I R O  de Bruce Humphrey * *  v2.1.0 | 2021/10/14 | ALAN 3.0Beta8
+-- * * V A M P I R O  de Bruce Humphrey * *  v2.1.1 | 2021/11/02 | ALAN 3.0Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
---  Vampiro para ALAN Foundation Library Spanish v0.3.0.
+--  Vampiro para ALAN Foundation Library Spanish v0.3.1.
 --
 -- Esta es la versión en ALAN + libreria española de "Memorias de reXXe",
 -- también conocido como "Vampiro". Este código fuente forma parte del
@@ -343,7 +343,7 @@ End the HabEscaleras.
 Synonyms
   escalones, escalon, escalera = escaleras.
 The escalones_escalera IsA Escenario at HabEscaleras
-  Has artículo "la".
+  Has artículo "las".
   Name escaleras.
   Description ""
   Verb Examinar
@@ -860,7 +860,7 @@ Visits 0. -- modo verbose
 
 "$t-Memorias de Rexxe-$n
 (c) 1998 Jaume Alcazo Castellarnau.$n$n
-Esta es la versión 2.1.0, programada en ALAN del juego
+Esta es la versión 2.1.1, programada en ALAN del juego
 ""Vampiro"" original de Aventuras ALCAZO. Para más información
 teclea HISTORIA en el juego.$n$nMuchas gracias por jugar$n$n"
 "$n$n$tDespiertas aturdido. Después de unos segundos te incorporas

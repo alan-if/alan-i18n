@@ -1,17 +1,25 @@
-﻿; tag::x-objects[]
-examina el árbol
+﻿examina el árbol
 examina la fuente
 examina las flores
-; end::x-objects[]
 
-; tag::x-no-article[]
+; tag::basic-no-article[]
 examina árbol
 examina fuente
 examina flores
-; end::x-no-article[]
+; end::basic-no-article[]
 
-; tag::x-any-article[]
+; tag::basic-any-article[]
 x el árbol
 x la árbol
 x los árbol
-; end::x-any-article[]
+; end::basic-any-article[]
+norde
+; tag::fs-el-basic[]
+examina el hacha
+come hacha
+; end::fs-el-basic[]
+; tag::fs-el-adj[]
+examina el arpa
+come la pequeña arpa
+toma arpa
+; end::fs-el-adj[]

@@ -1,6 +1,6 @@
 = Spanish Foundation Library
 Tristano Ajmone <tajmone@gmail.com>
-v0.1, 2021-10-27
+v0.2, 2021-11-02
 :rev_mark: WIP Alpha
 :doctype: book
 include::_inc_attr-header.adoc[]

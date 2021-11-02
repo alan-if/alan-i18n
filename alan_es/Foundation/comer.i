@@ -28,7 +28,7 @@ Syntax
 Add to every object
   Verb comer
     Check obj is comestible
-      else "¡No te puedes comer eso!"
+      else "¡No te puedes comer es" say obj:adj_suf. "!"
     Does
       Locate obj at Limbo.
       -- In case item was being worn:

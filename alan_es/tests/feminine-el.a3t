@@ -1,0 +1,56 @@
+
+
+Plaza Principal
+Hay una hacha, una ancla pesada y una pequeña arpa.
+
+> ; ==============================================================================
+> ; Feminine Nouns Taking "EL"
+> ; ==============================================================================
+> x hacha
+Un hacha muy afilada.
+
+> toma el hacha
+Tomas el hacha.
+
+> come el hacha
+¡No te puedes comer esa!
+
+> ; Even if player uses feminine article it works:
+> x la hacha
+Un hacha muy afilada.
+
+> pone la hacha
+Dejada.
+
+> ; ------------------------------------------------------------------------------
+> ; Followed by Adjective
+> ; ------------------------------------------------------------------------------
+> ; If an adjective follows, the noun retains the "EL" article. We can treat the
+> ; noun + adj. as a compound noun via MENTIONED.
+> x la ancla
+Tienes que poner un sustantivo.
+
+> x ancla pesada
+No hay nada particular acerca de el ancla pesada.
+
+> x pesada
+No hay nada particular acerca de el ancla pesada.
+
+> ; ==============================================================================
+> ; Feminine "EL" Nouns Preceded by Adjective
+> ; ==============================================================================
+> ; If an adjective (or any other word) precedes this type of noun, then it takes
+> ; the "LA" article. Treated as a compound noun via MENTIONED.
+> x el arpa
+No hay nada particular acerca de la pequeña arpa.
+
+> toma la pequeña arpa
+Tomas la pequeña arpa.
+
+> pone la pequena arpa
+Dejada.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

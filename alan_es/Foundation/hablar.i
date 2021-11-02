@@ -118,7 +118,6 @@ Syntax
     And act IsA thing
       else "No puedes hablar con eso."
   hablar_con = hablar con (act) (tema)!.
-  hablar_con = hablar con (act) sobre de (tema)!. -- @DELETE? (See #43)
   hablar_con = hablar (act) (tema)!.
   hablar_con = hablar (act) sobre (tema)!.
 

@@ -242,26 +242,54 @@ E.g. _el agua turbia_, _el hacha pesada_.
 | agua      | _water_     | `object` &rarr; `Is bebible`                |
 | águila    | _eagle_     | `actor` &rarr; animal                       |
 | alba      | _Sunrise_   | `escenario`                                 |
+| álgebra   | _algebra_   | `entity` (abstract)                         |
 | alma      | _soul_      | `entity` (abstract)                         |
+| ancla     | _anchor_    | `object`                                    |
+| arca      | _ark_       | `object`                                    |
+| área      | _area_      | `location`                                  |
 | arma      | _gun_       | `object` &rarr; `Is arma. Is dispararable`  |
+| arpa      | _harp_      | `object`                                    |
+| asta      | _flagpole_  | `object`                                    |
 | aula      | _classroom_ | `location`                                  |
 | ave       | _bird_      | `actor` &rarr; animal                       |
 | hacha     | _axe_       | `object` &rarr; `Is arma. Not dispararable` |
 | hada      | _fairy_     | `actor` &rarr; `hembra`                     |
-
+| hambre    | _hunger_    | `entity` (abstract)                         |
+| asma      | _asthma_    | `entity` (abstract)                         |
 
 - Indefinite articles can be written both in feminine or masculine, but the latter is more common.
 E.g. _un águila_ and _una águila_ are both correct.
 - This DOES NOT apply to plural forms, in this case the article is feminine.
 E.g. _las aguas_, _las armas_, _las hachas_.
 - If an adjective or other words are placed between the noun and the article, the article is feminine.
-E.g. _la pesada hacha_, _la pequeña hada_, _la negra agua_.
+E.g.
+    + la pesada hacha (_the heavy ax_)
+    + la pequeña hada (_the little fairy_)
+    + la negra agua (_the black water_)
+
+Some practical examples for testing purposes, where such feminine nous are _followed_ by an adjective, thus requiring the "el" article
+
+| noun f.s. |   art.  |   adj. after  |     English     |
+|-----------|---------|---------------|-----------------|
+| agua      | el / un | agua helada   | _the icy water_ |
+| hacha     | el / un | hacha afilada | _the sharp axe_ |
+
+
+Some practical examples where such feminine nous are _preceded_ by an adjective, thus requiring the "la" article:
+
+| noun f.s. |   art.   | adj. before  |      English       |
+|-----------|----------|--------------|--------------------|
+| agua      | la / una | negra agua   | _the black water_  |
+| arpa      | la / una | gran arpa    | _the big harp_     |
+| hacha     | la / una | pesada hacha | _the heavy ax_     |
+| hada      | la / una | pequeña hada | _the little fairy_ |
 
 For more info, see:
 
 - [Spanish words that start with stressed A and HA]
 - [Diccionario panhispánico de dudas » el]
 - [The Enigmatic Morphology of Spanish _azúcar_ and the "New Feminine _el_"]
+- [Example list of feminine words that take article "el" not "la"]
 
 
 -------------------------------------------------------------------------------
@@ -280,6 +308,7 @@ For more info, see:
 [Spanish words that start with stressed A and HA]: https://www.spanishschoolvalencia.com/spanish-words-that-start-with-stressed-a-and-ha/
 [Diccionario panhispánico de dudas » el]: https://www.rae.es/dpd/el
 [The Enigmatic Morphology of Spanish _azúcar_ and the "New Feminine _el_"]: https://www.degruyter.com/document/doi/10.1515/ibero-2014-0027/html
+[Example list of feminine words that take article "el" not "la"]: https://spanish.kwiziq.com/learn/theme/748708
 
 <!-- Wiki -->
 

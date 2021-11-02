@@ -1,0 +1,58 @@
+﻿-- "feminine-el.alan" | Spanish Foundation Library Test Suite
+--==============================================================================
+-- * * * *   T E S T   F E M I N I N E   N O U N S  W I T H   " E L "    * * * *
+--==============================================================================
+-- by Tristano Ajmone, 2021.
+--------------------------------------------------------------------------------
+
+Import 'Library.i'.
+
+The plaza IsA location
+  Name 'Plaza Principal'.
+End the.
+
+-- =============================================================================
+-- Feminine Nouns Taking "EL"
+-- =============================================================================
+
+-- "el hacha" (the hax)
+The hacha IsA object at plaza.
+  Is femenina.
+  Has xDesc "Un hacha muy afilada.".
+End the.
+
+--------------------------------------------------------------------------------
+-- Followed by Adjective
+--------------------------------------------------------------------------------
+
+-- If this type of feminine noun is followed by an adjective, it retains
+-- the "EL" article. We can choose to treat the noun and its adjective as a
+-- compound via the MENTIONED clause.
+
+-- "el ancla" (the anchor)
+The ancla IsA object at plaza.
+  Is femenina.
+  Mentioned "ancla pesada"
+  Name pesada.
+  Name ancla pesada.
+End the.
+
+-- =============================================================================
+-- "EL" Dropped Due to Preceding Adjective
+-- =============================================================================
+
+-- If a feminine noun that requires the "EL" article is preceded by an adjective
+-- then the "LA" article is used instead, in accordance with the adjective.
+-- Therefore, in this case we need to ensure that the noun is always MENTIONED
+-- with its adjective, and treat it as a masculine "compound noun" of sorts.
+
+The arpa IsA object at plaza.
+  Has artículo "la".
+  Mentioned "pequeña arpa"
+  Name pequeña arpa.
+  Name pequena arpa.
+End the.
+
+--------------------------------------------------------------------------------
+
+Start at plaza.

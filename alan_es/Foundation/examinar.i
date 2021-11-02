@@ -131,7 +131,7 @@ Syntax
     And obj IsA container
       else "No puedes mirar dentro de" say the obj. "."
   mirar_en = mirar dentro (obj).
-  mirar_en = mirar dentro de (obj). -- @DELETE? (See #43)
+  mirar_en = mirar dentro de (obj). -- @CHECK: Is it working? (See #43)
   mirar_en = mirar (obj).
 
 Add to every object
@@ -152,7 +152,7 @@ Syntax
       else "¡No puedes buscar en eso!"
   buscar = buscar en (obj).
   buscar = buscar dentro (obj).
-  buscar = buscar dentro de (obj). -- @DELETE? (See #43)
+  buscar = buscar dentro de (obj). -- @CHECK: Is it working? (See #43)
 
 Add to every object
   Verb buscar

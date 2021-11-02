@@ -13,6 +13,8 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.3.1 \(2021/11/02\)](#v031-20211102)
+        - [Support Feminine Nouns Taking "EL" Article](#support-feminine-nouns-taking-el-article)
     - [v0.3.0 \(2021/10/14\)](#v030-20211014)
         - [New Grammar Module](#new-grammar-module)
         - [Library Code Optimizations](#library-code-optimizations)
@@ -37,6 +39,39 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 # Beta Releases
 
 The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] and [Ricardo Osio].
+
+
+## v0.3.1 (2021/11/02)
+
+### Support Feminine Nouns Taking "EL" Article
+
+In the Spanish language there are some feminine singular words which need to take the masculine "EL" article. Now the grammar initialization module can handle these special exceptions by checking if a noun with `artículo "el"` is also set to `Is femenina`, in which case it will use masculine articles but feminine suffixes for the grammar attributes (`verb_suf` and `adj_suf`), since these nouns _are_ feminine in all respects, but take the "EL" article for phonetic reasons.
+
+Example:
+
+```alan
+The hacha IsA object at plaza.
+  Is femenina.
+End the.
+```
+
+Because all objects default to `artículo "el"`, the initialization code will detect the `hacha` object as a feminine noun requiring "EL" article.
+
+Since these special case nouns drop the "EL" article when preceded by an adjective (which will also be feminine, since the noun _is_ feminine), authors can handle this by treating the noun and is adjective as a "compound noun" of sorts, via MENTIONED, and enforce the feminine "AL" article instead:
+
+```alan
+The arpa IsA object at plaza.
+  Has artículo "la".
+  Mentioned "pequeña arpa"
+  Name pequeña arpa.
+  Name pequena arpa.
+End the.
+```
+
+- Tweaked the `gramática.i` module to handle feminine singular nouns that take the masculine "EL" article, via additional checks for objects with `artículo "el"` which might be set to `Is femenina`.
+- Removed some linguistically incorrect alternative syntaxes with 'DE':
+    + `hablar.i` — `hablar_con` (`hablar con (act) sobre de (tema)!`)
+    + `poner.i` — `poner_sobre` (`poner (obj1) sobre de (obj2)`)
 
 
 ## v0.3.0 (2021/10/14)

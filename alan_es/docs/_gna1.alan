@@ -1,7 +1,11 @@
-﻿Import 'Library.i'. -- <1>
+﻿-- tag::basic[]
+Import 'Library.i'. -- <1>
 
 The plaza IsA location
   Name 'Plaza Principal'.
+-- tag::ignore[]
+  Exit norde to museo.
+-- end::ignore[]
 End the.
 
 The árbol IsA object at plaza. -- <2>
@@ -14,5 +18,28 @@ End the.
 The flores IsA object at plaza.
   Has artículo "las".
 End the.
+-- tag::ignore[]
+
+The museo IsA location
+  Name 'Museo de Historia'.
+End the.
+
+-- end::ignore[]
+-- tag::hacha[]
+The hacha IsA object at museo.
+  Is femenina.
+End the.
+-- end::hacha[]
+-- tag::arpa[]
+The arpa IsA object at museo.
+  Has artículo "la".
+  Mentioned "pequeña arpa" -- <1>
+  Name pequeña arpa. -- <2>
+  Name pequena arpa. -- <3>
+  Has xDesc "Un arpa muy pequeña.". -- <4>
+End the.
+-- end::arpa[]
 
 Start at plaza.
+-- end::basic[]
+

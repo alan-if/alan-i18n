@@ -27,11 +27,15 @@ Add to every entity  -- 'thing' en pALANte!
   ---------------
     Depending on artículo of this
       = "el" then
-        -- @TODO: Handle feminine "el" nouns!
-        Make this not femenina.
         Make this not plural.
         Set this:verb_suf to "".
-        Set this:adj_suf to "$$o".
+        -- Handle feminine "el" nouns:
+        If this is femenina
+          then
+            Set this:adj_suf to "$$a".
+          else
+            Set this:adj_suf to "$$o".
+        end if.
       = "la" then
         Make this femenina.
         Make this not plural.
@@ -54,7 +58,7 @@ Add to every entity  -- 'thing' en pALANte!
   --------------------
     -- @TODO: Handle entities with proper name!
     Depending on artículo of this
-      = "el"   then  "el"    --> m.s
+      = "el"   then  "el"    --> m.s / f.s
       = "la"   then  "la"    --> f.s
       = "los"  then  "los"   --> m.p
       = "las"  then  "las"   --> f.p
@@ -65,7 +69,11 @@ Add to every entity  -- 'thing' en pALANte!
   ----------------------
     -- @TODO: Handle entities with proper name!
     Depending on artículo of this
-      = "el"   then  "un"    --> m.s
+      = "el"   then -- Handle feminine "el" nouns:
+        If this is femenina
+          then "una"         --> f.s
+          else "un"          --> m.s
+        end if.
       = "la"   then  "una"   --> f.s
       = "los"  then  "unos"  --> m.p
       = "las"  then  "unas"  --> f.p

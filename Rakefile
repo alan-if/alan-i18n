@@ -101,7 +101,7 @@ namespace "lib" do
     ###################
     desc "Spanish documentation"
     task :docs
-    ES_ADOC_DEPS = LIB_ES_SOURCES + FileList['alan_es/docs/*.adoc']
+    ES_ADOC_DEPS = LIB_ES_SOURCES + FileList['alan_es/docs/*.adoc', 'alan_es/docs/*.alan', 'alan_es/docs/*.a3s']
     CreateADocTranscriptingTasksFromFolder(:docs,'alan_es/docs', LIB_ES_SOURCES)
     CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_es/docs', ES_ADOC_DEPS)
   end # lib:es:
