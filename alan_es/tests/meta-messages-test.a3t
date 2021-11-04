@@ -15,33 +15,42 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
-tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
-. 
-
-TICK... (turno Nro 1 )
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
 
 > look
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
-tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
-. 
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
 
-TICK... (turno Nro 2 )
+> x boton
+It's a really big and menacing red button. Above the button there's a
+sign.
+
+> x cartel
+The sign reads "Press button to toggle the ticker machine on/off".
 
 > ; =========================================================================
 > ;                                 TICKER
 > ; =========================================================================
 > ; The ticker Event will help us check if META VERBs are behaving as
 > ; expected: if the counter ticks, a turn has been consumed.
+> presiona el boton
+As you press the button you ear a humming sound coming from the wall, as
+if a hidden machine came to life. 
+
+TICK... (turno Nro 1 )
+
 > ; --------------
 > ; EMPTY COMMANDS
 > ; --------------
 > ; Empty commands should consume a turn:
 > 
 
-TICK... (turno Nro 3 )
+TICK... (turno Nro 2 )
 
 > ; But an input containing only a comment is not considered an empty command
 > ; and it's ignored by ARun.
@@ -52,7 +61,7 @@ TICK... (turno Nro 3 )
 > toma tabla
 ¡No puedes tomar la tabla de puntuaciones! 
 
-TICK... (turno Nro 4 )
+TICK... (turno Nro 3 )
 
 > e
 No puedes ir por ahí.
@@ -94,37 +103,37 @@ Has logrado 0 puntos de un total de 207.
 > x tabla
 La tabla de puntuaciones muestra 0 puntos. 
 
-TICK... (turno Nro 5 )
+TICK... (turno Nro 4 )
 
 > x refresco
 Un refresco de cola. Probablemente delicioso, pero con mucha azúcar. 
 
-TICK... (turno Nro 6 )
+TICK... (turno Nro 5 )
 
 > bebe refresco
 Te bebes el refresco. 
 
-TICK... (turno Nro 7 )
+TICK... (turno Nro 6 )
 
 > x tabla
 La tabla de puntuaciones muestra 1 punto. 
 
-TICK... (turno Nro 8 )
+TICK... (turno Nro 7 )
 
 > bebe cafe
 Te bebes el café. 
 
-TICK... (turno Nro 9 )
+TICK... (turno Nro 8 )
 
 > x jugo
 Un refrescante jugo de naranja. ¡La vitamina C es muy beneficiosa! 
 
-TICK... (turno Nro 10 )
+TICK... (turno Nro 9 )
 
 > bebe jugo
 Te bebes el jugo de naranja. 
 
-TICK... (turno Nro 11 )
+TICK... (turno Nro 10 )
 
 > score
 Has logrado 7 puntos de un total de 207.
@@ -132,12 +141,12 @@ Has logrado 7 puntos de un total de 207.
 > bebe agua
 Te bebes el agua. 
 
-TICK... (turno Nro 12 )
+TICK... (turno Nro 11 )
 
 > x tabla
 La tabla de puntuaciones muestra 207 puntos. 
 
-TICK... (turno Nro 13 )
+TICK... (turno Nro 12 )
 
 > ; =========================================================================
 > ; TEST TRANSCRIPT
@@ -159,9 +168,9 @@ Hecho.
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
-tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
-.
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
 
 > ; The score should be 0.
 > score
@@ -171,22 +180,22 @@ Has logrado 0 puntos de un total de 207.
 > x jugo
 Un refrescante jugo de naranja. ¡La vitamina C es muy beneficiosa! 
 
-TICK... (turno Nro 5 )
+TICK... (turno Nro 4 )
 
 > x agua
 Un vaso de agua increíblemente saludable. 
 
-TICK... (turno Nro 6 )
+TICK... (turno Nro 5 )
 
 > x refresco
 Un refresco de cola. Probablemente delicioso, pero con mucha azúcar. 
 
-TICK... (turno Nro 7 )
+TICK... (turno Nro 6 )
 
 > x cafe
 Un poco de café caliente. Te vendría bien para esa cara de sueño... 
 
-TICK... (turno Nro 8 )
+TICK... (turno Nro 7 )
 
 > ; =========================================================================
 > ; TEST EXAMINING A CLASS
@@ -197,7 +206,7 @@ La palabra "bebida" no es relevante.
 > bebe agua
 Te bebes el agua. 
 
-TICK... (turno Nro 9 )
+TICK... (turno Nro 8 )
 
 > score
 Has logrado 200 puntos de un total de 207.
@@ -214,10 +223,11 @@ Has logrado 200 puntos de un total de 207.
 > look
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
-tabla de puntuaciones, un refresco, un café y un jugo de naranja. 
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café y un jugo de naranja. 
 
-TICK... (turno Nro 10 )
+TICK... (turno Nro 9 )
 
 > ; Does not restart (good).
 > x agua
@@ -280,9 +290,9 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). Hay una 
-tabla de puntuaciones, un refresco, un café, un jugo de naranja y una agua
-.
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
 
 > ; -------------------------------------------------------------------------
 > ; QUIT + UNDO

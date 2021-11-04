@@ -2,41 +2,48 @@
 --   META MESSAGES TEST by Ricardo Osio (2021)
 -- ***********************************************
 
--- This adventure tests Spanish run-time MESSAGEs and META VERBs.
--- It's mostly based on "meta-verbs" tests from the ALAN Standard Library.
--- Some features from the StdLib are not included in the Foundation Library,
--- therefore not all tests are implemented here.
+-- This adventure is for testing "meta" stuff:
+
+--  * Spanish run-time MESSAGEs, to check they are translated properly and use
+--    correct GNA references.
+--  * META VERBs, to ensure they are not consuming turns.
+--  * Turn consumptions in general, to check how ARun handles player input which
+--    is malformed, ambiguous or not understood for other reasons.
+
+-- Turn consumption is tracked via a "ticker machine" that can be turned ON/OFF
+-- by pressing a red button. When the ticker is on, it will tick at every turn
+-- and display a counter of the turns that have elapsed since its activation
+-- (the counter is reset when the ticker is stopped).
+
+-- We've added the activation button since we don't want to ticker to be always
+-- running, because in some test we'll be only checking that the run-time
+-- messages are translated and rendered properly, so having the ticker ON all
+-- the time would clutter the transcript unnecessarily.
+
+-- This test adventure is mostly based on the "meta-verbs" tests from the ALAN
+-- Standard Library. Some features from the StdLib are not included in the
+-- Foundation Library, therefore not all the original tests are implemented
+-- here.
+
 -- =============================================================================
 
 Import 'Library.i'.
-
 
 -- =============================================================================
 --                               L O C A T I O N S
 -- =============================================================================
 
--- *****************************************************************************
--- Due to the 'DEFINITION_BLOCK' class not being defined in the Spanish
--- Library, "my_game" has been defined as a Location, and all other locations
--- are located into it. The "cnt" attribute is used for the "ticker" event.
--- *****************************************************************************
-
-The my_game IsA location
-  Has cnt 1.
-End The.
-
 -- ---------------
 -- Sala de Pruebas
 -- ---------------
 
-The salaDePrueba IsA location at my_game
+The salaDePrueba IsA location
   Name 'Sala de pruebas'
   Description
     "Aquí se prueban diversos aspectos del lenguaje ALAN,
      gracias a tecnología de punta y sujetos de prueba
      extremadamente competentes (como tú)."
 End The.
-
 
 -- =============================================================================
 --                                   S C O R E
@@ -51,7 +58,6 @@ The tablaDePuntos IsA object at salaDePrueba
   Name tabla
   Is Not tomable.
   Is Not empujable.
-
   Verb examinar
     Does Only "La tabla de puntuaciones muestra" Say score.
       If score = 1 Then
@@ -61,7 +67,6 @@ The tablaDePuntos IsA object at salaDePrueba
       End If.
   End Verb examinar.
 End The.
-
 
 -- =============================================================================
 --                                  D R I N K S
@@ -120,24 +125,116 @@ The agua IsA bebida at salaDePrueba
   End Verb.
 End The.
 
-
-
 -- =============================================================================
---                                  T I C K E R
+--                      T H E   T I C K E R   M A C H I N E
 -- =============================================================================
+
+-- We need a ticker to track that META VERBs are not consuming a turn.
+
+-- So we implement a "tricker machine" that can be activated and stopped by
+-- pressing a red button, and will start ticking in the background at every
+-- turn, letting us know when a turn was consumed (EVENTs are only executed
+-- during consumed game turns, not when executing META VERBS).
+
+-- The ticker counter is implemented via the 'cnt' attribute on the button.
+-- Pressing the button when the ticker is active will stop the ticker and reset
+-- the ticks counter.
+
+--------------------------------------------------------------------------------
+-- V E R B  " P R E S S "
+--------------------------------------------------------------------------------
+
+-- @CHECK: @Rich15 please confirm if this is correct (if yes, delete this line):
+
+-- We need a dedicated verb for pressing the button, since the "empujar" verb
+-- for "pushing" things is not used for pressing buttons in Spanish
+-- (unlike English, were we can say "push the button").
+
+Add to every thing
+  Is not presionable. -- i.e. not pressable.
+End add to thing.
+
+Synonyms -- @CHECK: @Rich15 please look is these syntaxes are OK!
+  presiona, presione, pulsa,  pulse, pulsar =  presionar.
+
+Syntax
+  presionar =  presionar (obj)
+    Where obj IsA object
+      else "You can only press objects!" -- @TRANSLATE!
+
+Add to every object
+  Verb presionar
+    Check obj is empujable
+      else "No puedes presionar $+1."
+    Does
+      "You press $+1, but nothing happens." -- @TRANSLATE!
+  End verb.
+End add to.
+
+--------------------------------------------------------------------------------
+-- T I C K E R   B U T T O N
+--------------------------------------------------------------------------------
+
+The botón IsA object at salaDePrueba
+  Name botón. Name boton.
+  Name botón rojo. Name boton rojo.
+  Is presionable.
+  Is not tomable.
+  Is not active. -- i.e. the ticker machine state.
+  Has cnt 0. -- The ticks counter.
+  Description "A red button is bolted in the wall." -- @TRANSLATE!
+  Has xDesc "It's a really big and menacing red button.
+             Above the button there's a sign.". -- @TRANSLATE!
+
+  Verb presionar
+    Does only
+      "As you press the button" -- @TRANSLATE!
+      If this is not active
+        then
+          "you ear a humming sound coming from the wall,
+           as if a hidden machine came to life." -- @TRANSLATE!
+          Schedule ticker at hero after 0.
+          Set this:cnt to 0. -- reset counter.
+          Make this active.
+        else -- @TRANSLATE:
+          "the ticker machine stops and the humming from the walls ceases."
+          Cancel ticker.
+          Make this not active.
+      End if.
+  End verb.
+End The.
+
+------------------------
+-- B U T T O N   S I G N
+------------------------
+
+-- @TODO: Once we fix scenery in the English and Spanish libraries, the 'cartel'
+--        should be made into a scenery (probably will be an attribute by then,
+--        not a class any longer).
+
+The cartel IsA object at salaDePrueba
+  Is not tomable.
+  Is leible. -- @TODO: Implement reading (need to check if EN lib uses xDesc)
+  Description "" -- Don't mention it in room descriptions!
+  Has xDesc "The sign reads ""Press button to toggle the
+             ticker machine on/off"".". -- @TRANSLATE!
+End The.
+
+--------------------------------------------------------------------------------
+-- T I C K E R   E V E N T
+--------------------------------------------------------------------------------
 
 -- This event will let us know when a turn has been consumed.
 
 Event ticker
-  "$pTICK... (turno Nro" Say my_game:cnt. ")"
-  Increase cnt Of my_game.
-  Schedule ticker At hero After 1.
+  Increase botón:cnt.
+  "$pTICK... (turno Nro" say botón:cnt. ")"
+  Schedule ticker at hero after 1.
 End Event.
 
 --------------------------------------------------------------------------------
 
 Start at salaDePrueba.
-Schedule ticker at hero after 0.
 
  "Estás en la Sala de pruebas.
   Aquí se verifica que todo vaya bien con los juegos de ALAN.

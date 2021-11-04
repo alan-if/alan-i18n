@@ -1,9 +1,12 @@
 ﻿look
+x boton
+x cartel
 ; =========================================================================
 ;                                 TICKER
 ; =========================================================================
 ; The ticker Event will help us check if META VERBs are behaving as
 ; expected: if the counter ticks, a turn has been consumed.
+presiona el boton
 ; --------------
 ; EMPTY COMMANDS
 ; --------------
