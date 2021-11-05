@@ -341,7 +341,7 @@ un café, un jugo de naranja y una agua.
 
 ¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
 salir (quit)? undo
-Acción revertida.
+Acción 'quit' revertida.
 
 > ; -------------------------------------------------------------------------
 > ; QUIT + RESTORE

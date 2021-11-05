@@ -10,6 +10,11 @@ This folder contains the test suite to check the integrity of the **Spanish Foun
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [About](#about)
+- [Special Files](#special-files)
+- [Special Tests](#special-tests)
+    - [Meta Tests](#meta-tests)
+        - [MESSAGEs Table](#messages-table)
+        - [Untested MESSAGEs](#untested-messages)
 - [Test Objects](#test-objects)
     - [Actors](#actors)
         - [Actors Unnamed](#actors-unnamed)
@@ -45,6 +50,100 @@ Since the tests need to be accessible to repository maintainers who don't speak 
 
 Providing English annotations and file names helps the [Alan IF Development team] to easily understand the context of each test, in case a bug in the ALAN language is revealed by one of these tests, or to be able to amend the library sources if changes to the ALAN language demand it, or update the Spanish library when no native Spanish speaker is available.
 
+# Special Files
+
+The following special test files should not be deleted or otherwise tampered with:
+
+- `meta-session-different-adventure.sav`
+- `meta-session-different-arun.sav`
+
+
+# Special Tests
+
+Most test files are intuitive enough not to require further commenting.
+In the following section are some notes regarding tests that deserve some explanations.
+
+## Meta Tests
+
+Meta tests handle testing [Run-Time MESSAGEs] and [META VERBs], checking that their messages are translated correctly, use proper GNA references, and that META VERBs don't consume a turn.
+
+These are probably the trickier tests in the whole test suite, because eliciting all the various Run-Time MESSAGEs is not always easy.
+
+> **WARNING** — Don't edit the meta tests files unless strictly necessary, and provided you know what you're doing.
+> Before and after editing them, ensure that all the tests are working as intended (the exact order of each test is fundamental; introducing new commands or modifying the solution files could jeopardize other tests), and that you update this README file accordingly, if required.
+
+The following files handle meta testing:
+
+- `meta.alan` — source adventure for all meta-tests:
+    + `meta-session.a3s` — Tests game session related verbs and run-time messages:
+        * [`meta-session.a3t`][meta-session.a3t] — Generated test-transcript.
+        * `meta-session.sav` (_untracked_) — Save file created from the solution file.
+        * `meta-session-different-adventure.sav` (_tracked_) — A saved `adventV3.a3c` game session, to test the `SAVE_NAME ` run-time MESSAGE (don't delete or overwrite it!).
+        * `meta-session-different-arun.sav` (_tracked_) — A `meta.a3c` game session saved using ARun Beta7, to test the `SAVE_VERSION` run-time MESSAGE (don't delete or overwrite it!).
+
+### MESSAGEs Table
+
+The following table lists all the [Run-Time MESSAGEs], their testing status, and in which files they are being tested (see next section for untested messages).
+
+
+|       RT Message      |  status |     test file      |
+|-----------------------|---------|--------------------|
+| `AFTER_BUT`           | --      | TBD                |
+| `AGAIN`               | --      | TBD                |
+| `BUT_ALL`             | --      | TBD                |
+| `CAN_NOT_CONTAIN`     | --      | TBD                |
+| `CANT0`               | --      | TBD                |
+| `CARRIES`             | --      | TBD                |
+| `CONTAINMENT_LOOP2`   | --      | TBD                |
+| `CONTAINMENT_LOOP`    | --      | TBD                |
+| `CONTAINS_AND`        | --      | TBD                |
+| `CONTAINS_COMMA`      | --      | TBD                |
+| `CONTAINS_END`        | --      | TBD                |
+| `CONTAINS`            | --      | TBD                |
+| `EMPTY_HANDED`        | --      | TBD                |
+| `HAVE_SCORED`         | --      | TBD                |
+| `IMPOSSIBLE_WITH`     | --      | TBD                |
+| `IS_EMPTY`            | --      | TBD                |
+| `MORE`                | --      | TBD                |
+| `MULTIPLE`            | --      | TBD                |
+| `NO_SUCH`             | --      | TBD                |
+| `NO_UNDO`             | &check; | [meta-session.a3t] |
+| `NO_WAY`              | --      | TBD                |
+| `NOT_A_SAVEFILE`      | &check; | [meta-session.a3t] |
+| `NOT_MUCH`            | --      | TBD                |
+| `NOUN`                | --      | TBD                |
+| `QUIT_ACTION`         | &check; | [meta-session.a3t] |
+| `REALLY`              | &check; | [meta-session.a3t] |
+| `RESTORE_FROM`        | &check; | [meta-session.a3t] |
+| `SAVE_FAILED`         | &check; | [meta-session.a3t] |
+| `SAVE_MISSING`        | &check; | [meta-session.a3t] |
+| `SAVE_NAME`           | &check; | [meta-session.a3t] |
+| `SAVE_OVERWRITE`      | &cross; | [meta-session.a3t] |
+| `SAVE_VERSION`        | &check; | [meta-session.a3t] |
+| `SAVE_WHERE`          | &check; | [meta-session.a3t] |
+| `SEE_AND`             | --      | TBD                |
+| `SEE_END`             | --      | TBD                |
+| `SEE_START`           | --      | TBD                |
+| `UNDONE`              | &check; | [meta-session.a3t] |
+| `UNKNOWN_WORD`        | --      | TBD                |
+| `WHAT_WORD`           | --      | TBD                |
+| `WHAT`                | --      | TBD                |
+| `WHICH_COMMA`         | --      | TBD                |
+| `WHICH_OR`            | --      | TBD                |
+| `WHICH_PRONOUN_FIRST` | --      | TBD                |
+| `WHICH_PRONOUN_START` | --      | TBD                |
+| `WHICH_START`         | --      | TBD                |
+
+
+### Untested MESSAGEs
+
+We weren't able to test the following MESSAGEs:
+
+- `SAVE_OVERWRITE` —
+Couldn't manage to get ARun ask for confirmation before overwriting an existing save file.
+It does if you play in the terminal, but for some reason it doesn't work in the automated workflow.
+I thought it might be due to the filesystem cache not being flushed, but trying to overwrite a different save-file failed too (i.e. one saved from without the current session).
+No idea how to fix this, yet.
 
 # Test Objects
 
@@ -62,7 +161,7 @@ Special uses cases are annotated via footnotes for each table.
 
 ## Actors
 
-Various NPC actors for testing proper named (TBD!) and unnamed actors.
+Various NPC actors for testing proper named (TBD) and unnamed actors.
 
 ### Actors Unnamed
 
@@ -315,13 +414,20 @@ For more info, see:
 [ALAN i18n Wiki]: https://github.com/alan-if/alan-i18n/wiki/
 [Test Suites]: https://github.com/alan-if/alan-i18n/wiki/Test-Suites
 
+<!-- ALAN Manual -->
+
+[META VERBs]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#_meta_verbs "See ALAN Manual » META VERBs"
+[Run-Time MESSAGEs]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#_run_time_messages "See ALAN Manual » App. C: Run-Time Messages"
+
+<!-- project files -->
+
+[meta-session.a3t]: ./meta-session.a3t "View test transcript"
+
 <!-- people and organizations -->
 
 [Alan IF Development team]: https://github.com/alan-if "Visit the Alan Interactive Fiction Development team organization on GitHub"
 
 [Ricardo Osio]: https://github.com/Rich15 "View Ricardo Osio's GitHub profile"
 [Tristano Ajmone]: https://github.com/tajmone "View Tristano Ajmone's GitHub profile"
-
-
 
 <!-- EOF -->

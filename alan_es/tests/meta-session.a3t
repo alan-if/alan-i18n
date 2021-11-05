@@ -1,0 +1,269 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
+
+> ; ****************************************************************************
+> ; *                                                                          *
+> ; *                     GAME SESSION COMMANDS & MESSAGES                     *
+> ; *                                                                          *
+> ; ****************************************************************************
+> ; Testing all meta-verbs and run-time messages relating to game session.
+> ; For the VERBs definitions, see the "meta_sesión.i" library module.
+> ; For the MESSAGEs definitions, see the "mensajes.i" library module.
+> ; NOTE: Save and restore commands will always show in parenthesis the last
+> ;       filename used with these commands, even if the operation failed.
+> ;       The first time a save command is used, ARun will propose a save file
+> ;       with the same base name as the adventure.
+> ; ----------------------------------------------------------------------------
+> ; Enable ticker machine to check that session meta verbs don't consume a turn:
+> presiona el boton
+As you press the button you ear a humming sound coming from the wall, as
+if a hidden machine came to life. 
+
+TICK... (turno Nro 1 )
+
+> ; ============================================================================
+> ; UNDOING || META VERB: *none* (hardwired?)
+> ; ============================================================================
+> ; @CHECK: The Spanish library doesn't implement an UNDO verb; it looks like
+> ;         the UNDO command is hardwired into ALAN. In any case, it's not
+> ;         consuming a turn.
+> ; ----------------------------------------------------------------------------
+> ; TEST 'UNDONE': successful undoing message
+> ; ----------------------------------------------------------------------------
+> ; Let's undo the first action:
+> undo
+Acción 'presiona el boton' revertida.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NO_UNDO': failed undoing message
+> ; ----------------------------------------------------------------------------
+> ; Nothing else to undo:
+> undo
+No se puede revertir ahora.
+
+> ; ============================================================================
+> ; SAVING THE GAME || META VERB: 'save'
+> ; ============================================================================
+> ; TEST 'SAVE_WHERE': provide file name to save
+> ; ----------------------------------------------------------------------------
+> guardar
+Nombre de archivo para guardar (meta.sav) : meta-session.sav
+¡Perfecto!.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'SAVE_OVERWRITE': confirm overwriting an existing save file
+> ; ----------------------------------------------------------------------------
+> ; @ERROR! Couldn't manage to get ARun ask for confirmation before overwriting!
+> ;         It does if you play in the terminal, but for some reason it doesn't
+> ;         work in the automated workflow. I thought it might be due to the
+> ;         filesystem cache not being flushed, but even trying to overwrite a
+> ;         different save-file (i.e. saved from without the current session)
+> ;         failed. No idea how to fix this, yet. Suggestions?
+> guardar
+Nombre de archivo para guardar (meta-session.sav) : meta-session.sav
+¡Perfecto!.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'SAVE_FAILED ': error saving file
+> ; ----------------------------------------------------------------------------
+> ; The filename "bad*name.sav" is invalid in all OSs supported by ALAN.
+> guardar
+Nombre de archivo para guardar (meta-session.sav) : bad*name.sav
+Lo siento, no pude guardar la partida.
+
+> ; ============================================================================
+> ; RESTORING THE GAME || META VERB: 'restore'
+> ; ============================================================================
+> ; Let's drink the coffee and restart...
+> examina cafe
+Un poco de café caliente. Te vendría bien para esa cara de sueño...
+
+> bebe cafe
+Te bebes el café.
+
+> examina cafe
+No hay cafe aquí.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'RESTORE_FROM': provide file name to restore
+> ; ----------------------------------------------------------------------------
+> restaura
+Nombre del archivo para cargar (bad*name.sav) : meta-session.sav
+Hecho.
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
+
+> ; now the coffee should be back:
+> examina cafe
+Un poco de café caliente. Te vendría bien para esa cara de sueño...
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'SAVE_MISSING': restore a non-existing file
+> ; ----------------------------------------------------------------------------
+> restaura
+Nombre del archivo para cargar (meta-session.sav) : non-existing-file.sav
+Lo siento, no puedo abrir ese archivo.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NOT_A_SAVEFILE': restore a file which is not a saved game
+> ; ----------------------------------------------------------------------------
+> restaura
+Nombre del archivo para cargar (meta-session.sav) : meta.ifid
+Ese archivo no parece ser una partida guardada.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'SAVE_VERSION': restore a save file from a different ARun version
+> ; ----------------------------------------------------------------------------
+> ; File "meta-session-different-arun.sav" was saved using ARun 3.0Beta7:
+> restaura
+Nombre del archivo para cargar (meta.ifid) : meta-session-different-arun.sav
+Lo siento, el archivo fue creado por otra versión de Alan.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'SAVE_NAME ': restore a save file from a different adventure
+> ; ----------------------------------------------------------------------------
+> ; File "meta-session-different-adventure.sav" was saved from "adventV3.a3c":
+> restaura
+Nombre del archivo para cargar (meta-session-different-arun.sav) : meta-session-different-adventure.sav
+Lo siento, el archivo no es de esta aventura.
+
+> ; ============================================================================
+> ; RESTART THE GAME || META VERB: 'restart'
+> ; ============================================================================
+> ; Let's drink the coffee and restart...
+> examina cafe
+Un poco de café caliente. Te vendría bien para esa cara de sueño...
+
+> bebe cafe
+Te bebes el café.
+
+> examina cafe
+No hay cafe aquí.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'REALLY': confirmation prompt
+> ; ----------------------------------------------------------------------------
+> restart
+
+¿Estás seguro (presiona ENTER para confirmar)? 
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
+
+> ; now the coffee should be back:
+> examina cafe
+Un poco de café caliente. Te vendría bien para esa cara de sueño...
+
+> ; ============================================================================
+> ; Q VERB || META VERB: 'q'
+> ; ============================================================================
+> ; The verb 'Q' is implemented as a reminder of the full 'QUIT' verb, as safety
+> ; measure against accidentally quitting.
+> q
+Por favor escribe el comando 'abandonar' entero para salir del juego.
+
+(No puedes deshacer una instrucción abandonar. Así que, para evitar que
+accidentalmente salgas del juego por teclear 'q' cuando intentas hacer
+otra cosa, debes escribir el comando 'abandonar' al completo.)
+
+> ; ============================================================================
+> ; QUITTING THE GAME || META VERB: 'quit'
+> ; ============================================================================
+> ; Let's test the various Quit options...
+> ; ----------------------------------------------------------------------------
+> ; QUIT + RESTART => TEST 'QUIT_ACTION'
+> ; ----------------------------------------------------------------------------
+> abandona
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? restart
+
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
+
+> ; ----------------------------------------------------------------------------
+> ; QUIT + UNDO => TEST 'QUIT_ACTION' + 'UNDONE'
+> ; ----------------------------------------------------------------------------
+> ; We bring up the Quit menu but then Undo ...
+> abandona
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? undo
+Acción 'abandona' revertida.
+
+> ; ----------------------------------------------------------------------------
+> ; QUIT + RESTORE => TEST 'QUIT_ACTION' + 'RESTORE_FROM'
+> ; ----------------------------------------------------------------------------
+> abandona
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? restore
+Nombre del archivo para cargar 
+(meta-session-different-adventure.sav) : meta-session.sav
+
+> ; ----------------------------------------------------------------------------
+> ; QUIT + QUIT => TEST 'QUIT_ACTION'
+> ; ----------------------------------------------------------------------------
+> ; After quitting, the rest of the commands of this script should be ignored...
+> abandona
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? quit
+
