@@ -75,6 +75,8 @@ These are probably the trickier tests in the whole test suite, because eliciting
 The following files handle meta testing:
 
 - `meta.alan` — source adventure for all meta-tests:
+    + `meta-input-errors.a3s` — Tests run-time messages for problematic input:
+        * [`meta-input-errors.a3t`][meta-input-errors.a3t] — Generated test-transcript.
     + `meta-session.a3s` — Tests game session related verbs and run-time messages:
         * [`meta-session.a3t`][meta-session.a3t] — Generated test-transcript.
         * `meta-session.sav` (_untracked_) — Save file created from the solution file.
@@ -86,53 +88,53 @@ The following files handle meta testing:
 The following table lists all the [Run-Time MESSAGEs], their testing status, and in which files they are being tested (see next section for untested messages).
 
 
-|       RT Message      |  status |     test file      |
-|-----------------------|---------|--------------------|
-| `AFTER_BUT`           | --      | TBD                |
-| `AGAIN`               | --      | TBD                |
-| `BUT_ALL`             | --      | TBD                |
-| `CAN_NOT_CONTAIN`     | --      | TBD                |
-| `CANT0`               | --      | TBD                |
-| `CARRIES`             | --      | TBD                |
-| `CONTAINMENT_LOOP2`   | --      | TBD                |
-| `CONTAINMENT_LOOP`    | --      | TBD                |
-| `CONTAINS_AND`        | --      | TBD                |
-| `CONTAINS_COMMA`      | --      | TBD                |
-| `CONTAINS_END`        | --      | TBD                |
-| `CONTAINS`            | --      | TBD                |
-| `EMPTY_HANDED`        | --      | TBD                |
-| `HAVE_SCORED`         | --      | TBD                |
-| `IMPOSSIBLE_WITH`     | --      | TBD                |
-| `IS_EMPTY`            | --      | TBD                |
-| `MORE`                | --      | TBD                |
-| `MULTIPLE`            | --      | TBD                |
-| `NO_SUCH`             | --      | TBD                |
-| `NO_UNDO`             | &check; | [meta-session.a3t] |
-| `NO_WAY`              | --      | TBD                |
-| `NOT_A_SAVEFILE`      | &check; | [meta-session.a3t] |
-| `NOT_MUCH`            | --      | TBD                |
-| `NOUN`                | --      | TBD                |
-| `QUIT_ACTION`         | &check; | [meta-session.a3t] |
-| `REALLY`              | &check; | [meta-session.a3t] |
-| `RESTORE_FROM`        | &check; | [meta-session.a3t] |
-| `SAVE_FAILED`         | &check; | [meta-session.a3t] |
-| `SAVE_MISSING`        | &check; | [meta-session.a3t] |
-| `SAVE_NAME`           | &check; | [meta-session.a3t] |
-| `SAVE_OVERWRITE`      | &cross; | [meta-session.a3t] |
-| `SAVE_VERSION`        | &check; | [meta-session.a3t] |
-| `SAVE_WHERE`          | &check; | [meta-session.a3t] |
-| `SEE_AND`             | --      | TBD                |
-| `SEE_END`             | --      | TBD                |
-| `SEE_START`           | --      | TBD                |
-| `UNDONE`              | &check; | [meta-session.a3t] |
-| `UNKNOWN_WORD`        | --      | TBD                |
-| `WHAT_WORD`           | --      | TBD                |
-| `WHAT`                | --      | TBD                |
-| `WHICH_COMMA`         | --      | TBD                |
-| `WHICH_OR`            | --      | TBD                |
-| `WHICH_PRONOUN_FIRST` | --      | TBD                |
-| `WHICH_PRONOUN_START` | --      | TBD                |
-| `WHICH_START`         | --      | TBD                |
+|       RT Message      |  status |        test file        |
+|-----------------------|---------|-------------------------|
+| `AFTER_BUT`           | --      | TBD                     |
+| `AGAIN`               | --      | TBD                     |
+| `BUT_ALL`             | --      | TBD                     |
+| `CAN_NOT_CONTAIN`     | --      | TBD                     |
+| `CANT0`               | --      | TBD                     |
+| `CARRIES`             | --      | TBD                     |
+| `CONTAINMENT_LOOP2`   | --      | TBD                     |
+| `CONTAINMENT_LOOP`    | --      | TBD                     |
+| `CONTAINS_AND`        | --      | TBD                     |
+| `CONTAINS_COMMA`      | --      | TBD                     |
+| `CONTAINS_END`        | --      | TBD                     |
+| `CONTAINS`            | --      | TBD                     |
+| `EMPTY_HANDED`        | --      | TBD                     |
+| `HAVE_SCORED`         | --      | TBD                     |
+| `IMPOSSIBLE_WITH`     | --      | TBD                     |
+| `IS_EMPTY`            | --      | TBD                     |
+| `MORE`                | --      | TBD                     |
+| `MULTIPLE`            | --      | TBD                     |
+| `NO_SUCH`             | --      | TBD                     |
+| `NO_UNDO`             | &check; | [meta-session.a3t]      |
+| `NO_WAY`              | --      | TBD                     |
+| `NOT_A_SAVEFILE`      | &check; | [meta-session.a3t]      |
+| `NOT_MUCH`            | --      | TBD                     |
+| `NOUN`                | --      | TBD                     |
+| `QUIT_ACTION`         | &check; | [meta-session.a3t]      |
+| `REALLY`              | &check; | [meta-session.a3t]      |
+| `RESTORE_FROM`        | &check; | [meta-session.a3t]      |
+| `SAVE_FAILED`         | &check; | [meta-session.a3t]      |
+| `SAVE_MISSING`        | &check; | [meta-session.a3t]      |
+| `SAVE_NAME`           | &check; | [meta-session.a3t]      |
+| `SAVE_OVERWRITE`      | &cross; | [meta-session.a3t]      |
+| `SAVE_VERSION`        | &check; | [meta-session.a3t]      |
+| `SAVE_WHERE`          | &check; | [meta-session.a3t]      |
+| `SEE_AND`             | --      | TBD                     |
+| `SEE_END`             | --      | TBD                     |
+| `SEE_START`           | --      | TBD                     |
+| `UNDONE`              | &check; | [meta-session.a3t]      |
+| `UNKNOWN_WORD`        | &check; | [meta-input-errors.a3t] |
+| `WHAT_WORD`           | --      | TBD                     |
+| `WHAT`                | --      | TBD                     |
+| `WHICH_COMMA`         | --      | TBD                     |
+| `WHICH_OR`            | --      | TBD                     |
+| `WHICH_PRONOUN_FIRST` | --      | TBD                     |
+| `WHICH_PRONOUN_START` | --      | TBD                     |
+| `WHICH_START`         | --      | TBD                     |
 
 
 ### Untested MESSAGEs
@@ -421,6 +423,7 @@ For more info, see:
 
 <!-- project files -->
 
+[meta-input-errors.a3t]: ./meta-input-errors.a3t "View test transcript"
 [meta-session.a3t]: ./meta-session.a3t "View test transcript"
 
 <!-- people and organizations -->

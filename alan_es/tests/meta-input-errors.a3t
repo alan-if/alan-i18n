@@ -1,0 +1,112 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
+
+> ; ****************************************************************************
+> ; *                                                                          *
+> ; *                    PROBLEMATIC PLAYER INPUT MESSAGES                     *
+> ; *                                                                          *
+> ; ****************************************************************************
+> ; Testing run-time messages relating to malformed or otherwise problematic
+> ; player input.
+> ; For the MESSAGEs definitions, see the "mensajes.i" library module.
+> ; ----------------------------------------------------------------------------
+> ; Enable ticker machine to check which input types don't consume a turn:
+> presiona el boton
+As you press the button you ear a humming sound coming from the wall, as
+if a hidden machine came to life. 
+
+TICK... (turno Nro 1 )
+
+> ; ============================================================================
+> ;                     I N V A L I D   R E F E R E N C E S
+> ; ============================================================================
+> ; Problems with parameters or verbs in the player input...
+> ; ----------------------------------------------------------------------------
+> ; TEST 'UNKNOWN_WORD': word not in the dictionary
+> ; ----------------------------------------------------------------------------
+> ; Examine a non-existing object:
+> x Xyzzy
+La palabra "Xyzzy" no es relevante.
+
+> ; ****************************************************************************
+> ; ********************|  P E N D I N G   M E S S A G E S  |*******************
+> ; ****************************************************************************
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NO_SUCH': parameter not in scope
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NO_WAY': traversing inexistent Exit
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CANT0': input matches a Syntax without Verb
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'IMPOSSIBLE_WITH': ??????????????
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CAN_NOT_CONTAIN': trying to put object in wrong container type
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CONTAINMENT_LOOP': trying to put an instance in itself
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CONTAINMENT_LOOP2': trying to put an instance in its own container
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHAT': input doesn't match any Syntax
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHAT_WORD': unmatched multi-reference word (ALL, THEM. etc.)
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'MULTIPLE': invalid multiple parameters usage
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NOUN': player supplied an adjective without the noun
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'AFTER_BUT': an ALL BUT lacks exclusion criteria
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'BUT_ALL': a BUT word not used after ALL word
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'NOT_MUCH': a BUT ALL excluding all references
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHICH_START': parameter matching multiple instances
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHICH_COMMA': parameter matching multiple instances
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHICH_OR': parameter matching multiple instances
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHICH_PRONOUN_START': pronoun matching multiple instances
+> ; ----------------------------------------------------------------------------
+> ; ----------------------------------------------------------------------------
+> ; TEST 'WHICH_PRONOUN_FIRST': pronoun matching multiple instances
+> ; ----------------------------------------------------------------------------
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 
