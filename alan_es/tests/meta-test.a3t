@@ -83,7 +83,7 @@ Puedes encontrar más información sobre ALAN en la web:
 > ; SAVING A GAME
 > ; =========================================================================
 > guardar
-Nombre de archivo para guardar (meta-messages.sav) : meta-messages.sav
+Nombre de archivo para guardar (meta.sav) : meta.sav
 ¡Perfecto!.
 
 > ; =========================================================================
@@ -163,7 +163,7 @@ La palabra "script" no es relevante.
 > ; RESTORING A GAME
 > ; =========================================================================
 > restore
-Nombre del archivo para cargar (meta-messages.sav) : meta-messages.sav
+Nombre del archivo para cargar (meta.sav) : meta.sav
 Hecho.
 
 Sala de pruebas
@@ -216,8 +216,29 @@ Has logrado 200 puntos de un total de 207.
 > ; =========================================================================
 > reiniciar
 
-¿Estás seguro (presiona ENTER para confirmar)? ; -------------------------------------------------------------------------
+¿Estás seguro (presiona ENTER para confirmar)? 
 
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
+
+> ; -------------------------------------------------------------------------
 > ; If somenthing besides pressing ENTER is done.
 > ; -------------------------------------------------------------------------
 > look
@@ -225,40 +246,59 @@ Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
 de punta y sujetos de prueba extremadamente competentes (como tú). A red
 button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
-un café y un jugo de naranja. 
-
-TICK... (turno Nro 9 )
+un café, un jugo de naranja y una agua.
 
 > ; Does not restart (good).
 > x agua
-No hay agua aquí.
+Un vaso de agua increíblemente saludable.
 
 > ; This one does restart.
 > reiniciar
 
-¿Estás seguro (presiona ENTER para confirmar)? ; =========================================================================
+¿Estás seguro (presiona ENTER para confirmar)? 
 
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). A red
+button is bolted in the wall. Hay una tabla de puntuaciones, un refresco, 
+un café, un jugo de naranja y una agua.
+
+> ; =========================================================================
 > ; TEST ERROR MESSAGES WHEN RESTORING
 > ; =========================================================================
 > ; -------------------------------------------------------------------------
 > ; RESTORE A NON-EXISTING FILE
 > ; -------------------------------------------------------------------------
 > restore
-Nombre del archivo para cargar (meta-messages.sav) : unknown.sav
+Nombre del archivo para cargar (meta.sav) : unknown.sav
 Lo siento, no puedo abrir ese archivo.
 
 > ; -------------------------------------------------------------------------
 > ; RESTORE A FILE WHICH IS NOT A SAVED GAME
 > ; -------------------------------------------------------------------------
 > restore
-Nombre del archivo para cargar (meta-messages.sav) : meta-messages.a3c
-Ese archivo no parece ser una partida guardada.
+Nombre del archivo para cargar (meta.sav) : meta-messages.a3c
+Lo siento, no puedo abrir ese archivo.
 
 > ; -------------------------------------------------------------------------
 > ; RESTORE A FILE SAVED WITH AN OLDER ARUN VERSION
 > ; -------------------------------------------------------------------------
 > restore
-Nombre del archivo para cargar (meta-messages.a3c) : prev-version-meta-messages.sav
+Nombre del archivo para cargar (meta.sav) : prev-version-meta.sav
 Lo siento, no puedo abrir ese archivo.
 
 > ; =========================================================================
@@ -310,7 +350,7 @@ Acción revertida.
 
 ¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
 salir (quit)? restore
-Nombre del archivo para cargar (meta-messages.a3c) : meta-messages.sav
+Nombre del archivo para cargar (meta.sav) : meta.sav
 
 > ; -------------------------------------------------------------------------
 > ; QUIT + QUIT
