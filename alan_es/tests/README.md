@@ -95,18 +95,18 @@ The following table lists all the [Run-Time MESSAGEs], their testing status, and
 | `BUT_ALL`             | --      | TBD                     |
 | `CAN_NOT_CONTAIN`     | --      | TBD                     |
 | `CANT0`               | --      | TBD                     |
-| `CARRIES`             | --      | TBD                     |
+| `CARRIES`             | --      | _test unneeded_         |
 | `CONTAINMENT_LOOP2`   | --      | TBD                     |
 | `CONTAINMENT_LOOP`    | --      | TBD                     |
-| `CONTAINS_AND`        | --      | TBD                     |
-| `CONTAINS_COMMA`      | --      | TBD                     |
-| `CONTAINS_END`        | --      | TBD                     |
-| `CONTAINS`            | --      | TBD                     |
-| `EMPTY_HANDED`        | --      | TBD                     |
+| `CONTAINS_AND`        | --      | _test unneeded_         |
+| `CONTAINS_COMMA`      | --      | _test unneeded_         |
+| `CONTAINS_END`        | --      | _test unneeded_         |
+| `CONTAINS`            | --      | _test unneeded_         |
+| `EMPTY_HANDED`        | --      | _test unneeded_         |
 | `HAVE_SCORED`         | --      | TBD                     |
 | `IMPOSSIBLE_WITH`     | --      | TBD                     |
-| `IS_EMPTY`            | --      | TBD                     |
-| `MORE`                | --      | TBD                     |
+| `IS_EMPTY`            | --      | _test unneeded_         |
+| `MORE`                | --      | _unable to_             |
 | `MULTIPLE`            | --      | TBD                     |
 | `NO_SUCH`             | --      | TBD                     |
 | `NO_UNDO`             | &check; | [meta-session.a3t]      |
@@ -123,9 +123,9 @@ The following table lists all the [Run-Time MESSAGEs], their testing status, and
 | `SAVE_OVERWRITE`      | &cross; | [meta-session.a3t]      |
 | `SAVE_VERSION`        | &check; | [meta-session.a3t]      |
 | `SAVE_WHERE`          | &check; | [meta-session.a3t]      |
-| `SEE_AND`             | --      | TBD                     |
-| `SEE_END`             | --      | TBD                     |
-| `SEE_START`           | --      | TBD                     |
+| `SEE_AND`             | --      | _test unneeded_         |
+| `SEE_END`             | --      | _test unneeded_         |
+| `SEE_START`           | --      | _test unneeded_         |
 | `UNDONE`              | &check; | [meta-session.a3t]      |
 | `UNKNOWN_WORD`        | &check; | [meta-input-errors.a3t] |
 | `WHAT_WORD`           | --      | TBD                     |
@@ -139,13 +139,20 @@ The following table lists all the [Run-Time MESSAGEs], their testing status, and
 
 ### Untested MESSAGEs
 
-We weren't able to test the following MESSAGEs:
+Some MESSAGEs in the above table were marked as not needing specific testing because they are omnipresent in any game description, or already covered elsewhere (e.g. listing inventories and containers).
+
+We weren't able to test the following MESSAGEs via the automated toolchain:
 
 - `SAVE_OVERWRITE` —
 Couldn't manage to get ARun ask for confirmation before overwriting an existing save file.
 It does if you play in the terminal, but for some reason it doesn't work in the automated workflow.
 I thought it might be due to the filesystem cache not being flushed, but trying to overwrite a different save-file failed too (i.e. one saved from without the current session).
 No idea how to fix this, yet.
+- `MORE`
+
+
+But these untested MESSAGEs have been checked manually.
+
 
 # Test Objects
 
