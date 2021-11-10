@@ -32,14 +32,20 @@ the dangerous malformed code snippets which are stored in this restricted
 area of the ALAN Laboratories.
 
 Cámara de cuarentena de código
-Hay un CONTAINMENT_LOOP y un CONTAINMENT_LOOP2.
+This chamber contains various code snippets and test objects.
+
+> x código
+Los fragmentos de código son: CONTAINMENT_LOOP y CONTAINMENT_LOOP2.
+
+> x objetos
+Los objetos de prueba son: unos bidónes, unas cajas, una caja y un bidón.
 
 > ; ----------------------------------------------------------------------------
 > ; TEST 'CONTAINMENT_LOOP'
 > ; ----------------------------------------------------------------------------
 > x CONTAINMENT_LOOP
 Executing this code will trigger the CONTAINMENT_LOOP Run-Time MESSAGE by
-attempting to insert an object in itself.
+attempting to insert an object into itself.
 
 > ejecuta CONTAINMENT_LOOP
 Poner a el contenedor designado en sí mismo es imposible.

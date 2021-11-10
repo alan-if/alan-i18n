@@ -263,7 +263,7 @@ End Event.
 The bugsRoom IsA location
   Name 'Cámara de cuarentena de código'
   Description
-    ""
+    "This chamber contains various code snippets and test objects." -- @TRANSLATE!
   Entered
     "As you enter the quarantine zone the entrance is automatically
      sealed by a thick led panel sliding from above, insulating the
@@ -284,19 +284,38 @@ End The.
 -- Each code snippet corresponds to a specific Run-Time MESSAGEs.
 
 Every code_obj IsA object.
+  Description ""
+  Definite Article ""     -- Treat them as is having a proper name
+  Indefinite Article ""   -- (no articles shown).
 End every.
+
+-- To simplify listing the various code snippets, we gather them inside a virtual
+-- scenery object which can be examined by the player:
+
+The snippets IsA escenario at bugsRoom.
+  Name fragmentos de código.
+  Name codigo. Name fragmentos.
+  Has artículo "los".
+  Container
+    Header "Los fragmentos de código son:" -- @TRANSLATE! (check translation)
+  Description ""
+  Verb examinar
+    Does only list this.
+  End verb.
+End the snippets.
+
 
 Synonyms ejecuta, ejecute = ejecutar.
 
 Syntax ejecutar = ejecutar (código)
   Where código IsA code_obj
-    Else "You can only execute code snippets!"
+    Else "You can only execute code snippets!" -- @TRANSLATE!
 
 Syntax ejecutar_con = ejecutar (código) con (obj)
   Where código IsA code_obj
-    Else "You can only execute code snippets!"
+    Else "You can only execute code snippets!" -- @TRANSLATE!
   And obj IsA test_obj
-    Else "You can execute code with designated test objects!"
+    Else "You can execute code with designated test objects!" -- @TRANSLATE!
 
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- NOTE: Run-Time MESSAGEs identifiers are not reserved words in ALAN! they have
@@ -304,10 +323,26 @@ Syntax ejecutar_con = ejecutar (código) con (obj)
 --       identifiers elsewhere, without name clashing.
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The CONTAINMENT_LOOP IsA code_obj at bugsRoom.
+-- Snippets are created in inverse alphabetical order of the MESSAGEs, so that
+-- they will be listed in the correct order (FILO -- first-in last-out).
+
+The CONTAINMENT_LOOP2 IsA code_obj in snippets.
+  Has xDesc
+    "Executing this code will trigger the CONTAINMENT_LOOP2
+     Run-Time MESSAGE by attempting to insert an object into
+     another object while the latter is inside the former.". -- @TRANSLATE!
+  Verb ejecutar
+    Does
+      locate cont1 in cont2.
+  End verb.
+End the CONTAINMENT_LOOP2.
+
+
+The CONTAINMENT_LOOP IsA code_obj in snippets.
   Has xDesc
     "Executing this code will trigger the CONTAINMENT_LOOP
-     Run-Time MESSAGE by attempting to insert an object in itself.".
+     Run-Time MESSAGE by attempting to insert an object
+     into itself.". -- @TRANSLATE!
 
   Verb ejecutar
     Does
@@ -320,17 +355,6 @@ The CONTAINMENT_LOOP IsA code_obj at bugsRoom.
   End verb.
 End the CONTAINMENT_LOOP.
 
-The CONTAINMENT_LOOP2 IsA code_obj at bugsRoom.
-  Has xDesc
-    "Executing this code will trigger the CONTAINMENT_LOOP2
-     Run-Time MESSAGE by attempting to insert an object into
-     another object while the latter is inside the former.".
-  Verb ejecutar
-    Does
-      locate cont1 in cont2.
-  End verb.
-End the CONTAINMENT_LOOP2.
-
 --------------------------------------------------------------------------------
 -- Code Test Objects
 --------------------------------------------------------------------------------
@@ -339,23 +363,38 @@ Every test_obj IsA escenario container.
   Description ""
 End every.
 
+-- To simplify listing the various test objects, we gather them inside a virtual
+-- scenery object which can be examined by the player:
+
+The test_objects IsA escenario at bugsRoom.
+  Name objetos de prueba.
+  Name objetos.
+  Has artículo "los".
+  Container
+    Header "Los objetos de prueba son:" -- @TRANSLATE! (check translation)
+  Description ""
+  Verb examinar
+    Does only list this.
+  End verb.
+End the test_objects.
+
 -- We need various objects with different number and gender in order to test
 -- that the various MESSAGEs are handling GNA properly.
 
-The bidón IsA test_obj at bugsRoom. --> m.s. (drum)
+The bidón IsA test_obj in test_objects.   --> m.s. (drum)
   Name bidón. Name bidon.
 End the.
 
-The caja IsA test_obj at bugsRoom.  --> f.s. (box)
+The caja IsA test_obj in test_objects.    --> f.s. (box)
   Has artículo "la".
 End the.
 
-The bidónes IsA test_obj at bugsRoom. --> m.p. (drums)
+The bidónes IsA test_obj in test_objects. --> m.p. (drums)
   Name bidónes. Name bidones.
   Has artículo "los".
 End the.
 
-The cajas IsA test_obj at bugsRoom.  --> f.p. (boxs)
+The cajas IsA test_obj in test_objects.   --> f.p. (boxs)
   Has artículo "las".
 End the.
 
