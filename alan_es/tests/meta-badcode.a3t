@@ -1,0 +1,75 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). To the
+north lies the quarantine zone. A red button is bolted in the wall. Hay 
+una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
+agua.
+
+> ; ****************************************************************************
+> ; *                                                                          *
+> ; *                         MALFORMED CODE MESSAGES                          *
+> ; *                                                                          *
+> ; ****************************************************************************
+> norte
+As you enter the quarantine zone the entrance is automatically sealed by
+a thick led panel sliding from above, insulating the external world from
+the dangerous malformed code snippets which are stored in this restricted
+area of the ALAN Laboratories.
+
+Cámara de cuarentena de código
+Hay un CONTAINMENT_LOOP y un CONTAINMENT_LOOP2.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CONTAINMENT_LOOP'
+> ; ----------------------------------------------------------------------------
+> x CONTAINMENT_LOOP
+Executing this code will trigger the CONTAINMENT_LOOP Run-Time MESSAGE by
+attempting to insert an object in itself.
+
+> ejecuta CONTAINMENT_LOOP
+Poner a el contenedor designado en sí mismo es imposible.
+
+> ; Let's now test various objects with different GNA:
+> ejecuta CONTAINMENT_LOOP con bidón
+Poner a el bidón en sí mismo es imposible.
+
+> ejecuta CONTAINMENT_LOOP con caja
+Poner a la caja en sí misma es imposible.
+
+> ejecuta CONTAINMENT_LOOP con bidónes
+Poner a los bidónes en sí mismos es imposible.
+
+> ejecuta CONTAINMENT_LOOP con cajas
+Poner a las cajas en sí mismas es imposible.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CONTAINMENT_LOOP2'
+> ; ----------------------------------------------------------------------------
+> x CONTAINMENT_LOOP2
+Executing this code will trigger the CONTAINMENT_LOOP2 Run-Time MESSAGE
+by attempting to insert an object into another object while the latter is
+inside the former.
+
+> ejecuta CONTAINMENT_LOOP2
+Es imposible poner el contenedor designado en el contenedor de destino
+porque el contenedor de destino ya está dentro de el contenedor designado.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

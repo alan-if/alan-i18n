@@ -75,6 +75,8 @@ These are probably the trickier tests in the whole test suite, because eliciting
 The following files handle meta testing:
 
 - `meta.alan` — source adventure for all meta-tests:
+    + `meta-badcode.a3s` — Tests run-time messages for malformed adventures:
+        * [`meta-badcode.a3t`][meta-badcode.a3t] — Generated test-transcript.
     + `meta-input-errors.a3s` — Tests run-time messages for problematic input:
         * [`meta-input-errors.a3t`][meta-input-errors.a3t] — Generated test-transcript.
     + `meta-session.a3s` — Tests game session related verbs and run-time messages:
@@ -96,8 +98,8 @@ The following table lists all the [Run-Time MESSAGEs], their testing status, and
 | `CAN_NOT_CONTAIN`     | --      | TBD                     |
 | `CANT0`               | --      | TBD                     |
 | `CARRIES`             | --      | _test unneeded_         |
-| `CONTAINMENT_LOOP2`   | --      | TBD                     |
-| `CONTAINMENT_LOOP`    | --      | TBD                     |
+| `CONTAINMENT_LOOP2`   | &check; | [meta-badcode.a3t]      |
+| `CONTAINMENT_LOOP`    | &check; | [meta-badcode.a3t]      |
 | `CONTAINS_AND`        | --      | _test unneeded_         |
 | `CONTAINS_COMMA`      | --      | _test unneeded_         |
 | `CONTAINS_END`        | --      | _test unneeded_         |
@@ -430,6 +432,7 @@ For more info, see:
 
 <!-- project files -->
 
+[meta-badcode.a3t]: ./meta-badcode.a3t "View test transcript"
 [meta-input-errors.a3t]: ./meta-input-errors.a3t "View test transcript"
 [meta-session.a3t]: ./meta-session.a3t "View test transcript"
 

@@ -29,21 +29,32 @@
 
 Import 'Library.i'.
 
--- =============================================================================
---                               L O C A T I O N S
--- =============================================================================
+--==============================================================================
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--------------------------------------------------------------------------------
+--
+--                         S A L A   D E   P R U E B A S
+--
+--------------------------------------------------------------------------------
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--==============================================================================
 
--- ---------------
--- Sala de Pruebas
--- ---------------
+-- The "test room" is where ordinary META VERBs and Run-Time MESSAGEs can be
+-- safely tested and elicited. Various tech devices and ad hoc objects are made
+-- available on site for the purpose.
 
 The salaDePrueba IsA location
   Name 'Sala de pruebas'
   Description
     "Aquí se prueban diversos aspectos del lenguaje ALAN,
      gracias a tecnología de punta y sujetos de prueba
-     extremadamente competentes (como tú)."
+     extremadamente competentes (como tú).
+     To the north lies the quarantine zone." -- @TRANSLATE!
+  Exit norte to bugsRoom.
 End The.
+
 
 -- =============================================================================
 --                                   S C O R E
@@ -231,6 +242,131 @@ Event ticker
   "$pTICK... (turno Nro" say botón:cnt. ")"
   Schedule ticker at hero after 1.
 End Event.
+
+
+--==============================================================================
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--------------------------------------------------------------------------------
+--
+--                    C Á M A R A   D E   C U A R E N T E N A
+--
+--------------------------------------------------------------------------------
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--==============================================================================
+
+-- The "buggy code quarantine chamber" is a restricted zone were examples of
+-- malformed ALAN code are stored, for the sole purpose of testing specific
+-- Run-Time MESSAGEs that can't be elicited in normal circumstances.
+
+The bugsRoom IsA location
+  Name 'Cámara de cuarentena de código'
+  Description
+    ""
+  Entered
+    "As you enter the quarantine zone the entrance is automatically
+     sealed by a thick led panel sliding from above, insulating the
+     external world from the dangerous malformed code snippets which
+     are stored in this restricted area of the ALAN Laboratories." -- @TRANSLATE!
+  Exit sur to salaDePrueba
+    Does
+      "As you approach the exit, the room sensors activate the X-rays
+       shower to decontaminate you from any residue of buggy code,
+       before lifting the led barrier and letting you through." -- @TRANSLATE!
+    End exit.
+End The.
+
+--------------------------------------------------------------------------------
+-- Malformed Code Snippets
+--------------------------------------------------------------------------------
+
+-- Each code snippet corresponds to a specific Run-Time MESSAGEs.
+
+Every code_obj IsA object.
+End every.
+
+Synonyms ejecuta, ejecute = ejecutar.
+
+Syntax ejecutar = ejecutar (código)
+  Where código IsA code_obj
+    Else "You can only execute code snippets!"
+
+Syntax ejecutar_con = ejecutar (código) con (obj)
+  Where código IsA code_obj
+    Else "You can only execute code snippets!"
+  And obj IsA test_obj
+    Else "You can execute code with designated test objects!"
+
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- NOTE: Run-Time MESSAGEs identifiers are not reserved words in ALAN! they have
+--       special meaning only inside MESSAGE blocks, and can be freely used as
+--       identifiers elsewhere, without name clashing.
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The CONTAINMENT_LOOP IsA code_obj at bugsRoom.
+  Has xDesc
+    "Executing this code will trigger the CONTAINMENT_LOOP
+     Run-Time MESSAGE by attempting to insert an object in itself.".
+
+  Verb ejecutar
+    Does
+      locate cont1 in cont1.
+  End verb.
+
+  Verb ejecutar_con
+    Does
+      locate obj in obj.
+  End verb.
+End the CONTAINMENT_LOOP.
+
+The CONTAINMENT_LOOP2 IsA code_obj at bugsRoom.
+  Has xDesc
+    "Executing this code will trigger the CONTAINMENT_LOOP2
+     Run-Time MESSAGE by attempting to insert an object into
+     another object while the latter is inside the former.".
+  Verb ejecutar
+    Does
+      locate cont1 in cont2.
+  End verb.
+End the CONTAINMENT_LOOP2.
+
+--------------------------------------------------------------------------------
+-- Code Test Objects
+--------------------------------------------------------------------------------
+
+Every test_obj IsA escenario container.
+  Description ""
+End every.
+
+-- We need various objects with different number and gender in order to test
+-- that the various MESSAGEs are handling GNA properly.
+
+The bidón IsA test_obj at bugsRoom. --> m.s. (drum)
+  Name bidón. Name bidon.
+End the.
+
+The caja IsA test_obj at bugsRoom.  --> f.s. (box)
+  Has artículo "la".
+End the.
+
+The bidónes IsA test_obj at bugsRoom. --> m.p. (drums)
+  Name bidónes. Name bidones.
+  Has artículo "los".
+End the.
+
+The cajas IsA test_obj at bugsRoom.  --> f.p. (boxs)
+  Has artículo "las".
+End the.
+
+
+The cont1 IsA test_obj container.
+  Name 'contenedor designado'.
+End the.
+
+The cont2 IsA test_obj container in cont1.
+  Name 'contenedor de destino'.
+End the.
 
 --------------------------------------------------------------------------------
 

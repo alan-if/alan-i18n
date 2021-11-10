@@ -1,0 +1,21 @@
+﻿; ****************************************************************************
+; *                                                                          *
+; *                         MALFORMED CODE MESSAGES                          *
+; *                                                                          *
+; ****************************************************************************
+norte
+; ----------------------------------------------------------------------------
+; TEST 'CONTAINMENT_LOOP'
+; ----------------------------------------------------------------------------
+x CONTAINMENT_LOOP
+ejecuta CONTAINMENT_LOOP
+; Let's now test various objects with different GNA:
+ejecuta CONTAINMENT_LOOP con bidón
+ejecuta CONTAINMENT_LOOP con caja
+ejecuta CONTAINMENT_LOOP con bidónes
+ejecuta CONTAINMENT_LOOP con cajas
+; ----------------------------------------------------------------------------
+; TEST 'CONTAINMENT_LOOP2'
+; ----------------------------------------------------------------------------
+x CONTAINMENT_LOOP2
+ejecuta CONTAINMENT_LOOP2
