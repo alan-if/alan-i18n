@@ -21,3 +21,8 @@ ejecuta CONTAINMENT_LOOP con cajas
 ; ----------------------------------------------------------------------------
 x CONTAINMENT_LOOP2
 ejecuta CONTAINMENT_LOOP2
+; Let's now test various objects with different GNA:
+ejecuta CONTAINMENT_LOOP2 con bidón y caja
+ejecuta CONTAINMENT_LOOP2 con caja y bidónes
+ejecuta CONTAINMENT_LOOP2 con bidónes y caja
+ejecuta CONTAINMENT_LOOP2 con cajas y bidón

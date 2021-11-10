@@ -277,9 +277,9 @@ The bugsRoom IsA location
     End exit.
 End The.
 
---------------------------------------------------------------------------------
+--==============================================================================
 -- Malformed Code Snippets
---------------------------------------------------------------------------------
+--==============================================================================
 
 -- Each code snippet corresponds to a specific Run-Time MESSAGEs.
 
@@ -304,17 +304,32 @@ The snippets IsA escenario at bugsRoom.
   End verb.
 End the snippets.
 
+--------------------------------------------------------------------------------
+-- Test Verbs
+--------------------------------------------------------------------------------
 
 Synonyms ejecuta, ejecute = ejecutar.
+
+-- Default test (no parameters required):
 
 Syntax ejecutar = ejecutar (código)
   Where código IsA code_obj
     Else "You can only execute code snippets!" -- @TRANSLATE!
 
+-- Alternative test verbs accepting parameters to test GNA:
+
 Syntax ejecutar_con = ejecutar (código) con (obj)
   Where código IsA code_obj
     Else "You can only execute code snippets!" -- @TRANSLATE!
   And obj IsA test_obj
+    Else "You can execute code with designated test objects!" -- @TRANSLATE!
+
+Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
+  Where código IsA code_obj
+    Else "You can only execute code snippets!" -- @TRANSLATE!
+  And obj1 IsA test_obj
+    Else "You can execute code with designated test objects!" -- @TRANSLATE!
+  And obj2 IsA test_obj
     Else "You can execute code with designated test objects!" -- @TRANSLATE!
 
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -326,17 +341,43 @@ Syntax ejecutar_con = ejecutar (código) con (obj)
 -- Snippets are created in inverse alphabetical order of the MESSAGEs, so that
 -- they will be listed in the correct order (FILO -- first-in last-out).
 
+-- =================
+-- CONTAINMENT_LOOP2
+-- =================
+
 The CONTAINMENT_LOOP2 IsA code_obj in snippets.
   Has xDesc
     "Executing this code will trigger the CONTAINMENT_LOOP2
      Run-Time MESSAGE by attempting to insert an object into
      another object while the latter is inside the former.". -- @TRANSLATE!
+
   Verb ejecutar
     Does
       locate cont1 in cont2.
   End verb.
+
+  Verb ejecutar_con2
+    Does
+      -- -----------------------------------------------------------------------
+      -- We need to remove test objects which might have been inserted into each
+      -- other by previous executions of this verb. We have to do it here since
+      -- this verb will not tick a turn due to failure, so we can't use an
+      -- Event to handle this (Events won't be executed between successive
+      -- player input triggering this verb) nor can we cater for it at the end
+      -- of the verb body, since it will abort execution.
+      -- -----------------------------------------------------------------------
+      For each tObj IsA test_obj do
+        Empty tObj in test_objects.
+        Locate tObj in test_objects.
+      End for.
+      Locate obj2 in obj1.
+      Locate obj1 in obj2. -- Verb triggers CONTAINMENT_LOOP2 here and aborts!
+  End verb.
 End the CONTAINMENT_LOOP2.
 
+-- ================
+-- CONTAINMENT_LOOP
+-- ================
 
 The CONTAINMENT_LOOP IsA code_obj in snippets.
   Has xDesc
@@ -398,6 +439,9 @@ The cajas IsA test_obj in test_objects.   --> f.p. (boxs)
   Has artículo "las".
 End the.
 
+-- Objects used for default tests, when no parameters are specified.
+-- These are not located anywhere since they are for internal VERB use,
+-- so the player can't interact with them directly.
 
 The cont1 IsA test_obj container.
   Name 'contenedor designado'.

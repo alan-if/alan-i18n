@@ -75,6 +75,23 @@ inside the former.
 Es imposible poner el contenedor designado en el contenedor de destino
 porque el contenedor de destino ya está dentro de el contenedor designado.
 
+> ; Let's now test various objects with different GNA:
+> ejecuta CONTAINMENT_LOOP2 con bidón y caja
+Es imposible poner el bidón en la caja porque la caja ya está dentro de el 
+bidón.
+
+> ejecuta CONTAINMENT_LOOP2 con caja y bidónes
+Es imposible poner la caja en los bidónes porque los bidónes ya está 
+dentro de la caja.
+
+> ejecuta CONTAINMENT_LOOP2 con bidónes y caja
+Es imposible poner los bidónes en la caja porque la caja ya están dentro
+de los bidónes.
+
+> ejecuta CONTAINMENT_LOOP2 con cajas y bidón
+Es imposible poner las cajas en el bidón porque el bidón ya están dentro
+de las cajas.
+
 > 
 
 ¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
