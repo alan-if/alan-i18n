@@ -161,6 +161,18 @@ CONTAINMENT_LOOP2:
 
 -- =============================================================================
 
+-- @FIXME: 'UNKNOWN_WORD' The original message is "I don't know the word '$1'."
+--         The current translation "is not relevant" doesn't convey a clear
+--         message to the player, it's as if we're dealing with a non important
+--         game object (e.g. a scenery), which is misleading since the problem
+--         is that the typed word was not understood -- it could be that the
+--         player misspelled it by accident. I don't like the original message
+--         "I don't know", and I would prefer something like:
+--
+--               "I didn't understand the word '$1'."
+--
+--         See: https://github.com/alan-if/alan/issues/33
+
 UNKNOWN_WORD: "La palabra ""$1"" no es relevante."
 WHAT: "No entiendo bien esa frase. Redactala de nuevo."
 WHAT_WORD: "No entiendo lo que quieres decir con ""$1""."
@@ -176,7 +188,7 @@ BUT_ALL: "Solamente puedes usar ""$1"" después de ""$2""."
 NOT_MUCH: "Eso no deja mucho."
 
 --------------------------------------------------------------------------------
--- DIsAmbiguation
+-- Disambiguation
 --------------------------------------------------------------------------------
 
 WHICH_START: "No sé si quieres decir $+1"
@@ -203,7 +215,7 @@ WHICH_PRONOUN_FIRST: "$+1"
     --       prompt where the user will be typing the response.
     ----------------------------------------------------------------------
 
-REALLY: "¿Estás seguro (RETURN confirms) ? "
+REALLY: "¿Estás seguro (presiona ENTER para confirmar)? "
 
 QUIT_ACTION: "¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o salir (quit)? "
     --------------------------------------------------------------
@@ -215,8 +227,12 @@ QUIT_ACTION: "¿Quiere revertir (undo), recomenzar (restart), restaurar (restore
 
 HAVE_SCORED: "Has logrado $1 puntos de un total de $2."
 
-UNDONE: "Acción revertida."
+UNDONE: "Acción '$1' revertida."
 NO_UNDO: "No se puede revertir ahora."
+
+-- @TODO: The 'NO_UNDO' message in English is "Nothing to undo.",
+--        which I think it's clearer regarding the reason why it's
+--        not possible to undo the action. Fix it?
 
 --------------------------------------------------------------------------------
 -- Saving Game Session

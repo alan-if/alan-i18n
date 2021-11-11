@@ -13,6 +13,8 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.3.2 \(2021/11/11\)](#v032-20211111)
+        - [Fix Verbs Moving Objects into Containers](#fix-verbs-moving-objects-into-containers)
     - [v0.3.1 \(2021/11/02\)](#v031-20211102)
         - [Support Feminine Nouns Taking "EL" Article](#support-feminine-nouns-taking-el-article)
     - [v0.3.0 \(2021/10/14\)](#v030-20211014)
@@ -39,6 +41,19 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 # Beta Releases
 
 The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] and [Ricardo Osio].
+
+
+## v0.3.2 (2021/11/11)
+
+### Fix Verbs Moving Objects into Containers
+
+Fix some verbs that dislocate an object into a container: before reporting the "done" message and resetting its wearable status, check that the operation succeeded (by verifying that the object is effectively in the target container), since the operation is _not_ guaranteed to succeed — e.g. due to a `TAKING` clause in the target container, which would trigger the `CAN_NOT_CONTAIN` Run-Time MESSAGE without aborting the verb execution.
+
+Without these checks the object would not be transferred to the target container, but its wearing status would be affected (`portador` set to `nadie` and made `not puesto`), since a violation of the `TAKING` clause doesn't abort verb execution, which would compromise the status of a wearable object.
+
+- `dar.i` — verb `dar`.
+- `lanzar.i` — verb `lanzar_en`.
+- `poner.i` — verb `poner_en`.
 
 
 ## v0.3.1 (2021/11/02)

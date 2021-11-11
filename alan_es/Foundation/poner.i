@@ -44,10 +44,15 @@ Add to every object
         else "¡No puedes poner" say obj1. "dentro de tí!"
     Does
       Locate obj1 in obj2.
-      -- In case item was being worn:
-      Set portador of obj1 to nadie.
-      Make obj1 not puesto.
-      "Hecho."
+      -- Check that operation succeeded
+      -- (could fail due to TAKING clause):
+      If obj1 directly in obj2
+        then
+          -- In case item was being worn:
+          Set portador of obj1 to nadie.
+          Make obj1 not puesto.
+          "Hecho."
+      End if.
     End verb.
 End add to.
 
