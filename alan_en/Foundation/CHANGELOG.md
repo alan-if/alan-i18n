@@ -13,6 +13,8 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.3 \(2021/11/11\)](#v023-20211111)
+        - [Fix Verbs Moving Objects into Containers](#fix-verbs-moving-objects-into-containers)
     - [v0.2.2 \(2021/09/26\)](#v022-20210926)
         - [Honouring Sceneries xDesc](#honouring-sceneries-xdesc)
     - [v0.2.1 \(2021/09/10\)](#v021-20210910)
@@ -34,6 +36,20 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 
 # Beta Releases
+
+
+## v0.2.3 (2021/11/11)
+
+### Fix Verbs Moving Objects into Containers
+
+Fix some verbs that dislocate an object into a container: before reporting the "done" message and resetting its wearable status, check that the operation succeeded (by verifying that the object is effectively in the target container), since the operation is _not_ guaranteed to succeed — e.g. due to a `TAKING` clause in the target container, which would trigger the `CAN_NOT_CONTAIN` Run-Time MESSAGE without aborting the verb execution.
+
+Without these checks the object would not be transferred to the target container, but its wearing status would be affected (`wearer` set to `nobody` and made `not worn`), since a violation of the `TAKING` clause doesn't abort verb execution, which would compromise the status of a wearable object.
+
+- `give.i` — verb `give`.
+- `put.i` — verb `put_in`.
+- `throw.i` — verb `throw_in`.
+
 
 ## v0.2.2 (2021/09/26)
 

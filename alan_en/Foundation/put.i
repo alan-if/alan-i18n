@@ -41,10 +41,14 @@ Add to every object
         else "You can't put" say obj1. "into yourself!"
       Does
         Locate obj1 in obj2.
-        -- In case item was being worn:
-        Set wearer of obj1 to nobody.
-        Make obj1 not worn.
-        "Done."
+        -- Check that operation succeeded
+        -- (could fail due to TAKING clause):
+        If obj1 directly in obj2 then
+          -- In case item was being worn:
+          Set wearer of obj1 to nobody.
+          Make obj1 not worn.
+          "Done."
+        End if.
     End verb.
 End add.
 

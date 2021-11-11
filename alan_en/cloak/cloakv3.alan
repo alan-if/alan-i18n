@@ -1,6 +1,6 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
---* * Cloak of Darkness v3 * * 2021/09/26 | Foundation Lib v0.2.2 | ALAN 3.Beta8
+--* * Cloak of Darkness v3 * * 2021/09/26 | Foundation Lib v0.2.3 | ALAN 3.Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -242,6 +242,6 @@ Start at foyer.
   Style alert.
   "$p$nCloak of Darkness" Style emphasized.
   "$nA basic IF demonstration." Style normal.
-  "$pVersion 3, September 2021. (ALAN 3.0Beta8, Foundation Library v0.2.2)."
+  "$pVersion 3, September 2021. (ALAN 3.0Beta8, Foundation Library v0.2.3)."
   "$nOriginally implemented by Stephen Griffiths for ALAN 2,
    readapted by the ALAN IF Development Team."

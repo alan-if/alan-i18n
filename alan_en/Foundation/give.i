@@ -19,9 +19,13 @@ Add to every object
       else
         "You give" say the obj. "to" say the recip. "."
         Locate obj in recip.
-        -- In case item was being worn:
-        Set wearer of obj to nobody.
-        Make obj not worn.
+        -- Check that operation succeeded
+        -- (could fail due to TAKING clause):
+        If obj directly in recip then
+          -- In case item was being worn:
+          Set wearer of obj to nobody.
+          Make obj not worn.
+        End if.
       End if.
   End verb.
 End add.
