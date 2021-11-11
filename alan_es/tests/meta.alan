@@ -341,9 +341,34 @@ Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
 -- Snippets are created in inverse alphabetical order of the MESSAGEs, so that
 -- they will be listed in the correct order (FILO -- first-in last-out).
 
+
+-- =====
+-- CANT0
+-- =====
+
+-- To elicit the 'CANT0' RT Message we just don't supply a VERB for the CANT0
+-- object, and since there's no generic implementation of the 'ejecutar' VERB
+-- on any class, when invoked for CANT0 the SYNTAX won't be able to match any
+-- VERB body.
+
+The CANT0 IsA code_obj in snippets.
+  Has xDesc
+    "Executing this code will trigger the CANT0 Run-Time MESSAGE
+     because there's no VERB matching the 'ejecutar' SYNTAX for
+     this object.". -- @TRANSLATE!
+End the CONTAINMENT_LOOP2.
+
 -- =================
 -- CONTAINMENT_LOOP2
 -- =================
+
+-- This Message is shown when attempting a transitive containment loop, so we
+-- need two parameters (both containers) and first locate obj2 in obj1, then
+-- attempt to locate obj1 in obj2, which will trigger CONTAINMENT_LOOP2.
+
+-- The tricky part here was to allow repetitive tests using the same objects,
+-- since each execution of 'ejecutar_con2' aborts with CONTAINMENT_LOOP2 error,
+-- which doesn't leave us with a way to restore the parameters' original state.
 
 The CONTAINMENT_LOOP2 IsA code_obj in snippets.
   Has xDesc

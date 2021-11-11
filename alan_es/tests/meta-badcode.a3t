@@ -35,10 +35,20 @@ Cámara de cuarentena de código
 This chamber contains various code snippets and test objects.
 
 > x código
-Los fragmentos de código son: CONTAINMENT_LOOP y CONTAINMENT_LOOP2.
+Los fragmentos de código son: CONTAINMENT_LOOP, CONTAINMENT_LOOP2 y CANT0.
 
 > x objetos
 Los objetos de prueba son: unos bidónes, unas cajas, una caja y un bidón.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CANT0'
+> ; ----------------------------------------------------------------------------
+> x CANT0
+Executing this code will trigger the CANT0 Run-Time MESSAGE because
+there's no VERB matching the 'ejecutar' SYNTAX for this object.
+
+> ejecuta CANT0
+No se puede.
 
 > ; ----------------------------------------------------------------------------
 > ; TEST 'CONTAINMENT_LOOP'

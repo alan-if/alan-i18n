@@ -96,7 +96,7 @@ The following table lists all the [Run-Time MESSAGEs], their testing status, and
 | `AGAIN`               | --      | TBD                     |
 | `BUT_ALL`             | --      | TBD                     |
 | `CAN_NOT_CONTAIN`     | --      | TBD                     |
-| `CANT0`               | --      | TBD                     |
+| `CANT0`               | &check; | [meta-badcode.a3t]      |
 | `CARRIES`             | --      | _test unneeded_         |
 | `CONTAINMENT_LOOP2`   | &check; | [meta-badcode.a3t]      |
 | `CONTAINMENT_LOOP`    | &check; | [meta-badcode.a3t]      |
