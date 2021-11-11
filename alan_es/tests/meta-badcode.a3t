@@ -35,7 +35,7 @@ Cámara de cuarentena de código
 This chamber contains various code snippets and test objects.
 
 > x código
-Los fragmentos de código son: CONTAINMENT_LOOP, CONTAINMENT_LOOP2 y CANT0.
+Los fragmentos de código son: CANT0, CONTAINMENT_LOOP y CONTAINMENT_LOOP2.
 
 > x objetos
 Los objetos de prueba son: unos bidónes, unas cajas, una caja y un bidón.

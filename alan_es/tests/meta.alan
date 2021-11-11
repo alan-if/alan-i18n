@@ -278,12 +278,18 @@ The bugsRoom IsA location
 End The.
 
 --==============================================================================
--- Malformed Code Snippets
+--------------------------------------------------------------------------------
+--                 M A L F O R M E D   C O D E   S N I P P E T S
+--------------------------------------------------------------------------------
 --==============================================================================
 
--- Each code snippet corresponds to a specific Run-Time MESSAGEs.
+-- In order to test the RT-MESSAGEs associated to malformed adventures, the
+-- easiest way to expose custom objects emulating code snippets that would
+-- produce the desired message. I.e. each object will execute a specific task
+-- by implementing an ad hoc 'execute' VERB on the "code snippet" instance.
 
 Every code_obj IsA object.
+  Is Not buscable. Not tomable. Not empujable. Not tocable.
   Description ""
   Definite Article ""     -- Treat them as is having a proper name
   Indefinite Article ""   -- (no articles shown).
@@ -304,9 +310,9 @@ The snippets IsA escenario at bugsRoom.
   End verb.
 End the snippets.
 
---------------------------------------------------------------------------------
--- Test Verbs
---------------------------------------------------------------------------------
+--==============================================================================
+--                             T E S T   V E R B S
+--==============================================================================
 
 Synonyms ejecuta, ejecute = ejecutar.
 
@@ -332,35 +338,32 @@ Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
   And obj2 IsA test_obj
     Else "You can execute code with designated test objects!" -- @TRANSLATE!
 
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--==============================================================================
+--                           C O D E   O B J E C T S
+--==============================================================================
+
+-- Each code snippet is an object corresponding to a specific Run-Time MESSAGEs;
+-- it can be examined to obtain details and executed to elicit its RT Message.
+
+-- Snippet objects are created in inverse alphabetical order of the MESSAGEs, so
+-- that they will be listed in the correct order (FILO -- first-in last-out).
+
 -- NOTE: Run-Time MESSAGEs identifiers are not reserved words in ALAN! they have
 --       special meaning only inside MESSAGE blocks, and can be freely used as
 --       identifiers elsewhere, without name clashing.
+
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--                 * * *  P E N D I N G   M E S S A G E S  * * *
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--- Snippets are created in inverse alphabetical order of the MESSAGEs, so that
--- they will be listed in the correct order (FILO -- first-in last-out).
+-- These RT-Messages should be implemented here:
 
+--   * CAN_NOT_CONTAIN
+--   * IMPOSSIBLE_WITH
 
--- =====
--- CANT0
--- =====
-
--- To elicit the 'CANT0' RT Message we just don't supply a VERB for the CANT0
--- object, and since there's no generic implementation of the 'ejecutar' VERB
--- on any class, when invoked for CANT0 the SYNTAX won't be able to match any
--- VERB body.
-
-The CANT0 IsA code_obj in snippets.
-  Has xDesc
-    "Executing this code will trigger the CANT0 Run-Time MESSAGE
-     because there's no VERB matching the 'ejecutar' SYNTAX for
-     this object.". -- @TRANSLATE!
-End the CONTAINMENT_LOOP2.
-
--- =================
+--------------------------------------------------------------------------------
 -- CONTAINMENT_LOOP2
--- =================
+--------------------------------------------------------------------------------
 
 -- This Message is shown when attempting a transitive containment loop, so we
 -- need two parameters (both containers) and first locate obj2 in obj1, then
@@ -400,9 +403,9 @@ The CONTAINMENT_LOOP2 IsA code_obj in snippets.
   End verb.
 End the CONTAINMENT_LOOP2.
 
--- ================
+--------------------------------------------------------------------------------
 -- CONTAINMENT_LOOP
--- ================
+--------------------------------------------------------------------------------
 
 The CONTAINMENT_LOOP IsA code_obj in snippets.
   Has xDesc
@@ -422,8 +425,27 @@ The CONTAINMENT_LOOP IsA code_obj in snippets.
 End the CONTAINMENT_LOOP.
 
 --------------------------------------------------------------------------------
--- Code Test Objects
+-- CANT0
 --------------------------------------------------------------------------------
+
+-- To elicit the 'CANT0' RT Message we just don't supply a VERB for the CANT0
+-- object, and since there's no generic implementation of the 'ejecutar' VERB
+-- on any class, when invoked for CANT0 the SYNTAX won't be able to match any
+-- VERB body.
+
+The CANT0 IsA code_obj in snippets.
+  Has xDesc
+    "Executing this code will trigger the CANT0 Run-Time MESSAGE
+     because there's no VERB matching the 'ejecutar' SYNTAX for
+     this object.". -- @TRANSLATE!
+End the CONTAINMENT_LOOP2.
+
+
+--==============================================================================
+--------------------------------------------------------------------------------
+--                            T E S T   O B J E C T S
+--------------------------------------------------------------------------------
+--==============================================================================
 
 Every test_obj IsA escenario container.
   Description ""
