@@ -58,19 +58,19 @@ Tomas la llave.
 
 > ; test m.s
 > pone llave en bidón
-El bidón no puede contener la llave. Hecho.
+El bidón no puede contener la llave.
 
 > ; test f.s
 > pone llave en caja
-La caja no puede contener la llave. Hecho.
+La caja no puede contener la llave.
 
 > ; test m.p
 > pone llave en bidónes
-Los bidónes no pueden contener la llave. Hecho.
+Los bidónes no pueden contener la llave.
 
 > ; test f.p
 > pone llave en cajas
-Las cajas no pueden contener la llave. Hecho.
+Las cajas no pueden contener la llave.
 
 > ; ----------------------------------------------------------------------------
 > ; TEST 'CANT0'
