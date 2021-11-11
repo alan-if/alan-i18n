@@ -15,10 +15,10 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; ****************************************************************************
 > ; *                                                                          *
@@ -35,8 +35,8 @@ agua.
 > ; ----------------------------------------------------------------------------
 > ; Enable ticker machine to check that session meta verbs don't consume a turn:
 > presiona el boton
-As you press the button you ear a humming sound coming from the wall, as
-if a hidden machine came to life. 
+Al presionar el botón escuchas un zumbido que viene de la pared, como si
+una máquina oculta acabase de volver a la vida. 
 
 TICK... (turno Nro 1 )
 
@@ -58,7 +58,7 @@ Acción 'presiona el boton' revertida.
 > ; ----------------------------------------------------------------------------
 > ; Nothing else to undo:
 > undo
-No se puede revertir ahora.
+No hay nada que revertir.
 
 > ; ============================================================================
 > ; SAVING THE GAME || META VERB: 'save'
@@ -112,10 +112,10 @@ Hecho.
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; now the coffee should be back:
 > examina cafe
@@ -187,10 +187,10 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; now the coffee should be back:
 > examina cafe
@@ -237,10 +237,10 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; ----------------------------------------------------------------------------
 > ; QUIT + UNDO => TEST 'QUIT_ACTION' + 'UNDONE'

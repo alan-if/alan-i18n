@@ -17,7 +17,7 @@ pone llave en bidón
 ; test f.s
 pone llave en caja
 ; test m.p
-pone llave en bidónes
+pone llave en bidones
 ; test f.p
 pone llave en cajas
 ; ----------------------------------------------------------------------------
@@ -36,7 +36,7 @@ ejecuta CONTAINMENT_LOOP con bidón
 ; test f.s
 ejecuta CONTAINMENT_LOOP con caja
 ; test m.p
-ejecuta CONTAINMENT_LOOP con bidónes
+ejecuta CONTAINMENT_LOOP con bidones
 ; test f.p
 ejecuta CONTAINMENT_LOOP con cajas
 ; ----------------------------------------------------------------------------
@@ -48,8 +48,8 @@ ejecuta CONTAINMENT_LOOP2
 ; test m.s <-> f.s
 ejecuta CONTAINMENT_LOOP2 con bidón y caja
 ; test f.s <-> m.p.
-ejecuta CONTAINMENT_LOOP2 con caja y bidónes
+ejecuta CONTAINMENT_LOOP2 con caja y bidones
 ; test m.p <-> f.s.
-ejecuta CONTAINMENT_LOOP2 con bidónes y caja
+ejecuta CONTAINMENT_LOOP2 con bidones y caja
 ; test f.p <-> m.s.
 ejecuta CONTAINMENT_LOOP2 con cajas y bidón
