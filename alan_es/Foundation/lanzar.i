@@ -14,9 +14,7 @@ Add to every object
     Check obj in hero
       else "¡No tienes" say the obj. "!"
     Does
-      -- @CHECK: Doesn't seem right! (lanzaro|lanzara|lanzaros|lanzaras)???
-      --         Maybe: "No puedes lanzarL" --> lanzarLO, lanzarLA ...
-      "No puedes lanzar" say obj:adj_suf.
+      "No puedes lanzarl" say obj:adj_suf.
       "muy lejos," say the obj.
       "acaba" say obj:verb_suf. "en el suelo."
       Locate obj here.

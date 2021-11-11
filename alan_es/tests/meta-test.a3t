@@ -15,25 +15,25 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > look
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > x boton
-It's a really big and menacing red button. Above the button there's a
-sign.
+Es un botón rojo, grande y amenazador. Por encima del botón hay un cartel.
 
 > x cartel
-The sign reads "Press button to toggle the ticker machine on/off".
+El cartel dice "Presione el botón para encender/apagar la máquina de
+tics".
 
 > ; =========================================================================
 > ;                                 TICKER
@@ -41,8 +41,8 @@ The sign reads "Press button to toggle the ticker machine on/off".
 > ; The ticker Event will help us check if META VERBs are behaving as
 > ; expected: if the counter ticks, a turn has been consumed.
 > presiona el boton
-As you press the button you ear a humming sound coming from the wall, as
-if a hidden machine came to life. 
+Al presionar el botón escuchas un zumbido que viene de la pared, como si
+una máquina oculta acabase de volver a la vida. 
 
 TICK... (turno Nro 1 )
 
@@ -156,10 +156,10 @@ TICK... (turno Nro 12 )
 > ; @NOTE: "script" does not working. Does this has something to do with the
 > ; Spanish Library syntax or is the "script" function simply not included?
 > script
-La palabra "script" no es relevante.
+No entendí la palabra 'script'.
 
 > script on
-La palabra "script" no es relevante.
+No entendí la palabra 'script'.
 
 > ; =========================================================================
 > ; RESTORING A GAME
@@ -170,10 +170,10 @@ Hecho.
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; The score should be 0.
 > score
@@ -204,7 +204,7 @@ TICK... (turno Nro 7 )
 > ; TEST EXAMINING A CLASS
 > ; =========================================================================
 > x bebida
-La palabra "bebida" no es relevante.
+No entendí la palabra 'bebida'.
 
 > bebe agua
 Te bebes el agua. 
@@ -237,10 +237,10 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; -------------------------------------------------------------------------
 > ; If somenthing besides pressing ENTER is done.
@@ -248,10 +248,10 @@ agua.
 > look
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; Does not restart (good).
 > x agua
@@ -278,10 +278,10 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; =========================================================================
 > ; TEST ERROR MESSAGES WHEN RESTORING
@@ -336,10 +336,10 @@ remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
 
 Sala de pruebas
 Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
-de punta y sujetos de prueba extremadamente competentes (como tú). To the
-north lies the quarantine zone. A red button is bolted in the wall. Hay 
-una tabla de puntuaciones, un refresco, un café, un jugo de naranja y una 
-agua.
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
 
 > ; -------------------------------------------------------------------------
 > ; QUIT + UNDO

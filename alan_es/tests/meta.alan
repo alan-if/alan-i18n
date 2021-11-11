@@ -51,7 +51,7 @@ The salaDePrueba IsA location
     "Aquí se prueban diversos aspectos del lenguaje ALAN,
      gracias a tecnología de punta y sujetos de prueba
      extremadamente competentes (como tú).
-     To the north lies the quarantine zone." -- @TRANSLATE!
+     Al norte se encuentra la zona de cuarentena."
   Exit norte to bugsRoom.
 End The.
 
@@ -142,7 +142,7 @@ End The.
 
 -- We need a ticker to track that META VERBs are not consuming a turn.
 
--- So we implement a "tricker machine" that can be activated and stopped by
+-- So we implement a "ticker machine" that can be activated and stopped by
 -- pressing a red button, and will start ticking in the background at every
 -- turn, letting us know when a turn was consumed (EVENTs are only executed
 -- during consumed game turns, not when executing META VERBS).
@@ -155,7 +155,6 @@ End The.
 -- V E R B  " P R E S S "
 --------------------------------------------------------------------------------
 
--- @CHECK: @Rich15 please confirm if this is correct (if yes, delete this line):
 
 -- We need a dedicated verb for pressing the button, since the "empujar" verb
 -- for "pushing" things is not used for pressing buttons in Spanish
@@ -165,20 +164,20 @@ Add to every thing
   Is not presionable. -- i.e. not pressable.
 End add to thing.
 
-Synonyms -- @CHECK: @Rich15 please look is these syntaxes are OK!
-  presiona, presione, pulsa,  pulse, pulsar =  presionar.
+Synonyms
+  presiona, presione, pulsa,  pulse, pulsar, aprieta, apretar =  presionar.
 
 Syntax
   presionar =  presionar (obj)
     Where obj IsA object
-      else "You can only press objects!" -- @TRANSLATE!
+      else "¡Solo puedes presionar objetos!"
 
 Add to every object
   Verb presionar
     Check obj is empujable
       else "No puedes presionar $+1."
     Does
-      "You press $+1, but nothing happens." -- @TRANSLATE!
+      "Presionas $+1, pero nada sucede."
   End verb.
 End add to.
 
@@ -193,22 +192,22 @@ The botón IsA object at salaDePrueba
   Is not tomable.
   Is not active. -- i.e. the ticker machine state.
   Has cnt 0. -- The ticks counter.
-  Description "A red button is bolted in the wall." -- @TRANSLATE!
-  Has xDesc "It's a really big and menacing red button.
-             Above the button there's a sign.". -- @TRANSLATE!
+  Description "Un botón rojo está atornillado a la pared."
+  Has xDesc "Es un botón rojo, grande y amenazador.
+             Por encima del botón hay un cartel.".
 
   Verb presionar
     Does only
-      "As you press the button" -- @TRANSLATE!
+      "Al presionar el botón"
       If this is not active
         then
-          "you ear a humming sound coming from the wall,
-           as if a hidden machine came to life." -- @TRANSLATE!
+          "escuchas un zumbido que viene de la pared,
+           como si una máquina oculta acabase de volver a la vida."
           Schedule ticker at hero after 0.
           Set this:cnt to 0. -- reset counter.
           Make this active.
-        else -- @TRANSLATE:
-          "the ticker machine stops and the humming from the walls ceases."
+        else
+          "la máquina de tics para y el zumbido de la pared se detiene."
           Cancel ticker.
           Make this not active.
       End if.
@@ -227,8 +226,8 @@ The cartel IsA object at salaDePrueba
   Is not tomable.
   Is leible. -- @TODO: Implement reading (need to check if EN lib uses xDesc)
   Description "" -- Don't mention it in room descriptions!
-  Has xDesc "The sign reads ""Press button to toggle the
-             ticker machine on/off"".". -- @TRANSLATE!
+  Has xDesc "El cartel dice ""Presione el botón para encender/apagar
+             la máquina de tics"".".
 End The.
 
 --------------------------------------------------------------------------------
@@ -263,17 +262,17 @@ End Event.
 The bugsRoom IsA location
   Name 'Cámara de cuarentena de código'
   Description
-    "This chamber contains various code snippets and test objects." -- @TRANSLATE!
+    "Esta cámara contiene varios fragmentos de código y objetos de prueba."
   Entered
-    "As you enter the quarantine zone the entrance is automatically
-     sealed by a thick led panel sliding from above, insulating the
-     external world from the dangerous malformed code snippets which
-     are stored in this restricted area of the ALAN Laboratories." -- @TRANSLATE!
+    "Al entrar en la zona de cuarentena la entrada es sellada automáticamente
+    por un grueso panel de led que se desliza desde arriba, aislando el mundo
+    exterior de los peligrosos fragmentos de código malformados que se
+    almacenan en esta área restringida de los Laboratorios ALAN."
   Exit sur to salaDePrueba
     Does
-      "As you approach the exit, the room sensors activate the X-rays
-       shower to decontaminate you from any residue of buggy code,
-       before lifting the led barrier and letting you through." -- @TRANSLATE!
+      "Al acercarte a la salida, los sensores de la habitación activan la
+      ducha de rayos X para descontaminarte de cualquier residuo de código
+      defectuoso, antes de abrir la barrera de led y dejarte salir."
     End exit.
 End The.
 
@@ -303,7 +302,7 @@ The snippets IsA escenario at bugsRoom.
   Name codigo. Name fragmentos.
   Has artículo "los".
   Container
-    Header "Los fragmentos de código son:" -- @TRANSLATE! (check translation)
+    Header "Los fragmentos de código son:"
   Description ""
   Verb examinar
     Does only list this.
@@ -320,23 +319,23 @@ Synonyms ejecuta, ejecute = ejecutar.
 
 Syntax ejecutar = ejecutar (código)
   Where código IsA code_obj
-    Else "You can only execute code snippets!" -- @TRANSLATE!
+    Else "¡Solo puedes ejecutar fragmentos de código!"
 
 -- Alternative test verbs accepting parameters to test GNA:
 
 Syntax ejecutar_con = ejecutar (código) con (obj)
   Where código IsA code_obj
-    Else "You can only execute code snippets!" -- @TRANSLATE!
+    Else "¡Solo puedes ejecutar fragmentos de código!"
   And obj IsA test_obj
-    Else "You can execute code with designated test objects!" -- @TRANSLATE!
+    Else "¡Solo puedes ejecutar código con objetos de prueba designados!"
 
 Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
   Where código IsA code_obj
-    Else "You can only execute code snippets!" -- @TRANSLATE!
+    Else "¡Solo puedes ejecutar fragmentos de código!"
   And obj1 IsA test_obj
-    Else "You can execute code with designated test objects!" -- @TRANSLATE!
+    Else "¡Solo puedes ejecutar código con objetos de prueba designados!"
   And obj2 IsA test_obj
-    Else "You can execute code with designated test objects!" -- @TRANSLATE!
+    Else "¡Solo puedes ejecutar código con objetos de prueba designados!"
 
 --==============================================================================
 --                           C O D E   O B J E C T S
@@ -374,9 +373,9 @@ Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
 
 The CONTAINMENT_LOOP2 IsA code_obj in snippets.
   Has xDesc
-    "Executing this code will trigger the CONTAINMENT_LOOP2
-     Run-Time MESSAGE by attempting to insert an object into
-     another object while the latter is inside the former.". -- @TRANSLATE!
+    "Ejecutar este código activará el mensaje de CONTAINMENT_LOOP2, al intentar
+    insertar un objeto dentro de otro objeto mientras el primero está dentro
+    del segundo.".
 
   Verb ejecutar
     Does
@@ -408,9 +407,8 @@ End the CONTAINMENT_LOOP2.
 
 The CONTAINMENT_LOOP IsA code_obj in snippets.
   Has xDesc
-    "Executing this code will trigger the CONTAINMENT_LOOP
-     Run-Time MESSAGE by attempting to insert an object
-     into itself.". -- @TRANSLATE!
+    "Ejecutar este código activará el mensaje de CONTAINMENT_LOOP, al intentar
+    insertar un objeto dentro de sí mismo.".
 
   Verb ejecutar
     Does
@@ -434,9 +432,8 @@ End the CONTAINMENT_LOOP.
 
 The CANT0 IsA code_obj in snippets.
   Has xDesc
-    "Executing this code will trigger the CANT0 Run-Time MESSAGE
-     because there's no VERB matching the 'ejecutar' SYNTAX for
-     this object.". -- @TRANSLATE!
+    "Ejecutar este código activará el mensaje de CANT0 porque no hay un verbo
+    que coincida con la SYNTAX 'ejecutar' para este objeto.".
 End the.
 
 --------------------------------------------------------------------------------
@@ -448,9 +445,11 @@ End the.
 
 The CAN_NOT_CONTAIN IsA code_obj in snippets.
   Has xDesc
-    "To trigger the CAN_NOT_CONTAIN Run-Time MESSAGE try to
-     put the key found in this room inside one of the test objects,
-     which are all containers with a TAKING restrictive clause.". -- @TRANSLATE! End the.
+    "Para activar el mensaje de CAN_NOT_CONTAIN intenta poner la llave que se
+    encuentra en esta habitación dentro de uno de los objetos de prueba, los
+    cuales son contenedores con una cláusula restrictiva de tipo TAKING: solo
+    pueden contener otros objetos de prueba.".
+
   Verb ejecutar
     Does "Test me with: PONE LLAVE EN CAJA"
   End verb.
@@ -475,7 +474,7 @@ The test_objects IsA escenario at bugsRoom.
   Name objetos.
   Has artículo "los".
   Container
-    Header "Los objetos de prueba son:" -- @TRANSLATE! (check translation)
+    Header "Los objetos de prueba son:"
   Description ""
   Verb examinar
     Does only list this.
@@ -493,8 +492,8 @@ The caja IsA test_obj in test_objects.    --> f.s. (box)
   Has artículo "la".
 End the.
 
-The bidónes IsA test_obj in test_objects. --> m.p. (drums)
-  Name bidónes. Name bidones.
+The bidones IsA test_obj in test_objects. --> m.p. (drums)
+  Name bidones.
   Has artículo "los".
 End the.
 
