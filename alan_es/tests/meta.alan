@@ -358,7 +358,6 @@ Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
 
 -- These RT-Messages should be implemented here:
 
---   * CAN_NOT_CONTAIN
 --   * IMPOSSIBLE_WITH
 
 --------------------------------------------------------------------------------
@@ -438,8 +437,24 @@ The CANT0 IsA code_obj in snippets.
     "Executing this code will trigger the CANT0 Run-Time MESSAGE
      because there's no VERB matching the 'ejecutar' SYNTAX for
      this object.". -- @TRANSLATE!
-End the CONTAINMENT_LOOP2.
+End the.
 
+--------------------------------------------------------------------------------
+-- CAN_NOT_CONTAIN
+--------------------------------------------------------------------------------
+
+-- Since this messages is elicited by attempting to place into a container an
+-- object of the wrong type, it has to be manually tested via .
+
+The CAN_NOT_CONTAIN IsA code_obj in snippets.
+  Has xDesc
+    "To trigger the CAN_NOT_CONTAIN Run-Time MESSAGE try to
+     put the key found in this room inside one of the test objects,
+     which are all containers with a TAKING restrictive clause.". -- @TRANSLATE! End the.
+  Verb ejecutar
+    Does "Test me with: PONE LLAVE EN CAJA"
+  End verb.
+End the.
 
 --==============================================================================
 --------------------------------------------------------------------------------
@@ -447,7 +462,8 @@ End the CONTAINMENT_LOOP2.
 --------------------------------------------------------------------------------
 --==============================================================================
 
-Every test_obj IsA escenario container.
+Every test_obj IsA escenario.
+  Container taking test_obj.
   Description ""
 End every.
 
@@ -486,6 +502,10 @@ The cajas IsA test_obj in test_objects.   --> f.p. (boxs)
   Has artículo "las".
 End the.
 
+--------------------------------------------------------------------------------
+-- OBJECTS FOR DEFAULT TESTS
+--------------------------------------------------------------------------------
+
 -- Objects used for default tests, when no parameters are specified.
 -- These are not located anywhere since they are for internal VERB use,
 -- so the player can't interact with them directly.
@@ -497,6 +517,18 @@ End the.
 The cont2 IsA test_obj container in cont1.
   Name 'contenedor de destino'.
 End the.
+
+--------------------------------------------------------------------------------
+-- 'CAN_NOT_CONTAIN' TEST OBJECTS
+--------------------------------------------------------------------------------
+
+-- These are needed for testing CAN_NOT_CONTAIN messages, which require object
+-- which can't be located into the target container due to TAKING clause
+-- violation. So they are not instances of 'test_obj' class (nor containers).
+
+The llave IsA object at bugsRoom.
+  Has artículo "la".
+End the llave.
 
 --------------------------------------------------------------------------------
 

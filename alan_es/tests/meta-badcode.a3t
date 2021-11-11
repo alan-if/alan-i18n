@@ -32,13 +32,45 @@ the dangerous malformed code snippets which are stored in this restricted
 area of the ALAN Laboratories.
 
 Cámara de cuarentena de código
-This chamber contains various code snippets and test objects.
+This chamber contains various code snippets and test objects. Hay una 
+llave.
 
 > x código
-Los fragmentos de código son: CANT0, CONTAINMENT_LOOP y CONTAINMENT_LOOP2.
+Los fragmentos de código son: CANT0, CAN_NOT_CONTAIN, CONTAINMENT_LOOP y 
+CONTAINMENT_LOOP2.
 
 > x objetos
 Los objetos de prueba son: unos bidónes, unas cajas, una caja y un bidón.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'CAN_NOT_CONTAIN'
+> ; ----------------------------------------------------------------------------
+> x CAN_NOT_CONTAIN
+To trigger the CAN_NOT_CONTAIN Run-Time MESSAGE try to put the key found
+in this room inside one of the test objects, which are all containers
+with a TAKING restrictive clause.
+
+> ejecuta CAN_NOT_CONTAIN
+Test me with: PONE LLAVE EN CAJA
+
+> toma llave
+Tomas la llave.
+
+> ; test m.s
+> pone llave en bidón
+El bidón no puede contener la llave. Hecho.
+
+> ; test f.s
+> pone llave en caja
+La caja no puede contener la llave. Hecho.
+
+> ; test m.p
+> pone llave en bidónes
+Los bidónes no pueden contener la llave. Hecho.
+
+> ; test f.p
+> pone llave en cajas
+Las cajas no pueden contener la llave. Hecho.
 
 > ; ----------------------------------------------------------------------------
 > ; TEST 'CANT0'
@@ -61,15 +93,19 @@ attempting to insert an object into itself.
 Poner a el contenedor designado en sí mismo es imposible.
 
 > ; Let's now test various objects with different GNA:
+> ; test m.s
 > ejecuta CONTAINMENT_LOOP con bidón
 Poner a el bidón en sí mismo es imposible.
 
+> ; test f.s
 > ejecuta CONTAINMENT_LOOP con caja
 Poner a la caja en sí misma es imposible.
 
+> ; test m.p
 > ejecuta CONTAINMENT_LOOP con bidónes
 Poner a los bidónes en sí mismos es imposible.
 
+> ; test f.p
 > ejecuta CONTAINMENT_LOOP con cajas
 Poner a las cajas en sí mismas es imposible.
 
@@ -86,18 +122,22 @@ Es imposible poner el contenedor designado en el contenedor de destino
 porque el contenedor de destino ya está dentro de el contenedor designado.
 
 > ; Let's now test various objects with different GNA:
+> ; test m.s <-> f.s
 > ejecuta CONTAINMENT_LOOP2 con bidón y caja
 Es imposible poner el bidón en la caja porque la caja ya está dentro de el 
 bidón.
 
+> ; test f.s <-> m.p.
 > ejecuta CONTAINMENT_LOOP2 con caja y bidónes
 Es imposible poner la caja en los bidónes porque los bidónes ya está 
 dentro de la caja.
 
+> ; test m.p <-> f.s.
 > ejecuta CONTAINMENT_LOOP2 con bidónes y caja
 Es imposible poner los bidónes en la caja porque la caja ya están dentro
 de los bidónes.
 
+> ; test f.p <-> m.s.
 > ejecuta CONTAINMENT_LOOP2 con cajas y bidón
 Es imposible poner las cajas en el bidón porque el bidón ya están dentro
 de las cajas.

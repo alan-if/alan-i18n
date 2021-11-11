@@ -7,6 +7,20 @@ norte
 x código
 x objetos
 ; ----------------------------------------------------------------------------
+; TEST 'CAN_NOT_CONTAIN'
+; ----------------------------------------------------------------------------
+x CAN_NOT_CONTAIN
+ejecuta CAN_NOT_CONTAIN
+toma llave
+; test m.s
+pone llave en bidón
+; test f.s
+pone llave en caja
+; test m.p
+pone llave en bidónes
+; test f.p
+pone llave en cajas
+; ----------------------------------------------------------------------------
 ; TEST 'CANT0'
 ; ----------------------------------------------------------------------------
 x CANT0
@@ -17,9 +31,13 @@ ejecuta CANT0
 x CONTAINMENT_LOOP
 ejecuta CONTAINMENT_LOOP
 ; Let's now test various objects with different GNA:
+; test m.s
 ejecuta CONTAINMENT_LOOP con bidón
+; test f.s
 ejecuta CONTAINMENT_LOOP con caja
+; test m.p
 ejecuta CONTAINMENT_LOOP con bidónes
+; test f.p
 ejecuta CONTAINMENT_LOOP con cajas
 ; ----------------------------------------------------------------------------
 ; TEST 'CONTAINMENT_LOOP2'
@@ -27,7 +45,11 @@ ejecuta CONTAINMENT_LOOP con cajas
 x CONTAINMENT_LOOP2
 ejecuta CONTAINMENT_LOOP2
 ; Let's now test various objects with different GNA:
+; test m.s <-> f.s
 ejecuta CONTAINMENT_LOOP2 con bidón y caja
+; test f.s <-> m.p.
 ejecuta CONTAINMENT_LOOP2 con caja y bidónes
+; test m.p <-> f.s.
 ejecuta CONTAINMENT_LOOP2 con bidónes y caja
+; test f.p <-> m.s.
 ejecuta CONTAINMENT_LOOP2 con cajas y bidón
