@@ -13,6 +13,7 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.x.x \(2021/xx/xx\)](#v0xx-2021xxxx)
     - [v0.3.2 \(2021/11/11\)](#v032-20211111)
         - [Fix Verbs Moving Objects into Containers](#fix-verbs-moving-objects-into-containers)
     - [v0.3.1 \(2021/11/02\)](#v031-20211102)
@@ -41,6 +42,16 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 # Beta Releases
 
 The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] and [Ricardo Osio].
+
+
+## v0.x.x (2021/xx/xx)
+
+Fixed messages translations in various verbs and run-time messages:
+
+- `lanzar.i` — Fix the GNA in `lanzar` VERB.
+- `mensajes.i`:
+    + `CONTAINMENT_LOOP2` — wasn't handling the number of 'estar' verb properly.
+    + `NO_UNDO` and `UNKNOWN_WORD` — Improve translation providing clearer meaning.
 
 
 ## v0.3.2 (2021/11/11)
