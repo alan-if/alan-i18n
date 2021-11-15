@@ -53,3 +53,10 @@ ejecuta CONTAINMENT_LOOP2 con caja y bidones
 ejecuta CONTAINMENT_LOOP2 con bidones y caja
 ; test f.p <-> m.s.
 ejecuta CONTAINMENT_LOOP2 con cajas y bidón
+; ----------------------------------------------------------------------------
+; TEST 'IMPOSSIBLE_WITH'
+; ----------------------------------------------------------------------------
+x IMPOSSIBLE_WITH
+IMPOSSIBLE_WITH me
+IMPOSSIBLE_WITH 666
+IMPOSSIBLE_WITH "literal string"

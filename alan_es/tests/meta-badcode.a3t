@@ -36,8 +36,8 @@ Esta cámara contiene varios fragmentos de código y objetos de prueba. Hay
 una llave.
 
 > x código
-Los fragmentos de código son: CANT0, CAN_NOT_CONTAIN, CONTAINMENT_LOOP y 
-CONTAINMENT_LOOP2.
+Los fragmentos de código son: CONTAINMENT_LOOP, CANT0, CAN_NOT_CONTAIN, 
+CONTAINMENT_LOOP2 y IMPOSSIBLE_WITH.
 
 > x objetos
 Los objetos de prueba son: unos bidones, unas cajas, una caja y un bidón.
@@ -142,6 +142,23 @@ los bidones.
 > ejecuta CONTAINMENT_LOOP2 con cajas y bidón
 Es imposible poner las cajas en el bidón porque el bidón ya está dentro de 
 las cajas.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'IMPOSSIBLE_WITH'
+> ; ----------------------------------------------------------------------------
+> x IMPOSSIBLE_WITH
+To test the IMPOSSIBLE_WITH messages we've implemented a SYNTAX without a
+WHERE clause that will trigger the message when used with actors, strings
+and integers. Test me with: IMPOSSIBLE_WITH ME
+
+> IMPOSSIBLE_WITH me
+Eso es imposible con el hero.
+
+> IMPOSSIBLE_WITH 666
+Eso es imposible con 666.
+
+> IMPOSSIBLE_WITH "literal string"
+Eso es imposible con literal string.
 
 > 
 

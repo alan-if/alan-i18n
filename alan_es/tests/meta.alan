@@ -357,7 +357,49 @@ Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
 
 -- These RT-Messages should be implemented here:
 
---   * IMPOSSIBLE_WITH
+--   * xxxxxxx
+
+--------------------------------------------------------------------------------
+-- IMPOSSIBLE_WITH
+--------------------------------------------------------------------------------
+
+-- This message is shown only when there's a SYNTAX definition without WHERE
+-- clauses and the player attempts to use it on an instance of the wrong class.
+-- In other words, it's a fallback default for "lazy syntaxes" where the author
+-- doesn't provide custom responses via WHERE.
+
+-- Since such a bare SYNTAX assumes by default that its parameter will be an
+-- OBJECT instance, to elicit the IMPOSSIBLE_WITH message we need to implement
+-- an ad hoc bare syntax and test it with an ACTOR parameter (or literal STRING
+-- or INTEGER).
+
+-- NOTE: With the same bare SYNTAX, using a parameter of the correct class
+--       (OBJECT) which is not covered by the VERB will elicit the 'CANT0'
+--       message.
+
+Every impossible_obj IsA object.
+End every.
+
+Syntax impossible_action = IMPOSSIBLE_WITH (obj).
+
+Add to every impossible_obj
+  Verb impossible_action
+    Does "Nothing, because this verb is unreachable!"
+  End verb.
+End add to impossible_obj.
+
+
+The IMPOSSIBLE_WITH IsA code_obj in snippets.
+  Has xDesc
+    "To test the IMPOSSIBLE_WITH messages we've implemented a SYNTAX
+     without a WHERE clause that will trigger the message when used
+     with actors, strings and integers.
+     Test me with: IMPOSSIBLE_WITH ME". -- @TRANSLATE!
+
+  Verb ejecutar
+    Does "Test me with: IMPOSSIBLE_WITH ME" -- @TRANSLATE!
+  End verb.
+End the IMPOSSIBLE_WITH.
 
 --------------------------------------------------------------------------------
 -- CONTAINMENT_LOOP2
@@ -373,9 +415,9 @@ Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
 
 The CONTAINMENT_LOOP2 IsA code_obj in snippets.
   Has xDesc
-    "Ejecutar este código activará el mensaje de CONTAINMENT_LOOP2, al intentar
-    insertar un objeto dentro de otro objeto mientras el primero está dentro
-    del segundo.".
+    "Ejecutar este código activará el mensaje de CONTAINMENT_LOOP2,
+     al intentar insertar un objeto dentro de otro objeto mientras
+     el primero está dentro del segundo.".
 
   Verb ejecutar
     Does
@@ -407,8 +449,8 @@ End the CONTAINMENT_LOOP2.
 
 The CONTAINMENT_LOOP IsA code_obj in snippets.
   Has xDesc
-    "Ejecutar este código activará el mensaje de CONTAINMENT_LOOP, al intentar
-    insertar un objeto dentro de sí mismo.".
+    "Ejecutar este código activará el mensaje de CONTAINMENT_LOOP,
+     al intentar insertar un objeto dentro de sí mismo.".
 
   Verb ejecutar
     Does
@@ -432,8 +474,8 @@ End the CONTAINMENT_LOOP.
 
 The CANT0 IsA code_obj in snippets.
   Has xDesc
-    "Ejecutar este código activará el mensaje de CANT0 porque no hay un verbo
-    que coincida con la SYNTAX 'ejecutar' para este objeto.".
+    "Ejecutar este código activará el mensaje de CANT0 porque no hay
+     un verbo que coincida con la SYNTAX 'ejecutar' para este objeto.".
 End the.
 
 --------------------------------------------------------------------------------
@@ -445,13 +487,14 @@ End the.
 
 The CAN_NOT_CONTAIN IsA code_obj in snippets.
   Has xDesc
-    "Para activar el mensaje de CAN_NOT_CONTAIN intenta poner la llave que se
-    encuentra en esta habitación dentro de uno de los objetos de prueba, los
-    cuales son contenedores con una cláusula restrictiva de tipo TAKING: solo
-    pueden contener otros objetos de prueba.".
+    "Para activar el mensaje de CAN_NOT_CONTAIN intenta poner la
+     llave que se encuentra en esta habitación dentro de uno de los
+     objetos de prueba, los cuales son contenedores con una cláusula
+     restrictiva de tipo TAKING: solo pueden contener otros objetos
+     de prueba.".
 
   Verb ejecutar
-    Does "Test me with: PONE LLAVE EN CAJA"
+    Does "Test me with: PONE LLAVE EN CAJA" -- @TRANSLATE!
   End verb.
 End the.
 

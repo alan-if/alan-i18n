@@ -106,7 +106,7 @@ The following table lists all the [Run-Time MESSAGEs], their testing status, and
 | `CONTAINS`            | --      | _test unneeded_         |
 | `EMPTY_HANDED`        | --      | _test unneeded_         |
 | `HAVE_SCORED`         | --      | TBD                     |
-| `IMPOSSIBLE_WITH`     | --      | TBD                     |
+| `IMPOSSIBLE_WITH`     | &check; | [meta-badcode.a3t]      |
 | `IS_EMPTY`            | --      | _test unneeded_         |
 | `MORE`                | --      | _unable to_             |
 | `MULTIPLE`            | --      | TBD                     |
