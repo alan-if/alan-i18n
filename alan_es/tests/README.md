@@ -79,6 +79,8 @@ The following files handle meta testing:
         * [`meta-badcode.a3t`][meta-badcode.a3t] — Generated test-transcript.
     + `meta-input-errors.a3s` — Tests run-time messages for problematic input:
         * [`meta-input-errors.a3t`][meta-input-errors.a3t] — Generated test-transcript.
+    + `meta-misc.a3s` — Tests various run-time messages that don't fall in a particular category:
+        * [`meta-misc.a3t`][meta-misc.a3t] — Generated test-transcript.
     + `meta-session.a3s` — Tests game session related verbs and run-time messages:
         * [`meta-session.a3t`][meta-session.a3t] — Generated test-transcript.
         * `meta-session.sav` (_untracked_) — Save file created from the solution file.
@@ -93,7 +95,7 @@ The following table lists all the [Run-Time MESSAGEs], their testing status, and
 |       RT Message      |  status |        test file        |
 |-----------------------|---------|-------------------------|
 | `AFTER_BUT`           | --      | TBD                     |
-| `AGAIN`               | --      | TBD                     |
+| `AGAIN`               | &check; | [meta-misc.a3t]         |
 | `BUT_ALL`             | --      | TBD                     |
 | `CAN_NOT_CONTAIN`     | &check; | [meta-badcode.a3t]      |
 | `CANT0`               | &check; | [meta-badcode.a3t]      |
@@ -434,6 +436,7 @@ For more info, see:
 
 [meta-badcode.a3t]: ./meta-badcode.a3t "View test transcript"
 [meta-input-errors.a3t]: ./meta-input-errors.a3t "View test transcript"
+[meta-misc.a3t]: ./meta-misc.a3t "View test transcript"
 [meta-session.a3t]: ./meta-session.a3t "View test transcript"
 
 <!-- people and organizations -->

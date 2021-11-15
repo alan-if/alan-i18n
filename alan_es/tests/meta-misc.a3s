@@ -1,0 +1,9 @@
+﻿; ----------------------------------------------------------------------------
+; TEST 'AGAIN'
+; ----------------------------------------------------------------------------
+; To elicit the 'AGAIN' we need to enter a room, exit it and re-enter it again
+; because it's shown next to the room name only when in "brief mode" (i.e.
+; when VISITS has a non-zero value)...
+n
+s
+n

@@ -1,0 +1,63 @@
+
+Estás en la Sala de pruebas. Aquí se verifica que todo vaya bien con los
+juegos de ALAN. Fuiste escogido para ser un sujeto de pruebas debido a
+tus extraordinarias habilidades (y quizás tu atractiva apariencia tuvo
+algo que ver).
+
+Hoy comprobarás que todo marcha bien con ciertos meta-comandos del juego.
+Recuerda que a pesar de haber sido escogido, este trabajo no es
+remunerado en lo absoluto, pero hey, al menos estás siendo útil ¿no?
+
+¡Mucha suerte y gracias por contribuir con ALAN!
+
+-ALAN Enterprises
+
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
+
+> ; ----------------------------------------------------------------------------
+> ; TEST 'AGAIN'
+> ; ----------------------------------------------------------------------------
+> ; To elicit the 'AGAIN' we need to enter a room, exit it and re-enter it again
+> ; because it's shown next to the room name only when in "brief mode" (i.e.
+> ; when VISITS has a non-zero value)...
+> n
+Al entrar en la zona de cuarentena la entrada es sellada automáticamente
+por un grueso panel de led que se desliza desde arriba, aislando el mundo
+exterior de los peligrosos fragmentos de código malformados que se
+almacenan en esta área restringida de los Laboratorios ALAN.
+
+Cámara de cuarentena de código
+Esta cámara contiene varios fragmentos de código y objetos de prueba. Hay 
+una llave.
+
+> s
+Al acercarte a la salida, los sensores de la habitación activan la ducha
+de rayos X para descontaminarte de cualquier residuo de código
+defectuoso, antes de abrir la barrera de led y dejarte salir.
+
+Sala de pruebas
+Aquí se prueban diversos aspectos del lenguaje ALAN, gracias a tecnología
+de punta y sujetos de prueba extremadamente competentes (como tú). Al
+norte se encuentra la zona de cuarentena. Un botón rojo está atornillado
+a la pared. Hay una tabla de puntuaciones, un refresco, un café, un jugo
+de naranja y una agua.
+
+> n
+Al entrar en la zona de cuarentena la entrada es sellada automáticamente
+por un grueso panel de led que se desliza desde arriba, aislando el mundo
+exterior de los peligrosos fragmentos de código malformados que se
+almacenan en esta área restringida de los Laboratorios ALAN.
+
+Cámara de cuarentena de código (nuevamente)
+Hay una llave.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 
