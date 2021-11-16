@@ -46,13 +46,13 @@ x CONTAINMENT_LOOP2
 ejecuta CONTAINMENT_LOOP2
 ; Let's now test various objects with different GNA:
 ; test m.s <-> f.s
-ejecuta CONTAINMENT_LOOP2 con bidón y caja
+ejecuta CONTAINMENT_LOOP2 con bidón sobre caja
 ; test f.s <-> m.p.
-ejecuta CONTAINMENT_LOOP2 con caja y bidones
+ejecuta CONTAINMENT_LOOP2 con caja sobre bidones
 ; test m.p <-> f.s.
-ejecuta CONTAINMENT_LOOP2 con bidones y caja
+ejecuta CONTAINMENT_LOOP2 con bidones sobre caja
 ; test f.p <-> m.s.
-ejecuta CONTAINMENT_LOOP2 con cajas y bidón
+ejecuta CONTAINMENT_LOOP2 con cajas sobre bidón
 ; ----------------------------------------------------------------------------
 ; TEST 'IMPOSSIBLE_WITH'
 ; ----------------------------------------------------------------------------

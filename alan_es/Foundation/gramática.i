@@ -101,6 +101,22 @@ End add to entity.
 -- We need to define Spanish synonyms for those special words, so that the
 -- parser will recognize them as such.
 
+-- =========
+-- ALL WORDS
+-- =========
+
+Synonyms todo, todos, toda, todas = all.
+
+-- @TODO: Are all of these synonyms of IT, or are some of these THEM words?
+--        There's a difference, since IT refers only to last entity mentioned
+--        in a previous command, whereas THEM words refer to multiple parameters
+--        (e.g. those of ALL, or concatenated parameters via AND).
+
+-- =========
+-- AND WORDS
+-- =========
+
+Synonyms y, luego  = 'and'.
 
 -- ===========
 -- NOISE WORDS
@@ -113,16 +129,6 @@ End add to entity.
 
 Synonyms el, la, los, las = 'the'.
 
--- =========
--- ALL WORDS
--- =========
-
-Synonyms todo, todos, toda, todas = all.
-
--- @TODO: Are all of these synonyms of IT, or are some of these THEM words?
---        There's a difference, since IT refers only to last entity mentioned
---        in a previous command, whereas THEM words refer to multiple parameters
---        (e.g. those of ALL, or concatenated parameters via AND).
 
 Synonyms
   eso, esos, esa, esas, ello,

@@ -329,7 +329,7 @@ Syntax ejecutar_con = ejecutar (código) con (obj)
   And obj IsA test_obj
     Else "¡Solo puedes ejecutar código con objetos de prueba designados!"
 
-Syntax ejecutar_con2 = ejecutar (código) con (obj1) y (obj2)
+Syntax ejecutar_con2 = ejecutar (código) con (obj1) sobre (obj2)
   Where código IsA code_obj
     Else "¡Solo puedes ejecutar fragmentos de código!"
   And obj1 IsA test_obj

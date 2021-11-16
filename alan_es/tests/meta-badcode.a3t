@@ -124,22 +124,22 @@ porque el contenedor de destino ya está dentro de el contenedor designado.
 
 > ; Let's now test various objects with different GNA:
 > ; test m.s <-> f.s
-> ejecuta CONTAINMENT_LOOP2 con bidón y caja
+> ejecuta CONTAINMENT_LOOP2 con bidón sobre caja
 Es imposible poner el bidón en la caja porque la caja ya está dentro de el 
 bidón.
 
 > ; test f.s <-> m.p.
-> ejecuta CONTAINMENT_LOOP2 con caja y bidones
+> ejecuta CONTAINMENT_LOOP2 con caja sobre bidones
 Es imposible poner la caja en los bidones porque los bidones ya están 
 dentro de la caja.
 
 > ; test m.p <-> f.s.
-> ejecuta CONTAINMENT_LOOP2 con bidones y caja
+> ejecuta CONTAINMENT_LOOP2 con bidones sobre caja
 Es imposible poner los bidones en la caja porque la caja ya está dentro de 
 los bidones.
 
 > ; test f.p <-> m.s.
-> ejecuta CONTAINMENT_LOOP2 con cajas y bidón
+> ejecuta CONTAINMENT_LOOP2 con cajas sobre bidón
 Es imposible poner las cajas en el bidón porque el bidón ya está dentro de 
 las cajas.
 

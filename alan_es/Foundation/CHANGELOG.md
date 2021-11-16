@@ -46,6 +46,11 @@ The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] 
 
 ## v0.x.x (2021/xx/xx)
 
+Spanish grammar module improvements:
+
+- _Predefined Player Words_:
+    + **AND WORDS** — Define 'Y' and 'LUEGO' as a synonyms of 'AND' so that players might use them to concatenate commands or multiple parameters.
+
 Fixed messages translations in various verbs and run-time messages:
 
 - `lanzar.i` — Fix the GNA in `lanzar` VERB.
