@@ -1,0 +1,52 @@
+﻿; ****************************************************************************
+; *                                                                          *
+; *                         PREDEFINED PLAYER WORDS                          *
+; *                                                                          *
+; ****************************************************************************
+; This solution tests that the Spanish SYNONYMS of the Predefined Player Words
+; and other hardcoded input terms are all in place and working correctly.
+; The definitions of these SYNONYMS can be found in the "gramática.i" module.
+; ============================================================================
+;                           PREDEFINED PLAYER WORDS
+; ============================================================================
+; These are the proper "Predefined Player Words", as described in Appendix E
+; of The ALAN Manual...
+; ----------------------------------------------------------------------------
+; TEST: ALL WORDS
+; ----------------------------------------------------------------------------
+; Synonyms: 'TODO', 'TODOS', 'TODA', 'TODAS'.
+toma todo
+; ----------------------------------------------------------------------------
+; TEST: AND WORDS
+; ----------------------------------------------------------------------------
+; Synonyms: 'Y', 'LUEGO'.
+; ----------------------------------------------------------------------------
+; TEST: BUT WORDS
+; ----------------------------------------------------------------------------
+; Synonyms: NONE! (TO BE ADDED)
+; ----------------------------------------------------------------------------
+; TEST: THEM WORDS
+; ----------------------------------------------------------------------------
+; Synonyms: NONE! (TO BE ADDED)
+; ----------------------------------------------------------------------------
+; TEST: NOISE WORDS
+; ----------------------------------------------------------------------------
+; Synonyms: 'EL', 'LA', 'LOS', 'LAS' (definite articles).
+; ============================================================================
+;                         OTHER HARDCODED PLAYER WORDS
+; ============================================================================
+; Technically speaking, the SYNONYMS being tested here don't belong to the
+; Predefined Player Words, but since they are predefined (hardcoded) words in
+; the ALAN parser, and we had to provide translated SYNONYMS definitions for
+; them, we're including them in this solution file too...
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; NOTE: I'm not sure this is actually the case, for terms like 'IT', 'A', etc.
+;       might be just the default fallback values defined on ENTITY for non
+;       specified ARTICLES, PRONOUNS, etc. If the Spanish library defines
+;       other defined values for ENTITY, these SYNONYMS might actually no
+;       longer work. Need to check this!
+; ----------------------------------------------------------------------------
+; TEST: 'IT' WORDS
+; ----------------------------------------------------------------------------
+; Synonyms: 'ESO', 'ESOS', 'ESA', 'ESAS', 'ELLO', 'AQUELLO', 'AQUELLA',
+;           'AQUELLOS', 'AQUELLAS', 'LO'.

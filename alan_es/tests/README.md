@@ -76,13 +76,15 @@ The following files handle meta testing:
 
 - `meta.alan` — source adventure for all meta-tests:
     + `meta-badcode.a3s` — Tests run-time messages for malformed adventures:
-        * [`meta-badcode.a3t`][meta-badcode.a3t] — Generated test-transcript.
+        * [`meta-badcode.a3t`][meta-badcode.a3t]
     + `meta-input-errors.a3s` — Tests run-time messages for problematic input:
-        * [`meta-input-errors.a3t`][meta-input-errors.a3t] — Generated test-transcript.
+        * [`meta-input-errors.a3t`][meta-input-errors.a3t]
     + `meta-misc.a3s` — Tests various run-time messages that don't fall in a particular category:
-        * [`meta-misc.a3t`][meta-misc.a3t] — Generated test-transcript.
+        * [`meta-misc.a3t`][meta-misc.a3t]
+    + `meta-player-words.a3s` — Tests [predefined player words]:
+        * [`meta-player-words.a3t`][meta-player-words.a3t]
     + `meta-session.a3s` — Tests game session related verbs and run-time messages:
-        * [`meta-session.a3t`][meta-session.a3t] — Generated test-transcript.
+        * [`meta-session.a3t`][meta-session.a3t]
         * `meta-session.sav` (_untracked_) — Save file created from the solution file.
         * `meta-session-different-adventure.sav` (_tracked_) — A saved `adventV3.a3c` game session, to test the `SAVE_NAME ` run-time MESSAGE (don't delete or overwrite it!).
         * `meta-session-different-arun.sav` (_tracked_) — A `meta.a3c` game session saved using ARun Beta7, to test the `SAVE_VERSION` run-time MESSAGE (don't delete or overwrite it!).
@@ -426,6 +428,7 @@ For more info, see:
 
 [ALAN i18n Wiki]: https://github.com/alan-if/alan-i18n/wiki/
 [Test Suites]: https://github.com/alan-if/alan-i18n/wiki/Test-Suites
+[Predefined Player Words]: https://github.com/alan-if/alan-i18n/wiki/Predefined-Player-Words
 
 <!-- ALAN Manual -->
 
@@ -438,6 +441,7 @@ For more info, see:
 [meta-input-errors.a3t]: ./meta-input-errors.a3t "View test transcript"
 [meta-misc.a3t]: ./meta-misc.a3t "View test transcript"
 [meta-session.a3t]: ./meta-session.a3t "View test transcript"
+[meta-player-words.a3t]: ./meta-player-words.a3t "View test transcript"
 
 <!-- people and organizations -->
 
