@@ -14,11 +14,11 @@
 ; Enable ticker machine to check that session meta verbs don't consume a turn:
 presiona el boton
 ; ============================================================================
-; UNDOING || META VERB: *none* (hardwired?)
+; UNDOING || META VERB: *none* (UNDO is hardwired)
 ; ============================================================================
-; @CHECK: The Spanish library doesn't implement an UNDO verb; it looks like
-;         the UNDO command is hardwired into ALAN. In any case, it's not
-;         consuming a turn.
+; The UNDO command is hardwired into the ALAN interpreter, and behaves like a
+; meta verb, not consuming a turn.
+; @TODO: Add Spanish SYNONYMS for UNDO and test them here!
 ; ----------------------------------------------------------------------------
 ; TEST 'UNDONE': successful undoing message
 ; ----------------------------------------------------------------------------
@@ -89,6 +89,36 @@ meta-session-different-arun.sav
 ; File "meta-session-different-adventure.sav" was saved from "adventV3.a3c":
 restaura
 meta-session-different-adventure.sav
+; ============================================================================
+; TRANSCRIPTING THE GAME
+; ============================================================================
+; There are no transcript-specific RT-Messages.
+; ----------------------------------------------------------------------------
+; TRANSCRIPTING HELPER || META VERB: 'script0'
+; ----------------------------------------------------------------------------
+; This is a fallback verb that catches malformed attempts by the player to
+; invoke a transcript command, providing guidance on their correct syntax:
+transcripción
+scripting
+transcript
+; ----------------------------------------------------------------------------
+; START TRANSCRIPTING || META VERB: 'script_on'
+; ----------------------------------------------------------------------------
+; The following command will create/overwrite the "meta.a3t" transcript:
+activar transcripción
+; Further invocations are just ignored (they don't start a new transcript):
+transcripción on
+scripting on
+transcript on
+; ----------------------------------------------------------------------------
+; STOP TRANSCRIPTING || META VERB: 'script_off'
+; ----------------------------------------------------------------------------
+; The following command will stop writing to the "meta.a3t" transcript:
+desactivar transcripción
+; Further invocations are simply ignored:
+transcripción off
+scripting off
+transcript off
 ; ============================================================================
 ; RESTART THE GAME || META VERB: 'restart'
 ; ============================================================================

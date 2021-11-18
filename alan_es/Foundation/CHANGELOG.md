@@ -14,6 +14,8 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 - [Beta Releases](#beta-releases)
     - [v0.x.x \(2021/xx/xx\)](#v0xx-2021xxxx)
+        - [Add Transcript Verbs](#add-transcript-verbs)
+        - [Fixes and Improvements](#fixes-and-improvements)
     - [v0.3.2 \(2021/11/11\)](#v032-20211111)
         - [Fix Verbs Moving Objects into Containers](#fix-verbs-moving-objects-into-containers)
     - [v0.3.1 \(2021/11/02\)](#v031-20211102)
@@ -45,6 +47,17 @@ The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] 
 
 
 ## v0.x.x (2021/xx/xx)
+
+### Add Transcript Verbs
+
+Added commands to activate and stop saving a transcript of the game to file, so that players using a command line interpreter can access this feature.
+
+- `meta_sesión.i` — added the following META VERBs to control game transcription:
+    + `script0` — prints the correct commands syntax to activate/deactivate transcripts.
+    + `script_on` — starts the transcription via "activar transcripción" or "transcripción on".
+    + `script_off` — stops the transcription via "desactivar transcripción" or "transcripción off".
+
+### Fixes and Improvements
 
 Spanish grammar module improvements:
 

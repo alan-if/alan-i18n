@@ -41,11 +41,11 @@ una máquina oculta acabase de volver a la vida.
 TICK... (turno Nro 1 )
 
 > ; ============================================================================
-> ; UNDOING || META VERB: *none* (hardwired?)
+> ; UNDOING || META VERB: *none* (UNDO is hardwired)
 > ; ============================================================================
-> ; @CHECK: The Spanish library doesn't implement an UNDO verb; it looks like
-> ;         the UNDO command is hardwired into ALAN. In any case, it's not
-> ;         consuming a turn.
+> ; The UNDO command is hardwired into the ALAN interpreter, and behaves like a
+> ; meta verb, not consuming a turn.
+> ; @TODO: Add Spanish SYNONYMS for UNDO and test them here!
 > ; ----------------------------------------------------------------------------
 > ; TEST 'UNDONE': successful undoing message
 > ; ----------------------------------------------------------------------------
@@ -150,6 +150,61 @@ Lo siento, el archivo fue creado por otra versión de Alan.
 > restaura
 Nombre del archivo para cargar (meta-session-different-arun.sav) : meta-session-different-adventure.sav
 Lo siento, el archivo no es de esta aventura.
+
+> ; ============================================================================
+> ; TRANSCRIPTING THE GAME
+> ; ============================================================================
+> ; There are no transcript-specific RT-Messages.
+> ; ----------------------------------------------------------------------------
+> ; TRANSCRIPTING HELPER || META VERB: 'script0'
+> ; ----------------------------------------------------------------------------
+> ; This is a fallback verb that catches malformed attempts by the player to
+> ; invoke a transcript command, providing guidance on their correct syntax:
+> transcripción
+Para activar la transcripción del juego, escriba: ACTIVAR TRANSCRIPCIÓN.
+Para terminar la transcripción, escriba: DESACTIVAR TRANSCRIPCIÓN.
+
+> scripting
+Para activar la transcripción del juego, escriba: ACTIVAR TRANSCRIPCIÓN.
+Para terminar la transcripción, escriba: DESACTIVAR TRANSCRIPCIÓN.
+
+> transcript
+Para activar la transcripción del juego, escriba: ACTIVAR TRANSCRIPCIÓN.
+Para terminar la transcripción, escriba: DESACTIVAR TRANSCRIPCIÓN.
+
+> ; ----------------------------------------------------------------------------
+> ; START TRANSCRIPTING || META VERB: 'script_on'
+> ; ----------------------------------------------------------------------------
+> ; The following command will create/overwrite the "meta.a3t" transcript:
+> activar transcripción
+La transcripción ya ha comenzado.
+
+> ; Further invocations are just ignored (they don't start a new transcript):
+> transcripción on
+La transcripción ya ha comenzado.
+
+> scripting on
+La transcripción ya ha comenzado.
+
+> transcript on
+La transcripción ya ha comenzado.
+
+> ; ----------------------------------------------------------------------------
+> ; STOP TRANSCRIPTING || META VERB: 'script_off'
+> ; ----------------------------------------------------------------------------
+> ; The following command will stop writing to the "meta.a3t" transcript:
+> desactivar transcripción
+Fin de la transcripción.
+
+> ; Further invocations are simply ignored:
+> transcripción off
+Fin de la transcripción.
+
+> scripting off
+Fin de la transcripción.
+
+> transcript off
+Fin de la transcripción.
 
 > ; ============================================================================
 > ; RESTART THE GAME || META VERB: 'restart'

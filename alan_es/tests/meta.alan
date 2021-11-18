@@ -25,6 +25,12 @@
 -- Foundation Library, therefore not all the original tests are implemented
 -- here.
 
+-- !!! WARNING !!!
+
+-- Don't create a 'meta.a3s' solution for testing this adventure, because its
+-- associated transcript 'meta.a3t' would be overwritten when 'meta-session.a3s'
+-- tests the transcript verb 'activar transcripción'.
+
 -- =============================================================================
 
 Import 'Library.i'.
