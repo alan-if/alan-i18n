@@ -52,7 +52,7 @@ cuales son contenedores con una cláusula restrictiva de tipo TAKING: solo
 pueden contener otros objetos de prueba.
 
 > ejecuta CAN_NOT_CONTAIN
-Test me with: PONE LLAVE EN CAJA
+Pruébame con: PONE LLAVE EN CAJA
 
 > toma llave
 Tomas la llave.
@@ -147,9 +147,9 @@ las cajas.
 > ; TEST 'IMPOSSIBLE_WITH'
 > ; ----------------------------------------------------------------------------
 > x IMPOSSIBLE_WITH
-To test the IMPOSSIBLE_WITH messages we've implemented a SYNTAX without a
-WHERE clause that will trigger the message when used with actors, strings
-and integers. Test me with: IMPOSSIBLE_WITH ME
+Para probar los mensajes de IMPOSSIBLE_WITH, hemos implementado una
+SYNTAX sin una cláusula WHERE, la cual activará el mensaje cuando se use
+con actores, strings y números (enteros). Pruébame con: IMPOSSIBLE_WITH ME
 
 > IMPOSSIBLE_WITH me
 Eso es imposible con el hero.

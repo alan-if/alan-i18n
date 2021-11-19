@@ -397,13 +397,13 @@ End add to impossible_obj.
 
 The IMPOSSIBLE_WITH IsA code_obj in snippets.
   Has xDesc
-    "To test the IMPOSSIBLE_WITH messages we've implemented a SYNTAX
-     without a WHERE clause that will trigger the message when used
-     with actors, strings and integers.
-     Test me with: IMPOSSIBLE_WITH ME". -- @TRANSLATE!
+    "Para probar los mensajes de IMPOSSIBLE_WITH, hemos implementado una
+    SYNTAX sin una cláusula WHERE, la cual activará el mensaje cuando se use
+    con actores, strings y números (enteros).
+    Pruébame con: IMPOSSIBLE_WITH ME".
 
   Verb ejecutar
-    Does "Test me with: IMPOSSIBLE_WITH ME" -- @TRANSLATE!
+    Does "Pruébame con: IMPOSSIBLE_WITH ME"
   End verb.
 End the IMPOSSIBLE_WITH.
 
@@ -500,7 +500,7 @@ The CAN_NOT_CONTAIN IsA code_obj in snippets.
      de prueba.".
 
   Verb ejecutar
-    Does "Test me with: PONE LLAVE EN CAJA" -- @TRANSLATE!
+    Does "Pruébame con: PONE LLAVE EN CAJA"
   End verb.
 End the.
 

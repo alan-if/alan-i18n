@@ -118,6 +118,12 @@ Synonyms todo, todos, toda, todas = all.
 
 Synonyms y, luego  = 'and'.
 
+-- =========
+-- BUT WORDS
+-- =========
+
+Synonyms excepto = 'but'.
+
 -- ===========
 -- NOISE WORDS
 -- ===========
