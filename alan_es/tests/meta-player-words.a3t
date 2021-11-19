@@ -50,10 +50,27 @@ de naranja y una agua.
 > ; TEST: AND WORDS
 > ; ----------------------------------------------------------------------------
 > ; Synonyms: 'Y', 'LUEGO'.
+> deja agua y refresco
+(agua) Dejas el agua.
+
+(refresco) Dejas el refresco.
+
+> toma agua luego toma refresco
+Tomas el agua.
+
+Tomas el refresco.
+
 > ; ----------------------------------------------------------------------------
 > ; TEST: BUT WORDS
 > ; ----------------------------------------------------------------------------
-> ; Synonyms: NONE! (TO BE ADDED)
+> ; Synonyms: 'EXCEPTO'.
+> deja todo excepto jugo
+(refresco) Dejas el refresco.
+
+(café) Dejas el café.
+
+(agua) Dejas el agua.
+
 > ; ----------------------------------------------------------------------------
 > ; TEST: THEM WORDS
 > ; ----------------------------------------------------------------------------
