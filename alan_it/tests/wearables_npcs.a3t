@@ -1,0 +1,59 @@
+
+Usa il verbo RESET per far ritornare tutti gli oggetti indossabili al
+loro stato iniziale.
+
+
+Emporio Alani
+Qui c'è un commesso. Qui c'è una donna.
+
+> ; ============================================================================
+> ;                            Test Wearables on NPCs
+> ; ============================================================================
+> ; The Foundation Library allows 'wearable' items to be worn not only by the Hero
+> ; but also by any other actor.
+> ; ----------------------------------------------------------------------------
+> ; NPCs Inventory
+> ; ----------------------------------------------------------------------------
+> ; Examining an actor lists worn items in a separate list form carried ones.
+> x il commesso
+É qui per assistere i clienti nell'acquisto del vestiario. Il commesso
+indossa un completo elegante.
+
+> ; ----------------------------------------------------------------------------
+> ; Taking Items Worn by NPCs
+> ; ----------------------------------------------------------------------------
+> ; The library doesn't prevent taking worn items:
+> prendi il completo
+Preso.
+
+> x il commesso
+É qui per assistere i clienti nell'acquisto del vestiario.
+
+> RESET
+Tutti gli indossabili sono tornati al loro stato iniziale.
+
+> prendi il completo dal commesso
+Fatto, hai preso il completo elegante.
+
+> ; ----------------------------------------------------------------------------
+> ; Implicitly Taking Items Worn by NPCs
+> ; ----------------------------------------------------------------------------
+> ; The library no longer supports implicit taking in verbs:
+> RESET
+Tutti gli indossabili sono tornati al loro stato iniziale.
+
+> indossa il completo
+Non possiedi il completo elegante.
+
+> ; ============================================================================
+> ;                              Wear VERBs Misuses
+> ; ============================================================================
+> indossa il commesso
+Non è possibile indossare il commesso!
+
+> togliti il commesso
+Il commesso non è indossabile.
+
+> 
+
+Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? 

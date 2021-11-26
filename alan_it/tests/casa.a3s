@@ -1,0 +1,37 @@
+﻿; ==============================================================================
+; IL SALOTTO
+; ==============================================================================
+guarda
+inventario
+; ------------------------------------------------------------------------------
+; Divano
+; ------------------------------------------------------------------------------
+x divano
+guarda divano
+prendi il divano
+apri il divano
+spingi il divano
+l
+prendi la chiave
+prendi la chiave
+inventario
+; ------------------------------------------------------------------------------
+; Cassaforte
+; ------------------------------------------------------------------------------
+x la cassaforte
+prendi la cassaforte
+; ------------------------------------------------------------------------------
+; Bretelle
+; ------------------------------------------------------------------------------
+x le bretelle
+prendi le bretelle
+x le bretelle
+prendi le bretelle
+indossa le bretelle
+prendi le bretelle
+lascia le bretelle
+togliti le bretelle
+lascia le bretelle
+indossa le bretelle
+x le bretelle
+inventario

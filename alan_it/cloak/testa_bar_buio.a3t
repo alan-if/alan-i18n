@@ -1,0 +1,89 @@
+
+
+
+Affrettandoti nella piovosa notte di novembre, la vista delle luci
+sfavillanti del teatro dell'opera ti riallieta. È sorprendente che non ci
+sia più gente, ma, ehy, che ti aspetti da un semplice giochino
+dimostrativo...? 
+
+
+Cloak of Darkness 
+Una semplice AT dimostrativa in ALAN3. 
+Versione Alpha 26, febbraio 2019. (Implementata in ALAN 3.0beta6 build
+1878) 
+
+Digita INFO per maggiori informazioni.
+
+
+Foyer del teatro dell'opera
+Ti trovi in uno spazioso atrio d'ingresso splendidamente decorato in
+rosso e oro, con candelabri luccicanti appesi alla volta. L'ingresso
+dalla strada si trova a nord, delle porte conducono a sud e a ovest.
+
+> ; ******************************************************************************
+> ; *                                                                            *
+> ; *                               TESTA BAR BUIO                               *
+> ; *                                                                            *
+> ; ******************************************************************************
+> ; Assicuriamoci che nel bar buio qualsiasi verbo sia bloccato.
+> sud
+L'oscurità
+È buio pesto qui, non riesci a vedere nulla.
+
+> ; ==============================================================================
+> ; AZIONI BLOCCATE
+> ; ==============================================================================
+> aspetta
+Nel buio? Potresti facilmente disturbare... qualcosa!
+
+> appendi il mantello
+Nel buio? Potresti facilmente disturbare... qualcosa!
+
+> appendi il mantello al soffitto
+Nel buio? Potresti facilmente disturbare... qualcosa!
+
+> esamina mantello
+Nel buio? Potresti facilmente disturbare... qualcosa!
+
+> esamina pavimento
+Nel buio? Potresti facilmente disturbare... qualcosa!
+
+> guarda
+L'oscurità
+È buio pesto qui, non riesci a vedere nulla.
+
+> indossa mantello
+Il mantello non è indossabile.
+
+> inventario
+Sei a mani vuote. Stai indossando un mantello.
+
+> lascia mantello
+Fatto.
+
+> prendi mantello
+Preso.
+
+> ; ==============================================================================
+> ; META VERBI
+> ; ==============================================================================
+> ; I meta verbi non è necessario che vengano bloccati.
+> info
+In questo gioco sarò i tuoi occhi e il tuo corpo. Io ti descriverò
+l'ambiente circostante, e tu dovrai dirmi ciò che vorrai fare. Per
+esempio, se vuoi andare a nord, digita NORD. Potrai fare tantissime cose,
+come raccogliere oggetti, esaminarli, aprire porte, etc. Tenta qualsiasi
+azione che ti verrebbe spontanea se ti trovassi veramente qui! 
+
+Ricordati di studiare attentamente le descrizioni, dato che conterranno
+sicuramente indizi su come procedere.
+
+Il comando PUNTEGGIO ti consente di verificare come stai procedendo
+nell'avventura. I comandi SALVA e CARICA ti consentono di salvare e
+ripristinare una partita tra una sessione di gioco e l'altra.
+
+Buona fortuna avventuriero! (ne avrai bisogno)
+
+> 
+
+Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? 

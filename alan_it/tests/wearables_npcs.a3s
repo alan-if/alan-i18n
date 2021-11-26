@@ -1,0 +1,29 @@
+﻿; ============================================================================
+;                            Test Wearables on NPCs
+; ============================================================================
+; The Foundation Library allows 'wearable' items to be worn not only by the Hero
+; but also by any other actor.
+; ----------------------------------------------------------------------------
+; NPCs Inventory
+; ----------------------------------------------------------------------------
+; Examining an actor lists worn items in a separate list form carried ones.
+x il commesso
+; ----------------------------------------------------------------------------
+; Taking Items Worn by NPCs
+; ----------------------------------------------------------------------------
+; The library doesn't prevent taking worn items:
+prendi il completo
+x il commesso
+RESET
+prendi il completo dal commesso
+; ----------------------------------------------------------------------------
+; Implicitly Taking Items Worn by NPCs
+; ----------------------------------------------------------------------------
+; The library no longer supports implicit taking in verbs:
+RESET
+indossa il completo
+; ============================================================================
+;                              Wear VERBs Misuses
+; ============================================================================
+indossa il commesso
+togliti il commesso

@@ -1,0 +1,77 @@
+﻿-- "wearables.alan" | by Tristano Ajmone 2021 | Foundation Library IT Test suite
+-- =============================================================================
+-- * * * * *  T E S T   A D V E N T U R E   F O R   W E A R A B L E S  * * * * *
+-- =============================================================================
+
+Import 'Library.i'.
+
+The emporio IsA location.
+  Name 'Emporio Alani'.
+End the.
+
+-- ==========
+-- NPC Actors
+-- ==========
+
+The commesso IsA maschio at emporio.
+  Has xDesc "É qui per assistere i clienti nell'acquisto del vestiario.".
+End the.
+
+The donna IsA femmina at emporio.
+  Has articolo "la".
+  Has xDesc "É solo una cliente.".
+End the.
+
+-- =========
+-- Wearables
+-- =========
+
+Every ogg_indossabile IsA object.
+  Is indossabile.
+End every.
+
+Verb reset Does
+  -- Restores all wearables to their initial wearer or location.
+  "Tutti gli indossabili sono tornati al loro stato iniziale."
+  -- Hero
+  Locate polo in hero. Make polo indossato. Set indossatore of polo to hero.
+  Locate jeans in hero. Make jeans indossato. Set indossatore of jeans to hero.
+  -- CLerk
+  Locate completo in commesso. Make completo indossato. Set indossatore of completo to commesso.
+End verb.
+
+-- ------------
+-- Worn by Hero
+-- ------------
+
+The polo IsA ogg_indossabile in hero.
+  Has articolo "la".
+  Name polo.
+  Name polo shirt.
+  Is indossato. Has indossatore hero.
+  Has xDesc "É la tua polo preferita, bianca e con il logo
+             del coccodrillo sul lato sinistro.".
+End the.
+
+The jeans IsA ogg_indossabile in hero.
+  Has articolo "i".
+  -- Mentioned "pair of jeans"
+  Is indossato. Has indossatore hero.
+  Has xDesc "É solo un vecchio paio di jeans logori.".
+End the.
+
+-- -------------
+-- Worn by Clerk
+-- -------------
+
+The completo IsA ogg_indossabile in commesso.
+  -- Name completo elegante.
+  Name completo.
+  Is indossato. Has indossatore commesso.
+  Mentioned "completo elegante"
+  Has xDesc "É un elegante completo Giorgio Alani, in tinta grigia.".
+End the.
+
+Start at emporio.
+"Usa il verbo RESET per far ritornare tutti gli oggetti indossabili
+ al loro stato iniziale."

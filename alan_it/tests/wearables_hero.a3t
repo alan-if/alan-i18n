@@ -1,0 +1,106 @@
+
+Usa il verbo RESET per far ritornare tutti gli oggetti indossabili al
+loro stato iniziale.
+
+
+Emporio Alani
+Qui c'è un commesso. Qui c'è una donna.
+
+> ; ==============================================================================
+> ;                             Test Wearables on Hero
+> ; ==============================================================================
+> ; Inventory should always list separately carried and worn items.
+> inventario
+Sei a mani vuote. Stai indossando una polo e dei jeans.
+
+> x la polo
+É la tua polo preferita, bianca e con il logo del coccodrillo sul lato
+sinistro.
+
+> x i jeans
+É solo un vecchio paio di jeans logori.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB REMOVE
+> ; ------------------------------------------------------------------------------
+> ; REMOVE WORN ITEM:
+> togliti la polo
+Fatto. Ti sei sfilato la polo.
+
+> ; REMOVE CARRIED ITEM:
+> togliti la polo
+Non indossi la polo!
+
+> inventario
+Stai trasportando una polo. Stai indossando dei jeans.
+
+> lascia tutto
+(polo) Fatto.
+
+(jeans) Fatto.
+
+> inventario
+Sei a mani vuote.
+
+> ; REMOVE UNOWNED ITEM:
+> togliti la polo
+Non indossi la polo!
+
+> ; ------------------------------------------------------------------------------
+> ; VERB WEAR
+> ; ------------------------------------------------------------------------------
+> inventario
+Sei a mani vuote.
+
+> ; WEAR ALL (UNSUPPORTED):
+> indossa tutto
+Non puoi usare più di un oggetto con 'indossa'.
+
+> ; WEAR UNOWNED ITEM (IMPLICIT TAKING UNSUPPORTED):
+> indossa la polo
+Non possiedi la polo.
+
+> inventario
+Sei a mani vuote.
+
+> ; WEAR WORN ITEM:
+> prendi la polo
+Presa.
+
+> indossa la polo
+Fatto. Ora indossi la polo.
+
+> indossa la polo
+Indossi già la polo.
+
+> ; WEAR CARRIED ITEM:
+> prendi i jeans
+Presi.
+
+> inventario
+Stai trasportando dei jeans. Stai indossando una polo.
+
+> indossa i jeans
+Fatto. Ora indossi i jeans.
+
+> indossa i jeans
+Indossi già i jeans.
+
+> inventario
+Sei a mani vuote. Stai indossando una polo e dei jeans.
+
+> ; ------------------------------------------------------------------------------
+> ; VERB UNDRESS
+> ; ------------------------------------------------------------------------------
+> spogliati
+Fatto, hai rimosso tutto ciò che indossavi.
+
+> spogliati
+Ma non stai indossando nulla!
+
+> inventario
+Stai trasportando una polo e dei jeans.
+
+> 
+
+Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? 

@@ -1,0 +1,44 @@
+﻿; ==============================================================================
+;                             Test Wearables on Hero
+; ==============================================================================
+; Inventory should always list separately carried and worn items.
+inventario
+x la polo
+x i jeans
+; ------------------------------------------------------------------------------
+; VERB REMOVE
+; ------------------------------------------------------------------------------
+; REMOVE WORN ITEM:
+togliti la polo
+; REMOVE CARRIED ITEM:
+togliti la polo
+inventario
+lascia tutto
+inventario
+; REMOVE UNOWNED ITEM:
+togliti la polo
+; ------------------------------------------------------------------------------
+; VERB WEAR
+; ------------------------------------------------------------------------------
+inventario
+; WEAR ALL (UNSUPPORTED):
+indossa tutto
+; WEAR UNOWNED ITEM (IMPLICIT TAKING UNSUPPORTED):
+indossa la polo
+inventario
+; WEAR WORN ITEM:
+prendi la polo
+indossa la polo
+indossa la polo
+; WEAR CARRIED ITEM:
+prendi i jeans
+inventario
+indossa i jeans
+indossa i jeans
+inventario
+; ------------------------------------------------------------------------------
+; VERB UNDRESS
+; ------------------------------------------------------------------------------
+spogliati
+spogliati
+inventario

@@ -1,0 +1,100 @@
+
+
+Salotto
+Un cupo salotto avvolto in una tappezzeria logora. Per terra noti un paio
+di bretelle. Puoi vedere un divano e una cassaforte qui.
+
+> ; ==============================================================================
+> ; IL SALOTTO
+> ; ==============================================================================
+> guarda
+Salotto
+Un cupo salotto avvolto in una tappezzeria logora. Per terra noti un paio
+di bretelle. Puoi vedere un divano e una cassaforte qui.
+
+> inventario
+Sei a mani vuote.
+
+> ; ------------------------------------------------------------------------------
+> ; Divano
+> ; ------------------------------------------------------------------------------
+> x divano
+Non noti nulla di particolare riguardo il divano.
+
+> guarda divano
+Non noti nulla di particolare riguardo il divano.
+
+> prendi il divano
+You can't take that!
+
+> apri il divano
+Non è possibile aprirlo.
+
+> spingi il divano
+Spingi il divano. Dietro il divano trovi una chiave.
+
+> l
+Salotto
+Un cupo salotto avvolto in una tappezzeria logora. Per terra noti un paio
+di bretelle. Puoi vedere una chiave, un divano e una cassaforte qui.
+
+> prendi la chiave
+Presa.
+
+> prendi la chiave
+Possiedi già la chiave.
+
+> inventario
+Stai trasportando una chiave.
+
+> ; ------------------------------------------------------------------------------
+> ; Cassaforte
+> ; ------------------------------------------------------------------------------
+> x la cassaforte
+Non noti nulla di particolare riguardo la cassaforte.
+
+> prendi la cassaforte
+La cassaforte pesa troppo.
+
+> ; ------------------------------------------------------------------------------
+> ; Bretelle
+> ; ------------------------------------------------------------------------------
+> x le bretelle
+Sono le tue bretelle preferite.
+
+> prendi le bretelle
+Prese.
+
+> x le bretelle
+Sono le tue bretelle preferite.
+
+> prendi le bretelle
+Possiedi già le bretelle.
+
+> indossa le bretelle
+Fatto. Ora indossi le bretelle.
+
+> prendi le bretelle
+Possiedi già le bretelle, le stai indossando.
+
+> lascia le bretelle
+Fatto.
+
+> togliti le bretelle
+Non indossi le bretelle!
+
+> lascia le bretelle
+Non possiedi le bretelle.
+
+> indossa le bretelle
+Non possiedi le bretelle.
+
+> x le bretelle
+Sono le tue bretelle preferite.
+
+> inventario
+Stai trasportando una chiave.
+
+> 
+
+Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? 

@@ -41,6 +41,7 @@ Created by [Tristano Ajmone] on April, 2021.
 - [`/_assets/`][_assets/] — toolchain assets.
 - [`/alan_en/`][en] — English library.
 - [`/alan_es/`][es] — Spanish library.
+- [`/alan_it/`][it] — Italian library.
 - [`/resources/`][resources/] — developers' resources.
 - [`CONTRIBUTING.md`][CONTRIBUTING.md] — _Contributors' Guidelines_.
 - [`VERSION_SCHEME.md`][VERSION_SCHEME.md] — _Library Version Scheme_.
@@ -52,6 +53,7 @@ Created by [Tristano Ajmone] on April, 2021.
 |-------------------|---------|--------------------------------|-----------|
 | [`/alan_en/`][en] | English | Reference implementation.      | Nov. 2007 |
 | [`/alan_es/`][es] | Spanish | By M.Donantuonni & B.Humphrey. | Apr. 2010 |
+| [`/alan_it/`][it] | Italian | By [Tristano Ajmone]           | Nov. 2021 |
 
 # About
 
@@ -207,6 +209,7 @@ More details about the license terms, authors and credits of each third party as
 
 [en]: ./alan_en/ "Navigate to ALAN English folder"
 [es]: ./alan_es/ "Navigate to ALAN Spanish folder"
+[it]: ./alan_it/ "Navigate to ALAN Italian folder"
 [resources/]: ./resources "Navigate to resources folder"
 [_assets/]: ./_assets "Navigate to toolchain assets folder"
 

@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.4.2 | 2021/10/20 | by Tristano Ajmone
+=begin "Rakefile" v0.5.0 | 2021/11/26 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -45,7 +45,7 @@ CLOBBER.include('**/*.html').exclude('**/docinfo.html')
 namespace "lib" do
 
   desc "Build all libraries"
-  task all: %w[lib:en:all lib:es:all]
+  task all: %w[lib:en:all lib:es:all lib:it:all]
 
   ## ENGLISH LIBRARY
   ##################
@@ -105,4 +105,26 @@ namespace "lib" do
     CreateADocTranscriptingTasksFromFolder(:docs,'alan_es/docs', LIB_ES_SOURCES)
     CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_es/docs', ES_ADOC_DEPS)
   end # lib:es:
+
+  ## ITALIAN LIBRARY
+  ##################
+  namespace "it" do
+
+    desc "Italian library"
+    task :all => [:cloak, :tests]
+
+    LIB_IT_SOURCES = FileList['alan_it/Foundation/*.i']
+
+    ## Cloak of Darkness
+    ####################
+    desc "Cloak of Darkness Italian"
+    task :cloak
+    CreateTranscriptingTasksFromFolder(:cloak,'alan_it/cloak', LIB_IT_SOURCES)
+
+    ## IT Test Suite
+    ################
+    desc "Italian test suite"
+    task :tests
+    CreateTranscriptingTasksFromFolder(:tests,'alan_it/tests', LIB_IT_SOURCES)
+  end # lib:it:
 end   # lib:

@@ -1,0 +1,51 @@
+﻿--==============================================================================
+-- "Casa Dolce Casa" by Tristano Ajmone
+--==============================================================================
+
+Import 'Library.i'.
+
+--==============================================================================
+-- Il Salotto
+--==============================================================================
+The Salotto IsA location
+End the Salotto.
+
+The tappezzeria_salotto IsA scenery at Salotto.
+  Name tappezzeria
+  Has articolo "la".
+  Description "Un cupo salotto avvolto in una tappezzeria logora."
+End the tappezzeria_salotto.
+
+The chiave IsA object.
+  Has articolo "la".
+  Has xDesc "È una piccola chiave in ottone.".
+End the chiave.
+
+The divano IsA object at Salotto.
+  Is not prendibile.
+  Is spingibile.
+  Has not been_pushed.
+
+  Verb spingere
+    Check this has not been_pushed
+      Else "Non serve più spostare il divano, l'hai già fatto."
+    Does after
+      "Dietro il divano trovi una chiave."
+      Locate chiave at Hero.
+  End verb spingere.
+End the divano.
+
+The cassaforte IsA object at Salotto.
+  Has articolo "la".
+  Has peso 100.
+End the cassaforte.
+
+The bretelle IsA object at Salotto.
+  Has articolo "le".
+  Description "Per terra noti un paio di bretelle."
+  Is indossabile.
+  Has xDesc "Sono le tue bretelle preferite.".
+End the bretelle.
+
+--------------------------------------------------------------------------------
+Start at Salotto.
