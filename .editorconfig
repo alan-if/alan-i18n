@@ -57,7 +57,7 @@ insert_final_newline = true
 
 ## AsciiDoc
 ###########
-[*.{ad,adoc,asc,asciidoc}]
+[*.{adoc,asc,asciidoc}]
 indent_size = unset
 indent_style = space
 end_of_line = unset

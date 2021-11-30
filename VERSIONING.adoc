@@ -1,0 +1,115 @@
+= Library Version Scheme
+:revnumber: 2
+:revdate: 2021-11-30
+:toc: preamble
+
+// ***** !! IMPORTANT !! ****************************************************
+// This document will be included in the final library distribution packages,
+// in HTML format (either on its own or as part of larger document).
+//
+// Any changes to its contents should bear in mind this, so avoid introducing
+// any repository specific references that would prevent its use elsewhere.
+// **************************************************************************
+
+
+// >>> Custom Attributes for Substitutions >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+:Discussion_14: https://github.com/alan-if/alan-i18n/discussions/14[Discussion #14^, title="Discussion #14 -- Libraries Version Scheme"]
+:SemVer: https://semver.org[Semantic Versioning 2.0.0^, title="Semantic Versioning website"]
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+--
+This document explains how the version numbering scheme of the libraries works, and how to interpret the meaning of each version number and its implications for our adventures development.
+
+Document revision {revnumber}, last edited in {revdate}.
+--
+
+
+== Semantic Versioning
+
+The *ALAN Foundation Library* adopts **{SemVer}** as its versioning scheme.
+
+Each release is defined by a `MAJOR.MINOR.PATCH` triplet, consisting of three dot-separated numeric segments which are incremented in a meaningful way:
+
+1. *MAJOR* version indicates backwards compatibility breaking changes.
+2. *MINOR* version indicates new functionality that is backwards compatible.
+3. *PATCH* version indicates backwards compatible changes and bug fixes to the pre-existing library code.
+
+Basically, an author should be able to look at the version number of a new library release and determine whether its adoption in a pre-existing adventure requires code adjustments (MAJOR change), or if it's safe to adopt it without having to tweak the adventure code (MINOR and PATCH changes).
+
+*MAJOR* changes always require tweaking an adventure code, for some parts of the library have undergone significant changes that need to be mirrored in adventures written for a previous MAJOR library version.
+
+*MINOR* changes indicate that new library features are available, but their fruition (which is entirely optional) requires altering the adventure code.
+
+*PATCH* changes usually deal with typos, bugs fixes, or other type of improvements that don't require altering the code of adventures.
+
+
+.How to Decide When to Update the Library
+=========================================
+Suppose you started working on your adventure with `v1.0.0` of the library.
+Some time has gone by and you decide to check whether there are updated versions of the library available for download.
+
+You discover that the following updated versions are available: `v1.0.1`, `v1.0.2`, `v1.1.0` and `v2.0.0`.
+Which one should you pick?
+
+By looking at the version number of each update, you can safely deduced that your current best options are to either update to `v1.1.0` or `v2.0.0`:
+
+* If you choose `v2.0.0`, you know that you'll *have to* tweak your adventure code in order for it to keep working (or, indeed, even compile without error), because the bump in MAJOR version (from `v1.x.x` to `v2.x.x`) indicates that the new version contains new features that come at the price of breaking backward compatibility.
+The library CHANGELOG file will document all the breaking changes and required code adjustments to migrate your library to the new MAJOR version.
+* If you choose `v1.1.0`, you know that your adventure will keep working without changes, although the bump in MINOR version (from `v1.0.x` to `v1.1.x`) indicates that there are new features which *might* (or *might not*) require code adjustments to your adventure _if_ you wish to benefit from them -- again, the CHANGELOG will indicate the nature of the new features, and the required changes to use them (if any).
+But you can safely update to this new version expecting your adventure to still compile out of the box and work as usual, and immediately benefit from any bug fixes and typos correction that might come with it.
+
+Versions `v1.0.1` and `v1.0.2` should be skipped, since `v1.1.0` is the latest non-breaking version that you can safely install.
+
+Whether to choose `v1.1.0` or `v2.0.0` is entirely up to you, depending if you're willing or not to adapt your adventure in order to use the latest library version, or whether you'd rather stick with the current adventure code.
+What matters is that you're able to make an informed choice, without breaking your adventure code.
+=========================================
+
+
+
+=== How Version Updating Works
+
+Version updates always consist in a *single increment* (aka _bump-up_) in one of these three segments.
+Whenever a left-most segment is bumped-up, the segments to its right are reset to zero as a consequence, since the semantic meaning of MINOR and PATCH is contextual to MAJOR and MINOR, respectively -- i.e. MINOR and PATCH changes are only relevant to the current MAJOR version of the library, and PATCH changes are only relevant to the current MINOR version.
+
+Since the focus of this version scheme is communicating to end users how each new library version will impact existing adventures, each version bump focuses only on the left-most affected segment, since MAJOR, MINOR and PATCH represent change according to its impact on existing adventures, in an increasing order of severity, from left to right.
+
+.Version Bumping in Action
+==========================
+E.g. if library `v1.2.3` is undergoing a MAJOR update (i.e. introducing breaking changes) the next version will be `v2.0.0` (_not_ `v2.2.3`), because a MAJOR version bump resets the MINOR and PATCH segments.
+
+Accordingly, if library `v1.2.3` was undergoing a MINOR update (i.e. backward compatible new features) the next version would be `v1.3.0` (_not_ `v1.3.3`), because a MINOR version bump resets the PATCH segment.
+==========================
+
+Version numbers can only grow upwards, and once released a library *must never* be changed, even if the release introduced bugs -- in such cases, a new release with a bumped up PATCH number should be created, replacing the previous one.
+
+.Handling Buggy Releases
+========================
+E.g. if versions `v3.0.0` and `v2.1.5` of two given libraries turned out to be buggy, they would be followed by patch releases  `v3.0.1` and `v2.1.5`, respectively, since bug fixes pertain the PATCH segment.
+
+The previous buggy releases of the packages might be removed from public distribution, at the sole discretion of their maintainers, if they believe that preserving them might be counterproductive; but under no circumstance a released library should be replaced by a patched version adopting the same version number, or be omitted from mentioning in the CHANGELOG -- mistakes _do_ happen, and they are still part of a software development history.
+========================
+
+
+== Provisional Scheme for the Beta Stage
+
+[WARNING]
+=========================================
+The Foundation Library is currently in Beta stage (`v0.X.Y`), so the above rules are not yet enforceable until `v1.0.0` is available.
+=========================================
+
+For the whole duration of the `v0.X.Y` cycle, *MINOR* version bumps should be interpreted as if they were MAJOR changes (i.e. backwards compatibility breaking), and *PATCH* bumps as being MINOR and/or PATCH changes (their distinction is not important during Beta work).
+
+The reasons behind this agreed upon arrangement (which is compliant with {SemVer}) are twofold:
+
+1. We want to avoid introducing too many MAJOR version bumps in the new library, since in the early stages updating the library to exploit new ALAN features will entail many breaking changes, whereas after the `v1.0.0` stable release these should be more sporadic --  i.e. we want to prevent ending up having something like `Foundation Library v302.60.0`, which would look ridiculous.
+2. We want total development freedom in revamping the old ALAN Library into the new Foundation Library, without restricting concerns regarding the introduction of breaking changes.
+So we decided to make it very clear that #during the Beta development stage there are no stability guarantess# -- quoting from {SemVer}:
++
+____
+Major version zero (0.y.z) is for initial development.
+Anything MAY change at any time. The public API SHOULD NOT be considered stable.
+____
+
+For more info on the topic, see/join {Discussion_14} at the ALAN-i18n repository on GitHub.
+
+// EOF //

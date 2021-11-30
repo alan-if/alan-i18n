@@ -44,7 +44,7 @@ Created by [Tristano Ajmone] on April, 2021.
 - [`/alan_it/`][it] — Italian library.
 - [`/resources/`][resources/] — developers' resources.
 - [`CONTRIBUTING.md`][CONTRIBUTING.md] — _Contributors' Guidelines_.
-- [`VERSION_SCHEME.md`][VERSION_SCHEME.md] — _Library Version Scheme_.
+- [`VERSIONING.adoc`][VERSIONING.adoc] — _Library Version Scheme_.
 
 
 ## Library Locales
@@ -215,7 +215,7 @@ More details about the license terms, authors and credits of each third party as
 
 [COPYING]: ./COPYING "View Artistic License 2.0"
 [CONTRIBUTING.md]: ./CONTRIBUTING.md "Read 'Contributors' Guidelines' documentation"
-[VERSION_SCHEME.md]: ./VERSION_SCHEME.md "Read 'Library Version Scheme' documentation"
+[VERSIONING.adoc]: ./VERSIONING.adoc "Read 'Library Version Scheme' documentation"
 
 <!-- people and organizations -->
 

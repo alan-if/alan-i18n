@@ -4,7 +4,7 @@ This is the ChangeLog for the __ALAN Foundation Library__, English version.
 
 For the ChangeLog of the original __[ALAN Library v0.6.2]__ (from which this library was derived) see the archived [`ChangeLog`][ChangeLog] file hosted at the __[ALAN Goodies]__ project.
 
-To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VERSION_SCHEME.md] document.
+To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERSIONING.adoc] document.
 
 -----
 
@@ -240,7 +240,7 @@ The __Foundation Library__ is not going to be just a series of updates to the ol
 
 <!-- project files and folders -->
 
-[VERSION_SCHEME.md]: ../../VERSION_SCHEME.md "Read 'Library Version Scheme' documentation"
+[VERSIONING.adoc]: ../../VERSIONING.adoc "Read 'Library Version Scheme' documentation"
 
 <!-- people and organizations -->
 

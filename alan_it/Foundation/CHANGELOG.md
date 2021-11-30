@@ -2,7 +2,7 @@
 
 This is the ChangeLog for the __ALAN Foundation Library__, Italian version.
 
-To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VERSION_SCHEME.md] document.
+To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERSIONING.adoc] document.
 
 -----
 
@@ -41,7 +41,7 @@ First public Beta of the Italian library, integrating all features updates of th
 
 [English Foundation Library]: ../alan_en/Foundation/ "Navigate to the English Alan Library folder"
 
-[VERSION_SCHEME.md]: ../../VERSION_SCHEME.md "Read 'Library Version Scheme' documentation"
+[VERSIONING.adoc]: ../../VERSIONING.adoc "Read 'Library Version Scheme' documentation"
 
 <!-- people and organizations -->
 

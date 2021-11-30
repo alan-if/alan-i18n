@@ -4,7 +4,7 @@ This is the ChangeLog for the __ALAN Foundation Library__, Spanish version.
 
 An archived copy of the original __[Librería pALANte v0.6.1e]__ (from which this library was derived) can be found at the __[ALAN Goodies]__ project.
 
-To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VERSION_SCHEME.md] document.
+To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERSIONING.adoc] document.
 
 -----
 
@@ -382,7 +382,7 @@ The __Foundation Library__ is not going to be just a series of updates to the ol
 
 [English Foundation Library]: ../alan_en/Foundation/ "Navigate to the English Alan Library folder"
 
-[VERSION_SCHEME.md]: ../../VERSION_SCHEME.md "Read 'Library Version Scheme' documentation"
+[VERSIONING.adoc]: ../../VERSIONING.adoc "Read 'Library Version Scheme' documentation"
 
 <!-- people and organizations -->
 
