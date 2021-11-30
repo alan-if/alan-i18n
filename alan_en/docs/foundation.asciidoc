@@ -1,6 +1,6 @@
 = Foundation Library Design
 Tristano Ajmone <tajmone@gmail.com>
-v0.1, 2021-09-23
+v0.1.1, 2021-11-30
 :rev_mark: WIP Alpha
 :doctype: book
 include::_inc_attr-header.adoc[]

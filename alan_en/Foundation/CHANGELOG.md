@@ -13,6 +13,8 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.4 \(2021/11/30\)](#v024-20211130)
+        - [Add Transcript Verbs](#add-transcript-verbs)
     - [v0.2.3 \(2021/11/11\)](#v023-20211111)
         - [Fix Verbs Moving Objects into Containers](#fix-verbs-moving-objects-into-containers)
     - [v0.2.2 \(2021/09/26\)](#v022-20210926)
@@ -36,6 +38,19 @@ To learn more about the library version scheme, see the [`VERSION_SCHEME.md`][VE
 
 
 # Beta Releases
+
+
+## v0.2.4 (2021/11/30)
+
+### Add Transcript Verbs
+
+Added commands to activate and stop saving a transcript of the game to file, so that players using a command line interpreter can access this feature.
+Based on the changes from Spanish Foundation v0.3.3.
+
+- `meta_session.i` — added the following META VERBs to control game transcription:
+    + `script0` — prints the correct commands syntax to activate/deactivate transcripts.
+    + `script_on` — starts the transcription via "script/transcript on".
+    + `script_off` — stops the transcription via "script/transcript off".
 
 
 ## v0.2.3 (2021/11/11)

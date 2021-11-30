@@ -56,6 +56,9 @@ The following lookup table can be used as a quick reference to check the library
 | say_to      | 'say' (topic)! 'to' (act)      | talk.i
 | say_word    | 'say' (topic)!                 | talk.i
 | score       | 'score'                        | meta_session.i
+| script0     | 'script'                       | meta_session.i
+| script_off  | 'script' off                   | meta_session.i
+| script_on   | 'script' on                    | meta_session.i
 | search      | search (obj)                   | examine.i
 | shoot       | shoot (obj)                    | attack.i
 | shoot_at    | shoot (obj) 'at' (act)         | attack.i

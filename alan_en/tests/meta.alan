@@ -1,0 +1,28 @@
+﻿-- ************************************************
+--   META MESSAGES TEST by Tristano Ajmone (2021)
+-- ************************************************
+
+-- This adventure is for testing "meta" stuff (WIP Draft)
+
+-- !!! WARNING !!!
+
+-- Don't create a 'meta.a3s' solution for testing this adventure, because its
+-- associated transcript 'meta.a3t' would be overwritten when 'meta-session.a3s'
+-- tests the transcript verb 'activar transcripción'.
+
+-- =============================================================================
+
+Import 'Library.i'.
+
+The Lab IsA location
+  Name 'ALAN Labs: Main Test Room'
+  Description
+    "This is the main test facility of the famous
+     ALAN Research Laboratories."
+End The.
+
+
+--------------------------------------------------------------------------------
+
+Start at Lab.
+Visits 1. -- Needed to show the 'AGAIN' Run-Time MESSAGE.

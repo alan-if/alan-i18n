@@ -1,0 +1,10 @@
+﻿Transcripting enabled.
+
+> script on
+Transcripting enabled.
+
+> ; ----------------------------------------------------------------------------
+> ; STOP TRANSCRIPTING || META VERB: 'script_off'
+> ; ----------------------------------------------------------------------------
+> ; The following command will stop writing to the "meta.a3t" transcript:
+> transcript off

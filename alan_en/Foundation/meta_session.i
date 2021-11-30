@@ -3,6 +3,10 @@
 -- Meta verbs definitions for extradiegetic commands relating
 -- to the current game session (storage, quitting, etc.).
 
+--==============================================================================
+--                   Q U I T T I N G   &   R E S T A R T I N G
+--==============================================================================
+
 Synonyms q = 'quit'.
 
 Syntax
@@ -13,6 +17,18 @@ Meta verb 'quit'
     Quit.
 End verb.
 
+
+Syntax
+  'restart' = 'restart'.
+
+Meta verb 'restart'
+  Does
+    Restart.
+End verb.
+
+--==============================================================================
+--                      S A V I N G   &   R E S T O R I N G
+--==============================================================================
 
 Syntax
   'save' = 'save'.
@@ -34,15 +50,9 @@ Meta verb 'restore'
     Look.
 End verb.
 
-
-Syntax
-  'restart' = 'restart'.
-
-Meta verb 'restart'
-  Does
-    Restart.
-End verb.
-
+--==============================================================================
+--                                   S C O R E
+--==============================================================================
 
 Syntax
   'score' = 'score'.
@@ -52,6 +62,38 @@ Meta verb 'score'
     Score.
 End verb.
 
+--==============================================================================
+--                        G A M E   T R A N S C R I P T S
+--==============================================================================
+
+Synonyms 'transcript' = 'script'.
+
+Syntax script0    = 'script'.
+        script_on  = 'script' on.
+        script_off = 'script' off.
+
+
+Meta verb script0
+  Does
+    "You can turn file transcription on and off using the SCRIPT ON/OFF
+     command within the game."
+End verb.
+
+
+Meta verb script_on
+  Does
+    Transcript on. "Transcripting enabled."
+End verb.
+
+
+Meta verb script_off
+  Does
+    Transcript off. "Transcripting disabled."
+End verb.
+
+--==============================================================================
+--                                  A G A I N
+--==============================================================================
 
 Synonyms
   g = again.

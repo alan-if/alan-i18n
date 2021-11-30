@@ -1,0 +1,53 @@
+
+
+ALAN Labs: Main Test Room
+This is the main test facility of the famous ALAN Research Laboratories.
+
+> ; ****************************************************************************
+> ; *                                                                          *
+> ; *                     GAME SESSION COMMANDS & MESSAGES                     *
+> ; *                                                                          *
+> ; ****************************************************************************
+> ; WIP Draft!
+> ; ============================================================================
+> ; TRANSCRIPTING THE GAME
+> ; ============================================================================
+> ; There are no transcript-specific RT-Messages.
+> ; ----------------------------------------------------------------------------
+> ; TRANSCRIPTING HELPER || META VERB: 'script0'
+> ; ----------------------------------------------------------------------------
+> ; This is a fallback verb that catches malformed attempts by the player to
+> ; invoke a transcript command, providing guidance on their correct syntax:
+> transcript
+You can turn file transcription on and off using the SCRIPT ON/OFF
+command within the game.
+
+> script
+You can turn file transcription on and off using the SCRIPT ON/OFF
+command within the game.
+
+> ; ----------------------------------------------------------------------------
+> ; START TRANSCRIPTING || META VERB: 'script_on'
+> ; ----------------------------------------------------------------------------
+> ; The following command will create/overwrite the "meta.a3t" transcript:
+> ; Further invocations are just ignored (they don't start a new transcript):
+> transcript on
+Transcripting enabled.
+
+> script on
+Transcripting enabled.
+
+> ; ----------------------------------------------------------------------------
+> ; STOP TRANSCRIPTING || META VERB: 'script_off'
+> ; ----------------------------------------------------------------------------
+> ; The following command will stop writing to the "meta.a3t" transcript:
+> transcript off
+Transcripting disabled.
+
+> ; Further invocations are simply ignored:
+> script off
+Transcripting disabled.
+
+> 
+
+Do you want to UNDO, RESTART, RESTORE or QUIT ? 
