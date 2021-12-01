@@ -12,6 +12,7 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
+- [Pending Integrations](#pending-integrations)
 - [Beta Releases](#beta-releases)
     - [v0.3.3 \(2021/11/22\)](#v033-20211122)
         - [Add Transcript Verbs](#add-transcript-verbs)
@@ -42,14 +43,23 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 -----
 
+# Pending Integrations
+
+A list of features and changes that need to be replayed on the Spanish Foundation, based on releases from either from the **English Foundation** (the reference library) or the **Italian Foundation**, for changes that only apply to the Spanish and Italian languages, which are similar.
+
+- **Honouring Sceneries xDesc** — `EN v0.2.2`
+
+-------------------------------------------------------------------------------
+
 # Beta Releases
 
-The __Spanish Foundation Library__ is currently maintained by [Tristano Ajmone] and [Ricardo Osio].
-
+The __Spanish Foundation Library__ is currently maintained by [Ricardo Osio] (main maintainer) and [Tristano Ajmone] (vice maintainer and collaborator).
 
 ## v0.3.3 (2021/11/22)
 
 ### Add Transcript Verbs
+
+> These changes were replayed in English Foundation v0.2.4.
 
 Added commands to activate and stop saving a transcript of the game to file, so that players using a command line interpreter can access this feature.
 
@@ -92,6 +102,8 @@ Fixed messages translations in various verbs and run-time messages:
 
 
 ## v0.3.2 (2021/11/11)
+
+> These changes were replayed in English Foundation v0.2.3.
 
 ### Fix Verbs Moving Objects into Containers
 
@@ -207,7 +219,7 @@ Authors no longer need to SCHEDULE the `ini_terms` EVENT in the START section of
 
 ## v0.2.0 (2021/09/17)
 
-> Apply to Spanish library same changes as in English Foundation v0.2.0.
+> Apply to Spanish library equivalent changes to English Foundation v0.2.0.
 
 ### New Wearing Mechanics
 
@@ -266,7 +278,7 @@ This choice affected a single library verb:
 
 ## v0.1.3 (2021/09/12)
 
-> Apply to Spanish library same changes as in English Foundation v0.1.2.
+> Apply to Spanish library equivalent changes to English Foundation v0.1.2.
 
 ### New `xDesc` Attribute
 
@@ -297,7 +309,7 @@ This new attribute (inspired by the StdLib 2) allows to easily provide actors an
 
 ## v0.1.2 (2021/09/12)
 
-> Apply to Spanish library same changes as in English Foundation v0.1.1.
+> Apply to Spanish library equivalent changes to English Foundation v0.1.1.
 
 ### Meta Verbs
 
@@ -312,7 +324,7 @@ Convert "meta verbs" to real `META VERB`s, which in the original library were ju
 
 ## v0.1.1 (2021/09/10)
 
-> Apply to Spanish library same changes as in English Foundation v0.2.1.
+> Apply to Spanish library equivalent changes to English Foundation v0.2.1.
 
 ### UTF-8 Encoding
 
@@ -331,6 +343,8 @@ In view of the imminent Alan 3.0Beta8 release, which introduces support for UTF-
 
 
 ## v0.1.0 (2021/07/24)
+
+> Apply to Spanish library equivalent changes to English Foundation v0.1.0.
 
 ### pALANte v0.6.1e
 

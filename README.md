@@ -44,6 +44,7 @@ Created by [Tristano Ajmone] on April, 2021.
 - [`/alan_it/`][it] — Italian library.
 - [`/resources/`][resources/] — developers' resources.
 - [`CONTRIBUTING.md`][CONTRIBUTING.md] — _Contributors' Guidelines_.
+- [`PORTS_STATUS.md`][PORTS_STATUS.md] — _Ported Libraries Status_.
 - [`VERSIONING.adoc`][VERSIONING.adoc] — _Library Version Scheme_.
 
 
@@ -54,6 +55,8 @@ Created by [Tristano Ajmone] on April, 2021.
 | [`/alan_en/`][en] | English | Reference implementation.      | Nov. 2007 |
 | [`/alan_es/`][es] | Spanish | By M.Donantuonni & B.Humphrey. | Apr. 2010 |
 | [`/alan_it/`][it] | Italian | By [Tristano Ajmone]           | Nov. 2021 |
+
+For more info on the status of the various libraries, see the [`PORTS_STATUS.md`][PORTS_STATUS.md] document.
 
 # About
 
@@ -215,6 +218,7 @@ More details about the license terms, authors and credits of each third party as
 
 [COPYING]: ./COPYING "View Artistic License 2.0"
 [CONTRIBUTING.md]: ./CONTRIBUTING.md "Read 'Contributors' Guidelines' documentation"
+[PORTS_STATUS.md]: ./PORTS_STATUS.md "Read the 'Ported Libraries Status' document"
 [VERSIONING.adoc]: ./VERSIONING.adoc "Read 'Library Version Scheme' documentation"
 
 <!-- people and organizations -->

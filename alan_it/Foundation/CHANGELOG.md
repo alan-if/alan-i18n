@@ -10,12 +10,21 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
+- [Pending Integrations](#pending-integrations)
 - [Beta Releases](#beta-releases)
     - [v0.1.0 \(2021/11/06\)](#v010-20211106)
 
 <!-- /MarkdownTOC -->
 
 -----
+
+# Pending Integrations
+
+A list of features and changes that need to be replayed on the Italian Foundation, based on releases from either from the **English Foundation** (the reference library) or the **Spanish Foundation**, for changes that only apply to the Spanish and Italian languages, which are similar.
+
+- **Add Transcript Verbs** — `EN v0.2.4`/`ES v0.3.3`
+
+-------------------------------------------------------------------------------
 
 # Beta Releases
 

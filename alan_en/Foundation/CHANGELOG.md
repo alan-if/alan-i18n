@@ -36,7 +36,6 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 -----
 
-
 # Beta Releases
 
 
