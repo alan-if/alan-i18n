@@ -10,7 +10,6 @@ Some temporary developer notes to keep track of the work until the library is fu
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Modules Status](#modules-status)
-- [Foundation Features Status](#foundation-features-status)
 
 <!-- /MarkdownTOC -->
 
@@ -46,7 +45,7 @@ The following table contains the list of the Italian modules, their original Eng
 | [`limbo.i`][limbo.i]                       | [`nowhere.i`][nowhere.i] | WIP     |
 | [`mangiare.i`][mangiare.i]                 | [`eat.i`][eat.i]         | 90%     |
 | [`messaggi_runtime.i`][messaggi_runtime.i] |                          | 70%     |
-| [`meta_partita.i`][meta_partita.i]         | [`meta.i`][meta.i]       | TBD!    |
+| [`meta_partita.i`][meta_partita.i]         | [`meta.i`][meta.i]       | &check; |
 | [`meta_punteggio.i`][meta_punteggio.i]     | [`meta.i`][meta.i]       | TBD!    |
 | [`meta_verbosità.i`][meta_verbosità.i]     | [`brief.i`][brief.i]     | &check; |
 | [`mettere.i`][mettere.i]                   | [`put.i`][put.i]         | 50%     |
@@ -57,33 +56,6 @@ The following table contains the list of the Italian modules, their original Eng
 | [`scenario.i`][scenario.i]                 | [`scenery.i`][scenery.i] | 99%     |
 | [`spingere.i`][spingere.i]                 | [`push.i`][push.i]       | 90%     |
 | [`toccare.i`][toccare.i]                   | [`touch.i`][touch.i]     | &check; |
-
-
-# Foundation Features Status
-
-Since the Italian library work was built on the old **ALAN Library v 0.6.2** codebase, the following table tracks the integration status of the features added to the English Foundation library in the meantime, and those of the Spanish library for features which are not found in the English library but which are common to the Spanish and Italian locales.
-
-References are provided via the version number in which they were added in the reference library, first, followed by a description.
-
-|   rev.   |                feature                 |  status |
-|----------|----------------------------------------|---------|
-| EN 0.1.0 | Module `std.i` renamed to `Library.i`. | &check; |
-| EN 0.1.1 | Meta Verbs: add `META` modifier.       | &check; |
-| EN 0.1.2 | New `xDesc` attribute.                 | &check; |
-| EN 0.2.0 | New wearing mechanics                  | &check; |
-| EN 0.2.0 | Drop implicit taking                   | &check; |
-| EN 0.2.0 | Fix `undress` verb.                    | &check; |
-| EN 0.2.1 | Switch to UTF-8 encoding               | &check; |
-| EN 0.2.2 | Honour `xDesc`  in scenery             | &check; |
-| EN 0.2.3 | Fix verbs targetting containers        | &check; |
-
-Also, keep an eye on the following Spanish changes which might soon be included in the English library too:
-
-
-|   rev.   |       feature        | status |
-|----------|----------------------|--------|
-| ES 0.3.3 | Add transcript verbs | ???    |
-| ES 0.3.3 | Proper-named actors  | ???    |
 
 
 <!-----------------------------------------------------------------------------

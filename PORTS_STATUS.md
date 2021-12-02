@@ -25,7 +25,7 @@ This document tracks the development status of ports of the library to other loc
 
 | EN                  | feature                                | Spanish             | Italian             |
 | :-----------------: | :------------------------------------- | :-----------------: | :-----------------: |
-| [`0.2.4`][EN 0.2.4] | Add game transcription META verbs.     | [`0.3.3`][ES 0.3.3] | &cross;             |
+| [`0.2.4`][EN 0.2.4] | Add game transcription META verbs.     | [`0.3.3`][ES 0.3.3] | [`0.1.1`][IT 0.1.1] |
 | [`0.2.3`][EN 0.2.3] | Fix verbs targetting containers.       | [`0.3.2`][ES 0.3.2] | [`0.1.0`][IT 0.1.0] |
 | [`0.2.2`][EN 0.2.2] | Honour `xDesc`  in scenery.            | &cross;             | [`0.1.0`][IT 0.1.0] |
 | [`0.2.1`][EN 0.2.1] | Switch to UTF-8 encoding.              | [`0.1.1`][ES 0.1.1] | [`0.1.0`][IT 0.1.0] |
@@ -134,6 +134,10 @@ We're open to rediscuss our methodology, accepting advise and making room for ne
 [EN 0.1.1]: ./alan_en/Foundation/CHANGELOG.md#v011-20210729 "View English CHANGELOG entry"
 [EN 0.1.0]: ./alan_en/Foundation/CHANGELOG.md#v010-20210724 "View English CHANGELOG entry"
 
+<!--
+[EN 0.x.x]: ./alan_en/Foundation/CHANGELOG.md "View English CHANGELOG entry"
+-->
+
 <!-- Spanish CHANGELOG -->
 
 [ES 0.1.0]: ./alan_es/Foundation/CHANGELOG.md#v010-20210724 "View Spanish CHANGELOG entry"
@@ -144,13 +148,18 @@ We're open to rediscuss our methodology, accepting advise and making room for ne
 [ES 0.3.2]: ./alan_es/Foundation/CHANGELOG.md#v032-20211111 "View Spanish CHANGELOG entry"
 [ES 0.3.3]: ./alan_es/Foundation/CHANGELOG.md#v033-20211122 "View Spanish CHANGELOG entry"
 
-[ES 0.x.x]: ./alan_es/Foundation/CHANGELOG.md# "View Spanish CHANGELOG entry"
-[ES 0.x.x]: ./alan_es/Foundation/CHANGELOG.md# "View Spanish CHANGELOG entry"
+<!--
+[ES 0.x.x]: ./alan_es/Foundation/CHANGELOG.md "View Spanish CHANGELOG entry"
+-->
 
 
 <!-- Italian CHANGELOG -->
 
-[IT 0.1.0]: ./alan_it/Foundation/CHANGELOG.md#v010-20211106 "View Italian CHANGELOG entry"
+[IT 0.1.1]: ./alan_it/Foundation/CHANGELOG.md#v011-20211202 "View Italian CHANGELOG entry"
+[IT 0.1.0]: ./alan_it/Foundation/CHANGELOG.md#v010-20211126 "View Italian CHANGELOG entry"
 
+<!--
+[IT 0.x.x]: ./alan_it/Foundation/CHANGELOG.md "View Italian CHANGELOG entry"
+-->
 
 <!-- EOF -->

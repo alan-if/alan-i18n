@@ -1,20 +1,13 @@
-﻿-- "meta_aiuto.i" -> help.i
+﻿-- "meta_aiuto.i" <- "meta_help.i" <- "help.i"
 
 -- @TODO: Aggiungere meta-verbo COMANDI?
 
 
--- Synonyms
---   h = help.
+Synonyms help, info = istruzioni.
 
-Synonyms
-  help, info = istruzioni.
-
-Syntax
-  istruzioni = istruzioni. -- help
+Syntax istruzioni = istruzioni.
 
 Meta verb istruzioni
-  -- @NOTE: Il comando PUNTEGGIO potrebbe non essere disponibile!
-  --        Forse è meglio non menzionarlo.
   Does
     "In questo gioco sarò i tuoi occhi e il tuo corpo.
      Io ti descriverò l'ambiente circostante, e tu dovrai
@@ -33,14 +26,9 @@ Meta verb istruzioni
 End verb.
 
 
--- Synonyms
---   hints = hint.
+Synonyms hint, aiutino = suggerimento.
 
-Synonyms
-  hint, aiutino = suggerimento. -- hint
-
-Syntax
-  suggerimento = suggerimento.
+Syntax suggerimento = suggerimento.
 
 Meta verb suggerimento
   Does
@@ -49,13 +37,9 @@ Meta verb suggerimento
 End verb.
 
 
--- Synonyms
---   info, notes, author = credits.
+Synonyms credits, copyright = ringraziamenti.
 
-Synonyms
-  credits, copyright = ringraziamenti.
-
-Syntax ringraziamenti = ringraziamenti. -- credits
+Syntax ringraziamenti = ringraziamenti.
        ringraziamenti = autore.
 
 Meta verb ringraziamenti

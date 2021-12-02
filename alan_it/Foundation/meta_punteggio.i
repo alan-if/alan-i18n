@@ -1,10 +1,12 @@
-﻿-- "meta_punteggio.i" -> meta.i
+﻿-- "meta_punteggio.i" <-- "meta_session.i" <- "meta.i"
 
+--==============================================================================
+--                                   S C O R E
+--==============================================================================
 
-Syntax
-  'score' = 'score'. -- @TRANSLATE!
+Syntax vedi_punteggio = punteggio.
+       vedi_punteggio = 'score'.
 
-Meta verb 'score'
-  Does
-    Score.
+Meta verb vedi_punteggio
+  Does score.
 End verb.
