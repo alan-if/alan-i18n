@@ -1,0 +1,16 @@
+﻿; *********************************
+; TEST SCENERY OBJECTS DESCRIPTIONS
+; *********************************
+; ==========================
+; EXAMINE SCENERY WITH xDesc
+; ==========================
+; If the object has xDesc, then the xDesc mentioned.
+x sol
+x oasis
+x cactus
+; =========================
+; EXAMINE SCENERY W/O xDesc
+; =========================
+; If the object has no xDesc, then the default message appears.
+x arena
+x hierbas

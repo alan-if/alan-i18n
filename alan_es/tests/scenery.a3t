@@ -1,0 +1,39 @@
+
+
+Desierto
+Estás rodeado por arena y dunas. Un sol abrasador flota encima de ti,
+siguiéndote a dondequiera que vayas. El calor es irresistible, necesitas
+encontrar agua. Un cactus solitario se levanta en la arena. Pareciese que
+hay algo en el horizonte, ¿un oasis quizás? Ves algunas hierbas secas en
+el suelo.
+
+> ; *********************************
+> ; TEST SCENERY OBJECTS DESCRIPTIONS
+> ; *********************************
+> ; ==========================
+> ; EXAMINE SCENERY WITH xDesc
+> ; ==========================
+> ; If the object has xDesc, then the xDesc mentioned.
+> x sol
+Parece un disco de metal derretido flotando en el cielo.
+
+> x oasis
+Lamentablemente solo es una ilusión.
+
+> x cactus
+Una planta robusta con muchas espinas.
+
+> ; =========================
+> ; EXAMINE SCENERY W/O xDesc
+> ; =========================
+> ; If the object has no xDesc, then the default message appears.
+> x arena
+Olvida la arena, no es importante.
+
+> x hierbas
+Olvida las hierbas, no son importantes.
+
+> 
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)? 

@@ -14,6 +14,8 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 - [Pending Integrations](#pending-integrations)
 - [Beta Releases](#beta-releases)
+    - [v0.4.0 \(2021/12/07\)](#v040-20211207)
+        - [Honour Sceneries xDesc](#honour-sceneries-xdesc)
     - [v0.3.3 \(2021/11/22\)](#v033-20211122)
         - [Add Transcript Verbs](#add-transcript-verbs)
         - [Proper-Named Actors](#proper-named-actors)
@@ -47,13 +49,28 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 A list of features and changes that need to be replayed on the Spanish Foundation, based on releases from either from the **English Foundation** (the reference library) or the **Italian Foundation**, for changes that only apply to the Spanish and Italian languages, which are similar.
 
-- **Honouring Sceneries xDesc** — `EN v0.2.2`
+- _none_
 
 -------------------------------------------------------------------------------
 
 # Beta Releases
 
 The __Spanish Foundation Library__ is currently maintained by [Ricardo Osio] (main maintainer) and [Tristano Ajmone] (vice maintainer and collaborator).
+
+
+## v0.4.0 (2021/12/07)
+
+### Honour Sceneries xDesc
+
+> Apply to Spanish library equivalent changes to English Foundation v0.2.2.
+
+If a scenery object has a non-empty `xDesc` attribute, now the library will print its string, otherwise it will just print the default message for attempting actions on scenery objects.
+
+- `escenario.i`:
+    + Tweak `examinar` VERB to honour a non-empty `xDesc` attribute.
+    + Drop the scenery class GNA variations `escenario_p`, `escenario_f` and `escenario_fp`, since they are no longer required with the new grammar initialization module.
+    + Drop the verb overrides on `escenario` class for `tomar`, `empujar` and `tocar`, since they were not working due Run-Time context precedence of other CHECKs.
+
 
 ## v0.3.3 (2021/11/22)
 

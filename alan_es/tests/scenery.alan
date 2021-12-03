@@ -1,0 +1,69 @@
+﻿-- ****************************************
+-- SCENERY TEST by Ricardo Osio (2021)
+-- ****************************************
+-- This adventure aims to test 'scenery' objects and how they are described
+-- in Spanish when examined. It is mostly based in the scenery.alan test from
+-- the ALAN English Library.
+-- ==========================================================================
+
+Import 'Library.i'.
+
+-- ***************************************************************
+--
+--                       E L  D E S I E R T O
+--
+-- ***************************************************************
+-- The burning and merciless desert is going to be our location...
+
+The desierto IsA location
+  Name desierto.
+  Description
+    "Estás rodeado por arena y dunas. Un sol abrasador flota encima de ti,
+    siguiéndote a dondequiera que vayas. El calor es irresistible, necesitas
+    encontrar agua."
+
+  Exit norte, sur, este, oeste, noroeste, noreste, suroeste, sureste
+    to desierto
+    Does "¡Solo hay más desierto esperándote en esa
+          dirección!"
+  End Exit.
+End The.
+
+-- ****************************
+--
+-- S C E N E R Y  O B J E C T S
+--
+-- ****************************
+
+-- The Sun
+The sol IsA escenario at desierto
+  Has xDesc "Parece un disco de metal derretido flotando en el cielo.".
+End The.
+
+-- A cactus
+The cactus IsA escenario at desierto
+  Description "Un cactus solitario se levanta en la arena."
+  Has xDesc "Una planta robusta con muchas espinas.".
+End The.
+
+-- An oasis
+The oasis IsA escenario at desierto
+  Description "Pareciese que hay algo en el horizonte, ¿un oasis quizás?"
+  Has xDesc "Lamentablemente solo es una ilusión.".
+End The.
+
+-- Some weeds
+The hierbas IsA escenario at desierto
+  Has artículo "las".
+  Description "Ves algunas hierbas secas en el suelo."
+  Has xDesc "".
+End The.
+
+-- Sand
+The arena IsA escenario at desierto
+  Has artículo "la".
+End The.
+
+-- ============================================================================
+
+Start at desierto.

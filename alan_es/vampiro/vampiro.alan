@@ -1,10 +1,10 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * * V A M P I R O  de Bruce Humphrey * *  v2.1.1 | 2021/11/02 | ALAN 3.0Beta8
+-- * * V A M P I R O  de Bruce Humphrey * *  v2.2.0 | 2021/12/05 | ALAN 3.0Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
---  Vampiro para ALAN Foundation Library Spanish v0.3.3.
+--  Vampiro para ALAN Foundation Library Spanish v0.4.0.
 --
 -- Esta es la versión en ALAN + libreria española de "Memorias de reXXe",
 -- también conocido como "Vampiro". Este código fuente forma parte del
@@ -92,31 +92,26 @@ The lapuerta IsA Escenario at Hall
   Name entrada.
   Is not abierto.
   Description ""
+  Has xDesc "Es muy grande y está cerrada. No la vas a poder abrir.".
+
   Verb abrir
     Does only "¡Te he dicho que no la puedes abrir, Melón!"
-  End verb.
-  Verb examinar
-    Does only "Es muy grande y está cerrada. No la vas a poder abrir."
   End verb.
 End the lapuerta.
 
 The pasillodesdevestibulo IsA Escenario at Hall
   Name pasillo.
   Description ""
-  Verb examinar
-    Does only "Es el pasillo principal, se extiende hacia el norte."
-  End verb.
+  Has xDesc "Es el pasillo principal, se extiende hacia el norte.".
 End the pasillodesdevestibulo.
 
 The objVestibulo IsA Escenario at Hall
   Name Vestíbulo.
   Name Vestibulo.
   Name Hall.
-  Verb examinar
-    Does only "El ambiente es muy húmedo y frío.
-               Estás en un pasillo que se extiende hacia el norte.
-               Al sur queda la puerta de entrada al castillo."
-  End verb.
+  Has xDesc "El ambiente es muy húmedo y frío.
+             Estás en un pasillo que se extiende hacia el norte.
+             Al sur queda la puerta de entrada al castillo.".
 End the objVestibulo.
 
 -------------------------
@@ -147,10 +142,7 @@ End the Traje.
 The pasillodesdepasillo IsA Escenario at Pasillo
   Name pasillo.
   Description ""
-  Verb examinar
-    Does only
-      "Es el pasillo principal, se extiende hacia el norte y el sur."
-  End verb.
+  Has xDesc "Es el pasillo principal, se extiende hacia el norte y el sur.".
 End the pasillodesdepasillo.
 
 -------------------------
@@ -171,8 +163,7 @@ Synonyms
 The crucifijo IsA elemento at Biblioteca.
   Name crucifijo plateado.
   Name crucifijo.
-  Description
-    "Hay un pequeño crucifijo plateado en un lado."
+  Description "Hay un pequeño crucifijo plateado en un lado."
   Has xDesc
     "Es un pequeño crucifijo plateado. Es uno de los cuatro
      elementos que nos servirán para derrotar al vampiro.".
@@ -192,14 +183,13 @@ The libros IsA Escenario at Biblioteca.
   Name libro.
   Is leible.
   Description ""
-  Verb examinar
-    Does only
-      "Montones de libros, pero no tengo tiempo para leer ahora."
-  End verb.
+  Has xDesc "Montones de libros, pero no tengo tiempo para leer ahora.".
+
   Verb leer
     Does only
       "Montones de libros, pero no tengo tiempo para leer ahora."
   End verb.
+
   Verb tomar
     Does only
       "No quiero cargar con los libros, no hay tiempo para leerlos."
@@ -209,9 +199,7 @@ End the libros.
 The pasillodesdebiblioteca IsA Escenario at Biblioteca
   Name pasillo.
   Description ""
-  Verb examinar
-    Does only "El pasillo está al oeste."
-  End verb.
+  Has xDesc "El pasillo está al oeste.".
 End the pasillodesdebiblioteca.
 
 -------------------------
@@ -229,9 +217,7 @@ End the Cocina.
 The Horno IsA Escenario at Cocina
   Name Horno.
   Description ""
-  Verb Examinar
-    Does only "Un simple horno, no tiene ninguna importancia."
-  End verb.
+  Has xDesc "Un simple horno, no tiene ninguna importancia.".
 End the Horno.
 
 Synonyms
@@ -240,9 +226,7 @@ The Cacharros IsA Escenario at Cocina
   Has artículo "los".
   Name cacharros.
   Description ""
-  Verb Examinar
-    Does only "Simples cacerolas y cacharros de cocina."
-  End verb.
+  Has xDesc "Simples cacerolas y cacharros de cocina.".
 End the Cacharros.
 
 The Cuchillo IsA Object in Fregadero
@@ -259,6 +243,7 @@ The Fregadero IsA Escenario at Cocina
       "El fregadero está vacío."
   Name fregadero.
   Description ""
+
   Verb Examinar
     Does only
       "Es un fregadero de piedra."
@@ -319,9 +304,7 @@ End the Armario.
 The pasillodesdecocina IsA Escenario at Biblioteca
   Name pasillo.
   Description ""
-  Verb examinar
-    Does only "El pasillo está al este."
-  End verb.
+  Has xDesc "El pasillo está al este.".
 End the pasillodesdecocina.
 
 -------------------------
@@ -346,19 +329,13 @@ The escalones_escalera IsA Escenario at HabEscaleras
   Has artículo "las".
   Name escaleras.
   Description ""
-  Verb Examinar
-    Does only
-      "Unas polvorientas escaleras. Unas suben y otras bajan."
-  End verb.
+  Has xDesc "Unas polvorientas escaleras. Unas suben y otras bajan.".
 End the escalones_escalera.
 
 The pasillodesdeescaleras IsA Escenario at Biblioteca
   Name pasillo.
   Description ""
-  Verb examinar
-    Does only
-      "El pasillo principal del castillo se extiende hacia el sur."
-  End verb.
+  Has xDesc "El pasillo principal del castillo se extiende hacia el sur.".
 End the pasillodesdeescaleras.
 
 -------------------------
@@ -399,9 +376,7 @@ The Cama IsA Escenario at Dormitorio
   Has artículo "la".
   Name cama.
   Description ""
-  Verb Examinar
-    Does only "Está cubierta de sábanas."
-  End verb.
+  Has xDesc "Está cubierta de sábanas.".
 End the Cama.
 
 The Sabanas IsA Object at Dormitorio
@@ -424,9 +399,7 @@ End the Sabanas.
 The pasillodesdedormitorio IsA Escenario at Biblioteca
   Name pasillo.
   Description ""
-  Verb examinar
-    Does only "El pasillo está al este."
-  End verb.
+  Has xDesc "El pasillo está al este.".
 End the pasillodesdedormitorio.
 
 --------------------
@@ -448,9 +421,7 @@ The trofeos IsA Escenario at Sala
   Name trofeos.
   Name trofeo.
   Description ""
-  Verb Examinar
-    Does only "Insignificante trofeos."
-  End verb.
+  Has xDesc "Insignificante trofeos.".
 End the trofeos.
 
 The adornos IsA Escenario at Sala
@@ -458,10 +429,7 @@ The adornos IsA Escenario at Sala
   Name adornos.
   Name adorno.
   Description ""
-  Verb Examinar
-    Does only
-      "Adornan."
-  End verb.
+  Has xDesc "Adornan.".
 End the adornos.
 
 The chimenea IsA Escenario at Sala
@@ -471,10 +439,8 @@ The chimenea IsA Escenario at Sala
   Name ladrillo.
   Is buscable.
   Description ""
-  Verb Examinar
-    Does only
-      "Es una chimenea hecha de ladrillos y muy elegante."
-  End verb.
+  Has xDesc "Es una chimenea hecha de ladrillos y muy elegante.".
+
   Verb Buscar
     Does only
       "En la chimenea están los restos aún calientes de un fuego reciente."
@@ -485,7 +451,7 @@ The chimenea IsA Escenario at Sala
   End verb.
 End the chimenea.
 
-The restos IsA Escenario_p at Sala
+The restos IsA escenario at Sala
   Name restos.
   Name fuego.
   Description ""
@@ -506,9 +472,7 @@ The mesa IsA Escenario at Sala
   Name mesa grande.
   Name gran mesa.
   Description ""
-  Verb Examinar
-    Does only "Una mesa de caoba, bastante grande."
-  End verb.
+  Has xDesc "Una mesa de caoba, bastante grande.".
 End the mesa.
 
 The silla IsA Escenario at Sala
@@ -516,17 +480,13 @@ The silla IsA Escenario at Sala
   Name silla.
   Name silla cómoda.
   Description ""
-  Verb Examinar
-    Does only "Una cómoda silla."
-  End verb.
+  Has xDesc "Una cómoda silla.".
 End the silla.
 
 The pasillodesdesala IsA Escenario at Biblioteca
   Name pasillo.
   Description ""
-  Verb examinar
-    Does only "El pasillo está al oeste."
-  End verb.
+  Has xDesc "El pasillo está al oeste.".
 End the pasillodesdesala.
 
 --------------------
@@ -545,10 +505,7 @@ The escalones_sotano IsA Escenario at Sotano
   Has artículo "la".
   Name escaleras.
   Description ""
-  Verb Examinar
-    Does only
-      "Estos escalones conducen al piso superior."
-  End verb.
+  Has xDesc "Estos escalones conducen al piso superior.".
 End the escalones_sotano.
 
 -- El barril es un objeto que no puede abrirse, a menos que se use la
@@ -616,7 +573,7 @@ End the Rellano.
 The escalones_arriba IsA Escenario at Rellano
   Has artículo "la".
   Name escaleras.
-  Description  -- ToDo: Añadir concordancia número y género, como la versión InformAte
+  Description  -- @CEHCK: Añadir concordancia número y género, como la versión InformAte
     "Conducen al piso inferior."
 End the escalones_arriba.
 
@@ -635,12 +592,9 @@ End the HabVampiro.
 The Altar IsA Escenario at HabVampiro
   Name altar.
   Description ""
-  Verb Examinar
-    Does only
-      "Es un altar de dura piedra.
-       Encima de éste está el ataud."
-    End verb.
-  -- ToDo: añadir controles "no es necesario" para entrar, sentarse, estirarse, meterse, etc.
+  Has xDesc "Es un altar de dura piedra.
+             Encima de éste está el ataud.".
+  -- @TODO: añadir controles "no es necesario" para entrar, sentarse, estirarse, meterse, etc.
 End the Altar.
 
 Synonyms

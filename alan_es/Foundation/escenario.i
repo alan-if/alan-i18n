@@ -1,6 +1,7 @@
 ﻿-- "escenario.i" <-- "scenery.i"
 
-Every escenario IsA object
+Every escenario IsA object -- @NOTE: Change 'escenario' for a more
+                           -- understandable word in Spanish.
   Is
     Not buscable.
     Not tomable.
@@ -9,35 +10,16 @@ Every escenario IsA object
   Description "" -- para que no se liste en las descripciones
 
   Verb examinar
-    Does only "Solo es escenario."
-  End verb.
+    Does only
+      If xDesc of obj <> ""
+        then say xDesc of obj.
+        else
+          Say "Olvida $+1, no".
+          If obj is not plural
+            then "es importante."
+            else "son importantes."
+          End If.
+      End If.
+    End Verb examinar.
+End Every escenario.
 
-  Verb buscar
-    Does only "No hace falta buscar nada ahí."
-  End verb.
-
-  Verb tomar
-    Does only "No puedes tomarlo."
-  End verb.
-
-  Verb empujar
-    Does only "No tiene sentido empujar."
-  End verb.
-
-  Verb tocar
-    Does only "No hace falta tocar."
-  End verb.
-End every.
-
-Every escenario_p IsA escenario
-  Is plural.
-End every.
-
-Every escenario_f IsA escenario
-  Is femenina.
-End every.
-
-Every escenario_fp IsA escenario
-  Is femenina.
-  Is plural.
-End every.

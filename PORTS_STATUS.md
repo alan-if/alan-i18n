@@ -27,7 +27,7 @@ This document tracks the development status of ports of the library to other loc
 | :-----------------: | :------------------------------------- | :-----------------: | :-----------------: |
 | [`0.2.4`][EN 0.2.4] | Add game transcription META verbs.     | [`0.3.3`][ES 0.3.3] | [`0.1.1`][IT 0.1.1] |
 | [`0.2.3`][EN 0.2.3] | Fix verbs targetting containers.       | [`0.3.2`][ES 0.3.2] | [`0.1.0`][IT 0.1.0] |
-| [`0.2.2`][EN 0.2.2] | Honour `xDesc`  in scenery.            | &cross;             | [`0.1.0`][IT 0.1.0] |
+| [`0.2.2`][EN 0.2.2] | Honour `xDesc`  in scenery.            | [`0.4.0`][ES 0.4.0] | [`0.1.0`][IT 0.1.0] |
 | [`0.2.1`][EN 0.2.1] | Switch to UTF-8 encoding.              | [`0.1.1`][ES 0.1.1] | [`0.1.0`][IT 0.1.0] |
 | [`0.2.0`][EN 0.2.0] | Fix `undress` verb.                    | [`0.2.0`][ES 0.2.0] | [`0.1.0`][IT 0.1.0] |
 | [`0.2.0`][EN 0.2.0] | Drop implicit taking                   | [`0.2.0`][ES 0.2.0] | [`0.1.0`][IT 0.1.0] |
@@ -140,13 +140,14 @@ We're open to rediscuss our methodology, accepting advise and making room for ne
 
 <!-- Spanish CHANGELOG -->
 
-[ES 0.1.0]: ./alan_es/Foundation/CHANGELOG.md#v010-20210724 "View Spanish CHANGELOG entry"
-[ES 0.1.1]: ./alan_es/Foundation/CHANGELOG.md#v011-20210910 "View Spanish CHANGELOG entry"
-[ES 0.1.2]: ./alan_es/Foundation/CHANGELOG.md#v012-20210912 "View Spanish CHANGELOG entry"
-[ES 0.1.3]: ./alan_es/Foundation/CHANGELOG.md#v013-20210912 "View Spanish CHANGELOG entry"
-[ES 0.2.0]: ./alan_es/Foundation/CHANGELOG.md#v020-20210917 "View Spanish CHANGELOG entry"
-[ES 0.3.2]: ./alan_es/Foundation/CHANGELOG.md#v032-20211111 "View Spanish CHANGELOG entry"
+[ES 0.4.0]: ./alan_es/Foundation/CHANGELOG.md#v040-20211207 "View Spanish CHANGELOG entry"
 [ES 0.3.3]: ./alan_es/Foundation/CHANGELOG.md#v033-20211122 "View Spanish CHANGELOG entry"
+[ES 0.3.2]: ./alan_es/Foundation/CHANGELOG.md#v032-20211111 "View Spanish CHANGELOG entry"
+[ES 0.2.0]: ./alan_es/Foundation/CHANGELOG.md#v020-20210917 "View Spanish CHANGELOG entry"
+[ES 0.1.3]: ./alan_es/Foundation/CHANGELOG.md#v013-20210912 "View Spanish CHANGELOG entry"
+[ES 0.1.2]: ./alan_es/Foundation/CHANGELOG.md#v012-20210912 "View Spanish CHANGELOG entry"
+[ES 0.1.1]: ./alan_es/Foundation/CHANGELOG.md#v011-20210910 "View Spanish CHANGELOG entry"
+[ES 0.1.0]: ./alan_es/Foundation/CHANGELOG.md#v010-20210724 "View Spanish CHANGELOG entry"
 
 <!--
 [ES 0.x.x]: ./alan_es/Foundation/CHANGELOG.md "View Spanish CHANGELOG entry"
