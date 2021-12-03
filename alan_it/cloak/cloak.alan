@@ -78,36 +78,27 @@ End the hero.
 -- Il mantello
 --==============================================================================
 
--- All'inizio della partita, il protagonsta indossa il mantello. Poiché questo
+-- All'inizio della partita, il protagonista indossa il mantello. Poiché questo
 -- è l'unico oggetto del gioco realmente manipolabile, quasi tutti i verbi di
--- questa avventura saranno centrati attorno al mantello.
+-- questa avventura saranno incentrati sul mantello.
 --
 -- Il mantello può essere sia trasportato che indossato dall'eroe, e l'unica
 -- stanza in cui ci si può separare da esso è il guardaroba, in cui è possibile
 -- lasciarlo in terra o appenderlo al gancio.
 
 The mantello IsA object in hero
-  Is not appeso. indossato. stato_appeso.
+  Is indossabile. Is indossato.
+  Has indossatore hero.
+  Is not appeso. not stato_appeso.
   Description
     If mantello is appeso
       then "$pSul piccolo gancio d'ottone è appeso un mantello di velluto."
       else "$pC'è un mantello di velluto nero qui."
     End if.
-
-    Has xDesc
-      "Un bellissimo mantello in velluto nero bordato di raso, leggermente
-       spruzzato di gocce di pioggia. È di un nero talmente profondo
-       che sembra assorbire la luce nella stanza.".
-
-////
-  Verb esamina
-    Check current location <> bar_buio
-      Else describe avvertimento_bar_buio.
-    Does only "Un bellissimo mantello in velluto nero bordato di raso, leggermente
-               spruzzato di gocce di pioggia. È di un nero talmente profondo
-               che sembra assorbire la luce nella stanza."
-  End verb.
-////
+  Has xDesc
+    "Un bellissimo mantello in velluto nero bordato di raso, leggermente
+     spruzzato di gocce di pioggia. È di un nero talmente profondo
+     che sembra assorbire la luce nella stanza.".
 
   Verb appendi
     Check oggetto in hero
@@ -133,9 +124,9 @@ The mantello IsA object in hero
       make this not indossato.
   End verb lascia.
 
-  Verb indossa
-    Check this is not indossato
-      else "Stai già indossando $+1."
+  Verb indossa -- @FIXME: Override 'indossare' instead!
+    Check this is not indossato        -- @DELME: when overrides 'indossare'!
+      else "Stai già indossando $+1."  -- @DELME: when overrides 'indossare'!
     Does only
       If this not in hero
         then
@@ -145,7 +136,10 @@ The mantello IsA object in hero
           end if. "e lo indossi."
         else "Fatto."
       end if.
-      Make this indossato. Make this not appeso. Locate this in hero.
+      Locate this in hero.
+      Set indossatore of this to hero.
+      Make this indossato.
+      Make this not appeso.
   End verb indossa.
 End the mantello.
 
@@ -656,7 +650,6 @@ Add to every thing
 
   Verb lascia
     Check oggetto in  hero
-      else say msg:non_possiedi_P1.
     Does
       "Posi a terra $+1."
       locate this here.
@@ -721,7 +714,6 @@ Add to every object
             else "è"
           end if. "qualcosa che puoi appendere."
       And ogg1 in hero
-        else say msg:non_possiedi_P1.
   End verb appendi_a.
 End add to object.
 
