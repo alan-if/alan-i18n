@@ -1,24 +1,19 @@
-﻿-- "bussare.i" -> knock.i
+﻿-- "bussare.i" <- "knock.i"
 
-Syntax
-  bussare_a = bussa a (ogg)
-    Where ogg IsA thing
-      else "You can't knock on that!" -- @TRANSLATE!
+Syntax bussare = bussa a (ogg)
+  Where ogg IsA object
+    else "Non è possibile bussare" say ogg:prep_A. "$1!" --> @TODO: More explicit message!
 
 Add to every thing
-  Verb bussare_a
+  Verb bussare
     Does
       "Bussi" SAY ogg:prep_A. say the ogg. "ma non succedde nulla."
   End verb.
 End add.
 
--- @NOTE: 'bussare'   --> 'bussare_errore'?
---        'bussare_a' --> 'bussare'?
-Syntax
-  bussare = bussa.
+Syntax bussare0 = bussa.
 
-Verb bussare
+Verb bussare0
   Does
-  --"You need to specify what you want to knock on."
     "Per bussare a qualcosa, usa BUSSA A OGGETTO."
 End verb.

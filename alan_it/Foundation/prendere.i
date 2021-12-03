@@ -1,4 +1,4 @@
-﻿-- "prendere.i" -> take.i
+﻿-- "prendere.i" <- "take.i"
 
 Add to every thing
   Is inanimato.
@@ -27,7 +27,7 @@ End add.
 Syntax
   prendere = prendi (ogg) *
     Where ogg IsA object
-      else "You can't take that with you!" -- @TRANSLATE!
+      else "Puoi prendere soltanto oggetti!"
   prendere = raccogli (ogg).
   prendere = afferra (ogg).   --> @TODO: Eliminare?
   prendere = trasporta (ogg). --> @TODO: Eliminare?
@@ -35,9 +35,9 @@ Syntax
 Add to every object
   Verb prendere
     Check ogg is prendibile
-      else "You can't take that!" -- @TRANSLATE!
+      else "Non puoi prendere $+1."
     And ogg not in hero
-      else "Possiedi già" say the ogg.
+      else "Possiedi già $+1"
             If ogg is indossato
               then
                 ", l$$" say ogg:vocale.
@@ -87,11 +87,15 @@ End add.
 Syntax
   prendere_da = prendi (ogg) da (detentore)
     Where ogg IsA object
-      else "You can only take objects." -- @TRANSLATE!
+      else "Puoi prendere soltanto oggetti!"
     And detentore IsA thing
-      else "You can't take things from that!" -- @TRANSLATE!
+      else
+        "Non è possibile prendere nulla"
+        say detentore:prep_DA. "$+2!"
     And detentore IsA container
-      else "You can't take things from that!" -- @TRANSLATE!
+      else
+        "Non è possibile prendere nulla"
+        say detentore:prep_DA. "$+2!"
   prendere_da = prendi  (ogg)* dai (detentore).
   prendere_da = rimuovi (ogg)* da  (detentore).
   prendere_da = rimuovi (ogg)* dai (detentore).
@@ -109,11 +113,23 @@ Add to every object
       Check ogg not in hero
         else "Possiedi già" say the ogg. "."
       And ogg in detentore
-        else say the ogg. "is not there." -- @TRANSLATE!
+        else
+          If detentore IsA actor
+            then "$+2 non"
+              If detentore is plurale
+                then "possiedono"
+                else "possiede"
+              End if. "$+1."
+            else
+              "$+1 non si trova"
+              If ogg is plurale
+                then "$$no"
+              End if. "lì."
+          End if.
       Does
         If detentore=hero then
-          -- @CHECKME: Would this ever be executed???
-          "You don't need to take things from yourself!" -- @TRANSLATE!
+          -- @CHECKME: Would this ever be executed??? See Issue #20
+          "Non hai bisogno di prendere cose da te stesso!"
         else
           Locate ogg in hero.
           -- In case item was being worn:

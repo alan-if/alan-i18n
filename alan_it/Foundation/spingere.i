@@ -1,45 +1,36 @@
-﻿-- "spingere.i" -> push.i
+﻿-- "spingere.i" <- "push.i"
 
 Add to every thing
   Is spingibile.
 End add.
 
 
-Syntax
-  spingere = spingi (ogg)
-    Where ogg IsA thing
-    --else "You can't push that."
-      else "You can't push that." -- @TRANSLATE
+Syntax spingere = spingi (ogg)
+  Where ogg IsA thing
+    else "Non è possibile spingere $+1!"
 
 Add to every object
   Verb spingere
     Check ogg is spingibile
-    --else "You can't push that."
-      else "You can't push that." -- @TRANSLATE
+      else "Non puoi spingere $+1!"
     Does
-      "Spingi" say the ogg. "."
+      "Fatto. Hai spinto $+1."
   End verb.
 End add.
 
 
-Syntax
-  spingere_con = spingi (ogg1) con (ogg2)
-    Where ogg1 IsA thing
-    --else "You can't push that."
-      else "You can't push that." -- @TRANSLATE
-    And ogg2 IsA object
-    --else "You can use only objects to push things with."
-      else "You can use only objects to push things with." -- @TRANSLATE
+Syntax spingere_con = spingi (ogg1) con (ogg2)
+  Where ogg1 IsA thing
+    else "Non è possibile spingere $+1!"
+  And ogg2 IsA object
+    else "Puoi servirti solo di oggetti per spingere qulacosa!"
 
 Add to every object
   Verb spingere_con
     When ogg1
       Check ogg1 is spingibile
-      --else "You can't push that."
-        else "You can't push that."
+      else "Non puoi spingere $+1!"
       Does
-      --"Using" say the ogg2. "you push" say the ogg1. "."
-        "Servendoti" say ogg2:prep_DI. say the ogg2.
-        "spingi" say the ogg1. "."
+        "Servendoti" say ogg2:prep_DI. "$2 spingi $+1."
   End verb.
 End add.

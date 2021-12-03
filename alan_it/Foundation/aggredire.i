@@ -1,4 +1,4 @@
-﻿-- "aggredire.i" -> attack.i
+﻿-- "aggredire.i" <- "attack.i"
 
 Add to every thing
   Can not sparare.
@@ -9,6 +9,9 @@ Add to every object
   Can not sparare. -- @DELME? (redundant! already on THING)
 End add.
 
+--==============================================================================
+--                               A G G R E D I R E
+--==============================================================================
 
 -- @NOTA: In Inform 6 'attacca' riconosce questi sinonimi:
 --        rompi, colpisci, combatti, uccidi, tortura, lotta, sfonda, ammazza,
@@ -24,19 +27,16 @@ End add.
 --   kill, fight, hit = attack.
 --   fire = shoot.
 
-Synonyms
-  combatti, picchia, attacca = aggredisci.
-  fire = shoot.
+Synonyms combatti, picchia, attacca = aggredisci.
 
-Syntax
-  aggredire = aggredisci (png)
-    Where png IsA thing
-      else "You can't attack that." -- @TRANSLATE!
+Syntax aggredire = aggredisci (png)
+  Where png IsA thing
+    else "Non è possibile aggredire $+1!"
 
 Add to every thing
   Verb aggredire
     Does
-      "Violence is not the answer." -- @TRANSLATE!
+      "La violenza non è la giusta risposta a questo." --> taken from i6
   End verb.
 End add.
 
@@ -46,99 +46,92 @@ End add.
 --    SYNTAX attacca_con = attacca (bersaglio) con (arma)
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Syntax
-  aggredire_con = aggredisci (png) con (ogg)
-    Where png IsA thing
-      else "You can't attack that." -- @TRANSLATE!
-    And ogg IsA object
-      else "You can't attack anything with that!" -- @TRANSLATE!
+Syntax aggredire_con = aggredisci (png) con (ogg)
+  Where png IsA thing
+    else "Non è possibile aggredire $+1!"
+  And ogg IsA object
+    else "Non è possibile aggredire nulla con $+2!"
 
 Add to every thing
   Verb aggredire_con
     When ogg
       Check ogg in hero
-        else "You don't have that object to attack with." -- @TRANSLATE!
+        else "Non possiedi $+2!"
       And ogg is arma
-        else "No point attacking anything with that!" -- @TRANSLATE!
+        else "Non puoi aggredire nulla con $+2!"
       Does
-        "Violence is not the answer." -- @TRANSLATE!
+        "La violenza non è la giusta risposta a questo." --> taken from i6
   End verb.
 End add.
 
+--==============================================================================
+--                                S P A R A R E
+--==============================================================================
+
+Syntax spara0 = spara.
+
+Verb spara0 -- @NOTE: Should this be a META VERB and not consume a turn?
+  Does
+    "Devi specificare con cosa vorresti sparare e a chi o che cosa!"
+End verb.
 
 
--- @NOTE: Alan StdLib Italian:
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
---    SYNTAX spara = spara con (arma)
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Syntax
-  shoot = shoot (ogg) --> i.e. 'spara a'
-    Where ogg IsA thing
-      else "You can't shoot at that." -- @TRANSLATE!
-  shoot = shoot 'at' (ogg).
-
+Syntax spara = spara con (arma)
+  Where arma IsA object
+    else "Non è possibile sparare con $+1!"
 
 Add to every thing
-  Verb shoot
+  Verb spara
+    Check arma is arma
+      else "Non è possibile sparare con $+1!"
+    And arma can sparare
+      else "Non è possibile sparare con $+1!"
+    And arma in hero
+      else "Non possiedi $+1!"
     Does
-      If ogg can sparare then
-        "You need to specify what to shoot at." -- @TRANSLATE!
-      else
-        "You need to specify what you want to shoot" -- @TRANSLATE!
-        say the ogg. "with."
-      End if.
+      "Devi specificare a cosa vorresti sparare."
   End verb.
 End add.
 
 
--- @NOTE: Alan StdLib Italian:
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
---    SYNTAX  spara_a = spara con (arma) a (bersaglio)
---            spara_a = spara a (bersaglio) con (arma).
--- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Syntax
+  sparare_a0 = spara a (bersaglio)
+    Where bersaglio IsA thing
+      else "Non è possibile sparare"
+            say bersaglio:prep_A. "$+1!"
+  sparare_a0 = spara contro (bersaglio).
 
--- @NOTE: Le due sintassi inglesi non legano bene con le esigenze italiane.
---        'shoot_at' non può avere la sintassi "spara pistola a pippo".
---        Il problema è che l'oggetto di "spara" non può essere l'arma ma
---        piuttosto i suoi proiettili ("spara fuoco"). Non credo che in
---        inglese sia così diverso, e che questi verbi andrebbero rivisti.
+Add to every thing
+  Verb sparare_a0
+    Does
+      "Devi specificare con cosa vorresti sparare"
+      say bersaglio:prep_A. "$+1!"
+  End verb.
+End add.
 
 
 -- @NOTE: (png) or (bersaglio)? Non sembra che questi verbi
 --        agiscano solo su attori, ma anche su oggetti!
 
 Syntax
-  shoot_at = shoot (ogg) 'at' (png)
-    Where ogg IsA object
-      else "You can't shoot that." -- @TRANSLATE!
-    And png IsA thing
-      else "You can't shoot at that." -- @TRANSLATE!
-
-  shoot_with = shoot (png) 'with' (ogg)
-    Where ogg IsA object
-      else "You can't shoot that." -- @TRANSLATE!
-    And png IsA thing
-      else "You can't shoot at that." -- @TRANSLATE!
+  sparare_a = spara con (arma) a (bersaglio)
+    Where arma IsA object
+      else "Non è possibile sparare con $+1!"
+    And bersaglio IsA thing
+      else "Non è possibile sparare"
+            say bersaglio:prep_A. "$+2!"
+  sparare_a = spara a (bersaglio) con (arma).
 
 Add to every thing
-  Verb shoot_at
-    When ogg
-      Check ogg in hero
-        else "You don't have that." -- @TRANSLATE!
-      And ogg can sparare
-        else "You can't shoot anything with that." -- @TRANSLATE!
+  Verb sparare_a
+    When arma
+      Check arma is arma
+        else "Non è possibile sparare con $+1!"
+      And arma can sparare
+        else "Non è possibile sparare con $+1!"
+      And arma in hero
+        else "Non possiedi $+1!"
       Does
-        "Violence is not the answer." -- @TRANSLATE!
-  End verb.
-
-  Verb shoot_with
-    When ogg
-      Check ogg in hero
-        else "You don't have that." -- @TRANSLATE!
-      And ogg can sparare
-        else "You can't shoot anything with that." -- @TRANSLATE!
-      Does
-        "Violence is not the answer." -- @TRANSLATE!
+        "La violenza non è la giusta risposta a questo." --> taken from i6
   End verb.
 End add.

@@ -1,4 +1,4 @@
-﻿-- "persone.i" -> people.i
+﻿-- "persone.i" <- "people.i"
 
 
 -- Classi per le persone
@@ -6,9 +6,7 @@
 Every persona IsA actor
   Has not nome_proprio. -- Se ha nome proprio si sopprime l'aticolo.
   Description
-    -- @TODO: Rivedere testo...
     If this has not nome_proprio then
-      -- "There is" say an this. "here." @DELME
       "Qui"
       If this is not plurale
         then "c'è"
@@ -16,7 +14,6 @@ Every persona IsA actor
       End if.
       Say an this. "."
     else
-      -- Say this. "is here."
       Say this.
       If this is not plurale
         then "è"

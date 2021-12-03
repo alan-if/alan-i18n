@@ -1,23 +1,20 @@
-﻿-- "ascoltare.i" -> listen.i
+﻿-- "ascoltare.i" <- "listen.i"
 
-Syntax
-  ascoltare0 = ascolta.
+Syntax ascoltare0 = ascolta.
 
 Verb ascoltare0
   Does
     "Non odi niente di particolare."
-
 End verb.
 
-Syntax
-  ascoltare = ascolta (ogg)
-    Where ogg IsA thing
-      else "You can't listen to that!" -- @TRANSLATE
+
+Syntax ascoltare = ascolta (ogg)
+  Where ogg IsA thing
+    else "Non puoi ascoltare $+1!"
 
 Add to every thing
   Verb ascoltare
     Does
-      "Ascolti" say the ogg. "."
+      "Ascolti $+1."
   End verb.
 End add.
-

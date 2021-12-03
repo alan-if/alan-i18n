@@ -10,7 +10,7 @@ Import 'Library.i'.
 The Salotto IsA location
 End the Salotto.
 
-The tappezzeria_salotto IsA scenery at Salotto.
+The tappezzeria_salotto IsA scenario at Salotto.
   Name tappezzeria
   Has articolo "la".
   Description "Un cupo salotto avvolto in una tappezzeria logora."
@@ -46,6 +46,25 @@ The bretelle IsA object at Salotto.
   Is indossabile.
   Has xDesc "Sono le tue bretelle preferite.".
 End the bretelle.
+
+
+--==============================================================================
+--------------------------------------------------------------------------------
+--                         H E R O   I N V E N T O R Y
+--------------------------------------------------------------------------------
+--==============================================================================
+
+-- Right now, mostly randomly assorted stuff, just for the need of testing some
+-- verbs manually! Later on this will be a more carefully picked selection...
+
+The pugnale IsA object in Hero.
+  Is arma.
+End the.
+
+The pistola IsA object in Hero.
+  Has articolo "la".
+  Is arma. Can sparare.
+End the.
 
 --------------------------------------------------------------------------------
 Start at Salotto.

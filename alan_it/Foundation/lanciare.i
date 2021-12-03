@@ -1,4 +1,4 @@
-﻿-- "lanciare.i" -> throw.i
+﻿-- "lanciare.i" <- "throw.i"
 
 -- Synonyms
 --   dump, cast = throw.
@@ -6,18 +6,20 @@
 -- @NOTE: sinonimi: scaglia, tira?
 --        Però 'tira' è ambiguo e si sovrappone a tira (=pull).
 
-Syntax
-  lanciare = lancia (ogg) *
-    Where ogg IsA object
-      else "You can only throw objects." -- @TRANSLATE!
+Syntax lanciare = lancia (ogg) *
+  Where ogg IsA object
+    else "Puoi lanciare solo oggetti!"
 
 Add to every object
   Verb lanciare
     Check ogg in hero
-      else "Non possiedi" say the ogg. "."
+      else "Non possiedi $+1."
     Does
-      "You can't throw very far,"
-      say the ogg. "ends up on the ground." -- @TRANSLATE!
+      "Non lanci molto lontano, $+1 finisc$$"
+      If ogg is plurale
+        then "ono"
+        else "e"
+      End if. "a terra poco più in là."
       Locate ogg here.
       -- In case item was being worn:
       Set indossatore of ogg to nessuno.
@@ -25,34 +27,40 @@ Add to every object
   End verb.
 End add.
 
-Syntax
-  lanciare_contro = lancia (ogg1) contro (ogg2)
-    Where ogg1 IsA object
-      else "You can only throw objects." -- @TRANSLATE!
-    And ogg2 IsA thing
-      else "You can't throw anything at that." -- @TRANSLATE!
+Syntax lanciare_contro = lancia (ogg1) contro (ogg2)
+  Where ogg1 IsA object
+    else "Puoi lanciare solo oggetti!"
+  And ogg2 IsA thing
+    else "Non puoi lanciare nulla contro $+2!"
 
   lanciare_a = lancia (ogg1) a (ogg2)
     Where ogg1 IsA object
-      else "You can't be serious." -- @TRANSLATE!
+      else "Dici sul serio?"
     And ogg2 IsA thing
-      else "You can't throw anything to that." -- @TRANSLATE!
+    else "Non puoi lanciare nulla" say ogg2:prep_A. "$+2!"
 
 Add to every object
   Verb lanciare_contro, lanciare_a
     When ogg1
       Check ogg1 in hero
-        else "Non possiedi" say the ogg1. "."
+        else "Non possiedi $+1."
       And ogg2 not in hero
         else
-          "You are carrying" say the ogg2. "." -- @TRANSLATE!
+          "Non puoi lanciare nulla contro qualcosa che stai"
+          If ogg2 IsA object then
+          If ogg2 is indossato
+            then "idossando!"
+            else "trasportando!"
+          End if. End if.
       And ogg2 <> hero
         else
-          "You can't throw" say the ogg1. -- @TRANSLATE!
-          "at yourself."
+          "Che senso ha lanciare oggetti a se stessi?"
       Does
-        Say the ogg1. "bounces harmlessly off" -- @TRANSLATE!
-        say the ogg2. "and ends up on the ground."
+        "Dopo aver rimbalzato contro $+2, $+1 finisc$$"
+        If ogg1 is plurale
+          then "ono"
+          else "e"
+        End if. "a terra."
         Locate ogg1 here.
         -- In case item was being worn:
         Set indossatore of ogg1 to nessuno.
@@ -61,12 +69,11 @@ Add to every object
 End add.
 
 
-Syntax
-  lanciare_in = lancia (ogg1) 'in' (ogg2)
-    Where ogg1 IsA object
-      else "Don't be silly." -- @TRANSLATE!
-    And ogg2 IsA container
-      else "You can't throw anything in that." -- @TRANSLATE!
+Syntax lanciare_in = lancia (ogg1) 'in' (ogg2)
+  Where ogg1 IsA object
+    else "Dici sul serio?"
+  And ogg2 IsA container
+    else "Non puoi lanciare nulla" say ogg2:prep_IN. "$+2!"
 
 Add to every object
   Verb lanciare_in
@@ -74,10 +81,10 @@ Add to every object
       Check ogg1 in hero
         else "Non possiedi" say the ogg1. "."
       And ogg1 <> ogg2
-        else "Now, that would be a good trick!" -- @TRANSLATE!
+        else "Riuscire a lanciare un oggetto in se stesso richiederebbe un miracolo!"
       And ogg2 <> hero
         else
-          "You can't put" say the ogg1. "into yourself!" -- @TRANSLATE!
+          "Non puoi mettere nulla dentro di te!"
       Does
         Locate ogg1 in ogg2.
         -- Check that operation succeeded

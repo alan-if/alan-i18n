@@ -1,4 +1,4 @@
-﻿-- "limbo.i" ("nowhere.i")
+﻿-- "limbo.i" <- "nowhere.i"
 
 -- Il `limbo` è un luogo speciale la cui definizione ha duplice scopo:
 --

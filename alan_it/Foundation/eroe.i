@@ -1,4 +1,4 @@
-﻿-- "eroe.i" --> "hero.i"
+﻿-- "eroe.i" <- "hero.i"
 
 Synonyms
   me = hero.
@@ -7,12 +7,11 @@ The hero IsA actor
   Container
     Limits
       Count 10 then
-        -- @TODO: Sepcifica limite oggetti max.
-        "Non puoi trasportare più nulla.
+        "Hai raggiunto il limite di oggetti trasportabili.
          Dovresti prima lasciare qualcosa."
       peso 50 then
         -- @TODO: Sepcifica limite peso max.
-        "Non puoi trasportare più nulla.
+        "Hai raggiunto il limite di peso trasportabile.
          Dovresti prima lasciare qualcosa."
     Header
       "Stai trasportando"

@@ -1,10 +1,9 @@
-﻿-- "aprire.i" -> open.i
+﻿-- "aprire.i" <- "open.i"
 
 
-Syntax
-  aprire = apri (ogg)
-    Where ogg IsA object
-      else "You can't open that." -- @TRANSLATE!
+Syntax aprire = apri (ogg)
+  Where ogg IsA object
+    else "Puoi aprire solo oggetti!"
 
 Add to every object
   Is
@@ -13,7 +12,7 @@ Add to every object
 
   Verb aprire
     Check ogg is apribile
-      else "Non è possibile aprirl$$" Say ogg:vocale. "."
+      else "Non è possibile aprirl$$" say ogg:vocale. "."
     And ogg is not aperto
       else
         Say the ogg.
@@ -21,7 +20,7 @@ Add to every object
           then "è"
           else "sono"
         End if.
-        "già apert$$" Say ogg:vocale. "."
+        "già apert$$" say ogg:vocale. "."
     Does
       Make ogg aperto.
       "Fatto. Ora" say the ogg.
@@ -29,69 +28,67 @@ Add to every object
         then "è"
         else "sono"
       End if.
-      "apert$$" Say ogg:vocale. "."
+      "apert$$" say ogg:vocale. "."
   End verb.
 
 End add.
 
 
-Syntax
-  aprire_con = open (ogg1) con (ogg2)
-    Where ogg1 IsA object
-      else "You can't open that." -- @TRANSLATE!
-    And ogg2 IsA object
-      else "You can't open anything with that." -- @TRANSLATE!
+Syntax aprire_con = apri (ogg1) con (ogg2)
+  Where ogg1 IsA object
+    else "Puoi aprire solo oggetti!"
+  And ogg2 IsA object
+    else "Non puoi aprire nulla con $+2!"
 
 Add to every object
   Verb aprire_con
     When ogg1
       Check ogg2 in hero
-        else "You don't have" say the ogg2. "." -- @TRANSLATE!
+        else "Non possiedi $+2."
       Does
-        "You can't open" say the ogg1. "with" say the ogg2. "." -- @TRANSLATE!
+        "Non puoi aprire $+1 con $+2."
   End verb.
 End add.
 
 
-Synonyms
-  shut = close.
-
-Syntax
-  close = close (ogg) -- @TRANSLATE!
+Syntax chiudere = chiudi (ogg)
     Where ogg IsA object
-      else "You can only close objects." -- @TRANSLATE!
+      else "Puoi chiudere solo oggetti!"
 
 Add to every object
   Is not chiudibile.
 
-  Verb close
+  Verb chiudere
     Check ogg is chiudibile
-      else "You can't close that." -- @TRANSLATE!
+      else "Non è possibile chiuderl$$" say ogg:vocale. "."
     And ogg is aperto
-      else "It is not open." -- @TRANSLATE!
+      else "$+1 non"
+        If ogg is plurale
+          then "sono"
+          else "è"
+        End if.
+        "apert$$" say ogg:vocale. "!"
      Does
        Make ogg not aperto.
-       Say the ogg. "is now closed." -- @TRANSLATE!
+       "Hai chiuso $+1."
     End verb.
-
 End add.
 
 
-Syntax
-  close_with = close (ogg1) 'with' (ogg2) -- @TRANSLATE!
-    Where ogg1 IsA object
-      else "You can't close that." -- @TRANSLATE!
-    And ogg2 IsA object
-      else "You can't close anything with that." -- @TRANSLATE!
+Syntax chiudere_con = chiudi (ogg1) con (ogg2)
+  Where ogg1 IsA object
+      else "Puoi chiudere solo oggetti!"
+  And ogg2 IsA object
+    else "Non puoi chiudere nulla con $+2!"
 
 Add to every object
-  Verb close_with
+  Verb chiudere_con
     When ogg1
       Check ogg2 in hero
-        else "You don't have" say the ogg2. "." -- @TRANSLATE!
+        else "Non possiedi $+2!"
       And ogg1 Is apribile
-        else "You can't close" say the ogg1. "." -- @TRANSLATE!
+        else "Non è possibile chiudere $+1!"
       Does -- To be overridden by DOES ONLY where appropriate...
-        "You can't close" say the ogg1. "with" say the ogg2. "." -- @TRANSLATE!
+        "Non puoi chiudere $+1 con $+2."
   End verb.
 End add.

@@ -1,19 +1,18 @@
-﻿-- "mangiare.i" -> eat.i
+﻿-- "mangiare.i" <- "eat.i"
 
 Add to every object
-Is
-  Not commestibile.
-  Not potabile.
+  Is Not commestibile.
+     Not potabile.
 End add.
 
 Syntax
   mangiare = mangia (ogg)
     Where ogg IsA object
-      else "Non puoi mangiare" say an ogg. "!"
+      else "Non è possibile mangiare $+1!" --> @TODO: More explicit message!
 
   bere = bevi (ogg)
     Where ogg IsA object
-      else "Non puoi bere" say an ogg. "!"
+      else "Non è possibile bere $+1!" --> @TODO: More explicit message!
 
 Add to every object
   Verb mangiare
@@ -24,7 +23,7 @@ Add to every object
       -- In case item was being worn:
       Set indossatore of ogg to nessuno.
       Make ogg not indossato.
-      "Mangi" say the ogg. "."
+      "Mangi $+1."
   End verb.
 
   Verb bere
@@ -35,6 +34,6 @@ Add to every object
       -- In case item was being worn:
       Set indossatore of ogg to nessuno.
       Make ogg not indossato.
-      "Bevi" say the ogg. "."
+      "Bevi $+1."
   End verb.
 End add.

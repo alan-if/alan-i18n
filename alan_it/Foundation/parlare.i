@@ -1,4 +1,4 @@
-﻿-- "parlare.i" -> talk.i
+﻿-- "parlare.i" <- "talk.i"
 
 
 -- for verbs like 'ask' and 'tell' you need to individually program
@@ -36,11 +36,9 @@ Add to every actor
 End add.
 
 
-Synonyms
-  strilla, urla = grida.
+Synonyms strilla, urla = grida.
 
-Syntax
-  gridare = grida.  -- shout
+Syntax gridare = grida.
 
 Verb gridare
   Does
@@ -48,10 +46,9 @@ Verb gridare
 End verb.
 
 
-Syntax
-  say_word = 'say' (argomento)!
-    Where argomento IsA thing
-      else "You can't say that." -- @TRANSLATE!
+Syntax say_word = 'say' (argomento)!
+  Where argomento IsA thing
+    else "You can't say that." -- @TRANSLATE!
 
 Add to every thing
   Verb say_word
@@ -80,15 +77,14 @@ Add to every thing
 End add.
 
 
-Synonyms
-  circa = riguardo.
+Synonyms circa = riguardo.
 
 Syntax
   domandare = domanda a (png) di (argomento)!   -- ask
     Where argomento IsA thing
-      else "You can't ask about that." -- @TRANSLATE!
+      else "Non è possibile conversare riguardo $+2!"
     And png IsA thing
-      else "You can't talk to that." -- @TRANSLATE!
+      else "Non è possibile conversare con $+1!"
   domandare = domanda a (png) riguardo (argomento)!.
   domandare = chiedi a (png) di (argomento)!.
   domandare = chiedi a (png) riguardo (argomento)!.
@@ -102,20 +98,23 @@ Add to every thing
   Verb domandare
     When png
       Check png can parlare
-        else "You can't talk to that." -- @TRANSLATE!
+        else "Non è possibile conversare con $+1!"
       Does
-        Say the png.
-        "says ""I don't know anything about" -- @TRANSLATE!
-        say the argomento. "!"""
+        "$+1"
+        If png is plurale
+          then "sostengono di non sapere nulla circa $+2."
+          else "risponde, ""Non so nulla riguardo"
+               say argomento:prep_A. "$2!"""
+        End if.
   End verb.
 End add.
 
 Syntax
   raccontare = racconta a (png) di (argomento)!  -- talk_to
     Where argomento IsA thing
-      else "You can't ask about that." -- @TRANSLATE!
+      else "Non è possibile conversare riguardo $+2!"
     And png IsA thing
-      else "You can't talk to that." -- @TRANSLATE!
+      else "Non è possibile conversare con $+1!"
   raccontare = parla a (png) di (argomento)!.
   raccontare = parla con (png) di (argomento)!.
   raccontare = informa (png) di (argomento)!.
@@ -126,11 +125,12 @@ Add to every thing
   Verb raccontare
     When  argomento
       Check png can parlare
-        else "You can't talk to that." -- @TRANSLATE!
+        else "Non è possibile conversare con $+1!"
       Does
-        """I don't think I need to know about" -- @TRANSLATE!
-        say the argomento. "$$,"" says"
-        say the png. "."
+        "$+1 non mostra"
+        If png is plurale
+          then "$$no"
+        End if. "particolare interesse al riguardo."
   End verb.
 End add.
 
@@ -138,16 +138,19 @@ End add.
 Syntax
   parlare_con = parla con (png) -- talk_to_a
     Where png IsA thing
-      else "You can't talk to that." -- @TRANSLATE!
+      else "Non è possibile conversare con $+1!"
   parlare_con = parla a (png).
 
 Add to every thing
   Verb parlare_con
     Check png can parlare
-      else "You can't talk to that." -- @TRANSLATE!
+      else "Non è possibile conversare con $+1!"
     Does
-      Say the png.
-      "looks at you, seemingly wondering if you have
-       anything specific to talk about." -- @TRANSLATE!
+      "$+1 ti guarda"
+      If png is plurale
+        then "$$no"
+      End if.
+      "con espressione interrogativa, come a domandarsi
+       se hai in mente qualcosa di specifico di cui parlare."
   End verb.
 End add.

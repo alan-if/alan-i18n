@@ -7,6 +7,13 @@ Synonyms help, info = istruzioni.
 
 Syntax istruzioni = istruzioni.
 
+-- @NOTE: If the 'meta_punteggio.i' is excluded from inclusion, because the
+--        game doesn't use score, than this message will mention a command
+--        which doesn't exist! We should either provide an alternative
+--        definition of the 'score' verb, stating that the game has no score,
+--        or make the sentence about the score command here conditional on
+--        some boolean library attribute controlling settings!
+
 Meta verb istruzioni
   Does
     "In questo gioco sarò i tuoi occhi e il tuo corpo.

@@ -1,9 +1,8 @@
-﻿-- "inventario.i" -> invent.i
+﻿-- "inventario.i" <- "invent.i"
 
 Add to every thing
   Has peso 0.
 End add.
-
 
 Add to every actor
   Has peso 50.

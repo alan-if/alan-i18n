@@ -18,6 +18,9 @@ Add to every thing
   Is not plurale.
 End add.
 
+-- @NOTE: The 'named_actor' class will probably be removed!
+--        See Discussion #54.
+
 Every named_actor IsA actor -- @TRANSLATE CLASS!
   Definite article ""
   Indefinite article ""

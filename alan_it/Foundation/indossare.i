@@ -1,4 +1,4 @@
-﻿-- "indossare.i" -> wear.i
+﻿-- "indossare.i" <- "wear.i"
 
 Add to every object
   Is not indossabile.
@@ -21,7 +21,7 @@ Syntax
 Add to every object
   Verb indossare
     Check ogg is indossabile
-      else say the ogg. "non"
+      else "$+1 non"
            If ogg is not plurale
              then "è"
              else "sono"
@@ -31,15 +31,15 @@ Add to every object
              else "i"
            End if. "."
     And indossatore of ogg <> hero
-      else "Indossi già" say the ogg. "."
+      else "Indossi già $+1!"
     And ogg is prendibile
-      else "Non ti è possible prendere $+1"
+      else "Non ti è possible prendere $+1!"
     And ogg in hero
-      else "Non possiedi" say the ogg. "."
+      else "Non possiedi $+1!"
     Does
       Set indossatore of ogg to hero.
       Make ogg indossato.
-      "Fatto. Ora indossi" say the ogg. "."
+      "Fatto. Ora indossi $+1."
   End verb.
 End add.
 
@@ -53,9 +53,8 @@ End add.
 
 Syntax
   togliersi = togliti (ogg)
-    -- @NOTE: What else could it be if it's IN HERO?
     Where ogg IsA object
-      else "$+1 non" -- @FIXME: Need a better response!
+      else "$+1 non"
        If ogg is not plurale
          then "è"
          else "sono"
@@ -74,7 +73,7 @@ Add to every object
     Does
       Set indossatore of ogg to nessuno.
       Make ogg not indossato.
-      "Fatto. Ti sei sfilato" say the ogg. "."
+      "Fatto. Ti sei sfilato $+1."
   End verb.
 End add.
 

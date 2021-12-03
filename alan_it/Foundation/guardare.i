@@ -1,12 +1,9 @@
-﻿-- "guardare.i" -> look.i
+﻿-- "guardare.i" <- "look.i"
 
-Synonyms
-  l = guarda.
+Synonyms l = guarda.
 
-Syntax
-  guardare = guarda.
+Syntax guardare = guarda.
 
 Verb guardare
-  Does
-    Look.
+  Does look.
 End verb.

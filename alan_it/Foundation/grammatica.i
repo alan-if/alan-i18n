@@ -1,6 +1,6 @@
-﻿--| Alan Starter Library Italian | Alan 3.0beta6
+﻿--| Alan Foundation Library Italian | Alan 3.0beta8
 --~-----------------------------------------------------------------------------
---| "lib_italian.i" Modulo Grammatica
+--| "grammatica.i" Modulo Grammatica
 --|=============================================================================
 --| Modulo per il supporto della lingua italiana.
 --| Creato da Tristano Ajmone, <tajmone@gmail.com>.
@@ -8,17 +8,17 @@
 --|=============================================================================
 
 
---| Questo modulo della libreria è il cuore del supporto della lingua italiana
---| in Alan. È stato progettato come un modulo a sé stante, indipendente dal
---| resto della libreria, di modo che possa essere utilizzato anche al di fuori
---| di essa per creare avventure in italiano senza l'infrastruttura della libreria
---| standard, usufruendo solo del codice base per la grammatica italiana.
---|
---| Per i suddetti motivi, tutti il codice necessario per implementare la lingua
---| italiana è contenuto in questo modulo.
---|
---| Dato che questo modulo è concepito per essere usato anche al di fuori della
---| libreria, verrà inclusa una documentazione dettagliata su come utilizzarlo.
+-- Questo modulo della libreria è il cuore del supporto della lingua italiana
+-- in Alan. È stato progettato come un modulo a sé stante, indipendente dal
+-- resto della libreria, di modo che possa essere utilizzato anche al di fuori
+-- di essa per creare avventure in italiano senza l'infrastruttura della libreria
+-- standard, usufruendo solo del codice base per la grammatica italiana.
+--
+-- Per i suddetti motivi, tutti il codice necessario per implementare la lingua
+-- italiana è contenuto in questo modulo.
+--
+-- Dato che questo modulo è concepito per essere usato anche al di fuori della
+-- libreria, verrà inclusa una documentazione dettagliata su come utilizzarlo.
 
 
 --==============================================================================
@@ -26,30 +26,24 @@
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --------------------------------------------------------------------------------
 --
--- Attributi grammatica
+--                   A T T R I B U T I   G R A M M A T I C A
 --
 --------------------------------------------------------------------------------
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --==============================================================================
 
+--------------------------------------------------------------------------------
+-- Valori predefiniti
+--------------------------------------------------------------------------------
 
---~============================================================================
---~\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
---~-----------------------------------------------------------------------------
---| === Valori predefiniti
---~-----------------------------------------------------------------------------
---~/////////////////////////////////////////////////////////////////////////////
---~============================================================================
---|
---| I valori predefiniti su entità sono quelli di un oggetto maschile singolare
---| con articolo "`il`". Fatta eccezione per alcune classi specializzate della
---| libreria, che definiscono articoli con numero e/o genere diversi (`femmina`
---| = `"la"`, `maschi` = `"i"`, `femmine` = `"le"`), l'onere di specificare un
---| corretto `articolo` su ogni istanza dell'avventura ricade sull'autore.
+-- I valori predefiniti su entità sono quelli di un oggetto maschile singolare
+-- con articolo "il". Fatta eccezione per alcune classi specializzate della
+-- libreria, che definiscono articoli con numero e/o genere diversi (e.s.
+-- 'femmina' = "la", ecc.), l'onere di specificare un corretto 'articolo'su ogni
+-- istanza dell'avventura ricade sull'autore.
 
 Add to every entity
-
   Is not plurale.
   Is not femminile.
 
@@ -65,21 +59,17 @@ Add to every entity
   Has prep_IN "nel".
   Has prep_SU "sul".
 
---=============================================================================
---\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
---------------------------------------------------------------------------------
--- Inizializzazione attributi
--------------------------------------------------------------------------------
---//////////////////////////////////////////////////////////////////////////////
---=============================================================================
-
-
 
 --==============================================================================
 --------------------------------------------------------------------------------
+--             I N I Z I A L I Z Z A Z I O N E   A T T R I B U T I
+--------------------------------------------------------------------------------
+--==============================================================================
+
+--==============================================================================
 -- Inizializzazione di genere, numero e preposizioni articolate
---------------------------------------------------------------------------------
 --==============================================================================
+
 -- La prima parte dell'inizializzazione è comune a tutti le tipologie.
 
   Initialize
@@ -158,11 +148,13 @@ Add to every entity
         Set this:prep_SU to "sul".
 
     End depend.
---==============================================================================
+
+--------------------------------------------------------------------------------
 -- Entità con nome proprio
---==============================================================================
+--------------------------------------------------------------------------------
+
 -- Se l'entità ha un nome proprio, dovremo solo ridefinire le preposizioni da
--- articolate a semplici, di modo che si possa avere "da Gino" anziché "dal Gino".
+-- articolate a semplici, così da avere "da Gino" anziché "dal Gino".
 
     If this has nome_proprio
       Then
@@ -176,20 +168,21 @@ Add to every entity
 
 --==============================================================================
 --------------------------------------------------------------------------------
--- Inizializzazione articoli indeterminativi
+--                       I N I Z I A L I Z Z A Z I O N E
+--               A R T I C O L I   I N D E T E R M I N A T I V I
 --------------------------------------------------------------------------------
 --==============================================================================
 
   Indefinite Article
---==============================================================================
+--------------------------------------------------------------------------------
 -- Entità con nome proprio
---==============================================================================
+--------------------------------------------------------------------------------
   If this has nome_proprio
     Then ""
     Else
---==============================================================================
+--------------------------------------------------------------------------------
 -- Entità senza nome proprio
---==============================================================================
+--------------------------------------------------------------------------------
       Depending on articolo of this
         = "il"  then   "un"               ---> ms indet.
         = "lo"  then   "uno"              ---> ms indet.
@@ -223,21 +216,22 @@ Add to every entity
 
 --==============================================================================
 --------------------------------------------------------------------------------
--- Inizializzazione articoli determinativi
+--                       I N I Z I A L I Z Z A Z I O N E
+--                 A R T I C O L I   D E T E R M I N A T I V I
 --------------------------------------------------------------------------------
 --==============================================================================
 
   Definite Article
 
---==============================================================================
+--------------------------------------------------------------------------------
 -- Entità con nome proprio
---==============================================================================
+--------------------------------------------------------------------------------
   If this has nome_proprio
     Then ""
     Else
---==============================================================================
+--------------------------------------------------------------------------------
 -- Entità senza nome proprio
---==============================================================================
+--------------------------------------------------------------------------------
       Depending on articolo of this
         = "il"  then   "il"               ---> ms  det.
         = "lo"  then   "lo"               ---> ms  det.
@@ -264,93 +258,86 @@ Add to every entity
           End if.
       End depend.
   End if.
-
 End add to entity.
 
 
---~============================================================================
---~\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
---~-----------------------------------------------------------------------------
---| == Predefined Player Words
---~-----------------------------------------------------------------------------
---~/////////////////////////////////////////////////////////////////////////////
---~============================================================================
---|
---| Le _predefined Player Words_ sono dei gruppi di vocaboli del giocatore
---| predefiniti in Alan (ossia, integrate nel compilatore stesso). Le loro
---| definizioni variano in ciascuna delle lingue supportate nativamente da Alan.
---| La libreria italiana utilizza la lingua inglese come base di partenza.
---|
---| Queste sono le _Player Words_ predefinite per la lingua inglese, suddivise
---| in gruppi di appartenenza:
+--==============================================================================
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--------------------------------------------------------------------------------
+--
+--                P R E D E F I N E D   P L A Y E R   W O R D S
+--
+--------------------------------------------------------------------------------
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--==============================================================================
 
---| --------------------------
---| ALL:   all everything
---| AND:   and then
---| BUT:   but except
---| THEM:  them
---| NOISE: go the
---| --------------------------
+-- Le _predefined Player Words_ sono dei gruppi di vocaboli del giocatore
+-- predefiniti in ALAN (ossia, integrate nel compilatore stesso). Le loro
+-- definizioni variano in ciascuna delle lingue supportate nativamente da ALAN.
+-- La libreria italiana utilizza la lingua inglese come base di partenza.
+--
+-- Queste sono le Player Words predefinite per la lingua inglese, suddivise in
+-- gruppi di appartenenza:
 
---| [NOTE]
---| ============================================================================
---| Le _Player Words_ delle varie lingue sono definite nel file sorgente di Alan
---| `compiler/wrd.c` (riga 182).
---| ============================================================================
+--                         +-------------------------+
+--                         | ALL   | all, everything |
+--                         | AND   | and, then       |
+--                         | BUT   | but, except     |
+--                         | THEM  | them            |
+--                         | NOISE | go, the         |
+--                         +-------------------------+
 
--->=============================================================================
---~-----------------------------------------------------------------------------
---| === CONJUNCTION WORDS
---~-----------------------------------------------------------------------------
---~=============================================================================
---|
---| .............
---| AND: and then
---| .............
---|
---| Le _conjunction words_ (parole di congiunzione) consentono al parser di
---| interpretare correttamente i comandi del giocatore che fanno riferimento a
---| più oggetti, o le sequenze di comandi indipendenti combinati in una sola riga
---| di comando. Esempi:
---|
---| * "prendi la mela E la pera"
---| * "prendi la mela E prendi la pera"
---| * "prendi la mela POI prendi la pera"
---| * "prendi la mela E POI prendi la pera"
+--==============================================================================
+--------------------------------------------------------------------------------
+--                      C O N J U N C T I O N   W O R D S
+--------------------------------------------------------------------------------
+--==============================================================================
+-- AND: and then
+-- .............
+--
+-- Le "conjunction words" (parole di congiunzione) consentono al parser di
+-- interpretare correttamente i comandi del giocatore che fanno riferimento a
+-- più oggetti, o le sequenze di comandi indipendenti combinati in una sola
+-- riga di comando. Esempi:
+--
+-- * "prendi la mela E la pera"
+-- * "prendi la mela E prendi la pera"
+-- * "prendi la mela POI prendi la pera"
+-- * "prendi la mela E POI prendi la pera"
 
 Synonyms e, poi = 'and'.
 
-
-
--->=============================================================================
---~-----------------------------------------------------------------------------
---| === NOISE WORDS
---~-----------------------------------------------------------------------------
---~=============================================================================
---|
---| .............
---| NOISE: go the
---| .............
---|
---| Le _noise words_ (parole rumore) vengono ignorate dal parser che le tratta
---| come rumore di sottofondo.
---|
---| ==== Articoli determinativi
---|
---| Definiamo tutti gli articoli determinativi come sinonimi della _noise word_
---| `'the'` affinché vengano ignorati nel parsing dei comandi del giocatore, di
---| modo che comandi come "prendi LA mela" vengano interpretati come "prendi
---| mela".
---|
---| Nel caso di articoli con l'apostrofo, che vanno a formare un singolo lessema
---| con il sostantivo cui si riferiscono, il parser di Alan prima fallirà nel
---| riconoscere il lessema (es. `l'albero`) ma, appurata la presenza di un
---| apostrofo nel lessema, prima di generare un errore eseguirà un ulteriore
---| tentativo spezzando in due il lessema originale nel punto successivo al primo
---| apostrofo, e ritenterà il parsing dei due nuovi lessemi (`l'` + `albero`).
---| Durante il secondo tentativo, l'articolo `l'` verrà soppresso  in quanto
---| _noise word_, e `albero` verrà ora riconosciuto come il nome dell'oggetto
---| corrispondente.
+--==============================================================================
+--------------------------------------------------------------------------------
+--                            N O I S E   W O R D S
+--------------------------------------------------------------------------------
+--==============================================================================
+-- NOISE: go the
+-- .............
+--
+-- Le noise words (parole rumore) vengono ignorate dal parser che le tratta
+-- come rumore di sottofondo.
+--
+--
+-- ARTICOLI DETERMINATIVI
+-- ======================
+--
+-- Definiamo tutti gli articoli determinativi come sinonimi della noise word
+-- 'the' affinché vengano ignorati nel parsing dei comandi del giocatore, di
+-- modo che comandi come "prendi LA mela" vengano interpretati come "prendi
+-- mela".
+--
+-- Nel caso di articoli con l'apostrofo, che vanno a formare un singolo lessema
+-- con il sostantivo cui si riferiscono, il parser di Alan prima fallirà nel
+-- riconoscere il lessema (es. "l'albero") ma, appurata la presenza di un
+-- apostrofo nel lessema, prima di generare un errore eseguirà un ulteriore
+-- tentativo spezzando in due il lessema originale nel punto successivo al primo
+-- apostrofo, e ritenterà il parsing dei due nuovi lessemi ("l'" + "albero").
+-- Durante il secondo tentativo, l'articolo "l'" verrà soppresso  in quanto
+-- noise word, e "albero" verrà ora riconosciuto come il nome dell'oggetto
+-- corrispondente.
 
 Synonyms il, lo, la, 'l''', i, gli, le = 'the'.
 
@@ -376,392 +363,149 @@ Synonyms il, lo, la, 'l''', i, gli, le = 'the'.
 -- he should type the direction instead (like the StdLib does with take_from
 -- when used to pickup something from the floor).
 
--->=============================================================================
---~-----------------------------------------------------------------------------
---| === ALL WORDS
---~-----------------------------------------------------------------------------
---~=============================================================================
---|
---| .............
---| ALL: all everything
---| .............
+--==============================================================================
+--------------------------------------------------------------------------------
+--                              A L L   W O R D S
+--------------------------------------------------------------------------------
+--==============================================================================
+-- ALL: all everything
+-- ...................
 
 Synonyms tutto, tutti, tutte = all.
 
 -- @NOTE: Dovrei includere anche "ogni"?                                        CHECK!
 
--->=============================================================================
---~-----------------------------------------------------------------------------
---| === EXCEPT WORDS
---~-----------------------------------------------------------------------------
---~=============================================================================
---|
---| .............
---| BUT: but except
---| .............
---|
---| Le _except words_ (parole di eccezione) operano congiuntamente alle _ALL words_
---| per escludere alcuni oggetti dall'insieme. Esempi:
---|
---| * "lascia TUTTO TRANNE la mela"
---| * "lascia TUTTO ECCETTO la mela"
---| * "lascia TUTTO ESCLUSA la mela"
---| * "lascia TUTTO ESCLUSO il mango"
---| * "lascia TUTTO ESCLUSI il mango e la mela"
---| * "lascia TUTTO ESCLUSE la mela e la pera"
+--==============================================================================
+--------------------------------------------------------------------------------
+--                           E X C E P T   W O R D S
+--------------------------------------------------------------------------------
+--==============================================================================
+-- BUT: but except
+-- ...............
+--
+-- Le "except words" (parole di eccezione) operano congiuntamente alle "ALL
+-- words" per escludere alcuni oggetti dall'insieme. Esempi:
+--
+-- * "lascia TUTTO TRANNE la mela"
+-- * "lascia TUTTO ECCETTO la mela"
+-- * "lascia TUTTO ESCLUSA la mela"
+-- * "lascia TUTTO ESCLUSO il mango"
+-- * "lascia TUTTO ESCLUSI il mango e la mela"
+-- * "lascia TUTTO ESCLUSE la mela e la pera"
 
 Synonyms tranne, eccetto, escluso, esclusa, esclusi, escluse = except.
 
+--==============================================================================
+--------------------------------------------------------------------------------
+--                             T H E M   W O R D S
+--------------------------------------------------------------------------------
+--==============================================================================
+-- THEM: them
+-- ..........
+--
+-- Le "them words" rappresentano gli oggetti multipli utilizzati in un comando
+-- precedente. Esempio:
+--
+-- * "remove the hat and the scarf then drop THEM"
+--
+-- Questo tipo di riferimento a oggetti multipli è consentito solo nei comandi
+-- che supportano parametri multipli. L'interprete restringerà il campo dei
+-- parametri idonei all'inclusione nel referente in base alle regole di scoping.
 
--->=============================================================================
---~-----------------------------------------------------------------------------
---| === THEM WORDS
---~-----------------------------------------------------------------------------
---~=============================================================================
---|
---| ..........
---| THEM: them
---| ..........
---|
---| Le _them words_ rappresentano gli oggetti multipli utilizzati in un comando
---| precedente. Esempio:
---|
---| * "remove the hat and the scarf then drop THEM"
---|
---| Questo tipo di riferimento a oggetti multipli è consentito solo nei comandi
---| che supportano parametri multipli. L'interprete restringerà il campo dei
---| parametri idonei all'inclusione nel referente in base alle regole di _scoping_.
+--==============================================================================
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--------------------------------------------------------------------------------
+--
+--                P R E P O S I Z I O N I   A R T I C O L A T E
+--
+--------------------------------------------------------------------------------
+--* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+--==============================================================================
 
+-- La libreria definisce dei sinonimi per trasformare le preposizioni articolate
+-- nelle corrispettive preposizioni semplici (es. _della_ -> _di_).
+--
+-- Solo alcune preposizioni (di|a|da|in|con|su) hanno un'applicazione practica
+-- nelle avventure testuali, e non tutte le forme contratte delle preposizioni
+-- articolate sono implementabili.
+-- La seguente tabella riporta tra parentesi le forme contratte non supportate,
+-- e in corsivo quelle che non subiscono sostituzioni nel parsing:
 
--->============================================================================
---~\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
---~-----------------------------------------------------------------------------
---| == Preposizioni articolate
---~-----------------------------------------------------------------------------
---~/////////////////////////////////////////////////////////////////////////////
---~============================================================================
---|
+--  +-----+-------+---------+---------+----------+-------+---------+--------+
+--  |     | il    | lo      | la      | l'       | i     | gli     | le     |
+--  +-----+-------+---------+---------+----------+-------+---------+--------+
+--  | di  | del   | dello   | della   | dell'    | dei   | degli   | delle  |
+--  | a   | al    | allo    | alla    | all'     | ai    | agli    | alle   |
+--  | da  | dal   | dallo   | dalla   | dall'    | (dai) | dagli   | dalle  |
+--  | in  | nel   | nello   | nella   | nell'    | nei   | negli   | nelle  |
+--  | con | (col) | (collo) | (colla) | _con l'_ | (coi) | (cogli) | (colle)|
+--  | su  | sul   | sullo   | sulla   | sull'    | sui   | sugli   | sulle  |
+--  | per | (pel) | (pello) | (pella) | (pell')  | (pei) | (pegli) | (pelle)|
+--  +-----+-------+---------+---------+----------+-------+---------+--------+
 
---| La libreria definisce dei sinonimi per trasformare le preposizioni articolate
---| nelle corrispettive preposizioni semplici (es. _della_ -> _di_).
+-- Il mancato supporto di "dai" è dovuto a un conflitto con l'imperativo del
+-- verbo "dare", e si sta cercando una soluzione a questo.
 
---| Solo alcune preposizioni (di|a|da|in|con|su) hanno un'applicazione practica
---| nelle avventure testuali, e non tutte le forme contratte delle preposizioni
---| articolate sono implementabili.
---| La seguente tabella riporta tra parentesi le forme contratte non supportate,
---| e in corsivo quelle che non subiscono sostituzioni nel parsing:
+-- Le forme contratte di "con"+articolo sono state tralasciate per via dei
+-- potenziali conflitti con altri vocaboli: "collo" (parte del corpo), "colla"
+-- (adesiva), "cogli" (verbo), "colle" (collina). L'implementazione di queste
+-- forme come sinonimi avrebbe impedito l'uso di quei vocaboli nelle avventure.
 
---| [cols="<h,7*<d",options="header"]
---| |========================================================================
---| |     | il    | lo      | la      | l'       | i     | gli     | le
---~ +-----+-------+---------+---------+----------+-------+---------+--------+
---| | di  | del   | dello   | della   | dell'    | dei   | degli   | delle
---| | a   | al    | allo    | alla    | all'     | ai    | agli    | alle
---| | da  | dal   | dallo   | dalla   | dall'    | (dai) | dagli   | dalle
---| | in  | nel   | nello   | nella   | nell'    | nei   | negli   | nelle
---| | con | (col) | (collo) | (colla) | _con l'_ | (coi) | (cogli) | (colle)
---| | su  | sul   | sullo   | sulla   | sull'    | sui   | sugli   | sulle
---| | per | (pel) | (pello) | (pella) | (pell')  | (pei) | (pegli) | (pelle)
---| |========================================================================
+-- Le varie preposizioni con "per" ("pel", "pello", ecc.) sono state omesse
+-- poiché raramente usate oggi, così come altre forme arcaiche ("gl`'", e affini).
 
---| Il mancato supporto di _dai_ è dovuto a un conflitto con l'imperativo del
---| verbo _dare_, e si sta cercando una soluzione a questo.
+-- Nell'implementazione attuale sussistono comunque potenziali conflitti:
+-- "dei" (divinità), "dallo/a/e" (verbo), "Nello/a" (nomi propri),
+-- "nei" (cutanei).
+-- Ma all'atto pratico questi non costituiscono un problema reale per le AT, e
+-- simili occorrenze sono più rare nelle AT di quanto non lo siano nella vita
+-- reale, ed eventuali loro conflitti dovrebbero essere comunque gestibili.
 
---| Le forme contratte di _con_+articolo sono state tralasciate per via dei
---| potenziali conflitti con altri vocaboli: _collo_ (parte del corpo), _colla_
---| (adesiva), _cogli_ (verbo), _colle_ (collina). L'implementazione di queste
---| forme come sinonimi avrebbe impedito l'uso di quei vocaboli nelle avventure.
-
---| Le varie preposizioni con _per_ (_pel_, _pello_, ecc.) sono state omesse
---| poiché raramente usate oggi, così come altre forme arcaiche (_gl`'_, e affini).
-
---| Nell'implementazione attuale sussistono comunque potenziali conflitti:
---| _dei_ (divinità), _dallo/a/e_ (verbo), _Nello/a_ (nomi propri),
---| _nei_ (cutanei).
---| Ma all'atto pratico questi non costituiscono un problema reale per le AT, e
---| simili occorrenze sono più rare nelle AT di quanto non lo siano nella vita
---| reale, ed eventuali loro conflitti dovrebbero essere comunque gestibili.
-
---| Sull'argomento, si veda l'eccellente articolo di Max Bianchi:
---|
---| * http://www.tads.org/xlat3/En_vs_It.htm
+-- Sull'argomento, si veda l'eccellente articolo di Max Bianchi:
+--
+--    https://www.tads.org/xlat3/En_vs_It.htm
 
 
---| Adesso, definiamo i vari sinonimi.
+-- Adesso, definiamo i vari sinonimi..
 
---~=============================================================================
---| === "`DI`" + Articolo
---~=============================================================================
+--==============================================================================
+-- "DI" + Articolo
+--==============================================================================
 Synonyms
   del, dello, della, 'dell''', dei, degli, delle = di.
---~=============================================================================
---| === "`A`" + Articolo
---~=============================================================================
+--==============================================================================
+-- "A" + Articolo
+--==============================================================================
 Synonyms
   al, allo, alla, 'all''', ai, agli, alle  = a.
---~=============================================================================
---| === "`DA`" + Articolo
---~=============================================================================
+--==============================================================================
+-- "DA" + Articolo
+--==============================================================================
 Synonyms
   dal, dallo, dalla, 'dall''', dall, dagli, dalle  = da.
 
---| [WARNING]
---| ======================================================
---| La preposizione `dai` è stata omessa dalla lista di sinonimi poiché creava
---| conflitto con la forma imperativa del verbo "`dare`", causando l'errore di
---| compilazione:
---| ......................................................
---| 333 E : The word 'dai' is defined to be both a synonym and another word class.
---| ......................................................
---| Sto ancora cercando una soluzione ottimale al problema.
---| ======================================================
+-- **** !!! WARNING !!! *****************************************************
+-- La preposizione `dai` è stata omessa dalla lista di sinonimi poiché creava
+-- conflitto con la forma imperativa del verbo "`dare`", causando l'errore di
+-- compilazione:
+--      +----------------------------------------------+
+--      | 333 E : The word 'dai' is defined to be both |
+--      |         a synonym and another word class.    |
+--      +----------------------------------------------+
+-- Sto ancora cercando una soluzione ottimale al problema.
+-- **************************************************************************
 
--->todo_checklist(.33)
---| * [ ] Risolvi conflitti con verbo `dai_a` che prevenie `SYNONYMS dai = da.`.
-
---  dai = da.       -- dai (masc.plur.) --| CAN'T BE USED AS ALTERNATIVE because
---                                      --| of conflict with 'dai' verb:
--- 333 E : The word 'dai' is defined to be both a synonym and another word class.
-
--->=============================================================================
---| === "`IN`" + Articolo
---~=============================================================================
+--==============================================================================
+-- "IN" + Articolo
+--==============================================================================
 Synonyms
   nel, nello, nella, 'nell''', nei, negli, nelle, dentro = 'in'.
---~=============================================================================
---| === "`SU`" + Articolo
---~=============================================================================
+--==============================================================================
+-- "SU" + Articolo
+--==============================================================================
 Synonyms
   sul, sullo, sulla, 'sull''', sui, sugli, sulle, sopra = su.
-
-
-
--->guida(1000.1)
---~=============================================================================
---~* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
---~ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
---~-----------------------------------------------------------------------------
---|
---| == Guida all'uso
---|
---~-----------------------------------------------------------------------------
---~* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
---~ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
---~=============================================================================
---|
---| Per poter utilizzare correttamente la lingua italiana in Alan è necessario
---| comprendere come funziona internamente questo modulo.
-
-
---| [WARNING]
---| ==========================================
---| La documentazione non è ancora completa...
---| ==========================================
-
---~=============================================================================
---~-----------------------------------------------------------------------------
---| === Attributi grammaticali delle entità
---~-----------------------------------------------------------------------------
---~=============================================================================
-
---| Questo modulo definisce una serie di attributi sulla classe `entity` che
---| serviranno a tracciare il genere ed il numero di ciascuna istanza, ed altre
---| informazioni grammaticali utili ai fini di una messaggistica dell'avventura
---| corretta. Essendo questi definiti sulla classe `entity`, saranno eridati
---| automaticamente da ognuna delle classi native di Alan, e quindi presenti su
---| ogni instanza del gioco (cose, oggetti, attori, luoghi) e finanche sulle
---| classi letterali `literal`, `string`, e `integer`.
-
---| Ai fini pratici di un'avventura, le classi di maggior interesse per un
---| autore saranno ovviamente gli oggetti e gli attori, le cui instanze dovranno
---| sempre essere inizializzate correttamente per garantire una messaggistica
---| consona al loro genere e numero. In casi meno frequenti, ci si troverà
---| anche a dover impostare gli attributi grammaticali su istanze di entità e/o
---| luoghi. Le classi letterali (che non ammettono né instanze né sottoclassi)
---| non hanno rilevanza pratica ai fini della grammatica italiana, sebbene esse
---| eriditino tali attributi di riflesso in quanto sottoclassi di `entity`.
-
---| [NOTE]
---| ========================================================================
---| La necessità di definire questi attributi direttamente su `entity` è anche
---| dettata dal fatto che per poter usufruire di essi nelle clausole sintattiche
---| dei verbi (e in altri contesti di esecuzione condizionale) è indispensabile
---| garantire che siano presenti in ogni possibile istanza assoggettabile a quel
---| contesto d'esecuzione.
---| ========================================================================
-
-
--->valori_predefiniti
-
---| Fatta eccezione per gli attributi `articolo` e `nome_proprio`, questi
---| attributi sono destinati alla sola lettura, poiché i loro valori saranno
---| settati automaticamente su ciascuna istanza durante l'inizializzazione,
---| in base ai valori di `articolo` e `nome_proprio` della medesima.
-
---| Ora spiegheremo nel dettaglio la funzione di questi attributi e come debbano
---| essere usati dagli autori di avventure.
-
---~=============================================================================
---~-----------------------------------------------------------------------------
---| === Articolo di riferimento
---~-----------------------------------------------------------------------------
---~=============================================================================
-
---| Ogni istanza possiede l'attributo `articolo` che ne specifica l'articolo
---| determinativo ad essa associato. Questo attributo viene utilizzato dalla
---| libreria per inizializzare le istanze del gioco: in base ad esso il modulo
---| Italian sarà in grado di dedurre il genere ed il numero dell'istanza, e
---| imposterà tutte le sue proprietà grammaticali con i valori appropriati.
-
---| L'autore deve semplicemente specficare l'articolo determinativo del
---| sostantivo, e la libreria farà tutto il resto. L'unica eccezione è
---| l'articolo `"l'"`, che può rifererirsi sia a un sostantivo maschile che
---| femminile; per questo articolo l'autore dovrà specificare `IS femminile`
---| nel caso di sostantivi femminili, altrimenti la libreria presumerà che si
---| tratti di un sostantivo maschile.
-
---| [NOTE]
---| ========================================================================
---| Dopo l'inizializzazione, l'attributo `articolo` non viene più utlizzato in
---| alcun modo.
---|
---| La libreria non ricorre mai all'attributo `articolo` per stampare l'articolo
---| di un istanza nei messaggi, e neanche gli autori dovrebbero farlo. L'attributo
---| `articolo` è solo un mezzo per inizializzare correttamente tutta una serie di
---| attributi e proprietà delle istanze, tra cui anche `DEFINITE`/`INDEFINITE
---| ARTICLE`.
---| ========================================================================
-
---~-----------------------------------------------------------------------------
---| ==== Esempi pratici
---~-----------------------------------------------------------------------------
-
---| Supponiamo di voler creare i seguenti oggetti: un palloncino, una mela, un
---| albero e un'arancia.
-
---| Per il palloncino non sarà necessario specificare l'articolo, dato che è il
---| medesimo del predefinito ("`il`"):
-
---| [source,alan,role=example]
---| --------------------------
---| The palloncino IsA object
---| End the.
---| --------------------------
-
---| Per creare la mela:
-
---| [source,alan,role=example]
---| --------------------------
---| The mela IsA object
---|   Has articolo "la".
---| End the.
---| --------------------------
-
---| Quanto all'albero e l'arancia, entrambi hanno il medesimo articolo ("`l'`"),
---| e in questo caso sarà necessario specificare il genere per l'arancia,
---| altrimenti il modulo Italian presumerà si tratti di un oggetto maschile:
-
---| [source,alan,role=example]
---| --------------------------
---| The albero IsA object
---|   Has articolo "l'".
---| End the.
---|
---| The arancia IsA object
---|   Has articolo "l'".
---|   Is femminile.
---| End the.
---| --------------------------
-
---| L'articolo "`l'`" femminile è l'unico a richiedere di definire manualmente
---| il genere dell'istanza, poiché il modulo non è in grado di distinguere tra
---| maschile e femminile senza tale intervento.
-
-
---~=============================================================================
---~-----------------------------------------------------------------------------
---| === Nome proprio
---~-----------------------------------------------------------------------------
---~=============================================================================
-
---| [WARNING]
---| =================================
---| Sezione non ancora disponibile...
---| =================================
-
---~=============================================================================
---~-----------------------------------------------------------------------------
---| === Vocale per accordo aggettivi
---~-----------------------------------------------------------------------------
---~=============================================================================
-
---| [WARNING]
---| ================================
---| Sezione non ancora completata...
---| ================================
-
---| L'attributo `vocale` contiene la vocale finale di riferimento per gli
---| aggettivi che seguono la forma "`o/a i/e`" nell'accordo di genere e numero.
-
---| Anche `vocale` sarà inizializzato automaticamente dalla libreria, basandosi
---| sul valore di `articolo` dell'istanza.
---|
---| Questo attributo semplifica molto la corretta rappresentazione di aggettivi
---| nei vari messaggi della libreria poiché consente di stampare direttamente
---| questo attributo come ultima vocale dell'aggetivo, aniziché dover eseguire
---| controlli sul genere e sul numero dell'istanza in oggetto, riducendo quindi
---| drasticamente la lunghezza del codice all'interno dei verbi.
---| Inoltre, questo attributo potrà essere impiegato anche dagli autori stessi,
---| poiché la sua utilità non è limitata all'uso interno che ne fa la libreria.
-
-
---~=============================================================================
---~-----------------------------------------------------------------------------
---| === Preposizioni articolate
---~-----------------------------------------------------------------------------
---~=============================================================================
---|
-
---| Grazie a questi attributi, nei messaggi della libreria (e delle avventure)
---| è possibile recuperare le corrette preposizioni articolate da usare con
---| ciascuna istanza.
-
---~ @TODO: Chiarificare meglio! (non so neanche se sia corretto)                TODO!
---~ Non è necessario rappresentare tutte le preposizioni articolate, solo quelle
---~ che si uniscono all'articolo.
-
---| [WARNING]
---| ================================
---| Sezione non ancora completata...
---| ================================
-
---~============================================================================
---~\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
---~-----------------------------------------------------------------------------
---| === Inizializzazione attributi
---~-----------------------------------------------------------------------------
---~/////////////////////////////////////////////////////////////////////////////
---~============================================================================
---|
---| [WARNING]
---| =================================
---| Sezione non ancora disponibile...
---| =================================
-
---==============================================================================
---* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
--- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
---------------------------------------------------------------------------------
---|
---| TODO
---|
---------------------------------------------------------------------------------
---* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
--- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
---==============================================================================
---|
---| Questa sezione contiene l'elenco delle cose da fare per completare il modulo
---| della grammatica italiana.
-
 
 ---< Fine del File >---

@@ -58,7 +58,7 @@ Non puoi usare più di un oggetto con 'indossa'.
 
 > ; WEAR UNOWNED ITEM (IMPLICIT TAKING UNSUPPORTED):
 > indossa la polo
-Non possiedi la polo.
+Non possiedi la polo!
 
 > inventario
 Sei a mani vuote.
@@ -71,7 +71,7 @@ Presa.
 Fatto. Ora indossi la polo.
 
 > indossa la polo
-Indossi già la polo.
+Indossi già la polo!
 
 > ; WEAR CARRIED ITEM:
 > prendi i jeans
@@ -84,7 +84,7 @@ Stai trasportando dei jeans. Stai indossando una polo.
 Fatto. Ora indossi i jeans.
 
 > indossa i jeans
-Indossi già i jeans.
+Indossi già i jeans!
 
 > inventario
 Sei a mani vuote. Stai indossando una polo e dei jeans.

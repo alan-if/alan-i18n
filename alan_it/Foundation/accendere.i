@@ -1,51 +1,48 @@
-﻿-- "accendere.i" -> turn.i
+﻿-- "accendere.i" <- "turn.i"
 
 Add to every object
-  Is
-    Not acceso.
-    Not accendibile.
+  Is not acceso.
+     not accendibile.
 End add.
 
 
-Syntax
-  accendere = accendi (ogg)
-    Where ogg IsA object
-      else "You can't turn that on." -- @TRANSLATE!
+Syntax accendere = accendi (ogg)
+  Where ogg IsA object
+    else "Non è possibile accendere $+1!"
 
 Add to every object
   Verb accendere
     Check ogg is accendibile
-      else "You can't turn that on." -- @TRANSLATE!
+      else "Non puoi accendere $+1!"
     And ogg is not acceso
-      else say the ogg.
-           If ogg is not plurale
-             then "è"
-             else "sono"
-           End if. "già acces$$" say ogg:vocale. "!"
+      else "$+1"
+        If ogg is plurale
+          then "sono"
+          else "è"
+        End if. "già acces$$" say ogg:vocale. "!"
     Does
       Make ogg acceso.
-      "Hai acceso" say the ogg. "."
+      "Hai acceso $+1."
   End verb.
 End add.
 
 
-Syntax
-  spegnere = spegni (ogg)
-    Where ogg IsA object
-      else "You can't turn that off." -- @TRANSLATE!
+Syntax spegnere = spegni (ogg)
+  Where ogg IsA object
+    else "Non è possibile spegnere $+1!"
 
 Add to every object
   Verb spegnere
     Check ogg is accendibile
-      else "You can't turn that off." -- @TRANSLATE!
+      else "Non puoi spegnere $+1!"
     And ogg is acceso
-      else say the ogg.
-           If ogg is not plurale
-             then "è"
-             else "sono"
-           End if. "già spent$$" say ogg:vocale. "!"
+      else "$+1"
+        If ogg is plurale
+          then "sono"
+          else "è"
+        End if. "già spent$$" say ogg:vocale. "!"
     Does
       Make ogg not acceso.
-      "Hai spento" say the ogg. "."
+      "Hai spento $+1."
   End verb.
 End add.

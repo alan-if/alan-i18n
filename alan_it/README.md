@@ -30,7 +30,6 @@ Based on the __[Alan Italian]__ project (2018–), by [Tristano Ajmone].
 - [`/Foundation/`][Foundation/] — Italian Foundation Library:
     + [`Library.i`][Library.i] — main library module that loads all others:
         * `*.i` — various library modules.
-    + [`README.md`][README.md] — Development notes.
     + [`CHANGELOG.md`][CHANGELOG.md] — Foundation Library Changelog.
 - [`/cloak/`][cloak] — _Cloak of Darkness_ sample adventure (WIP).
 - [`/tests/`][tests] — Italian Test suite.
@@ -95,7 +94,7 @@ The __ALAN Foundation Library__ is released under the terms of the [Artistic Lic
 
 <!-- badges -->
 
-[lib badge]: https://img.shields.io/badge/Foundation_Lib_IT-0.1.1-yellow "ALAN Foundation Library version"
+[lib badge]: https://img.shields.io/badge/Foundation_Lib_IT-0.2.0-yellow "ALAN Foundation Library version"
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta8-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta8 "Tested with Alan SDK 3.0beta8"
 [license badge]: https://img.shields.io/badge/license-Artistic_License_2.0-blue
@@ -107,7 +106,6 @@ The __ALAN Foundation Library__ is released under the terms of the [Artistic Lic
 [Foundation/]: ./Foundation/ "Navigate to Italian Alan IF library folder"
 [tests]: ./tests/ "Navigate to tests folder"
 
-[README.md]: ./Foundation/README.md "Read README document"
 [CHANGELOG.md]: ./Foundation/CHANGELOG.md "Read CHANGELOG document"
 [COPYING]: ./Foundation/COPYING "View Artistic License 2.0"
 [Library.i]: ./Foundation/Library.i "View source file of main library module"

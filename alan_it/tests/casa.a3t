@@ -13,7 +13,7 @@ Un cupo salotto avvolto in una tappezzeria logora. Per terra noti un paio
 di bretelle. Puoi vedere un divano e una cassaforte qui.
 
 > inventario
-Sei a mani vuote.
+Stai trasportando un pugnale e una pistola.
 
 > ; ------------------------------------------------------------------------------
 > ; Divano
@@ -25,13 +25,13 @@ Non noti nulla di particolare riguardo il divano.
 Non noti nulla di particolare riguardo il divano.
 
 > prendi il divano
-You can't take that!
+Non puoi prendere il divano.
 
 > apri il divano
 Non è possibile aprirlo.
 
 > spingi il divano
-Spingi il divano. Dietro il divano trovi una chiave.
+Fatto. Hai spinto il divano. Dietro il divano trovi una chiave.
 
 > l
 Salotto
@@ -45,7 +45,7 @@ Presa.
 Possiedi già la chiave.
 
 > inventario
-Stai trasportando una chiave.
+Stai trasportando una chiave, un pugnale e una pistola.
 
 > ; ------------------------------------------------------------------------------
 > ; Cassaforte
@@ -87,13 +87,13 @@ Non indossi le bretelle!
 Non possiedi le bretelle.
 
 > indossa le bretelle
-Non possiedi le bretelle.
+Non possiedi le bretelle!
 
 > x le bretelle
 Sono le tue bretelle preferite.
 
 > inventario
-Stai trasportando una chiave.
+Stai trasportando una chiave, un pugnale e una pistola.
 
 > 
 

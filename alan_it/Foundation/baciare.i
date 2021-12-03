@@ -1,20 +1,13 @@
-﻿-- kiss.i
--- Library version 0.5.0
+﻿-- "baciare.i" <- "kiss.i"
 
--- 0.4.1 - converted to ALANv3
-
-
-Syntax
-  baciare = bacia (ogg)
-    Where ogg IsA thing
-      -- else "You can't kiss that!"
-      else "Non puoi baciarl$$" say ogg:vocale. "$$!"
+Syntax baciare = bacia (ogg)
+  Where ogg IsA thing
+    else "Non puoi baciarl$$" say ogg:vocale. "$$!"
 
 Add to every thing
   Verb baciare
     Does
       If ogg=hero then
-        -- "Well, if you must!"
         "Se proprio devi!"
       else
         If ogg is inanimato then

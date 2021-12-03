@@ -1,9 +1,8 @@
-﻿-- "bloccare.i" -> lock.i
+﻿-- "bloccare.i" <- "lock.i"
 
 Add to every object
-  Is
-    Not bloccabile.
-    bloccato.
+  Is not bloccabile.
+     bloccato.
 End add.
 
 
@@ -15,110 +14,115 @@ End add.
 
 Synonyms serra = blocca.
 
-Syntax
-  bloccare = blocca (ogg)
-    Where ogg IsA object
-      else "You can't lock that." -- @TRANSLATE!
+Syntax bloccare = blocca (ogg)
+  Where ogg IsA object
+    else "Non è possibile bloccare $+1!"
 
 Add to every object
   Verb bloccare
     Check ogg is bloccabile
-      else "You can't lock that!" -- @TRANSLATE!
+      else "Non puoi bloccare $+1!"
     And ogg is not bloccato
       else say the ogg.
            If ogg is not plurale
              then "è"
              else "sono"
            End if. "già bloccat$$"
-           say vocale of ogg.
+           say ogg:vocale. "!"
     Does
       Make ogg bloccato.
-      "Fatto, ora" say the ogg.
+      "Fatto, ora $+1"
       If ogg is not plurale
         then "è"
         else "sono"
-      End if. "bloccat$$" say vocale of ogg.
+      End if. "bloccat$$" say ogg:vocale. "."
   End verb.
 End add.
 
 
-Syntax
-  bloccare_con = blocca (ogg) con (chiave)
-    Where ogg IsA object
-      else "You can't lock that." -- @TRANSLATE!
-    And chiave IsA object
-      else "You can't lock anything with that." -- @TRANSLATE!
+Syntax bloccare_con = blocca (ogg) con (chiave)
+  Where ogg IsA object
+    else "Non è possibile bloccare $+1!"
+  And chiave IsA object
+    else "Non è possibile bloccare nulla con $+2!"
 
 Add to every Object
   Verb bloccare_con
     When ogg
       Check ogg is bloccabile
-        else "You can't lock that!" -- @TRANSLATE!
+        else "Non puoi bloccare $+1!"
       And ogg is not bloccato
-        else say the ogg.
+        else "$+1"
              If ogg is not plurale
                then "è"
                else "sono"
              End if. "già bloccat$$"
-             say vocale of ogg.
+             say ogg:vocale. "!"
       And chiave in hero
-        else "Non possiedi" say the chiave. "!"
+        else "Non possiedi $+2!"
       Does
         Make ogg bloccato.
-        "Fatto, ora" say the ogg.
+        "Fatto, ora $+1"
         If ogg is not plurale
           then "è"
           else "sono"
-        End if. "bloccat$$" say vocale of ogg.
+        End if. "bloccat$$" say ogg:vocale. "."
   End verb.
 End add.
 
 
-Syntax
-  sbloccare = sblocca (ogg)
-    Where ogg IsA object
-      else "You can't lock that." -- @TRANSLATE!
+Syntax sbloccare = sblocca (ogg)
+  Where ogg IsA object
+    else "Non è possibile sbloccare $+1!"
 
 Add to every object
   Verb sbloccare
     Check ogg is bloccabile
-      else "You can't unlock that!" -- @TRANSLATE!
+      else "Non puoi sbloccare $+1!"
     And ogg is bloccato
-        else say the ogg.
+        else "$+1"
              If ogg is not plurale
                then "è"
                else "sono"
              End if. "già sbloccat$$"
-             say vocale of ogg.
+             say ogg:vocale. "!"
     Does
       Make ogg not bloccato.
-      "Fatto, ora" say the ogg.
+      "Fatto, ora $+1"
       If ogg is not plurale
         then "è"
         else "sono"
-      End if. "sbloccat$$" say vocale of ogg.
+      End if. "sbloccat$$" say ogg:vocale. "."
   End verb.
 End add.
 
 
-Syntax
-  sbloccare_con = sblocca (ogg) con (chiave)
-    Where ogg IsA object
-      else "You can't lock that." -- @TRANSLATE!
-    And chiave IsA object
-      else "You can't lock anything with that." -- @TRANSLATE!
+Syntax sbloccare_con = sblocca (ogg) con (chiave)
+  Where ogg IsA object
+    else "Non è possibile sbloccare $+1!"
+  And chiave IsA object
+    else "Non è possibile sbloccare nulla con $+2!"
 
 Add to every object
   Verb sbloccare_con
     When ogg
       Check ogg is bloccabile
-        else "You can't unlock that!" -- @TRANSLATE!
+        else "Non puoi sbloccare $+1!"
       And ogg is bloccato
-        else "It's already unlocked." -- @TRANSLATE!
+        else "$+1"
+             If ogg is not plurale
+               then "è"
+               else "sono"
+             End if. "già sbloccat$$"
+             say ogg:vocale. "!"
       And chiave in hero
-        else "You don't have" say the chiave. "." -- @TRANSLATE!
+        else "Non possiedi $+2!"
       Does
         Make ogg not bloccato.
-        Say the ogg. "is now unlocked." -- @TRANSLATE!
+        "Fatto, ora $+1"
+        If ogg is not plurale
+          then "è"
+          else "sono"
+        End if. "sbloccat$$" say ogg:vocale. "."
   End verb.
 End add.

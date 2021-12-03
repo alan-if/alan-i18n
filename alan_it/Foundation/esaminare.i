@@ -1,4 +1,4 @@
-﻿-- "esaminare.i" -> examine.i
+﻿-- "esaminare.i" <- "examine.i"
 
 Add to every thing
   Is
@@ -13,25 +13,26 @@ End add.
 
 ----
 
-Synonyms
-  descrivi, osserva, X = esamina.
---x, inspect, 'check' = examine.
+Synonyms descrivi, osserva, X = esamina.
 
-Syntax
-  esaminare = esamina (ogg) *
-    Where ogg IsA thing
-      else "You can't examine that!" -- @TRANSLATE!
+Syntax esaminare = esamina (ogg) *
+  Where ogg IsA thing
+    else "$+1 non si"
+    If ogg is plurale
+      then "possono"
+      else "può"
+    End if. "esaminare!"
   esaminare = guarda (ogg) *.
 
 
 Add to every thing
   Verb esaminare
     Check ogg is esaminabile
-      else "Non puoi esaminare" say the ogg. "."
+      else "Non puoi esaminare $+1!"
     Does
-      If xDesc of ogg <> ""
-        then say xDesc of ogg.
-        else "Non noti nulla di particolare riguardo" say the ogg. "."
+      If ogg:xDesc <> ""
+        then say ogg:xDesc.
+        else "Non noti nulla di particolare riguardo $+1."
       End if.
   End verb.
 End add.
@@ -91,18 +92,19 @@ End add to actor.
 
 -- Synonyms dentro = 'in'. --> already defined in 'grammatica.i'
 
-Syntax
-  guardare_dentro = guarda 'in' (ogg)
-    Where ogg IsA thing
-      else "You can't look inside that." -- @TRANSLATE!
-    And ogg IsA container
-      else "You can't look inside that." -- @TRANSLATE!
+Syntax guardare_dentro = guarda 'in' (ogg)
+  Where ogg IsA thing
+    else "È impossibile guardare"
+          say ogg:prep_IN. "$+1."
+  And ogg IsA container
+    else "È impossibile guardare"
+          say ogg:prep_IN. "$+1."
 
 Add to every object
   Verb guardare_dentro
     Check ogg is esaminabile
       else "Non è possibile guardare"
-           say ogg:prep_IN. say the ogg. "."
+           say ogg:prep_IN. "$+1."
     Does
       List ogg.
   End verb.
@@ -110,18 +112,16 @@ End add.
 
 ----
 
-Synonyms
-  perquisisci = ispeziona.
+Synonyms perquisisci = ispeziona.
 
-Syntax
-  ispezionare = ispeziona (ogg)
-    Where ogg IsA thing
-      else "You can't search that!" -- @TRANSLATE!
+Syntax ispezionare = ispeziona (ogg)
+  Where ogg IsA thing
+    else "È impossibile ispezionare $+1!"
 
 Add to every object
   Verb ispezionare
     Check ogg is ispezionabile
-      else "Non è possibile ispezionare" say the ogg. "."
+      else "È impossibile ispezionare $+1!"
     Does
       "L'ispezione non ha rivelato nulla di interessante."
   End verb.

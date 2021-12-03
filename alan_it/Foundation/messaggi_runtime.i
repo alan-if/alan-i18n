@@ -1,11 +1,11 @@
-﻿--- "messaggi_runtime.i" -> (nessuno)
+﻿--- "messaggi_runtime.i" <- (nessuno)
 
 --==============================================================================
 -- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 --------------------------------------------------------------------------------
 --
---  Messaggi runtime di Alan
+--                M E S S A G G I   R U N T I M E   D I   A L A N
 --
 --------------------------------------------------------------------------------
 --* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -18,8 +18,8 @@ Message
   --==============================================================================
   SEE_START: "Puoi vedere $01"
   SEE_COMMA: ", $01"
-  SEE_AND: "e $01"
-  SEE_END: "qui."
+  SEE_AND:   "e $01"
+  SEE_END:   "qui."
   --==============================================================================
   -- COMANDI NEGATI...
   --==============================================================================
@@ -120,62 +120,62 @@ Message
 
 
   CONTAINMENT_LOOP:
-    "Non è possibile mettere $+1 dentro sé stess$$" SAY parameter1:vocale. "."
+    "Non è possibile mettere $+1 dentro sé stess$$" say parameter1:vocale. "."
 
 
   CONTAINMENT_LOOP2: "Non è possibile mettere $+1 in $+2 dato che $+2"
-    IF parameter2 IS NOT plurale
-      THEN "è"
-      ELSE "sono"
-    END IF.
+    If parameter2 is not plurale
+      then "è"
+      else "sono"
+    End if.
     "all'interno di $+1."
 
 --==============================================================================
 -- DESCRIZIONE CONTENITORI E LORO CONTENUTI
 --==============================================================================
   CONTAINS:
-    IF parameter1 IS NOT plurale
-      THEN "$+1 contiene"
-      ELSE "$+1 contengono"
-    END IF.
+    If parameter1 is not plurale
+      then "$+1 contiene"
+      else "$+1 contengono"
+    End if.
 
   CONTAINS_AND: "$01 e"
 
   CONTAINS_COMMA: "$01"
-    IF parameter1 IsA object THEN
-        IF parameter1 IS indossato
-          THEN "(indossat$$" SAY vocale OF parameter1. "$$)"
-        END IF.
-    END IF. ","
+    If parameter1 IsA object then
+        If parameter1 is indossato
+          then "(indossat$$" say vocale of parameter1. "$$)"
+        End if.
+    End if. ","
 
   CONTAINS_AND: "$01"
-    IF parameter1 IsA object THEN
-        IF parameter1 IS indossato
-          THEN "(indossat$$" SAY vocale OF parameter1. "$$)"
-        END IF.
-    END IF. "e"
+    If parameter1 IsA object then
+        If parameter1 is indossato
+          then "(indossat$$" say vocale of parameter1. "$$)"
+        End if.
+    End if. "e"
 
   CONTAINS_END: "$01"
-    IF parameter1 IsA object THEN
-        IF parameter1 IS indossato
-          THEN "(indossat$$" SAY vocale OF parameter1. "$$)"
-        END IF.
-    END IF. "."
+    If parameter1 IsA object then
+        If parameter1 is indossato
+          then "(indossat$$" say vocale of parameter1. "$$)"
+        End if.
+    End if. "."
 
   ------------------------------------------------------------------------------
 
   CARRIES:
-    IF parameter1 IS NOT plurale
-      THEN "$+1 trasporta"   -- "is carrying"
-      ELSE "$+1 trasportano" -- "are carrying"
-    END IF.
+    If parameter1 is not plurale
+      then "$+1 trasporta"   -- "is carrying"
+      else "$+1 trasportano" -- "are carrying"
+    End if.
 
   EMPTY_HANDED:
     "$+1 non"
-    IF parameter1 IS NOT plurale
-      THEN "sta"
-      ELSE "stanno"
-    END IF.
+    If parameter1 is not plurale
+      then "sta"
+      else "stanno"
+    End if.
     "trasportando nulla."
 
 -- =========================
@@ -201,11 +201,11 @@ Message
   -- Il messaggio predefinito per i contenitori vuoti.
 
   IS_EMPTY: "$+1"
-    IF parameter1 IS NOT plurale
-      THEN "è"
-      ELSE "sono"
-    END IF.
-    "vuot$$" SAY parameter1:vocale. "."
+    If parameter1 is not plurale
+      then "è"
+      else "sono"
+    End if.
+    "vuot$$" say parameter1:vocale. "."
 
   ------------------------------------------------------------------------------
 
@@ -215,52 +215,3 @@ Message
         -- "No further undo available."
 
   UNDONE: "'$1' annullato."
-
-
--->todo(50000.1)
---~============================================================================
---~\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
---~-----------------------------------------------------------------------------
---| == TODO
---~-----------------------------------------------------------------------------
---~/////////////////////////////////////////////////////////////////////////////
---~============================================================================
---|
---| Questa sezione contiene l'elenco delle cose da fare per ultimare l'adattamento
---| italiano del modulo delle classi.
---<
-
--->todo_checklist(51000.1)
---~=============================================================================
---~-----------------------------------------------------------------------------
---| === Check-list generale
---~-----------------------------------------------------------------------------
---~=============================================================================
---|
---| Lista della spesa per le varie cosucce da fare:
---<
-
--->todo_checklist(.665)
---|
---| === Check-list per Doxter
---|
---| Finisci di trasformare commenti in documentazione Doxter:
---<
-
-
--->custom_attributes(100)
---| ////
---| ============================================================================
---| Custom AsciiDoc Attributes for Doxter
---| ============================================================================
---| ////
-
---| // Traduzione italiana degli attributi predefiniti di Asciidoctor:
---| include::attributes-it.adoc[tag=attributes-it]
-
---| // Definisci sostituzione di {X} con il carattere Unicode 'heavy check mark'
---| // (U+2714), usato nelle tabelle dei verbi:
---| :X: &#x2714;
---<
-
----< Fine del File >---

@@ -12,6 +12,8 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 - [Pending Integrations](#pending-integrations)
 - [Beta Releases](#beta-releases)
+    - [v0.2.0 \(2021/12/03\)](#v020-20211203)
+        - [Complete Library Translation](#complete-library-translation)
     - [v0.1.1 \(2021/12/02\)](#v011-20211202)
         - [Add Transcript Verbs](#add-transcript-verbs)
         - [Translate Score Verb](#translate-score-verb)
@@ -26,13 +28,26 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 A list of features and changes that need to be replayed on the Italian Foundation, based on releases from either from the **English Foundation** (the reference library) or the **Spanish Foundation**, for changes that only apply to the Spanish and Italian languages, which are similar.
 
-- **Add Transcript Verbs** — `EN v0.2.4`/`ES v0.3.3`
+- _none_
 
 -------------------------------------------------------------------------------
 
 # Beta Releases
 
 The __Italian Foundation Library__ is currently maintained by [Tristano Ajmone].
+
+
+## v0.2.0 (2021/12/03)
+
+### Complete Library Translation
+
+Finish translating verb responses that were still in English, polish the library code, and take care of some improvements:
+
+- Always use `$` parameters references instead of `Say` statements for verb responses.
+- `bussare.i` — restricted `Syntax` of the _knock_ verb to `object` instead of `thing` (what's the purpose of knocking on somebody?)
+- `lanciare.i` — many significant messages improvements!
+- `aggredire.i` — readjusted the _shoot_ verbs to the Italian language, since their original English usage didn't overlap their use in Italian.
+- `prendere.i` — improved CHECK responses based on whether the holder is an actor or an object.
 
 
 ## v0.1.1 (2021/12/02)
