@@ -406,7 +406,6 @@ The bar_buio IsA location at teatro
 
   Exit nord to foyer.
 
-  -- @DELME: Not needed, Foundation defines them in 'limbo.i'.
   ------------------------------------------------------------------------------
   -- Le seguenti definizioni di uscite non praticabili hanno lo scopo, in Alan,
   -- di definere i nomi di tutte le direzioni, di modo che vengano riconosciute
@@ -419,7 +418,8 @@ The bar_buio IsA location at teatro
   -- messaggio in terra.
   ------------------------------------------------------------------------------
 
-  Exit nordest, est, sudest, sud, sudovest, ovest, nordovest, su, giù to bar_buio
+  Exit nordest, est, sudest, sud, sudovest, ovest, nordovest, su, giù
+       to bar_buio
     Check
       "Brancolare nell'oscurità non è una buona idea!"
       Increase livello_danno of messaggio by 2.
@@ -436,7 +436,11 @@ The bar_buio IsA location at teatro
   -- Verbi globali, senza parametri:
 
   -- Verb aspetta, guardare, inventario
-  Verb aspettare, inventario -- @REMOVED: guardare (so we show description)
+  Verb aspettare -- @REMOVED: guardare (so we show description)
+    Check describe avvertimento_bar_buio.
+  End verb.
+
+  Verb inventario -- @REMOVED: guardare (so we show description)
     Check describe avvertimento_bar_buio.
   End verb.
 
@@ -516,6 +520,7 @@ Verb aspetta
 End verb.
 ////
 
+////
 Verb inventario
   Does
     If mantello in hero
@@ -527,6 +532,7 @@ Verb inventario
       else "Non stai portando nulla con te."
   end if.
 End verb inventario.
+////
 
 --------------------------------------------------------------------------------
 -- Meta verbi
@@ -579,7 +585,6 @@ Meta verb ringraziamenti
      pubblico dominio e, pertanto, liberamente utilizzabile senza restrizioni.
 
      $pTristano Ajmone (Torino, 2019)"
-
 End verb.
 
 
@@ -649,7 +654,8 @@ Add to every thing
   End verb.
 
   Verb lascia
-    Check oggetto in  hero
+    Check oggetto in hero
+      else say msg:non_possiedi_P1.
     Does
       "Posi a terra $+1."
       locate this here.
@@ -714,6 +720,7 @@ Add to every object
             else "è"
           end if. "qualcosa che puoi appendere."
       And ogg1 in hero
+        else say msg:non_possiedi_P1.
   End verb appendi_a.
 End add to object.
 
@@ -738,15 +745,16 @@ Visits 9999. -- @CHECK: Is this supported by Foundation? Needs fixing?
 --~  the bright lights of the Opera House. It's surprising that there aren't
 --~  more people about but, hey, what do you expect in a cheap demo game...?"
 
-  "$p$pAffrettandoti nella piovosa notte di novembre, la vista delle luci
-   sfavillanti del teatro dell'opera ti riallieta.
-   È sorprendente che non ci sia più gente, ma, ehy, che ti aspetti da un
-   semplice giochino dimostrativo...?"
+"$p$pAffrettandoti nella piovosa notte di novembre, la vista delle luci
+     sfavillanti del teatro dell'opera ti riallieta.
+     È sorprendente che non ci sia più gente, ma, ehy, che ti aspetti da un
+     semplice giochino dimostrativo...?"
 
-   Style emphasized. "$p$nCloak of Darkness" style normal.
+Style emphasized. "$p$nCloak of Darkness" style normal.
 
   "$nUna semplice AT dimostrativa in ALAN3."
-  "$nVersione Alpha 26, febbraio 2019. (Implementata in ALAN 3.0beta6 build 1878)"
+  "$nVersione Alpha 26, febbraio 2019.
+     (Implementata in ALAN 3.0beta8)"
 
   "$pDigita INFO per maggiori informazioni."
 
