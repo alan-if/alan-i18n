@@ -48,7 +48,9 @@ rimane soltanto uno. L'unica uscita è una porta a est.
 > ; GUARDAROBA
 > ; ------------------------------------------------------------------------------
 > appendi il mantello al gancio
-Appendi il mantello al gancio.
+Appendi il mantello al gancio. 
+
+[Il tuo punteggio è appena salito di 1.]
 
 > ; TESTA -> MANTELLO NON POSSEDUTO
 > appendi il mantello al gancio
@@ -81,25 +83,25 @@ Stai trasportando un mantello.
 > ; ==============================================================================
 > ; TESTA -> INDOSSA -> MANTELLO POSSEDUTO
 > indossa il mantello
-Il mantello non è indossabile.
+Fatto. Ora indossi il mantello.
 
 > appendi il mantello
 Appendi il mantello al gancio.
 
 > ; TESTA -> INDOSSA -> MANTELLO APPESO
 > indossa il mantello
-Il mantello non è indossabile.
+Indossi già il mantello!
 
 > lascia il mantello
 Non possiedi il mantello!
 
 > ; TESTA -> INDOSSA -> MANTELLO IN TERRA
 > indossa il mantello
-Il mantello non è indossabile.
+Indossi già il mantello!
 
 > ; TESTA -> INDOSSA -> MANTELLO GIÀ INDOSSATO
 > indossa il mantello
-Il mantello non è indossabile.
+Indossi già il mantello!
 
 > ; ==============================================================================
 > ; LASCIARE IL MANTELLO
