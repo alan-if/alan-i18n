@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.5.0 | 2021/11/26 | by Tristano Ajmone
+=begin "Rakefile" v0.5.1 | 2021/12/18 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -25,11 +25,32 @@ require './_assets/rake/globals.rb'
 require './_assets/rake/alan.rb'
 require './_assets/rake/asciidoc.rb'
 
+# ==============================================================================
+# --------------------{  P R O J E C T   S E T T I N G S  }---------------------
+# ==============================================================================
+
 # Relative path to libraries for ALAN '-include' option:
 $alan_include = "../Foundation"
 
-## Tasks
-########
+$rouge_dir = "#{$repo_root}/_assets/rouge"
+require "#{$rouge_dir}/custom-rouge-adapter.rb"
+
+ADOC_OPTS = <<~HEREDOC
+  --failure-level WARN \
+  --verbose \
+  --timings \
+  --safe-mode unsafe \
+  --require #{$rouge_dir}/custom-rouge-adapter.rb \
+  -a source-highlighter=rouge \
+  -a rouge-style=thankful_eyes \
+  -a docinfodir=#{$rouge_dir} \
+  -a docinfo@=shared-head \
+  -a data-uri
+HEREDOC
+
+# ==============================================================================
+# -------------------------------{  T A S K S  }--------------------------------
+# ==============================================================================
 
 task :default => %w[lib:all]
 
@@ -73,7 +94,7 @@ namespace "lib" do
     desc "English documentation"
     task :docs
     EN_ADOC_DEPS = FileList['alan_en/docs/*.adoc']
-    CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_en/docs', EN_ADOC_DEPS)
+    CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_en/docs', EN_ADOC_DEPS, ADOC_OPTS)
   end # lib:en:
 
   ## SPANISH LIBRARY
@@ -103,7 +124,7 @@ namespace "lib" do
     task :docs
     ES_ADOC_DEPS = LIB_ES_SOURCES + FileList['alan_es/docs/*.adoc', 'alan_es/docs/*.alan', 'alan_es/docs/*.a3s']
     CreateADocTranscriptingTasksFromFolder(:docs,'alan_es/docs', LIB_ES_SOURCES)
-    CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_es/docs', ES_ADOC_DEPS)
+    CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_es/docs', ES_ADOC_DEPS, ADOC_OPTS)
   end # lib:es:
 
   ## ITALIAN LIBRARY
