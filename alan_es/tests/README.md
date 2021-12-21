@@ -439,8 +439,8 @@ For more info, see:
 
 <!-- ALAN Manual -->
 
-[META VERBs]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#_meta_verbs "See ALAN Manual » META VERBs"
-[Run-Time MESSAGEs]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#_run_time_messages "See ALAN Manual » App. C: Run-Time Messages"
+[META VERBs]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#meta_verbs "See ALAN Manual » META VERBs"
+[Run-Time MESSAGEs]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#run_time_messages "See ALAN Manual » App. C: Run-Time Messages"
 
 <!-- project files -->
 

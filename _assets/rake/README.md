@@ -186,7 +186,7 @@ SOFTWARE.
 
 <!-- ALAN Manual -->
 
-[arun switches]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#_interpreter_switches "ALAN Manual » §A.4. Interpreter Switches"
+[arun switches]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#interpreter_switches "ALAN Manual » §A.4. Interpreter Switches"
 
 <!-- Rake -->
 

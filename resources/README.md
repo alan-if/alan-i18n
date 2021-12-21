@@ -45,8 +45,8 @@ You can provide dynamic messages by including actual code in their definitions, 
 <!-- ALAN Manual -->
 
 [The ALAN Manual]: https://alan-if.github.io/alan-docs/manual-beta/manual.html "Read The ALAN Manual online"
-[§3.15]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#_messages
-[§C.1]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#_input_response_messages
+[§3.15]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#messages
+[§C.1]: https://alan-if.github.io/alan-docs/manual-beta/manual.html#input_response_messages
 
 <!-- ALAN sources -->
 
