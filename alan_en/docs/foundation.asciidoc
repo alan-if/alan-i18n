@@ -1,6 +1,6 @@
 = Foundation Library Design
 Tristano Ajmone <tajmone@gmail.com>
-v0.1.1, 2021-11-30
+v0.1.2, 2021-12-22
 :rev_mark: WIP Alpha
 :doctype: book
 include::_inc_attr-header.adoc[]
@@ -12,6 +12,8 @@ include::_inc_attr-header.adoc[]
 :sectnumlevels: 2
 // Paths:
 :imagesdir: images
+
+include::_inc_attr-custom.adoc[]
 
 // Document Preamble
 // =================

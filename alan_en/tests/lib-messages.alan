@@ -1,0 +1,104 @@
+﻿-- "lib-messages.alan" | by Tristano Ajmone 2021 | Foundation EN Test suite
+-- =============================================================================
+-- * * * * * * * *   T E S T   L I B R A R Y   M E S S A G E S   * * * * * * * *
+-- =============================================================================
+
+Import 'Library.i'.
+
+-- =============================================================================
+--                     S H O P   R O O M   &  S C E N E R Y
+-- =============================================================================
+
+The shop IsA location.
+  Name 'The Novelty Shop'.
+End the.
+
+The upholstery IsA scenery at shop.
+  Description "The room walls are wrapped in a kitsch
+               upholstery with ugly floral motifs."
+  -- Has xDesc
+  --   "The upholstery is as ugly as it gets.
+  --    Floral patterns in salmon tint depict leaves and strange fruits
+  --    chasing each other in a whirlwind of gigantic rose petals. Yuck!".
+End the.
+
+The walls IsA scenery at shop.
+  Name walls. Name wall.
+  Is plural.
+  Description ""
+End the.
+
+The odour IsA object at shop.
+  Name foul odour. Name odor.
+  Name smell.
+  Description "A foul odour lingers in the air."
+
+  Is not searchable.
+     not examinable.
+     not takeable.
+  Has smellDesc
+    "Pew, isn't that a foul smell! A mixture of stale cigarette
+     smoke, dampness and mould hiding behind the upholstery.".
+
+  Verb smell0
+    Does only
+      Say this:smellDesc.
+  End verb.
+
+  Verb smell
+    Does only
+      Say this:smellDesc.
+  End verb.
+End the.
+
+The door IsA object at shop.
+  Is lockable. Not locked.
+     openable. Not open.
+     not takeable.
+
+  Verb lock, unlock
+    Check shop_key in hero
+      else "You'll need the door key!"
+  End verb.
+
+End the door.
+-- =============================================================================
+--                              T H E   C L E R K
+-- =============================================================================
+
+The clerk IsA male at shop.
+  Description "$pThe shop clerk is watching you from a safe distance."
+  Has xDesc
+    "Short, chubby and dressed as an accountant,
+     not exactly the kind of guy you'd ask advise for a gift.".
+End the.
+
+The shop_key IsA object in clerk.
+  Name key. Name shop key.
+  Has xDesc "It's the key to the shop door.".
+End the.
+
+-- =============================================================================
+--                                 O B J E C T S
+-- =============================================================================
+
+The hammer IsA object at shop.
+  Is weapon.
+End the.
+
+-- =============================================================================
+--                     H E R O ' S   P O S S E S S I O N S
+-- =============================================================================
+
+The revolver IsA object in hero.
+  Name revolver.
+  Name my revolver. Name your revolver.
+  Name my gun. Name your gun.
+  -- Pronoun your, it.
+  Is weapon. shootable.
+  Has xDesc
+    "Oh, it's your Taurus 856 38 Special Revolver!
+     I guess you're carrying it just for library testing purposes, right?".
+End the revolver.
+
+Start at shop.

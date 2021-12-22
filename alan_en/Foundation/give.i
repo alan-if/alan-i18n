@@ -12,7 +12,7 @@ Add to every object
   Verb give
     When obj
       Check obj in hero
-        else "You don't have" say the obj. "."
+        else say msg:you_dont_have_P1.
     Does
       If recip=hero then
         "You already have" say the obj. "!"

@@ -13,6 +13,8 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.2.5 \(2021/12/22\)](#v025-20211222)
+        - [New `messages_library.i` Module](#new-messages_libraryi-module)
     - [v0.2.4 \(2021/11/30\)](#v024-20211130)
         - [Add Transcript Verbs](#add-transcript-verbs)
     - [v0.2.3 \(2021/11/11\)](#v023-20211111)
@@ -38,6 +40,36 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 # Beta Releases
 
+
+## v0.2.5 (2021/12/22)
+
+### New `messages_library.i` Module
+
+Added a new `messages_library.i` module defining an hidden `msg` location on which recurrent library messages are defined as string attributes.
+This allows:
+
+- Editing recurrent messages in a single source file.
+- Changing the default messages from within an adventure, even during play, instead of editing the library sources.
+- Optimizing compiled games size by reducing string redundancy.
+
+The following attributes were defined covering standard responses for scenery, violence and missing objects:
+
+|           attribute           |                  value                  |
+|-------------------------------|-----------------------------------------|
+| `msg:scenery_response_P1_sg`  | `"Forget $+1, it's not important.".`    |
+| `msg:scenery_response_P1_pl`  | `"Forget $+1, they're not important.".` |
+| `msg:scenery_response_P2_sg`  | `"Forget $+2, it's not important.".`    |
+| `msg:scenery_response_P2_pl`  | `"Forget $+2, they're not important.".` |
+| `msg:violence_not_the_answer` | `"Violence is not the answer.".`        |
+| `msg:you_dont_have_P1`        | `"You don't have $+1!".`                |
+| `msg:you_dont_have_P2`        | `"You don't have $+2!".`                |
+
+All verbs and syntaxes using those standard responses where adapted accordingly.
+
+In the future, more message attributes will be added for recurring messages, trying to adopt flexible messages template which work well with different `VERB`, `WHERE` and `CHECK` responses.
+
+> **NOTE** — For more info on library messages, see the
+[_Foundation Library Design_](../docs/foundation.html#library_messages) documentation.
 
 ## v0.2.4 (2021/11/30)
 
@@ -74,7 +106,7 @@ If a scenery object has a non-empty `xDesc` attribute, now the library will prin
 In `scenery.i`, edit the verbs redefined on the `scenery` class:
 
 - Change the default scenery message from "That's only scenery." to "Forget the OBJ, [it's/they're] not important.", which makes it clear to the player that all actions on the object are futile, without breaking the narrative illusion (see [#34]).
-- Previously the verbs `examine` and `take` where overridden together, now they are defined separately so that `examine` can handle the `xDesc` attribute.
+- Previously the verbs `examine` and `take` WHERE overridden together, now they are defined separately so that `examine` can handle the `xDesc` attribute.
 - Tweak the `examine` verb to print the `xDesc` attribute if it's not an empty string, or a default message otherwise.
 
 

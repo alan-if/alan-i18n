@@ -12,12 +12,10 @@ Every scenery IsA object
       If xDesc of obj <> ""
         then say xDesc of obj.
         else
-          Say "Forget $+1,".
-          If this is not plural
-            then "it's"
-            else "they're"
+          If this is plural
+            then Say msg:scenery_response_P1_pl.
+            else Say msg:scenery_response_P1_sg.
           End if.
-          "not important."
       End if.
   End verb.
 
@@ -30,12 +28,10 @@ Every scenery IsA object
     --        'Check' won't work either, because the checks on the parent
     --        class are executed first!
     Does only
-      Say "Forget $+1,".
-      If this is not plural
-        then "it's"
-        else "they're"
+      If this is plural
+        then Say msg:scenery_response_P1_pl.
+        else Say msg:scenery_response_P1_sg.
       End if.
-      "not important."
   End verb.
 
   -- @TODO: Add other verbs with compatible syntaxes.

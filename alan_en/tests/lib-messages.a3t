@@ -1,0 +1,90 @@
+
+
+The Novelty Shop
+The room walls are wrapped in a kitsch upholstery with ugly floral motifs. 
+A foul odour lingers in the air. There is a door and a hammer here. 
+
+The shop clerk is watching you from a safe distance.
+
+> i
+You are carrying a revolver.
+
+> take hammer
+Taken.
+
+> ; ============================================================================
+> ; msg:scenery_response_P1_[sg/pl] | 'scenery.i'
+> ; ============================================================================
+> x upholstery
+Forget the upholstery, it's not important.
+
+> x walls
+Forget the walls, they're not important.
+
+> ; ** NOTE ** Other verbs on 'scenery' class not working due to CHECKS!
+> ; ============================================================================
+> ; msg:violence_not_the_answer | 'attack.i'
+> ; ============================================================================
+> attack clerk
+Violence is not the answer.
+
+> attack clerk with hammer
+Violence is not the answer.
+
+> shoot clerk with revolver
+Violence is not the answer.
+
+> shoot revolver at clerk
+Violence is not the answer.
+
+> ; ============================================================================
+> ; msg:you_dont_have_[P1/P2]
+> ; ============================================================================
+> ; 'attack.i'
+> drop hammer and revolver
+(hammer) Dropped.
+
+(revolver) Dropped.
+
+> attack clerk with hammer
+You don't have the hammer!
+
+> shoot clerk with revolver
+You don't have the revolver!
+
+> shoot revolver at clerk
+You don't have the revolver!
+
+> ; 'give.i'
+> give hammer to clerk
+You don't have the hammer!
+
+> ; 'lock.i'
+> lock door with key
+You don't have the key!
+
+> unlock door with key
+It's already unlocked.
+
+> take key
+Taken.
+
+> lock door with key
+The door is now locked.
+
+> drop key
+Dropped.
+
+> unlock door with key
+You don't have the key!
+
+> ; 'open.i'
+> open door with hammer
+You don't have the hammer!
+
+> close door with hammer
+You don't have the hammer!
+
+> 
+
+Do you want to UNDO, RESTART, RESTORE or QUIT ? 

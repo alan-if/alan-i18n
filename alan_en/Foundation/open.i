@@ -34,7 +34,7 @@ Add to every object
   Verb open_with
     When obj1
       Check obj2 in hero
-        else "You don't have" say the obj2. "."
+        else say msg:you_dont_have_P2.
       Does
         "You can't open" say the obj1. "with" say the obj2. "."
   End verb.
@@ -76,7 +76,7 @@ Add to every object
   Verb close_with
     When obj1
       Check obj2 in hero
-        else "You don't have" say the obj2. "."
+        else say msg:you_dont_have_P2.
       And obj1 is openable
         else "You can't close" say the obj1. "."
       Does -- To be overridden by DOES ONLY where appropriate...

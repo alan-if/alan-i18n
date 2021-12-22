@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.5.1 | 2021/12/18 | by Tristano Ajmone
+=begin "Rakefile" v0.5.2 | 2021/12/22 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -93,7 +93,7 @@ namespace "lib" do
     ###################
     desc "English documentation"
     task :docs
-    EN_ADOC_DEPS = FileList['alan_en/docs/*.adoc']
+    EN_ADOC_DEPS = LIB_EN_SOURCES + FileList['alan_en/docs/*.adoc']
     CreateAsciiDocHTMLTasksFromFolder(:docs,'alan_en/docs', EN_ADOC_DEPS, ADOC_OPTS)
   end # lib:en:
 

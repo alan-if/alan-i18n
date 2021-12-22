@@ -1,0 +1,35 @@
+﻿i
+take hammer
+; ============================================================================
+; msg:scenery_response_P1_[sg/pl] | 'scenery.i'
+; ============================================================================
+x upholstery
+x walls
+; ** NOTE ** Other verbs on 'scenery' class not working due to CHECKS!
+; ============================================================================
+; msg:violence_not_the_answer | 'attack.i'
+; ============================================================================
+attack clerk
+attack clerk with hammer
+shoot clerk with revolver
+shoot revolver at clerk
+; ============================================================================
+; msg:you_dont_have_[P1/P2]
+; ============================================================================
+; 'attack.i'
+drop hammer and revolver
+attack clerk with hammer
+shoot clerk with revolver
+shoot revolver at clerk
+; 'give.i'
+give hammer to clerk
+; 'lock.i'
+lock door with key
+unlock door with key
+take key
+lock door with key
+drop key
+unlock door with key
+; 'open.i'
+open door with hammer
+close door with hammer

@@ -1,6 +1,6 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * *  ALAN Foundation Library English  * *  v0.2.4 | 2021/11/30 | ALAN 3.Beta8
+-- * *  ALAN Foundation Library English  * *  v0.2.5 | 2021/12/22 | ALAN 3.Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -14,6 +14,7 @@ Import 'hero.i'.
 Import 'global.i'.
 Import 'temp.i'. -- temporary variables
 Import 'messages_runtime.i'. -- redefines some run-time MESSAGEs.
+Import 'messages_library.i'. -- recurrent library messages as attributes.
 
 -- People, male/female etc.
 Import 'people.i'.

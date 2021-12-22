@@ -25,6 +25,7 @@ This document tracks the development status of ports of the library to other loc
 
 | EN                  | feature                                | Spanish             | Italian             |
 | :-----------------: | :------------------------------------- | :-----------------: | :-----------------: |
+| [`0.2.5`][EN 0.2.5] | New `messages_library.i` module.       | &cross;             | &cross;             |
 | [`0.2.4`][EN 0.2.4] | Add game transcription META verbs.     | [`0.3.3`][ES 0.3.3] | [`0.1.1`][IT 0.1.1] |
 | [`0.2.3`][EN 0.2.3] | Fix verbs targetting containers.       | [`0.3.2`][ES 0.3.2] | [`0.1.0`][IT 0.1.0] |
 | [`0.2.2`][EN 0.2.2] | Honour `xDesc`  in scenery.            | [`0.4.0`][ES 0.4.0] | [`0.1.0`][IT 0.1.0] |
@@ -125,6 +126,7 @@ We're open to rediscuss our methodology, accepting advise and making room for ne
 
 <!-- English CHANGELOG -->
 
+[EN 0.2.5]: ./alan_en/Foundation/CHANGELOG.md#v025-20211222 "View English CHANGELOG entry"
 [EN 0.2.4]: ./alan_en/Foundation/CHANGELOG.md#v024-20211130 "View English CHANGELOG entry"
 [EN 0.2.3]: ./alan_en/Foundation/CHANGELOG.md#v023-20211111 "View English CHANGELOG entry"
 [EN 0.2.2]: ./alan_en/Foundation/CHANGELOG.md#v022-20210926 "View English CHANGELOG entry"

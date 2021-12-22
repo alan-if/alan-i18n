@@ -22,10 +22,12 @@ Syntax
       else "You can't attack that."
 
 Add to every thing
+-- tag::lib_msgs_ex1[]
   Verb attack
     Does
-      "Violence is not the answer."
+      Say msg:violence_not_the_answer.
   End verb.
+-- end::lib_msgs_ex1[]
 End add.
 
 
@@ -40,11 +42,11 @@ Add to every thing
   Verb attack_with
     When obj
       Check obj in hero
-        else "You don't have that object to attack with."
+        else say msg:you_dont_have_P2.
       And obj is weapon
         else "No point attacking anything with that!"
       Does
-        "Violence is not the answer."
+        Say msg:violence_not_the_answer.
   End verb.
 End add.
 
@@ -86,20 +88,20 @@ Add to every thing
   Verb shoot_at
     When obj
       Check obj in hero
-        else "You don't have that."
+        else say msg:you_dont_have_P1.
       And obj is shootable
         else "You can't shoot anything with that."
       Does
-        "Violence is not the answer."
+        Say msg:violence_not_the_answer.
   End verb.
 
   Verb shoot_with
     When obj
       Check obj in hero
-        else "You don't have that."
+        else say msg:you_dont_have_P2.
       And obj is shootable
         else "You can't shoot anything with that."
       Does
-        "Violence is not the answer."
+        Say msg:violence_not_the_answer.
   End verb.
 End add.

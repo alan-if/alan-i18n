@@ -39,7 +39,7 @@ Add to every Object
       And obj is not locked
         else "It's already locked."
       And key in hero
-        else "You don't have" say the key. "."
+        else say msg:you_dont_have_P2.
       Does
         Make obj locked.
         Say the obj. "is now locked."
@@ -80,7 +80,7 @@ Add to every object
       And obj is locked
         else "It's already unlocked."
       And key in hero
-        else "You don't have" say the key. "."
+        else say msg:you_dont_have_P2.
       Does
         Make obj not locked.
         Say the obj. "is now unlocked."

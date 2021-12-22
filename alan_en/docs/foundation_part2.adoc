@@ -8,6 +8,86 @@ During the process of updating the old ALAN Library v0.6 to the new ALAN Foundat
 
 This document is our attempt to lay down those principles in order to allow adventures authors to better understand the underlying library structure, so that they may extend the library following the same principles.
 
+
+== Library Messages
+
+The "`messages_library.i`" module defines recurrent library messages, as string attributes on the `msg` location:
+
+.Excerpt from "`messages_library.i`"
+[source,alan]
+--------------------------------------------------------------------------------
+include::{dir_LibEN}/messages_library.i[tag=lib_msgs_def1]
+--------------------------------------------------------------------------------
+
+etc., which are shown by the various verbs and syntaxes via `Say` statements:
+
+.Excerpt from "`attack.i`"
+[source,alan,indent=0]
+--------------------------------------------------------------------------------
+include::{dir_LibEN}/attack.i[tag=lib_msgs_ex1]
+--------------------------------------------------------------------------------
+
+Defining recurrent library messages as attributes offers several advantages:
+
+* It reduces strings redundancy, leading to smaller story files.
+* Maintainers can:
+** Tweak the text of library responses in a single place (DRY).
+** Esily search the library sources to find which verb is using a given message.
+* Authors can:
+** Override the default messages in their own adventure sources, without having to edit the library sources, which allows updating the library without loosing customizations.
+** Tweak these messages during gameplay, since they are attributes.
+** Reuse these attributes in their custom verbs responses.
+
+
+=== Messages ID Naming Conventions
+
+By looking at "`messages_library.i`" you'll notice that some messages have multiple definitions, covering variations in number (singular vs plural) or referenced parameter:
+
+.Excerpt from "`messages_library.i`"
+[source,alan,indent=0]
+--------------------------------------------------------------------------------
+include::{dir_LibEN}/messages_library.i[tag=lib_msgs_def2]
+--------------------------------------------------------------------------------
+
+Some segments of the parameter identifiers have conventional meanings:
+
+[horizontal]
+`_P1`/`_P2` :: Indicate parameter references `$+1`/`$+2`.
+The definite article is assumed, unless otherwise specified (e.g. `_an_P1`).
+`_sg`/`_pl` :: Indicate the singular vs plural variations of a message, or of a specific parameter segment (e.g. `_P1sg`/`_P1pl`) in messages referencing multiple parameters, since all possible combinations of singular and plural parameters need to be covered.
+`_VERB` :: Indicates the `$v` reference.
+
+
+These conventions were adopted to provide message attributes IDs which are intuitive to read, brief, and consistently named.
+
+
+.On Using `$v` in Message Attributes
+[WARNING]
+================================================================================
+You should be careful using `$v` in message parameters!
+The `$v` is replaced with whatever verb the player typed, including `Synonyms` and alternative syntaxes.
+
+So, using `"You can't $v $+1!"` in a verb message might lead to undesirable results:
+
+[example,role="gametranscript"]
+===============================
+&gt; _x happiness_
+
+You can't x the happiness!
+===============================
+
+Furthermore, with complex syntaxes including prepositions, only the verb noun would replace the `$v`.
+E.g. with `Syntax jump_in = jump 'in' (cont)` you'd get the following response for a failed '`jump in`' attempt:
+
+[example,role="gametranscript"]
+===============================
+&gt; _jump in lake_
+
+You can't jump the lake!
+===============================
+================================================================================
+
+
 == Implicit Taking
 
 Well polished text adventures usually implement implicit taking action for some verbs, so that the player doesn't have to first take the item to complete that action.

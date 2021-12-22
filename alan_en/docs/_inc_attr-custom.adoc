@@ -1,0 +1,3 @@
+// Commonly Shared Header Attributes
+
+:dir_LibEN: ../Foundation
