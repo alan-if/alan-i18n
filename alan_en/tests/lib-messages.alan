@@ -13,7 +13,8 @@ The shop IsA location.
   Name 'The Novelty Shop'.
 End the.
 
-The upholstery IsA scenery at shop.
+The upholstery IsA object at shop.
+  Is scenery.
   Description "The room walls are wrapped in a kitsch
                upholstery with ugly floral motifs."
   -- Has xDesc
@@ -22,8 +23,9 @@ The upholstery IsA scenery at shop.
   --    chasing each other in a whirlwind of gigantic rose petals. Yuck!".
 End the.
 
-The walls IsA scenery at shop.
+The walls IsA object at shop.
   Name walls. Name wall.
+  Is scenery.
   Is plural.
   Description ""
 End the.
@@ -94,11 +96,10 @@ The revolver IsA object in hero.
   Name revolver.
   Name my revolver. Name your revolver.
   Name my gun. Name your gun.
-  -- Pronoun your, it.
   Is weapon. shootable.
   Has xDesc
     "Oh, it's your Taurus 856 38 Special Revolver!
      I guess you're carrying it just for library testing purposes, right?".
-End the revolver.
+End the.
 
 Start at shop.

@@ -14,7 +14,12 @@ Syntax
 
 Add to every object
   Verb lock
-    Check obj is lockable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is lockable
       else "You can't lock that!"
     And obj is not locked
       else "It's already locked."
@@ -34,7 +39,17 @@ Syntax
 Add to every Object
   Verb lock_with
     When obj
-      Check obj is lockable
+      Check obj is not scenery else
+        If obj is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And key is not scenery else
+        If key is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj is lockable
         else "You can't lock that!"
       And obj is not locked
         else "It's already locked."
@@ -54,7 +69,12 @@ Syntax
 
 Add to every object
   Verb unlock
-    Check obj is lockable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is lockable
       else "You can't unlock that!"
     And obj is locked
       else "It's already unlocked."
@@ -75,7 +95,17 @@ Syntax
 Add to every object
   Verb unlock_with
     When obj
-      Check obj is lockable
+      Check obj is not scenery else
+        If obj is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And key is not scenery else
+        If key is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj is lockable
         else "You can't unlock that!"
       And obj is locked
         else "It's already unlocked."

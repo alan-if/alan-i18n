@@ -12,7 +12,12 @@ Syntax
 
 Add to every object
   Verb read
-    Check obj is readable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is readable
       else "There is nothing written on" say the obj. "."
     Does
       "You read" say the obj. "."

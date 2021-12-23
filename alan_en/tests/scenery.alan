@@ -20,27 +20,67 @@ The desert IsA location.
   End exit.
 End the.
 
-The sun IsA scenery at desert.
+--==============================================================================
+--                        S C E N E R Y   O B J E C T S
+--==============================================================================
+
+The sun IsA object at desert.
+  Is scenery.
   Description ""
   Has xDesc
     "It resembles a disc of molten metal floating in the sky.".
 End the.
 
-The cactus IsA scenery at desert.
+The cactus IsA object at desert.
+  Is scenery.
   Name cactus. Name spines.
-  Description "A lonely cactus rises tall from the sand."
+  Description "A lonely cactus rises tall from the sand, next to an abandoned pit."
   Has xDesc "It's a sturdy plant, covered in spines.".
 End the.
 
-The sand IsA scenery at desert.
+The pit IsA object container at desert.
+  Is scenery.
+  Name abandoned pit.
   Description ""
 End the.
 
-The tumbleweeds IsA scenery at desert.
+The sand IsA object at desert.
+  Is scenery.
+  Description ""
+End the.
+
+The tumbleweeds IsA object container at desert.
+  Is scenery. plural.
   Name tumbleweeds. Name tumbleweed.
-  Is plural.
   Description
     "In the distance you glimpse tumbleweeds rolling across the sand."
+End the.
+
+--==============================================================================
+--                                   N P C S
+--==============================================================================
+
+The skorpion IsA actor at desert.
+End the skorpion.
+
+--==============================================================================
+--                     H E R O ' S   P O S S E S S I O N S
+--==============================================================================
+
+The knife IsA object in hero.
+  Is weapon.
+End the.
+
+The pistol IsA object in hero.
+  Name pistol. Name gun.
+  Is weapon. shootable.
+End the.
+
+The palock IsA object in hero.
+  Is lockable. locked.
+End the.
+
+The key IsA object in hero.
 End the.
 
 --------------------------------------------------------------------------------

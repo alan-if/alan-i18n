@@ -18,7 +18,12 @@ Syntax
 
 Add to every object
   Verb touch
-    Check obj is touchable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is touchable
       else "You can't touch that."
     Does
       "You touch" say the obj. "."
@@ -26,7 +31,17 @@ Add to every object
 
   Verb touch_with
     When obj1
-      Check obj1 is touchable
+      Check obj1 is not scenery else
+        If obj1 is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And obj2 is not scenery else
+        If obj2 is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj1 is touchable
         else "You can't touch that."
       And obj1 <> obj2
         else "It doesn't make sense to touch something with itself."

@@ -3,8 +3,9 @@
 Lost in the Desert
 You're surrounded by dunes. A fierce sun looms above you, following you
 wherever you go. The heat is unbearable, you need to find water.
-A lonely cactus rises tall from the sand. In the distance you glimpse
-tumbleweeds rolling across the sand.
+A lonely cactus rises tall from the sand, next to an abandoned pit. In
+the distance you glimpse tumbleweeds rolling across the sand. There is a 
+skorpion here.
 
 > ; ==============================================================================
 > ; EXAMINE SCENERY w/ xDesc
@@ -26,24 +27,587 @@ It resembles a disc of molten metal floating in the sky.
 > x sand
 Forget the sand, it's not important.
 
-> ; Plural nouns:
+> ; plural:
 > x tumbleweeds
 Forget the tumbleweeds, they're not important.
 
 > ; ==============================================================================
-> ; VERBS OVERRIDEN ON SCENERY
+> ; VERBS BLOCKED FOR SCENERY
 > ; ==============================================================================
-> ; Verbs which are being added as DOES ONLY to replace default...
+> ; Verbs other than 'examine' contain CHECKs that prevent execution when there's
+> ; a parameter which 'is scenery'. Let's test all verbs, one module at the time:
+> ;   * Test all parameters against a scenery object.
+> ;   * Test all parameters against singular and plural objects:
+> ;     * 'cactus'      --> scenery, singular
+> ;     * 'pit'         --> scenery, singular container
+> ;     * 'tumbleweeds' --> scenery, plural container
+> ;     * 'skorpion'    --> actor
 > ; ------------------------------------------------------------------------------
-> ; TAKE
+> ; attack.i
 > ; ------------------------------------------------------------------------------
-> ; BUG: The DOES ONLY body is never executed because the NOT TAKEABLE attribute
-> ;      is failing the CHECKs of the TAKE verb on the OBJECT class!
-> take cactus
-You can't take that!
+> ; singular:
+> attack cactus
+Forget the cactus, it's not important.
 
+> attack cactus with knife ; P1
+Forget the cactus, it's not important.
+
+> attack knife with cactus ; P2
+Forget the cactus, it's not important.
+
+> shoot cactus
+Forget the cactus, it's not important.
+
+> shoot cactus at pistol ; P1
+Forget the cactus, it's not important.
+
+> shoot pistol at cactus ; P2
+Forget the cactus, it's not important.
+
+> shoot cactus with pistol ; P1
+Forget the cactus, it's not important.
+
+> shoot pistol with cactus ; P2
+Forget the cactus, it's not important.
+
+> ; plural:
+> attack tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> attack tumbleweeds with knife ; P1
+Forget the tumbleweeds, they're not important.
+
+> attack knife with tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> shoot tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> shoot tumbleweeds at pistol ; P1
+Forget the tumbleweeds, they're not important.
+
+> shoot pistol at tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> shoot tumbleweeds with pistol ; P1
+Forget the tumbleweeds, they're not important.
+
+> shoot pistol with tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; eat.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> eat cactus
+Forget the cactus, it's not important.
+
+> drink cactus
+Forget the cactus, it's not important.
+
+> ; plural:
+> eat tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> drink tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; examine.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> look in pit
+Forget the abandoned pit, it's not important.
+
+> search pit
+Forget the abandoned pit, it's not important.
+
+> ; plural:
+> look in tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> search tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; give.i
+> ; ------------------------------------------------------------------------------
+> give gun to pit
+Forget the abandoned pit, it's not important.
+
+> give gun to tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; jump.i
+> ; ------------------------------------------------------------------------------
+> jump on cactus
+Forget the cactus, it's not important.
+
+> jump on tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; kiss.i
+> ; ------------------------------------------------------------------------------
+> kiss cactus
+Forget the cactus, it's not important.
+
+> kiss tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; knock.i
+> ; ------------------------------------------------------------------------------
+> knock on cactus
+Forget the cactus, it's not important.
+
+> knock on tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; listen.i
+> ; ------------------------------------------------------------------------------
+> listen to cactus
+Forget the cactus, it's not important.
+
+> listen to tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; lock.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> lock cactus
+Forget the cactus, it's not important.
+
+> lock cactus with key ; P1
+Forget the cactus, it's not important.
+
+> lock palock with cactus ; P2
+Forget the cactus, it's not important.
+
+> unlock cactus
+Forget the cactus, it's not important.
+
+> unlock cactus with key ; P1
+Forget the cactus, it's not important.
+
+> unlock palock with cactus ; P2
+Forget the cactus, it's not important.
+
+> ; plural:
+> lock tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> lock tumbleweeds with key ; P1
+Forget the tumbleweeds, they're not important.
+
+> lock palock with tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> unlock tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> unlock tumbleweeds with key ; P1
+Forget the tumbleweeds, they're not important.
+
+> unlock palock with tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; open.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> open cactus
+Forget the cactus, it's not important.
+
+> open cactus with key ; P1
+Forget the cactus, it's not important.
+
+> open key with cactus ; P2
+Forget the cactus, it's not important.
+
+> close cactus
+Forget the cactus, it's not important.
+
+> close cactus with key ; P1
+Forget the cactus, it's not important.
+
+> close key with cactus ; P2
+Forget the cactus, it's not important.
+
+> ; plural:
+> open tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> open tumbleweeds with key ; P1
+Forget the tumbleweeds, they're not important.
+
+> open key with tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> close tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> close tumbleweeds with key ; P1
+Forget the tumbleweeds, they're not important.
+
+> close key with tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; push.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> push cactus
+Forget the cactus, it's not important.
+
+> push cactus with key ; P1
+Forget the cactus, it's not important.
+
+> push key with cactus ; P2
+Forget the cactus, it's not important.
+
+> ; plural:
+> push tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> push tumbleweeds with key ; P1
+Forget the tumbleweeds, they're not important.
+
+> push key with tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; put.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> put cactus
+Forget the cactus, it's not important.
+
+> put cactus in pit ; P1
+Forget the cactus, it's not important.
+
+> put gun in pit ; P2
+Forget the abandoned pit, it's not important.
+
+> put cactus near pit ; P1
+Forget the cactus, it's not important.
+
+> put gun near pit ; P2
+Forget the abandoned pit, it's not important.
+
+> put cactus behind pit ; P1
+Forget the cactus, it's not important.
+
+> put gun behind pit ; P2
+Forget the abandoned pit, it's not important.
+
+> put cactus on pit ; P1
+Forget the cactus, it's not important.
+
+> put gun on pit ; P2
+Forget the abandoned pit, it's not important.
+
+> put cactus under pit ; P1
+Forget the cactus, it's not important.
+
+> put gun under pit ; P2
+Forget the abandoned pit, it's not important.
+
+> ; plural:
+> put tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> put tumbleweeds in me ; P1
+Forget the tumbleweeds, they're not important.
+
+> put gun in tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> put tumbleweeds near me ; P1
+Forget the tumbleweeds, they're not important.
+
+> put gun near tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> put tumbleweeds behind me ; P1
+Forget the tumbleweeds, they're not important.
+
+> put gun behind tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> put tumbleweeds on me ; P1
+Forget the tumbleweeds, they're not important.
+
+> put gun on tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> put tumbleweeds under me ; P1
+Forget the tumbleweeds, they're not important.
+
+> put gun under tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; read.i
+> ; ------------------------------------------------------------------------------
+> read cactus
+Forget the cactus, it's not important.
+
+> read tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; smell.i
+> ; ------------------------------------------------------------------------------
+> smell cactus
+Forget the cactus, it's not important.
+
+> smell tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; take.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> take cactus
+Forget the cactus, it's not important.
+
+> pick up cactus
+Forget the cactus, it's not important.
+
+> pick cactus up
+Forget the cactus, it's not important.
+
+> drop cactus
+Forget the cactus, it's not important.
+
+> put cactus down
+Forget the cactus, it's not important.
+
+> put down cactus
+Forget the cactus, it's not important.
+
+> take cactus from pit ; P1
+Forget the cactus, it's not important.
+
+> take key from pit ; P2
+Forget the abandoned pit, it's not important.
+
+> ; plural:
 > take tumbleweeds
-You can't take that!
+Forget the tumbleweeds, they're not important.
+
+> pick up tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> pick tumbleweeds up
+Forget the tumbleweeds, they're not important.
+
+> drop tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> put tumbleweeds down
+Forget the tumbleweeds, they're not important.
+
+> put down tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> take tumbleweeds from pit ; P1
+Forget the tumbleweeds, they're not important.
+
+> take key from tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; talk.i | many parameters don't have to be actors but things
+> ; ------------------------------------------------------------------------------
+> ; NOTE: Scenery objects can be topics!
+> ; singular:
+> say cactus ; (allowed)
+Cactus? That's a nice word!
+
+> say cactus to skorpion ; (allowed)
+The skorpion doesn't seem interested.
+
+> say tumbleweeds to cactus ; P2
+Forget the cactus, it's not important.
+
+> ask skorpion about cactus ; (allowed)
+The skorpion says "I don't know anything about the cactus !"
+
+> talk to cactus about me ; P1
+Forget the cactus, it's not important.
+
+> talk to skorpion about cactus ; (allowed)
+"I don't think I need to know about the cactus," says the skorpion.
+
+> talk to cactus
+Forget the cactus, it's not important.
+
+> ; plural:
+> say cactus to tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> talk to tumbleweeds about me ; P1
+Forget the tumbleweeds, they're not important.
+
+> talk to tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; throw.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> throw cactus
+Forget the cactus, it's not important.
+
+> throw cactus to key ; P1
+Forget the cactus, it's not important.
+
+> throw key to cactus ; P2
+Forget the cactus, it's not important.
+
+> throw cactus at key ; P1
+Forget the cactus, it's not important.
+
+> throw key at cactus ; P2
+Forget the cactus, it's not important.
+
+> throw cactus in pit ; P1
+Forget the cactus, it's not important.
+
+> throw knife in pit ; P2
+Forget the abandoned pit, it's not important.
+
+> ; plural:
+> throw tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> throw tumbleweeds to key ; P1
+Forget the tumbleweeds, they're not important.
+
+> throw key to tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> throw tumbleweeds at key ; P1
+Forget the tumbleweeds, they're not important.
+
+> throw key at tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> throw tumbleweeds in pit ; P1
+Forget the tumbleweeds, they're not important.
+
+> throw knife in tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; touch.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> touch cactus
+Forget the cactus, it's not important.
+
+> touch cactus with key ; P1
+Forget the cactus, it's not important.
+
+> touch key with cactus ; P2
+Forget the cactus, it's not important.
+
+> ; plural:
+> touch tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> touch tumbleweeds with key ; P1
+Forget the tumbleweeds, they're not important.
+
+> touch key with tumbleweeds ; P2
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; turn.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> turn on cactus
+Forget the cactus, it's not important.
+
+> turn cactus on
+Forget the cactus, it's not important.
+
+> switch on cactus
+Forget the cactus, it's not important.
+
+> switch cactus on
+Forget the cactus, it's not important.
+
+> turn off cactus
+Forget the cactus, it's not important.
+
+> turn cactus off
+Forget the cactus, it's not important.
+
+> switch off cactus
+Forget the cactus, it's not important.
+
+> switch cactus off
+Forget the cactus, it's not important.
+
+> ; plural:
+> turn on tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> turn tumbleweeds on
+Forget the tumbleweeds, they're not important.
+
+> switch on tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> switch tumbleweeds on
+Forget the tumbleweeds, they're not important.
+
+> turn off tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> turn tumbleweeds off
+Forget the tumbleweeds, they're not important.
+
+> switch off tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> switch tumbleweeds off
+Forget the tumbleweeds, they're not important.
+
+> ; ------------------------------------------------------------------------------
+> ; wear.i
+> ; ------------------------------------------------------------------------------
+> ; singular:
+> wear cactus
+Forget the cactus, it's not important.
+
+> put cactus on
+Forget the cactus, it's not important.
+
+> put on cactus
+Forget the cactus, it's not important.
+
+> remove cactus
+Forget the cactus, it's not important.
+
+> ; plural:
+> wear tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> put tumbleweeds on
+Forget the tumbleweeds, they're not important.
+
+> put on tumbleweeds
+Forget the tumbleweeds, they're not important.
+
+> remove tumbleweeds
+Forget the tumbleweeds, they're not important.
 
 > 
 

@@ -27,7 +27,12 @@ Syntax
 
 Add to every object
   Verb turn_on1, turn_on2, switch_on1, switch_on2
-    Check obj is switchable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is switchable
       else "You can't turn that on."
     And obj is not 'on'
       else "It's already on."
@@ -58,7 +63,12 @@ Syntax
 
 Add to every object
   Verb turn_off1, turn_off2, switch_off1, switch_off2
-    Check obj is switchable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is switchable
       else "You can't turn that off."
     And obj is 'on'
       else "It's already off."

@@ -12,7 +12,12 @@ Syntax
 
 Add to every object
   Verb push
-    Check obj is pushable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is pushable
       else "You can't push that."
     Does
       "You push" say the obj. "."
@@ -30,7 +35,17 @@ Syntax
 Add to every object
   Verb push_with
     When obj1
-      Check obj1 is pushable
+      Check obj1 is not scenery else
+        If obj1 is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And obj2 is not scenery else
+        If obj2 is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj1 is pushable
         else "You can't push that."
       Does
         "Using" say the obj2. "you push" say the obj1. "."

@@ -34,7 +34,12 @@ Syntax
 
 Add to every object
   Verb take, pick_up1, pick_up2
-    Check obj is takeable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is takeable
       else "You can't take that!"
     And obj not in hero
       else "You've already got that."
@@ -71,7 +76,12 @@ Syntax
 
 Add to every object
   Verb drop, put_down1, put_down2
-    Check obj in hero
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj in hero
       else "You aren't carrying that."
     Does
       Locate obj here.
@@ -95,7 +105,17 @@ Syntax
 Add to every object
   Verb take_from
     When obj
-      Check obj not in hero
+      Check obj is not scenery else
+        If obj is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And holder is not scenery else
+        If holder is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj not in hero
         else "You already have" say the obj. "."
       And obj in holder
         else Say the obj. "is not there."

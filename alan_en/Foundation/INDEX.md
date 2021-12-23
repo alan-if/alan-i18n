@@ -500,7 +500,6 @@ Please read the [README] and [NOTES] files for information about using the libra
 [push.i]: ./push.i "View source file"
 [put.i]: ./put.i "View source file"
 [read.i]: ./read.i "View source file"
-[scenery.i]: ./scenery.i "View source file"
 [smell.i]: ./smell.i "View source file"
 [Library.i]: ./Library.i "View source file"
 [take.i]: ./take.i "View source file"

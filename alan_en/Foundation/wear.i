@@ -17,7 +17,12 @@ Syntax
 
 Add to every object
   Verb wear
-    Check obj is wearable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is wearable
       else "You can't wear" say the obj. "."
     And wearer of obj <> hero
       else "You are already wearing" say the obj. "."
@@ -48,7 +53,12 @@ Syntax
 
 Add to every object
   Verb 'remove'
-    Check wearer of obj = hero
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And wearer of obj = hero
       else "You are not wearing" say the obj. "."
     Does
       Set wearer of obj to nobody.

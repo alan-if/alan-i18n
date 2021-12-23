@@ -1,6 +1,6 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * *  ALAN Foundation Library English  * *  v0.2.5 | 2021/12/22 | ALAN 3.Beta8
+-- * *  ALAN Foundation Library English  * *  v0.3.0 | 2021/12/23 | ALAN 3.Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
@@ -42,11 +42,6 @@ Import 'knock.i'.
 Import 'jump.i'.
 Import 'wear.i'.    -- + remove, undress, put on
 Import 'wait.i'.
-
-
-
--- Scenery
-Import 'scenery.i'.
 
 -- Inventory verb and inventory limits (including clothing items)
 Import 'invent.i'.

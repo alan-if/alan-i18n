@@ -10,16 +10,263 @@ x sun
 ; ==============================================================================
 ; Otherwise a standard message is shown to deter further actions:
 x sand
-; Plural nouns:
+; plural:
 x tumbleweeds
 ; ==============================================================================
-; VERBS OVERRIDEN ON SCENERY
+; VERBS BLOCKED FOR SCENERY
 ; ==============================================================================
-; Verbs which are being added as DOES ONLY to replace default...
+; Verbs other than 'examine' contain CHECKs that prevent execution when there's
+; a parameter which 'is scenery'. Let's test all verbs, one module at the time:
+;   * Test all parameters against a scenery object.
+;   * Test all parameters against singular and plural objects:
+;     * 'cactus'      --> scenery, singular
+;     * 'pit'         --> scenery, singular container
+;     * 'tumbleweeds' --> scenery, plural container
+;     * 'skorpion'    --> actor
 ; ------------------------------------------------------------------------------
-; TAKE
+; attack.i
 ; ------------------------------------------------------------------------------
-; BUG: The DOES ONLY body is never executed because the NOT TAKEABLE attribute
-;      is failing the CHECKs of the TAKE verb on the OBJECT class!
+; singular:
+attack cactus
+attack cactus with knife ; P1
+attack knife with cactus ; P2
+shoot cactus
+shoot cactus at pistol ; P1
+shoot pistol at cactus ; P2
+shoot cactus with pistol ; P1
+shoot pistol with cactus ; P2
+; plural:
+attack tumbleweeds
+attack tumbleweeds with knife ; P1
+attack knife with tumbleweeds ; P2
+shoot tumbleweeds
+shoot tumbleweeds at pistol ; P1
+shoot pistol at tumbleweeds ; P2
+shoot tumbleweeds with pistol ; P1
+shoot pistol with tumbleweeds ; P2
+; ------------------------------------------------------------------------------
+; eat.i
+; ------------------------------------------------------------------------------
+; singular:
+eat cactus
+drink cactus
+; plural:
+eat tumbleweeds
+drink tumbleweeds
+; ------------------------------------------------------------------------------
+; examine.i
+; ------------------------------------------------------------------------------
+; singular:
+look in pit
+search pit
+; plural:
+look in tumbleweeds
+search tumbleweeds
+; ------------------------------------------------------------------------------
+; give.i
+; ------------------------------------------------------------------------------
+give gun to pit
+give gun to tumbleweeds
+; ------------------------------------------------------------------------------
+; jump.i
+; ------------------------------------------------------------------------------
+jump on cactus
+jump on tumbleweeds
+; ------------------------------------------------------------------------------
+; kiss.i
+; ------------------------------------------------------------------------------
+kiss cactus
+kiss tumbleweeds
+; ------------------------------------------------------------------------------
+; knock.i
+; ------------------------------------------------------------------------------
+knock on cactus
+knock on tumbleweeds
+; ------------------------------------------------------------------------------
+; listen.i
+; ------------------------------------------------------------------------------
+listen to cactus
+listen to tumbleweeds
+; ------------------------------------------------------------------------------
+; lock.i
+; ------------------------------------------------------------------------------
+; singular:
+lock cactus
+lock cactus with key ; P1
+lock palock with cactus ; P2
+unlock cactus
+unlock cactus with key ; P1
+unlock palock with cactus ; P2
+; plural:
+lock tumbleweeds
+lock tumbleweeds with key ; P1
+lock palock with tumbleweeds ; P2
+unlock tumbleweeds
+unlock tumbleweeds with key ; P1
+unlock palock with tumbleweeds ; P2
+; ------------------------------------------------------------------------------
+; open.i
+; ------------------------------------------------------------------------------
+; singular:
+open cactus
+open cactus with key ; P1
+open key with cactus ; P2
+close cactus
+close cactus with key ; P1
+close key with cactus ; P2
+; plural:
+open tumbleweeds
+open tumbleweeds with key ; P1
+open key with tumbleweeds ; P2
+close tumbleweeds
+close tumbleweeds with key ; P1
+close key with tumbleweeds ; P2
+; ------------------------------------------------------------------------------
+; push.i
+; ------------------------------------------------------------------------------
+; singular:
+push cactus
+push cactus with key ; P1
+push key with cactus ; P2
+; plural:
+push tumbleweeds
+push tumbleweeds with key ; P1
+push key with tumbleweeds ; P2
+; ------------------------------------------------------------------------------
+; put.i
+; ------------------------------------------------------------------------------
+; singular:
+put cactus
+put cactus in pit ; P1
+put gun in pit ; P2
+put cactus near pit ; P1
+put gun near pit ; P2
+put cactus behind pit ; P1
+put gun behind pit ; P2
+put cactus on pit ; P1
+put gun on pit ; P2
+put cactus under pit ; P1
+put gun under pit ; P2
+; plural:
+put tumbleweeds
+put tumbleweeds in me ; P1
+put gun in tumbleweeds ; P2
+put tumbleweeds near me ; P1
+put gun near tumbleweeds ; P2
+put tumbleweeds behind me ; P1
+put gun behind tumbleweeds ; P2
+put tumbleweeds on me ; P1
+put gun on tumbleweeds ; P2
+put tumbleweeds under me ; P1
+put gun under tumbleweeds ; P2
+; ------------------------------------------------------------------------------
+; read.i
+; ------------------------------------------------------------------------------
+read cactus
+read tumbleweeds
+; ------------------------------------------------------------------------------
+; smell.i
+; ------------------------------------------------------------------------------
+smell cactus
+smell tumbleweeds
+; ------------------------------------------------------------------------------
+; take.i
+; ------------------------------------------------------------------------------
+; singular:
 take cactus
+pick up cactus
+pick cactus up
+drop cactus
+put cactus down
+put down cactus
+take cactus from pit ; P1
+take key from pit ; P2
+; plural:
 take tumbleweeds
+pick up tumbleweeds
+pick tumbleweeds up
+drop tumbleweeds
+put tumbleweeds down
+put down tumbleweeds
+take tumbleweeds from pit ; P1
+take key from tumbleweeds ; P2
+; ------------------------------------------------------------------------------
+; talk.i | many parameters don't have to be actors but things
+; ------------------------------------------------------------------------------
+; NOTE: Scenery objects can be topics!
+; singular:
+say cactus ; (allowed)
+say cactus to skorpion ; (allowed)
+say tumbleweeds to cactus ; P2
+ask skorpion about cactus ; (allowed)
+talk to cactus about me ; P1
+talk to skorpion about cactus ; (allowed)
+talk to cactus
+; plural:
+say cactus to tumbleweeds ; P2
+talk to tumbleweeds about me ; P1
+talk to tumbleweeds
+; ------------------------------------------------------------------------------
+; throw.i
+; ------------------------------------------------------------------------------
+; singular:
+throw cactus
+throw cactus to key ; P1
+throw key to cactus ; P2
+throw cactus at key ; P1
+throw key at cactus ; P2
+throw cactus in pit ; P1
+throw knife in pit ; P2
+; plural:
+throw tumbleweeds
+throw tumbleweeds to key ; P1
+throw key to tumbleweeds ; P2
+throw tumbleweeds at key ; P1
+throw key at tumbleweeds ; P2
+throw tumbleweeds in pit ; P1
+throw knife in tumbleweeds ; P2
+; ------------------------------------------------------------------------------
+; touch.i
+; ------------------------------------------------------------------------------
+; singular:
+touch cactus
+touch cactus with key ; P1
+touch key with cactus ; P2
+; plural:
+touch tumbleweeds
+touch tumbleweeds with key ; P1
+touch key with tumbleweeds ; P2
+; ------------------------------------------------------------------------------
+; turn.i
+; ------------------------------------------------------------------------------
+; singular:
+turn on cactus
+turn cactus on
+switch on cactus
+switch cactus on
+turn off cactus
+turn cactus off
+switch off cactus
+switch cactus off
+; plural:
+turn on tumbleweeds
+turn tumbleweeds on
+switch on tumbleweeds
+switch tumbleweeds on
+turn off tumbleweeds
+turn tumbleweeds off
+switch off tumbleweeds
+switch tumbleweeds off
+; ------------------------------------------------------------------------------
+; wear.i
+; ------------------------------------------------------------------------------
+; singular:
+wear cactus
+put cactus on
+put on cactus
+remove cactus
+; plural:
+wear tumbleweeds
+put tumbleweeds on
+put on tumbleweeds
+remove tumbleweeds

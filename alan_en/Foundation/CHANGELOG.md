@@ -13,6 +13,8 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.3.0 \(2021/12/23\)](#v030-20211223)
+        - [Scenery Class Becomes an Attribute](#scenery-class-becomes-an-attribute)
     - [v0.2.5 \(2021/12/22\)](#v025-20211222)
         - [New `messages_library.i` Module](#new-messages_libraryi-module)
     - [v0.2.4 \(2021/11/30\)](#v024-20211130)
@@ -39,6 +41,25 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 -----
 
 # Beta Releases
+
+
+## v0.3.0 (2021/12/23)
+
+### Scenery Class Becomes an Attribute
+
+Drop the `scenery` class in favour of a `scenery` attribute added to every `entity`:
+
+- `global.i` — add `Is not scenery` to every `entity`.
+- `scenery.i` — module deleted.
+- `Library.i` — delete `Import 'scenery.i` directive.
+- `examine.i` — tweak verb `examine` to show default scenery responses if the instance `is scenery` and has an empty `xDesc` string attribute.
+
+In all verbs taking parameters, add CHECKs to prevent the action when a parameter is `scenery`, with the following exceptions:
+
+- Verb `examine` is allowed, a non-empty `xDesc` will be honoured.
+- Actor parameters have no `scenery` CHECKs, since actors shouldn't be scenery.
+- In conversation verbs, topic parameters can be `scenery`.
+
 
 
 ## v0.2.5 (2021/12/22)

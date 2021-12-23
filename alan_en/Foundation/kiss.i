@@ -7,6 +7,11 @@ Syntax
 
 Add to every thing
   Verb kiss
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
     Does
       If obj=hero then
         "Well, if you must!"

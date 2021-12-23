@@ -10,7 +10,12 @@ Syntax
 
 Add to every object
   Verb put
-    Check obj in hero
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj in hero
       else "You haven't got that."
     Does
       Locate obj here.
@@ -32,7 +37,17 @@ Syntax
 Add to every object
   Verb put_in
     When obj1
-      Check obj1 in hero
+      Check obj1 is not scenery else
+        If obj1 is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And obj2 is not scenery else
+        If obj2 is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj1 in hero
         else
           "You haven't got" say the obj1. "."
       And obj1 <> obj2
@@ -81,7 +96,17 @@ Syntax
 Add to every object
   Verb put_near, put_behind, put_on, put_under
     When obj1
-      Check obj1 in hero
+      Check obj1 is not scenery else
+        If obj1 is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And obj2 is not scenery else
+        If obj2 is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj1 in hero
         else "You haven't got" say the obj1. "."
       And obj2 not in hero
         else

@@ -1,5 +1,7 @@
 ﻿-- "give.i"
 
+-- @NOTE: Why 'recip' can be an object and not only an actor?
+
 Syntax
   give = 'give' (obj) 'to' (recip)
     Where obj IsA object
@@ -11,7 +13,17 @@ Syntax
 Add to every object
   Verb give
     When obj
-      Check obj in hero
+      Check obj is not scenery else
+        If obj is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And recip is not scenery else
+        If recip is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj in hero
         else say msg:you_dont_have_P1.
     Does
       If recip=hero then

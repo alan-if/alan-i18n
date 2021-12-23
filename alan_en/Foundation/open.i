@@ -11,7 +11,12 @@ Add to every object
     Not open.
 
   Verb open
-    Check obj is openable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is openable
       else "You can't open that!"
     And obj is not open
       else "It's already open."
@@ -33,7 +38,17 @@ Syntax
 Add to every object
   Verb open_with
     When obj1
-      Check obj2 in hero
+      Check obj1 is not scenery else
+        If obj1 is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And obj2 is not scenery else
+        If obj2 is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj2 in hero
         else say msg:you_dont_have_P2.
       Does
         "You can't open" say the obj1. "with" say the obj2. "."
@@ -53,7 +68,12 @@ Add to every object
   Is not closeable.
 
   Verb close
-    Check obj is closeable
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj is closeable
       else "You can't close that."
     And obj is open
       else "It is not open."
@@ -75,7 +95,17 @@ Syntax
 Add to every object
   Verb close_with
     When obj1
-      Check obj2 in hero
+      Check obj1 is not scenery else
+        If obj1 is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And obj2 is not scenery else
+        If obj2 is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj2 in hero
         else say msg:you_dont_have_P2.
       And obj1 is openable
         else "You can't close" say the obj1. "."

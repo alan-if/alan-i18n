@@ -10,7 +10,12 @@ Syntax
 
 Add to every object
   Verb throw
-    Check obj in hero
+    Check obj is not scenery else
+      If obj is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And obj in hero
       else "You haven't got that!"
     Does
       "You can't throw very far,"
@@ -39,7 +44,17 @@ Syntax
 Add to every object
   Verb throw_at, throw_to
     When obj1
-      Check obj1 in hero
+      Check obj1 is not scenery else
+        If obj1 is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And obj2 is not scenery else
+        If obj2 is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj1 in hero
         else "You haven't got that!"
       And obj2 not in hero
         else
@@ -69,7 +84,17 @@ Syntax
 Add to every object
   Verb throw_in
     When obj1
-      Check obj1 in hero
+      Check obj1 is not scenery else
+        If obj1 is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And obj2 is not scenery else
+        If obj2 is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And obj1 in hero
         else "You haven't got that!"
       And obj1 <> obj2
         else "Now, that would be a good trick!"

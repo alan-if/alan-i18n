@@ -10,12 +10,25 @@ In this first part of the book we'll be focusing on the general features offered
 
 == Scenery
 
-The "`scenery.i`" module defines `scenery` object class, i.e. objects which only serve the purpose of setting up the game mood by providing details which have a mere scenic purpose, like props in theatre or movie sets.
+The "`global.i`" module adds the `Is not scenery` attribute to every `entity`, so that authors can use this attribute to create "`scenery objects`", i.e. objects which only serve the purpose of setting up the game mood by providing details which have a mere scenic purpose, like props in theatre or movie sets.
+
+To turn an object into a scenery, add `Is scenery.` to the instance definition:
+
+[source,alan]
+--------------------------------------------------------------------------------
+The cobwebs IsA object at castle.
+  Is scenery.
+--------------------------------------------------------------------------------
+
 
 WARNING: @TODO: Provide example on how to create a scenery instance!
 
 
-Because they are only intended as props, scenery objects can't be interacted with, and any attempt to do so will result in a standard default response which discourages the player to further attempting any other action on the object.
+Because they are only intended as props, scenery objects can't be interacted with, and any attempt to do so will result in a standard default response which discourages the player from further attempting any other action on the object -- i.e. making it clear that the instance at hand serves no practical purpose in advancing the game story.
+
+The exceptions to this are the `examine` verb, which will honour a non empty `xDesc` string attribute, and conversational verbs, where a scenery can be a topic parameter.
+The rationale for these exceptions is that these interactions can allow scenery objects to convey further atmosphere and mood to the game, is the author wishes to.
+
 
 Scenery objects are also important to flesh out adventures in a consistent way, by offering implementation to details mentioned in room descriptions.
 E.g. if a room description mentions that its wall are covered in spider cobwebs, but when the player examines the cobwebs the game replies that it doesn't understand the word "`cobwebs`" it doesn't have a nice impact on the player -- the narrative illusion starts to crack.

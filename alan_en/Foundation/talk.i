@@ -48,6 +48,7 @@ Verb shout
     "You make a lot of noise..."
 End verb.
 
+-- @NOTE: Scenery objects are allowed as topics!
 
 Syntax
   say_word = 'say' (topic)!
@@ -72,7 +73,12 @@ Syntax
 Add to every thing
   Verb say_to
     When act
-      Check act Has can_talk
+      Check act is not scenery else
+        If act is plural
+          then say msg:scenery_response_P2_pl.
+          else say msg:scenery_response_P2_sg.
+        End if.
+      And act Has can_talk
         else "You can't talk to that."
     Does
       Say the act. "doesn't seem interested."
@@ -111,7 +117,12 @@ Syntax
 Add to every thing
   Verb talk_to
     When  topic
-      Check act Has can_talk
+      Check act is not scenery else
+        If act is plural
+          then say msg:scenery_response_P1_pl.
+          else say msg:scenery_response_P1_sg.
+        End if.
+      And act Has can_talk
         else "You can't talk to that."
       Does
         """I don't think I need to know about"
@@ -128,7 +139,12 @@ Syntax
 
 Add to every thing
   Verb talk_to_a
-    Check act Has can_talk
+    Check act is not scenery else
+      If act is plural
+        then say msg:scenery_response_P1_pl.
+        else say msg:scenery_response_P1_sg.
+      End if.
+    And act Has can_talk
       else "You can't talk to that."
     Does
       Say the act.

@@ -1,7 +1,7 @@
 ﻿i
 take hammer
 ; ============================================================================
-; msg:scenery_response_P1_[sg/pl] | 'scenery.i'
+; msg:scenery_response_P1_[sg/pl] | 'examine.i'
 ; ============================================================================
 x upholstery
 x walls
