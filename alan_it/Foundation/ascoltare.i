@@ -14,6 +14,11 @@ Syntax ascoltare = ascolta (ogg)
 
 Add to every thing
   Verb ascoltare
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P2_sg.
+      End if.
     Does
       "Ascolti $+1."
   End verb.

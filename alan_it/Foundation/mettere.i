@@ -14,7 +14,7 @@
 -- Add to every object
 --   Verb mettere
 --     Check ogg in hero
---       else "Non possiedi" say the ogg. "."
+--       else say msg:non_possiedi_P1.
 --     Does
 --       Locate ogg here.
 --       "Dropped." -- @TRANSLATE!
@@ -25,12 +25,12 @@
 Syntax mettere_in = metti (ogg1) 'in' (ogg2)
   Where ogg1 IsA object
     else "$+1 non"
-          If ogg1 is plurale
-            then "pssono"
-            else "può"
-          End if.
-          "essere mess$$" say ogg1:vocale.
-          "in alcun dove!"
+      If ogg1 is plurale
+        then "possono"
+        else "può"
+      End if.
+      "essere mess$$" say ogg1:vocale.
+      "in alcun dove!"
   And ogg2 IsA container
     else "Non è possibile mettere nulla"
           say ogg2:prep_IN. "$+2!"
@@ -38,8 +38,18 @@ Syntax mettere_in = metti (ogg1) 'in' (ogg2)
 Add to every object
   Verb mettere_in
     When ogg1
-      Check ogg1 in hero
-        else "Non possiedi $+1!"
+      Check ogg1 is not scenario else
+        If ogg1 is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg2 is not scenario else
+        If ogg2 is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg1 in hero
+        else say msg:non_possiedi_P1.
       And ogg1 <> ogg2
         else "Non puoi mettere una cosa in se stessa!"
       And ogg2 <> hero
@@ -89,8 +99,18 @@ Syntax
 Add to every object
   Verb mettere_vicino, mettere_dietro, mettere_su, mettere_sotto
     When ogg1
-      Check ogg1 in hero
-        else "Non possiedi" say the ogg1. "."
+      Check ogg1 is not scenario else
+        If ogg1 is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg2 is not scenario else
+        If ogg2 is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg1 in hero
+        else say msg:non_possiedi_P1.
       And ogg2 not in hero
         else
           "Ma tu stai"

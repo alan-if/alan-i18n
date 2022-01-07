@@ -52,7 +52,7 @@ Appendi il mantello al gancio.
 
 > ; TESTA -> MANTELLO NON POSSEDUTO
 > appendi il mantello al gancio
-Non possiedi il mantello.
+Non possiedi il mantello!
 
 > guarda
 Guardaroba
@@ -91,7 +91,7 @@ Appendi il mantello al gancio.
 Il mantello non è indossabile.
 
 > lascia il mantello
-Non possiedi il mantello.
+Non possiedi il mantello!
 
 > ; TESTA -> INDOSSA -> MANTELLO IN TERRA
 > indossa il mantello
@@ -106,11 +106,11 @@ Il mantello non è indossabile.
 > ; ==============================================================================
 > ; Il mantello deve poter essere lasciato solo nel guardaroba.
 > lascia il mantello
-Non possiedi il mantello.
+Non possiedi il mantello!
 
 > ; TESTA -> MANTELLO NON POSSEDUTO
 > lascia il mantello
-Non possiedi il mantello.
+Non possiedi il mantello!
 
 > guarda
 Guardaroba

@@ -45,6 +45,9 @@ Verb gridare
     "Gridi a squarciagola..."
 End verb.
 
+-- @NOTE: Scenario objects are allowed as argomento (topic)!
+
+-- @TRANSLATE: say_word Syntax + Verb + responses
 
 Syntax say_word = 'say' (argomento)!
   Where argomento IsA thing
@@ -57,6 +60,7 @@ Add to every thing
   End verb.
 End add.
 
+-- @NOTE: Why (png) is a thing a not an actor???
 
 Syntax
   dire_a = dì (argomento)! a (png)   -- say_to
@@ -69,7 +73,12 @@ Syntax
 Add to every thing
   Verb dire_a
     When png
-      Check png can parlare
+      Check png is not scenario else
+        If png is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And png can parlare
         else "You can't talk to that." -- @TRANSLATE!
     Does
       Say the png. "doesn't seem interested." -- @TRANSLATE!
@@ -78,6 +87,8 @@ End add.
 
 
 Synonyms circa = riguardo.
+
+-- @NOTE: Why (png) is a thing a not an actor???
 
 Syntax
   domandare = domanda a (png) di (argomento)!   -- ask
@@ -97,7 +108,12 @@ Syntax
 Add to every thing
   Verb domandare
     When png
-      Check png can parlare
+      Check png is not scenario else
+        If png is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And png can parlare
         else "Non è possibile conversare con $+1!"
       Does
         "$+1"
@@ -108,6 +124,8 @@ Add to every thing
         End if.
   End verb.
 End add.
+
+-- @NOTE: Why (png) is a thing a not an actor???
 
 Syntax
   raccontare = racconta a (png) di (argomento)!  -- talk_to
@@ -123,8 +141,13 @@ Syntax
 
 Add to every thing
   Verb raccontare
-    When  argomento
-      Check png can parlare
+    When argomento
+      Check png is not scenario else
+        If png is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And png can parlare
         else "Non è possibile conversare con $+1!"
       Does
         "$+1 non mostra"
@@ -134,6 +157,7 @@ Add to every thing
   End verb.
 End add.
 
+-- @NOTE: Why (png) is a thing a not an actor???
 
 Syntax
   parlare_con = parla con (png) -- talk_to_a
@@ -143,7 +167,12 @@ Syntax
 
 Add to every thing
   Verb parlare_con
-    Check png can parlare
+    Check png is not scenario else
+      If png is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P2_sg.
+      End if.
+    And png can parlare
       else "Non è possibile conversare con $+1!"
     Does
       "$+1 ti guarda"

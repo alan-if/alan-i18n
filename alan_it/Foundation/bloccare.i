@@ -20,7 +20,12 @@ Syntax bloccare = blocca (ogg)
 
 Add to every object
   Verb bloccare
-    Check ogg is bloccabile
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P2_sg.
+      End if.
+    And ogg is bloccabile
       else "Non puoi bloccare $+1!"
     And ogg is not bloccato
       else say the ogg.
@@ -49,7 +54,17 @@ Syntax bloccare_con = blocca (ogg) con (chiave)
 Add to every Object
   Verb bloccare_con
     When ogg
-      Check ogg is bloccabile
+      Check ogg is not scenario else
+        If ogg is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And chiave is not scenario else
+        If chiave is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg is bloccabile
         else "Non puoi bloccare $+1!"
       And ogg is not bloccato
         else "$+1"
@@ -59,7 +74,7 @@ Add to every Object
              End if. "già bloccat$$"
              say ogg:vocale. "!"
       And chiave in hero
-        else "Non possiedi $+2!"
+        else say msg:non_possiedi_P2.
       Does
         Make ogg bloccato.
         "Fatto, ora $+1"
@@ -77,7 +92,12 @@ Syntax sbloccare = sblocca (ogg)
 
 Add to every object
   Verb sbloccare
-    Check ogg is bloccabile
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P2_sg.
+      End if.
+    And ogg is bloccabile
       else "Non puoi sbloccare $+1!"
     And ogg is bloccato
         else "$+1"
@@ -106,7 +126,17 @@ Syntax sbloccare_con = sblocca (ogg) con (chiave)
 Add to every object
   Verb sbloccare_con
     When ogg
-      Check ogg is bloccabile
+      Check ogg is not scenario else
+        If ogg is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And chiave is not scenario else
+        If chiave is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg is bloccabile
         else "Non puoi sbloccare $+1!"
       And ogg is bloccato
         else "$+1"
@@ -116,7 +146,7 @@ Add to every object
              End if. "già sbloccat$$"
              say ogg:vocale. "!"
       And chiave in hero
-        else "Non possiedi $+2!"
+        else say msg:non_possiedi_P2.
       Does
         Make ogg not bloccato.
         "Fatto, ora $+1"

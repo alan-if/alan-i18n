@@ -1,12 +1,13 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * *  ALAN Foundation Library Italian  * *  v0.2.0 | 2021/12/03 | ALAN 3.Beta8
+-- * *  ALAN Foundation Library Italian  * *  v0.3.0 | 2022/01/07 | ALAN 3.Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
 -- Moduli creati appositamente per l'italiano.
 Import 'grammatica.i'.
 Import 'messaggi_runtime.i'.
+Import 'messaggi_libreria.i'.
 
 
 -- All verb definitions have a small, simple default body. To make
@@ -43,9 +44,6 @@ Import 'prendere.i'.           --> 'take.i' + pick up, drop, put down.
 Import 'saltare.i'.            --> 'jump.i'
 Import 'spingere.i'.           --> 'push.i'
 Import 'toccare.i'.            --> 'touch.i'
-
--- Scenery
-Import 'scenario.i'.           --> 'scenery.i'
 
 -- Inventory verb and inventory limits (including clothing items)
 Import 'inventario.i'.         --> 'invent.i'

@@ -15,7 +15,7 @@
 --
 -- rev date:    2019-04-02
 -- rev number:  1.0.0-alpha.3
--- AlanS DK:    Alan 3.0beta6 build 2022
+-- AlanSDK:    Alan 3.0beta6 build 2022
 --------------------------------------------------------------------------------
 -- Basato sull'avventura "Cloak of Darkness" di Roger Firth, utlizzando come
 -- base del codice l'implementazione in Alan di Stephen Griffiths, portata ad
@@ -92,7 +92,7 @@ The mantello IsA object in hero
     If mantello is appeso
       then "$pSul piccolo gancio d'ottone è appeso un mantello di velluto."
       else "$pC'è un mantello di velluto nero qui."
-    end if.
+    End if.
 
     Has xDesc
       "Un bellissimo mantello in velluto nero bordato di raso, leggermente
@@ -111,7 +111,7 @@ The mantello IsA object in hero
 
   Verb appendi
     Check oggetto in hero
-      else "non possiedi $+1."
+      else say msg:non_possiedi_P1.
     And current location = guardaroba
       else "Qui non c'è nulla a cui poterlo appendere."
     Does
@@ -656,7 +656,7 @@ Add to every thing
 
   Verb lascia
     Check oggetto in  hero
-      else "Non possiedi $+1."
+      else say msg:non_possiedi_P1.
     Does
       "Posi a terra $+1."
       locate this here.
@@ -721,7 +721,7 @@ Add to every object
             else "è"
           end if. "qualcosa che puoi appendere."
       And ogg1 in hero
-        else "non possiedi $+1."
+        else say msg:non_possiedi_P1.
   End verb appendi_a.
 End add to object.
 

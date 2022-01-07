@@ -6,6 +6,11 @@ Syntax baciare = bacia (ogg)
 
 Add to every thing
   Verb baciare
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P2_sg.
+      End if.
     Does
       If ogg=hero then
         "Se proprio devi!"
