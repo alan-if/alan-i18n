@@ -32,7 +32,12 @@ Add to every thing
     Does
       If ogg:xDesc <> ""
         then say ogg:xDesc.
-        else "Non noti nulla di particolare riguardo $+1."
+      ElsIf ogg is scenario then
+        If ogg is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P1_sg.
+        End if.
+      else "Non noti nulla di particolare riguardo $+1."
       End if.
   End verb.
 End add.
@@ -102,7 +107,12 @@ Syntax guardare_dentro = guarda 'in' (ogg)
 
 Add to every object
   Verb guardare_dentro
-    Check ogg is esaminabile
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And ogg is esaminabile
       else "Non è possibile guardare"
            say ogg:prep_IN. "$+1."
     Does
@@ -120,7 +130,12 @@ Syntax ispezionare = ispeziona (ogg)
 
 Add to every object
   Verb ispezionare
-    Check ogg is ispezionabile
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And ogg is ispezionabile
       else "È impossibile ispezionare $+1!"
     Does
       "L'ispezione non ha rivelato nulla di interessante."

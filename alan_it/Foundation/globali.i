@@ -14,8 +14,9 @@
 --    The robot IsA actor at spaceship Name 'Floyd' Name floyd
 
 
-Add to every thing
-  Is not plurale.
+Add to every entity
+  Is
+    not scenario.
 End add.
 
 -- @NOTE: The 'named_actor' class will probably be removed!

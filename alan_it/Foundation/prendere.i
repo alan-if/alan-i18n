@@ -34,7 +34,12 @@ Syntax
 
 Add to every object
   Verb prendere
-    Check ogg is prendibile
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And ogg is prendibile
       else "Non puoi prendere $+1."
     And ogg not in hero
       else "Possiedi già $+1"
@@ -72,8 +77,13 @@ Syntax
 
 Add to every object
   Verb lasciare
-    Check ogg in hero
-      else "Non possiedi" say the ogg. "."
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And ogg in hero
+      else say msg:non_possiedi_P1.
     Does
       Locate ogg here.
       -- In case item was being worn:
@@ -110,7 +120,17 @@ Syntax
 Add to every object
   Verb prendere_da
     When ogg
-      Check ogg not in hero
+      Check ogg is not scenario else
+        If ogg is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P1_sg.
+        End if.
+      And detentore is not scenario else
+        If detentore is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg not in hero
         else "Possiedi già" say the ogg. "."
       And ogg in detentore
         else

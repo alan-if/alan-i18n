@@ -36,7 +36,7 @@ Syntax aggredire = aggredisci (png)
 Add to every thing
   Verb aggredire
     Does
-      "La violenza non è la giusta risposta a questo." --> taken from i6
+      Say msg:violenza_non_risposta.
   End verb.
 End add.
 
@@ -55,12 +55,17 @@ Syntax aggredire_con = aggredisci (png) con (ogg)
 Add to every thing
   Verb aggredire_con
     When ogg
-      Check ogg in hero
-        else "Non possiedi $+2!"
+      Check ogg is not scenario else
+        If ogg is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg in hero
+        else say msg:non_possiedi_P2.
       And ogg is arma
         else "Non puoi aggredire nulla con $+2!"
       Does
-        "La violenza non è la giusta risposta a questo." --> taken from i6
+        Say msg:violenza_non_risposta.
   End verb.
 End add.
 
@@ -82,12 +87,17 @@ Syntax spara = spara con (arma)
 
 Add to every thing
   Verb spara
-    Check arma is arma
+    Check arma is not scenario else
+      If arma is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And arma is arma
       else "Non è possibile sparare con $+1!"
     And arma can sparare
       else "Non è possibile sparare con $+1!"
     And arma in hero
-      else "Non possiedi $+1!"
+      else say msg:non_possiedi_P1.
     Does
       "Devi specificare a cosa vorresti sparare."
   End verb.
@@ -103,6 +113,11 @@ Syntax
 
 Add to every thing
   Verb sparare_a0
+    Check bersaglio is not scenario else
+      If bersaglio is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
     Does
       "Devi specificare con cosa vorresti sparare"
       say bersaglio:prep_A. "$+1!"
@@ -125,13 +140,23 @@ Syntax
 Add to every thing
   Verb sparare_a
     When arma
-      Check arma is arma
+      Check arma is not scenario else
+        If arma is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P1_sg.
+        End if.
+      And bersaglio is not scenario else
+        If bersaglio is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And arma is arma
         else "Non è possibile sparare con $+1!"
       And arma can sparare
         else "Non è possibile sparare con $+1!"
       And arma in hero
-        else "Non possiedi $+1!"
+        else say msg:non_possiedi_P1.
       Does
-        "La violenza non è la giusta risposta a questo." --> taken from i6
+        Say msg:violenza_non_risposta.
   End verb.
 End add.

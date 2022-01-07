@@ -25,8 +25,8 @@ This document tracks the development status of ports of the library to other loc
 
 | EN                  | feature                                | Spanish             | Italian             |
 | :-----------------: | :------------------------------------- | :-----------------: | :-----------------: |
-| [`0.3.0`][EN 0.3.0] | Scenery Class Becomes an Attribute.    | &cross;             | &cross;             |
-| [`0.2.5`][EN 0.2.5] | New `messages_library.i` module.       | &cross;             | &cross;             |
+| [`0.3.0`][EN 0.3.0] | Scenery Class Becomes an Attribute.    | &cross;             | [`0.3.0`][IT 0.3.0] |
+| [`0.2.5`][EN 0.2.5] | New `messages_library.i` module.       | &cross;             | [`0.3.0`][IT 0.3.0] |
 | [`0.2.4`][EN 0.2.4] | Add game transcription META verbs.     | [`0.3.3`][ES 0.3.3] | [`0.1.1`][IT 0.1.1] |
 | [`0.2.3`][EN 0.2.3] | Fix verbs targetting containers.       | [`0.3.2`][ES 0.3.2] | [`0.1.0`][IT 0.1.0] |
 | [`0.2.2`][EN 0.2.2] | Honour `xDesc`  in scenery.            | [`0.4.0`][ES 0.4.0] | [`0.1.0`][IT 0.1.0] |
@@ -160,6 +160,7 @@ We're open to rediscuss our methodology, accepting advise and making room for ne
 
 <!-- Italian CHANGELOG -->
 
+[IT 0.3.0]: ./alan_it/Foundation/CHANGELOG.md#v030-20220107 "View Italian CHANGELOG entry"
 [IT 0.1.1]: ./alan_it/Foundation/CHANGELOG.md#v011-20211202 "View Italian CHANGELOG entry"
 [IT 0.1.0]: ./alan_it/Foundation/CHANGELOG.md#v010-20211126 "View Italian CHANGELOG entry"
 

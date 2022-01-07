@@ -11,7 +11,12 @@ Add to every object
     Not aperto.
 
   Verb aprire
-    Check ogg is apribile
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And ogg is apribile
       else "Non è possibile aprirl$$" say ogg:vocale. "."
     And ogg is not aperto
       else
@@ -43,8 +48,18 @@ Syntax aprire_con = apri (ogg1) con (ogg2)
 Add to every object
   Verb aprire_con
     When ogg1
-      Check ogg2 in hero
-        else "Non possiedi $+2."
+      Check ogg1 is not scenario else
+        If ogg1 is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P1_sg.
+        End if.
+      And ogg2 is not scenario else
+        If ogg2 is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg2 in hero
+        else say msg:non_possiedi_P2.
       Does
         "Non puoi aprire $+1 con $+2."
   End verb.
@@ -59,7 +74,12 @@ Add to every object
   Is not chiudibile.
 
   Verb chiudere
-    Check ogg is chiudibile
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And ogg is chiudibile
       else "Non è possibile chiuderl$$" say ogg:vocale. "."
     And ogg is aperto
       else "$+1 non"
@@ -84,8 +104,18 @@ Syntax chiudere_con = chiudi (ogg1) con (ogg2)
 Add to every object
   Verb chiudere_con
     When ogg1
-      Check ogg2 in hero
-        else "Non possiedi $+2!"
+      Check ogg1 is not scenario else
+        If ogg1 is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P1_sg.
+        End if.
+      And ogg2 is not scenario else
+        If ogg2 is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg2 in hero
+        else say msg:non_possiedi_P2.
       And ogg1 Is apribile
         else "Non è possibile chiudere $+1!"
       Does -- To be overridden by DOES ONLY where appropriate...

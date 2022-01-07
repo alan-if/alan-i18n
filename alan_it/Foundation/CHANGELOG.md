@@ -12,6 +12,9 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 - [Pending Integrations](#pending-integrations)
 - [Beta Releases](#beta-releases)
+    - [v0.3.0 \(2022/01/07\)](#v030-20220107)
+        - [New `messaggi_libreria.i` Module](#new-messaggi_libreriai-module)
+        - [Scenery Class Becomes an Attribute](#scenery-class-becomes-an-attribute)
     - [v0.2.0 \(2021/12/03\)](#v020-20211203)
         - [Complete Library Translation](#complete-library-translation)
     - [v0.1.1 \(2021/12/02\)](#v011-20211202)
@@ -35,6 +38,59 @@ A list of features and changes that need to be replayed on the Italian Foundatio
 # Beta Releases
 
 The __Italian Foundation Library__ is currently maintained by [Tristano Ajmone].
+
+
+## v0.3.0 (2022/01/07)
+
+### New `messaggi_libreria.i` Module
+
+> Apply to Italian library equivalent changes to English Foundation v0.2.5.
+
+Added a new `messaggi_libreria.i` module defining an hidden `msg` location on which recurrent library messages are defined as string attributes.
+This allows:
+
+- Editing recurrent messages in a single source file.
+- Changing the default messages from within an adventure, even during play, instead of editing the library sources.
+- Optimizing compiled games size by reducing string redundancy.
+
+The following attributes were defined covering standard responses for scenery, violence and missing objects:
+
+|          attribute          |                       value                       |
+|-----------------------------|---------------------------------------------------|
+| `msg:non_possiedi_P1`       | `"Non possiedi $+1!"`                             |
+| `msg:non_possiedi_P2`       | `"Non possiedi $+2!"`                             |
+| `msg:scenario_P1_pl`        | `"$+1 non sono importanti ai fini del gioco."`    |
+| `msg:scenario_P1_sg`        | `"$+1 non è importante ai fini del gioco."`       |
+| `msg:scenario_P2_pl`        | `"$+2 non sono importanti ai fini del gioco."`    |
+| `msg:scenario_P2_sg`        | `"$+2 non è importante ai fini del gioco."`       |
+| `msg:violenza_non_risposta` | `"La violenza non è la giusta risposta a questo"` |
+
+- All verbs and syntaxes using those standard responses where adapted accordingly.
+
+In the future, more message attributes will be added for recurring messages, trying to adopt flexible messages template which work well with different `VERB`, `WHERE` and `CHECK` responses.
+
+> **NOTE** — For more info on library messages, see the
+[_Foundation Library Design_](../../alan_en/docs/foundation.html#library_messages) documentation.
+
+
+### Scenery Class Becomes an Attribute
+
+> Apply to Italian library equivalent changes to English Foundation v0.3.0.
+
+Drop the `scenario` class in favour of a `scenario` attribute added to every `entity`:
+
+- `globali.i`:
+    + Add `Is not scenario` to every `entity`.
+    + Delete addition of `plurale` attribute on every `thing` since it's already defined on `entity` in `grammatica.i`.
+- `scenario.i` — module deleted.
+- `Library.i` — delete `Import 'scenario.i` directive.
+- `esaminare.i` — tweak verb `esaminare` to show default scenery responses if the instance `is scenario` and has an empty `xDesc` string attribute.
+
+In all verbs taking parameters, add CHECKs to prevent the action when a parameter is `scenario`, with the following exceptions:
+
+- Verb `esaminare` is allowed, a non-empty `xDesc` will be honoured.
+- Actor parameters have no `scenario` CHECKs, since actors shouldn't be scenery.
+- In conversation verbs, `argomento` (topic) parameters can be `scenario`.
 
 
 ## v0.2.0 (2021/12/03)

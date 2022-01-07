@@ -20,7 +20,12 @@ Syntax
 
 Add to every object
   Verb indossare
-    Check ogg is indossabile
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And ogg is indossabile
       else "$+1 non"
            If ogg is not plurale
              then "è"
@@ -35,7 +40,7 @@ Add to every object
     And ogg is prendibile
       else "Non ti è possible prendere $+1!"
     And ogg in hero
-      else "Non possiedi $+1!"
+      else say msg:non_possiedi_P1.
     Does
       Set indossatore of ogg to hero.
       Make ogg indossato.
@@ -68,7 +73,12 @@ Syntax
 
 Add to every object
   Verb togliersi
-    Check indossatore of ogg = hero
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And indossatore of ogg = hero
       else "Non indossi $+1!"
     Does
       Set indossatore of ogg to nessuno.

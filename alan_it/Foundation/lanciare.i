@@ -12,8 +12,13 @@ Syntax lanciare = lancia (ogg) *
 
 Add to every object
   Verb lanciare
-    Check ogg in hero
-      else "Non possiedi $+1."
+    Check ogg is not scenario else
+      If ogg is plurale
+        then say msg:scenario_P1_pl.
+        else say msg:scenario_P1_sg.
+      End if.
+    And ogg in hero
+      else say msg:non_possiedi_P1.
     Does
       "Non lanci molto lontano, $+1 finisc$$"
       If ogg is plurale
@@ -42,8 +47,18 @@ Syntax lanciare_contro = lancia (ogg1) contro (ogg2)
 Add to every object
   Verb lanciare_contro, lanciare_a
     When ogg1
-      Check ogg1 in hero
-        else "Non possiedi $+1."
+      Check ogg1 is not scenario else
+        If ogg1 is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P1_sg.
+        End if.
+      And ogg2 is not scenario else
+        If ogg2 is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg1 in hero
+        else say msg:non_possiedi_P1.
       And ogg2 not in hero
         else
           "Non puoi lanciare nulla contro qualcosa che stai"
@@ -78,8 +93,18 @@ Syntax lanciare_in = lancia (ogg1) 'in' (ogg2)
 Add to every object
   Verb lanciare_in
     When ogg1
-      Check ogg1 in hero
-        else "Non possiedi" say the ogg1. "."
+      Check ogg1 is not scenario else
+        If ogg1 is plurale
+          then say msg:scenario_P1_pl.
+          else say msg:scenario_P1_sg.
+        End if.
+      And ogg2 is not scenario else
+        If ogg2 is plurale
+          then say msg:scenario_P2_pl.
+          else say msg:scenario_P2_sg.
+        End if.
+      And ogg1 in hero
+        else say msg:non_possiedi_P1.
       And ogg1 <> ogg2
         else "Riuscire a lanciare un oggetto in se stesso richiederebbe un miracolo!"
       And ogg2 <> hero

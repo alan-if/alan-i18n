@@ -10,7 +10,8 @@ Import 'Library.i'.
 The Salotto IsA location
 End the Salotto.
 
-The tappezzeria_salotto IsA scenario at Salotto.
+The tappezzeria_salotto IsA object at Salotto.
+  Is scenario.
   Name tappezzeria
   Has articolo "la".
   Description "Un cupo salotto avvolto in una tappezzeria logora."
