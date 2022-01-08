@@ -181,23 +181,11 @@ End event.
 
 The teatro IsA location. End the teatro.
 
--- Definiamo la classe specializzata `fondale` per gli elementi comuni delle
--- stanze. Ridefiniremo su questa classe alcuni verbi transitivi comuni, così
--- da poterli intercettare nei comandi del giocatore e produrre delle risposte
--- che lo scoraggino a perdere tempo con questi oggetti meramente scenici.
+-- Facciamo in modo che esaminare le pareti del guardaroba produca una
+-- descrizione in cui venga menzionato che rimane un unico gancio su di essa.
 
--- @FIXME: Could we use the 'scenery' class/attribute instead?
---         Or is this a more complex object type?
-
-Every fondale IsA object at teatro.
+The pareti IsA object at teatro.
   Is scenario.
-End every fondale.
-
--- Nel definire il fondale per le pareti, facciamo in modo che esaminare le
--- pareti del guardaroba produca una descrizione in cui venga menzionato che
--- rimane un unico gancio su di essa.
-
-The pareti IsA fondale.
   Has articolo "le".
   Verb esaminare
     Check current location <> guardaroba
@@ -207,10 +195,11 @@ End the pareti.
 
 Synonyms parete, muro, muri = pareti.
 
--- Nel definire il fondale per i pavimenti, facciamo in modo che esaminare o
--- leggere il pavimento del bar illuminato equivalga ad esaminare il messaggio.
+-- Facciamo in modo che esaminare o leggere il pavimento del bar illuminato
+-- equivalga ad esaminare il messaggio.
 
-The pavimento IsA fondale.
+The pavimento IsA object at teatro.
+  Is scenario.
   Verb esaminare
     Check current location <> bar
       else describe leggi_messaggio.
@@ -226,7 +215,8 @@ End the pavimento.
 -- soffitto del foyer menzioni i candelabri, di modo da essere coerenti con la
 -- descrizione della stanza.
 
-The soffitto IsA fondale.
+The soffitto IsA object at teatro.
+  Is scenario.
   Verb esaminare
     Check current location <> foyer
       else "Dalla volta pendono candelabri luccicanti."
