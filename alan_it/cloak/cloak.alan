@@ -62,7 +62,6 @@ Synonyms me, te = hero.
 The hero IsA actor
   HAS nome_proprio.
   Mentioned "te stesso"
-  Has not appeso_mantello.
 
   Verb esamina
     Check current location <> bar_buio
@@ -117,26 +116,17 @@ The mantello IsA object in hero
         schedule appendi_mantello after 0.
   End verb appendi_a.
 
-  Verb lasciare
+  -- @TODO: Make sure that any Foundation verb that might dislocate the
+  --        cloak is covered here!!!!
+  Verb lasciare, lanciare
     Check current location = guardaroba
       else "Non è il posto migliore per lasciare un mantello."
   End verb.
 
-  Verb indossare
-    Does only
-      If this not in hero
-        then
-          If this is appeso
-            then  "Sfili $+1 dal gancio"
-            else  "Raccogli $+1 da terra"
-          end if. "e lo indossi."
-        else "Fatto."
-      end if.
-      Locate this in hero.
-      Set indossatore of this to hero.
-      Make this indossato.
+  Verb prendere
+    Does after
       Make this not appeso.
-  End verb indossare.
+  End verb.
 End the mantello.
 
 -- @FIXME: EVENT appendi_mantello
@@ -379,15 +369,8 @@ The bar_buio IsA location at teatro
   Exit nord to foyer.
 
   ------------------------------------------------------------------------------
-  -- Le seguenti definizioni di uscite non praticabili hanno lo scopo, in Alan,
-  -- di definere i nomi di tutte le direzioni, di modo che vengano riconosciute
-  -- nell'input del giocatore, ovunque egli si trovi. Alan non provvede a
-  -- definire alcuna direzione, le "apprende" dalle clausole `Exit` contenute
-  -- nell'avventura sorgente.
-  --
-  -- Quanto all'avventura, ogni tentativo di muoversi in una direzione che non
-  -- sia nord sfocerà in un avvertimento ed incrementerà (+2) i danni al
-  -- messaggio in terra.
+  -- Ogni tentativo di muoversi in una direzione che non sia nord sfocerà in un
+  -- avvertimento ed incrementerà (+2) i danni al messaggio in terra.
   ------------------------------------------------------------------------------
 
   Exit nordest, est, sudest, sud, sudovest, ovest, nordovest, su, giù
@@ -404,6 +387,8 @@ The bar_buio IsA location at teatro
   -- che invochino la descrizione di `avvertimento_bar_buio`.
   -- Raggrupperemo assieme tutti i verbi con sintassi compatibili.
   ------------------------------------------------------------------------------
+
+  -- @FIXME: Group verbs with compatible syntaxes!
 
   -- Verbi globali, senza parametri:
 
@@ -488,6 +473,8 @@ Syntax info = info.
 
 Synonyms about, copyright, credits, licenza, riconoscimenti = info.
 ////
+
+-- @FIXME: Change date to 2022, and update text!
 
 Meta verb ringraziamenti
   Does only
@@ -581,26 +568,8 @@ Syntax  appendi_a = appendi (ogg1) a  (ogg2).
         appendi_a = metti (ogg1) su (ogg2).
         appendi_a = posa (ogg1) su (ogg2).
 
-////
-Syntax prendi = prendi (oggetto).
-Synonyms raccogli = prendi.
-////
 
 Add to every object
-////
-  Verb prendi
-    Check oggetto not in hero
-      else "Possiedi già $+1."
-    Does
-      If this <> mantello
-        then "$+1 non è trasportabile."
-        else
-          "Pres$$" say this:vocale. "."
-          locate this in hero.
-      end if.
-  End verb prendi.
-////
-
   Verb appendi_a
     When ogg1
       Check ogg1 <> ogg2
@@ -633,10 +602,6 @@ Visits 9999. -- @CHECK: Is this supported by Foundation? Needs fixing?
 
 -- Mostriamo del testo d'apertura quando il gioco inizia.
 
---~ "$p$pHurrying through the rainswept November night, you're glad to see
---~  the bright lights of the Opera House. It's surprising that there aren't
---~  more people about but, hey, what do you expect in a cheap demo game...?"
-
 "$p$pAffrettandoti nella piovosa notte di novembre, la vista delle luci
      sfavillanti del teatro dell'opera ti riallieta.
      È sorprendente che non ci sia più gente, ma, ehy, che ti aspetti da un
@@ -649,6 +614,5 @@ Style emphasized. "$p$nCloak of Darkness" style normal.
      (Implementata in ALAN 3.0beta8)"
 
   "$pDigita INFO per maggiori informazioni."
-
 
 --/// FINE ///--
