@@ -37,10 +37,10 @@ dalla strada si trova a nord, delle porte conducono a sud e a ovest.
 > ; TESTA: esamina
 > ; ------------------------------------------------------------------------------
 > x il pavimento
-Non noti nulla di particolare riguardo il pavimento.
+Il pavimento non è importante ai fini del gioco.
 
 > x le pareti
-Non noti nulla di particolare riguardo le pareti.
+Le pareti non sono importanti ai fini del gioco.
 
 > x il soffitto
 Dalla volta pendono candelabri luccicanti.
@@ -52,13 +52,13 @@ I candelabri non sono importanti ai fini del gioco.
 > ; TESTA: prendi
 > ; ------------------------------------------------------------------------------
 > prendi il pavimento
-Preso.
+Il pavimento non sono importanti ai fini del gioco.
 
 > prendi le pareti
-Prese.
+Le pareti non è importante ai fini del gioco.
 
 > prendi il soffitto
-Preso.
+Il soffitto non sono importanti ai fini del gioco.
 
 > prendi i candelabri
 Presi.
@@ -87,13 +87,13 @@ Nel buio? Potresti facilmente disturbare... qualcosa!
 > ; TESTA: prendi
 > ; ------------------------------------------------------------------------------
 > prendi il pavimento
-Possiedi già il pavimento.
+Nel buio? Potresti facilmente disturbare... qualcosa!
 
 > prendi le pareti
-Possiedi già le pareti.
+Nel buio? Potresti facilmente disturbare... qualcosa!
 
 > prendi il soffitto
-Possiedi già il soffitto.
+Nel buio? Potresti facilmente disturbare... qualcosa!
 
 > ; ==============================================================================
 > ; GUARDAROBA
@@ -113,7 +113,7 @@ rimane soltanto uno. L'unica uscita è una porta a est.
 > ; TESTA: esamina
 > ; ------------------------------------------------------------------------------
 > x il pavimento
-Non noti nulla di particolare riguardo il pavimento.
+Il pavimento non è importante ai fini del gioco.
 
 > ; Nel guardaroba esaminare le pareti deve descrivere i ganci:
 > x le pareti
@@ -121,19 +121,19 @@ Le pareti di questa piccola stanza un tempo erano piene di ganci, ora ne
 rimane soltanto uno.
 
 > x il soffitto
-Non noti nulla di particolare riguardo il soffitto.
+Il soffitto non è importante ai fini del gioco.
 
 > ; ------------------------------------------------------------------------------
 > ; TESTA: prendi
 > ; ------------------------------------------------------------------------------
 > prendi il pavimento
-Possiedi già il pavimento.
+Il pavimento non sono importanti ai fini del gioco.
 
 > prendi le pareti
-Possiedi già le pareti.
+Le pareti non è importante ai fini del gioco.
 
 > prendi il soffitto
-Possiedi già il soffitto.
+Il soffitto non sono importanti ai fini del gioco.
 
 > ; ==============================================================================
 > ; BAR ILLUMINATO
@@ -166,10 +166,10 @@ Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? UNDO
 'x' annullato.
 
 > x le pareti
-Non noti nulla di particolare riguardo le pareti.
+Le pareti non sono importanti ai fini del gioco.
 
 > x il soffitto
-Non noti nulla di particolare riguardo il soffitto.
+Il soffitto non è importante ai fini del gioco.
 
 > x il messaggio
 Il messaggio è stato incautamente calpestato, rendendolo quasi
@@ -187,16 +187,16 @@ Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? UNDO
 > ; ------------------------------------------------------------------------------
 > ; Leggere il pavimento equivale a leggere il messaggio:
 > leggi il pavimento
-Non c'è scritto nulla sul il pavimento.
+Il pavimento non sono importanti ai fini del gioco.
 
 > UNDO
 Non conosco la parola 'UNDO'.
 
 > leggi le pareti
-Non c'è scritto nulla sulle le pareti.
+Le pareti non è importante ai fini del gioco.
 
 > leggi il soffitto
-Non c'è scritto nulla sul il soffitto.
+Il soffitto non sono importanti ai fini del gioco.
 
 > leggi il messaggio
 Non c'è scritto nulla sul il messaggio.
@@ -208,13 +208,13 @@ Non conosco la parola 'UNDO'.
 > ; TESTA: prendi
 > ; ------------------------------------------------------------------------------
 > prendi il pavimento
-Possiedi già il pavimento.
+Il pavimento non sono importanti ai fini del gioco.
 
 > prendi le pareti
-Possiedi già le pareti.
+Le pareti non è importante ai fini del gioco.
 
 > prendi il soffitto
-Possiedi già il soffitto.
+Il soffitto non sono importanti ai fini del gioco.
 
 > prendi il messaggio
 Preso.
