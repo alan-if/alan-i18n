@@ -190,13 +190,7 @@ The teatro IsA location. End the teatro.
 --         Or is this a more complex object type?
 
 Every fondale IsA object at teatro.
-  Verb prendi, sposta
-    Does only "$+1 non"
-      if this is plurale
-        then  "sono importanti"
-        else  "è importante"
-      end if. "ai fini del gioco."
-  End verb.
+  Is scenario.
 End every fondale.
 
 -- Nel definire il fondale per le pareti, facciamo in modo che esaminare le
@@ -283,9 +277,11 @@ The candelabri IsA object at foyer.
     Does only "I candelabri non sono importanti ai fini del gioco."
   End verb.
 
+////
   Verb prendi, sposta
     Does only "I candelabri non sono importanti ai fini del gioco."
   End verb.
+////
 End the candelabri.
 
 --==============================================================================
@@ -435,7 +431,7 @@ The bar_buio IsA location at teatro
     Check describe avvertimento_bar_buio.
   End verb.
 
-  Verb prendi
+  Verb prendere
     Check describe avvertimento_bar_buio.
   End verb.
 
@@ -593,13 +589,14 @@ Syntax  appendi_a = appendi (ogg1) a  (ogg2).
         appendi_a = appendi (ogg1) su (ogg2).
         appendi_a = metti (ogg1) su (ogg2).
         appendi_a = posa (ogg1) su (ogg2).
-           prendi = prendi (oggetto).
 
 ////
+Syntax prendi = prendi (oggetto).
 Synonyms raccogli = prendi.
 ////
 
 Add to every object
+////
   Verb prendi
     Check oggetto not in hero
       else "Possiedi già $+1."
@@ -611,6 +608,7 @@ Add to every object
           locate this in hero.
       end if.
   End verb prendi.
+////
 
   Verb appendi_a
     When ogg1
