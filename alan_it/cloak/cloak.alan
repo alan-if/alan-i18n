@@ -117,12 +117,10 @@ The mantello IsA object in hero
         schedule appendi_mantello after 0.
   End verb appendi_a.
 
-  Verb lascia
+  Verb lasciare
     Check current location = guardaroba
       else "Non è il posto migliore per lasciare un mantello."
-    Does after
-      make this not indossato.
-  End verb lascia.
+  End verb.
 
   Verb indossare
     Does only
@@ -444,11 +442,11 @@ The bar_buio IsA location at teatro
 
   -- Verbi con parametro singolo (*):
 
-  Verb esaminare
+  Verb esaminare, lasciare
     Check describe avvertimento_bar_buio.
   End verb.
 
-  Verb lascia, prendi
+  Verb prendi
     Check describe avvertimento_bar_buio.
   End verb.
 
@@ -602,15 +600,15 @@ End verb.
 -- vengono usati sull'Eroe.
 
 Syntax appendi = appendi (oggetto).
-        lascia = lascia (oggetto).
-        lascia = metti giù (oggetto).
-        lascia = posa (oggetto).
         sposta = sposta (oggetto).
 
 //// REMOVED:
 Syntax
   indossa = indossa (oggetto).
   leggere = leggi (oggetto).
+  lascia = posa (oggetto).
+  lascia = lascia (oggetto).
+  lascia = metti giù (oggetto).
 ////
 
 -- L'eccezione è il verbo '`esamina`', che deve poter essere usato anche su sé
@@ -651,7 +649,6 @@ Add to every thing
   Verb indossa
     Does "Non puoi indossare $+1."
   End verb.
-////
 
   Verb lascia
     Check oggetto in hero
@@ -660,6 +657,7 @@ Add to every thing
       "Posi a terra $+1."
       locate this here.
   End verb lascia.
+////
 
   Verb sposta
     Does "Non otterresti nulla."

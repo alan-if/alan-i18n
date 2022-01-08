@@ -138,10 +138,10 @@ dalla strada si trova a nord, delle porte conducono a sud e a ovest.
 > ; Non deve essere possibile lasciare il mantello nel foyer.
 > ; TESTA -> LASCIA MANTELLO -> IN FOYER
 > lascia il mantello
-Fatto.
+Non è il posto migliore per lasciare un mantello.
 
 > inventario
-Sei a mani vuote.
+Stai trasportando un mantello.
 
 > ovest
 Guardaroba
@@ -153,56 +153,56 @@ rimane soltanto uno. L'unica uscita è una porta a est.
 > ; ==============================================================================
 > ; Proviamo a prendere il mantello quando già lo possediamo.
 > inventario
-Sei a mani vuote.
+Stai trasportando un mantello.
 
 > ; TESTA -> PRENDI -> MANTELLO GIÀ POSSEDUTO
 > prendi il mantello
-Qui non puoi vedere nulla del genere.
+Possiedi già il mantello.
 
 > ; ==============================================================================
 > ; APPENDERE IL MANTELLO
 > ; ==============================================================================
 > appendi il mantello
-Qui non puoi vedere nulla del genere.
+Appendi il mantello al gancio.
 
 > ; TESTA -> APPENDI -> MANTELLO GIÀ APPESO
 > appendi il mantello
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > prendi il mantello
-Qui non puoi vedere nulla del genere.
+Preso.
 
 > ; sintassi alternative di 'appendi':
 > appendi il mantello al gancio
-Qui non puoi vedere nulla del genere.
+Appendi il mantello al gancio.
 
 > appendi il mantello sul gancio
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > appendi il mantello sopra il gancio
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > metti il mantello sul gancio
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > metti il mantello sopra il gancio
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > ; ma non accettare 'metti al':
 > metti il mantello al gancio
 Non ho capito la frase.
 
 > aggancia il mantello
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > aggancia il mantello al gancio
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > aggancia il mantello sul gancio
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > aggancia il mantello sopra il gancio
-Qui non puoi vedere nulla del genere.
+Non possiedi il mantello!
 
 > 
 
