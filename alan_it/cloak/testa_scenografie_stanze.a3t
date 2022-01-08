@@ -199,10 +199,16 @@ Le pareti non è importante ai fini del gioco.
 Il soffitto non sono importanti ai fini del gioco.
 
 > leggi il messaggio
-Non c'è scritto nulla sul il messaggio.
+Il messaggio è stato incautamente calpestato, rendendolo quasi
+illeggibile. Riesci a malapena a distinguere le parole...
 
-> UNDO
-Non conosco la parola 'UNDO'.
+    *** Hai perso ***
+
+Hai totalizzato 0 punti su 2 possibili.
+
+Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? UNDO
+'leggi il messaggio'
+annullato.
 
 > ; ------------------------------------------------------------------------------
 > ; TESTA: prendi

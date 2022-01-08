@@ -52,116 +52,206 @@ messaggio scarabocchiato nella segatura sul pavimento.
 
 > ; TESTA -> "1 punto" (e non "1 punti")
 > leggi il messaggio
-Non c'è scritto nulla sul il messaggio.
+Il messaggio, vergato con cura nella segatura, dice...
 
-> RESTART
+    *** Hai vinto ***
 
-Sei sicuro (premi INVIO per confermare)?; ==============================================================================
+Hai totalizzato 1 punto su 2 possibili.
 
+Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? RESTART
+
+
+
+
+Affrettandoti nella piovosa notte di novembre, la vista delle luci
+sfavillanti del teatro dell'opera ti riallieta. È sorprendente che non ci
+sia più gente, ma, ehy, che ti aspetti da un semplice giochino
+dimostrativo...? 
+
+
+Cloak of Darkness 
+Una semplice AT dimostrativa in ALAN3. 
+Versione Alpha 26, febbraio 2019. (Implementata in ALAN 3.0beta8) 
+
+Digita INFO per maggiori informazioni.
+
+
+Foyer del teatro dell'opera
+Ti trovi in uno spazioso atrio d'ingresso splendidamente decorato in
+rosso e oro, con candelabri luccicanti appesi alla volta. L'ingresso
+dalla strada si trova a nord, delle porte conducono a sud e a ovest.
+
+> ; ==============================================================================
 > ; TESTA -> VINCI -> PUNTEGGIO 2
 > ; ==============================================================================
 > ovest
-Non puoi andare in quella direzione.
+Guardaroba
+Le pareti di questa piccola stanza un tempo erano piene di ganci, ora ne
+rimane soltanto uno. L'unica uscita è una porta a est.
 
 > appendi il mantello
-Qui non puoi vedere nulla del genere.
+Appendi il mantello al gancio. 
+
+[Il tuo punteggio è appena salito di 1.]
 
 > est
-Non puoi andare in quella direzione.
+Foyer del teatro dell'opera
+Ti trovi in uno spazioso atrio d'ingresso splendidamente decorato in
+rosso e oro, con candelabri luccicanti appesi alla volta. L'ingresso
+dalla strada si trova a nord, delle porte conducono a sud e a ovest.
 
 > sud
-Non puoi andare in quella direzione.
+Bar del foyer
+Il bar, più sobrio di quanto ti saresti aspettato dopo l'opulenza
+dell'ingresso a nord, è completamente vuoto. Sembra esserci una sorta di
+messaggio scarabocchiato nella segatura sul pavimento.
 
 > ; TESTA -> "2 punti" (e non "2 punto")
 > leggi il messaggio
-Non c'è scritto nulla sul il messaggio.
+Il messaggio, vergato con cura nella segatura, dice...
 
-> RESTART
+    *** Hai vinto ***
 
-Sei sicuro (premi INVIO per confermare)?; ==============================================================================
+Hai totalizzato 2 punti su 2 possibili.
 
+Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? RESTART
+
+
+
+
+Affrettandoti nella piovosa notte di novembre, la vista delle luci
+sfavillanti del teatro dell'opera ti riallieta. È sorprendente che non ci
+sia più gente, ma, ehy, che ti aspetti da un semplice giochino
+dimostrativo...? 
+
+
+Cloak of Darkness 
+Una semplice AT dimostrativa in ALAN3. 
+Versione Alpha 26, febbraio 2019. (Implementata in ALAN 3.0beta8) 
+
+Digita INFO per maggiori informazioni.
+
+
+Foyer del teatro dell'opera
+Ti trovi in uno spazioso atrio d'ingresso splendidamente decorato in
+rosso e oro, con candelabri luccicanti appesi alla volta. L'ingresso
+dalla strada si trova a nord, delle porte conducono a sud e a ovest.
+
+> ; ==============================================================================
 > ; TESTA -> PERDI -> PUNTEGGIO 0
 > ; ==============================================================================
 > sud
-Non puoi andare in quella direzione.
+L'oscurità
+È buio pesto qui, non riesci a vedere nulla.
 
 > guarda
-Bar del foyer
-Il bar, più sobrio di quanto ti saresti aspettato dopo l'opulenza
-dell'ingresso a nord, è completamente vuoto. Sembra esserci una sorta di
-messaggio scarabocchiato nella segatura sul pavimento.
+L'oscurità
+È buio pesto qui, non riesci a vedere nulla.
 
 > guarda
-Bar del foyer
-Il bar, più sobrio di quanto ti saresti aspettato dopo l'opulenza
-dell'ingresso a nord, è completamente vuoto. Sembra esserci una sorta di
-messaggio scarabocchiato nella segatura sul pavimento.
+L'oscurità
+È buio pesto qui, non riesci a vedere nulla.
 
 > nord
 Foyer del teatro dell'opera
+Ti trovi in uno spazioso atrio d'ingresso splendidamente decorato in
+rosso e oro, con candelabri luccicanti appesi alla volta. L'ingresso
+dalla strada si trova a nord, delle porte conducono a sud e a ovest.
 
 > ovest
 Guardaroba
 Le pareti di questa piccola stanza un tempo erano piene di ganci, ora ne
-rimane soltanto uno. L'unica uscita è una porta a est. 
-
-C'è un mantello di velluto nero qui.
+rimane soltanto uno. L'unica uscita è una porta a est.
 
 > lascia il mantello
-Non possiedi il mantello!
+Fatto.
 
 > est
 Foyer del teatro dell'opera
 
 > sud
 Bar del foyer
+Il bar, più sobrio di quanto ti saresti aspettato dopo l'opulenza
+dell'ingresso a nord, è completamente vuoto. Sembra esserci una sorta di
+messaggio scarabocchiato nella segatura sul pavimento.
 
 > ; TESTA -> "0 punti" (e non "0 punto")
 > leggi il messaggio
-Non c'è scritto nulla sul il messaggio.
+Il messaggio, vergato con cura nella segatura, dice...
 
-> RESTART
+    *** Hai vinto ***
 
-Sei sicuro (premi INVIO per confermare)?; ==============================================================================
+Hai totalizzato 1 punto su 2 possibili.
 
+Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? RESTART
+
+
+
+
+Affrettandoti nella piovosa notte di novembre, la vista delle luci
+sfavillanti del teatro dell'opera ti riallieta. È sorprendente che non ci
+sia più gente, ma, ehy, che ti aspetti da un semplice giochino
+dimostrativo...? 
+
+
+Cloak of Darkness 
+Una semplice AT dimostrativa in ALAN3. 
+Versione Alpha 26, febbraio 2019. (Implementata in ALAN 3.0beta8) 
+
+Digita INFO per maggiori informazioni.
+
+
+Foyer del teatro dell'opera
+Ti trovi in uno spazioso atrio d'ingresso splendidamente decorato in
+rosso e oro, con candelabri luccicanti appesi alla volta. L'ingresso
+dalla strada si trova a nord, delle porte conducono a sud e a ovest.
+
+> ; ==============================================================================
 > ; TESTA -> PERDI -> PUNTEGGIO 1
 > ; ==============================================================================
 > sud
-Non puoi andare in quella direzione.
+L'oscurità
+È buio pesto qui, non riesci a vedere nulla.
 
 > guarda
-Bar del foyer
-Il bar, più sobrio di quanto ti saresti aspettato dopo l'opulenza
-dell'ingresso a nord, è completamente vuoto. Sembra esserci una sorta di
-messaggio scarabocchiato nella segatura sul pavimento.
+L'oscurità
+È buio pesto qui, non riesci a vedere nulla.
 
 > guarda
-Bar del foyer
-Il bar, più sobrio di quanto ti saresti aspettato dopo l'opulenza
-dell'ingresso a nord, è completamente vuoto. Sembra esserci una sorta di
-messaggio scarabocchiato nella segatura sul pavimento.
+L'oscurità
+È buio pesto qui, non riesci a vedere nulla.
 
 > nord
 Foyer del teatro dell'opera
+Ti trovi in uno spazioso atrio d'ingresso splendidamente decorato in
+rosso e oro, con candelabri luccicanti appesi alla volta. L'ingresso
+dalla strada si trova a nord, delle porte conducono a sud e a ovest.
 
 > ovest
 Guardaroba
-
-C'è un mantello di velluto nero qui.
+Le pareti di questa piccola stanza un tempo erano piene di ganci, ora ne
+rimane soltanto uno. L'unica uscita è una porta a est.
 
 > appendi il mantello
-Non possiedi il mantello!
+Appendi il mantello al gancio. 
+
+[Il tuo punteggio è appena salito di 1.]
 
 > est
 Foyer del teatro dell'opera
 
 > sud
 Bar del foyer
+Il bar, più sobrio di quanto ti saresti aspettato dopo l'opulenza
+dell'ingresso a nord, è completamente vuoto. Sembra esserci una sorta di
+messaggio scarabocchiato nella segatura sul pavimento.
 
 > ; TESTA -> "1 punto" (e non "1 punti")
 > leggi il messaggio
-Non c'è scritto nulla sul il messaggio.
+Il messaggio, vergato con cura nella segatura, dice...
 
-> 
+    *** Hai vinto ***
+
+Hai totalizzato 2 punti su 2 possibili.
 
 Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? 

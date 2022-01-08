@@ -329,6 +329,7 @@ End the bar.
 The messaggio IsA object at bar
   Name messaggio
   Name messaggio scarabocchiato
+  Is leggibile.
   Has livello_danno 0.
   Description
 
