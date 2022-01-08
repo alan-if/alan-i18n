@@ -247,21 +247,10 @@ End the foyer.
 -- Dato che nella descrizione del foyer si menzionano i candelabri, sarà bene
 -- implementarli, giusto per essere coerenti.
 
--- @FIXME: Use 'scenery' instead!
-
 The candelabri IsA object at foyer.
   Has articolo "i".
+  Is scenario.
   Description
-
-  Verb esaminare
-    Does only "I candelabri non sono importanti ai fini del gioco."
-  End verb.
-
-////
-  Verb prendi, sposta
-    Does only "I candelabri non sono importanti ai fini del gioco."
-  End verb.
-////
 End the candelabri.
 
 --==============================================================================
@@ -281,7 +270,10 @@ End the guardaroba.
 -- Il gancio
 --------------------------------------------------------------------------------
 
+-- @TODO: Ensure all Foundation attributes are set correctly:
+
 The gancio IsA object at guardaroba
+  Is not prendibile.
   Name gancio
   Name piccolo gancio
   Name gancio ottone
