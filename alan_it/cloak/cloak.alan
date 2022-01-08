@@ -124,9 +124,7 @@ The mantello IsA object in hero
       make this not indossato.
   End verb lascia.
 
-  Verb indossa -- @FIXME: Override 'indossare' instead!
-    Check this is not indossato        -- @DELME: when overrides 'indossare'!
-      else "Stai già indossando $+1."  -- @DELME: when overrides 'indossare'!
+  Verb indossare
     Does only
       If this not in hero
         then
@@ -140,7 +138,7 @@ The mantello IsA object in hero
       Set indossatore of this to hero.
       Make this indossato.
       Make this not appeso.
-  End verb indossa.
+  End verb indossare.
 End the mantello.
 
 -- @FIXME: EVENT appendi_mantello
@@ -444,17 +442,19 @@ The bar_buio IsA location at teatro
     Check describe avvertimento_bar_buio.
   End verb.
 
-  -- Verbi con parametro singolo:
+  -- Verbi con parametro singolo (*):
 
   Verb esaminare
     Check describe avvertimento_bar_buio.
   End verb.
 
-  Verb lascia, indossa, prendi
+  Verb lascia, prendi
     Check describe avvertimento_bar_buio.
   End verb.
 
-  Verb leggere
+  -- Verbi con parametro singolo:
+
+  Verb leggere, indossare
     Check describe avvertimento_bar_buio.
   End verb.
 
@@ -602,7 +602,6 @@ End verb.
 -- vengono usati sull'Eroe.
 
 Syntax appendi = appendi (oggetto).
-       indossa = indossa (oggetto).
         lascia = lascia (oggetto).
         lascia = metti giù (oggetto).
         lascia = posa (oggetto).
@@ -610,6 +609,7 @@ Syntax appendi = appendi (oggetto).
 
 //// REMOVED:
 Syntax
+  indossa = indossa (oggetto).
   leggere = leggi (oggetto).
 ////
 
@@ -647,11 +647,11 @@ Add to every thing
   Verb leggere
     Does "non c'è nulla da leggere" say prep_SU of this. "$1."
   End verb.
-////
 
   Verb indossa
     Does "Non puoi indossare $+1."
   End verb.
+////
 
   Verb lascia
     Check oggetto in hero
