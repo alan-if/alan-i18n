@@ -158,17 +158,6 @@ Event appendi_mantello
   end if.
 End event.
 
-//// ORIGINAL CODE:
-Event appendi_mantello
-  "Appendi il mantello al gancio."
-  Make mantello appeso. Make mantello not indossato. Locate mantello here.
-  If hero has not appeso_mantello then
-    Score 1. Make hero appeso_mantello.
-    Style emphasized. "$p[Il tuo punteggio è appena salito di 1.]" Style normal.
-  end if.
-End event.
-////
-
 --==============================================================================
 --------------------------------------------------------------------------------
 -- La mappa del gioco
@@ -498,40 +487,6 @@ End the avvertimento_bar_buio.
 -- I verbi '`globali`' sono verbi che non non prevedono parametri, per cui non
 -- vengono definiti su alcuna classe.
 
-//// @FIX: Use the Foundation verbs instead
-Syntax aspetta = aspetta.
-
-Syntax aspetta = aspetta.
-        guarda = guarda.
-    inventario = inventario.
-
-Synonyms z = aspetta.
-         l = guarda.
-       inv = inventario.
-
-Verb guarda
-  Does look.
-End verb.
-
-Verb aspetta
-  Does "Il tempo passa."
-End verb.
-////
-
-////
-Verb inventario
-  Does
-    If mantello in hero
-      then "Stai"
-        If mantello is indossato
-          then "indossando"
-          else "portando"
-        end if. "il tuo mantello di velluto."
-      else "Non stai portando nulla con te."
-  end if.
-End verb inventario.
-////
-
 --------------------------------------------------------------------------------
 -- Meta verbi
 --------------------------------------------------------------------------------
@@ -602,34 +557,6 @@ End verb.
 Syntax appendi = appendi (oggetto).
         sposta = sposta (oggetto).
 
-//// REMOVED:
-Syntax
-  indossa = indossa (oggetto).
-  leggere = leggi (oggetto).
-  lascia = posa (oggetto).
-  lascia = lascia (oggetto).
-  lascia = metti giù (oggetto).
-////
-
--- L'eccezione è il verbo '`esamina`', che deve poter essere usato anche su sé
--- stessi.
-
-//// @FIX: Use the 'esamniare' verb from Foundation!
-Syntax esamina = esamina (oggetto)
-  Where oggetto IsA thing
-    else "$+1 non è esaminabile."
-
-       esamina = guarda (oggetto).
-////
-
-////
-Synonyms             x = esamina.
-               mettiti = indossa.
-  butta, getta, lancia = lascia.
-   muovi, spingi, tira = sposta.
-              aggancia = appendi.
-////
-
 Synonyms aggancia = appendi.
 
 -- Il verbo `appendi` è stato definito direttamente sull'istanza `mantello`,
@@ -637,28 +564,6 @@ Synonyms aggancia = appendi.
 -- esito.
 
 Add to every thing
-////
-  Verb esamina
-    Does "Esamini $+1 ma non noti nulla di speciale."
-  End verb.
-
-  Verb leggere
-    Does "non c'è nulla da leggere" say prep_SU of this. "$1."
-  End verb.
-
-  Verb indossa
-    Does "Non puoi indossare $+1."
-  End verb.
-
-  Verb lascia
-    Check oggetto in hero
-      else say msg:non_possiedi_P1.
-    Does
-      "Posi a terra $+1."
-      locate this here.
-  End verb lascia.
-////
-
   Verb sposta
     Does "Non otterresti nulla."
   End verb.
