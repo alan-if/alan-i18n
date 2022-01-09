@@ -22,11 +22,9 @@ x i candelabri
 ; ------------------------------------------------------------------------------
 ; TESTA: prendi
 ; ------------------------------------------------------------------------------
-; ** BUG ** For some reason trying to take 'pavimento' or 'soffitto' crashes!
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-; prendi il pavimento
+prendi il pavimento
 prendi le pareti
-; prendi il soffitto
+prendi il soffitto
 prendi i candelabri
 ; ==============================================================================
 ; BAR BUIO
@@ -42,9 +40,9 @@ x il soffitto
 ; ------------------------------------------------------------------------------
 ; TESTA: prendi
 ; ------------------------------------------------------------------------------
-; prendi il pavimento
+prendi il pavimento
 prendi le pareti
-; prendi il soffitto
+prendi il soffitto
 ; ==============================================================================
 ; GUARDAROBA
 ; ==============================================================================
@@ -60,9 +58,9 @@ x il soffitto
 ; ------------------------------------------------------------------------------
 ; TESTA: prendi
 ; ------------------------------------------------------------------------------
-; prendi il pavimento
+prendi il pavimento
 prendi le pareti
-; prendi il soffitto
+prendi il soffitto
 ; ==============================================================================
 ; BAR ILLUMINATO
 ; ==============================================================================
@@ -81,21 +79,18 @@ x il messaggio
 UNDO
 ; ------------------------------------------------------------------------------
 ; TESTA: leggi
-; ------------------------------------------------------------------------------
-; ** BUG ** For some reason trying to read 'pavimento' or 'soffitto' crashes!
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ; Leggere il pavimento equivale a leggere il messaggio:
-; leggi il pavimento
+leggi il pavimento
 UNDO
 leggi le pareti
-; leggi il soffitto
+leggi il soffitto
 leggi il messaggio
 UNDO
 ; ------------------------------------------------------------------------------
 ; TESTA: prendi
 ; ------------------------------------------------------------------------------
-; prendi il pavimento
+prendi il pavimento
 prendi le pareti
-; prendi il soffitto
+prendi il soffitto
 prendi il messaggio
 ; // FINE TEST //

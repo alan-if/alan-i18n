@@ -36,7 +36,7 @@
 -- modulo della grammatica italiana di Alan Italian, senza avvalersi della
 -- Libreria Standard Italiana:
 
-Import 'library.i'.
+Import 'Library.i'.
 
 -- Perciò l'avventura dovrà implementare tutti i verbi di base e tradurre i
 -- messaggi di runtime.
