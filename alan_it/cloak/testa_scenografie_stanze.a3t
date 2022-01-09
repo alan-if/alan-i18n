@@ -51,13 +51,15 @@ I candelabri non sono importanti ai fini del gioco.
 > ; ------------------------------------------------------------------------------
 > ; TESTA: prendi
 > ; ------------------------------------------------------------------------------
-> ; ** BUG ** For some reason trying to take 'pavimento' or 'soffitto' crashes!
-> ; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-> ; prendi il pavimento
+> prendi il pavimento
+Il pavimento non è importante ai fini del gioco.
+
 > prendi le pareti
 Le pareti non sono importanti ai fini del gioco.
 
-> ; prendi il soffitto
+> prendi il soffitto
+Il soffitto non è importante ai fini del gioco.
+
 > prendi i candelabri
 I candelabri non sono importanti ai fini del gioco.
 
@@ -84,11 +86,15 @@ Nel buio? Potresti facilmente disturbare... qualcosa!
 > ; ------------------------------------------------------------------------------
 > ; TESTA: prendi
 > ; ------------------------------------------------------------------------------
-> ; prendi il pavimento
+> prendi il pavimento
+Nel buio? Potresti facilmente disturbare... qualcosa!
+
 > prendi le pareti
 Nel buio? Potresti facilmente disturbare... qualcosa!
 
-> ; prendi il soffitto
+> prendi il soffitto
+Nel buio? Potresti facilmente disturbare... qualcosa!
+
 > ; ==============================================================================
 > ; GUARDAROBA
 > ; ==============================================================================
@@ -120,11 +126,15 @@ Il soffitto non è importante ai fini del gioco.
 > ; ------------------------------------------------------------------------------
 > ; TESTA: prendi
 > ; ------------------------------------------------------------------------------
-> ; prendi il pavimento
+> prendi il pavimento
+Il pavimento non è importante ai fini del gioco.
+
 > prendi le pareti
 Le pareti non sono importanti ai fini del gioco.
 
-> ; prendi il soffitto
+> prendi il soffitto
+Il soffitto non è importante ai fini del gioco.
+
 > ; ==============================================================================
 > ; BAR ILLUMINATO
 > ; ==============================================================================
@@ -174,18 +184,19 @@ Cosa vuoi fare: RESTART, RESTORE, QUIT o UNDO? UNDO
 
 > ; ------------------------------------------------------------------------------
 > ; TESTA: leggi
-> ; ------------------------------------------------------------------------------
-> ; ** BUG ** For some reason trying to read 'pavimento' or 'soffitto' crashes!
-> ; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 > ; Leggere il pavimento equivale a leggere il messaggio:
-> ; leggi il pavimento
+> leggi il pavimento
+Il pavimento non è importante ai fini del gioco.
+
 > UNDO
 Non conosco la parola 'UNDO'.
 
 > leggi le pareti
 Le pareti non sono importanti ai fini del gioco.
 
-> ; leggi il soffitto
+> leggi il soffitto
+Il soffitto non è importante ai fini del gioco.
+
 > leggi il messaggio
 Il messaggio è stato incautamente calpestato, rendendolo quasi
 illeggibile. Riesci a malapena a distinguere le parole...
@@ -201,11 +212,15 @@ annullato.
 > ; ------------------------------------------------------------------------------
 > ; TESTA: prendi
 > ; ------------------------------------------------------------------------------
-> ; prendi il pavimento
+> prendi il pavimento
+Il pavimento non è importante ai fini del gioco.
+
 > prendi le pareti
 Le pareti non sono importanti ai fini del gioco.
 
-> ; prendi il soffitto
+> prendi il soffitto
+Il soffitto non è importante ai fini del gioco.
+
 > prendi il messaggio
 Preso.
 
