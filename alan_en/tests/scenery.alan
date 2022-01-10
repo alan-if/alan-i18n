@@ -3,6 +3,8 @@
 -- * * * * * *  T E S T   A D V E N T U R E   F O R   S C E N E R Y  * * * * * *
 -- =============================================================================
 
+-- The old 'scenery' class has now become the 'ornamental' attribute.
+
 Import 'Library.i'.
 
 The desert IsA location.
@@ -25,32 +27,32 @@ End the.
 --==============================================================================
 
 The sun IsA object at desert.
-  Is scenery.
+  Is ornamental.
   Description ""
   Has xDesc
     "It resembles a disc of molten metal floating in the sky.".
 End the.
 
 The cactus IsA object at desert.
-  Is scenery.
+  Is ornamental.
   Name cactus. Name spines.
   Description "A lonely cactus rises tall from the sand, next to an abandoned pit."
   Has xDesc "It's a sturdy plant, covered in spines.".
 End the.
 
 The pit IsA object container at desert.
-  Is scenery.
+  Is ornamental.
   Name abandoned pit.
   Description ""
 End the.
 
 The sand IsA object at desert.
-  Is scenery.
+  Is ornamental.
   Description ""
 End the.
 
 The tumbleweeds IsA object container at desert.
-  Is scenery. plural.
+  Is ornamental. plural.
   Name tumbleweeds. Name tumbleweed.
   Description
     "In the distance you glimpse tumbleweeds rolling across the sand."

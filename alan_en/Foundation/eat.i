@@ -17,10 +17,10 @@ Syntax
 
 Add to every object
   Verb eat
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is edible
       else "You can't eat that!"
@@ -33,10 +33,10 @@ Add to every object
   End verb.
 
   Verb drink
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is drinkable
       else "That is not drinkable."

@@ -31,7 +31,10 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 A list of features and changes that need to be replayed on the Italian Foundation, based on releases from either from the **English Foundation** (the reference library) or the **Spanish Foundation**, for changes that only apply to the Spanish and Italian languages, which are similar.
 
-- _none_
+- [[`EN 0.4.0`][EN 0.4.0]] — Rename Scenery to Ornamental.
+
+[EN 0.4.0]:  https://github.com/alan-if/alan-i18n/blob/main/alan_en/Foundation/CHANGELOG.md#v040-20220110 "View English ChangeLog Entry"
+
 
 -------------------------------------------------------------------------------
 

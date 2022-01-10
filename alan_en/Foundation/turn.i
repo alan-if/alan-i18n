@@ -27,10 +27,10 @@ Syntax
 
 Add to every object
   Verb turn_on1, turn_on2, switch_on1, switch_on2
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is switchable
       else "You can't turn that on."
@@ -63,10 +63,10 @@ Syntax
 
 Add to every object
   Verb turn_off1, turn_off2, switch_off1, switch_off2
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is switchable
       else "You can't turn that off."

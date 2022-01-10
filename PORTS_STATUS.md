@@ -25,6 +25,7 @@ This document tracks the development status of ports of the library to other loc
 
 | EN                  | feature                                | Spanish             | Italian             |
 | :-----------------: | :------------------------------------- | :-----------------: | :-----------------: |
+| [`0.4.0`][EN 0.4.0] | Rename Scenery to Ornamental.          | &cross;             | &cross;             |
 | [`0.3.0`][EN 0.3.0] | Scenery Class Becomes an Attribute.    | &cross;             | [`0.3.0`][IT 0.3.0] |
 | [`0.2.5`][EN 0.2.5] | New `messages_library.i` module.       | &cross;             | [`0.3.0`][IT 0.3.0] |
 | [`0.2.4`][EN 0.2.4] | Add game transcription META verbs.     | [`0.3.3`][ES 0.3.3] | [`0.1.1`][IT 0.1.1] |
@@ -127,6 +128,7 @@ We're open to rediscuss our methodology, accepting advise and making room for ne
 
 <!-- English CHANGELOG -->
 
+[EN 0.4.0]: ./alan_en/Foundation/CHANGELOG.md#v040-20220110 "View English CHANGELOG entry"
 [EN 0.3.0]: ./alan_en/Foundation/CHANGELOG.md#v030-20211223 "View English CHANGELOG entry"
 [EN 0.2.5]: ./alan_en/Foundation/CHANGELOG.md#v025-20211222 "View English CHANGELOG entry"
 [EN 0.2.4]: ./alan_en/Foundation/CHANGELOG.md#v024-20211130 "View English CHANGELOG entry"

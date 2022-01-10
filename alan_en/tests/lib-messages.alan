@@ -14,7 +14,7 @@ The shop IsA location.
 End the.
 
 The upholstery IsA object at shop.
-  Is scenery.
+  Is ornamental.
   Description "The room walls are wrapped in a kitsch
                upholstery with ugly floral motifs."
   -- Has xDesc
@@ -25,7 +25,7 @@ End the.
 
 The walls IsA object at shop.
   Name walls. Name wall.
-  Is scenery.
+  Is ornamental.
   Is plural.
   Description ""
 End the.

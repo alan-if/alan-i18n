@@ -31,19 +31,19 @@ Add to every thing
     Does
       If xDesc of obj <> "" then
         say xDesc of obj.
-      ElsIf obj is scenery then
+      ElsIf obj is ornamental then
         If obj is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
       else "There is nothing special about $+1."
       End if.
   End verb.
 End add.
 
--- @NOTE: Examining actors doesn't check for 'is scenery' since the assumption
---        is that actors are never scenery. Is there a plausible use case for
---        scenery actors? Should we add the check?
+-- @NOTE: Examining actors doesn't check for 'is ornamental' since the assumption
+--        is that actors are never ornamental. Is there a plausible use case for
+--        ornamental actors? Should we add the check?
 
 Add to every actor
   Verb examine
@@ -112,10 +112,10 @@ Syntax
 
 Add to every object
   Verb look_in
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is examinable
       else "You can't look inside $+1."
@@ -133,10 +133,10 @@ Syntax
 
 Add to every object
   Verb search
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is searchable
       else "You can't search" say the obj. "."

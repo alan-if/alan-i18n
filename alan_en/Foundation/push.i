@@ -12,10 +12,10 @@ Syntax
 
 Add to every object
   Verb push
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is pushable
       else "You can't push that."
@@ -35,15 +35,15 @@ Syntax
 Add to every object
   Verb push_with
     When obj1
-      Check obj1 is not scenery else
+      Check obj1 is not ornamental else
         If obj1 is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
-      And obj2 is not scenery else
+      And obj2 is not ornamental else
         If obj2 is plural
-          then say msg:scenery_response_P2_pl.
-          else say msg:scenery_response_P2_sg.
+          then say msg:ornamental_response_P2_pl.
+          else say msg:ornamental_response_P2_sg.
         End if.
       And obj1 is pushable
         else "You can't push that."

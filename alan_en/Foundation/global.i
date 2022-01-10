@@ -8,7 +8,7 @@
 
 Add to every entity
   Is not plural.
-  Is not scenery.
+  Is not ornamental.
 End add.
 
 Every named_actor IsA actor

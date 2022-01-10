@@ -13,15 +13,15 @@ Syntax
 Add to every object
   Verb give
     When obj
-      Check obj is not scenery else
+      Check obj is not ornamental else
         If obj is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
-      And recip is not scenery else
+      And recip is not ornamental else
         If recip is plural
-          then say msg:scenery_response_P2_pl.
-          else say msg:scenery_response_P2_sg.
+          then say msg:ornamental_response_P2_pl.
+          else say msg:ornamental_response_P2_sg.
         End if.
       And obj in hero
         else say msg:you_dont_have_P1.

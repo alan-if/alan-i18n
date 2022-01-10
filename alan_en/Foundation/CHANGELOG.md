@@ -13,6 +13,8 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
 - [Beta Releases](#beta-releases)
+    - [v0.4.0 \(2022/01/10\)](#v040-20220110)
+        - [Rename Scenery to Ornamental](#rename-scenery-to-ornamental)
     - [v0.3.0 \(2021/12/23\)](#v030-20211223)
         - [Scenery Class Becomes an Attribute](#scenery-class-becomes-an-attribute)
     - [v0.2.5 \(2021/12/22\)](#v025-20211222)
@@ -41,6 +43,16 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 -----
 
 # Beta Releases
+
+
+## v0.4.0 (2022/01/10)
+
+### Rename Scenery to Ornamental
+
+Rename the `scenery` attribute to `ornamental` since it's more indicative of the actual attribute nature and because the terms lends itself to better translations in other locales (see [Discussion #57]).
+
+Library messages starting in `scenery_` are also renamed to `ornamental_`.
+
 
 
 ## v0.3.0 (2021/12/23)
@@ -289,6 +301,7 @@ The __Foundation Library__ is not going to be just a series of updates to the ol
 
 [Discussion #14]: https://github.com/alan-if/alan-i18n/discussions/14 "Discussion #14 — Libraries Version Scheme"
 [#34]: https://github.com/alan-if/alan-i18n/discussions/34 "Discussion #34 — On Scenery Objects"
+[Discussion #57]: https://github.com/alan-if/alan-i18n/discussions/57#discussioncomment-1892673 "Discussion #57 — Spanish Scenery Attributes"
 
 <!-- project files and folders -->
 

@@ -25,10 +25,10 @@ Add to every thing
 -- tag::lib_msgs_ex1[]
   Verb attack
 -- end::lib_msgs_ex1[]
-    Check act is not scenery else
+    Check act is not ornamental else
       If act is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
 -- tag::lib_msgs_ex1[]
     Does
@@ -48,15 +48,15 @@ Syntax
 Add to every thing
   Verb attack_with
     When obj
-      Check act is not scenery else
+      Check act is not ornamental else
         If act is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
-      And obj is not scenery else
+      And obj is not ornamental else
         If obj is plural
-          then say msg:scenery_response_P2_pl.
-          else say msg:scenery_response_P2_sg.
+          then say msg:ornamental_response_P2_pl.
+          else say msg:ornamental_response_P2_sg.
         End if.
       And obj in hero
         else say msg:you_dont_have_P2.
@@ -77,10 +77,10 @@ Syntax
 
 Add to every thing
   Verb shoot
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     Does
       If obj is shootable then
@@ -109,15 +109,15 @@ Syntax
 Add to every thing
   Verb shoot_at
     When obj
-      Check obj is not scenery else
+      Check obj is not ornamental else
         If obj is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
-      And act is not scenery else
+      And act is not ornamental else
         If act is plural
-          then say msg:scenery_response_P2_pl.
-          else say msg:scenery_response_P2_sg.
+          then say msg:ornamental_response_P2_pl.
+          else say msg:ornamental_response_P2_sg.
         End if.
       And obj in hero
         else say msg:you_dont_have_P1.
@@ -129,15 +129,15 @@ Add to every thing
 
   Verb shoot_with
     When obj
-      Check act is not scenery else
+      Check act is not ornamental else
         If act is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
-      And obj is not scenery else
+      And obj is not ornamental else
         If obj is plural
-          then say msg:scenery_response_P2_pl.
-          else say msg:scenery_response_P2_sg.
+          then say msg:ornamental_response_P2_pl.
+          else say msg:ornamental_response_P2_sg.
         End if.
       And obj in hero
         else say msg:you_dont_have_P2.

@@ -8,29 +8,40 @@
 In this first part of the book we'll be focusing on the general features offered by the Foundation Library, their usage and general design principles.
 
 
-== Scenery
+== Ornamental Objects
 
-The "`global.i`" module adds the `Is not scenery` attribute to every `entity`, so that authors can use this attribute to create "`scenery objects`", i.e. objects which only serve the purpose of setting up the game mood by providing details which have a mere scenic purpose, like props in theatre or movie sets.
+The "`global.i`" module adds the `Is not ornamental` attribute to every `entity` so that authors can use this attribute to create "`ornamental objects`", aka  "`scenery`" -- i.e. objects which only serve the purpose of setting up the game mood by providing details which have a mere scenic purpose, like props in theatre or movie sets.
 
-To turn an object into a scenery, add `Is scenery.` to the instance definition:
+[NOTE]
+==============================================
+In earlier versions of ALAN Libraries, ornamental objects were known as "`scenery`" -- in the ALAN Library, they were implemented via the `scenery` class, in the ALAN Standard Library v2.0 the `scenery` class became an attribute instead.
+==============================================
+
+
+To turn an object into an ornament, add `Is ornamental.` to its definition:
 
 [source,alan]
 --------------------------------------------------------------------------------
 The cobwebs IsA object at castle.
-  Is scenery.
+  Is ornamental.
 --------------------------------------------------------------------------------
 
 
-WARNING: @TODO: Provide example on how to create a scenery instance!
+Because they are only intended as props, ornamental objects can't be interacted with, and any attempt to do so will result in a standard default response which discourages the player from further attempting any other action on the object -- i.e. making it clear that the instance at hand serves no practical purpose in advancing the game story.
+
+The exceptions to this are the `examine` verb, which will honour a non empty `xDesc` string attribute, and conversational verbs, where an ornamental can be a topic parameter.
+The rationale for these exceptions is that these interactions can allow ornamental objects to convey further atmosphere and mood to the game, if the author wishes to.
+
+.Open Desing Question: Other Allowed Verbs?
+[WARNING]
+=======================================
+The above rationale could also be extended to other sensory verbs, like _listen_ and _smell_, since sounds and odours can also contribute to the game's mood, and possibly also allow the _read_ verb, e.g. for a sign or some other inscription which might be practical to implement as an ornamental object.
+
+See https://github.com/alan-if/alan-i18n/discussions/58[Discussion #58^].
+=======================================
 
 
-Because they are only intended as props, scenery objects can't be interacted with, and any attempt to do so will result in a standard default response which discourages the player from further attempting any other action on the object -- i.e. making it clear that the instance at hand serves no practical purpose in advancing the game story.
-
-The exceptions to this are the `examine` verb, which will honour a non empty `xDesc` string attribute, and conversational verbs, where a scenery can be a topic parameter.
-The rationale for these exceptions is that these interactions can allow scenery objects to convey further atmosphere and mood to the game, is the author wishes to.
-
-
-Scenery objects are also important to flesh out adventures in a consistent way, by offering implementation to details mentioned in room descriptions.
+Ornamental objects are also important to flesh out adventures in a consistent way, by offering implementation to details mentioned in room descriptions.
 E.g. if a room description mentions that its wall are covered in spider cobwebs, but when the player examines the cobwebs the game replies that it doesn't understand the word "`cobwebs`" it doesn't have a nice impact on the player -- the narrative illusion starts to crack.
 
 [example,role="gametranscript"]
@@ -40,9 +51,9 @@ E.g. if a room description mentions that its wall are covered in spider cobwebs,
 I don't know the word 'cobwebs'.
 ================================================================================
 
-To avoid this, you should implement every mentioned object as a scenery object, so that the player is offered some feedback on the environment described by the game (i.e. by _you_, the author).
+To avoid this, you should implement every mentioned object as an ornamental object, so that the player is offered some feedback on the environment described by the game (i.e. by _you_, the author).
 
-Usually, when a complex scenic object is described as having multiple parts, it's sufficient to implement them with a single scenery objects with synonyms.
+Usually, when a complex scenic object is described as having multiple parts, it's sufficient to implement them with a single ornamental objects with synonyms.
 
 WARNING: @TODO: Provide sample transcript and source example!
 

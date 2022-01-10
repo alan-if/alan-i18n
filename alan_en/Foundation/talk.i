@@ -73,10 +73,10 @@ Syntax
 Add to every thing
   Verb say_to
     When act
-      Check act is not scenery else
+      Check act is not ornamental else
         If act is plural
-          then say msg:scenery_response_P2_pl.
-          else say msg:scenery_response_P2_sg.
+          then say msg:ornamental_response_P2_pl.
+          else say msg:ornamental_response_P2_sg.
         End if.
       And act Has can_talk
         else "You can't talk to that."
@@ -117,10 +117,10 @@ Syntax
 Add to every thing
   Verb talk_to
     When  topic
-      Check act is not scenery else
+      Check act is not ornamental else
         If act is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
       And act Has can_talk
         else "You can't talk to that."
@@ -139,10 +139,10 @@ Syntax
 
 Add to every thing
   Verb talk_to_a
-    Check act is not scenery else
+    Check act is not ornamental else
       If act is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And act Has can_talk
       else "You can't talk to that."

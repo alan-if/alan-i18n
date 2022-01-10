@@ -11,10 +11,10 @@ Add to every object
     Not open.
 
   Verb open
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is openable
       else "You can't open that!"
@@ -38,15 +38,15 @@ Syntax
 Add to every object
   Verb open_with
     When obj1
-      Check obj1 is not scenery else
+      Check obj1 is not ornamental else
         If obj1 is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
-      And obj2 is not scenery else
+      And obj2 is not ornamental else
         If obj2 is plural
-          then say msg:scenery_response_P2_pl.
-          else say msg:scenery_response_P2_sg.
+          then say msg:ornamental_response_P2_pl.
+          else say msg:ornamental_response_P2_sg.
         End if.
       And obj2 in hero
         else say msg:you_dont_have_P2.
@@ -68,10 +68,10 @@ Add to every object
   Is not closeable.
 
   Verb close
-    Check obj is not scenery else
+    Check obj is not ornamental else
       If obj is plural
-        then say msg:scenery_response_P1_pl.
-        else say msg:scenery_response_P1_sg.
+        then say msg:ornamental_response_P1_pl.
+        else say msg:ornamental_response_P1_sg.
       End if.
     And obj is closeable
       else "You can't close that."
@@ -95,15 +95,15 @@ Syntax
 Add to every object
   Verb close_with
     When obj1
-      Check obj1 is not scenery else
+      Check obj1 is not ornamental else
         If obj1 is plural
-          then say msg:scenery_response_P1_pl.
-          else say msg:scenery_response_P1_sg.
+          then say msg:ornamental_response_P1_pl.
+          else say msg:ornamental_response_P1_sg.
         End if.
-      And obj2 is not scenery else
+      And obj2 is not ornamental else
         If obj2 is plural
-          then say msg:scenery_response_P2_pl.
-          else say msg:scenery_response_P2_sg.
+          then say msg:ornamental_response_P2_pl.
+          else say msg:ornamental_response_P2_sg.
         End if.
       And obj2 in hero
         else say msg:you_dont_have_P2.
