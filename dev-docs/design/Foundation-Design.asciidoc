@@ -1,0 +1,42 @@
+= Foundation Library Design
+Tristano Ajmone <tajmone@gmail.com>
+v0.1.0, 2022-01-12
+:rev_mark: WIP Alpha
+:doctype: book
+include::_inc_attr-header.adoc[]
+// TOC Settings:
+:toclevels: 5
+:toc: left
+// Sections:
+:sectnums:
+:sectnumlevels: 2
+// Paths:
+:imagesdir: images
+
+include::_inc_attr-custom.adoc[]
+
+// Document Preamble
+// =================
+
+====================
+This will ultimately be the developers' and porters' guide to the _Foundation Library_.
+
+WARNING: This is a work-in-progress early draft.
+Right now it's almost identical to the User Guide of the English library, since it's being re-adapted from its source files.
+====================
+
+[preface]
+== Introduction
+
+.TBD Library Intro
+NOTE: Add introduction to the _Foundation Library_, its goals, etc.
+
+// BOOK PARTS
+include::foundation_part1.adoc[]
+
+include::foundation_part2.adoc[]
+
+// APPENDICES
+include::{dir_DocsEN}/foundation_app_syntaxes.adoc[]
+
+// EOF //

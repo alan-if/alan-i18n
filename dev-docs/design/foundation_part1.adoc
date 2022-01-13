@@ -1,0 +1,121 @@
+// =============================================================================
+//                                  P A R T   I
+// =============================================================================
+
+
+= Library Features
+
+In this first part of the book we'll be focusing on the general features offered by the Foundation Library, their usage and general design principles.
+
+
+== Ornamental Objects
+
+The "`global.i`" module adds the `Is not ornamental` attribute to every `entity` so that authors can use this attribute to create "`ornamental objects`", aka  "`scenery`" -- i.e. objects which only serve the purpose of setting up the game mood by providing details which have a mere scenic purpose, like props in theatre or movie sets.
+
+[NOTE]
+==============================================
+In earlier versions of ALAN Libraries, ornamental objects were known as "`scenery`" -- in the ALAN Library, they were implemented via the `scenery` class, in the ALAN Standard Library v2.0 the `scenery` class became an attribute instead.
+==============================================
+
+
+To turn an object into an ornament, add `Is ornamental.` to its definition:
+
+[source,alan]
+--------------------------------------------------------------------------------
+The cobwebs IsA object at castle.
+  Is ornamental.
+--------------------------------------------------------------------------------
+
+
+Because they are only intended as props, ornamental objects can't be interacted with, and any attempt to do so will result in a standard default response which discourages the player from further attempting any other action on the object -- i.e. making it clear that the instance at hand serves no practical purpose in advancing the game story.
+
+The exceptions to this are the `examine` verb, which will honour a non empty `xDesc` string attribute, and conversational verbs, where an ornamental can be a topic parameter.
+The rationale for these exceptions is that these interactions can allow ornamental objects to convey further atmosphere and mood to the game, if the author wishes to.
+
+.Open Desing Question: Other Allowed Verbs?
+[WARNING]
+=======================================
+The above rationale could also be extended to other sensory verbs, like _listen_ and _smell_, since sounds and odours can also contribute to the game's mood, and possibly also allow the _read_ verb, e.g. for a sign or some other inscription which might be practical to implement as an ornamental object.
+
+See https://github.com/alan-if/alan-i18n/discussions/58[Discussion #58^].
+=======================================
+
+
+Ornamental objects are also important to flesh out adventures in a consistent way, by offering implementation to details mentioned in room descriptions.
+E.g. if a room description mentions that its wall are covered in spider cobwebs, but when the player examines the cobwebs the game replies that it doesn't understand the word "`cobwebs`" it doesn't have a nice impact on the player -- the narrative illusion starts to crack.
+
+[example,role="gametranscript"]
+================================================================================
+&gt; x cobwebs
+
+I don't know the word 'cobwebs'.
+================================================================================
+
+To avoid this, you should implement every mentioned object as an ornamental object, so that the player is offered some feedback on the environment described by the game (i.e. by _you_, the author).
+
+Usually, when a complex scenic object is described as having multiple parts, it's sufficient to implement them with a single ornamental objects with synonyms.
+
+WARNING: @TODO: Provide sample transcript and source example!
+
+
+== Wearable Items
+
+The "`wear.i`" modules defines all the attributes and verbs relating to wearable items.
+
+Any `object` instance can be turned into a wearable item by setting it to `is wearable` (e.g. clothes, glasses, an helmet, a backpack, etc.).
+By default, all objects are not wearable.
+
+
+=== Wearables Attributes
+
+To track the status of wearable items, the library defines two further attributes: `worn` (bolean), and `wearer` (reference to `actor` instances).
+
+[source,alan]
+Add to every object
+  Is not wearable.
+     not worn.
+  Has wearer nobody. -- dummy actor = unworn state. (see people.i)
+End add.
+
+The default wearer is `nodoby`, a dummy actor instance defined in "`people.i`", which is used as a placeholder whenever the item is unworn.
+
+[source,alan]
+The nobody IsA actor at nowhere
+  -- Dummy actor used to indicate items not being worn, etc.
+End the.
+
+
+The `worn` attribute provides a quick way to check whether an item is being worn at any time, whereas the `wearer` attribute allows to quickly access the wearing actor.
+
+[NOTE]
+==============
+The reason we've implemented both the `worn` and `wearer` attributes, instead of just keeping `wearer` (which would indicate that an item is unworn when it points to the `nobody` instance) is because aggregators only support boolean attributes in filters.
+==============
+
+
+=== Tracking Wearables Status
+
+The library verbs correctly handle these attributes, so end authors don't have to worry about modifying them with the default actions, but it's important that any custom defined verb, script or event that might change the worn status of a wearable item in the adventure code will also update correctly these attributes.
+
+Any action, script or event that relocates an object should:
+
+* Check if the item `is worn`, and e.g. block the action if it's being worn by an actor other than the player (this is the general design rule, but authors can take exception to the rule in their custom actions).
+* If an item is moved from its current location to another place (or into an actor) via the `locate` statement, that item should always be made `not worn` and its `wearer` set to `nobody`. E.g.
++
+[source,alan]
+Make this not worn. Set wearer of this to nobody.
+
+
+=== Interactions with Worn Items
+
+By design, we chose not to prevent the player from taking worn items, leaving it to the author to decide if an how to implement such restrictions.
+
+Depending on the adventure you're creating, you might for example wish to prevent the player from taking items worn by some types of actors and not others, or maybe from all actors, according to need.
+
+Usually, you'd want to prevent removing items worn by a `person` actor, ensuring that any verbs attempting a similar action will fail with a message reporting that he/she won't let you do that, or some other message along those lines.
+
+As for non-human actors (i.e. `actor` instances other than `people`) you might or might not want to enforce such restrictions, e.g. in order to allow these actions on animals, robot, etc.
+
+If your adventure features animals or mythological creatures with which the player will be interacting, it might be useful for example to allow putting and removing a saddle on a horse, a dog's collar, etc. all items which would qualify as being worn by the animal.
+
+These restriction rules usually should apply to both explicit (e.g. '`take`') and implicit actions (i.e. verbs that will attempt to first take the object if the Hero doesn't posses it), so make sure that your custom verbs and checks apply these restrictions consistently across your adventure verbs.

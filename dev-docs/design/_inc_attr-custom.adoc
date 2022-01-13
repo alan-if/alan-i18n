@@ -1,0 +1,4 @@
+// Commonly Shared Custom Attributes
+
+:dir_LibEN: ../../alan_en/Foundation
+:dir_DocsEN: ../../alan_en/docs

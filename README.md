@@ -42,6 +42,7 @@ Created by [Tristano Ajmone] on April, 2021.
 - [`/alan_en/`][en] — English library.
 - [`/alan_es/`][es] — Spanish library.
 - [`/alan_it/`][it] — Italian library.
+- [`/dev-docs/`][dev-docs/] — developers' documentation.
 - [`/resources/`][resources/] — developers' resources.
 - [`CONTRIBUTING.md`][CONTRIBUTING.md] — _Contributors' Guidelines_.
 - [`PORTS_STATUS.md`][PORTS_STATUS.md] — _Ported Libraries Status_.
@@ -213,6 +214,7 @@ More details about the license terms, authors and credits of each third party as
 [en]: ./alan_en/ "Navigate to ALAN English folder"
 [es]: ./alan_es/ "Navigate to ALAN Spanish folder"
 [it]: ./alan_it/ "Navigate to ALAN Italian folder"
+[dev-docs/]: ./dev-docs "Navigate to developer's documentation folder"
 [resources/]: ./resources "Navigate to resources folder"
 [_assets/]: ./_assets "Navigate to toolchain assets folder"
 

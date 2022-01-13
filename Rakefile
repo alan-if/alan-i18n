@@ -1,4 +1,4 @@
-=begin "Rakefile" v0.5.2 | 2021/12/22 | by Tristano Ajmone
+=begin "Rakefile" v0.5.3 | 2022/01/13 | by Tristano Ajmone
 ================================================================================
 This is an initial Rakefile proposal for Alan-i18n.  It's fully working and uses
 namespaces to separate tasks according to locale, but it could do with some
@@ -52,7 +52,7 @@ HEREDOC
 # -------------------------------{  T A S K S  }--------------------------------
 # ==============================================================================
 
-task :default => %w[lib:all]
+task :default => ['lib:all', :devdocs]
 
 
 ## Clean & Clobber
@@ -65,7 +65,7 @@ CLOBBER.include('**/*.html').exclude('**/docinfo.html')
 
 namespace "lib" do
 
-  desc "Build all libraries"
+  desc "Build all libraries (lib:*)"
   task all: %w[lib:en:all lib:es:all lib:it:all]
 
   ## ENGLISH LIBRARY
@@ -149,3 +149,19 @@ namespace "lib" do
     CreateTranscriptingTasksFromFolder(:tests,'alan_it/tests', LIB_IT_SOURCES)
   end # lib:it:
 end   # lib:
+
+
+## Developers' Documentation
+############################
+
+# The "Foundation Design" book includes some source code snippets from the
+# English library, via tagged-regions 'include::' directives, hence the
+# presence of LIB_EN_SOURCES in its dependencies list.
+
+desc "Developers' Documentation"
+task :devdocs
+DESIGN_ADOC_DEPS = LIB_EN_SOURCES + FileList[
+  'alan_en/docs/foundation_app_syntaxes.adoc',
+  'dev-docs/design/*.adoc'
+]
+CreateAsciiDocHTMLTasksFromFolder(:devdocs,'dev-docs/design', DESIGN_ADOC_DEPS, ADOC_OPTS)

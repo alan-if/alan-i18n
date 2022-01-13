@@ -1,6 +1,6 @@
-= Foundation Library Design
+= Foundation Library
 Tristano Ajmone <tajmone@gmail.com>
-v0.1.3, 2022-01-10
+v0.2.0, 2022-01-12
 :rev_mark: WIP Alpha
 :doctype: book
 include::_inc_attr-header.adoc[]
@@ -18,11 +18,16 @@ include::_inc_attr-custom.adoc[]
 // Document Preamble
 // =================
 
-====================
-This will ultimately be the documentation of the _Foundation Library_.
+================================================================================
+This will ultimately become the users' guide for the _English Foundation Library_.
 
-WARNING: This is a work-in-progress early draft.
-====================
+[WARNING]
+=======================
+This is a work-in-progress early draft.
+
+Some of the current contents will be soon moved to the _Foundation Library Design_ document (found in `/dev-docs/design/`) in order to keep this guide free from excessive implementation design details.
+=======================
+================================================================================
 
 [preface]
 == Introduction
