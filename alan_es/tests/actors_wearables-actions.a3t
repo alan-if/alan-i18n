@@ -72,7 +72,7 @@ No puedes aplicar ese verbo a varios objetos.
 
 > ; WEAR UNOWNED ITEM (IMPLICIT TAKING NOT SUPPORTED):
 > lleva pantalón
-No llevas el pantalón
+No llevas el pantalón.
 
 > i
 No llevas nada.
@@ -141,7 +141,7 @@ Tomas la chaqueta.
 > ; ------------------------------------------------------------------------------
 > ; The library no longer supports implicit taking in verbs:
 > lleva zapatos
-No llevas los zapatos
+No llevas los zapatos.
 
 > 
 

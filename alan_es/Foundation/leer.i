@@ -14,7 +14,12 @@ Syntax
 
 Add to every object
   Verb leer
-    Check obj is leible
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is leible
       else "No hay nada escrito en" say the obj. "."
     Does
       "Lees" say the obj. "."

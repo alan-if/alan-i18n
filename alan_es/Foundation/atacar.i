@@ -27,8 +27,13 @@ Syntax
 
 Add to every thing
   Verb atacar
+    Check act is not ornamentale else
+      If act is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
     Does
-      "La violencia no es la solución. Por lo menos, no siempre."
+      Say msg:violencia_no_es_solución.
   End verb.
 End add to.
 
@@ -44,12 +49,22 @@ Syntax
 Add to every thing
   Verb atacar_con
     When obj
-      Check obj in hero
-        else "No tienes ese objeto para atacar con él."
+      Check act is not ornamentale else
+        If act is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And obj is not ornamentale else
+        If obj is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj in hero
+        else say msg:no_tienes_P2.
       And obj is arma
         else "¡No tiene sentido atacar nada con eso!"
     Does
-      "La violencia no es la solución."
+      Say msg:violencia_no_es_solución.
   End verb.
 End add to.
 
@@ -63,6 +78,11 @@ Syntax
 
 Add to every thing
   Verb disparar
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
     Does
       If obj is dispararable then
         "Debes especificar contra qué disparar."
@@ -91,21 +111,41 @@ Syntax
 Add to every thing
   Verb disparar_a
     When obj
-      Check obj in hero
+      Check obj is not ornamentale else
+        If obj is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And act is not ornamentale else
+        If act is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj in hero
         else "No lo tienes."
       And obj is dispararable
         else "No puedes disparar a nada con eso."
     Does
-      "La violencia no es la solución."
+      Say msg:violencia_no_es_solución.
   End verb.
 
   Verb disparar_con
     When obj
-      Check obj in hero
-        else "No tienes eso."
+      Check act is not ornamentale else
+        If act is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And obj is not ornamentale else
+        If obj is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj in hero
+        else say msg:no_tienes_P2.
       And obj is dispararable
         else "No puedes disparar a nada con eso."
     Does
-      "La violencia no es la solución."
+      Say msg:violencia_no_es_solución.
   End verb.
 End add to.

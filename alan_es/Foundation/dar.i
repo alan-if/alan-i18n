@@ -15,8 +15,18 @@ Syntax
 Add to every object
   Verb dar
     When obj
-      Check obj in hero
-        else "No tienes" say the obj. "."
+      Check obj is not ornamentale else
+        If obj is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And recip is not ornamentale else
+        If recip is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj in hero
+        else say msg:no_tienes_P1.
     Does
       If recip=hero then
         "¡Ya tienes" say the obj. "!"

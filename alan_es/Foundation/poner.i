@@ -13,8 +13,13 @@ Syntax
 
 Add to every object
   Verb poner
-    Check obj in hero
-      else "No tienes eso."
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj in hero
+      else say msg:no_tienes_P1.
     Does
       Locate obj here.
       -- In case item was being worn:
@@ -30,18 +35,28 @@ Syntax
     Where obj1 IsA object
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA container
-      else "No puedes poner nada en" say the obj1. "."
+      else "No puedes poner nada en $+1."
   poner_en = dejar (obj1) en (obj2).
 
 Add to every object
   Verb poner_en
     When obj1
-      Check obj1 in hero
-        else "No tienes" say the obj1. "."
+      Check obj1 is not ornamentale else
+        If obj1 is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And obj2 is not ornamentale else
+        If obj2 is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj1 in hero
+        else say msg:no_tienes_P1.
       And obj1 <> obj2
         else "¡No puedes poner algo dentro de si mismo!"
       And obj2 <> hero
-        else "¡No puedes poner" say obj1. "dentro de tí!"
+        else "¡No puedes poner $1 dentro de tí!"
     Does
       Locate obj1 in obj2.
       -- Check that operation succeeded
@@ -66,14 +81,14 @@ Syntax
     Where obj1 IsA object
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA thing
-      else "No puedes poner nada cerca " say the obj2. "."
+      else "No puedes poner nada cerca $+2"
   poner_cerca = poner (obj1) cerca de (obj2). -- @CHECK: Is it working? (See #43)
 
   poner_detras = poner (obj1) detras (obj2)
     Where obj1 IsA object
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA thing
-      else "No puedes poner nada tras " say the obj2. "."
+      else "No puedes poner nada tras $+2"
   poner_detras = poner (obj1) detras de (obj2). -- @CHECK: Is it working? (See #43)
   poner_detras = poner (obj1) tras (obj2).
   poner_detras = poner (obj1) tras de (obj2). -- @CHECK: Is it working? (See #43)
@@ -82,28 +97,37 @@ Syntax
     Where obj1 IsA object
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA thing
-      else "No se puede poner nada sobre" say the obj1. "."
+      else "No se puede poner nada sobre $+1."
 
   poner_bajo = poner (obj1) debajo (obj2)
     Where obj1 IsA object
       else "No puedes poner eso en ningún lugar."
     And obj2 IsA thing
-      else "No puedes poner nada bajo" say the obj1. "."
+      else "No puedes poner nada bajo $+1."
   poner_bajo = poner (obj1) debajo de (obj2). -- @CHECK: Is it working? (See #43)
 
 Add to every object
   Verb poner_cerca, poner_detras, poner_sobre, poner_bajo
     When obj1
-      Check obj1 in hero
-        else
-          "No tienes" say the obj1. "."
+      Check obj1 is not ornamentale else
+        If obj1 is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And obj2 is not ornamentale else
+        If obj2 is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj1 in hero
+        else say msg:no_tienes_P1.
       And obj2 not in hero
         else
-          "Llevas" say the obj2.
-          ". Si quieres tomar" say the obj1. "simplemente dilo."
+          "Llevas $+2."
+          ". Si quieres tomar $+1simplemente dilo."
     Does
-      "¡Naaah!. Prefiero poner" say the obj1. "en el suelo."
-      Locate obj1 At obj2.
+      "¡Naaah!. Prefiero poner $+1en el suelo."
+      Locate obj1 at obj2.
       -- In case item was being worn:
       Set portador of obj1 to nadie.
       Make obj1 not puesto.

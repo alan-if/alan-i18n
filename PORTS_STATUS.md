@@ -25,9 +25,9 @@ This document tracks the development status of ports of the library to other loc
 
 | EN                  | feature                                | Spanish             | Italian             |
 | :-----------------: | :------------------------------------- | :-----------------: | :-----------------: |
-| [`0.4.0`][EN 0.4.0] | Rename Scenery to Ornamental.          | &cross;             | &cross;             |
-| [`0.3.0`][EN 0.3.0] | Scenery Class Becomes an Attribute.    | &cross;             | [`0.3.0`][IT 0.3.0] |
-| [`0.2.5`][EN 0.2.5] | New `messages_library.i` module.       | &cross;             | [`0.3.0`][IT 0.3.0] |
+| [`0.4.0`][EN 0.4.0] | Rename Scenery to Ornamental.          | [`0.5.0`][ES 0.5.0] | &cross;             |
+| [`0.3.0`][EN 0.3.0] | Scenery Class Becomes an Attribute.    | [`0.5.0`][ES 0.5.0] | [`0.3.0`][IT 0.3.0] |
+| [`0.2.5`][EN 0.2.5] | New `messages_library.i` module.       | [`0.5.0`][ES 0.5.0] | [`0.3.0`][IT 0.3.0] |
 | [`0.2.4`][EN 0.2.4] | Add game transcription META verbs.     | [`0.3.3`][ES 0.3.3] | [`0.1.1`][IT 0.1.1] |
 | [`0.2.3`][EN 0.2.3] | Fix verbs targetting containers.       | [`0.3.2`][ES 0.3.2] | [`0.1.0`][IT 0.1.0] |
 | [`0.2.2`][EN 0.2.2] | Honour `xDesc`  in scenery.            | [`0.4.0`][ES 0.4.0] | [`0.1.0`][IT 0.1.0] |
@@ -146,6 +146,7 @@ We're open to rediscuss our methodology, accepting advise and making room for ne
 
 <!-- Spanish CHANGELOG -->
 
+[ES 0.5.0]: ./alan_es/Foundation/CHANGELOG.md#v050-20220119 "View Spanish CHANGELOG entry"
 [ES 0.4.0]: ./alan_es/Foundation/CHANGELOG.md#v040-20211207 "View Spanish CHANGELOG entry"
 [ES 0.3.3]: ./alan_es/Foundation/CHANGELOG.md#v033-20211122 "View Spanish CHANGELOG entry"
 [ES 0.3.2]: ./alan_es/Foundation/CHANGELOG.md#v032-20211111 "View Spanish CHANGELOG entry"

@@ -1,4 +1,4 @@
-﻿-- "mensajes.i" <- messages_runtime.i" (added in Foundation)
+﻿-- "mensajes_runtime.i" <- "messages_runtime.i" (added in Foundation)
 
 Message
 

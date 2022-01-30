@@ -27,7 +27,12 @@ Syntax
 
 Add to every object
   Verb comer
-    Check obj is comestible
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is comestible
       else "¡No te puedes comer es" say obj:adj_suf. "!"
     Does
       Locate obj at Limbo.
@@ -38,7 +43,12 @@ Add to every object
   End verb.
 
   Verb beber
-    Check obj is bebible
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is bebible
       else "Eso no se puede beber."
     Does
       Locate obj at Limbo.

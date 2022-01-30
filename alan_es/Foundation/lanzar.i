@@ -11,7 +11,12 @@ Syntax
 
 Add to every object
   Verb lanzar
-    Check obj in hero
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj in hero
       else "¡No tienes" say the obj. "!"
     Does
       "No puedes lanzarl" say obj:adj_suf.
@@ -38,7 +43,17 @@ Syntax
 Add to every object
   Verb lanzar_a
     When obj1
-      Check obj1 in hero
+      Check obj1 is not ornamentale else
+        If obj1 is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And obj2 is not ornamentale else
+        If obj2 is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj1 in hero
         else "¡No tienes" say the obj1. "!"
       And obj2 not in hero
         else "¡Tú llevas" say the obj2. "!"
@@ -65,7 +80,17 @@ Syntax
 Add to every object
   Verb lanzar_en
     When obj1
-      Check obj1 in hero
+      Check obj1 is not ornamentale else
+        If obj1 is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And obj2 is not ornamentale else
+        If obj2 is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj1 in hero
         else "¡No tienes" say the obj1. "!"
       And obj1 <> obj2
         else "¡Ese sería un gran truco!"

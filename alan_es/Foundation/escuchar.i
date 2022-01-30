@@ -11,8 +11,13 @@ Syntax
 
 Add to every thing
   Verb escuchar_el
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
     Does
-      "Escuchas" say the obj. "."
+      "Escuchas $+1."
   End verb.
 End add to.
 

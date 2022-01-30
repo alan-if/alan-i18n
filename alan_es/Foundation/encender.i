@@ -19,7 +19,12 @@ Syntax
 
 Add to every object
   Verb encender
-    Check obj is conmutable
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is conmutable
       else "No puedes encender" say the obj. "."
     And obj is not encendido
       else "Eso ya está encendido"
@@ -41,7 +46,12 @@ Syntax
 
 Add to every object
   Verb apagar
-    Check obj is conmutable
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is conmutable
       else "No se puede apagar."
     And obj is encendido
       else "Ya está apagado."

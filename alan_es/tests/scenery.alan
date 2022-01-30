@@ -1,6 +1,6 @@
-﻿-- ****************************************
--- SCENERY TEST by Ricardo Osio (2021)
--- ****************************************
+﻿-- ********************************************
+--   SCENERY TEST by Ricardo Osio (2021-2022)
+-- ********************************************
 -- This adventure aims to test 'scenery' objects and how they are described
 -- in Spanish when examined. It is mostly based in the scenery.alan test from
 -- the ALAN English Library.
@@ -27,7 +27,7 @@ The desierto IsA location
     Does "¡Solo hay más desierto esperándote en esa
           dirección!"
   End Exit.
-End The.
+End the.
 
 -- ****************************
 --
@@ -36,34 +36,75 @@ End The.
 -- ****************************
 
 -- The Sun
-The sol IsA escenario at desierto
+The sol IsA object at desierto
+  Is ornamentale.
+  Description ""
   Has xDesc "Parece un disco de metal derretido flotando en el cielo.".
-End The.
+End the.
 
 -- A cactus
-The cactus IsA escenario at desierto
-  Description "Un cactus solitario se levanta en la arena."
+The cactus IsA object at desierto
+  Is ornamentale.
+  -- @CHECK TRANSLATION: of last sentence ", next to an abandoned pit."
+  Description "Un cactus solitario se levanta en la arena,
+               al lado de un pozo abandonado."
   Has xDesc "Una planta robusta con muchas espinas.".
-End The.
+End the.
+
+-- A pit/well
+The pozo IsA object container at desierto
+  Is ornamentale.
+  Name pozo.
+  Name pozo abandonado.
+End the.
 
 -- An oasis
-The oasis IsA escenario at desierto
+The oasis IsA object at desierto
+  Is ornamentale.
   Description "Pareciese que hay algo en el horizonte, ¿un oasis quizás?"
   Has xDesc "Lamentablemente solo es una ilusión.".
-End The.
+End the.
 
 -- Some weeds
-The hierbas IsA escenario at desierto
+-- (we made them a 'container' just because we need a plural one for tests!)
+The hierbas IsA object container at desierto
   Has artículo "las".
+  Is ornamentale.
   Description "Ves algunas hierbas secas en el suelo."
   Has xDesc "".
-End The.
+End the.
 
 -- Sand
-The arena IsA escenario at desierto
+The arena IsA object at desierto
   Has artículo "la".
-End The.
+  Is ornamentale.
+  Description ""
+End the.
 
--- ============================================================================
+-- ***************************************
+
+-- N O N - S C E N E R Y   E N T I T I E S
+
+-- ***************************************
+
+-- We need some non-scenery objects in order to test verbs with multiple
+-- parameters, since we must test both parameters.
+
+-- A key
+The llave IsA object in hero
+  Has artículo "la".
+  Description ""
+End the.
+
+
+-- And at least one NPC (actors are never scenery):
+
+-- The skorpion
+The escorpión IsA actor at desierto
+  Name escorpión.
+  Name escorpion.
+End the.
+
+--------------------------------------------------------------------------------
 
 Start at desierto.

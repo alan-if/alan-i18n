@@ -14,6 +14,9 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 - [Pending Integrations](#pending-integrations)
 - [Beta Releases](#beta-releases)
+    - [v0.5.0 \(2022/01/19\)](#v050-20220119)
+        - [Escenario Class Becomes the `ornamentale` Attribute](#escenario-class-becomes-the-ornamentale-attribute)
+        - [New `mensajes_libreria.i` Module](#new-mensajes_libreriai-module)
     - [v0.4.0 \(2021/12/07\)](#v040-20211207)
         - [Honour Sceneries xDesc](#honour-sceneries-xdesc)
     - [v0.3.3 \(2021/11/22\)](#v033-20211122)
@@ -49,19 +52,64 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 A list of features and changes that need to be replayed on the Spanish Foundation, based on releases from either from the **English Foundation** (the reference library) or the **Italian Foundation**, for changes that only apply to the Spanish and Italian languages, which are similar.
 
-- [[`EN 0.2.5`][EN 0.2.5]] — New `messages_library.i` module.
-- [[`EN 0.3.0`][EN 0.3.0]] — Scenery Class Becomes an Attribute.
-- [[`EN 0.4.0`][EN 0.4.0]] — Rename Scenery to Ornamental.
-
-[EN 0.2.5]: https://github.com/alan-if/alan-i18n/blob/main/alan_en/Foundation/CHANGELOG.md#v025-20211222 "View English ChangeLog Entry"
-[EN 0.3.0]:  https://github.com/alan-if/alan-i18n/blob/main/alan_en/Foundation/CHANGELOG.md#v030-20211223 "View English ChangeLog Entry"
-[EN 0.4.0]:  https://github.com/alan-if/alan-i18n/blob/main/alan_en/Foundation/CHANGELOG.md#v040-20220110 "View English ChangeLog Entry"
+- _none_
 
 -------------------------------------------------------------------------------
 
 # Beta Releases
 
 The __Spanish Foundation Library__ is currently maintained by [Ricardo Osio] (main maintainer) and [Tristano Ajmone] (vice maintainer and collaborator).
+
+## v0.5.0 (2022/01/19)
+
+### Escenario Class Becomes the `ornamentale` Attribute
+
+> Apply to Spanish library equivalent changes to English Foundation v0.3.0 and v0.4.0.
+
+Drop the `escenario` class in favour of a `ornamentale` attribute added to every `entity`:
+
+- `atributos.i` — add `Is not ornamentale` to every `entity`.
+- `escenario.i` — module deleted.
+- `Library.i` — delete `Import 'escenario.i` directive.
+- `examinar.i` — tweak verb `examinar` to show default scenery responses if the instance `is ornamentale` and has an empty `xDesc` string attribute.
+
+In all verbs taking parameters, add CHECKs to prevent the action when a parameter is `ornamentale`, with the following exceptions:
+
+- Verb `examinar` is allowed, a non-empty `xDesc` will be honoured.
+- Actor parameters have no `ornamentale` CHECKs, since actors shouldn't be scenery.
+- In conversation verbs, topic parameters can be `ornamentale`.
+
+
+### New `mensajes_libreria.i` Module
+
+> Apply to Spanish library equivalent changes to English Foundation v0.2.5.
+
+- Renamed `mensajes.i` to `mensajes_runtime.i`
+- Added a new `mensajes_libreria.i` module defining an hidden `msg` location on which recurrent library messages are defined as string attributes.
+This allows:
+    + Editing recurrent messages in a single source file.
+    + Changing the default messages from within an adventure, even during play, instead of editing the library sources.
+    + Optimizing compiled games size by reducing string redundancy.
+
+- In `mensajes_libreria.i`, the following attributes were defined covering standard responses for scenery, violence and missing objects:
+
+    |           attribute            |                value                |
+    |--------------------------------|-------------------------------------|
+    | `msg:no_tienes_P1`             | `"No tienes $+1!"`                  |
+    | `msg:no_tienes_P2`             | `"No tienes $+2!"`                  |
+    | `msg:ornamentale_P1_pl`        | `"Olvida $+1, no son importantes."` |
+    | `msg:ornamentale_P1_sg`        | `"Olvida $+1, no es importante."`   |
+    | `msg:ornamentale_P2_pl`        | `"Olvida $+2, no son importantes."` |
+    | `msg:ornamentale_P2_sg`        | `"Olvida $+2, no es importante."`   |
+    | `msg:violencia_no_es_solución` | `"La violencia no es la solución."` |
+
+- All verbs and syntaxes using those standard responses where adapted accordingly.
+
+In the future, more message attributes will be added for recurring messages, trying to adopt flexible messages template which work well with different `VERB`, `WHERE` and `CHECK` responses.
+
+> **NOTE** — For more info on library messages, see the
+[_Foundation Library Design_](../../dev-docs/design/Foundation-Design.html#library_messages) documentation.
+
 
 
 ## v0.4.0 (2021/12/07)

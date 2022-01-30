@@ -1,10 +1,10 @@
 ﻿--==============================================================================
 --------------------------------------------------------------------------------
--- * * V A M P I R O  de Bruce Humphrey * *  v2.2.0 | 2021/12/05 | ALAN 3.0Beta8
+-- * * V A M P I R O  de Bruce Humphrey * *  v2.3.0 | 2022/01/19 | ALAN 3.0Beta8
 --------------------------------------------------------------------------------
 --==============================================================================
 
---  Vampiro para ALAN Foundation Library Spanish v0.4.0.
+--  Vampiro para ALAN Foundation Library Spanish v0.5.0.
 --
 -- Esta es la versión en ALAN + libreria española de "Memorias de reXXe",
 -- también conocido como "Vampiro". Este código fuente forma parte del
@@ -85,30 +85,36 @@ The Hall IsA lugar
   Exit norte to Pasillo.
 End the Hall.
 
-The lapuerta IsA Escenario at Hall
+The lapuerta IsA object at Hall
   Has artículo "la".
   Name puerta.
   Name salida.
   Name entrada.
+  Is ornamentale.
   Is not abierto.
   Description ""
   Has xDesc "Es muy grande y está cerrada. No la vas a poder abrir.".
 
+  -- @NOTE: Since for scenery/ornamental objects all verbs are blocked
+  --        via CHECKs, this verb will never execute!
   Verb abrir
     Does only "¡Te he dicho que no la puedes abrir, Melón!"
   End verb.
 End the lapuerta.
 
-The pasillodesdevestibulo IsA Escenario at Hall
+The pasillodesdevestibulo IsA object at Hall
   Name pasillo.
+  Is ornamentale.
   Description ""
   Has xDesc "Es el pasillo principal, se extiende hacia el norte.".
 End the pasillodesdevestibulo.
 
-The objVestibulo IsA Escenario at Hall
+The objVestibulo IsA object at Hall
   Name Vestíbulo.
   Name Vestibulo.
   Name Hall.
+  Is ornamentale.
+  Description ""
   Has xDesc "El ambiente es muy húmedo y frío.
              Estás en un pasillo que se extiende hacia el norte.
              Al sur queda la puerta de entrada al castillo.".
@@ -139,8 +145,9 @@ The Traje IsA Object in hero
   Has xDesc "Es un traje barato comprado en las rebajas.".
 End the Traje.
 
-The pasillodesdepasillo IsA Escenario at Pasillo
+The pasillodesdepasillo IsA object at Pasillo
   Name pasillo.
+  Is ornamentale.
   Description ""
   Has xDesc "Es el pasillo principal, se extiende hacia el norte y el sur.".
 End the pasillodesdepasillo.
@@ -177,10 +184,11 @@ The palanca IsA Object at Biblioteca.
   Has xDesc "Es una palanca de acero toledano. Sirve para forzar cosas.".
 End the palanca.
 
-The libros IsA Escenario at Biblioteca.
+The libros IsA object at Biblioteca.
   Has artículo "los".
   Name libros.
   Name libro.
+  Is ornamentale.
   Is leible.
   Description ""
   Has xDesc "Montones de libros, pero no tengo tiempo para leer ahora.".
@@ -196,8 +204,9 @@ The libros IsA Escenario at Biblioteca.
   End verb.
 End the libros.
 
-The pasillodesdebiblioteca IsA Escenario at Biblioteca
+The pasillodesdebiblioteca IsA object at Biblioteca
   Name pasillo.
+  Is ornamentale.
   Description ""
   Has xDesc "El pasillo está al oeste.".
 End the pasillodesdebiblioteca.
@@ -214,17 +223,19 @@ The Cocina IsA lugar
   Exit este to Pasillo.
 End the Cocina.
 
-The Horno IsA Escenario at Cocina
+The Horno IsA object at Cocina
   Name Horno.
+  Is ornamentale.
   Description ""
   Has xDesc "Un simple horno, no tiene ninguna importancia.".
 End the Horno.
 
 Synonyms
   cacharro, cacerola, cacerolas = cacharros.
-The Cacharros IsA Escenario at Cocina
+The Cacharros IsA object at Cocina
   Has artículo "los".
   Name cacharros.
+  Is ornamentale.
   Description ""
   Has xDesc "Simples cacerolas y cacharros de cocina.".
 End the Cacharros.
@@ -235,13 +246,14 @@ The Cuchillo IsA Object in Fregadero
   Has xDesc "Un simple cuchillo de cocina. Pincha.".
 End the Cuchillo.
 
-The Fregadero IsA Escenario at Cocina
+The Fregadero IsA object at Cocina
   Container
     Header
       "En el fregadero hay"
     else
       "El fregadero está vacío."
   Name fregadero.
+  Is ornamentale.
   Description ""
 
   Verb Examinar
@@ -301,8 +313,9 @@ The Armario IsA ContenedorCerr at Cocina
    End verb.
 End the Armario.
 
-The pasillodesdecocina IsA Escenario at Biblioteca
+The pasillodesdecocina IsA object at Biblioteca
   Name pasillo.
+  Is ornamentale.
   Description ""
   Has xDesc "El pasillo está al este.".
 End the pasillodesdecocina.
@@ -325,15 +338,17 @@ End the HabEscaleras.
 
 Synonyms
   escalones, escalon, escalera = escaleras.
-The escalones_escalera IsA Escenario at HabEscaleras
+The escalones_escalera IsA object at HabEscaleras
   Has artículo "las".
   Name escaleras.
+  Is ornamentale.
   Description ""
   Has xDesc "Unas polvorientas escaleras. Unas suben y otras bajan.".
 End the escalones_escalera.
 
-The pasillodesdeescaleras IsA Escenario at Biblioteca
+The pasillodesdeescaleras IsA object at Biblioteca
   Name pasillo.
+  Is ornamentale.
   Description ""
   Has xDesc "El pasillo principal del castillo se extiende hacia el sur.".
 End the pasillodesdeescaleras.
@@ -372,9 +387,10 @@ The armario_dormitorio IsA object at Dormitorio.
   End verb.
 End the armario_dormitorio.
 
-The Cama IsA Escenario at Dormitorio
+The Cama IsA object at Dormitorio
   Has artículo "la".
   Name cama.
+  Is ornamentale.
   Description ""
   Has xDesc "Está cubierta de sábanas.".
 End the Cama.
@@ -396,8 +412,9 @@ The Sabanas IsA Object at Dormitorio
   End verb.
 End the Sabanas.
 
-The pasillodesdedormitorio IsA Escenario at Biblioteca
+The pasillodesdedormitorio IsA object at Biblioteca
   Name pasillo.
+  Is ornamentale.
   Description ""
   Has xDesc "El pasillo está al este.".
 End the pasillodesdedormitorio.
@@ -416,27 +433,30 @@ The Sala IsA lugar
   Exit oeste to HabEscaleras.
 End the Sala.
 
-The trofeos IsA Escenario at Sala
+The trofeos IsA object at Sala
   Has artículo "los".
   Name trofeos.
   Name trofeo.
+  Is ornamentale.
   Description ""
   Has xDesc "Insignificante trofeos.".
 End the trofeos.
 
-The adornos IsA Escenario at Sala
+The adornos IsA object at Sala
   Has artículo "los".
   Name adornos.
   Name adorno.
+  Is ornamentale.
   Description ""
   Has xDesc "Adornan.".
 End the adornos.
 
-The chimenea IsA Escenario at Sala
+The chimenea IsA object at Sala
   Has artículo "la".
   Name chimenea.
   Name ladrillos.
   Name ladrillo.
+  Is ornamentale.
   Is buscable.
   Description ""
   Has xDesc "Es una chimenea hecha de ladrillos y muy elegante.".
@@ -451,9 +471,10 @@ The chimenea IsA Escenario at Sala
   End verb.
 End the chimenea.
 
-The restos IsA escenario at Sala
+The restos IsA object at Sala
   Name restos.
   Name fuego.
+  Is ornamentale.
   Description ""
   Verb Examinar
     Does only
@@ -465,26 +486,29 @@ The restos IsA escenario at Sala
   End verb.
 End the restos.
 
-The mesa IsA Escenario at Sala
+The mesa IsA object at Sala
   Has artículo "la".
   Name mesa.
   Name mesa caoba.
   Name mesa grande.
   Name gran mesa.
+  Is ornamentale.
   Description ""
   Has xDesc "Una mesa de caoba, bastante grande.".
 End the mesa.
 
-The silla IsA Escenario at Sala
+The silla IsA object at Sala
   Has artículo "la".
   Name silla.
   Name silla cómoda.
+  Is ornamentale.
   Description ""
   Has xDesc "Una cómoda silla.".
 End the silla.
 
-The pasillodesdesala IsA Escenario at Biblioteca
+The pasillodesdesala IsA object at Biblioteca
   Name pasillo.
+  Is ornamentale.
   Description ""
   Has xDesc "El pasillo está al oeste.".
 End the pasillodesdesala.
@@ -501,9 +525,10 @@ The Sotano IsA lugar
   Exit arriba to HabEscaleras.
 End the Sotano.
 
-The escalones_sotano IsA Escenario at Sotano
+The escalones_sotano IsA object at Sotano
   Has artículo "la".
   Name escaleras.
+  Is ornamentale.
   Description ""
   Has xDesc "Estos escalones conducen al piso superior.".
 End the escalones_sotano.
@@ -570,9 +595,10 @@ The Rellano IsA lugar
   Exit oeste to HabVampiro.
 End the Rellano.
 
-The escalones_arriba IsA Escenario at Rellano
+The escalones_arriba IsA object at Rellano
   Has artículo "la".
   Name escaleras.
+  Is ornamentale.
   Description  -- @CEHCK: Añadir concordancia número y género, como la versión InformAte
     "Conducen al piso inferior."
 End the escalones_arriba.
@@ -589,8 +615,9 @@ The HabVampiro IsA lugar
   Exit este to Rellano.
 End the HabVampiro.
 
-The Altar IsA Escenario at HabVampiro
+The Altar IsA object at HabVampiro
   Name altar.
+  Is ornamentale.
   Description ""
   Has xDesc "Es un altar de dura piedra.
              Encima de éste está el ataud.".
@@ -814,7 +841,7 @@ Visits 0. -- modo verbose
 
 "$t-Memorias de Rexxe-$n
 (c) 1998 Jaume Alcazo Castellarnau.$n$n
-Esta es la versión 2.1.1, programada en ALAN del juego
+Esta es la versión 2.3.0, programada en ALAN del juego
 ""Vampiro"" original de Aventuras ALCAZO. Para más información
 teclea HISTORIA en el juego.$n$nMuchas gracias por jugar$n$n"
 "$n$n$tDespiertas aturdido. Después de unos segundos te incorporas

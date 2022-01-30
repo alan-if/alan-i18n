@@ -14,3 +14,227 @@ x cactus
 ; If the object has no xDesc, then the default message appears.
 x arena
 x hierbas
+; ============================================================================
+;                      TEST VERBS WITH SCENERY PARAMETERS
+; ============================================================================
+; All verbs (with a few exceptions) will prevent the action if any of the
+; parameters is a scenery object ('Is ornamentale'). With multi-parameter
+; verbs, we'll need to test both the first and second parameter against a
+; scenery object.
+; ----------------------------------------------------------------------------
+; 'abrir.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+abri cactus
+abri cactus con llave
+abri llave con cactus
+cierra cactus
+cierra cactus con llave
+cierra llave con cactus
+; // PLURAL //
+abri hierbas
+abri hierbas con llave
+abri llave con hierbas
+cierra hierbas
+cierra hierbas con llave
+cierra llave con hierbas
+; ----------------------------------------------------------------------------
+; 'atacar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+ataca cactus
+ataca cactus con llave
+ataca llave con cactus
+dispara cactus
+dispara cactus a llave
+dispara llave a cactus
+dispara cactus con llave
+dispara llave con cactus
+; // PLURAL //
+ataca hierbas
+ataca hierbas con llave
+ataca llave con hierbas
+dispara hierbas
+dispara hierbas a llave
+dispara llave a hierbas
+dispara hierbas con llave
+dispara llave con hierbas
+; ----------------------------------------------------------------------------
+; 'besar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+besa cactus
+; // PLURAL //
+besa hierbas
+; ----------------------------------------------------------------------------
+; 'comer.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+come cactus
+bebe cactus
+; // PLURAL //
+come hierbas
+bebe hierbas
+; ----------------------------------------------------------------------------
+; 'dar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+da pozo a hierbas ; test P1
+da llave a pozo ; test P2
+; // PLURAL //
+da hierbas a pozo ; test P1
+da llave a hierbas ; test P2
+; ----------------------------------------------------------------------------
+; 'empujar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+empuja cactus
+empuja cactus con llave
+; // PLURAL //
+empuja hierbas
+empuja hierbas con llave
+; ----------------------------------------------------------------------------
+; 'encender.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+encende cactus
+apaga cactus
+; // PLURAL //
+encende hierbas
+apaga hierbas
+; ----------------------------------------------------------------------------
+; 'escuchar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+escucha cactus
+; // PLURAL //
+escucha hierbas
+; ----------------------------------------------------------------------------
+; 'examinar.i'
+; ----------------------------------------------------------------------------
+; We'll skip 'examine' since it's not blocked! (see previous tests)
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; @NOTE: The busca/mira syntax variations/synonyms are not available!
+;        See annotated source comments and proposed fixes.
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; // SINGULAR //
+buscar cactus
+mirar en pozo
+; // PLURAL //
+buscar hierbas
+mirar en hierbas
+; ----------------------------------------------------------------------------
+; 'hablar.i'
+; ----------------------------------------------------------------------------
+; Note that the scorpion is not a scenery!
+;
+; // EXCEPTIONS //
+; Topic parameters can be scenery:
+di cactus
+di cactus a escorpión
+pregunta escorpión por cactus
+habla con escorpión sobre cactus
+; // SINGULAR //
+di escorpión a cactus
+pregunta cactus por escorpión
+habla con cactus
+habla con cactus sobre escorpión
+; // PLURAL //
+di escorpión a hierbas
+pregunta hierbas por escorpión
+habla con hierbas
+habla con hierbas sobre escorpión
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; @NOTE: Currently these conversation verbs accept talking to any 'thing'
+;        parameter, not just actors! This might change in the future.
+; ----------------------------------------------------------------------------
+; 'lanzar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+lanza cactus
+lanza cactus a escorpión
+lanza llave a cactus
+lanza cactus en pozo
+lanza llave en pozo
+; // PLURAL //
+lanza hierbas
+lanza hierbas a escorpión
+lanza llave a hierbas
+lanza hierbas en pozo
+lanza llave en pozo
+; ----------------------------------------------------------------------------
+; 'leer.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+lee cactus
+; // PLURAL //
+lee hierbas
+; ----------------------------------------------------------------------------
+; 'llamar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+llama cactus
+; // PLURAL //
+llama hierbas
+; ----------------------------------------------------------------------------
+; 'llevar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+lleva cactus
+quita cactus
+; // PLURAL //
+lleva hierbas
+quita hierbas
+; ----------------------------------------------------------------------------
+; 'oler.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+huele cactus
+; // PLURAL //
+huele hierbas
+; ----------------------------------------------------------------------------
+; 'poner.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+pone cactus
+pone cactus en pozo ; test P1
+pone llave en pozo ; test P2
+pone cactus cerca pozo ; test P1
+pone llave cerca pozo ; test P2
+; // PLURAL //
+pone hierbas
+pone hierbas en pozo ; test P1
+pone llave en hierbas ; test P2
+pone hierbas cerca pozo ; test P1
+pone llave cerca hierbas ; test P2
+; ----------------------------------------------------------------------------
+; 'saltar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+salta en cactus
+; // PLURAL //
+salta en hierbas
+; ----------------------------------------------------------------------------
+; 'tocar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+toca cactus
+toca cactus con llave ; test P1
+toca llave con cactus ; test P2
+; // PLURAL //
+toca hierbas
+toca hierbas con llave ; test P1
+toca llave con hierbas ; test P2
+; ----------------------------------------------------------------------------
+; 'tomar.i'
+; ----------------------------------------------------------------------------
+; // SINGULAR //
+toma cactus
+toma cactus de pozo ; test P1
+toma llave de pozo ; test P2
+deja cactus
+; // PLURAL //
+toma hierbas
+toma hierbas de pozo ; test P1
+toma llave de hierbas ; test P2
+deja hierbas

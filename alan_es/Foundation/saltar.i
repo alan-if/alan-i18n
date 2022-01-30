@@ -12,8 +12,13 @@ Syntax
 
 Add to every thing
   Verb saltar_en
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
     Does
-      "Saltas sobre" say the obj. "."
+      "Saltas sobre $+1."
   End verb.
 End add to.
 

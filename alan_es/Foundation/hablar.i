@@ -35,6 +35,9 @@ Add to every actor
   Is habla.
 End add to actor.
 
+-- NOTE: Topic parameters (tema) are allowed to be 'ornamentale' (scenery).
+--       This is one of the exceptions to the rule that all verbs should be
+--       blocked on scenery objects.
 
 Synonyms
   grita, grito,
@@ -77,10 +80,15 @@ Syntax
 Add to every thing
   Verb decir_a
     When act
-      Check act has habla
-        else "No puedes hablar con eso."
+      Check act is not ornamentale else
+        If act is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And act has habla
+        else "No puedes hablar con eso." -- @CHECK: GNA OK here?
     Does
-      Say the act. "no parece interesado."
+      Say the act. "no parece interesado." -- @CHECK: GNA OK here?
   End verb.
 End add to.
 
@@ -98,7 +106,12 @@ Syntax
 Add to every thing
   Verb preguntar
     When act
-      Check act has habla
+      Check act is not ornamentale else
+        If act is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And act has habla
         else "No puedes hablar con eso."
     Does
       Say the act. "dice ""¡No sé nada sobre" say the tema. "!"""
@@ -124,7 +137,12 @@ Syntax
 Add to every thing
   Verb hablar_con
     When tema
-      Check act has habla
+      Check act is not ornamentale else
+        If act is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And act has habla
         else "No puedo hablar con eso."
     Does
       """No creo que deba saber sobre" say the tema. "$$,"" dice"
@@ -142,10 +160,15 @@ Syntax
 
 Add to every thing
   Verb hablar_con_act
-    Check act has habla
+    Check act is not ornamentale else
+      If act is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And act has habla
       else "No puedes hablar con eso."
     Does
-      Say the act. "te mira, aparentemente pensando si tienes algo
-      específico sobre lo que hablar."
+      "$+1 te mira, aparentemente pensando si tienes algo
+       específico sobre lo que hablar."
   End verb.
 End add to.

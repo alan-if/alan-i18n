@@ -1,6 +1,6 @@
-﻿-- ***********************************************
---   META MESSAGES TEST by Ricardo Osio (2021)
--- ***********************************************
+﻿-- **************************************************
+--   META MESSAGES TEST by Ricardo Osio (2021-2022)
+-- **************************************************
 
 -- This adventure is for testing "meta" stuff:
 
@@ -379,7 +379,8 @@ End every.
 -- To simplify listing the various code snippets, we gather them inside a virtual
 -- scenery object which can be examined by the player:
 
-The snippets IsA escenario at bugsRoom.
+The snippets IsA object at bugsRoom.
+  Is ornamentale.
   Name fragmentos de código.
   Name codigo. Name fragmentos.
   Has artículo "los".
@@ -586,15 +587,18 @@ End the.
 --------------------------------------------------------------------------------
 --==============================================================================
 
-Every test_obj IsA escenario.
+Every test_obj IsA object.
   Container taking test_obj.
+  -- Is ornamentale. --> Removed since scenery CEHCKs it would prevent the VERB
+  --                     from triggering some RT messages.
   Description ""
 End every.
 
 -- To simplify listing the various test objects, we gather them inside a virtual
 -- scenery object which can be examined by the player:
 
-The test_objects IsA escenario at bugsRoom.
+The test_objects IsA object at bugsRoom.
+  Is ornamentale.
   Name objetos de prueba.
   Name objetos.
   Has artículo "los".

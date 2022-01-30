@@ -12,23 +12,26 @@ Add to every actor
   Is not inanimado.
 End add to actor.
 
+
 Synonyms
   toma, tomo, agarro, agarra, agarrar, cojo, coge, coger,
   recojo, recoge, recoger = tomar.
 
-  deja, dejo, descarto, descarta, descartar, suelto,
-  suelta, soltar = dejar.
-
 Syntax
   tomar = tomar (obj) *
     Where obj IsA object
-      else "¡No puedes tomar" say the obj. "!"
+      else "¡No puedes tomar $+1!"
 
 
 Add to every object
   Verb tomar
-    Check obj is tomable
-      else "¡No puedes tomar" say the obj. "!"
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is tomable
+      else "¡No puedes tomar $+1!"
     And obj not in hero
       else
 -- @NOTE: ALAN is buggy when wrapping lines at words that use $$ continuation,
@@ -63,10 +66,14 @@ Add to every object
       -- In case item was being worn:
       Set portador of obj to nadie.
       Make obj not puesto.
-      "Tomas" say the obj. "."
+      "Tomas $+1."
   End verb.
 End add to.
 
+
+Synonyms
+  deja, dejo, descarto, descarta, descartar, suelto,
+  suelta, soltar = dejar.
 
 Syntax
   dejar = dejar (obj) *.
@@ -74,14 +81,19 @@ Syntax
 
 Add to every object
   Verb dejar
-    Check obj in hero
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj in hero
       else "No lo llevas."
     Does
       Locate obj here.
       -- In case item was being worn:
       Set portador of obj to nadie.
       Make obj not puesto.
-      "Dejas" say the obj. "."
+      "Dejas $+1."
   End verb.
 End add to.
 
@@ -100,10 +112,20 @@ Syntax
 Add to every object
   Verb tomar_de
     When obj
-      Check obj not in hero
-        else "Ya llevas" say the obj. "."
+      Check obj is not ornamentale else
+        If obj is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And cont is not ornamentale else
+        If cont is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj not in hero
+        else "Ya llevas $+1."
       And obj in cont
-        else say the obj. "no está."
+        else "$+1 no está."
     Does
       If cont=hero then
         "¡No necesitas tomar cosas de ti mismo!"
@@ -112,7 +134,7 @@ Add to every object
         -- In case item was being worn:
         Set portador of obj to nadie.
         Make obj not puesto.
-        "Tomas" say the obj. "."
+        "Tomas $+1."
       End if.
   End verb.
 End add.

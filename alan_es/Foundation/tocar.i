@@ -21,19 +21,34 @@ Syntax
 
 Add to every object
   Verb tocar
-    Check obj is tocable
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is tocable
       else "Eso es intocable."
     Does
-      "Tocas" say the obj. "."
+      "Tocas $+1."
   End verb.
 
   Verb tocar_con
     When obj1
-      Check obj1 is tocable
+      Check obj1 is not ornamentale else
+        If obj1 is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
+      And obj2 is not ornamentale else
+        If obj2 is plural
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
+        End if.
+      And obj1 is tocable
         else "Eso es intocable."
       And obj1 <> obj2
         else "No tiene sentido tocar algo con si mismo."
     Does
-    "Tocas" say the obj1. "con" say the obj2. "."
+      "Tocas $+1 con $+2."
   End verb.
 End add to.

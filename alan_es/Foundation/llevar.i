@@ -15,24 +15,23 @@ Syntax
 
 Add to every object
   Verb llevar
-    Check obj is ponible
-      else "No puedes ponerte" say the obj. "."
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is ponible
+      else "No puedes ponerte $+1."
     And portador of obj <> hero
-      else "Ya llevas puesto" say the obj. "."
- -- And obj not in llevado
- --   else "Ya llevas" say the obj. "."
+      else "Ya llevas puesto $+1."
     And obj is tomable
-      else "No puedes tomar" say the obj.
+      else "No puedes tomar $+1."
     And obj in hero
-      else "No llevas" say the obj.
+      else "No llevas $+1."
     Does
---    If obj not in hero then
---      Locate obj in hero.
---      "(tomas" say the obj. ".)$n"
---    End if.
       Set portador of obj to hero.
       Make obj puesto.
-      "Te pones" say the obj. "."
+      "Te pones $+1."
     End verb.
 End add to.
 
@@ -46,12 +45,17 @@ Syntax
 
 Add to every object
   Verb quitar
-    Check portador of obj = hero
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And portador of obj = hero
       else "No llevas" say the obj. "."
     Does
       Set portador of obj to nadie.
       Make obj not puesto.
-      "Te quitas" say the obj. "."
+      "Te quitas $+1."
     End verb.
 End add to.
 

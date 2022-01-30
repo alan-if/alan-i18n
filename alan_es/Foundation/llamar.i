@@ -11,8 +11,13 @@ Syntax
 
 Add to every thing
   Verb llamar_a
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
     Does
-      "Llamas a" say the obj. "."
+      "Llamas a $+1."
   End verb.
 End add to.
 

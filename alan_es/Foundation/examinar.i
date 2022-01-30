@@ -26,8 +26,13 @@ Add to every thing
     Check obj is examinable
       else "No puedes examinar" say the obj. "."
     Does
-      If xDesc of obj <> ""
-        then say xDesc of obj.
+      If xDesc of obj <> ""then
+        say xDesc of obj.
+      ElsIf obj is ornamentale then
+        If obj is plural
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
+        End if.
         else "No hay nada particular acerca de" say the obj. "."
       End if.
   End verb.
@@ -124,6 +129,9 @@ Verb mirar
     Look.
 End verb.
 
+-- @NOTE: There are no 'mira'/'miro' SYNONYMS or SYNTAX variants!
+--        Should they be? or for grammatical reasons they are not OK?
+
 Syntax
   mirar_en = mirar en (obj)
     Where obj IsA thing
@@ -134,9 +142,23 @@ Syntax
   mirar_en = mirar dentro de (obj). -- @CHECK: Is it working? (See #43)
   mirar_en = mirar (obj).
 
+-- @NOTE: Unlike 'examinar', the 'mirar_en' verb is blocked on scenery objects;
+--        which makes the 'mirar (obj)' alternative syntax seem strange, since
+--        they are very similar actions (if not identical).
+
+--        A possible fix would be to assign mirar (obj)' to the 'examinar' verb,
+--        instead of 'mirar_en'. This should be fine, unless the author
+--        intended different results for the two forms -- would that be a
+--        possibility? Are these two forms different enough to justify it?
+
 Add to every object
   Verb mirar_en
-    Check obj is examinable
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is examinable
       else "No puedes mirar en" say the obj. "."
     Does
       List obj.
@@ -154,9 +176,17 @@ Syntax
   buscar = buscar dentro (obj).
   buscar = buscar dentro de (obj). -- @CHECK: Is it working? (See #43)
 
+-- @NOTE: There are no 'busca'/'busco' SYNONYMS or SYNTAX variants!
+--        Should they be? or for grammatical reasons they are not OK?
+
 Add to every object
   Verb buscar
-    Check obj is buscable
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
+    And obj is buscable
       else "No puedes buscar en" say the obj. "."
     Does
       "No encuentras nada de interés."

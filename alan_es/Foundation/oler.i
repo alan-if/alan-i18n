@@ -1,6 +1,5 @@
 ﻿-- "oler.i" <-- "smell.i"
 
-
 Synonyms
   huele, huelo,
   olisqueo, olisquea, olisquear,
@@ -22,7 +21,12 @@ Syntax
 
 Add to every thing
   Verb oler
+    Check obj is not ornamentale else
+      If obj is plural
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
+      End if.
     Does
-      "Hueles" say the obj. "."
+      "Hueles $+1."
   End verb.
 End add to.

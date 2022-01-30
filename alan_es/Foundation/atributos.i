@@ -10,9 +10,13 @@
 -- |            statements herein contained somewhere else.                    |
 -- +---------------------------------------------------------------------------+
 
+Add to every entity
+  Is not ornamentale.
+End add.
+
 Add to every actor
   Container
-End add to actor.
+End add.
 
 
 Every named_actor IsA actor

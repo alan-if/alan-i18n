@@ -3,9 +3,9 @@
 Desierto
 Estás rodeado por arena y dunas. Un sol abrasador flota encima de ti,
 siguiéndote a dondequiera que vayas. El calor es irresistible, necesitas
-encontrar agua. Un cactus solitario se levanta en la arena. Pareciese que
-hay algo en el horizonte, ¿un oasis quizás? Ves algunas hierbas secas en
-el suelo.
+encontrar agua. Un cactus solitario se levanta en la arena, al lado de un
+pozo abandonado. Pareciese que hay algo en el horizonte, ¿un oasis quizás? 
+Ves algunas hierbas secas en el suelo. Hay un pozo. Hay un escorpión.
 
 > ; *********************************
 > ; TEST SCENERY OBJECTS DESCRIPTIONS
@@ -31,6 +31,450 @@ Una planta robusta con muchas espinas.
 Olvida la arena, no es importante.
 
 > x hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ============================================================================
+> ;                      TEST VERBS WITH SCENERY PARAMETERS
+> ; ============================================================================
+> ; All verbs (with a few exceptions) will prevent the action if any of the
+> ; parameters is a scenery object ('Is ornamentale'). With multi-parameter
+> ; verbs, we'll need to test both the first and second parameter against a
+> ; scenery object.
+> ; ----------------------------------------------------------------------------
+> ; 'abrir.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> abri cactus
+Olvida el cactus, no es importante.
+
+> abri cactus con llave
+Olvida el cactus, no es importante.
+
+> abri llave con cactus
+Olvida el cactus, no es importante.
+
+> cierra cactus
+Olvida el cactus, no es importante.
+
+> cierra cactus con llave
+Olvida el cactus, no es importante.
+
+> cierra llave con cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> abri hierbas
+Olvida las hierbas, no son importantes.
+
+> abri hierbas con llave
+Olvida las hierbas, no son importantes.
+
+> abri llave con hierbas
+Olvida las hierbas, no son importantes.
+
+> cierra hierbas
+Olvida las hierbas, no son importantes.
+
+> cierra hierbas con llave
+Olvida las hierbas, no son importantes.
+
+> cierra llave con hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'atacar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> ataca cactus
+Olvida el cactus, no es importante.
+
+> ataca cactus con llave
+Olvida el cactus, no es importante.
+
+> ataca llave con cactus
+Olvida el cactus, no es importante.
+
+> dispara cactus
+Olvida el cactus, no es importante.
+
+> dispara cactus a llave
+Olvida el cactus, no es importante.
+
+> dispara llave a cactus
+Olvida el cactus, no es importante.
+
+> dispara cactus con llave
+Olvida el cactus, no es importante.
+
+> dispara llave con cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> ataca hierbas
+Olvida las hierbas, no son importantes.
+
+> ataca hierbas con llave
+Olvida las hierbas, no son importantes.
+
+> ataca llave con hierbas
+Olvida las hierbas, no son importantes.
+
+> dispara hierbas
+Olvida las hierbas, no son importantes.
+
+> dispara hierbas a llave
+Olvida las hierbas, no son importantes.
+
+> dispara llave a hierbas
+Olvida las hierbas, no son importantes.
+
+> dispara hierbas con llave
+Olvida las hierbas, no son importantes.
+
+> dispara llave con hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'besar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> besa cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> besa hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'comer.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> come cactus
+Olvida el cactus, no es importante.
+
+> bebe cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> come hierbas
+Olvida las hierbas, no son importantes.
+
+> bebe hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'dar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> da pozo a hierbas ; test P1
+Olvida el pozo, no es importante.
+
+> da llave a pozo ; test P2
+Olvida el pozo, no es importante.
+
+> ; // PLURAL //
+> da hierbas a pozo ; test P1
+Olvida las hierbas, no son importantes.
+
+> da llave a hierbas ; test P2
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'empujar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> empuja cactus
+Olvida el cactus, no es importante.
+
+> empuja cactus con llave
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> empuja hierbas
+Olvida las hierbas, no son importantes.
+
+> empuja hierbas con llave
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'encender.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> encende cactus
+Olvida el cactus, no es importante.
+
+> apaga cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> encende hierbas
+Olvida las hierbas, no son importantes.
+
+> apaga hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'escuchar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> escucha cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> escucha hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'examinar.i'
+> ; ----------------------------------------------------------------------------
+> ; We'll skip 'examine' since it's not blocked! (see previous tests)
+> ; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> ; @NOTE: The busca/mira syntax variations/synonyms are not available!
+> ;        See annotated source comments and proposed fixes.
+> ; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> ; // SINGULAR //
+> buscar cactus
+Olvida el cactus, no es importante.
+
+> mirar en pozo
+Olvida el pozo, no es importante.
+
+> ; // PLURAL //
+> buscar hierbas
+Olvida las hierbas, no son importantes.
+
+> mirar en hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'hablar.i'
+> ; ----------------------------------------------------------------------------
+> ; Note that the scorpion is not a scenery!
+> ;
+> ; // EXCEPTIONS //
+> ; Topic parameters can be scenery:
+> di cactus
+Cactus ... ¡Qué concepto tan hermoso!
+
+> di cactus a escorpión
+El escorpión no parece interesado.
+
+> pregunta escorpión por cactus
+El escorpión dice "¡No sé nada sobre el cactus !"
+
+> habla con escorpión sobre cactus
+"No creo que deba saber sobre el cactus," dice el escorpión.
+
+> ; // SINGULAR //
+> di escorpión a cactus
+Olvida el cactus, no es importante.
+
+> pregunta cactus por escorpión
+Olvida el cactus, no es importante.
+
+> habla con cactus
+Olvida el cactus, no es importante.
+
+> habla con cactus sobre escorpión
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> di escorpión a hierbas
+Olvida las hierbas, no son importantes.
+
+> pregunta hierbas por escorpión
+Olvida las hierbas, no son importantes.
+
+> habla con hierbas
+Olvida las hierbas, no son importantes.
+
+> habla con hierbas sobre escorpión
+Olvida las hierbas, no son importantes.
+
+> ; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> ; @NOTE: Currently these conversation verbs accept talking to any 'thing'
+> ;        parameter, not just actors! This might change in the future.
+> ; ----------------------------------------------------------------------------
+> ; 'lanzar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> lanza cactus
+Olvida el cactus, no es importante.
+
+> lanza cactus a escorpión
+Olvida el cactus, no es importante.
+
+> lanza llave a cactus
+Olvida el cactus, no es importante.
+
+> lanza cactus en pozo
+Olvida el cactus, no es importante.
+
+> lanza llave en pozo
+Olvida el pozo, no es importante.
+
+> ; // PLURAL //
+> lanza hierbas
+Olvida las hierbas, no son importantes.
+
+> lanza hierbas a escorpión
+Olvida las hierbas, no son importantes.
+
+> lanza llave a hierbas
+Olvida las hierbas, no son importantes.
+
+> lanza hierbas en pozo
+Olvida las hierbas, no son importantes.
+
+> lanza llave en pozo
+Olvida el pozo, no es importante.
+
+> ; ----------------------------------------------------------------------------
+> ; 'leer.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> lee cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> lee hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'llamar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> llama cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> llama hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'llevar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> lleva cactus
+Olvida el cactus, no es importante.
+
+> quita cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> lleva hierbas
+Olvida las hierbas, no son importantes.
+
+> quita hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'oler.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> huele cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> huele hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'poner.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> pone cactus
+Olvida el cactus, no es importante.
+
+> pone cactus en pozo ; test P1
+Olvida el cactus, no es importante.
+
+> pone llave en pozo ; test P2
+Olvida el pozo, no es importante.
+
+> pone cactus cerca pozo ; test P1
+Olvida el cactus, no es importante.
+
+> pone llave cerca pozo ; test P2
+Olvida el pozo, no es importante.
+
+> ; // PLURAL //
+> pone hierbas
+Olvida las hierbas, no son importantes.
+
+> pone hierbas en pozo ; test P1
+Olvida las hierbas, no son importantes.
+
+> pone llave en hierbas ; test P2
+Olvida las hierbas, no son importantes.
+
+> pone hierbas cerca pozo ; test P1
+Olvida las hierbas, no son importantes.
+
+> pone llave cerca hierbas ; test P2
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'saltar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> salta en cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> salta en hierbas
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'tocar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> toca cactus
+Olvida el cactus, no es importante.
+
+> toca cactus con llave ; test P1
+Olvida el cactus, no es importante.
+
+> toca llave con cactus ; test P2
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> toca hierbas
+Olvida las hierbas, no son importantes.
+
+> toca hierbas con llave ; test P1
+Olvida las hierbas, no son importantes.
+
+> toca llave con hierbas ; test P2
+Olvida las hierbas, no son importantes.
+
+> ; ----------------------------------------------------------------------------
+> ; 'tomar.i'
+> ; ----------------------------------------------------------------------------
+> ; // SINGULAR //
+> toma cactus
+Olvida el cactus, no es importante.
+
+> toma cactus de pozo ; test P1
+Olvida el cactus, no es importante.
+
+> toma llave de pozo ; test P2
+Olvida el pozo, no es importante.
+
+> deja cactus
+Olvida el cactus, no es importante.
+
+> ; // PLURAL //
+> toma hierbas
+Olvida las hierbas, no son importantes.
+
+> toma hierbas de pozo ; test P1
+Olvida las hierbas, no son importantes.
+
+> toma llave de hierbas ; test P2
+Olvida las hierbas, no son importantes.
+
+> deja hierbas
 Olvida las hierbas, no son importantes.
 
 > 
