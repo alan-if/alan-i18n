@@ -16,10 +16,10 @@ Syntax
 
 Add to every object
   Verb mangiare
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is commestibile
       else "$+1 non è commestibile!"
@@ -32,10 +32,10 @@ Add to every object
   End verb.
 
   Verb bere
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is potabile
       else "$+1 non è potabile."

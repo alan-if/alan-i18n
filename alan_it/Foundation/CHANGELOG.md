@@ -12,6 +12,8 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 - [Pending Integrations](#pending-integrations)
 - [Beta Releases](#beta-releases)
+    - [v0.4.0 \(2022/01/31\)](#v040-20220131)
+        - [Rename Scenario to Ornamentale](#rename-scenario-to-ornamentale)
     - [v0.3.0 \(2022/01/07\)](#v030-20220107)
         - [New `messaggi_libreria.i` Module](#new-messaggi_libreriai-module)
         - [Scenery Class Becomes an Attribute](#scenery-class-becomes-an-attribute)
@@ -31,16 +33,25 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 A list of features and changes that need to be replayed on the Italian Foundation, based on releases from either from the **English Foundation** (the reference library) or the **Spanish Foundation**, for changes that only apply to the Spanish and Italian languages, which are similar.
 
-- [[`EN 0.4.0`][EN 0.4.0]] — Rename Scenery to Ornamental.
-
-[EN 0.4.0]:  https://github.com/alan-if/alan-i18n/blob/main/alan_en/Foundation/CHANGELOG.md#v040-20220110 "View English ChangeLog Entry"
-
+- _none_.
 
 -------------------------------------------------------------------------------
 
 # Beta Releases
 
 The __Italian Foundation Library__ is currently maintained by [Tristano Ajmone].
+
+
+## v0.4.0 (2022/01/31)
+
+### Rename Scenario to Ornamentale
+
+> Apply to Italian library equivalent changes to English Foundation v0.4.0.
+
+Rename the `scenario` attribute to `ornamentale` since it's more indicative of the actual attribute nature and because the terms lends itself to better translations in other locales (see [Discussion #57]).
+
+Library messages starting in `scenario_` are also renamed to `ornamentale_`.
+
 
 
 ## v0.3.0 (2022/01/07)
@@ -155,6 +166,7 @@ First public Beta of the Italian library, integrating all features updates of th
 
 [Discussion #14]: https://github.com/alan-if/alan-i18n/discussions/14 "See Discussion #14 — Libraries Version Scheme"
 [Discussion #51]: https://github.com/alan-if/alan-i18n/discussions/51 "See Discussion #51 — THEM WORDS vs PRONOUNs in Italian and Spanish Libs"
+[Discussion #57]: https://github.com/alan-if/alan-i18n/discussions/57#discussioncomment-1892673 "Discussion #57 — Spanish Scenery Attributes"
 
 <!-- project files and folders -->
 

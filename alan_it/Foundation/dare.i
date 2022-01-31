@@ -10,15 +10,15 @@ Syntax dare = dai (ogg) a (png)
 Add to every object
   Verb dare
     When ogg
-      Check ogg is not scenario else
+      Check ogg is not ornamentale else
         If ogg is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And png is not scenario else
+      And png is not ornamentale else
         If png is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg in hero
         else say msg:non_possiedi_P1.

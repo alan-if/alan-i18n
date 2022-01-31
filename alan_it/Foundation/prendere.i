@@ -34,10 +34,10 @@ Syntax
 
 Add to every object
   Verb prendere
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is prendibile
       else "Non puoi prendere $+1."
@@ -77,10 +77,10 @@ Syntax
 
 Add to every object
   Verb lasciare
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg in hero
       else say msg:non_possiedi_P1.
@@ -120,15 +120,15 @@ Syntax
 Add to every object
   Verb prendere_da
     When ogg
-      Check ogg is not scenario else
+      Check ogg is not ornamentale else
         If ogg is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And detentore is not scenario else
+      And detentore is not ornamentale else
         If detentore is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg not in hero
         else "Possiedi già" say the ogg. "."

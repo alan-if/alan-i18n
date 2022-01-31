@@ -12,10 +12,10 @@ Syntax lanciare = lancia (ogg) *
 
 Add to every object
   Verb lanciare
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg in hero
       else say msg:non_possiedi_P1.
@@ -47,15 +47,15 @@ Syntax lanciare_contro = lancia (ogg1) contro (ogg2)
 Add to every object
   Verb lanciare_contro, lanciare_a
     When ogg1
-      Check ogg1 is not scenario else
+      Check ogg1 is not ornamentale else
         If ogg1 is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And ogg2 is not scenario else
+      And ogg2 is not ornamentale else
         If ogg2 is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg1 in hero
         else say msg:non_possiedi_P1.
@@ -93,15 +93,15 @@ Syntax lanciare_in = lancia (ogg1) 'in' (ogg2)
 Add to every object
   Verb lanciare_in
     When ogg1
-      Check ogg1 is not scenario else
+      Check ogg1 is not ornamentale else
         If ogg1 is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And ogg2 is not scenario else
+      And ogg2 is not ornamentale else
         If ogg2 is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg1 in hero
         else say msg:non_possiedi_P1.

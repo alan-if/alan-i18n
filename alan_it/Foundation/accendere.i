@@ -12,10 +12,10 @@ Syntax accendere = accendi (ogg)
 
 Add to every object
   Verb accendere
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is accendibile
       else "Non puoi accendere $+1!"
@@ -38,10 +38,10 @@ Syntax spegnere = spegni (ogg)
 
 Add to every object
   Verb spegnere
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is accendibile
       else "Non puoi spegnere $+1!"

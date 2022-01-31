@@ -20,10 +20,10 @@ Syntax bloccare = blocca (ogg)
 
 Add to every object
   Verb bloccare
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is bloccabile
       else "Non puoi bloccare $+1!"
@@ -54,15 +54,15 @@ Syntax bloccare_con = blocca (ogg) con (chiave)
 Add to every Object
   Verb bloccare_con
     When ogg
-      Check ogg is not scenario else
+      Check ogg is not ornamentale else
         If ogg is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And chiave is not scenario else
+      And chiave is not ornamentale else
         If chiave is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg is bloccabile
         else "Non puoi bloccare $+1!"
@@ -92,10 +92,10 @@ Syntax sbloccare = sblocca (ogg)
 
 Add to every object
   Verb sbloccare
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is bloccabile
       else "Non puoi sbloccare $+1!"
@@ -126,15 +126,15 @@ Syntax sbloccare_con = sblocca (ogg) con (chiave)
 Add to every object
   Verb sbloccare_con
     When ogg
-      Check ogg is not scenario else
+      Check ogg is not ornamentale else
         If ogg is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And chiave is not scenario else
+      And chiave is not ornamentale else
         If chiave is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg is bloccabile
         else "Non puoi sbloccare $+1!"

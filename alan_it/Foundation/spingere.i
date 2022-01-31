@@ -11,10 +11,10 @@ Syntax spingere = spingi (ogg)
 
 Add to every object
   Verb spingere
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is spingibile
       else "Non puoi spingere $+1!"
@@ -33,15 +33,15 @@ Syntax spingere_con = spingi (ogg1) con (ogg2)
 Add to every object
   Verb spingere_con
     When ogg1
-      Check ogg1 is not scenario else
+      Check ogg1 is not ornamentale else
         If ogg1 is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And ogg2 is not scenario else
+      And ogg2 is not ornamentale else
         If ogg2 is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg1 is spingibile
         else "Non puoi spingere $+1!"

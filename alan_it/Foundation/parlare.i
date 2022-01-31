@@ -73,10 +73,10 @@ Syntax
 Add to every thing
   Verb dire_a
     When png
-      Check png is not scenario else
+      Check png is not ornamentale else
         If png is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
       And png can parlare
         else "You can't talk to that." -- @TRANSLATE!
@@ -108,10 +108,10 @@ Syntax
 Add to every thing
   Verb domandare
     When png
-      Check png is not scenario else
+      Check png is not ornamentale else
         If png is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
       And png can parlare
         else "Non è possibile conversare con $+1!"
@@ -142,10 +142,10 @@ Syntax
 Add to every thing
   Verb raccontare
     When argomento
-      Check png is not scenario else
+      Check png is not ornamentale else
         If png is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
       And png can parlare
         else "Non è possibile conversare con $+1!"
@@ -167,10 +167,10 @@ Syntax
 
 Add to every thing
   Verb parlare_con
-    Check png is not scenario else
+    Check png is not ornamentale else
       If png is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And png can parlare
       else "Non è possibile conversare con $+1!"

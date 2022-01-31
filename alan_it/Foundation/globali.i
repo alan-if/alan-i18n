@@ -16,7 +16,7 @@
 
 Add to every entity
   Is
-    not scenario.
+    not ornamentale.
 End add.
 
 -- @NOTE: The 'named_actor' class will probably be removed!

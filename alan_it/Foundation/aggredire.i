@@ -55,10 +55,10 @@ Syntax aggredire_con = aggredisci (png) con (ogg)
 Add to every thing
   Verb aggredire_con
     When ogg
-      Check ogg is not scenario else
+      Check ogg is not ornamentale else
         If ogg is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg in hero
         else say msg:non_possiedi_P2.
@@ -87,10 +87,10 @@ Syntax spara = spara con (arma)
 
 Add to every thing
   Verb spara
-    Check arma is not scenario else
+    Check arma is not ornamentale else
       If arma is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And arma is arma
       else "Non è possibile sparare con $+1!"
@@ -113,10 +113,10 @@ Syntax
 
 Add to every thing
   Verb sparare_a0
-    Check bersaglio is not scenario else
+    Check bersaglio is not ornamentale else
       If bersaglio is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     Does
       "Devi specificare con cosa vorresti sparare"
@@ -140,15 +140,15 @@ Syntax
 Add to every thing
   Verb sparare_a
     When arma
-      Check arma is not scenario else
+      Check arma is not ornamentale else
         If arma is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And bersaglio is not scenario else
+      And bersaglio is not ornamentale else
         If bersaglio is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And arma is arma
         else "Non è possibile sparare con $+1!"

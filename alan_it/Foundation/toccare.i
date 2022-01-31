@@ -22,10 +22,10 @@ Syntax
 
 Add to every object
   Verb toccare
-    Check ogg is not scenario else
+    Check ogg is not ornamentale else
       If ogg is plurale
-        then say msg:scenario_P1_pl.
-        else say msg:scenario_P1_sg.
+        then say msg:ornamentale_P1_pl.
+        else say msg:ornamentale_P1_sg.
       End if.
     And ogg is toccabile
       else "Non è possibile toccarl$$" say ogg:vocale. "$$!"
@@ -35,15 +35,15 @@ Add to every object
 
   Verb toccare_con
     When ogg1
-      Check ogg1 is not scenario else
+      Check ogg1 is not ornamentale else
         If ogg1 is plurale
-          then say msg:scenario_P1_pl.
-          else say msg:scenario_P1_sg.
+          then say msg:ornamentale_P1_pl.
+          else say msg:ornamentale_P1_sg.
         End if.
-      And ogg2 is not scenario else
+      And ogg2 is not ornamentale else
         If ogg2 is plurale
-          then say msg:scenario_P2_pl.
-          else say msg:scenario_P2_sg.
+          then say msg:ornamentale_P2_pl.
+          else say msg:ornamentale_P2_sg.
         End if.
       And ogg1 Is toccabile
         else "Non è possibile toccarl$$" say ogg1:vocale. "$$!"
