@@ -12,6 +12,9 @@ To learn more about the library version scheme, see the [`VERSIONING.adoc`][VERS
 
 - [Pending Integrations](#pending-integrations)
 - [Beta Releases](#beta-releases)
+    - [v0.4.1 \(2023/06/18\)](#v041-20230618)
+        - [Rename Short Directions](#rename-short-directions)
+        - [Drop Directions `in` and `fuori`](#drop-directions-in-and-fuori)
     - [v0.4.0 \(2022/01/31\)](#v040-20220131)
         - [Rename Scenario to Ornamentale](#rename-scenario-to-ornamentale)
     - [v0.3.0 \(2022/01/07\)](#v030-20220107)
@@ -40,6 +43,34 @@ A list of features and changes that need to be replayed on the Italian Foundatio
 # Beta Releases
 
 The __Italian Foundation Library__ is currently maintained by [Tristano Ajmone].
+
+
+## v0.4.1 (2023/06/18)
+
+### Rename Short Directions
+
+Implement better synonyms for short directions (exits) names in `limbo.i`:
+
+| short |    long   |
+|-------|-----------|
+| nn    | nord      |
+| ss    | sud       |
+| ee    | est       |
+| oo    | ovest     |
+| nne   | nordest   |
+| sse   | sudest    |
+| sso   | sudovest  |
+| nno   | nordovest |
+
+The new naming convention is more intuitive and easier to remember, since it just doubles the first letter of the classic short names used historically in Italian IF.
+There is no risk that the new synonyms might conflict with custom verbs syntaxes, objects names or other game identifiers, since Italian words _never_ start with a double letter (consonant or vowel).
+
+### Drop Directions `in` and `fuori`
+
+Removed directions `'in'` and `fuori` (for entering and exiting) since these might cause conflicts (both are prepositions, the latter also an adverb), and are probably better implemented as verbs.
+
+In any case, similar choices are better left to the end user of the library because, depending on the adventure type, different possible solutions are available to implement these directions that have the form of prepositions, adverbs, or verbs — and often one solution prevents the others.
+
 
 
 ## v0.4.0 (2022/01/31)

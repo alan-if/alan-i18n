@@ -24,78 +24,74 @@ The limbo IsA location.
         ovest,
         nordest,
         sudest,
-        nordovest,
         sudovest,
+        nordovest,
         su,
-        giù,
-       'in',  --> per "dentro" (sinonimo??) @TODO: Remove?
-        fuori -- @TODO: Remove?
+        giù
     to limbo.
 End the limbo.
 
---| Oltre alle direzioni predefinite sul `limbo`, la libreria definisce anche
---| dei sinonimi comuni per esse, che includono sintassi alternative e comandi
---| brevi:
+-- @EDITED: DIREZIONI RIMOSSE (vedi note sotto):
+--     'in',  --> per "dentro" (magari come sinonimo?)
+--      fuori --> per "esci"
 
+
+-- Oltre alle direzioni predefinite sul `limbo`, la libreria definisce anche
+-- dei sinonimi comuni per esse, che includono sintassi alternative e comandi
+-- brevi:
 
 Synonyms
-    nest    = nordest.
-    sest    = sudest.
-    novest  = nordovest.
-    sovest  = sudovest.
-    sopra   = su.
-    giu     = giù.
+    nn    = nord.
+    ss    = sud.
+    ee    = est.
+    oo    = ovest.
 
-//// @NOTE: Possible alternatives:
-Synonyms
-  n     = nord.
-  s     = sud.
-  o     = ovest.
-  es    = est. -- can't have 'e = est.' because of AND WORDS!
+    nne   = nordest.
+    sse   = sudest.
+    sso   = sudovest.
+    nno   = nordovest.
 
-  ne    = nordest.
-  se    = sudest.
-  so    = sudovest.
- 'no'   = nordovest. -- could conflict with 'no' as a reply?
-////
+    giu   = giù.
+--  sopra = su.   => Già definito in "grammatica.i"
 
---| [FIX ME: 'in']
---| ========================================================================
---| (1) Dovrei implementare `in` come sinomimo di `dentro`?
---| (2) Dovrei togliere `in` dalle direzioni predefinite?
---|
---| 1) In molti verbi i due termini sono equivalenti -- "guarda nella/dentro la
---|    scatola", "entra in/dentro casa". Ma per altri verbi non è cosi, e.s.
---|
---|      "guarda in basso"          !=  "guarda dentro basso"
---|      "scrivi in corsivo/calce"  !=  "scrivi dentro corsivo/calce"
---|    Forse conviene lasciare all'autore il compito di definire le sintassi
---|    alternative per quei verbi che le prevedono.
---| 2) L'uso di "in" come direzione non mi convince; semmai "dentro" sarebbe
---|    accettabile, ma anche in questo case "entra" sarebbe meglio.
---| ========================================================================
+-- ==========================================================================
+-- La ragione per cui non è stato possibile definire le direzioni brevi
+-- classiche (N, E, S, O, NE, NO, SE, SO) è dovuto al fatto che alcune di
+-- esse avrebbero conflitto con altri identificativi definiti altrove:
+--
+--   E -> EST        :: Ignorato dal parser dei comandi poiché "E" è una
+--                      noise word ("rumore").
+--   A -> SU (alto)  :: Causerebbe conflitti con la preposizione "A".
+--   NO -> NORDOVEST :: In conflitto con la sintassi del verbo 'rispondi_No'
+--                      (per le risposte Sì/No).
+--   SOTTO -> GIÙ    :: In conflitto con la sintassi "guarda sotto".
+--
+-- Ragion per cui si è adottato il raddoppiamento della prima lettera, dato
+-- che offre un sistema di abbreviazioni coerente ed intuitivo, sebbene non
+-- elegante come il sistema classico.
+-- ==========================================================================
 
---| [FIX ME: 'fuori']
---| ========================================================================
---| Forse dovrei rimuovere `fuori` dalle direzioni di base. L'uso del verbo
---| "esci" sarebbe puù appropriato, o chiamare una direzione "esci" (se non
---| confligge con l'omonimo verbo -- da verificare!).
---| ========================================================================
+-- [REMOVED: 'in']
+-- ==========================================================================
+-- (1) Ho rimosso `in` dalle direzioni predefinite.
+-- (2) Dovrei implementare `in` come sinonimo di `dentro`?
+--
+-- 1) L'uso di "in" come direzione non mi convinceva; semmai "dentro" sarebbe
+--    accettabile, ma anche in questo caso "entra" sarebbe meglio.
+--
+-- 2) In molti verbi i due termini sono equivalenti -- "guarda nella/dentro
+--    la scatola", "entra in/dentro casa". Ma per altri verbi non è cosi, e.s.
+--
+--      "guarda in basso"          !=  "guarda dentro basso"
+--      "scrivi in corsivo/calce"  !=  "scrivi dentro corsivo/calce"
+--
+--    Forse conviene lasciare all'autore il compito di definire le sintassi
+--    alternative per quei verbi che le prevedono.
+-- ==========================================================================
 
-
---| [NOTE]
---| ========================================================================
---| La ragione per cui non è stato possibile definire le direzioni brevi
---| classiche `n`, `e`, `s`, `o`, `ne`, `no`, `se`, `so` è dovuto al fatto che
---| alcune di esse avrebbero conflitto con altri identificativi definiti
---| altrove:
---|
---| `e` -> `est`        :: ignorato dal parsing dei comandi poiché `e` è una
---|                        "noise word".
---| `a` -> `su`         :: causerebbe conflitti con la preposizione `a`.
---| `no` -> `nordovest` :: in conflitto con la sintassi del verbo `rispondi_No`.
---| `sotto` -> `giù`    :: in conflitto con la sintassi "`guarda sotto`".
---|
---| Ragion per cui si è preferito adottare un sistema di abbreviazioni coerente,
---| limitandone l'uso alle direzioni composite.
---| ========================================================================
+-- [REMOVED: 'fuori']
+-- ==========================================================================
+-- Ho rimosso `fuori` dalle direzioni di base. L'uso del verbo "esci" sarebbe
+-- più appropriato, o chiamare una direzione "esci" (se non confligge con
+-- l'omonimo verbo -- da verificare!).
+-- ==========================================================================
